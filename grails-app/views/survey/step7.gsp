@@ -1,0 +1,213 @@
+<%@ page import="u56survey.Survey" %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="layout" content="main" />
+        <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
+        <title><g:message code="step7.label" default="Step7" /></title>
+
+		<g:render template="errMsgsToJson-js"/>
+
+		<g:javascript src="check_step7.js" />       
+	     
+    </head>
+    <body>
+<g:javascript>
+
+<g:if test="${surveyInstance?.sex!='male' }">
+window.onload= function(){
+  DisableEnableForm(document.surveyform7,true);
+  $("[name=_action_update]").attr("disabled", false);
+  $("[name=_action_step6]").attr("disabled", false);
+  $("[name=_action_update_unified]").attr("disabled", false);
+}   
+</g:if>
+
+$(document).ready(function(){ 
+
+$.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male.gif')}" align="absmiddle" alt="male" /><br/><g:message code="male.only.page" /><br/></p>');
+
+	$("input[name='q32']").change(function(){
+	    if ($("input[name='q32']:checked").val() == 'yes'){
+	    	$("[name*='date_rectal_exam']").attr("disabled", '');	    	
+	    	$("[name*='findings_rectal_exam']").attr("disabled", '');		    
+	    }
+	    else if ($("input[name='q32']:checked").val() == 'no'){
+	    	$("[name*='date_rectal_exam']").val('');
+	    	$("[name*='date_rectal_exam']").attr("disabled", true);	    	
+	    	$("[name*='findings_rectal_exam']").val('');
+	    	$("[name*='findings_rectal_exam']").attr("disabled", true);	    
+	    }
+	});
+	$("input[name='q33']").change(function(){
+	    if ($("input[name='q33']:checked").val() == 'yes'){
+	    	$("[name*='date_most_recent_PSA_test']").attr("disabled", '');	    	
+	    	$("[name*='results_PSA_test']").attr("disabled", '');		    
+	    }
+	    else if ($("input[name='q33']:checked").val() == 'no'){
+	    	$("[name*='date_most_recent_PSA_test']").val('');
+	    	$("[name*='date_most_recent_PSA_test']").attr("disabled", true);	    	
+	    	$("[name*='results_PSA_test']").val('');
+	    	$("[name*='results_PSA_test']").attr("disabled", true);	    
+	    }
+	});	
+	    
+});		    	    
+</g:javascript>
+        <div class="nav">
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+			<span class="menuButton"><g:render template="/common/step_meter"/></span>
+        </div>
+        <div class="body">
+            <h1><g:message code="step7.label" default="Step7" /> </h1>
+            <g:if test="${flash.message}">
+            <div class="message">${flash.message}</div>
+            </g:if>
+            <g:hasErrors bean="${surveyInstance}">
+            <div class="errors">
+                <g:renderErrors bean="${surveyInstance}" as="list" />
+            </div>
+            </g:hasErrors>
+            <g:form name="surveyform7"
+            		method="post"
+            		onsubmit="return checkForm7();" >
+                <g:hiddenField name="id" value="${surveyInstance?.id}" />
+                <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:render template="/common/status_info"/>
+                <div class="dialog">
+                <br/><ul><label><g:message code="survey.q30" default="q30" /></label></ul>
+
+                	<%
+					def ProstateProblemList=[message(code:"survey.q30.p1"),
+											message(code:"survey.q30.p2"),
+											message(code:"survey.q30.p3"),
+											message(code:"survey.q30.p4"),
+											message(code:"survey.q30.p5"),
+											message(code:"survey.q30.p6")]
+
+					def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
+					%>  					 
+                    <table class="box-table-b-wide">
+                    <thead>
+                    <tr>
+                    	<th style="width:50%"><g:message code="survey.problems" default="Problems" /></th>
+                    	<th><g:message code="survey.yesno" default="Yes / No" /></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <g:each in="${ProstateProblemList }" status="i" var="problem">
+                    <% def idx=i+1 %>
+                    <tr>
+                    	<td style="font-weight:bold;">
+                    	${problem }
+
+                    	</td>
+                    	<td>
+                        	<g:radioGroup name="${('q30_'+idx)}"
+                            	value="${surveyInstance?.('q30_'+idx)}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+                    	</td>
+                    </tr>
+                    </g:each>
+                    </tbody>
+                    </table>
+                    <br/><ul><label><g:message code="survey.q31" default="q31" /></label></ul>
+
+                	<%
+					def ProstateProblemList2=[message(code:"survey.q31.p1"),
+											message(code:"survey.q31.p2"),
+											message(code:"survey.q31.p3")]
+					 %>
+                    <table class="box-table-b-wide">
+                    <thead>
+                    <tr>
+                    	<th style="width:50%"><g:message code="survey.prostateProblems" default="Prostate Problems" /></th>
+                    	<th><g:message code="survey.yesno" default="Yes / No" /></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <g:each in="${ProstateProblemList2 }" status="i" var="problem">
+                    <% def idx=i+1 %>
+                    <tr>
+                    	<td style="font-weight:bold;">
+                    	${problem }
+
+                    	</td>
+                    	<td>
+                        	<g:radioGroup name="${('q31_'+idx)}"
+                            	value="${surveyInstance?.('q31_'+idx)}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+                    	</td>
+                    </tr>
+                    </g:each>
+                    </tbody>
+                    </table>
+
+                    <table class="box-table-b-wide">
+                    <tbody>
+                    <tr>
+                    	<td style="width:30%;font-weight:bold;""><label><g:message code="survey.q32" default="q32" /></label></td>
+                    	<td style="width:15%">
+                        	<g:radioGroup name="q32"
+                            	value="${surveyInstance?.q32}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+							</g:radioGroup>
+						</td>
+						<td align="right"><g:message code="survey.when" default="When" />:<br/>
+							<g:datePicker name="date_rectal_exam" precision="month" value="${surveyInstance?.date_rectal_exam}"
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+						</td>
+						<td><g:message code="survey.findings" default="Findings" />:
+						 <g:textField  style="width:150px;" name="findings_rectal_exam" value="${surveyInstance?.findings_rectal_exam}" />
+                    	</td>
+                    </tr>
+                    <tr>
+                    	<td style="font-weight:bold;"><label><g:message code="survey.q33" default="q33" /></label></td>
+                    	<td>
+                        	<g:radioGroup name="q33"
+                            	value="${surveyInstance?.q33}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+							</g:radioGroup>
+						</td>
+						<td align="right"><g:message code="survey.mostRecentTest" default="Most recent Test" />:<br/>
+						<g:datePicker name="date_most_recent_PSA_test" precision="month" value="${surveyInstance?.date_most_recent_PSA_test}"
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+						</td>
+						<td><g:message code="survey.results" default="Results" />: <g:textField style="width:150px;" name="results_PSA_test" value="${surveyInstance?.results_PSA_test}" />
+                    	</td>
+                    </tr>
+                    <tr>
+                    	<td style="font-weight:bold;"><label><g:message code="survey.q34" default="q34" /></label></td>
+                    	<td colspan="3">
+                        	<g:radioGroup name="q34"
+                            	value="${surveyInstance?.q34}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+							</g:radioGroup>                    	
+                    	</td>
+                    </tr>                                        
+                    </tbody>
+                    </table>                     
+                </div>
+                <div class="buttons">
+                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
+                    <span class="button"><g:actionSubmit class="back" action="step6" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
+                    <span class="menuButton"><g:render template="/common/step_meter"/></span>
+                 </div>
+            </g:form>
+        </div>
+    </body>
+</html>

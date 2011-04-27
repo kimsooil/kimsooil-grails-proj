@@ -1,0 +1,430 @@
+<%@ page import="u56survey.Survey" %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="layout" content="main" />
+        <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
+        <title><g:message code="step9.label" default="Step9" /></title>
+
+		<%-- <jv:generateValidation domain="survey" form="surveyform9"  display="list" container="errors"/> --%>  
+
+		<g:render template="errMsgsToJson-js"/>
+
+		<g:javascript src="check_step9.js" />       
+
+			
+    </head>
+    <body>
+<g:javascript>
+
+<g:if test="${surveyInstance?.sex!='female' }">
+window.onload= function(){
+  DisableEnableForm(document.surveyform9,true);
+  $("[name=_action_update]").attr("disabled", false);
+  $("[name=_action_step8]").attr("disabled", false);
+  $("[name=_action_update_unified]").attr("disabled", false);  
+}   
+</g:if>
+
+$(document).ready(function(){
+
+$.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /><br/><g:message code="female.only.page" /><br/></p>');
+
+	$("input[name='q47']").change(function(){
+	    if ($("input[name='q47']:checked").val() != 'never'){
+	    	$("[name*='q48_date_last_visit_gynecologist']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q47']:checked").val() == 'never'){
+	    	$("[name*='q48_date_last_visit_gynecologist']").val('');
+	    	$("[name*='q48_date_last_visit_gynecologist']").attr("disabled", true);	  
+	    }
+	});
+ 
+	$("input[name='q49']").change(function(){
+	    if ($("input[name='q49']:checked").val() == 'yes'){
+
+	    	$("#q49_findings_pelvic_exam").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q49']:checked").val() == 'no'){
+	    	$("#q49_findings_pelvic_exam").val('');
+	    	$("#q49_findings_pelvic_exam").attr("disabled", true);	  
+	    }
+	});
+	$("input[name='q50']").change(function(){
+	    if ($("input[name='q50']:checked").val() == 'yes'){
+
+	    	$("#q50_findings_digital_rectal_exam").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q50']:checked").val() == 'no'){
+	    	$("#q50_findings_digital_rectal_exam").val('');
+	    	$("#q50_findings_digital_rectal_exam").attr("disabled", true);	  
+	    }
+	});
+	$("input[name='q51']").change(function(){
+	    if ($("input[name='q51']:checked").val() == 'yes'){
+
+	    	$("[name*='q51_']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q51']:checked").val() == 'no'){
+	    	$("[name*='q51_']").val('');
+	    	$("[name*='q51_']").attr("disabled", true);	  
+	    }
+	});
+	$("input[name='q51_1']").change(function(){
+	    if ($("input[name='q51_1']:checked").val() == 'yes'){
+	    	$("[name*='q51_1_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_1']:checked").val() == 'no'){
+	    	$("[name*='q51_1_']").val('');
+	    	$("[name*='q51_1_']").attr("disabled", true);	  	 
+	    }
+	});
+	$("input[name='q51_2']").change(function(){
+	    if ($("input[name='q51_2']:checked").val() == 'yes'){
+	    	$("[name*='q51_2_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_2']:checked").val() == 'no'){
+	    	$("[name*='q51_2_']").val('');
+	    	$("[name*='q51_2_']").attr("disabled", true);	  	 
+	    }
+	});	
+	$("input[name='q51_3']").change(function(){
+	    if ($("input[name='q51_3']:checked").val() == 'yes'){
+	    	$("[name*='q51_3_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_3']:checked").val() == 'no'){
+	    	$("[name*='q51_3_']").val('');
+	    	$("[name*='q51_3_']").attr("disabled", true);	  	 
+	    }
+	});	
+	$("input[name='q51_4']").change(function(){
+	    if ($("input[name='q51_4']:checked").val() == 'yes'){
+	    	$("[name*='q51_4_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_4']:checked").val() == 'no'){
+	    	$("[name*='q51_4_']").val('');
+	    	$("[name*='q51_4_']").attr("disabled", true);	  	 
+	    }
+	});
+	$("input[name='q51_5']").change(function(){
+	    if ($("input[name='q51_5']:checked").val() == 'yes'){
+	    	$("[name*='q51_5_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_5']:checked").val() == 'no'){
+	    	$("[name*='q51_5_']").val('');
+	    	$("[name*='q51_5_']").attr("disabled", true);	  	 
+	    }
+	});	
+	$("input[name='q51_6']").change(function(){
+	    if ($("input[name='q51_6']:checked").val() == 'yes'){
+	    	$("[name*='q51_6_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_6']:checked").val() == 'no'){
+	    	$("[name*='q51_6_']").val('');
+	    	$("[name*='q51_6_']").attr("disabled", true);	  	 
+	    }
+	});	
+	$("input[name='q52']").change(function(){
+	    if ($("input[name='q52']:checked").val() == 'yes'){
+	    	$("[name*='q52_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q52']:checked").val() == 'no'){
+	    	$("[name*='q52_']").val('');
+	    	$("[name*='q52_']").attr("disabled", true);	  
+	    		 
+	    }
+	});
+	$("input[name='q53']").change(function(){
+	    if ($("input[name='q53']:checked").val() == 'yes'){
+	    	
+	    	$("[name*='q53_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q53']:checked").val() == 'no'){
+	    	$("[name*='q53_']").val('');
+	    	$("[name*='q53_']").attr("disabled", true);	  
+	    		 
+	    }
+	});									
+});	
+</g:javascript>    
+        <div class="nav">
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+			<span class="menuButton"><g:render template="/common/step_meter"/></span>
+        </div>
+        <div class="body">
+            <h1><g:message code="step9.label" default="Step9" /></h1>
+            <g:if test="${flash.message}">
+            <div class="message">${flash.message}</div>
+            </g:if>
+<div id="errors" class="errors" style="display:none;">
+</div>
+            <g:form name="surveyform9"
+            		onsubmit="return checkForm9();"
+            		method="post" >
+                <g:hiddenField name="id" value="${surveyInstance?.id}" />
+                <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:render template="/common/status_info"/>
+                <div class="dialog">
+					<br/><ul><label><g:message code="survey.q45" default="q45" /></label></ul>
+					<%
+
+					def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
+					
+					def GynecologicalProblemList=[message(code:'survey.q45.t1'),
+												message(code:'survey.q45.t2'),
+												message(code:'survey.q45.t3'),
+												message(code:'survey.q45.t4'),
+												message(code:'survey.q45.t5'),
+												message(code:'survey.q45.t6'),
+												message(code:'survey.q45.t7')]
+					
+					 %>
+					<table class="box-table-b-wide">
+					<thead>
+					<tr>
+						<th><g:message code="survey.gynecologicalProblem" default="Gynecological Problem" /></th>
+						<th><g:message code="survey.yesno" default="Yes / No" /></th>
+					</tr>
+					</thead>
+					<tbody>
+					<g:each in="${GynecologicalProblemList}" status="i" var="problem">
+					<% def idx=i+1 %>
+					<tr>
+						<td style="width:50%;font-weight:bold;">${idx}. ${problem }
+						</td>
+						<td>
+                        	<g:radioGroup name="${('q45_'+idx)}"
+                            	value="${surveyInstance?.('q45_'+idx)}" 
+                                labels="${yesno }"
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>						
+						</td>
+					</tr>
+					</g:each>
+					</tbody>
+					</table>
+					   
+					<br/><ul><label><g:message code="survey.q46" default="q46" /></label></ul>
+					<%
+					def GastrointestinalSymptomList=[message(code:'survey.q46.t1'),
+												message(code:'survey.q46.t2'),
+												message(code:'survey.q46.t3'),
+												message(code:'survey.q46.t4'),
+												message(code:'survey.q46.t5'),
+												message(code:'survey.q46.t6')]
+
+					 %>
+					<table class="box-table-b-wide">
+					<thead>
+					<tr>
+						<th><g:message code="survey.gastrointestinalSymptom" default="Gastrointestinal Symptom" /></th>
+						<th><g:message code="survey.yesno" default="Yes / No" /></th>
+					</tr>
+					</thead>
+					<tbody>
+					<g:each in="${GastrointestinalSymptomList}" status="i" var="symptom">
+					<% def idx=i+1 %>
+					<tr>
+						<td style="width:50%;font-weight:bold;">${idx}. ${symptom }
+						</td>
+						<td>
+                        	<g:radioGroup name="${('q46_'+idx)}"
+                            	value="${surveyInstance?.('q46_'+idx)}" 
+                                labels="${yesno }"
+                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+									
+							</g:radioGroup>						
+						</td>
+					</tr>
+					</g:each>
+					<tr>
+						<td><g:message code="survey.q46.t7" default="other" /></td>
+						<td><g:textField name="q46_7" value="${surveyInstance?.q46_7}" />
+						</td>
+					</tr>					
+					</tbody>
+					</table>   
+
+					
+                    <table class="box-table-b-wide">
+                        <tbody>
+	                    <tr>
+	                    	<td style="width:50%;font-weight:bold;"><label><g:message code="survey.q47" default="q47" /></label></td>
+	                    	<td>
+	                    	<%
+							def q47lbls=[message(code:'survey.q47.f1'),
+								message(code:'survey.q47.f2'),
+								message(code:'survey.q47.f3'),
+								message(code:'survey.q47.f4')]
+							 %>
+	                        	<g:radioGroup name="q47"
+	                            	value="${surveyInstance?.q47}" 
+	                                labels="${q47lbls }" 
+	                                values="['every6mon', 'everyyear', 'lessthan6mon', 'never']" >
+									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+								</g:radioGroup>                  	
+	                    	</td>
+	                    </tr> 
+	                    <tr>
+	                    	<td style="font-weight:bold;"><label><g:message code="survey.q48" default="q48" /></label></td>
+	                    	<td>
+								<g:datePicker name="q48_date_last_visit_gynecologist" precision="month" value="${surveyInstance?.q48_date_last_visit_gynecologist}"
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />                	
+	                    	</td>
+	                    </tr>
+	                    <tr>
+	                    	<td style="font-weight:bold;"><label><g:message code="survey.q49" default="q49" /></label></td>
+	                    	<td>
+	                        	<g:radioGroup name="q49"
+	                            	value="${surveyInstance?.q49}" 
+	                                labels="${yesno }"
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>
+								<br/>
+								<div style="clear:left">
+									<g:message code="survey.findings" default="findings" />: <g:textField name="q49_findings_pelvic_exam" value="${surveyInstance?.q49_findings_pelvic_exam}" />
+								</div>
+	                    	</td>
+	                    </tr>
+	                    <tr>
+	                    	<td style="font-weight:bold;"><label><g:message code="survey.q50" default="q50" /></label></td>
+	                    	<td>
+	                        	<g:radioGroup name="q50"
+	                            	value="${surveyInstance?.q50}" 
+	                                labels="${yesno }"
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>
+								<br/>
+								<div style="clear:left">
+									<g:message code="survey.findings" default="findings" />: <g:textField name="q50_findings_digital_rectal_exam" value="${surveyInstance?.q50_findings_digital_rectal_exam}" />
+								</div>
+	                    	</td>
+	                    </tr>	                    	                                                                                                         
+                        </tbody>
+                    </table>
+                    <br/><ul>
+                    <div>
+                    	<label><g:message code="survey.q51" default="q51" /></label>
+                    </div>
+                    <br/>
+                    <ul>
+	                    <div>
+			                <g:radioGroup name="q51"
+			                            	value="${surveyInstance?.q51}" 
+			                                labels="${yesno }"
+			                                values="['yes','no']" >
+											<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>                   
+	                    </div>
+	                    <br/> <br/>
+	                    <div style="clear:left;">
+		                    <label>&nbsp;&nbsp;<g:message code="survey.q51.table" default="q51.table" /></label>
+		                </div>
+                    </ul>
+                    
+                    </ul>
+                    <%
+					def DiagnosticTestList=[message(code:'survey.q51.t1'),
+											message(code:'survey.q51.t2'),
+											message(code:'survey.q51.t3'),
+											message(code:'survey.q51.t4'),
+											message(code:'survey.q51.t5'),
+											message(code:'survey.q51.t6')]
+					 %>
+					<table class="box-table-b-wide">
+					<thead>
+					<tr>
+						<th><g:message code="survey.diagnosticTest" default="Diagnostic Test" /></th>
+						<th><g:message code="survey.yesno" default="Yes / No" /></th>
+						<th><g:message code="survey.monthYear" default="Month / Year" /></th>
+						<th><g:message code="survey.results" default="Result" /></th>
+					</tr>
+					</thead>
+					<tbody>
+					<g:each in="${DiagnosticTestList }" status="i" var="diagnostic">
+					<% def idx=i+1 %>
+                    <tr>
+                    	<td style="width:20%;font-weight:bold;"><label>${idx}. ${diagnostic }</label></td>
+                    	<td>
+                        	<g:radioGroup name="${('q51_'+idx)}"
+                            	value="${surveyInstance?.('q51_'+idx)}"  
+                                labels="${yesno }"
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+						</td>
+                        <td>    
+                             <g:datePicker name="${('q51_'+idx+'_date')}" precision="month" value="${surveyInstance?.('q51_'+idx+'_date')}"  
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+						</td>
+						<td>
+						 <g:textField name="${('q51_'+idx+'_result')}" value="${surveyInstance?.('q51_'+idx+'_result')}" />
+                    	</td>
+                    </tr>
+                    </g:each>					
+					</tbody>
+					</table>
+
+
+                    <table class="box-table-b-wide">
+                    <tbody>
+                    <tr>
+                    	<td style="width:30%;font-weight:bold;"><label><g:message code="survey.q52" default="q52" /></label></td>
+                    	<td>
+                        	<g:radioGroup name="q52"
+                            	value="${surveyInstance?.q52}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+							<br/>
+							<div style="clear:left">
+								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52_date_most_recent_pap_smear" precision="month" value="${surveyInstance?.q52_date_most_recent_pap_smear}"  
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+								<br/>
+                            	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear" value="${surveyInstance?.q52_results_pap_smear}" />
+                            </div>
+                    	</td>
+                    </tr>
+                    <tr>
+                    	<td style="width:30%;font-weight:bold;"><label><g:message code="survey.q53" default="q53" /></label></td>
+                    	<td>
+                        	<g:radioGroup name="q53"
+                            	value="${surveyInstance?.q53}" 
+                                labels="${yesno }"
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+							<br/>
+							<div style="clear:left">
+							<label><g:message code="survey.q53.which" default="q53_which" /></label>: 
+							<g:textField name="q53_medication_fertility"
+										 value="${surveyInstance?.q53_medication_fertility}" />&nbsp;&nbsp;&nbsp;
+							<br/>
+                            <label><g:message code="survey.q53.howlong" default="q53_howlong" /></label>: 
+                            <g:textField name="q53_how_long_use_fertility_medication"
+                            			 value="${surveyInstance?.q53_how_long_use_fertility_medication}"
+                            			 onkeyup="checkIfValidNumber(this.value, 1, 360, document.getElementById(\'q53_length_status\')); "/>
+                            <span id="q53_length_status"></span>
+                            </div>
+                    	</td>
+                    </tr>                    
+                    </tbody>
+                    </table>
+					                    
+                </div>
+                <div class="buttons">
+                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
+                    <span class="button"><g:actionSubmit class="back" action="step8" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
+                    <span class="menuButton"><g:render template="/common/step_meter"/></span>
+                 </div>
+            </g:form>
+        </div>
+    </body>
+</html>
