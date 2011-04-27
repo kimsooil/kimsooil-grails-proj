@@ -25,7 +25,10 @@
                         </tbody>
                     </table>
 					<ul><label for="q11a"><g:message code="survey.q11a.label" default="q11a" /></label></ul>
-					<% def InfectionsList=[message(code:"survey.hepatitis"),
+					<% def InfectionsList=[message(code:"survey.hepatitis")+" ("+message(code:"survey.q11a_donotknow")+")",
+										message(code:"survey.hepatitis")+" A",
+										message(code:"survey.hepatitis")+" B",
+										message(code:"survey.hepatitis")+" C",
 										message(code:"survey.anytype_hpv"),
 										message(code:"survey.AIDS_HIV"),,
 										message(code:"survey.helicobacter_pylori")]
@@ -40,17 +43,18 @@
 					</thead>
 					<tbody>
 					<g:each in="${InfectionsList}" status="i" var="infectiontype">
-					<% def idx=i+1 %>
+					<% def idx=i %>
+					<g:if test="${idx==0}">
+					<tr>
+						<td style="border: 1px solid #9baff1;font-weight:bold;">${infectiontype }</td>
+						<td style="border: 1px solid #9baff1;font-weight:bold;"><g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}""/></td>
+						<td></td>
+					</tr>
+					</g:if>
+					<g:else>
 					<tr>
 						<td style="border: 1px solid #9baff1;font-weight:bold;">${infectiontype }
-						<g:if test="${infectiontype==message(code:'survey.hepatitis') }">
-						<br/><ul> 
-						        <br/><g:checkBox name="q11a_hep_a" value="${surveyInstance?.q11a_hep_a}"  onclick="resetIfnone()"/> <g:message code="survey.htype"/> A
-						        <br/><g:checkBox name="q11a_hep_b" value="${surveyInstance?.q11a_hep_b}"  onclick="resetIfnone()"/> <g:message code="survey.htype"/> B
-						        <br/><g:checkBox name="q11a_hep_c" value="${surveyInstance?.q11a_hep_c}"  onclick="resetIfnone()"/> <g:message code="survey.htype"/> C
-						        <br/><g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}" onclick="resetIfnone()"/> <g:message code="survey.q11a_donotknow" default="Don't know the type" />
-							</ul>	
-						</g:if>
+
 						</td>
 						<td style="border: 1px solid #9baff1;font-weight:bold;">
                                 <g:radioGroup name="${('q11a_'+idx)}"
@@ -61,10 +65,13 @@
 								</g:radioGroup>						
 						</td>
 						<td style="border: 1px solid #9baff1;">
-						<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <br/>
+
+							<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
+	                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_'+idx+'_status')}"></span><br/>
+
 						</td>
 					</tr>
+					</g:else>
 					</g:each>
 					</tbody>
 					</table>
