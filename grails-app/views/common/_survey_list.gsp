@@ -41,7 +41,7 @@ def incomplete=surveyInstanceTotal-completed
 							<%
 								def stepNum=0
 								def stepNumUrl="show"
-								if (surveyInstance.step){
+								if (!surveyInstance.completed && surveyInstance.step){
 									stepNum = surveyInstance.step.toInteger()
 									stepNumUrl=(surveyInstance.step && stepNum>=1 && stepNum<=15 ) ? (stepNum==1 ? "step1_edit": "step"+stepNum) : "show"
 								}

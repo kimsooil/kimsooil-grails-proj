@@ -1,5 +1,3 @@
-
-
 <%
 	def i=0
     def step=''

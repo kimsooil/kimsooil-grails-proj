@@ -39,11 +39,11 @@
                     <g:if test="${!surveyInstance?.completed}">
 
                     	<%--<g:link class="editbutton" action="verify" id="${surveyInstance?.id }" ><g:message code="verify" default="verify" /></g:link> --%>
-                   		<g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                   		<span class="button"><g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></span>
                     </g:if>
                     <g:else>
 
-                    	<g:link class="editbutton" action="preview" id="${surveyInstance?.id }" ><g:message code="preview" default="readonly" /></g:link>
+                    	<span class="button"><g:link class="editbutton" action="preview" id="${surveyInstance?.id }" ><g:message code="preview" default="readonly" /></g:link></span>
                  
                     	<label style="color:orange">Locked by completion<br/>(Contact admin for any inquiry about this survey)</label>
                   	
