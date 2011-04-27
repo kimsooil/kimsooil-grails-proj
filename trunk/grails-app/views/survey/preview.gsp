@@ -32,6 +32,8 @@ window.onload= function(){
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:render template="/common/status_info"/>
+                
+                <%--<g:render template="preview"  model="[surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]"/> --%>
 
 <h1><label style="color:orange;"><g:message code="step1.label" default="Step1-new" /></label></h1>
 <g:render template="/onepage/step1"/>
@@ -77,6 +79,7 @@ window.onload= function(){
 
 <h1><label style="color:orange;"><g:message code="step15.label" default="Step15" /></label></h1>
 <g:render template="/onepage/step15"/>
+
                 <div class="buttons">
 <%--
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
@@ -85,6 +88,7 @@ window.onload= function(){
                      
                     <span class="button"><g:actionSubmit class="done" action="done" value="${message(code: 'Done', default: 'Done.')}" /></span>
  --%> 
+
  <br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 14px;">[<g:link action="done" id="${surveyInstance?.id}">${message(code: 'Done', default: 'Done')}</g:link>]</span>

@@ -265,7 +265,7 @@ th.desc a {
     font-size: 11px;
     margin-top: 10px;
     overflow: hidden;
-    padding: 5;
+    padding: 5px 5px;    
 }
 .buttons input {
     background: #fff;

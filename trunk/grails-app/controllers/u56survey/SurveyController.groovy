@@ -641,4 +641,36 @@ class SurveyController {
         }
     }
     */
+
+	def pdf ={
+		def countries = [] as SortedSet
+		def countryNames = [:] // map
+		
+		Locale.ISOCountries.each {
+		  if (it) {
+			countries << it
+		  }
+		}
+		countries.each{twolettercode->
+			Locale l= new Locale("", twolettercode);
+			countryNames.put(twolettercode, l.getDisplayCountry())
+		}
+		countryNames.remove("US")
+		countryNames.remove("PR")
+		countryNames=["PR":"PUERTO RICO", "US":"UNITED STATES", "--":"--"]+countryNames.sort{it.value}
+		
+		def today = new Date()
+		def thisyear=today[YEAR]
+		
+		def surveyInstance = Survey.get(params.id)
+		if (!surveyInstance) {
+			flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'survey.label', default: 'Survey'), params.id])}"
+			redirect(action: "list")
+		}
+		else {
+					renderPdf(template: 'preview', model:[surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear])
+		}
+
+
+	}
 }

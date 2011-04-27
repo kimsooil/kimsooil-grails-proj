@@ -286,8 +286,8 @@ $(document).ready(function(){
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
                     <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
-                    <span class="button"><g:actionSubmit class="next" action="step2_after_update" value="${message(code: 'button.save-then-go-to-next.label', default: 'step2_after_update')}" /></span>
-                    <%--<span class="button"><g:actionSubmit action="update_unified" value="New NEXT" /></span> --%>
+                    <%--<span class="button"><g:actionSubmit class="next" action="step2_after_update" value="${message(code: 'button.save-then-go-to-next.label', default: 'step2_after_update')}" /></span> --%>
+                    <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                 </div>
             </g:form>
