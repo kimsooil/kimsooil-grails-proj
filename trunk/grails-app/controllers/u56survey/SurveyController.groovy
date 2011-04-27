@@ -489,7 +489,7 @@ class SurveyController {
 		def surveyInstance = Survey.get(params.id)
 
 		surveyInstance.completed=true
-		surveyInstance.surveyer=session.user.login
+		//surveyInstance.surveyer=session.user.login
 		surveyInstance.step=''
 		surveyCompletedInstance.completed=true
         
@@ -512,6 +512,7 @@ class SurveyController {
 			surveyCompletedInstance.consentNumSurv=surveyInstance.consentNumSurv
 			surveyCompletedInstance.consentNumLoc=surveyInstance.consentNumLoc
 			surveyCompletedInstance.consentNum=surveyInstance.consentNum
+			surveyCompletedInstance.surveyer=surveyInstance.surveyer // saving the original surveyer
 			
             if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true) && surveyCompletedInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
@@ -604,7 +605,7 @@ class SurveyController {
 					return
 				}
 			}
-			surveyInstance.surveyer=session.user.login
+			surveyInstance.surveyer=session.user.login // when ever updated, save the surveyer (loggined user)
 			surveyInstance.step=session.step.toString()
 			surveyInstance.properties = params
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {

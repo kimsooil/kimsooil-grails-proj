@@ -41,23 +41,13 @@ $(document).ready(function(){
 	    	$("#q11a_1_status").html(" <font color='red'>Choose Year</font>");
 	    	$("#q11a_1Year_year").attr("disabled", '');
 
-	    	$("#q11a_hep_a").attr("disabled", '');
-	    	$("#q11a_hep_b").attr("disabled", '');
-	    	$("#q11a_hep_c").attr("disabled", '');
-	    	$("#q11a_hep_donotknow_type").attr("disabled", '');	    	
+
 	    }
 	    else if ($("input[name='q11a_1']:checked").val() == 'no'){
 	    	$("#q11a_1_status").html("");
 	    	$("#q11a_1Year_year").val('');
 	    	$("#q11a_1Year_year").attr("disabled", true);
-	    	$("#q11a_hep_a").attr("checked", '');
-	    	$("#q11a_hep_a").attr("disabled", true);
-	    	$("#q11a_hep_b").attr("checked", '');
-	    	$("#q11a_hep_b").attr("disabled", true);
-	    	$("#q11a_hep_c").attr("checked", '');
-	    	$("#q11a_hep_c").attr("disabled", true);
-	    	$("#q11a_hep_donotknow_type").attr("checked", '');
-	    	$("#q11a_hep_donotknow_type").attr("disabled", true);
+
 	    }
 	}); 
 	$("input[name='q11a_2']").change(function(){
@@ -82,18 +72,82 @@ $(document).ready(function(){
 	    	$("#q11a_3Year_year").attr("disabled", true);
 	    }
 	}); 
-	$("input[name='q11a_4']").change(function(){
+	$("#q11a_hep_donotknow_type").change(function(){
+		if (this.checked){
+	    	$("[name*='q11a_1']").attr('checked', false)
+	    	$("[name*='q11a_1']").attr('disabled', true)
+	    	$("[name*='q11a_2']").attr('checked', false)
+	    	$("[name*='q11a_2']").attr('disabled', true)
+	    	$("[name*='q11a_3']").attr('checked', false)
+	    	$("[name*='q11a_3']").attr('disabled', true)
+
+	    	$("#q11a_1_status").html('');
+	    	$("#q11a_1Year_year").val('');
+	    	$("#q11a_1Year_year").attr("disabled", true);
+	    	
+	    	$("#q11a_2_status").html('');
+	    	$("#q11a_2Year_year").val('');
+	    	$("#q11a_2Year_year").attr("disabled", true);
+
+	    	$("#q11a_3_status").html('');
+	    	$("#q11a_3Year_year").val('');
+	    	$("#q11a_3Year_year").attr("disabled", true);		
+    	
+		}
+		else{
+	    	$("[name*='q11a_1']").attr('disabled', false);
+	    	$("[name*='q11a_2']").attr('disabled', false);
+	    	$("[name*='q11a_3']").attr('disabled', false);			
+		}
+	});
+	$("input[name='q11a_4']").change(function(){ // don't know type so disable all above hepatitis
 	    if ($("input[name='q11a_4']:checked").val() == 'yes'){
 	    	$("#q11a_4_status").html(" <font color='red'>Choose Year</font>");
 	    	$("#q11a_4Year_year").attr("disabled", '');
+
+
 	    }
 	    else if ($("input[name='q11a_4']:checked").val() == 'no'){
 	    	$("#q11a_4_status").html("");
 	    	$("#q11a_4Year_year").val('');
 	    	$("#q11a_4Year_year").attr("disabled", true);
+	    	
+
 	    }
 	});
-	
+	$("input[name='q11a_5']").change(function(){
+	    if ($("input[name='q11a_5']:checked").val() == 'yes'){
+	    	$("#q11a_5_status").html(" <font color='red'>Choose Year</font>");
+	    	$("#q11a_5Year_year").attr("disabled", '');
+	    }
+	    else if ($("input[name='q11a_5']:checked").val() == 'no'){
+	    	$("#q11a_5_status").html("");
+	    	$("#q11a_5Year_year").val('');
+	    	$("#q11a_5Year_year").attr("disabled", true);
+	    }
+	});	
+	$("input[name='q11a_6']").change(function(){
+	    if ($("input[name='q11a_6']:checked").val() == 'yes'){
+	    	$("#q11a_6_status").html(" <font color='red'>Choose Year</font>");
+	    	$("#q11a_6Year_year").attr("disabled", '');
+	    }
+	    else if ($("input[name='q11a_6']:checked").val() == 'no'){
+	    	$("#q11a_6_status").html("");
+	    	$("#q11a_6Year_year").val('');
+	    	$("#q11a_6Year_year").attr("disabled", true);
+	    }
+	});	
+	$("input[name='q11a_7']").change(function(){
+	    if ($("input[name='q11a_7']:checked").val() == 'yes'){
+	    	$("#q11a_7_status").html(" <font color='red'>Choose Year</font>");
+	    	$("#q11a_7Year_year").attr("disabled", '');
+	    }
+	    else if ($("input[name='q11a_7']:checked").val() == 'no'){
+	    	$("#q11a_7_status").html("");
+	    	$("#q11a_7Year_year").val('');
+	    	$("#q11a_7Year_year").attr("disabled", true);
+	    }
+	});	
 	$("input[name='haveCancer']").change(function(){
 	    if ($("input[name='haveCancer']:checked").val() == 'yes'){
 	    	$("#q12_status").html(" <font color='red'>(<b>***</b>)</font>");
@@ -183,7 +237,10 @@ $(document).ready(function(){
                         </tbody>
                     </table>
 					<ul><label for="q11a"><g:message code="survey.q11a.label" default="q11a" /></label></ul>
-					<% def InfectionsList=[message(code:"survey.hepatitis"),
+					<% def InfectionsList=[message(code:"survey.hepatitis")+" ("+message(code:"survey.q11a_donotknow")+")",
+										message(code:"survey.hepatitis")+" A",
+										message(code:"survey.hepatitis")+" B",
+										message(code:"survey.hepatitis")+" C",
 										message(code:"survey.anytype_hpv"),
 										message(code:"survey.AIDS_HIV"),,
 										message(code:"survey.helicobacter_pylori")]
@@ -198,17 +255,18 @@ $(document).ready(function(){
 					</thead>
 					<tbody>
 					<g:each in="${InfectionsList}" status="i" var="infectiontype">
-					<% def idx=i+1 %>
+					<% def idx=i %>
+					<g:if test="${idx==0}">
+					<tr>
+						<td style="border: 1px solid #9baff1;font-weight:bold;">${infectiontype }</td>
+						<td style="border: 1px solid #9baff1;font-weight:bold;"><g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}""/></td>
+						<td></td>
+					</tr>
+					</g:if>
+					<g:else>
 					<tr>
 						<td style="border: 1px solid #9baff1;font-weight:bold;">${infectiontype }
-						<g:if test="${infectiontype==message(code:'survey.hepatitis') }">
-						<br/><ul> 
-						        <br/><g:checkBox name="q11a_hep_a" value="${surveyInstance?.q11a_hep_a}"  onclick="rresetIfnone_hep()"/> <g:message code="survey.htype"/> A
-						        <br/><g:checkBox name="q11a_hep_b" value="${surveyInstance?.q11a_hep_b}"  onclick="resetIfnone_hep()"/> <g:message code="survey.htype"/> B
-						        <br/><g:checkBox name="q11a_hep_c" value="${surveyInstance?.q11a_hep_c}"  onclick="resetIfnone_hep()"/> <g:message code="survey.htype"/> C
-						        <br/><g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}" onclick="resetIfnone_hep()"/> <g:message code="survey.q11a_donotknow" default="Don't know the type" />
-							</ul>	
-						</g:if>
+
 						</td>
 						<td style="border: 1px solid #9baff1;font-weight:bold;">
                                 <g:radioGroup name="${('q11a_'+idx)}"
@@ -219,36 +277,23 @@ $(document).ready(function(){
 								</g:radioGroup>						
 						</td>
 						<td style="border: 1px solid #9baff1;">
-						<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_'+idx+'_status')}"></span><br/>
+
+							<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
+	                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_'+idx+'_status')}"></span><br/>
+
 						</td>
 					</tr>
+					</g:else>
 					</g:each>
 					</tbody>
 					</table>
 					
                     <ul><label for="q11d"><g:message code="survey.q11d.label" default="q11d" /></label>
-					<%--
-					<input type="radio" name="haveCancer" value="yes" onClick="toggleQ12();" <g:if test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
-					<input type="radio" name="haveCancer" value="no" onClick="toggleQ12();" <g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
-					 --%>
+
 					 <br/> <br/>
 						 <ul>
 						 <div>
-<%--						 
-						 <g:if test="${request.getHeader('user-agent').indexOf('MSIE')>=0}">
-						 	<input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
-						 	<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
-						 </g:if>
-						 <g:else>
-							<div class="checkbox"><input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:if> /></div> <div class="label"><g:message code="survey.yes" default="Yes" /></div>&nbsp;&nbsp;&nbsp;
-							<div class="checkbox"><input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /></div> <div class="label"><g:message code="survey.no" default="No" /></div>
-						</g:else>
- --%>						
-<%--
-						 	<input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
-						 	<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
- --%>						 	
+					 	
 						 	<input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.being_treated_for_cancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
 						 	<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
 
@@ -259,10 +304,7 @@ $(document).ready(function(){
 									  
                     
                     <div id="q12div">
-                    <%--
-                    	<g:if test="${surveyInstance?.haveCancer=='yes'}">style="display:block;"</g:if>
-                    	<g:else>style="display:none;"</g:else> 
-                    --%>	
+
                     	
                     <br/>
                     <ul><label><g:message code="survey.q12" default="q12" /></label> <span id="q12_status"></span></ul>

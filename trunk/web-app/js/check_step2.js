@@ -27,23 +27,29 @@ function checkForm2()
 			fv.raiseError(i18nmessages.step2Err6);
 		}
 	}	
-	if (!fv.isChecked(document.getElementById('q11a_hep_a')) &&
-		!fv.isChecked(document.getElementById('q11a_hep_b')) &&
-		!fv.isChecked(document.getElementById('q11a_hep_c')) &&
-		!fv.isChecked(document.getElementById('q11a_hep_donotknow_type')) &&
-		getRadioValue(document.getElementsByName('q11a_1'))=='yes'	 ){
-			fv.raiseError(i18nmessages.step2Err7);
+	//if (!fv.isChecked(document.getElementById('q11a_hep_a')) &&
+	//	!fv.isChecked(document.getElementById('q11a_hep_b')) &&
+	//	!fv.isChecked(document.getElementById('q11a_hep_c')) &&
+	//	!fv.isChecked(document.getElementById('q11a_hep_donotknow_type')) &&
+	//	getRadioValue(document.getElementsByName('q11a_1'))=='yes'	 ){
+	//		fv.raiseError(i18nmessages.step2Err7);
+	//}
+	if  (!$('#q11a_hep_donotknow_type').attr("checked") ){
+		if ( !fv.isRadioChecked(document.getElementsByName('q11a_1')) || !fv.isRadioChecked(document.getElementsByName('q11a_2')) || !fv.isRadioChecked(document.getElementsByName('q11a_3')) ){
+			fv.raiseError(i18nmessages.step2Err8+" 1");
+		}
 	}
-	if (!fv.isRadioChecked(document.getElementsByName('q11a_1')) ||
-		!fv.isRadioChecked(document.getElementsByName('q11a_2')) ||
-		!fv.isRadioChecked(document.getElementsByName('q11a_3')) ||
-		!fv.isRadioChecked(document.getElementsByName('q11a_4')) ){
-			fv.raiseError(i18nmessages.step2Err8);	
+	if (!fv.isRadioChecked(document.getElementsByName('q11a_4')) ||
+		!fv.isRadioChecked(document.getElementsByName('q11a_5')) ||
+		!fv.isRadioChecked(document.getElementsByName('q11a_6')) ){
+			fv.raiseError(i18nmessages.step2Err8+" 2");	
 	}
 	if (fv.needSpecify(document.getElementsByName('q11a_1'), document.getElementById('q11a_1Year_year'), 'yes')||
-		fv.needSpecify(document.getElementsByName('q11a_2'), document.getElementById('q11a_2Year_year'), 'yes')||
-		fv.needSpecify(document.getElementsByName('q11a_3'), document.getElementById('q11a_3Year_year'), 'yes')||
-		fv.needSpecify(document.getElementsByName('q11a_4'), document.getElementById('q11a_4Year_year'), 'yes')){
+			fv.needSpecify(document.getElementsByName('q11a_2'), document.getElementById('q11a_2Year_year'), 'yes')||
+			fv.needSpecify(document.getElementsByName('q11a_3'), document.getElementById('q11a_3Year_year'), 'yes')||
+			fv.needSpecify(document.getElementsByName('q11a_4'), document.getElementById('q11a_4Year_year'), 'yes')||
+			fv.needSpecify(document.getElementsByName('q11a_5'), document.getElementById('q11a_5Year_year'), 'yes')||
+			fv.needSpecify(document.getElementsByName('q11a_6'), document.getElementById('q11a_6Year_year'), 'yes')){
 		fv.raiseError(i18nmessages.step2Err9);
 	}
 	if (!fv.isRadioChecked(document.getElementsByName('haveCancer'))){
@@ -97,13 +103,13 @@ function checkForm2()
 		return true;
 	}
 }
-function resetIfnone_hep(){
-	if (document.getElementById('q11a_hep_donotknow_type').checked){
-		document.getElementById('q11a_hep_a').checked='';
-		document.getElementById('q11a_hep_b').checked='';
-		document.getElementById('q11a_hep_c').checked='';
-	}		  	
-}
+//function resetIfnone_hep(){
+//	if (document.getElementById('q11a_hep_donotknow_type').checked){
+//		document.getElementById('q11a_hep_a').checked='';
+//		document.getElementById('q11a_hep_b').checked='';
+//		document.getElementById('q11a_hep_c').checked='';
+//	}		  	
+//}
 function resetIfnone(){
 	for (i=1;i<=24;i++){
 		if (document.getElementById('q12_'+i+'_4').checked){
