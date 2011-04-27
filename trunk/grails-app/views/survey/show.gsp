@@ -30,16 +30,16 @@
 				}
 								
 			%>
-                    <g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                    
                     <%--
                     <g:hiddenField name="id" value="${surveyInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="step1_edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
                      --%>
-                     <%--
+
                     <g:if test="${!surveyInstance?.completed}">
 
-                    	<g:link class="editbutton" action="verify" id="${surveyInstance?.id }" ><g:message code="verify" default="verify" /></g:link>
-                   	
+                    	<%--<g:link class="editbutton" action="verify" id="${surveyInstance?.id }" ><g:message code="verify" default="verify" /></g:link> --%>
+                   		<g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
                     </g:if>
                     <g:else>
 
@@ -48,7 +48,7 @@
                     	<label style="color:orange">Locked by completion<br/>(Contact admin for any inquiry about this survey)</label>
                   	
                     </g:else>
-                     --%>
+
                      
                     <%--<span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span> --%>
                
