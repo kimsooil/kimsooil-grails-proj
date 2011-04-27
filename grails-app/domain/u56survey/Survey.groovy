@@ -57,9 +57,11 @@ class Survey {
 	Boolean q11 // have you ever told by a doctor or health care provider that you have cancer
 	String haveCancer
 
-	String q11a_1, q11a_2, q11a_3, q11a_4
-	Boolean q11a_hep_a, q11a_hep_b, q11a_hep_c, q11a_hep_donotknow_type
-	Date q11a_1Year, q11a_2Year, q11a_3Year, q11a_4Year
+	String q11a_1, q11a_2, q11a_3, q11a_4, q11a_5, q11a_6 //  _5~_7 added for separate yes/no question
+	//String q11a_hep_a_str, q11a_hep_b_str, q11a_hep_c_str, q11a_hep_donotknow_type_str // added for separate yes/no question
+	//Boolean q11a_hep_a, q11a_hep_b, q11a_hep_c, q11a_hep_donotknow_type
+	Boolean q11a_hep_donotknow_type
+	Date q11a_1Year, q11a_2Year, q11a_3Year, q11a_4Year, q11a_5Year, q11a_6Year
 	
 	String spread_cancer // q11c
 	Boolean spread_liver, spread_brain, spread_lung, spread_bone, spread_other 

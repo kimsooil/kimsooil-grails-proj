@@ -16,7 +16,7 @@
     <body>
 <g:javascript>
 $(document).ready(function(){
-	$.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/><label style="color:red"><g:message code="verify.important.message1" /><br/><br><g:message code="verify.important.message2" /></label><br/></p>');
+	$.jqDialog.alert('<p align="center"><label style="color:red"><g:message code="verify.important.message1" /><br/><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/><g:message code="verify.important.message2" /></label><br/></p>');
 });
 </g:javascript>
         <div class="nav">
