@@ -61,8 +61,8 @@
 								</g:radioGroup>						
 						</td>
 						<td style="border: 1px solid #9baff1;">
-						<g:kimsiDatePicker name=""${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /><br/>
+						<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <br/>
 						</td>
 					</tr>
 					</g:each>
