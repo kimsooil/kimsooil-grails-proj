@@ -1,0 +1,26 @@
+(Last updated: 4/29)
+
+How to use
+
+- Admin's view
+	* Basic role: Admin does not create survey but can only edit when needed
+	* Can see all surveys (done & ongoing)
+	* Can add/edit/delete the surveyer
+- Surveyer's view
+	* Basic role: Can create a new survey / Can edit the survey by the survey (not other surveyer's survey)
+- Admin & Surveyer's view
+	* In list page, link will redirect to the previous step (e.g. If stopped at Step 2, go to step 2 not start at step 1)
+	* Verify page will be disabled at first.
+	* To complete the survey, click "Complete" button in the bottom.
+	* If there's not entered "required" inputs, user(surveyer) need to go to the step which need correction.
+
+Bugs fixed & Changes between 4/26~4/29
+- "Clear" button are gone
+- Hepatitis selections are separated into (Type A, Type B, Type C, and Don't Know)
+- Dates except DOB are all optional
+- To avoid TOMCAT server's OutOfMemory error, increase the allocated heap size (256 MB -> 1024 MB)
+
+...
+Features - Coming soon
+- Spanish version of Error messages from javascript validation (Waiting for translation) 
+- Import the survey results to CSV file (But iPad will not supported.)
