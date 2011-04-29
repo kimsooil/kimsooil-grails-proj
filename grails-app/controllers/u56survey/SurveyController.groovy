@@ -439,7 +439,7 @@ class SurveyController {
 				}
 			}
 			surveyInstance.surveyer=session.user.login
-			surveyInstance.step="verify"
+			surveyInstance.step="15"
 			surveyInstance.properties = params
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
 				flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
@@ -575,7 +575,7 @@ class SurveyController {
         }
     }
 	def update_unified = {
-		def currentStep =  session.step
+		def currentStep =  session.step!='' && session.step ? session.step.toInteger() : 1
 		def nextStep=currentStep+1
 
 		def countries = [] as SortedSet
@@ -605,9 +605,11 @@ class SurveyController {
 					return
 				}
 			}
-			surveyInstance.surveyer=session.user.login // when ever updated, save the surveyer (loggined user)
-			surveyInstance.step=session.step.toString()
 			surveyInstance.properties = params
+			
+			surveyInstance.surveyer=session.user.login // when ever updated, save the surveyer (loggined user)
+			surveyInstance.step=currentStep
+			
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
 				flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
 				//redirect(action: "show", id: surveyInstance.id)

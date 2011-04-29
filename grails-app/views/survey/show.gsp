@@ -24,9 +24,16 @@
 			<%
 				def stepNum=0
 				def stepNumUrl="step1_edit"
-				if (surveyInstance.step){
+				if (surveyInstance.step=='verify'){
+					stepNumUrl="verify"
+				}
+				else if (surveyInstance.step){
 					stepNum = surveyInstance.step.toInteger()
-					stepNumUrl=(surveyInstance.step && stepNum>=1 && stepNum<=15 ) ? (stepNum==1 ? "step1_edit": "step"+stepNum) : "show"
+					
+					if (stepNum >=1 && stepNum <=15)
+						stepNumUrl = stepNum==1 ? "step1_edit": "step"+stepNum
+					else
+						stepNumUrl = "show"
 				}
 								
 			%>
