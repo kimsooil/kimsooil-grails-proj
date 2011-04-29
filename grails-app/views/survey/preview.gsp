@@ -8,17 +8,37 @@
 <%--
 		<jv:generateValidation domain="survey" form="surveyform15"  display="list" container="errors"/>        
  --%>
-
+		<g:render template="errMsgsToJson-js"/>
+		
+		<g:javascript src="checkVerifyForm.js" /> 
     </head>
     <body>
 <g:javascript>
-window.onload= function(){
-  DisableEnableForm(document.surveyform_preview,true);
-}    
+$(document).ready(function(){
+	<g:if test="${!surveyInstance?.completed}">
+  	$.jqDialog.alert('<p align="center"><label style="color:red"><g:message code="verify.important.message1" /><br/><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/><g:message code="verify.important.message2" /></label><br/></p>');
+	</g:if>
+	<g:else>
+	$.jqDialog.alert('<p align="center"><label style="color:green"><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/>This survey has been locked by completion.<br/>Contact administrator for inquiry<br/></p>');
+	</g:else>
+	
+	window.onload= function(){
+	  	DisableEnableForm(document.surveyform_preview,true);
+		$("[name=_action_update]").attr("disabled", false);
+  		$("[name=_action_completed]").attr("disabled", false);
+  		$("[name=id]").attr("disabled", false);		  
+  		$("[name=version]").attr("disabled", false);
+  		//$("[name=consentNum]").attr("disabled", false);
+	}
+
+});
+    
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <%--<span class="menuButton"><g:render template="/common/step_meter"/></span> --%>
+            <g:if test="${!surveyInstance?.completed}">
+            	<span class="menuButton"><g:render template="/common/step_meter"/></span>
+            </g:if>
         </div>
         <div class="body">
             <h1><g:message code="preview"/></h1>
@@ -28,9 +48,11 @@ window.onload= function(){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform_preview"
+            		onsubmit="return checkVerifyForm();"
 					method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:hiddenField name="consentNum" value="${surveyInstance?.consentNum}" />
                 <g:render template="/common/status_info"/>
                 
                 <%--<g:render template="preview"  model="[surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]"/> --%>
@@ -89,11 +111,18 @@ window.onload= function(){
                     <span class="button"><g:actionSubmit class="done" action="done" value="${message(code: 'Done', default: 'Done.')}" /></span>
  --%> 
 
- <br/>
+<g:if test="${!surveyInstance?.completed}"> 
+	<span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
+	<span class="button"><g:actionSubmit class="complete" action="completed" value="${message(code: 'complete', default: 'Complete')}" /></span>
+<br/>
+</g:if>
+<g:else>
+<br/>
+&nbsp;&nbsp;&nbsp;<span style="font-size: 14px;">[<g:link action="done" id="${surveyInstance?.id}">${message(code: 'Done', default: 'Done')}</g:link>]</span>
+<br/>
+<br/>
+</g:else>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 14px;">[<g:link action="done" id="${surveyInstance?.id}">${message(code: 'Done', default: 'Done')}</g:link>]</span>
-
-<br/><br/>
                 </div>
             </g:form>
         </div>

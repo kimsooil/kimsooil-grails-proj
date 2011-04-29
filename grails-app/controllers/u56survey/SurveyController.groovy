@@ -383,9 +383,11 @@ class SurveyController {
 		countryNames=["PR":"PUERTO RICO", "US":"UNITED STATES", "--":"--"]+countryNames.sort{it.value}
 		
 		def today = new Date()
+		//today=today.minusYears(18) // subject should be 18 years old or more
 		def thisyear=today[YEAR]
 		
 		def surveyInstance = Survey.get(params.id)
+
 		if (!surveyInstance) {
 			flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'survey.label', default: 'Survey'), params.id])}"
 			redirect(action: "list")
@@ -412,7 +414,7 @@ class SurveyController {
 		countryNames=["PR":"PUERTO RICO", "US":"UNITED STATES", "--":"--"]+countryNames.sort{it.value}
 		
 		def today = new Date()
-		today=today.minusYears(18) // subject should be 18 years old or more
+		//today=today.minusYears(18) // subject should be 18 years old or more
 		def thisyear=today[YEAR]
 		
 		def surveyInstance = Survey.get(params.id)
@@ -485,14 +487,9 @@ class SurveyController {
     }
 	def completed = {
 
-		def surveyCompletedInstance = new SurveyCompleted()
+		//def surveyCompletedInstance = new SurveyCompleted()
 		def surveyInstance = Survey.get(params.id)
-
-		surveyInstance.completed=true
-		//surveyInstance.surveyer=session.user.login
-		surveyInstance.step=''
-		surveyCompletedInstance.completed=true
-        
+      
 		if (surveyInstance) {
 			
             if (params.version) {
@@ -506,21 +503,23 @@ class SurveyController {
             }
             
             surveyInstance.properties = params
+			surveyInstance.completed=true
+			surveyInstance.step='completed'
+			surveyInstance.completedBy = session.user.login
 			
-			params.id=null
-			surveyCompletedInstance.properties = params
-			surveyCompletedInstance.consentNumSurv=surveyInstance.consentNumSurv
-			surveyCompletedInstance.consentNumLoc=surveyInstance.consentNumLoc
-			surveyCompletedInstance.consentNum=surveyInstance.consentNum
-			surveyCompletedInstance.surveyer=surveyInstance.surveyer // saving the original surveyer
+			//surveyCompletedInstance.properties = params
+			//surveyCompletedInstance.completed=true
+			//surveyCompletedInstance.step='completed'
+			//surveyCompletedInstance.completedBy = session.user.login
 			
-            if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true) && surveyCompletedInstance.save(flush: true)) {
+            //if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true) && surveyCompletedInstance.save(flush: true)) {
+			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
                 redirect(action: "show", id: surveyInstance.id)
             }
             else {
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
-				redirect(action: "verify", id: surveyInstance.id)
+				redirect(action: "preview", id: surveyInstance.id)
             }
         }
         else {
@@ -607,7 +606,8 @@ class SurveyController {
 			}
 			surveyInstance.properties = params
 			
-			surveyInstance.surveyer=session.user.login // when ever updated, save the surveyer (loggined user)
+			//surveyInstance.surveyer=session.user.login // when ever updated, save the surveyer (loggined user)
+			surveyInstance.updatedBy = session.user.login
 			surveyInstance.step=currentStep
 			
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {

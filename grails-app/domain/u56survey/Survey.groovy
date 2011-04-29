@@ -12,6 +12,8 @@ class Survey {
 	// status keeping
 	String step // step #. If completed, put 'completed' 
 	String surveyer // admin or surveyer's login
+	String updatedBy
+	String completedBy
 	
 	Boolean completed=false
 	
@@ -306,10 +308,10 @@ class Survey {
 	String q42_7 // hemorrhoids
 	String q42_8 // polyps
 	
-	Boolean q43 // a biopsy was performed
+	String q43 // a biopsy was performed
 	String q43_biopsy_results
 	
-	Boolean q44 // have you ever had anemia
+	String q44 // have you ever had anemia
 	String q44_hemoglobin_levels
 	
 // History of Ovarian Cancer
