@@ -25,10 +25,12 @@ function checkForm9()
 	{
 		fv.raiseError(i18nmessages.step9Err3);
 	}
+	/*
 	if (getRadioValue(document.getElementsByName('q47'))!='never' && ($('#q48_date_last_visit_gynecologist_momth').val()=='' || $('#q48_date_last_visit_gynecologist_year').val()==''))
 	{
 		fv.raiseError(i18nmessages.step9Err4);
 	}
+	*/
 	if (!fv.isRadioChecked(document.getElementsByName('q49')) )
 	{
 		fv.raiseError(i18nmessages.step9Err5);
@@ -64,6 +66,7 @@ function checkForm9()
 	{
 		fv.raiseError(i18nmessages.step9Err9);
 	}
+	/*
 	if (getRadioValue(document.getElementsByName('q51_1'))=='yes' &&
 		( fv.isEmpty($('#q51_1_date_month').val()) || fv.isEmpty($('#q51_1_date_year').val()) ||fv.isEmpty($('#q51_1_results').val()) )
 	)
@@ -100,16 +103,19 @@ function checkForm9()
 	{
 		fv.raiseError(i18nmessages.step9Err15);
 	}
+	*/
 	if (!fv.isRadioChecked(document.getElementsByName('q52')) )
 	{
 		fv.raiseError(i18nmessages.step9Err16_1);
-	}		
+	}
+	/*
 	if (getRadioValue(document.getElementsByName('q52'))=='yes' &&
 		( fv.isEmpty($('#q52_date_most_recent_pap_smear_month').val()) || fv.isEmpty($('#q52_date_most_recent_pap_smear_year').val()) ||fv.isEmpty($('#q52_results_pap_smear').val()) )
 	)
 	{
 		fv.raiseError(i18nmessages.step9Err16);
-	}	
+	}
+	*/	
 	if (!fv.isRadioChecked(document.getElementsByName('q53')) )
 	{
 		fv.raiseError(i18nmessages.step9Err17_1);

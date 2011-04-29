@@ -14,43 +14,43 @@ function checkForm14()
 	}	
 	if (getRadioValue(document.getElementsByName("q90_1"))=='yes') 
 	{
-		if (fv.isEmpty($('#q90_1_age').val()) && fv.isEmpty($('#q90_1_year_year').val()) )
-			fv.raiseError(i18nmessages.step14Err2+"(#1)");
+		//if (fv.isEmpty($('#q90_1_age').val()) && fv.isEmpty($('#q90_1_year_year').val()) )
+			//fv.raiseError(i18nmessages.step14Err2+"(#1)");
 		if (!fv.isValidNumber($('#q90_1_age').val(), 1, 125))
 			fv.raiseError(i18nmessages.step14Err3);
 	}
 	if (getRadioValue(document.getElementsByName("q90_2"))=='yes')
 	{
-		if (fv.isEmpty($('#q90_2_age').val()) && fv.isEmpty($('#q90_2_year_year').val()) ) 
-			fv.raiseError(i18nmessages.step14Err2+"(#2)");
+		//if (fv.isEmpty($('#q90_2_age').val()) && fv.isEmpty($('#q90_2_year_year').val()) ) 
+			//fv.raiseError(i18nmessages.step14Err2+"(#2)");
 		if (!fv.isValidNumber($('#q90_2_age').val(), 1, 125))
 			fv.raiseError(i18nmessages.step14Err3);
 	}
 	if (getRadioValue(document.getElementsByName("q90_3"))=='yes')
 	{
-		if (fv.isEmpty($('#q90_3_age').val()) && fv.isEmpty($('#q90_3_year_year').val()) ) 
-			fv.raiseError(i18nmessages.step14Err2+"(#3)");
+		//if (fv.isEmpty($('#q90_3_age').val()) && fv.isEmpty($('#q90_3_year_year').val()) ) 
+			//fv.raiseError(i18nmessages.step14Err2+"(#3)");
 		if (!fv.isValidNumber($('#q90_3_age').val(), 1, 125))
 			fv.raiseError(i18nmessages.step14Err3);
 	}
 	if (getRadioValue(document.getElementsByName("q90_4"))=='yes')
 	{
-		if (fv.isEmpty($('#q90_4_age').val()) && fv.isEmpty($('#q90_4_year_year').val()) ) 
-			fv.raiseError(i18nmessages.step14Err2+"(#4)");
+		//if (fv.isEmpty($('#q90_4_age').val()) && fv.isEmpty($('#q90_4_year_year').val()) ) 
+			//fv.raiseError(i18nmessages.step14Err2+"(#4)");
 		if (!fv.isValidNumber($('#q90_4_age').val(), 1, 125))
 			fv.raiseError(i18nmessages.step14Err3);
 	}
 	if (getRadioValue(document.getElementsByName("q90_5"))=='yes')
 	{
-		if (fv.isEmpty($('#q90_5_age').val()) && fv.isEmpty($('#q90_5_year_year').val()) ) 
-			fv.raiseError(i18nmessages.step14Err2+"(#5)");
+		//if (fv.isEmpty($('#q90_5_age').val()) && fv.isEmpty($('#q90_5_year_year').val()) ) 
+			//fv.raiseError(i18nmessages.step14Err2+"(#5)");
 		if (!fv.isValidNumber($('#q90_5_age').val(), 1, 125))
 			fv.raiseError(i18nmessages.step14Err3);
 	}
 	if (getRadioValue(document.getElementsByName("q90_6"))=='yes')
 	{
-		if (fv.isEmpty($('#q90_6_age').val()) && fv.isEmpty($('#q90_6_year_year').val()) ) 
-			fv.raiseError(i18nmessages.step14Err2+"(#6)");
+		//if (fv.isEmpty($('#q90_6_age').val()) && fv.isEmpty($('#q90_6_year_year').val()) ) 
+			//fv.raiseError(i18nmessages.step14Err2+"(#6)");
 		if (!fv.isValidNumber($('#q90_6_age').val(), 1, 125))
 			fv.raiseError(i18nmessages.step14Err3);
 	}

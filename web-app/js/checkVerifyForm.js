@@ -113,6 +113,7 @@
 		!fv.isRadioChecked(document.getElementsByName('q11a_6')) ){
 			fv.raiseError(i18nmessages.step2Err8+" 2");	
 	}
+	/*
 	if (fv.needSpecify(document.getElementsByName('q11a_1'), document.getElementById('q11a_1Year_year'), 'yes')||
 			fv.needSpecify(document.getElementsByName('q11a_2'), document.getElementById('q11a_2Year_year'), 'yes')||
 			fv.needSpecify(document.getElementsByName('q11a_3'), document.getElementById('q11a_3Year_year'), 'yes')||
@@ -121,7 +122,7 @@
 			fv.needSpecify(document.getElementsByName('q11a_6'), document.getElementById('q11a_6Year_year'), 'yes')){
 		fv.raiseError(i18nmessages.step2Err9);
 	}
-
+	*/
 	if (!fv.isRadioChecked(document.getElementsByName('haveCancer'))){
 		fv.raiseError(i18nmessages.step2Err10);
 	}
@@ -336,12 +337,12 @@ if (getRadioValue(document.getElementsByName('sex'))=='male'){
 		fv.raiseError(i18nmessages.step7Err3);
 	}
 	if (getRadioValue(document.getElementsByName('q32'))=='yes' &&
-		(fv.isEmpty($('#date_rectal_exam_month').val()) || fv.isEmpty($('#date_rectal_exam_year').val()) || fv.isEmpty($('#findings_rectal_exam').val()))
+		(fv.isEmpty($('#date_rectal_exam_month').val()) || fv.isEmpty($('#findings_rectal_exam').val()))
 	){
 		fv.raiseError(i18nmessages.step7Err4);
 	}
 	if (getRadioValue(document.getElementsByName('q33'))=='yes' &&
-		(fv.isEmpty($('#date_most_recent_PSA_test_month').val()) || fv.isEmpty($('#date_most_recent_PSA_test_year').val()) || fv.isEmpty($('#results_PSA_test').val()))
+		(fv.isEmpty($('#date_most_recent_PSA_test_month').val()) || fv.isEmpty($('#results_PSA_test').val()))
 	){
 		fv.raiseError(i18nmessages.step7Err5);
 	}	
@@ -390,22 +391,26 @@ if (getRadioValue(document.getElementsByName('sex'))=='male'){
 	{
 		fv.raiseError(i18nmessages.step8Err7);
 	}
+	/*
 	if (getRadioValue(document.getElementsByName('q41'))!='no' &&
 	($('#date_digital_rectal_exam_month').val()=='' ||$('#date_digital_rectal_exam_year').val()=='')
 	)
 	{
 		fv.raiseError(i18nmessages.step8Err8);
 	}
+	*/
 	if (!fv.isRadioChecked(document.getElementsByName('q42')) )
 	{
 		fv.raiseError(i18nmessages.step8Err9);
 	}
+	/*
 	if (getRadioValue(document.getElementsByName('q42'))=='yes' &&
 	($('#date_sigmoidoscopy_colonoscopy_month').val()=='' ||$('#date_sigmoidoscopy_colonoscopy_year').val()=='')
 	)
 	{
 		fv.raiseError(i18nmessages.step8Err10);
 	}
+	*/
 	if (getRadioValue(document.getElementsByName('q42'))=='yes' &&
 		(!fv.isRadioChecked(document.getElementsByName('q42_1')) ||
 		!fv.isRadioChecked(document.getElementsByName('q42_2')) ||
@@ -464,10 +469,12 @@ if (getRadioValue(document.getElementsByName('sex'))=='female'){
 		{
 			fv.raiseError(i18nmessages.step9Err3);
 		}
+		/*
 		if (getRadioValue(document.getElementsByName('q47'))!='never' && ($('#q48_date_last_visit_gynecologist_momth').val()=='' || $('#q48_date_last_visit_gynecologist_year').val()==''))
 		{
 			fv.raiseError(i18nmessages.step9Err4);
 		}
+		*/
 		if (!fv.isRadioChecked(document.getElementsByName('q49')) )
 		{
 			fv.raiseError(i18nmessages.step9Err5);
@@ -503,6 +510,7 @@ if (getRadioValue(document.getElementsByName('sex'))=='female'){
 		{
 			fv.raiseError(i18nmessages.step9Err9);
 		}
+		/*
 		if (getRadioValue(document.getElementsByName('q51_1'))=='yes' &&
 			( fv.isEmpty($('#q51_1_date_month').val()) || fv.isEmpty($('#q51_1_date_year').val()) ||fv.isEmpty($('#q51_1_results').val()) )
 		)
@@ -539,16 +547,19 @@ if (getRadioValue(document.getElementsByName('sex'))=='female'){
 		{
 			fv.raiseError(i18nmessages.step9Err15);
 		}
+		*/
 		if (!fv.isRadioChecked(document.getElementsByName('q52')) )
 		{
 			fv.raiseError(i18nmessages.step9Err16_1);
 		}		
+		/*
 		if (getRadioValue(document.getElementsByName('q52'))=='yes' &&
 			( fv.isEmpty($('#q52_date_most_recent_pap_smear_month').val()) || fv.isEmpty($('#q52_date_most_recent_pap_smear_year').val()) ||fv.isEmpty($('#q52_results_pap_smear').val()) )
 		)
 		{
 			fv.raiseError(i18nmessages.step9Err16);
-		}	
+		}
+		*/	
 		if (!fv.isRadioChecked(document.getElementsByName('q53')) )
 		{
 			fv.raiseError(i18nmessages.step9Err17_1);
@@ -736,106 +747,106 @@ if (getRadioValue(document.getElementsByName('sex'))=='female'){
 		{
 			if (fv.isRadioChecked(document.getElementsByName('q82_1')) && getRadioValue(document.getElementsByName('q82_1'))=='yes' )
 			{
-				if ($('#q82_1_type').val()=='' || $('#q82_1_whatAge').val()=='' || $('#q82_1_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#1)");
+				//if ($('#q82_1_type').val()=='' || $('#q82_1_whatAge').val()=='' || $('#q82_1_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#1)");
 				if (!fv.isEmpty($('#q82_1_whatAge').val()) && !fv.isValidNumber($('#q82_1_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}
 			if (fv.isRadioChecked(document.getElementsByName('q82_2')) && getRadioValue(document.getElementsByName('q82_2'))=='yes' )
 			{
-				if ($('#q82_2_type').val()=='' || $('#q82_2_whatAge').val()=='' || $('#q82_2_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#2)");
+				//if ($('#q82_2_type').val()=='' || $('#q82_2_whatAge').val()=='' || $('#q82_2_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#2)");
 				if (!fv.isEmpty($('#q82_2_whatAge').val()) && !fv.isValidNumber($('#q82_2_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}		
 			if (fv.isRadioChecked(document.getElementsByName('q82_3')) && getRadioValue(document.getElementsByName('q82_3'))=='yes' )
 			{
-				if ($('#q82_3_type').val()=='' || $('#q82_3_whatAge').val()=='' || $('#q82_3_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#3)");
+				//if ($('#q82_3_type').val()=='' || $('#q82_3_whatAge').val()=='' || $('#q82_3_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#3)");
 				if (!fv.isEmpty($('#q82_3_whatAge').val()) && !fv.isValidNumber($('#q82_3_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}
 			if (fv.isRadioChecked(document.getElementsByName('q82_4')) && getRadioValue(document.getElementsByName('q82_4'))=='yes' )
 			{
-				if ($('#q82_4_type').val()=='' || $('#q82_4_whatAge').val()=='' || $('#q82_4_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#4)");
+				//if ($('#q82_4_type').val()=='' || $('#q82_4_whatAge').val()=='' || $('#q82_4_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#4)");
 				if (!fv.isEmpty($('#q82_4_whatAge').val()) && !fv.isValidNumber($('#q82_4_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_5')) && getRadioValue(document.getElementsByName('q82_5'))=='yes' )
 			{
-				if ($('#q82_5_type').val()=='' || $('#q82_5_whatAge').val()=='' || $('#q82_5_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#5)");
+				//if ($('#q82_5_type').val()=='' || $('#q82_5_whatAge').val()=='' || $('#q82_5_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#5)");
 				if (!fv.isEmpty($('#q82_5_whatAge').val()) && !fv.isValidNumber($('#q82_5_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_6')) && getRadioValue(document.getElementsByName('q82_6'))=='yes' )
 			{
-				if ($('#q82_6_type').val()=='' || $('#q82_6_whatAge').val()=='' || $('#q82_6_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#6)");
+				//if ($('#q82_6_type').val()=='' || $('#q82_6_whatAge').val()=='' || $('#q82_6_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#6)");
 				if (!fv.isEmpty($('#q82_6_whatAge').val()) && !fv.isValidNumber($('#q82_6_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_7')) && getRadioValue(document.getElementsByName('q82_7'))=='yes' )
 			{
-				if ($('#q82_7_type').val()=='' || $('#q82_7_whatAge').val()=='' || $('#q82_7_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#7)");
+				//if ($('#q82_7_type').val()=='' || $('#q82_7_whatAge').val()=='' || $('#q82_7_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#7)");
 				if (!fv.isEmpty($('#q82_7_whatAge').val()) && !fv.isValidNumber($('#q82_7_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_8')) && getRadioValue(document.getElementsByName('q82_8'))=='yes' )
 			{
-				if ($('#q82_8_type').val()=='' || $('#q82_8_whatAge').val()=='' || $('#q82_8_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#8)");
+				//if ($('#q82_8_type').val()=='' || $('#q82_8_whatAge').val()=='' || $('#q82_8_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#8)");
 				if (!fv.isEmpty($('#q82_8_whatAge').val()) && !fv.isValidNumber($('#q82_8_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_9')) && getRadioValue(document.getElementsByName('q82_9'))=='yes' )
 			{
-				if ($('#q82_9_type').val()=='' || $('#q82_9_whatAge').val()=='' || $('#q82_9_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#9)");
+				//if ($('#q82_9_type').val()=='' || $('#q82_9_whatAge').val()=='' || $('#q82_9_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#9)");
 				if (!fv.isEmpty($('#q82_9_whatAge').val()) && !fv.isValidNumber($('#q82_9_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_10')) && getRadioValue(document.getElementsByName('q82_10'))=='yes' )
 			{
-				if ($('#q82_10_type').val()=='' || $('#q82_10_whatAge').val()=='' || $('#q82_10_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#10)");
+				//if ($('#q82_10_type').val()=='' || $('#q82_10_whatAge').val()=='' || $('#q82_10_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#10)");
 				if (!fv.isEmpty($('#q82_10_whatAge').val()) && !fv.isValidNumber($('#q82_10_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_11')) && getRadioValue(document.getElementsByName('q82_11'))=='yes' )
 			{
-				if ($('#q82_11_type').val()=='' || $('#q82_11_whatAge').val()=='' || $('#q82_11_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#11)");
+				//if ($('#q82_11_type').val()=='' || $('#q82_11_whatAge').val()=='' || $('#q82_11_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#11)");
 				if (!fv.isEmpty($('#q82_11_whatAge').val()) && !fv.isValidNumber($('#q82_11_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_12')) && getRadioValue(document.getElementsByName('q82_12'))=='yes' )
 			{
-				if ($('#q82_12_type').val()=='' || $('#q82_12_whatAge').val()=='' || $('#q82_12_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#12)");
+				//if ($('#q82_12_type').val()=='' || $('#q82_12_whatAge').val()=='' || $('#q82_12_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#12)");
 				if (!fv.isEmpty($('#q82_12_whatAge').val()) && !fv.isValidNumber($('#q82_12_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_13')) && getRadioValue(document.getElementsByName('q82_13'))=='yes' )
 			{
-				if ($('#q82_13_type').val()=='' || $('#q82_13_whatAge').val()=='' || $('#q82_13_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#13)");
+				//if ($('#q82_13_type').val()=='' || $('#q82_13_whatAge').val()=='' || $('#q82_13_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#13)");
 				if (!fv.isEmpty($('#q82_13_whatAge').val()) && !fv.isValidNumber($('#q82_13_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
 			if (fv.isRadioChecked(document.getElementsByName('q82_14')) && getRadioValue(document.getElementsByName('q82_14'))=='yes' )
 			{
-				if ($('#q82_14_type').val()=='' || $('#q82_14_whatAge').val()=='' || $('#q82_14_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#14)");
+				//if ($('#q82_14_type').val()=='' || $('#q82_14_whatAge').val()=='' || $('#q82_14_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#14)");
 				if (!fv.isEmpty($('#q82_14_whatAge').val()) && !fv.isValidNumber($('#q82_14_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}
 			if (fv.isRadioChecked(document.getElementsByName('q82_15')) && getRadioValue(document.getElementsByName('q82_15'))=='yes' )
 			{
-				if (fv.isEmpty($('#q82_others').val()) || $('#q82_15_type').val()=='' || $('#q82_15_whatAge').val()=='' || $('#q82_15_aliveDead').val()=='')
-					fv.raiseError(i18nmessages.step11Err14+"(#15)");
+				//if (fv.isEmpty($('#q82_others').val()) || $('#q82_15_type').val()=='' || $('#q82_15_whatAge').val()=='' || $('#q82_15_aliveDead').val()=='')
+					//fv.raiseError(i18nmessages.step11Err14+"(#15)");
 				if (!fv.isEmpty($('#q82_15_whatAge').val()) && !fv.isValidNumber($('#q82_15_whatAge').val(), 1, 125))
 					fv.raiseError(i18nmessages.step11Err15);
 			}	
@@ -1015,43 +1026,43 @@ if (getRadioValue(document.getElementsByName('sex'))=='female'){
 			}	
 			if (getRadioValue(document.getElementsByName("q90_1"))=='yes') 
 			{
-				if (fv.isEmpty($('#q90_1_age').val()) && fv.isEmpty($('#q90_1_year_year').val()) )
-					fv.raiseError(i18nmessages.step14Err2+"(#1)");
+				//if (fv.isEmpty($('#q90_1_age').val()) && fv.isEmpty($('#q90_1_year_year').val()) )
+					//fv.raiseError(i18nmessages.step14Err2+"(#1)");
 				if (!fv.isValidNumber($('#q90_1_age').val(), 1, 125))
 					fv.raiseError(i18nmessages.step14Err3);
 			}
 			if (getRadioValue(document.getElementsByName("q90_2"))=='yes')
 			{
-				if (fv.isEmpty($('#q90_2_age').val()) && fv.isEmpty($('#q90_2_year_year').val()) ) 
-					fv.raiseError(i18nmessages.step14Err2+"(#2)");
+				//if (fv.isEmpty($('#q90_2_age').val()) && fv.isEmpty($('#q90_2_year_year').val()) ) 
+					//fv.raiseError(i18nmessages.step14Err2+"(#2)");
 				if (!fv.isValidNumber($('#q90_2_age').val(), 1, 125))
 					fv.raiseError(i18nmessages.step14Err3);
 			}
 			if (getRadioValue(document.getElementsByName("q90_3"))=='yes')
 			{
-				if (fv.isEmpty($('#q90_3_age').val()) && fv.isEmpty($('#q90_3_year_year').val()) ) 
-					fv.raiseError(i18nmessages.step14Err2+"(#3)");
+				//if (fv.isEmpty($('#q90_3_age').val()) && fv.isEmpty($('#q90_3_year_year').val()) ) 
+					//fv.raiseError(i18nmessages.step14Err2+"(#3)");
 				if (!fv.isValidNumber($('#q90_3_age').val(), 1, 125))
 					fv.raiseError(i18nmessages.step14Err3);
 			}
 			if (getRadioValue(document.getElementsByName("q90_4"))=='yes')
 			{
-				if (fv.isEmpty($('#q90_4_age').val()) && fv.isEmpty($('#q90_4_year_year').val()) ) 
-					fv.raiseError(i18nmessages.step14Err2+"(#4)");
+				//if (fv.isEmpty($('#q90_4_age').val()) && fv.isEmpty($('#q90_4_year_year').val()) ) 
+					//fv.raiseError(i18nmessages.step14Err2+"(#4)");
 				if (!fv.isValidNumber($('#q90_4_age').val(), 1, 125))
 					fv.raiseError(i18nmessages.step14Err3);
 			}
 			if (getRadioValue(document.getElementsByName("q90_5"))=='yes')
 			{
-				if (fv.isEmpty($('#q90_5_age').val()) && fv.isEmpty($('#q90_5_year_year').val()) ) 
-					fv.raiseError(i18nmessages.step14Err2+"(#5)");
+				//if (fv.isEmpty($('#q90_5_age').val()) && fv.isEmpty($('#q90_5_year_year').val()) ) 
+					//fv.raiseError(i18nmessages.step14Err2+"(#5)");
 				if (!fv.isValidNumber($('#q90_5_age').val(), 1, 125))
 					fv.raiseError(i18nmessages.step14Err3);
 			}
 			if (getRadioValue(document.getElementsByName("q90_6"))=='yes')
 			{
-				if (fv.isEmpty($('#q90_6_age').val()) && fv.isEmpty($('#q90_6_year_year').val()) ) 
-					fv.raiseError(i18nmessages.step14Err2+"(#6)");
+				//if (fv.isEmpty($('#q90_6_age').val()) && fv.isEmpty($('#q90_6_year_year').val()) ) 
+					//fv.raiseError(i18nmessages.step14Err2+"(#6)");
 				if (!fv.isValidNumber($('#q90_6_age').val(), 1, 125))
 					fv.raiseError(i18nmessages.step14Err3);
 			}

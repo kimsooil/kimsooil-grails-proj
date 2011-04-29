@@ -36,22 +36,26 @@ function checkForm8()
 	{
 		fv.raiseError(i18nmessages.step8Err7);
 	}
+	/*
 	if (getRadioValue(document.getElementsByName('q41'))!='no' &&
 	($('#date_digital_rectal_exam_month').val()=='' ||$('#date_digital_rectal_exam_year').val()=='')
 	)
 	{
 		fv.raiseError(i18nmessages.step8Err8);
 	}
+	*/
 	if (!fv.isRadioChecked(document.getElementsByName('q42')) )
 	{
 		fv.raiseError(i18nmessages.step8Err9);
 	}
+	/*
 	if (getRadioValue(document.getElementsByName('q42'))=='yes' &&
 	($('#date_sigmoidoscopy_colonoscopy_month').val()=='' ||$('#date_sigmoidoscopy_colonoscopy_year').val()=='')
 	)
 	{
 		fv.raiseError(i18nmessages.step8Err10);
 	}
+	*/
 	if (getRadioValue(document.getElementsByName('q42'))=='yes' &&
 		(!fv.isRadioChecked(document.getElementsByName('q42_1')) ||
 		!fv.isRadioChecked(document.getElementsByName('q42_2')) ||
