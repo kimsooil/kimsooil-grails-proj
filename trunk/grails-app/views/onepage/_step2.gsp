@@ -193,11 +193,11 @@
 					<br/><br/>
 					
 					<ul>
-						<g:checkBox name="spread_liver" value="${surveyInstance?.spread_liver}" /><g:message code="survey.q11c.liver" />&nbsp;&nbsp;&nbsp;
-						<g:checkBox name="spread_brain" value="${surveyInstance?.spread_brain}" /><g:message code="survey.q11c.brain" />&nbsp;&nbsp;&nbsp;
-						<g:checkBox name="spread_lung" value="${surveyInstance?.spread_lung}" /><g:message code="survey.q11c.lung" />&nbsp;&nbsp;&nbsp;
-						<g:checkBox name="spread_bone" value="${surveyInstance?.spread_bone}" /><g:message code="survey.q11c.bone" />&nbsp;&nbsp;&nbsp;
-						<g:checkBox name="spread_other" value="${surveyInstance?.spread_other}" /><g:message code="survey.q11c.other" />&nbsp;&nbsp;&nbsp;
+						<g:checkBox name="spread_liver" value="${surveyInstance?.spread_liver}" /> <g:message code="survey.q11c.liver" />&nbsp;&nbsp;&nbsp;
+						<g:checkBox name="spread_brain" value="${surveyInstance?.spread_brain}" /> <g:message code="survey.q11c.brain" />&nbsp;&nbsp;&nbsp;
+						<g:checkBox name="spread_lung" value="${surveyInstance?.spread_lung}" /> <g:message code="survey.q11c.lung" />&nbsp;&nbsp;&nbsp;
+						<g:checkBox name="spread_bone" value="${surveyInstance?.spread_bone}" /> <g:message code="survey.q11c.bone" />&nbsp;&nbsp;&nbsp;
+						<g:checkBox name="spread_other" value="${surveyInstance?.spread_other}" /> <g:message code="survey.q11c.other" />&nbsp;&nbsp;&nbsp;
 						<g:textField name="spread_where" value="${surveyInstance?.spread_where}" />
 					</ul>
 					<br/>

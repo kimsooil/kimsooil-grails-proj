@@ -44,6 +44,7 @@ function checkForm2()
 		!fv.isRadioChecked(document.getElementsByName('q11a_6')) ){
 			fv.raiseError(i18nmessages.step2Err8+" 2");	
 	}
+	/*
 	if (fv.needSpecify(document.getElementsByName('q11a_1'), document.getElementById('q11a_1Year_year'), 'yes')||
 			fv.needSpecify(document.getElementsByName('q11a_2'), document.getElementById('q11a_2Year_year'), 'yes')||
 			fv.needSpecify(document.getElementsByName('q11a_3'), document.getElementById('q11a_3Year_year'), 'yes')||
@@ -52,6 +53,7 @@ function checkForm2()
 			fv.needSpecify(document.getElementsByName('q11a_6'), document.getElementById('q11a_6Year_year'), 'yes')){
 		fv.raiseError(i18nmessages.step2Err9);
 	}
+	*/
 	if (!fv.isRadioChecked(document.getElementsByName('haveCancer'))){
 		fv.raiseError(i18nmessages.step2Err10);
 	}
