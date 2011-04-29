@@ -27,7 +27,7 @@
 				step=current_url.substring(current_url.indexOf('step')+4,current_url.indexOf('.dispatch'))
 			}
 		}
-		if (step!='') session.step=step.toInteger()
+		if (step!='') session.step=step
  %>
 <g:while test="${i < 15}">
     <%

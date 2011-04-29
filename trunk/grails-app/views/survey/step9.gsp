@@ -420,8 +420,13 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
                     <span class="button"><g:actionSubmit class="back" action="step8" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
-                    <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
+                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>
+                    <g:if test="${surveyInstance?.sex=='female' }">  
+                    	<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
+                    </g:if>
+                    <g:else>
+                    	<g:link action="step10" id="${surveyInstance?.id}"><label style="color:green"><g:message code='button.save-then-go-to-next.label'/></label></g:link>
+                    </g:else>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>
             </g:form>
