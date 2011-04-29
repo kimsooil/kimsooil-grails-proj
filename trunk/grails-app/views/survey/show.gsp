@@ -27,6 +27,9 @@
 				if (surveyInstance.step=='verify'){
 					stepNumUrl="verify"
 				}
+				else if (surveyInstance.step=='completed'){
+					stepNumUrl="preview"
+				}
 				else if (surveyInstance.step){
 					stepNum = surveyInstance.step.toInteger()
 					

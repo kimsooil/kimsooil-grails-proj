@@ -40,7 +40,10 @@
                     <br/>
                     <%
 					//def TobaccoList = ["Chewing Tobacco", "Snuff or Dip", "Pipe", "Cigars"]
-					def TobaccoList = [message(code:"survey.q15a.label"),message(code:"survey.q15b.label"),message(code:"survey.q15c.label"),message(code:"survey.q15d.label")]
+					def TobaccoList = [message(code:"survey.q15a.label"),
+									   message(code:"survey.q15b.label"),
+									   message(code:"survey.q15c.label"),
+									   message(code:"survey.q15d.label")]
 					 %>
 					<table class="box-table-b-wide">
 					<tbody>
@@ -54,19 +57,27 @@
                                     <g:radioGroup name="${('q15_'+idx)}"
                                     value="${surveyInstance?.('q15_'+idx)}" 
                                     labels="[g.message(code:'survey.q15_opt1'),g.message(code:'survey.q15_opt2'), g.message(code:'survey.q15_opt3')]"
-                                    values="['never','quit', 'drink']" >
+                                    values="['currently','quit', 'no']" >
 										<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 									</g:radioGroup>
 						</td>
 						<td>
-									<g:message code="survey.q15_howManyTimesPerWeek.label" default="q15_howManyTimesPerWeek" /> <g:textField name="${('q15_'+idx+'_howManyTimesPerWeek')}" value="${surveyInstance?.('q15_'+idx+'_howManyTimesPerWeek')}" />
-									<br/><g:message code="survey.q15_howManyYears.label" default="q15_howManyYears" /> <g:textField name="${('q15_'+idx+'_howManyYears')}" value="${surveyInstance?.('q15_'+idx+'_howManyYears')}" />
+									<g:message code="survey.q15_howManyTimesPerWeek.label" default="q15_howManyTimesPerWeek" /> 
+									<g:textField name="${('q15_'+idx+'_howManyTimesPerWeek')}" 
+												 value="${surveyInstance?.('q15_'+idx+'_howManyTimesPerWeek')}"
+												 onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('tobaccoWeek_status'+idx)}\')); " /> <span id="${('tobaccoWeek_status'+idx)}"></span>
+									<br/>
+									<g:message code="survey.q15_howManyYears.label" default="q15_howManyYears" />
+									<g:textField name="${('q15_'+idx+'_howManyYears')}"
+												 value="${surveyInstance?.('q15_'+idx+'_howManyYears')}"
+												 onkeyup="checkIfValidNumber(this.value, 1, 125, document.getElementById(\'${('tobaccoYear_status'+idx)}\')); " /> <span id="${('tobaccoYear_status'+idx)}"></span>
 						
 						</td>
 					</tr>
 					</g:each>
 					</tbody>
 					</table>
+
                     
                     <%
 						def yesno=[message(code:'survey.yes'), message(code:'survey.no')]

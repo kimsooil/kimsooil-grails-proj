@@ -47,7 +47,7 @@
 					<g:if test="${idx==0}">
 					<tr>
 						<td style="border: 1px solid #9baff1;font-weight:bold;">${infectiontype }</td>
-						<td style="border: 1px solid #9baff1;font-weight:bold;"><g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}""/></td>
+						<td style="border: 1px solid #9baff1;font-weight:bold;"><g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}" /></td>
 						<td></td>
 					</tr>
 					</g:if>
@@ -77,15 +77,17 @@
 					</table>
 					
                     <ul><label for="q11d"><g:message code="survey.q11d.label" default="q11d" /></label>
-					<%--
-					<input type="radio" name="haveCancer" value="yes" onClick="toggleQ12();" <g:if test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
-					<input type="radio" name="haveCancer" value="no" onClick="toggleQ12();" <g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
-					 --%>
+
 					 <br/> <br/>
 						 <ul>
 						 <div>
+						 <%--
 						 	<input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
 						 	<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
+						  --%>
+						 	<input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.being_treated_for_cancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
+						 	<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
+						 	
 
 						</div>
 						</ul>

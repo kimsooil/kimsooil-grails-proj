@@ -11,7 +11,12 @@ class SurveyCompleted {
 	String consentNumSurv="HISPBB" // Name of the survey
 	String consentNumLoc
 	
-	String surveyer
+	// status keeping
+	String step // step #. If completed, put 'completed' 
+	String surveyer // admin or surveyer's login
+	String updatedBy
+	String completedBy
+	
 	Boolean completed=false
 	
 	String race
@@ -56,9 +61,11 @@ class SurveyCompleted {
 	Boolean q11 // have you ever told by a doctor or health care provider that you have cancer
 	String haveCancer
 
-	String q11a_1, q11a_2, q11a_3, q11a_4
-	Boolean q11a_hep_a, q11a_hep_b, q11a_hep_c, q11a_hep_donotknow_type
-	Date q11a_1_year, q11a_2_year, q11a_3_year, q11a_4_year
+	String q11a_1, q11a_2, q11a_3, q11a_4, q11a_5, q11a_6 //  _5~_7 added for separate yes/no question
+	//String q11a_hep_a_str, q11a_hep_b_str, q11a_hep_c_str, q11a_hep_donotknow_type_str // added for separate yes/no question
+	//Boolean q11a_hep_a, q11a_hep_b, q11a_hep_c, q11a_hep_donotknow_type
+	Boolean q11a_hep_donotknow_type
+	Date q11a_1Year, q11a_2Year, q11a_3Year, q11a_4Year, q11a_5Year, q11a_6Year
 	
 	String spread_cancer // q11c
 	Boolean spread_liver, spread_brain, spread_lung, spread_bone, spread_other 
@@ -303,10 +310,10 @@ class SurveyCompleted {
 	String q42_7 // hemorrhoids
 	String q42_8 // polyps
 	
-	Boolean q43 // a biopsy was performed
+	String q43 // a biopsy was performed
 	String q43_biopsy_results
 	
-	Boolean q44 // have you ever had anemia
+	String q44 // have you ever had anemia
 	String q44_hemoglobin_levels
 	
 // History of Ovarian Cancer
@@ -330,7 +337,7 @@ class SurveyCompleted {
 	String q47 // every 6 months, every year, never
 	Date q48_date_last_visit_gynecologist // month and year only
 	String q49 // have you had a pelvic exam: yes, no
-	String q49_findings_pevic_exam // if q49=yes/true
+	String q49_findings_pelvic_exam // if q49=yes/true
 	String q50 // have you had a digital rectal exam ... ??? same as q41
 	String q50_findings_digital_rectal_exam
 	
@@ -442,166 +449,5 @@ class SurveyCompleted {
 	
 	String q95_doctor_name, q95_doctor_telephone, q95_doctor_other_info
 	String q95_addr_street1,q95_addr_street2, q95_addr_city, q95_addr_state, q95_addr_zipcode, q95_country
-
-	static constraints = {
-		
-		//consentNumSurv(inList:["HISPBB"])
-		consentNumLoc(inList:["MOFF", "SANL"])
-		consentNum(blank:false)
-		being_treated_for_cancer(blank:false)
-		sex(blank:false)
-		// DOB(blank:false)
-		//DOB(validator: {val, obj ->
-		//	if (val && (obj.dateCreated.getAt(Calendar.YEAR) - val.getAt(Calendar.YEAR) < 18))
-		//			return 'Too young for this survey'
-		//})
-		
-		race(blank:false)
-		
-		//marital_status(inList:["Married", "Single", "Divorce", "Consensual relationship"])
-		//education(inList:["Up to 8 grade", "8-12 grade", "Vocational School", "Associate degree", "Bachelor", "Master", "Doctor", "Other"])
-		//DOB(nullable:false)
-		addr_zipcode(matches:/^([0-9]+)$/)
-		q95_addr_zipcode(matches:/^([0-9]+)$/)
-		age(matches:/^([0-9]+)$/)
-		current_occupation_time(matches:/^([0-9]+)$/) // years
-		prior_job_time(matches:/^([0-9]+)$/) // years
-		weight(matches:/^([0-9]+)$/) // pounds
-		height_feet(matches:/^([0-9]+)$/) // feet inches
-		height_inches(matches:/^([0-9]+)$/)
-
-		q13_1_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_2_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_3_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_4_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_5_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_6_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_7_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_8_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_9_ageDiagnosed(matches:/^([0-9]+)$/)
-		q13_10_ageDiagnosed(matches:/^([0-9]+)$/)
-				
-		q14_1_howManyPerWeek(matches:/^([0-9]+)$/)
-		q14_2_howManyPerWeek(matches:/^([0-9]+)$/)
-		q14_3_howManyPerWeek(matches:/^([0-9]+)$/)
-		q15_1_howManyTimesPerWeek(matches:/^([0-9]+)$/)
-		q15_1_howManyYears(matches:/^([0-9]+)$/)
-		q15_2_howManyTimesPerWeek(matches:/^([0-9]+)$/)
-		q15_2_howManyYears(matches:/^([0-9]+)$/)
-		q15_3_howManyTimesPerWeek(matches:/^([0-9]+)$/)
-		q15_3_howManyYears(matches:/^([0-9]+)$/)
-		q15_4_howManyTimesPerWeek(matches:/^([0-9]+)$/)
-		q15_4_howManyYears(matches:/^([0-9]+)$/)
-		q17(matches:/^([0-9]+)$/)
-		q18(matches:/^([0-9]+)$/)
-		q19(matches:/^([0-9]+)$/)
-		q21_whenStopSmoking_years(matches:/^([0-9]+)$/)
-		q21_whenStopSmoking_months(matches:/^([0-9]+)$/)
-		
-		q44_hemoglobin_levels(matches:/^([0-9]+)$/)
-		q53_how_long_use_fertility_medication(matches:/^([0-9]+)$/)
-		q54(matches:/^([0-9]+)$/)
-		q55(matches:/^([0-9]+)$/)
-		q56(matches:/^([0-9]+)$/)
-		q59_whatAge(matches:/^([0-9]+)$/)
-		q61_whatAge(matches:/^([0-9]+)$/)
-		q65(matches:/^([0-9]+)$/)
-		q68(matches:/^([0-9]+)$/)
-		q69_whatAgeStarted(matches:/^([0-9]+)$/)
-		
-		q73_alive(matches:/^([0-9]+)$/)
-		q73_dead(matches:/^([0-9]+)$/)
-		q73_miscarriage(matches:/^([0-9]+)$/)
-		q74(matches:/^([0-9]+)$/)
-		q75(matches:/^([0-9]+)$/)
-		q76(matches:/^([0-9]+)$/)
-		q78_1_week(matches:/^([0-9]+)$/)
-		q78_1_month(matches:/^([0-9]+)$/)
-		q78_2_week(matches:/^([0-9]+)$/)
-		q78_2_month(matches:/^([0-9]+)$/)
-		q78_3_week(matches:/^([0-9]+)$/)
-		q78_3_month(matches:/^([0-9]+)$/)
-		q78_4_week(matches:/^([0-9]+)$/)
-		q78_4_month(matches:/^([0-9]+)$/)
-		q78_5_week(matches:/^([0-9]+)$/)
-		q78_5_month(matches:/^([0-9]+)$/)
-		q78_6_week(matches:/^([0-9]+)$/)
-		q78_6_month(matches:/^([0-9]+)$/)
-		q78_7_week(matches:/^([0-9]+)$/)
-		q78_7_month(matches:/^([0-9]+)$/)
-		q78_8_week(matches:/^([0-9]+)$/)
-		q78_8_month(matches:/^([0-9]+)$/)
-		q78_9_week(matches:/^([0-9]+)$/)
-		q78_9_month(matches:/^([0-9]+)$/)
-		q78_10_week(matches:/^([0-9]+)$/)
-		q78_10_month(matches:/^([0-9]+)$/)
-		q80_whatAge(matches:/^([0-9]+)$/)
-		q80_howLong(matches:/^([0-9]+)$/)
-		q82_1_whatAge(matches:/^([0-9]+)$/)
-		q82_2_whatAge(matches:/^([0-9]+)$/)
-		q82_3_whatAge(matches:/^([0-9]+)$/)
-		q82_4_whatAge(matches:/^([0-9]+)$/)
-		q82_5_whatAge(matches:/^([0-9]+)$/)
-		q82_6_whatAge(matches:/^([0-9]+)$/)
-		q82_7_whatAge(matches:/^([0-9]+)$/)
-		q82_8_whatAge(matches:/^([0-9]+)$/)
-		q82_9_whatAge(matches:/^([0-9]+)$/)
-		q82_10_whatAge(matches:/^([0-9]+)$/)
-		q82_11_whatAge(matches:/^([0-9]+)$/)
-		
-		q84_1_whatAge(matches:/^([0-9]+)$/)
-		q84_2_whatAge(matches:/^([0-9]+)$/)
-		q84_3_whatAge(matches:/^([0-9]+)$/)
-		q84_4_whatAge(matches:/^([0-9]+)$/)
-		q84_5_whatAge(matches:/^([0-9]+)$/)
-		q84_6_whatAge(matches:/^([0-9]+)$/)
-		q84_7_whatAge(matches:/^([0-9]+)$/)
-		q84_8_whatAge(matches:/^([0-9]+)$/)
-		q84_9_whatAge(matches:/^([0-9]+)$/)
-		q84_10_whatAge(matches:/^([0-9]+)$/)
-		
-		q90_1_age(matches:/^([0-9]+)$/)
-		q90_2_age(matches:/^([0-9]+)$/)
-		q90_3_age(matches:/^([0-9]+)$/)
-		q90_4_age(matches:/^([0-9]+)$/)
-		q90_5_age(matches:/^([0-9]+)$/)
-		q90_6_age(matches:/^([0-9]+)$/)
-		q91_1_howManyYears(matches:/^([0-9]+)$/)
-		q91_2_howManyYears(matches:/^([0-9]+)$/)
-		q91_3_howManyYears(matches:/^([0-9]+)$/)
-		q92_1_howManyYears(matches:/^([0-9]+)$/)
-		q92_2_howManyYears(matches:/^([0-9]+)$/)
-		q92_3_howManyYears(matches:/^([0-9]+)$/)
-		q92_4_howManyYears(matches:/^([0-9]+)$/)
-		q92_5_howManyYears(matches:/^([0-9]+)$/)
-		q92_6_howManyYears(matches:/^([0-9]+)$/)
-		q92_7_howManyYears(matches:/^([0-9]+)$/)
-		q92_8_howManyYears(matches:/^([0-9]+)$/)
-		q92_9_howManyYears(matches:/^([0-9]+)$/)
-		q93_1_howManyMonths(matches:/^([0-9]+)$/)
-		q93_2_howManyMonths(matches:/^([0-9]+)$/)
-		q93_3_howManyMonths(matches:/^([0-9]+)$/)
-		q93_4_howManyMonths(matches:/^([0-9]+)$/)
-		q93_5_howManyMonths(matches:/^([0-9]+)$/)
-		q94_1_ageStart(matches:/^([0-9]+)$/)
-		q94_2_ageStart(matches:/^([0-9]+)$/)
-		q94_3_ageStart(matches:/^([0-9]+)$/)
-		q94_4_ageStart(matches:/^([0-9]+)$/)
-		q94_5_ageStart(matches:/^([0-9]+)$/)
-		q94_6_ageStart(matches:/^([0-9]+)$/)
-		q94_1_ageStop(matches:/^([0-9]+)$/)
-		q94_2_ageStop(matches:/^([0-9]+)$/)
-		q94_3_ageStop(matches:/^([0-9]+)$/)
-		q94_4_ageStop(matches:/^([0-9]+)$/)
-		q94_5_ageStop(matches:/^([0-9]+)$/)
-		q94_6_ageStop(matches:/^([0-9]+)$/)
-		q94_1_NumPillsPerWeek(matches:/^([0-9]+)$/)
-		q94_2_NumPillsPerWeek(matches:/^([0-9]+)$/)
-		q94_3_NumPillsPerWeek(matches:/^([0-9]+)$/)
-		q94_4_NumPillsPerWeek(matches:/^([0-9]+)$/)
-		q94_5_NumPillsPerWeek(matches:/^([0-9]+)$/)
-		q94_6_NumPillsPerWeek(matches:/^([0-9]+)$/)
-	
-	}
 
 }

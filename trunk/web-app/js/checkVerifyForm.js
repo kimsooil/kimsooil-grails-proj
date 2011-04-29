@@ -315,6 +315,7 @@
 		fv.raiseError(i18nmessages.step6Err8);
 	}			
 	/////////////////////////////////////////////////////////////
+if (getRadioValue(document.getElementsByName('sex'))=='male'){
 	if (!fv.isRadioChecked(document.getElementsByName('q30_1')) ||
 		!fv.isRadioChecked(document.getElementsByName('q30_2')) ||
 		!fv.isRadioChecked(document.getElementsByName('q30_3')) ||
@@ -353,6 +354,7 @@
 	{
 		fv.raiseError(i18nmessages.step7Err7);
 	}
+}	
 /////////////////////////////////////////////////////	
 	
 	if (!fv.isRadioChecked(document.getElementsByName('q35')) )
@@ -438,7 +440,7 @@
 		fv.raiseError(i18nmessages.step8Err15);
 	}		
 ///////////////////////////////////////////////////////
-	
+if (getRadioValue(document.getElementsByName('sex'))=='female'){	
 	if (!fv.isRadioChecked(document.getElementsByName('q45_1')) ||
 			!fv.isRadioChecked(document.getElementsByName('q45_2')) ||
 			!fv.isRadioChecked(document.getElementsByName('q45_3')) ||
@@ -561,7 +563,8 @@
 
 		{
 			fv.raiseError(i18nmessages.step9Err18);
-		}		
+		}
+	
 ///////////////////////////////////
 		if (fv.isEmpty($('#q54').val()) || !fv.isValidNumber($('#q54').val(),1,99))
 		{
@@ -839,6 +842,7 @@
 				
 				
 		}
+} // female only	(step 9-11)		
 /////////////////////////////////
 		if (!fv.isRadioChecked(document.getElementsByName('q83')) )
 		{
