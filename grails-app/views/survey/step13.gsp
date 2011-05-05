@@ -63,7 +63,7 @@ $(document).ready(function(){
                 <div class="dialog">
 					<%
 					def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
-					def freqList=[message(code:'survey.daily'), message(code:'survey.weekly'),message(code:'survey.monthly'),message(code:'survey.none')]
+					def freqList=[message(code:'survey.daily'), message(code:'survey.weekly'),message(code:'survey.monthly'),message(code:'survey.none2')]
 					%>                   
                     <br/>
                     <ul>
@@ -142,7 +142,7 @@ $(document).ready(function(){
 					 		<g:textField name="q85_sat_fat_other" value="${surveyInstance?.q85_sat_fat_other}" style="width:75px"/>
 					 	</g:if>
 					 	</td>
-					 	<td style="font-size: 12px;">
+					 	<td style="font-size: 11px;">
 							<g:radioGroup name="${('q85_sat_fat_'+idx)}"
 	                            	value="${surveyInstance?.('q85_sat_fat_'+idx)}" 
 	                                labels="${freqList }" 
@@ -159,7 +159,7 @@ $(document).ready(function(){
 						
 						 <g:else>&nbsp;</g:else>
 					 	</td>
-					 	<td style="font-size: 12px;">
+					 	<td style="font-size: 11px;">
 					 	
 							<g:radioGroup name="${('q85_vege_'+idx)}"
 	                            	value="${surveyInstance?.('q85_vege_'+idx)}" 
