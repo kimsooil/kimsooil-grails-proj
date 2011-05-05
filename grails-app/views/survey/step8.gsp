@@ -46,14 +46,18 @@ $(document).ready(function(){
 	$("input[name='q42']").change(function(){
 	    if ($("input[name='q42']:checked").val() == 'yes'){
 	    	$("[name*='date_sigmoidoscopy_colonoscopy']").attr("disabled", '');
-	    	$("[name*='q42_']").attr("disabled", '');	    			    
+	    	$("[name*='q42_']").attr("disabled", '');
+	    	$("[name*='q43']").attr("disabled", '');	    			    
 	    }
 	    else if ($("input[name='q42']:checked").val() == 'no'){
 	    	$("[name*='date_sigmoidoscopy_colonoscopy']").val('');
 	    	$("[name*='date_sigmoidoscopy_colonoscopy']").attr("disabled", true);	  
 	    	
 	    	$("[name*='q42_']").attr("checked", false);
-	    	$("[name*='q42_']").attr("disabled", true);	 	    	  
+	    	$("[name*='q42_']").attr("disabled", true);
+			
+	    	$("[name*='q43']").attr("checked", false);
+	    	$("[name*='q43']").attr("disabled", true);
 	    }
 	});
 	$("input[name='q43']").change(function(){
@@ -313,7 +317,9 @@ $(document).ready(function(){
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
-								<g:message code="survey.hemoglobinLevels" default="hemoglobin_levels" />: <g:textField name="q44_hemoglobin_levels" value="${surveyInstance?.q44_hemoglobin_levels}" />
+								<g:message code="survey.hemoglobinLevels" default="hemoglobin_levels" />: <g:textField name="q44_hemoglobin_levels" 
+																													   value="${surveyInstance?.q44_hemoglobin_levels}"
+																													   onkeyup="checkIfValidNumber(this.value, 7, 15, document.getElementById(\'q44_status\')); "/> <span id="q44_status"></span>
 							</div>                    	
                     	</td>
                     </tr>                    
