@@ -24,7 +24,7 @@ function updateConfigurationMap(newConfigurationMap) {
 }
 updateConfigurationMap({
 
-   step15Err1 : "${message(code:'step15.err.msgs1').encodeAsHTML()}",
+   step15Err1 : "${message(code:'step15.err.msgs1').encodeAsHTML()}"
 
  }); 
 function checkForm15()
