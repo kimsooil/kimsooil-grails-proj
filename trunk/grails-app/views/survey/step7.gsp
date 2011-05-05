@@ -183,7 +183,10 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 						<g:datePicker name="date_most_recent_PSA_test" precision="month" value="${surveyInstance?.date_most_recent_PSA_test}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 						</td>
-						<td><g:message code="survey.results" default="Results" />: <g:textField style="width:150px;" name="results_PSA_test" value="${surveyInstance?.results_PSA_test}" />
+						<td><g:message code="survey.results" default="Results" />: <g:textField style="width:150px;" 
+																								name="results_PSA_test"
+																								value="${surveyInstance?.results_PSA_test}" 
+																								onkeyup="checkIfValidNumber(this.value, 0, 100, document.getElementById(\'q33_status\')); "/> <span id="q33_status"></span>
                     	</td>
                     </tr>
                     <tr>

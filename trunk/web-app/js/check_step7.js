@@ -22,15 +22,19 @@ function checkForm7()
 	{
 		fv.raiseError(i18nmessages.step7Err3);
 	}
-	if (getRadioValue(document.getElementsByName('q32'))=='yes' &&
-		(fv.isEmpty($('#date_rectal_exam_month').val()) || fv.isEmpty($('#findings_rectal_exam').val()))
+	if (getRadioValue(document.getElementsByName('q32'))=='yes'
+		// && (fv.isEmpty($('#date_rectal_exam_month').val()) || fv.isEmpty($('#findings_rectal_exam').val()))  /// date is optional
 	){
-		fv.raiseError(i18nmessages.step7Err4);
+		if (fv.isEmpty($('#findings_rectal_exam').val()))
+			fv.raiseError(i18nmessages.step7Err4);
 	}
-	if (getRadioValue(document.getElementsByName('q33'))=='yes' &&
-		(fv.isEmpty($('#date_most_recent_PSA_test_month').val()) || fv.isEmpty($('#results_PSA_test').val()))
+	if (getRadioValue(document.getElementsByName('q33'))=='yes'
+		// && (fv.isEmpty($('#date_most_recent_PSA_test_month').val()) || fv.isEmpty($('#results_PSA_test').val())) // date is optional
 	){
-		fv.raiseError(i18nmessages.step7Err5);
+		if (fv.isEmpty($('#results_PSA_test').val())) fv.raiseError(i18nmessages.step7Err5);
+		else if (!fv.isValidNumber($('#results_PSA_test').val(), 0, 100))
+			fv.raiseError("Q38: Enter valid number (PSA test result)");
+
 	}	
 	
 	if (!fv.isRadioChecked(document.getElementsByName('q33')) )
