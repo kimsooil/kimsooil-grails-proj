@@ -260,7 +260,7 @@ $(document).ready(function(){
 					<tr>
 						<td style="border: 1px solid #9baff1;font-weight:bold;">${infectiontype }</td>
 						<td style="border: 1px solid #9baff1;font-weight:bold;">
-						<g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}" />				
+						<g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}" /> (<g:message code="survey.q11a_donotknow" />)				
 						</td>
 						
 						<td></td>
