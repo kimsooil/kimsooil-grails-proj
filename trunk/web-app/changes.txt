@@ -14,13 +14,13 @@ How to use
 	* To complete the survey, click "Complete" button in the bottom.
 	* If there's not entered "required" inputs, user(surveyer) need to go to the step which need correction.
 
-Bugs fixed & Changes between 4/26~4/29
+Bugs fixed & Changes between 4/26~
 - "Clear" button are gone
 - Hepatitis selections are separated into (Type A, Type B, Type C, and Don't Know)
 - Dates except DOB are all optional
 - To avoid TOMCAT server's OutOfMemory error, increase the allocated heap size (256 MB -> 1024 MB)
-
+- (5/3) IE7's javascript error fixed.
 ...
 Features - Coming soon
 - Spanish version of Error messages from javascript validation (Waiting for translation) 
-- Import the survey results to CSV file (But iPad will not supported.)
+- Import the survey results to CSV file

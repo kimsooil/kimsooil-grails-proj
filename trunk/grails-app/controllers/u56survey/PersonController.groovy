@@ -4,7 +4,7 @@ class PersonController {
 	def scaffold = true
 	
 	def beforeInterceptor = [action:this.&auth,
-		except:["login", "authenticate", "logout"]]
+		except:["login", "authenticate", "logout", "securelogout"]]
 
 	def auth() {
 		if( !(session?.user?.role == "admin") ){
@@ -60,6 +60,24 @@ class PersonController {
 		}
 		else
 		  redirect(controller:"survey", action:"list")
+	}
+	def securelogout = {
+		if (session.user){
+			def now = new Date()
+		  //flash.message = "Goodbye ${session.user.name}"
+			flash.message = "Goodbye."
+			//System.err.print now
+			//System.err.println(" User:'"+session.user.login+"' Logged out")
+			//log.info now
+			log.info " User:'"+session.user.login+"' Logged out"
+		  session.user = null
+		  //redirect(controller:"survey", action:"list")
+		  redirect(url:"https://secure.moffitt.org:443/dana-na/auth/logout.cgi")
+		}
+		else
+		  //redirect(controller:"survey", action:"list")
+		redirect(url:"https://secure.moffitt.org:443/dana-na/auth/logout.cgi")
+		  
 	}
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 25, 100)
