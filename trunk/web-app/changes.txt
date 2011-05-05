@@ -19,7 +19,8 @@ Bugs fixed & Changes between 4/26~
 - Hepatitis selections are separated into (Type A, Type B, Type C, and Don't Know)
 - Dates except DOB are all optional
 - To avoid TOMCAT server's OutOfMemory error, increase the allocated heap size (256 MB -> 1024 MB)
-- (5/3) IE7's javascript error fixed.
+- (5/3) Fixed IE7's javascript error.
+- (5/5) Renamed old 'logout' to 'Switch user'. Added secure logout for terminating secure connection.
 ...
 Features - Coming soon
 - Spanish version of Error messages from javascript validation (Waiting for translation) 
