@@ -2,26 +2,28 @@ function checkForm10()
 {
 	// instantiate object
 	fv = new formValidator();
-	
-	if (fv.isEmpty($('#q54').val()) || !fv.isValidNumber($('#q54').val(),1,99))
-	{
-		fv.raiseError(i18nmessages.step10Err1);
-	}
-	if (fv.isEmpty($('#q55').val()) || !fv.isValidNumber($('#q55').val(),10,365))
-	{
-		fv.raiseError(i18nmessages.step10Err2);
-	}
-	if (fv.isEmpty($('#q56').val()) || !fv.isValidNumber($('#q56').val(),1,100))
-	{
-		fv.raiseError(i18nmessages.step10Err3);
-	}
-	if (!fv.isRadioChecked(document.getElementsByName('q57')) )
-	{
-		fv.raiseError(i18nmessages.step10Err4);
-	}
-	if (!fv.isRadioChecked(document.getElementsByName('q58')) )
-	{
-		fv.raiseError(i18nmessages.step10Err5);
+
+	if (!fv.isEmpty($('#q54').val()) ){
+		if (!fv.isValidNumber($('#q54').val(),1,99))
+		{
+			fv.raiseError(i18nmessages.step10Err1);
+		}
+		if (fv.isEmpty($('#q55').val()) || !fv.isValidNumber($('#q55').val(),10,365))
+		{
+			fv.raiseError(i18nmessages.step10Err2);
+		}
+		if (fv.isEmpty($('#q56').val()) || !fv.isValidNumber($('#q56').val(),1,100))
+		{
+			fv.raiseError(i18nmessages.step10Err3);
+		}
+		if (!fv.isRadioChecked(document.getElementsByName('q57')) )
+		{
+			fv.raiseError(i18nmessages.step10Err4);
+		}
+		if (!fv.isRadioChecked(document.getElementsByName('q58')) )
+		{
+			fv.raiseError(i18nmessages.step10Err5);
+		}
 	}
 	if (getRadioValue(document.getElementsByName('q59'))=='yes')
 	{

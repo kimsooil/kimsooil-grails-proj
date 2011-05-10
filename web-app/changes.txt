@@ -1,5 +1,3 @@
-(Last updated: 4/29)
-
 How to use
 
 - Admin's view
@@ -21,7 +19,11 @@ Bugs fixed & Changes between 4/26~
 - To avoid TOMCAT server's OutOfMemory error, increase the allocated heap size (256 MB -> 1024 MB)
 - (5/3) Fixed IE7's javascript error.
 - (5/5) Renamed old 'logout' to 'Switch user'. Added secure logout for terminating secure connection.
-...
+- (5/10)
+	-> If Country=PR, State is not required (Only if Country=US, State is required
+	-> In Q56 (Step9), added units for number only, U/mL, ng/mL, mUI/mL
+	-> When number-only is invalid, give warning but allow input.  
+	
 Features - Coming soon
 - Spanish version of Error messages from javascript validation (Waiting for translation) 
 - Import the survey results to CSV file

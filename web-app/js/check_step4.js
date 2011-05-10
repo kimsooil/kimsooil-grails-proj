@@ -28,6 +28,7 @@ function checkForm4()
 	{
 		fv.raiseError(i18nmessages.step4Err5);
 	}
+	/*// become all optional
 	if ((getRadioValue(document.getElementsByName('q15_1'))=='currently' || getRadioValue(document.getElementsByName('q15_1'))=='quit') &&
 		(($('#q15_1_howManyTimesPerWeek').val()=='' && $('#q15_1_howManyYears').val()=='') ||
 		 (!fv.isValidNumber($('#q15_1_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_1_howManyYears').val(), 1, 125))
@@ -51,7 +52,8 @@ function checkForm4()
 		 (!fv.isValidNumber($('#q15_4_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_4_howManyYears').val(), 1, 125))
 	   ){
 		fv.raiseError(i18nmessages.step4Err9);
-	}					
+	}
+	*/					
 	if (!fv.isRadioChecked(document.getElementsByName('q16')))
 	{
 		fv.raiseError(i18nmessages.step4Err10);

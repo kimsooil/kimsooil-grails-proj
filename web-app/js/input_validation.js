@@ -118,6 +118,39 @@ function checkIfValidNumber(val, min, max, obj)
 		}
 	}
 }
+function checkIfNumber(val, obj)
+{
+    //obj = document.getElementById("country_status");
+	obj.style.display = 'inline';	
+	if (val!='' && val!=null){
+		if (isNaN(val))
+		{
+			obj.innerHTML = "<font color='red'>Invalid</font>";
+		}
+		else
+		{
+			obj.style.display = 'none';
+			obj.innerHTML = "<font color='blue'>Valid</font>";
+		}
+	}
+}
+function checkIfNumberOnly(val, obj)
+{
+    //obj = document.getElementById("country_status");
+	obj.style.display = 'inline';	
+	if (val!='' && val!=null){
+		if (isNaN(val))
+		{
+			obj.style.display = 'none';
+			obj.innerHTML = "<font color='blue'>Valid</font>";
+		}
+		else
+		{
+			
+			obj.innerHTML = "<font color='red'>Warning: Not valid input</font>";
+		}
+	}
+}
 function sumOfNumbers(n1, n2, n3, obj)
 {
 		

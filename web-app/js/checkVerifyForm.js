@@ -35,11 +35,11 @@
 		fv.raiseError(i18nmessages.step1Err7);
 	}
 	if (fv.isEmpty(document.getElementById('addr_street1').value) ||
-		fv.isEmpty(document.getElementById('addr_city').value) ||
-		fv.isEmpty(document.getElementById('addr_state').value) ||
-		fv.isEmpty(document.getElementById('addr_zipcode').value)){
-			fv.raiseError(i18nmessages.step1Err8);
-	}
+			fv.isEmpty(document.getElementById('addr_city').value) ||
+			(document.getElementById('country').value=='US' && fv.isEmpty(document.getElementById('addr_state').value)) ||
+			fv.isEmpty(document.getElementById('addr_zipcode').value)){
+				fv.raiseError(i18nmessages.step1Err8);
+		}
 	if (!fv.isValidZipcode(document.getElementById('addr_zipcode').value)){
 		fv.raiseError(i18nmessages.step1Err9);
 	}
@@ -213,6 +213,7 @@
 	{
 		fv.raiseError(i18nmessages.step4Err5);
 	}
+	/*// become optional
 	if ((getRadioValue(document.getElementsByName('q15_1'))=='currently' || getRadioValue(document.getElementsByName('q15_1'))=='quit') &&
 		(($('#q15_1_howManyTimesPerWeek').val()=='' && $('#q15_1_howManyYears').val()=='') ||
 		 (!fv.isValidNumber($('#q15_1_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_1_howManyYears').val(), 1, 125))
@@ -236,7 +237,8 @@
 		 (!fv.isValidNumber($('#q15_4_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_4_howManyYears').val(), 1, 125))
 	   ){
 		fv.raiseError(i18nmessages.step4Err9);
-	}					
+	}
+	*/					
 	if (!fv.isRadioChecked(document.getElementsByName('q16')))
 	{
 		fv.raiseError(i18nmessages.step4Err10);
@@ -1192,7 +1194,7 @@ function resetIfnone(){
 			for (j=1;j<=3;j++){
 				$('#q12_'+i+'_'+j).attr('checked', '');
 			}
-			$('#q12_'+i+'_ageDiagnosed').val('');
+			//$('#q12_'+i+'_ageDiagnosed').val('');
 		}
 	}
 }       

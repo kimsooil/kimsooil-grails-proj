@@ -117,13 +117,14 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
                 <div class="dialog">
 					<%
 					def yesno=[message(code:'survey.yes'), message(code:'survey.no')]     
-					%>           
+					%>
+					<br/>&nbsp;&nbsp;&nbsp;(<label style="color:blue">*</label>: Optional)           
                     <table class="box-table-b-wide">
                         <tbody>
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q54" default="q54" /></label></td>
 	                    	<td style="width:60%">
-		                    	<g:textField name="q54"
+		                    	<label style="color:blue">*</label> <g:textField name="q54"
 											 value="${surveyInstance?.q54}" 
 											 onkeyup="checkIfValidNumber(this.value, 1, 99, document.getElementById(\'q54_status\')); "/> <span id="q54_status"></span>
 	                    	</td>
@@ -131,7 +132,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q55" default="q55" /></label></td>
 	                    	<td style="width:60%">
-		                    	<g:message code="survey.q55.every" default="every" /> 
+		                    	<label style="color:blue">*</label> <g:message code="survey.q55.every" default="every" /> 
 		                    	<g:textField name="q55" 
 		                    				 value="${surveyInstance?.q55}"
 		                    				 onkeyup="checkIfValidNumber(this.value, 10, 365, document.getElementById(\'q55_status\')); "/>
@@ -141,7 +142,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q56" default="q56" /></label></td>
 	                    	<td style="width:60%">
-		                    	<g:textField name="q56"
+		                    	<label style="color:blue">*</label> <g:textField name="q56"
 		                    	value="${surveyInstance?.q56}" 
 								onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'q56_status\')); "/> <g:message code="survey.q55.days" default="days" /> <span id="q56_status"></span>
 	                    	</td>
@@ -149,7 +150,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q57" default="q57" /></label></td>
 	                    	<td style="width:60%">
-	                        	<g:radioGroup name="q57"
+	                        	<label style="color:blue">*</label> <g:radioGroup name="q57"
 	                            	value="${surveyInstance?.q57}" 
 	                                labels="${yesno }" 
 	                                values="['yes','no']" >
@@ -160,7 +161,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q58" default="q58" /></label></td>
 	                    	<td style="width:60%">
-	                        	<g:radioGroup name="q58"
+	                        	<label style="color:blue">*</label> <g:radioGroup name="q58"
 	                            	value="${surveyInstance?.q58}" 
 	                                labels="${yesno }"
 	                                values="['yes','no']" >
@@ -168,6 +169,11 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 								</g:radioGroup>
 							</td>
 						</tr>
+						</tbody>
+						</table>
+						
+	                    <table class="box-table-b-wide">
+                        <tbody>
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q59" default="q59" /></label></td>
 	                    	<td style="width:60%">
@@ -178,7 +184,9 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 								</g:radioGroup>
 								<div style="clear:left">
-								<br/><g:message code="survey.ifyeswhy" default="If yes, why?" /> <g:textField name="q59_why" value="${surveyInstance?.q59_why}" />&nbsp;&nbsp;&nbsp;
+								<br/><g:message code="survey.ifyeswhy" default="If yes, why?" /> <g:textField name="q59_why" 
+																											  value="${surveyInstance?.q59_why}" 
+																										      onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q59_why_status')}\')); "/> <span id="${('q59_why_status')}"></span>&nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q59_whatAge" 
 																										      value="${surveyInstance?.q59_whatAge}" 
 																										      onkeyup="checkIfValidNumber(this.value, 1, 99, document.getElementById(\'q59_whatAge_status\')); "/> <span id="q59_whatAge_status"></span>
@@ -235,7 +243,9 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q64" default="q64" /></label></td>
 	                    	<td style="width:60%">
-		                    	<g:textField name="q64" value="${surveyInstance?.q64}" />
+		                    	<g:textField name="q64"
+		                    				 value="${surveyInstance?.q64}"
+		                    				 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q64_status')}\')); "/> <span id="${('q64_status')}"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -282,8 +292,12 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 								</g:radioGroup>
 								<div style="clear:left">
-								<br/><g:message code="survey.whichone" default="Which one" /> <g:textField name="q69_which" value="${surveyInstance?.q69_which}" />&nbsp;&nbsp;&nbsp;
-								<br/><g:message code="survey.forwhat" default="For what" /> <g:textField name="q69_forWhat" value="${surveyInstance?.q69_forWhat}" />&nbsp;&nbsp;&nbsp;
+								<br/><g:message code="survey.whichone" default="Which one" /> <g:textField name="q69_which" 
+																										   value="${surveyInstance?.q69_which}"
+																										   onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q69_which_status')}\')); "/> <span id="${('q69_which_status')}"></span>&nbsp;&nbsp;&nbsp;
+								<br/><g:message code="survey.forwhat" default="For what" /> <g:textField name="q69_forWhat" 
+																									     value="${surveyInstance?.q69_forWhat}"
+																									     onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q69_forWhat_status')}\')); "/> <span id="${('q69_forWhat_status')}"></span>&nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.atwhatageyoustarted" default="At what age you started?" /> <g:textField name="q69_whatAgeStarted" 
 																																	 value="${surveyInstance?.q69_whatAgeStarted}" 
 																																	 onkeyup="checkIfValidNumber(this.value, 1, 99, document.getElementById(\'q69_age_status\')); "/> <span id="q69_age_status"></span>
