@@ -82,7 +82,9 @@ $(document).ready(function(){
 						</div>
 						<br/>
 						<div id="whichDiet" style="clear:left;" >
-								<g:message code="survey.whichone" default="which one" /> <g:textField name="q85_which" value="${surveyInstance?.q85_which}" />
+								<g:message code="survey.whichone" default="which one" /> <g:textField name="q85_which"
+																									  value="${surveyInstance?.q85_which}"
+																									  onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q85_status')}\')); "/> <span id="${('q85_status')}"></span>
 						</div>
 						</ul>
    	

@@ -73,7 +73,7 @@ $(document).ready(function(){
         </td>
         <td>
 	        <h1><g:message code="site.title"/></h1><br/>
-	        <label>Hispanic Bio-Bank (5/5/2011 - <a href="/hispbb/changes.txt">Changes</a>)</label>
+	        <label>Hispanic Bio-Bank (5/10/2011 - <a href="/hispbb/changes.txt">Changes</a>)</label>
         </td>
         <td>
         

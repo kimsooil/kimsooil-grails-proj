@@ -463,7 +463,7 @@ $(document).ready(function(){
 					   <thead>
 					   <tr>
 					   		<th style="border: 1px solid #9baff1;;font-weight:bold;" colspan="5">
-					   		<g:message code="survey.q94.table" /> <input onclick="clear_q99();" type="button" value="Clear Q99" />
+					   		<g:message code="survey.q94.table" /><%-- <input onclick="clear_q99();" type="button" value="Clear Q99" /> --%>
 					   		</th>
 					   </tr>
 					   <tr>

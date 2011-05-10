@@ -118,7 +118,7 @@ function resetIfnone(){
 			for (j=1;j<=3;j++){
 				$('#q12_'+i+'_'+j).attr('checked', '');
 			}
-			$('#q12_'+i+'_ageDiagnosed').val('');
+			//$('#q12_'+i+'_ageDiagnosed').val('');
 		}
 	}
 }        

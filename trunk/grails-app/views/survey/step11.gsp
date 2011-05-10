@@ -498,16 +498,24 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 								</g:radioGroup>
 								<div style="clear:left">
-								<br/><g:message code="survey.whichone" default="Which one" /> <g:textField name="q80_which" value="${surveyInstance?.q80_which}" />&nbsp;&nbsp;&nbsp;
-								<br/><g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q80_whatAge" value="${surveyInstance?.q80_whatAge}" />&nbsp;&nbsp;&nbsp;
-								<br/><g:message code="survey.forhowlong" default="For how long" /> <g:textField name="q80_howLong" value="${surveyInstance?.q80_howLong}" />
+								<br/><g:message code="survey.whichone" default="Which one" /> <g:textField name="q80_which"
+																										   value="${surveyInstance?.q80_which}"
+																										   onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q80_which_status')}\')); "/> <span id="${('q80_which_status')}"></span>&nbsp;&nbsp;&nbsp;
+								<br/><g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q80_whatAge"
+																											  value="${surveyInstance?.q80_whatAge}"
+																											  onkeyup="checkIfValidNumber(this.value, 0, 99, document.getElementById(\'${('q80_whatAge_status')}\')); "/> <g:message code="survey.years" /> <span id="${('q80_whatAge_status')}"></span>&nbsp;&nbsp;&nbsp;
+								<br/><g:message code="survey.forhowlong" default="For how long" /> <g:textField name="q80_howLong"
+																												value="${surveyInstance?.q80_howLong}"
+																												onkeyup="checkIfValidNumber(this.value, 0, 99, document.getElementById(\'${('q80_howLong_status')}\')); "/> <g:message code="survey.years.label" /> <label style="color:orange">(If 6 months, enter 0.5)</label><span id="${('q80_howLong_status')}"></span> &nbsp;&nbsp;&nbsp;
 								</div>
 	                    	</td>
 	                    </tr>
 	                    <tr>
 	                    	<td style="width:25%;font-weight:bold;"><label><g:message code="survey.q81" default="q81" /></label></td>
 	                    	<td style="width:75%">
-		                    	<g:textField name="q81" value="${surveyInstance?.q81}" />
+		                    	<g:textField name="q81"
+		                    				 value="${surveyInstance?.q81}"
+		                    				 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q81_status')}\')); "/> <span id="${('q81_status')}"></span>
 	                    	</td>
 	                    </tr>
                     </tbody>
@@ -515,7 +523,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
                     
                     <h1><g:message code="step11b.label" default="Step11b" /></h1>
                     
-                    <table class="box-table-b-wide">
+                    <table class="box-table-b-wide">http://localhost:8080/hispbb/survey/step13/93
                     <tbody>                    	                    
 	                    <tr>
 	                    	<td style="width:25%;font-weight:bold;"><label><g:message code="survey.q82" default="q82" /></label></td>

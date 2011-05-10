@@ -75,7 +75,10 @@ $(document).ready(function(){
                                     <label for="q25_howHaveYouFeltForPast4Weeks"><g:message code="survey.q25" default="howHaveYouFeltForPast4Weeks" /></label>
                                 </td>
                                 <td valign="top" class="${hasErrors(bean: surveyInstance, field: 'q25_howHaveYouFeltForPast4Weeks', 'errors')}">
-                                    <g:textField name="q25_howHaveYouFeltForPast4Weeks" value="${surveyInstance?.q25_howHaveYouFeltForPast4Weeks}" />
+                                    <g:textField name="q25_howHaveYouFeltForPast4Weeks"
+												 value="${surveyInstance?.q25_howHaveYouFeltForPast4Weeks}"
+												 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q25_status')}\')); "/> <span id="${('q25_status')}"></span> 
+
                                 </td>
                             </tr>
                             <tr class="prop">
@@ -90,7 +93,9 @@ $(document).ready(function(){
 										<g:render template="/common/checkmark_radio" model="[it:it]"/>
 									</g:radioGroup>
 									<div  style="clear:left">
-									<br/><g:message code="survey.q26.ifyesexplain" default="If yes, explain"/>: <g:textField name="q26_explain" value="${surveyInstance?.q26_explain}" />
+									<br/><g:message code="survey.q26.ifyesexplain" default="If yes, explain"/>: <g:textField name="q26_explain"
+																															 value="${surveyInstance?.q26_explain}"
+																															 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q26_status')}\')); "/> <span id="${('q26_status')}"></span>
 									</div>
                                 </td>
                             </tr>                                                                                   

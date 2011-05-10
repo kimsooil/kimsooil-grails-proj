@@ -250,7 +250,9 @@ $(document).ready(function(){
 						<tr>
 						<th style="width: 40%;border: 1px solid #9baff1;""><g:message code="survey.infection" default="Infection" /></th>
 						<th style="width: 30%;border: 1px solid #9baff1;""><g:message code="survey.yesno" default="Yes / No" /></th>
-						<th style="width: 30%;border: 1px solid #9baff1;""><g:message code="survey.first_infection" default="Year of first infection" /></th>
+						<th style="width: 30%;border: 1px solid #9baff1;""><g:message code="survey.first_infection" default="Year of first infection" />
+						<br/><label style="color:orange">(<g:message code="survey.donotremember" />)</label>
+						</th>
 						</tr>
 					</thead>
 					<tbody>
