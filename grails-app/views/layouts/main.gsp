@@ -72,8 +72,8 @@ $(document).ready(function(){
         	<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'MCC-Logo-DarkLight.png')}" alt="moffitt" border="0" /></a>
         </td>
         <td>
-	        <h1><g:message code="site.title"/></h1><br/>
-	        <label>Hispanic Bio-Bank (5/17/2011 - <a href="/hispbb/changes.html">Changes</a>)</label>
+	        <h1><g:message code="site.title"/></h1>
+	        <label>Hispanic Bio-Bank (5/23/2011 - <a href="/hispbb/changes.html">Changes</a>)</label> - <label>(Best viewed with Safari and FireFox - <a href="/hispbb/browsers.html">Supported Browsers</a>)</label>
         </td>
         <td>
         
@@ -81,9 +81,10 @@ $(document).ready(function(){
         </tr>
         </table>
         <span style="float:right; padding:1em"><g:loginControl /></span>
-         <span style="float:right; padding:1em"><langs:selector langs="es, en"/></span>
+        <span style="float:right; padding:1em"><langs:selector langs="es, en"/></span>
         </div>
         <g:layoutBody />
 
     </body>
+    
 </html>
