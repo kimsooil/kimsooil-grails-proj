@@ -229,7 +229,7 @@ $(document).ready(function(){
                                     			 onkeyup="checkIfValidNumber(this.value, 0, 10, document.getElementById('height_status1'));" /> <g:message code="survey.feet" default="feet" /> <span id="height_status1"></span><br/>
                                     <g:textField name="height_inches"
                                     			 value="${surveyInstance?.height_inches}" 
-                                    			 onkeyup="checkIfValidNumber(this.value, 0, 11, document.getElementById('height_status2'));"/> <g:message code="survey.inches" default="inches" /> <span id="height_status2"></span>
+                                    			 onkeyup="checkIfValidNumber(this.value, 0, 11.99, document.getElementById('height_status2'));"/> <g:message code="survey.inches" default="inches" /> <span id="height_status2"></span>
                                 </td>
                             </tr>
 
