@@ -99,7 +99,7 @@
 		fv.raiseError(i18nmessages.step2Err5);
 	}		
 	else{
-		if (!fv.isValidNumber(document.getElementById('height_inches').value, 0, 11)){
+		if (!fv.isValidNumber(document.getElementById('height_inches').value, 0, 11.99)){
 			fv.raiseError(i18nmessages.step2Err6);
 		}
 	}
