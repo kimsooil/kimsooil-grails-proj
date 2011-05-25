@@ -1,5 +1,7 @@
  function checkForm1()
 {
+	 $('#age').val(CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val())); // set age
+	 
 	// instantiate object
 	fv = new formValidator();
 	
