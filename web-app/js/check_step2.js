@@ -7,7 +7,7 @@ function checkForm2()
 		fv.raiseError(i18nmessages.step2Err1);
 	}
 	else{
-		if (!fv.isValidNumber(document.getElementById('weight').value, 10, 1000)){
+		if (!fv.isValidNumber(document.getElementById('weight').value, 10, 599)){
 			fv.raiseError(i18nmessages.step2Err2);
 		}
 	}	

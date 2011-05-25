@@ -214,7 +214,7 @@ $(document).ready(function(){
                                 <td valign="top" class="${hasErrors(bean: surveyInstance, field: 'weight', 'errors')}">
                                     <g:textField name="weight"
                                     			 value="${surveyInstance?.weight}"
-                                    			 onkeyup="checkIfValidNumber(this.value, 10, 1000, document.getElementById('weight_status'));" /> <g:message code="survey.pounds" default="Pounds" /> <span id="weight_status"></span>
+                                    			 onkeyup="checkIfValidNumber(this.value, 10, 500, document.getElementById('weight_status'));" /> <g:message code="survey.pounds" default="Pounds" /> <span id="weight_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
