@@ -60,7 +60,7 @@ $(document).ready(function(){
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />   
                 <g:hiddenField name="step" value="${step}" />
                 <g:hiddenField name="surveyer" value="${session.user.login}" />
-                <g:hiddenField name="age" value="${session.user.login}" />
+                <g:hiddenField name="age" value="" />
 
                 <div class="dialog">
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" />-<g:select disabled="true" name="consentNumLoc" from="${surveyInstance.constraints.consentNumLoc.inList}" value="${surveyInstance?.consentNumLoc}" valueMessagePrefix="survey.consentNumLoc"  />-<g:textField disabled="true" name="consentNum" value="${surveyInstance?.consentNum}" /></h3><br/>
