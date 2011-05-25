@@ -180,3 +180,27 @@ function getRadioValue(radioobj){
 	}
 	return (radioobj[myoption].value);
 }
+// modified from http://pankajlalwani.wordpress.com/2010/08/02/age-calculation-from-date-of-birth-using-javascriptjquery/
+function CalAge(dd,mm, yy) {
+
+    var now = new Date();
+    //var mm = document.getElementById('ddlmnths').value;
+    //var ddr = document.getElementById('ddldays');
+    //var dd = ddr.options[ddr.selectedIndex].value;
+    //var yy = document.getElementById('ddlyrs').value;
+    bDay = dd + "/" + mm + "/" + yy;
+    bD = bDay.split('/');
+   	    if (bD.length == 3) {
+        	   born = new Date(bD[2], bD[1] * 1 - 1, bD[0]);
+                 years = Math.floor((now.getTime() - born.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+   //     if (years < 18) {
+   //         alert(“You are not eligible”);
+   //
+   //     }
+   //     else if (years = 18 || years > 18) {
+   //     	alert(“Welcome”);
+   //     }
+        return years;
+    }
+   	    return "";
+}

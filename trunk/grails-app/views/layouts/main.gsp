@@ -73,7 +73,7 @@ $(document).ready(function(){
         </td>
         <td>
 	        <h1><g:message code="site.title"/></h1>
-	        <label>Hispanic Bio-Bank (5/23/2011 - <a href="/hispbb/changes.html">Changes</a>)</label> - <label>(Best viewed with Safari and FireFox - <a href="/hispbb/browsers.html">Supported Browsers</a>)</label>
+	        <label>Hispanic Bio-Bank (5/26/2011 - <a href="/hispbb/changes.html">Changes</a>)</label> - <label>(Best viewed with Safari and FireFox - <a href="/hispbb/browsers.html">Supported Browsers</a>)</label>
         </td>
         <td>
         
