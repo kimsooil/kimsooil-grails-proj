@@ -25,12 +25,12 @@ window.onload= function(){
 	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("checked", '');
 	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("disabled", true);
 	    	$("[name*='q12_1_'], [name*='q12_2_'], [name*='q12_3_'], [name*='q12_4_']").attr("disabled", true);
-	    	$("[name='haveCancer']").attr("disabled", true);
+	    	//$("[name='haveCancer']").attr("disabled", true);
 }   
 </g:if>
 <g:else>
 window.onload= function(){
-	$("[name='haveCancer']").attr("disabled", true);
+	//$("[name='haveCancer']").attr("disabled", true);
 }
 </g:else>
 
@@ -300,7 +300,8 @@ $(document).ready(function(){
 						 <div>
 					 	
 						 	<input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.being_treated_for_cancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
-						 	<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
+						 	<!-- <input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" /> -->
+						 	<input type="radio" name="haveCancer" value="no" /> <g:message code="survey.no" default="No" />
 
 						</div>
 						</ul>
