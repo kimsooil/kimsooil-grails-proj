@@ -34,7 +34,10 @@ $(document).ready(function(){
 	    	$("#q8_4_which").val('');
 	    	$("#q8_4_which").attr("disabled", true);	  
 	    }
-	});		
+	});
+	$("#DOB_day").change(function() { $('#age_calculated').attr('innerHTML', CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
+	$("#DOB_month").change(function() {$('#age_calculated').attr('innerHTML', CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
+	$("#DOB_year").change(function() {$('#age_calculated').attr('innerHTML', CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});			
 });	
     </g:javascript>
         <div class="nav">
@@ -57,6 +60,7 @@ $(document).ready(function(){
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />   
                 <g:hiddenField name="step" value="${step}" />
                 <g:hiddenField name="surveyer" value="${session.user.login}" />
+                <g:hiddenField name="age" value="${session.user.login}" />
 
                 <div class="dialog">
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" />-<g:select disabled="true" name="consentNumLoc" from="${surveyInstance.constraints.consentNumLoc.inList}" value="${surveyInstance?.consentNumLoc}" valueMessagePrefix="survey.consentNumLoc"  />-<g:textField disabled="true" name="consentNum" value="${surveyInstance?.consentNum}" /></h3><br/>

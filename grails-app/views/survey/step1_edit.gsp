@@ -36,6 +36,9 @@ $(document).ready(function(){
 	    	$("#q8_4_which").attr("disabled", true);	  
 	    }
 	});	
+	$("#DOB_day").change(function() { $('#age_calculated').attr('innerHTML', CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
+	$("#DOB_month").change(function() {$('#age_calculated').attr('innerHTML', CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
+	$("#DOB_year").change(function() {$('#age_calculated').attr('innerHTML', CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
 });	
     </g:javascript>    
         <div class="nav">
@@ -98,7 +101,7 @@ $(document).ready(function(){
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'DOB', 'errors')}">
                                     <g:kimsiDatePicker name="DOB" precision="day" value="${surveyInstance?.DOB}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="age_calculated"></span>
                                 </td>
                             </tr>
                             <% def RaceList=[message(code:"survey.race.white"),
