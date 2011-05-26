@@ -238,8 +238,11 @@ $(document).ready(function(){
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
+                       <%
+							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
+						%>								
 							<g:message code="survey.when" default="When" />: <g:datePicker name="date_sigmoidoscopy_colonoscopy" precision="month" value="${surveyInstance?.date_sigmoidoscopy_colonoscopy}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
                                       </div>
                             
                     	</td>

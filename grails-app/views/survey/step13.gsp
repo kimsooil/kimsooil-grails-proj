@@ -139,7 +139,9 @@ $(document).ready(function(){
 					 <tr>
 					 	<td style="font-size: 12px;">
 					 	<%--${i+1}. --%>
+
 					 	 ${SaturatedFatList[i]}
+
 					 	<g:if test="${i==13 }">
 					 		<g:textField name="q85_sat_fat_other" value="${surveyInstance?.q85_sat_fat_other}" style="width:75px"/>
 					 	</g:if>
@@ -154,7 +156,13 @@ $(document).ready(function(){
 					 	</td>
 					 	<td>
 					 	<%--${i+1}.  --%>
-					 	${VegetableList[i]}
+					 	<g:if test="${idx==11 }">
+					 	<a target=_new href="http://en.m.wikipedia.org/wiki/Gherkin">${VegetableList[i]}</a>
+					 	</g:if>
+					 	<g:else>
+					 	 ${VegetableList[i]}
+					 	</g:else>					 	
+					 	
 						 	<g:if test="${i==13 }">
 						 		<g:textField name="q85_vege_other" value="${surveyInstance?.q85_vege_other}" style="width:75px"/>
 						 	</g:if>

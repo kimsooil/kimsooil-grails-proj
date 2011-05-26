@@ -147,6 +147,9 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	});									
 });	
 </g:javascript>    
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
+%>	
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
@@ -273,7 +276,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    	<td style="font-weight:bold;"><label><g:message code="survey.q48" default="q48" /></label></td>
 	                    	<td>
 								<g:datePicker name="q48_date_last_visit_gynecologist" precision="month" value="${surveyInstance?.q48_date_last_visit_gynecologist}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />                	
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />                	
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -365,7 +368,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 						</td>
                         <td>    
                              <g:datePicker name="${('q51_'+idx+'_date')}" precision="month" value="${surveyInstance?.('q51_'+idx+'_date')}"  
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
 						</td>
 						<td>
 						<g:if test="${idx==1}">
@@ -419,7 +422,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 							<br/>
 							<div style="clear:left">
 								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52_date_most_recent_pap_smear" precision="month" value="${surveyInstance?.q52_date_most_recent_pap_smear}"  
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
 								<br/>
                             	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear"
                             																		value="${surveyInstance?.q52_results_pap_smear}"

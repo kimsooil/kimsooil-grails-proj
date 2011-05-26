@@ -161,9 +161,12 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>
 						</td>
+                       <%
+							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
+						%>						
 						<td align="right"><g:message code="survey.when" default="When" />:<br/>
 							<g:datePicker name="date_rectal_exam" precision="month" value="${surveyInstance?.date_rectal_exam}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
 						</td>
 						<td><g:message code="survey.findings" default="Findings" />:
 						 <g:textField  style="width:150px;" name="findings_rectal_exam" value="${surveyInstance?.findings_rectal_exam}" />
@@ -181,7 +184,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 						</td>
 						<td align="right"><g:message code="survey.mostRecentTest" default="Most recent Test" />:<br/>
 						<g:datePicker name="date_most_recent_PSA_test" precision="month" value="${surveyInstance?.date_most_recent_PSA_test}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
 						</td>
 						<td><g:message code="survey.results" default="Results" />: <g:textField style="width:150px;" 
 																								name="results_PSA_test"

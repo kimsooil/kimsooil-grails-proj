@@ -217,7 +217,7 @@ $(document).ready(function(){
 									<g:message code="survey.q15_howManyYears.label" default="q15_howManyYears" />
 									<g:textField name="${('q15_'+idx+'_howManyYears')}"
 												 value="${surveyInstance?.('q15_'+idx+'_howManyYears')}"
-												 onkeyup="checkIfValidNumber(this.value, 1, 125, document.getElementById(\'${('tobaccoYear_status'+idx)}\')); " /> <span id="${('tobaccoYear_status'+idx)}"></span>
+												 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('tobaccoYear_status'+idx)}\')); " /> <span id="${('tobaccoYear_status'+idx)}"></span>
 						
 						</td>
 					</tr>
@@ -250,8 +250,9 @@ $(document).ready(function(){
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q17', 'errors')}">
                                     <g:textField name="q17" 
+                                    style="width: 100px"
                                     value="${surveyInstance?.q17}" 
-                                    onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('q17_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q17_status"></span>
+                                    onkeyup="checkIfValidNumber(this.value, 0, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q17_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q17_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
@@ -261,8 +262,9 @@ $(document).ready(function(){
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q18', 'errors')}">
                                     <g:message code="survey.smokedFor" default="Smoked for" /> 
                                     <g:textField name="q18" 
+                                    style="width: 100px"
                                     value="${surveyInstance?.q18}" 
-									onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('q18_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q18_status"></span>
+									onkeyup="checkIfValidNumber(this.value, 0, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q18_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q18_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
@@ -271,8 +273,9 @@ $(document).ready(function(){
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q19', 'errors')}">
                                     <g:textField name="q19"
+                                    			 style="width: 100px"
                                     			 value="${surveyInstance?.q19}"
-                                    			 onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q19_status')}\')); " /> <g:message code="survey.q19.cigarettesPerDay" default="cigarettes Per Day" /> <span id="q19_status"></span>
+                                    			 onkeyup="checkIfValidNumber(this.value, 0, 200, document.getElementById(\'${('q19_status')}\')); " /> <g:message code="survey.q19.cigarettesPerDay" default="cigarettes Per Day" /> <span id="q19_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
@@ -295,16 +298,23 @@ $(document).ready(function(){
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q21_dateStopSmoking', 'errors')}">
                                     <g:textField name="q21_whenStopSmoking_years" 
+                                    			 style="width: 100px"
                                     			 value="${surveyInstance?.q21_whenStopSmoking_years}"
-                                    			 onkeyup="checkIfValidNumber(this.value, 0, 120, document.getElementById(\'${('q21_status1')}\')); " /> <g:message code="survey.years.label" default="years" /> <span id="q21_status1"></span>
+                                    			 onkeyup="checkIfValidNumber(this.value, 0, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q21_status1')}\')); " /> <g:message code="survey.years.label" default="years" /> <span id="q21_status1"></span>
                                     <br/>
                                     <g:textField name="q21_whenStopSmoking_months"
+                                    			 style="width: 100px"
                                     			 value="${surveyInstance?.q21_whenStopSmoking_months}"
 												 onkeyup="checkIfValidNumber(this.value, 0, 11, document.getElementById(\'${('q21_status2')}\')); " /> <g:message code="survey.months.label" default="months" /> <span id="q21_status2"></span>
 									<br/><g:message code="survey.and_or.label" default="and/or" />
                                     <br/>
+                                    <%
+									def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 
+									//out << birth[java.util.Calendar.YEAR]
+									
+                                    %>
                                     <g:kimsiDatePicker name="q21_dateStopSmoking" precision="day" value="${surveyInstance?.q21_dateStopSmoking}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /><br/>
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /><br/>
 
                                     
                                 </td>

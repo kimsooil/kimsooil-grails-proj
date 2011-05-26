@@ -282,9 +282,11 @@ $(document).ready(function(){
 								</g:radioGroup>						
 						</td>
 						<td style="border: 1px solid #9baff1;">
-
+                    <%
+							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
+					%>	
 							<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
-	                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_'+idx+'_status')}"></span><br/>
+	                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_'+idx+'_status')}"></span><br/>
 
 						</td>
 					</tr>
@@ -368,7 +370,7 @@ $(document).ready(function(){
 	                    	<td style="width: 10%;">
 	                    		<g:textField name="${('q12_'+idx+'_ageDiagnosed')}"
 	                    					 value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}"
-	                    					 onkeyup="checkIfValidNumber(this.value, 1, 125, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
+	                    					 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
 	                    	</td>
 	                    	<td>
 							 <g:each in="${TreatmentList }" status="j" var="treatment">

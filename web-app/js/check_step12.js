@@ -90,8 +90,9 @@ function checkForm12()
 		{
 			//if (fv.isEmpty($('#q84_another').val()) || $('#q84_10_rad_date_month').val()=='' || $('#q84_10_rad_date_day').val()=='' || $('#q84_10_rad_date_year').val()=='' || $('#q82_10_whatAge').val()=='')
 				//fv.raiseError(i18nmessages.step12Err3 +"(#10)");
-			if (!fv.isEmpty($('#q84_10_whatAge').val()) && !fv.isValidNumber($('#q84_10_whatAge').val(), 1, 125))
-				fv.raiseError(i18nmessages.step12Err4);
+
+			if (fv.isEmpty($('#q84_another').val()) || fv.isEmpty($('#q84_10_whatAge').val()) || !fv.isValidNumber($('#q84_10_whatAge').val(), 1, 125))
+				fv.raiseError(i18nmessages.step12Err3 +"(#10)");
 		}	
 	}
 	// all done
