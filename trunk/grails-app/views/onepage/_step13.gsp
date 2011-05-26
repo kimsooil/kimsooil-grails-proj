@@ -62,10 +62,10 @@
 					 <table class="box-table-b-wide">
 					 <thead>
 					 <tr>
-					 	<th style="width:5%"><g:message code="survey.saturatedfats" /></th>
-					 	<th style="width:45%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
-					 	<th style="width:5%"><g:message code="survey.vegetables" /></th>
-					 	<th style="width:45%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
+					 	<th style="width:3%"><g:message code="survey.saturatedfats" /></th>
+					 	<th style="width:47%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
+					 	<th style="width:3%"><g:message code="survey.vegetables" /></th>
+					 	<th style="width:47%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
 					 </tr>
 					 </thead>
 					 <tbody>
@@ -73,14 +73,14 @@
 					 <g:while test="${i<14}">
 					 <%def idx=i+1 %>
 					 <tr>
-					 	<td>
+					 	<td style="font-size: 12px;">
 					 	<%--${i+1}. --%>
 					 	 ${SaturatedFatList[i]}
 					 	<g:if test="${i==13 }">
 					 		<g:textField name="q85_sat_fat_other" value="${surveyInstance?.q85_sat_fat_other}" style="width:75px"/>
 					 	</g:if>
 					 	</td>
-					 	<td style="font-size: 12px;">
+					 	<td style="font-size: 11px;">
 							<g:radioGroup name="${('q85_sat_fat_'+idx)}"
 	                            	value="${surveyInstance?.('q85_sat_fat_'+idx)}" 
 	                                labels="${freqList }" 

@@ -188,7 +188,7 @@
                             	value="${surveyInstance?.('q51_'+idx)}"  
                                 labels="${yesno }"
                                 values="['yes','no']" >
-								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>
 						</td>
                         <td>    

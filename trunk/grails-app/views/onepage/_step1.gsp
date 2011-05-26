@@ -210,9 +210,9 @@
 							</td>
 						</tr>
 						</g:each>
-						<tr>
-						<td><g:message code="survey.q8.others" default="q8.others" /></td>
-						<td><g:textField name="${('q8_'+'others')}" value="${surveyInstance?.('q8_'+'others')}" /></td>
+						<tr class="prop">
+							<td valign="top" class="name"><g:message code="survey.q8.others" default="q8.others" /></td>
+							<td valign="top" class="value"><g:textField name="${('q8_'+'others')}" value="${surveyInstance?.('q8_'+'others')}" /></td>
 						</tr>
 						</tbody>
 					</table>
