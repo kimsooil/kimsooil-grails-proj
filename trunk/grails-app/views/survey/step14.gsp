@@ -255,7 +255,10 @@ $(document).ready(function(){
 	});	
 
 });	 
-</g:javascript>    
+</g:javascript> 
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 
+%>   
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
@@ -305,12 +308,12 @@ $(document).ready(function(){
 							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:message code="survey.age" /> <g:textField name="${('q90_'+idx+'_age')}" 
 																			 value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, 125, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
 							
 							</td>
 							<td style="border: 1px solid #9baff1;">
 								<g:message code="survey.year" /> <g:datePicker name="${('q90_'+idx+'_year')}" precision="year" value="${surveyInstance?.('q90_'+idx+'_year')}"  
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
 							</td>
 						</tr>
 						</g:each>
@@ -346,7 +349,7 @@ $(document).ready(function(){
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q91_'+idx+'_howManyYears')}"
 																			value="${surveyInstance?.('q91_'+idx+'_howManyYears')}" 
-																			onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
+																			onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
 								</div>
 					 	</td>
 					 </tr>
@@ -389,7 +392,7 @@ $(document).ready(function(){
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q92_'+idx+'_howManyYears')}" 
 																						  value="${surveyInstance?.('q92_'+idx+'_howManyYears')}" 
-																						  onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
+																						  onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
 								</div>
 					  	</td>
 					  </tr>
@@ -442,7 +445,7 @@ $(document).ready(function(){
 								<div style="clear:left;">
 									<g:message code="survey.monthsofuse" /> <g:textField name="${('q93_'+idx+'_howManyMonths')}"
 																						 value="${surveyInstance?.('q93_'+idx+'_howManyMonths')}"
-																						 onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
+																						 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
 								</div>					  	
 					  	</td>
 					  </tr>
@@ -490,7 +493,7 @@ $(document).ready(function(){
 					   			<g:textField style="width:100px" 
 					   				name="${('q94_'+idx+'_ageStart')}" 
 					   				value="${surveyInstance?.('q94_'+idx+'_ageStart')}"
-									onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
+									onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
 					   		</td>
 					   		<td style="width:5%">
 					   			<g:textField style="width:100px" 
@@ -513,7 +516,7 @@ $(document).ready(function(){
 					   			<g:textField style="width:100px" 
 					   				name="${('q94_'+idx+'_ageStop')}" 
 					   				value="${surveyInstance?.('q94_'+idx+'_ageStop')}"
-					   				onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('q94_ageStop_status'+idx)}\')); "/> <span name="${('q94_ageStop_status'+idx)}" id="${('q94_ageStop_status'+idx)}"></span>
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_${idx}_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status'+idx)}\')); "/> <span name="${('q94_ageStop_status'+idx)}" id="${('q94_ageStop_status'+idx)}"></span>
 					   		</td>
 					   </tr>
 					   </g:each>

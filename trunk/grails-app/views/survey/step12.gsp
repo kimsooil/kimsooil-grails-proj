@@ -198,7 +198,9 @@ $(document).ready(function(){
                     </div>
                     </ul>
                     <br/>
-                    
+                    <%
+							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
+					%>	                    
 
                     <%
 					def RadiationTypeList=[message(code:'survey.q84.t1'),
@@ -244,12 +246,12 @@ $(document).ready(function(){
 					 	</td>
 					 	<td style="width:40%">
 					 		<g:kimsiDatePicker name="${('q84_'+idx+'_rad_date')}" precision="day" value="${surveyInstance?.('q84_'+idx+'_rad_date')}"  
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
 					 	</td>
 					 	<td style="width:10%">
 					 		<g:textField name="${('q84_'+idx+'_whatAge')}"
 					 					 value="${surveyInstance?.('q84_'+idx+'_whatAge')}" 
-					 					 onkeyup="checkIfValidNumber(this.value, 1, 125, document.getElementById(\'${('q84_age_status'+idx)}\')); "/>
+					 					 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q84_age_status'+idx)}\')); "/>
 					 		<br/>
 					 		 <span id="${('q84_age_status'+idx)}"></span> 
 					 	</td>

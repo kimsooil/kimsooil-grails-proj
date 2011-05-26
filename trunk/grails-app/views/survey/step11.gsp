@@ -402,7 +402,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    	<td>
 		                    	<g:textField name="q74"
 		                    				 value="${surveyInstance?.q74}"
-		                    				 onkeyup="checkIfValidNumber(this.value, 5, 70, document.getElementById(\'q74_status\')); "/> <g:message code="survey.years" default="years" /> <span id="q74_status"></span>
+		                    				 onkeyup="checkIfValidNumber(this.value, 5, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'q74_status\')); "/> <g:message code="survey.years" default="years" /> <span id="q74_status"></span>
 	                    	</td>
 	                    </tr> 
 	                    <tr>
@@ -410,7 +410,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    	<td>
 		                    	<g:textField name="q75" 
 		                    				 value="${surveyInstance?.q75}"
-											 onkeyup="checkIfValidNumber(this.value, 5, 70, document.getElementById(\'q75_status\')); "/> <g:message code="survey.years" default="years" /> <span id="q75_status"></span>
+											 onkeyup="checkIfValidNumber(this.value, 5, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'q75_status\')); "/> <g:message code="survey.years" default="years" /> <span id="q75_status"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
