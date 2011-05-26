@@ -126,10 +126,10 @@ $(document).ready(function(){
 					 <table class="box-table-b-wide">
 					 <thead>
 					 <tr>
-					 	<th style="width:5%"><g:message code="survey.saturatedfats" /></th>
-					 	<th style="width:45%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
-					 	<th style="width:5%"><g:message code="survey.vegetables" /></th>
-					 	<th style="width:45%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
+					 	<th style="width:3%"><g:message code="survey.saturatedfats" /></th>
+					 	<th style="width:47%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
+					 	<th style="width:3%"><g:message code="survey.vegetables" /></th>
+					 	<th style="width:47%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
 					 </tr>
 					 </thead>
 					 <tbody>
@@ -137,7 +137,7 @@ $(document).ready(function(){
 					 <g:while test="${i<14}">
 					 <%def idx=i+1 %>
 					 <tr>
-					 	<td>
+					 	<td style="font-size: 12px;">
 					 	<%--${i+1}. --%>
 					 	 ${SaturatedFatList[i]}
 					 	<g:if test="${i==13 }">
@@ -257,7 +257,7 @@ $(document).ready(function(){
 					 </tr>
 					 </g:each>
 					 <tr>
-					 <td><g:message code="survey.q89.t8" /></td>
+					 <td><label style="font-weight:bold;"><g:message code="survey.q89.t8" /></label></td>
 					 <td><g:textField name="q89_other" value="${surveyInstance?.q89_other}" /></td>
 					 </tr>
 					 </tbody>

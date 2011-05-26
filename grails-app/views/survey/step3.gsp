@@ -129,7 +129,7 @@ $(document).ready(function(){
 										"GIST":message(code:"survey.q12_GIST"),
 										"hodgkin":message(code:"survey.q12_hodgkin"),
 										"kidney":message(code:"survey.q12_kidney"),
-										"leukemia":message(code:"survey.q12_leukemial"),
+										"leukemia":message(code:"survey.q12_leukemia"),
 										"liver":message(code:"survey.q12_liver"),
 										"lung":message(code:"survey.q12_lung"),
 										"melanoma":message(code:"survey.q12_melanoma"),

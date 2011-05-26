@@ -240,7 +240,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 					</tr>
 					</g:each>
 					<tr>
-						<td><g:message code="survey.q46.t7" default="other" /></td>
+						<td><label style="font-weight:bold;"><g:message code="survey.q46.t7" default="other" /></label></td>
 						<td><g:textField name="q46_7"
 										 value="${surveyInstance?.q46_7}"
 										 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q46_7status')}\')); "/> <span id="${('q46_7status')}"></span>
@@ -360,7 +360,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
                             	value="${surveyInstance?.('q51_'+idx)}"  
                                 labels="${yesno }"
                                 values="['yes','no']" >
-								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>
 						</td>
                         <td>    

@@ -506,7 +506,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 																											  onkeyup="checkIfValidNumber(this.value, 0, 99, document.getElementById(\'${('q80_whatAge_status')}\')); "/> <g:message code="survey.years" /> <span id="${('q80_whatAge_status')}"></span>&nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.forhowlong" default="For how long" /> <g:textField name="q80_howLong"
 																												value="${surveyInstance?.q80_howLong}"
-																												onkeyup="checkIfValidNumber(this.value, 0, 99, document.getElementById(\'${('q80_howLong_status')}\')); "/> <g:message code="survey.years.label" /> <label style="color:orange">(If 6 months, enter 0.5)</label><span id="${('q80_howLong_status')}"></span> &nbsp;&nbsp;&nbsp;
+																												onkeyup="checkIfValidNumber(this.value, 0, 99, document.getElementById(\'${('q80_howLong_status')}\')); "/> <g:message code="survey.years.label" /> <label style="color:orange">(<g:message code="survey.q80_if6monthEnter0.5" />)</label><span id="${('q80_howLong_status')}"></span> &nbsp;&nbsp;&nbsp;
 								</div>
 	                    	</td>
 	                    </tr>
