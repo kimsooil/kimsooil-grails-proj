@@ -98,7 +98,7 @@ $(document).ready(function(){
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                     <%
 						def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
@@ -139,7 +139,7 @@ $(document).ready(function(){
 						<g:each in="${ColonCancerSymptomList }" status="i" var="symptom">
 						<% def idx=i+1 %>
 						<tr>
-							<td style="width:45%;font-weight:bold">${symptom }
+							<td style="width:60%;font-weight:bold">${symptom }
 							</td>
 							<td>
 	                        	<g:radioGroup name="${('q36_'+idx)}"
@@ -153,16 +153,18 @@ $(document).ready(function(){
 						</g:each>
 						</tbody>
 						</table>
-					
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
+%>						
 					
 
                     <table class="box-table-b-wide">
                     <tbody>
                     <tr>
-                    	<td style="width:45%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
+                    	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
                     	<td>
                     	<%
-						def bleedingList=[message(code:'survey.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2')]
+						def bleedingList=[message(code:'survey.q37.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2')]
 						 %>
                         	<g:radioGroup name="q37"
                             	value="${surveyInstance?.q37}" 
@@ -222,7 +224,7 @@ $(document).ready(function(){
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left"><g:message code="survey.when" default="When" />: <g:datePicker name="date_digital_rectal_exam" precision="month" value="${surveyInstance?.date_digital_rectal_exam}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
                                       </div>
                             
                     	</td>
@@ -238,9 +240,7 @@ $(document).ready(function(){
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
-                       <%
-							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-						%>								
+							
 							<g:message code="survey.when" default="When" />: <g:datePicker name="date_sigmoidoscopy_colonoscopy" precision="month" value="${surveyInstance?.date_sigmoidoscopy_colonoscopy}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
                                       </div>
@@ -266,7 +266,7 @@ $(document).ready(function(){
 						<table class="box-table-b-wide">
 						<thead>
 						<tr>
-							<th style="width:20%"><g:message code="survey.findings" default="Findings" /></th>
+							<th style="width:60%"><g:message code="survey.findings" default="Findings" /></th>
 							<th><g:message code="survey.yesno" default="Yes / No" /></th>
 						</tr>
 						</thead>
@@ -294,7 +294,7 @@ $(document).ready(function(){
                     <table class="box-table-b-wide">
                     <tbody>
                     <tr>
-                    	<td style="width:50%;font-weight:bold"><label><g:message code="survey.q43" default="q43" /></label></td>
+                    	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q43" default="q43" /></label></td>
                     	<td>
                         	<g:radioGroup name="q43"
                             	value="${surveyInstance?.q43}" 
@@ -310,7 +310,7 @@ $(document).ready(function(){
                     	</td>
                     </tr>
                     <tr>
-                    	<td style="width:50%;font-weight:bold"><label><g:message code="survey.q44" default="q44" /></label></td>
+                    	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q44" default="q44" /></label></td>
                     	<td>
                         	<g:radioGroup name="q44"
                             	value="${surveyInstance?.q44}" 
@@ -331,8 +331,9 @@ $(document).ready(function(){
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step7" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:render template="/common/back_button"/></span>
+                    <%--<span class="button"><g:actionSubmit class="back" action="step7" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>

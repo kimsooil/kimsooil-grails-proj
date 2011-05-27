@@ -72,7 +72,7 @@ function checkForm2()
 		if (r1 && $("#q12_"+i+"_ageDiagnosed").val()==''){
 			fv.raiseError(i18nmessages.step2Err12+" (#"+i+").")
 		}
-		if ($("#q12_"+i+"_ageDiagnosed").val()!='' && !isValidNumber($("#q12_"+i+"_ageDiagnosed").val(), 1, 125)){
+		if ($("#q12_"+i+"_ageDiagnosed").val()!='' && !isValidNumber($("#q12_"+i+"_ageDiagnosed").val(), 1, ageCalculated)){
 			fv.raiseError(i18nmessages.step2Err13+" (#"+i+").");
 		}
 	}

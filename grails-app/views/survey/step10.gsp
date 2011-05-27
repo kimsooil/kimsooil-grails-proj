@@ -113,7 +113,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
 					<%
 					def yesno=[message(code:'survey.yes'), message(code:'survey.no')]     
@@ -144,7 +144,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    	<td style="width:60%">
 		                    	<label style="color:blue">*</label> <g:textField name="q56"
 		                    	value="${surveyInstance?.q56}" 
-								onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'q56_status\')); "/> <g:message code="survey.q55.days" default="days" /> <span id="q56_status"></span>
+								onkeyup="checkIfValidNumber(this.value, 1, 365, document.getElementById(\'q56_status\')); "/> <g:message code="survey.q55.days" default="days" /> <span id="q56_status"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -189,7 +189,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 																										      onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q59_why_status')}\')); "/> <span id="${('q59_why_status')}"></span>&nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q59_whatAge" 
 																										      value="${surveyInstance?.q59_whatAge}" 
-																										      onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'q59_whatAge_status\')); "/> <span id="q59_whatAge_status"></span>
+																										      onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q59_whatAge_status\')); "/> <span id="q59_whatAge_status"></span>
 								</div>
 							</td>
 						</tr>
@@ -215,7 +215,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 								</g:radioGroup>&nbsp;&nbsp;&nbsp;
 								<g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q61_whatAge" 
 																										 value="${surveyInstance?.q61_whatAge}"
-																										 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'q61_whatAge_status\')); "/> <span id="q61_whatAge_status"></span>
+																										 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q61_whatAge_status\')); "/> <span id="q61_whatAge_status"></span>
 							</td>
 						</tr>
 	                    <tr>
@@ -251,7 +251,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q65" default="q65" /></label></td>
 	                    	<td style="width:60%">
-		                    	<g:textField name="q65" value="${surveyInstance?.q65}" onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'q65_status\')); "/> <span id="q65_status"></span>
+		                    	<g:textField name="q65" value="${surveyInstance?.q65}" onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q65_status\')); "/> <span id="q65_status"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -279,7 +279,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q68" default="q68" /></label></td>
 	                    	<td style="width:60%">
-		                    	<g:textField name="q68" value="${surveyInstance?.q68}" onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'q68_status\')); "/> <g:message code="survey.years" default="years" /> <span id="q68_status"></span>
+		                    	<g:textField name="q68" value="${surveyInstance?.q68}" onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q68_status\')); "/> <g:message code="survey.years" default="years" /> <span id="q68_status"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -300,7 +300,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 																									     onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q69_forWhat_status')}\')); "/> <span id="${('q69_forWhat_status')}"></span>&nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.atwhatageyoustarted" default="At what age you started?" /> <g:textField name="q69_whatAgeStarted" 
 																																	 value="${surveyInstance?.q69_whatAgeStarted}" 
-																																	 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'q69_age_status\')); "/> <span id="q69_age_status"></span>
+																																	 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q69_age_status\')); "/> <span id="q69_age_status"></span>
 								</div>
 							</td>
 						</tr>
@@ -330,8 +330,9 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step9" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:render template="/common/back_button"/></span>
+                    <%--<span class="button"><g:actionSubmit class="back" action="step9" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <g:if test="${surveyInstance?.sex=='female' }">  
                     	<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     </g:if>

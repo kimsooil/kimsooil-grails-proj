@@ -85,10 +85,10 @@
                     <table class="box-table-b-wide">
                     	<tbody>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q16"><g:message code="survey.q16" default="q16.smoked100cigarettes" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q16', 'errors')}">
+                                <td>
                                     <g:radioGroup name="q16"
                                      value="${surveyInstance?.q16 }"
                                      labels="${yesno }" 
@@ -99,34 +99,34 @@
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td>
                                     <label for="q17"><g:message code="survey.q17.label" default="q17" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q17', 'errors')}">
+                                <td>
                                     <g:textField name="q17" value="${surveyInstance?.q17}" /> <g:message code="survey.years" default="Years" />
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td>
                                     <label for="q18"><g:message code="survey.q18.label" default="q18" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q18', 'errors')}">
+                                <td>
                                     <g:message code="survey.smokedFor" default="Smoked for" /> <g:textField name="q18" value="${surveyInstance?.q18}" /> <g:message code="survey.years" default="Years" />
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td>
                                     <label for="q19"><g:message code="survey.q19.label" default="q19" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q19', 'errors')}">
+                                <td>
                                     <g:textField name="q19" value="${surveyInstance?.q19}" /> <g:message code="survey.q19.cigarettesPerDay" default="cigarettes Per Day" />
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td>
                                     <label for="q20"><g:message code="survey.q20.label" default="q20" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q20', 'errors')}">
+                                <td>
                                     <%--<g:checkBox name="q20" value="${surveyInstance?.q20}" />--%>
                                     <g:radioGroup name="stillSmoke"
                                      value="${surveyInstance?.stillSmoke }"
@@ -137,10 +137,10 @@
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td>
                                     <label for="q21_dateStopSmoking"><g:message code="survey.q21_dateStopSmoking.label" default="q21_dateStopSmoking" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q21_dateStopSmoking', 'errors')}">
+                                <td>
                                     <g:textField name="q21_whenStopSmoking_years" value="${surveyInstance?.q21_whenStopSmoking_years}" /> <g:message code="survey.years.label" default="years" />
                                     <br/><g:textField name="q21_whenStopSmoking_months" value="${surveyInstance?.q21_whenStopSmoking_months}" /> <g:message code="survey.months.label" default="months" />
 									<br/><g:message code="survey.and_or.label" default="and/or" />

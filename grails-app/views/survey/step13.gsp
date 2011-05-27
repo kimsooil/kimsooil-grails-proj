@@ -59,7 +59,7 @@ $(document).ready(function(){
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info"  model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
 					<%
 					def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
@@ -273,8 +273,9 @@ $(document).ready(function(){
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step12" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:render template="/common/back_button"/></span>
+                    <%--<span class="button"><g:actionSubmit class="back" action="step12" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>

@@ -275,7 +275,7 @@ $(document).ready(function(){
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info"  model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                 <br/><ul><label><g:message code="survey.q90" default="q90" /></label></ul>
                 <%
@@ -296,7 +296,7 @@ $(document).ready(function(){
 						<g:each in="${MedicalConditionList}" status="i" var="medcond">
 						<%def idx=i+1 %>
 						<tr>
-							<td style="width:25%;border: 1px solid #9baff1;font-weight:bold;">${idx}. ${medcond }</td>
+							<td style="width:35%;border: 1px solid #9baff1;font-weight:bold;">${idx}. ${medcond }</td>
 							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:radioGroup name="${('q90_'+idx)}"
 	                            	value="${surveyInstance?.('q90_'+idx)}" 
@@ -308,7 +308,7 @@ $(document).ready(function(){
 							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:message code="survey.age" /> <g:textField name="${('q90_'+idx+'_age')}" 
 																			 value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
 							
 							</td>
 							<td style="border: 1px solid #9baff1;">
@@ -349,7 +349,7 @@ $(document).ready(function(){
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q91_'+idx+'_howManyYears')}"
 																			value="${surveyInstance?.('q91_'+idx+'_howManyYears')}" 
-																			onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
+																			onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
 								</div>
 					 	</td>
 					 </tr>
@@ -392,7 +392,7 @@ $(document).ready(function(){
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q92_'+idx+'_howManyYears')}" 
 																						  value="${surveyInstance?.('q92_'+idx+'_howManyYears')}" 
-																						  onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
+																						  onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
 								</div>
 					  	</td>
 					  </tr>
@@ -445,7 +445,7 @@ $(document).ready(function(){
 								<div style="clear:left;">
 									<g:message code="survey.monthsofuse" /> <g:textField name="${('q93_'+idx+'_howManyMonths')}"
 																						 value="${surveyInstance?.('q93_'+idx+'_howManyMonths')}"
-																						 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
+																						 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
 								</div>					  	
 					  	</td>
 					  </tr>
@@ -493,7 +493,7 @@ $(document).ready(function(){
 					   			<g:textField style="width:100px" 
 					   				name="${('q94_'+idx+'_ageStart')}" 
 					   				value="${surveyInstance?.('q94_'+idx+'_ageStart')}"
-									onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
 					   		</td>
 					   		<td style="width:5%">
 					   			<g:textField style="width:100px" 
@@ -525,8 +525,9 @@ $(document).ready(function(){
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step13" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:render template="/common/back_button"/></span>
+                    <%--<span class="button"><g:actionSubmit class="back" action="step13" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>

@@ -203,7 +203,7 @@ $(document).ready(function(){
                 <g:hiddenField name="step" value="${step}" />
                 <g:hiddenField name="surveyer" value="${session.user.login}" />
                 
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                     <table class="box-table-b-wide">
                         <tbody>
@@ -367,10 +367,10 @@ $(document).ready(function(){
 	                    					 value="${surveyInstance?.q12_which_cancer}" /> 
 	                    	</g:if>
 	                    	</td>
-	                    	<td style="width: 10%;">
-	                    		<g:textField name="${('q12_'+idx+'_ageDiagnosed')}"
+	                    	<td style="width: 5%;">
+	                    		<g:textField style="width: 50px" name="${('q12_'+idx+'_ageDiagnosed')}"
 	                    					 value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}"
-	                    					 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
+	                    					 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
 	                    	</td>
 	                    	<td>
 							 <g:each in="${TreatmentList }" status="j" var="treatment">
@@ -416,8 +416,9 @@ $(document).ready(function(){
                 </div>
                 <div class="buttons" style="clear:left">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step1_edit" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:render template="/common/back_button"/></span>
+                    <%--<span class="button"><g:actionSubmit class="back" action="step1_edit" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>

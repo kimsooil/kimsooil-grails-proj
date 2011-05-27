@@ -38,7 +38,7 @@
 						<g:each in="${ColonCancerSymptomList }" status="i" var="symptom">
 						<% def idx=i+1 %>
 						<tr>
-							<td style="width:45%;font-weight:bold">${symptom }
+							<td style="width:60%;font-weight:bold">${symptom }
 							</td>
 							<td>
 	                        	<g:radioGroup name="${('q36_'+idx)}"
@@ -58,7 +58,7 @@
                     <table class="box-table-b-wide">
                     <tbody>
                     <tr>
-                    	<td style="width:45%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
+                    	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
                     	<td>
                     	<%
 						def bleedingList=[message(code:'survey.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2')]
@@ -162,7 +162,7 @@
 						<table class="box-table-b-wide">
 						<thead>
 						<tr>
-							<th style="width:20%"><g:message code="survey.findings" default="Findings" /></th>
+							<th style="width:60%"><g:message code="survey.findings" default="Findings" /></th>
 							<th><g:message code="survey.yesno" default="Yes / No" /></th>
 						</tr>
 						</thead>
@@ -190,7 +190,7 @@
                     <table class="box-table-b-wide">
                     <tbody>
                     <tr>
-                    	<td style="width:50%;font-weight:bold"><label><g:message code="survey.q43" default="q43" /></label></td>
+                    	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q43" default="q43" /></label></td>
                     	<td>
                         	<g:radioGroup name="q43"
                             	value="${surveyInstance?.q43}" 
@@ -206,7 +206,7 @@
                     	</td>
                     </tr>
                     <tr>
-                    	<td style="width:50%;font-weight:bold"><label><g:message code="survey.q44" default="q44" /></label></td>
+                    	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q44" default="q44" /></label></td>
                     	<td>
                         	<g:radioGroup name="q44"
                             	value="${surveyInstance?.q44}" 

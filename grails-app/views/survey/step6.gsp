@@ -44,7 +44,7 @@ $(document).ready(function(){
             		onsubmit="return checkForm6();" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                     <%
 						def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
@@ -52,7 +52,7 @@ $(document).ready(function(){
                     <table class="box-table-b-wide">
                         <tbody>
                             <tr class="prop">
-                                <td valign="top"  style="width:35%;font-weight: bold;">
+                                <td valign="top" style="width:60%;font-weight: bold;">
                                     <label for="q24_HowDoYouFeelRightNow"><g:message code="survey.q24" default="HowDoYouFeelRightNow" /></label>
                                 </td>
                                 <td valign="top" class="${hasErrors(bean: surveyInstance, field: 'q24_howDoYouFeelRightNow', 'errors')}">
@@ -148,7 +148,7 @@ $(document).ready(function(){
 						message(code:"survey.q29.6"),
 						message(code:"survey.q29.7")]
 					 %>
-                    <table class="box-table-b-wide" style="width:500px">
+                    <table class="box-table-b-wide">
                     <thead>
                     <tr>
                     	<th><g:message code="survey.q29.diagnosis" default="Diagnosis" /></th>
@@ -159,7 +159,7 @@ $(document).ready(function(){
                     <g:each in="${PsychoDiagnosisList2 }" status="i" var="diagnosis">
                     <% def idx=i+1 %>
                     <tr>
-                    	<td style="width:250px;font-weight: bold;">
+                    	<td style="width:60%;font-weight: bold;">
                     	${diagnosis }
                     	<g:if test="${diagnosis==message(code:'survey.q29.7') }">
                     		<g:textField name="q29_other" value="${surveyInstance?.q29_other}" />
@@ -180,8 +180,9 @@ $(document).ready(function(){
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step5" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+                    <span class="button"><g:render template="/common/back_button"/></span>
+                    <%--<span class="button"><g:actionSubmit class="back" action="step5" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>

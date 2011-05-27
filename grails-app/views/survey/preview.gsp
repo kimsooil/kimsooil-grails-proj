@@ -53,7 +53,7 @@ $(document).ready(function(){
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:hiddenField name="consentNum" value="${surveyInstance?.consentNum}" />
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info"  model="['dob':surveyInstance?.DOB]"/>
                 
                 <%--<g:render template="preview"  model="[surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]"/> --%>
 

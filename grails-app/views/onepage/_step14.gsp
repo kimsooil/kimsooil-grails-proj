@@ -18,8 +18,8 @@
 						<g:each in="${MedicalConditionList}" status="i" var="medcond">
 						<%def idx=i+1 %>
 						<tr>
-							<td style="width:15%;border: 1px solid #9baff1;font-weight:bold;">${medcond }</td>
-							<td style="width:15%;border: 1px solid #9baff1;">
+							<td style="width:35%;border: 1px solid #9baff1;font-weight:bold;">${medcond }</td>
+							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:radioGroup name="${('q90_'+idx)}"
 	                            	value="${surveyInstance?.('q90_'+idx)}" 
 	                                labels="${yesno }" 
@@ -27,7 +27,7 @@
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 								</g:radioGroup>
 							</td>
-							<td style="width:25%;border: 1px solid #9baff1;">
+							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:message code="survey.age" /> <g:textField name="${('q90_'+idx+'_age')}" value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"/>
 							</td>
 							<td style="border: 1px solid #9baff1;">
@@ -53,7 +53,7 @@
 					 <g:each in="${WhereList }" status="i" var="location">
 					 <%def idx=i+1 %>
 					 <tr>
-					 	<td style="width:15%;font-weight:bold;">
+					 	<td style="width:25%;font-weight:bold;">
 					 		${location }
 					 	</td>
 					 	<td>

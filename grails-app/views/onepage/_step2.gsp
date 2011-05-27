@@ -147,14 +147,14 @@
 	                    	<g:each in="${CancerList}" status="i" var="cancertype">
 	                    	<% def idx=i+1 %>
 	                    	<tr class="prop">
-	                    	<td style="width: 20%;font-weight:bold;">
+	                    	<td style="width: 35%;font-weight:bold;">
 	                    	${cancertype}
 	                    	<g:if test="${cancertype==message(code:'survey.q12_other') }">
 	                    		<g:textField name="q12_which_cancer" value="${surveyInstance?.q12_which_cancer}" />
 	                    	</g:if>
 	                    	</td>
-	                    	<td style="width: 10%;">
-	                    		<g:textField name="${('q12_'+idx+'_ageDiagnosed')}" value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}" />
+	                    	<td style="width: 5%;">
+	                    		<g:textField style="width: 50px" name="${('q12_'+idx+'_ageDiagnosed')}" value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}" />
 	                    	</td>
 	                    	<td>
 	                    	<%--

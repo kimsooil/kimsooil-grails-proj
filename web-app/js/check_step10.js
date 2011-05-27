@@ -40,7 +40,7 @@ function checkForm10()
 	{
 		if (!fv.isRadioChecked(document.getElementsByName('q61')) || fv.isEmpty($('#q61_whatAge').val()))
 			fv.raiseError(i18nmessages.step10Err9);
-		if (!fv.isValidNumber($('#q61_whatAge').val(), 1, 99))
+		if (!fv.isValidNumber($('#q61_whatAge').val(), 1, ageCalculated))
 			fv.raiseError(i18nmessages.step10Err10);
 	}
 	if (!fv.isRadioChecked(document.getElementsByName('q62')) )
@@ -53,7 +53,7 @@ function checkForm10()
 			fv.raiseError(i18nmessages.step10Err12);
 		if (fv.isEmpty($('#q64').val()))
 			fv.raiseError(i18nmessages.step10Err13);
-		if (fv.isEmpty($('#q65').val()) || !fv.isValidNumber($('#q65').val(), 1, 99))
+		if (fv.isEmpty($('#q65').val()) || !fv.isValidNumber($('#q65').val(), 1, ageCalculated))
 			fv.raiseError(i18nmessages.step10Err14);
 	}
 	if (!fv.isRadioChecked(document.getElementsByName('q66')) )
@@ -66,7 +66,7 @@ function checkForm10()
 	}
 
 	if ((getRadioValue(document.getElementsByName('q66'))=='yes' || getRadioValue(document.getElementsByName('q66'))=='yes') &&
-	(fv.isEmpty($('#q68').val()) || !fv.isValidNumber($('#q68').val(), 1, 99))
+	(fv.isEmpty($('#q68').val()) || !fv.isValidNumber($('#q68').val(), 1, ageCalculated))
 	)
 	{
 		fv.raiseError(i18nmessages.step10Err17);
@@ -77,7 +77,7 @@ function checkForm10()
 	}
 	if (getRadioValue(document.getElementsByName('q69'))=='yes')
 	{
-		if (fv.isEmpty($('#q69_which').val()) || fv.isEmpty($('#q69_forWhat').val()) || !fv.isValidNumber($('#q69_whatAgeStarted').val(), 1, 99))
+		if (fv.isEmpty($('#q69_which').val()) || fv.isEmpty($('#q69_forWhat').val()) || !fv.isValidNumber($('#q69_whatAgeStarted').val(), 1, ageCalculated))
 			fv.raiseError(i18nmessages.step10Err19);
 	}
 	if (!fv.isRadioChecked(document.getElementsByName('q70')) )
