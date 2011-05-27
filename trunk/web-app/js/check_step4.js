@@ -28,32 +28,32 @@ function checkForm4()
 	{
 		fv.raiseError(i18nmessages.step4Err5);
 	}
-	/*// become all optional
+
 	if ((getRadioValue(document.getElementsByName('q15_1'))=='currently' || getRadioValue(document.getElementsByName('q15_1'))=='quit') &&
 		(($('#q15_1_howManyTimesPerWeek').val()=='' && $('#q15_1_howManyYears').val()=='') ||
-		 (!fv.isValidNumber($('#q15_1_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_1_howManyYears').val(), 1, 125))
+		 (!fv.isValidNumber($('#q15_1_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_1_howManyYears').val(), 1, ageCalculated))
 	   ){
 		fv.raiseError(i18nmessages.step4Err6);
 	}
 	if ((getRadioValue(document.getElementsByName('q15_2'))=='currently' || getRadioValue(document.getElementsByName('q15_2'))=='quit') &&
 		(($('#q15_2_howManyTimesPerWeek').val()=='' && $('#q15_2_howManyYears').val()=='') ||
-		 (!fv.isValidNumber($('#q15_2_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_2_howManyYears').val(), 1, 125))
+		 (!fv.isValidNumber($('#q15_2_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_2_howManyYears').val(), 1, ageCalculated))
 	   ){
 		fv.raiseError(i18nmessages.step4Err7);
 	}
 	if ((getRadioValue(document.getElementsByName('q15_3'))=='currently' || getRadioValue(document.getElementsByName('q15_3'))=='quit') &&
 		(($('#q15_3_howManyTimesPerWeek').val()=='' && $('#q15_3_howManyYears').val()=='') ||
-		 (!fv.isValidNumber($('#q15_3_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_3_howManyYears').val(), 1, 125))
+		 (!fv.isValidNumber($('#q15_3_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_3_howManyYears').val(), 1, ageCalculated))
 	   ){
 		fv.raiseError(i18nmessages.step4Err8);
 	}
 	if ((getRadioValue(document.getElementsByName('q15_4'))=='currently' || getRadioValue(document.getElementsByName('q15_4'))=='quit') &&
 		(($('#q15_4_howManyTimesPerWeek').val()=='' && $('#q15_4_howManyYears').val()=='') ||
-		 (!fv.isValidNumber($('#q15_4_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_4_howManyYears').val(), 1, 125))
+		 (!fv.isValidNumber($('#q15_4_howManyTimesPerWeek').val(), 1, 200)) || !fv.isValidNumber($('#q15_4_howManyYears').val(), 1, ageCalculated))
 	   ){
 		fv.raiseError(i18nmessages.step4Err9);
 	}
-	*/					
+				
 	if (!fv.isRadioChecked(document.getElementsByName('q16')))
 	{
 		fv.raiseError(i18nmessages.step4Err10);

@@ -142,7 +142,7 @@ $(document).ready(function(){
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
-                <g:render template="/common/status_info"/>
+                <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                 	<br/>
                 	<ul><label><g:message code="survey.q14" default="q14" /></label></ul>
@@ -217,7 +217,7 @@ $(document).ready(function(){
 									<g:message code="survey.q15_howManyYears.label" default="q15_howManyYears" />
 									<g:textField name="${('q15_'+idx+'_howManyYears')}"
 												 value="${surveyInstance?.('q15_'+idx+'_howManyYears')}"
-												 onkeyup="checkIfValidNumber(this.value, 1, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('tobaccoYear_status'+idx)}\')); " /> <span id="${('tobaccoYear_status'+idx)}"></span>
+												 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('tobaccoYear_status'+idx)}\')); " /> <span id="${('tobaccoYear_status'+idx)}"></span>
 						
 						</td>
 					</tr>
@@ -231,10 +231,10 @@ $(document).ready(function(){
                     <table class="box-table-b-wide">
                     	<tbody>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q16"><g:message code="survey.q16" default="q16.smoked100cigarettes" /></label> <span id="smoke100_status"></span>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q16', 'errors')}">
+                                <td>
                                     <g:radioGroup name="q16"
                                      value="${surveyInstance?.q16 }"
                                      labels="${yesno }" 
@@ -245,44 +245,44 @@ $(document).ready(function(){
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q17"><g:message code="survey.q17.label" default="q17" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q17', 'errors')}">
+                                <td>
                                     <g:textField name="q17" 
-                                    style="width: 100px"
+                                    style="width: 50px"
                                     value="${surveyInstance?.q17}" 
-                                    onkeyup="checkIfValidNumber(this.value, 0, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q17_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q17_status"></span>
+                                    onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q17_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q17_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q18"><g:message code="survey.q18.label" default="q18" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q18', 'errors')}">
+                                <td>
                                     <g:message code="survey.smokedFor" default="Smoked for" /> 
                                     <g:textField name="q18" 
-                                    style="width: 100px"
+                                    style="width: 50px"
                                     value="${surveyInstance?.q18}" 
-									onkeyup="checkIfValidNumber(this.value, 0, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q18_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q18_status"></span>
+									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q18_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q18_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q19"><g:message code="survey.q19.label" default="q19" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q19', 'errors')}">
+                                <td>
                                     <g:textField name="q19"
-                                    			 style="width: 100px"
+                                    			 style="width: 50px"
                                     			 value="${surveyInstance?.q19}"
                                     			 onkeyup="checkIfValidNumber(this.value, 0, 200, document.getElementById(\'${('q19_status')}\')); " /> <g:message code="survey.q19.cigarettesPerDay" default="cigarettes Per Day" /> <span id="q19_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q20"><g:message code="survey.q20.label" default="q20" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q20', 'errors')}">
+                                <td>
                                     <%--<g:checkBox name="q20" value="${surveyInstance?.q20}" />--%>
                                     <g:radioGroup name="stillSmoke"
                                      value="${surveyInstance?.stillSmoke }"
@@ -293,17 +293,17 @@ $(document).ready(function(){
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td valign="top" class="name">
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q21_dateStopSmoking"><g:message code="survey.q21_dateStopSmoking.label" default="q21_dateStopSmoking" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'q21_dateStopSmoking', 'errors')}">
+                                <td>
                                     <g:textField name="q21_whenStopSmoking_years" 
-                                    			 style="width: 100px"
+                                    			 style="width: 50px"
                                     			 value="${surveyInstance?.q21_whenStopSmoking_years}"
-                                    			 onkeyup="checkIfValidNumber(this.value, 0, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q21_status1')}\')); " /> <g:message code="survey.years.label" default="years" /> <span id="q21_status1"></span>
+                                    			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q21_status1')}\')); " /> <g:message code="survey.years.label" default="years" /> <span id="q21_status1"></span>
                                     <br/>
                                     <g:textField name="q21_whenStopSmoking_months"
-                                    			 style="width: 100px"
+                                    			 style="width: 50px"
                                     			 value="${surveyInstance?.q21_whenStopSmoking_months}"
 												 onkeyup="checkIfValidNumber(this.value, 0, 11, document.getElementById(\'${('q21_status2')}\')); " /> <g:message code="survey.months.label" default="months" /> <span id="q21_status2"></span>
 									<br/><g:message code="survey.and_or.label" default="and/or" />
@@ -324,9 +324,10 @@ $(document).ready(function(){
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step3" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
-                    <%--<span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
-<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
+                    <span class="button"><g:render template="/common/back_button"/></span>
+                    <%--<span class="button"><g:actionSubmit class="back" action="step3" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+					<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>
             </g:form>

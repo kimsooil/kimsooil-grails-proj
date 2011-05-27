@@ -63,7 +63,7 @@ $(document).ready(function(){
                 <g:hiddenField name="step" value="${step}" />
                 <g:hiddenField name="surveyer" value="${session.user.login}" />
                 <g:hiddenField name="age" value="" />
-                
+                <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" />-<g:select disabled="true" name="consentNumLoc" from="${surveyInstance.constraints.consentNumLoc.inList}" value="${surveyInstance?.consentNumLoc}" valueMessagePrefix="survey.consentNumLoc"  />-<g:textField disabled="true" name="consentNum" value="${surveyInstance?.consentNum}" /></h3><br/>
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
