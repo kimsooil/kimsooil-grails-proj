@@ -16,10 +16,10 @@
 <g:javascript>
 $(document).ready(function(){
 	<g:if test="${!surveyInstance?.completed}">
-  	$.jqDialog.alert('<p align="center"><label style="color:red"><g:message code="verify.important.message1" /><br/><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/><g:message code="verify.important.message2" /></label><br/></p>');
+  	//$.jqDialog.alert('<p align="center"><label style="color:red"><g:message code="verify.important.message1" /><br/><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/><g:message code="verify.important.message2" /></label><br/></p>');
 	</g:if>
 	<g:else>
-	$.jqDialog.alert('<p align="center"><label style="color:green"><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/>This survey has been locked by completion.<br/>Contact administrator for inquiry<br/></p>');
+	//$.jqDialog.alert('<p align="center"><label style="color:green"><img src="${resource(dir:'images',file:'important.gif')}" align="absmiddle" alt="important" /><br/>This survey has been locked by completion.<br/>Contact administrator for inquiry<br/></p>');
 	</g:else>
 	
 	window.onload= function(){
@@ -29,10 +29,11 @@ $(document).ready(function(){
   		$("[name=id]").attr("disabled", false);		  
   		$("[name=version]").attr("disabled", false);
   		//$("[name=consentNum]").attr("disabled", false);
+  		checkVerifyForm();
 	}
 
 });
-    
+
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
