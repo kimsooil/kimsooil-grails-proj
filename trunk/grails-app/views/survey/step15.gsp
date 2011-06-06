@@ -72,16 +72,7 @@ function checkForm15()
 		return true;
 	}	
 }
-function confirmSubmit()
-{
-	var agree=confirm("Are you sure you wish to send(submit)?");
-	if (agree){
-		return true ;
-	}
-	else{
-		return false ;
-	}
-}   
+
 </g:javascript>
 		  
     </head>
@@ -98,7 +89,7 @@ function confirmSubmit()
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform15"
-					onsubmit="return confirmSubmit()"
+					onsubmit="return checkForm15()"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
