@@ -29,11 +29,20 @@ $(document).ready(function(){
   		$("[name=id]").attr("disabled", false);		  
   		$("[name=version]").attr("disabled", false);
   		//$("[name=consentNum]").attr("disabled", false);
-  		checkVerifyForm();
+  		//checkVerifyForm();
 	}
 
 });
-
+function confirmSubmit()
+{
+	var agree=confirm(i18nmessages.confirmMsg);
+	if (agree){
+		return false;
+	}
+	else{
+		return false ;
+	}
+}   
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
@@ -49,7 +58,7 @@ $(document).ready(function(){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform_preview"
-            		onsubmit="return checkVerifyForm();"
+            		onsubmit="return confirmSubmit();"
 					method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
@@ -115,6 +124,7 @@ $(document).ready(function(){
 <g:if test="${!surveyInstance?.completed}"> 
 	<span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
 	<span class="button"><g:actionSubmit class="complete" action="completed" value="${message(code: 'complete', default: 'Complete')}" /></span>
+	<span class="menuButton"><g:render template="/common/step_meter"/></span>
 <br/>
 </g:if>
 <g:else>
