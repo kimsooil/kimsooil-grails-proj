@@ -74,8 +74,10 @@
 					</tr>
 					</g:each>
 					<tr>
-						<td><g:message code="survey.q46.t7" default="other" /></td>
-						<td><g:textField name="q46_7" value="${surveyInstance?.q46_7}" />
+						<td><label style="font-weight:bold;"><g:message code="survey.q46.t7" default="other" /></label></td>
+						<td><g:textField name="q46_7"
+										 value="${surveyInstance?.q46_7}"
+										 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q46_7status')}\')); "/> <span id="${('q46_7status')}"></span>
 						</td>
 					</tr>					
 					</tbody>
@@ -119,7 +121,9 @@
 								</g:radioGroup>
 								<br/>
 								<div style="clear:left">
-									<g:message code="survey.findings" default="findings" />: <g:textField name="q49_findings_pelvic_exam" value="${surveyInstance?.q49_findings_pelvic_exam}" />
+									<g:message code="survey.findings" default="findings" />: <g:textField name="q49_findings_pelvic_exam" 
+																										  value="${surveyInstance?.q49_findings_pelvic_exam}"
+																										  onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q49_findings_status')}\')); "/> <span id="${('q49_findings_status')}"></span>
 								</div>
 	                    	</td>
 	                    </tr>
@@ -134,7 +138,9 @@
 								</g:radioGroup>
 								<br/>
 								<div style="clear:left">
-									<g:message code="survey.findings" default="findings" />: <g:textField name="q50_findings_digital_rectal_exam" value="${surveyInstance?.q50_findings_digital_rectal_exam}" />
+									<g:message code="survey.findings" default="findings" />: <g:textField name="q50_findings_digital_rectal_exam"
+																										  value="${surveyInstance?.q50_findings_digital_rectal_exam}"
+																										  onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q50_findings_status')}\')); "/> <span id="${('q50_findings_status')}"></span>
 								</div>
 	                    	</td>
 	                    </tr>	                    	                                                                                                         
@@ -175,7 +181,7 @@
 						<th><g:message code="survey.diagnosticTest" default="Diagnostic Test" /></th>
 						<th><g:message code="survey.yesno" default="Yes / No" /></th>
 						<th><g:message code="survey.monthYear" default="Month / Year" /></th>
-						<th><g:message code="survey.results" default="Result" /></th>
+						<th><g:message code="survey.results" default="Result" /> (<label style="color:red">#</label>: <g:message code="survey.numberonly" />)</th>
 					</tr>
 					</thead>
 					<tbody>
@@ -196,7 +202,36 @@
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 						</td>
 						<td>
-						 <g:textField name="${('q51_'+idx+'_result')}" value="${surveyInstance?.('q51_'+idx+'_result')}" />
+						<g:if test="${idx==1}">
+						 <label style="color:red">#</label><g:textField name="${('q51_'+idx+'_result')}"
+						 			  value="${surveyInstance?.('q51_'+idx+'_result')}"
+						 			  onkeyup="checkIfValidNumber(this.value, 0, 1000, document.getElementById(\'${('q51_result'+idx)}\')); "/>
+						 
+						 </g:if>
+						 <g:elseif  test="${idx==4 || idx==5 || idx==6}">
+						 <g:textField name="${('q51_'+idx+'_result')}"
+						 			  value="${surveyInstance?.('q51_'+idx+'_result')}" />
+
+						 </g:elseif>						 
+						 <g:else>
+						 <label style="color:red">#</label><g:textField name="${('q51_'+idx+'_result')}"
+						 			  value="${surveyInstance?.('q51_'+idx+'_result')}"
+						 			  onkeyup="checkIfNumber(this.value, document.getElementById(\'${('q51_result'+idx)}\')); "/>
+						 
+						 </g:else>
+						 
+						 <g:if test="${idx==1}">
+						 U/mL
+						 </g:if>
+						 <g:elseif test="${idx==2}">
+						 ng/mL
+						 </g:elseif>
+						 <g:elseif test="${idx==3}">
+						 mIU/mL
+						 </g:elseif>
+						  <span id="${('q51_result'+idx)}"></span>
+						 
+
                     	</td>
                     </tr>
                     </g:each>					
@@ -220,7 +255,9 @@
 								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52_date_most_recent_pap_smear" precision="month" value="${surveyInstance?.q52_date_most_recent_pap_smear}"  
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 								<br/>
-                            	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear" value="${surveyInstance?.q52_results_pap_smear}" />
+                            	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear"
+                            																		value="${surveyInstance?.q52_results_pap_smear}"
+                            																		onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q52_status')}\')); "/> <span id="${('q52_status')}"></span>
                             </div>
                     	</td>
                     </tr>
@@ -235,9 +272,17 @@
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
-							<label><g:message code="survey.q53.which" default="q53_which" /></label>: <g:textField name="q53_medication_fertility" value="${surveyInstance?.q53_medication_fertility}" />&nbsp;&nbsp;&nbsp;
+							<label><g:message code="survey.q53.which" default="q53_which" /></label>: 
+							<g:textField name="q53_medication_fertility"
+										 value="${surveyInstance?.q53_medication_fertility}"
+										 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q53_which_status')}\')); "/> <span id="${('q53_which_status')}"></span>
+										 &nbsp;&nbsp;&nbsp;
 							<br/>
-                            <label><g:message code="survey.q53.howlong" default="q53_howlong" /></label>: <g:textField name="q53_how_long_use_fertility_medication" value="${surveyInstance?.q53_how_long_use_fertility_medication}" />
+                            <label><g:message code="survey.q53.howlong" default="q53_howlong" /></label>: 
+                            <g:textField name="q53_how_long_use_fertility_medication"
+                            			 value="${surveyInstance?.q53_how_long_use_fertility_medication}"
+                            			 onkeyup="checkIfValidNumber(this.value, 1, 360, document.getElementById(\'q53_length_status\')); "/>
+                            <span id="q53_length_status"></span>
                             </div>
                     	</td>
                     </tr>                    

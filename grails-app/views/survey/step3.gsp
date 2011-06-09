@@ -83,12 +83,13 @@ $(document).ready(function(){
 						</ul>
 					</ul>
 					<br/>					                	
-                	<div
+                	<div id="q13div"> 
                 	<%--
                     	<g:if test="${surveyInstance?.familyHaveCancer=='yes'}">style="display:block;"</g:if>
                     	<g:else>style="display:none;"</g:else>
+                    	 id="q13div">
                     --%>
-                     id="q13div"> 
+                     
                     	                	
                     <table class="box-table-b-wide">
                     	<thead>
@@ -146,7 +147,7 @@ $(document).ready(function(){
 						 	<% def idx=i+1 %>
 						 	<td valign="top" class="name rounded-foot-left">${idx}. ${member}
 							 	<g:if test="${member==message(code:'survey.q13_others') }">
-							 		<g:textField name="q13_other_family_member" value="${surveyInstance?.q13_other_family_member"} />
+							 		<g:textField name="q13_other_family_member" value="${surveyInstance?.q13_other_family_member}" />
 							 	</g:if>
 						 	</td>
 						 	<td valign="top" class="value rounded-foot-right ${hasErrors(bean: surveyInstance, field: 'q13_'+idx+'_cancerType', 'errors')} ${hasErrors(bean: surveyInstance, field: 'q13_'+idx+'_ageDiagnosed', 'errors')}">

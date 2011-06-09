@@ -5,7 +5,7 @@
                     <table class="box-table-b-wide">
                         <tbody>
                             <tr class="prop">
-                                <td valign="top"  style="width:35%;font-weight: bold;">
+                                <td valign="top" style="width:60%;font-weight: bold;">
                                     <label for="q24_HowDoYouFeelRightNow"><g:message code="survey.q24" default="HowDoYouFeelRightNow" /></label>
                                 </td>
                                 <td valign="top" class="${hasErrors(bean: surveyInstance, field: 'q24_howDoYouFeelRightNow', 'errors')}">
@@ -28,7 +28,10 @@
                                     <label for="q25_howHaveYouFeltForPast4Weeks"><g:message code="survey.q25" default="howHaveYouFeltForPast4Weeks" /></label>
                                 </td>
                                 <td valign="top" class="${hasErrors(bean: surveyInstance, field: 'q25_howHaveYouFeltForPast4Weeks', 'errors')}">
-                                    <g:textField name="q25_howHaveYouFeltForPast4Weeks" value="${surveyInstance?.q25_howHaveYouFeltForPast4Weeks}" />
+                                    <g:textField name="q25_howHaveYouFeltForPast4Weeks"
+												 value="${surveyInstance?.q25_howHaveYouFeltForPast4Weeks}"
+												 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q25_status')}\')); "/> <span id="${('q25_status')}"></span> 
+
                                 </td>
                             </tr>
                             <tr class="prop">
@@ -43,7 +46,9 @@
 										<g:render template="/common/checkmark_radio" model="[it:it]"/>
 									</g:radioGroup>
 									<div  style="clear:left">
-									<br/><g:message code="survey.q26.ifyesexplain" default="If yes, explain"/>: <g:textField name="q26_explain" value="${surveyInstance?.q26_explain}" />
+									<br/><g:message code="survey.q26.ifyesexplain" default="If yes, explain"/>: <g:textField name="q26_explain"
+																															 value="${surveyInstance?.q26_explain}"
+																															 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q26_status')}\')); "/> <span id="${('q26_status')}"></span>
 									</div>
                                 </td>
                             </tr>                                                                                   
@@ -96,7 +101,7 @@
 						message(code:"survey.q29.6"),
 						message(code:"survey.q29.7")]
 					 %>
-                    <table class="box-table-b-wide" style="width:500px">
+                    <table class="box-table-b-wide">
                     <thead>
                     <tr>
                     	<th><g:message code="survey.q29.diagnosis" default="Diagnosis" /></th>
@@ -107,7 +112,7 @@
                     <g:each in="${PsychoDiagnosisList2 }" status="i" var="diagnosis">
                     <% def idx=i+1 %>
                     <tr>
-                    	<td style="width:250px;font-weight: bold;">
+                    	<td style="width:60%;font-weight: bold;">
                     	${diagnosis }
                     	<g:if test="${diagnosis==message(code:'survey.q29.7') }">
                     		<g:textField name="q29_other" value="${surveyInstance?.q29_other}" />

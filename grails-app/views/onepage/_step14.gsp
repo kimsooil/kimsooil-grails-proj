@@ -18,7 +18,7 @@
 						<g:each in="${MedicalConditionList}" status="i" var="medcond">
 						<%def idx=i+1 %>
 						<tr>
-							<td style="width:35%;border: 1px solid #9baff1;font-weight:bold;">${medcond }</td>
+							<td style="width:35%;border: 1px solid #9baff1;font-weight:bold;">${idx}. ${medcond }</td>
 							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:radioGroup name="${('q90_'+idx)}"
 	                            	value="${surveyInstance?.('q90_'+idx)}" 
@@ -28,7 +28,10 @@
 								</g:radioGroup>
 							</td>
 							<td style="width:20%;border: 1px solid #9baff1;">
-								<g:message code="survey.age" /> <g:textField name="${('q90_'+idx+'_age')}" value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"/>
+								<g:message code="survey.age" /> <g:textField name="${('q90_'+idx+'_age')}" 
+																			 value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
+							
 							</td>
 							<td style="border: 1px solid #9baff1;">
 								<g:message code="survey.year" /> <g:datePicker name="${('q90_'+idx+'_year')}" precision="year" value="${surveyInstance?.('q90_'+idx+'_year')}"  
@@ -54,7 +57,7 @@
 					 <%def idx=i+1 %>
 					 <tr>
 					 	<td style="width:25%;font-weight:bold;">
-					 		${location }
+					 		${idx}. ${location }
 					 	</td>
 					 	<td>
 
@@ -66,7 +69,9 @@
 								</g:radioGroup>
 								<br/>
 								<div style="clear:left;">
-									<g:message code="survey.howmanyyears" /> <g:textField name="${('q91_'+idx+'_howManyYears')}" value="${surveyInstance?.('q91_'+idx+'_howManyYears')}" />
+									<g:message code="survey.howmanyyears" /> <g:textField name="${('q91_'+idx+'_howManyYears')}"
+																			value="${surveyInstance?.('q91_'+idx+'_howManyYears')}" 
+																			onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
 								</div>
 					 	</td>
 					 </tr>
@@ -95,8 +100,8 @@
 					  <g:each in="${MaterialSubstanceList }" status="i" var="mat">
 					  <% def idx=i+1 %>
 					  <tr>
-					  	<td style="width:15%;font-weight:bold;">
-					  		${mat }
+					  	<td style="width:25%;font-weight:bold;">
+					  		${idx}. ${mat }
 					  	</td>
 					  	<td>
 								<g:radioGroup name="${('q92_'+idx)}"
@@ -107,7 +112,9 @@
 								</g:radioGroup>
 								<br/>
 								<div style="clear:left;">
-									<g:message code="survey.howmanyyears" /> <g:textField name="${('q92_'+idx+'_howManyYears')}" value="${surveyInstance?.('q92_'+idx+'_howManyYears')}" />
+									<g:message code="survey.howmanyyears" /> <g:textField name="${('q92_'+idx+'_howManyYears')}" 
+																						  value="${surveyInstance?.('q92_'+idx+'_howManyYears')}" 
+																						  onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
 								</div>
 					  	</td>
 					  </tr>
@@ -135,7 +142,7 @@
 					  </ul>
 					 
 					<br/><br/>
-					 <label><ul><g:message code="survey.q93.table" default="q93.table" /></label></ul>
+					 <ul><g:message code="survey.q93.table" default="q93.table" /></ul>
 					 <%
 					 def NicotineReplacementList=[message(code:'survey.q93.t1'),
 						 						message(code:'survey.q93.t2'),
@@ -148,7 +155,7 @@
 					  <g:each in="${NicotineReplacementList }" status="i" var="replacement">
 					  <%def idx=i+1 %>
 					  <tr>
-					  	<td style="width:15%;font-weight:bold;">${replacement }</td>
+					  	<td style="width:25%;font-weight:bold;">${idx}. ${replacement }</td>
 					  	<td>
 								<g:radioGroup name="${('q93_'+idx)}"
 	                            	value="${surveyInstance?.('q93_'+idx)}" 
@@ -158,7 +165,9 @@
 								</g:radioGroup>
 								<br/>
 								<div style="clear:left;">
-									<g:message code="survey.monthsofuse" /> <g:textField name="${('q93_'+idx+'_howManyMonths')}" value="${surveyInstance?.('q93_'+idx+'_howManyMonths')}" />
+									<g:message code="survey.monthsofuse" /> <g:textField name="${('q93_'+idx+'_howManyMonths')}"
+																						 value="${surveyInstance?.('q93_'+idx+'_howManyMonths')}"
+																						 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
 								</div>					  	
 					  	</td>
 					  </tr>
@@ -179,7 +188,7 @@
 					   <thead>
 					   <tr>
 					   		<th style="border: 1px solid #9baff1;;font-weight:bold;" colspan="5">
-					   		<g:message code="survey.q94.table" />
+					   		<g:message code="survey.q94.table" /><%-- <input onclick="clear_q99();" type="button" value="Clear Q99" /> --%>
 					   		</th>
 					   </tr>
 					   <tr>
@@ -194,7 +203,7 @@
 					   <g:each in="${DrugMedicineList }" status="i" var="drug">
 					   <%def idx=i+1 %>
 					   <tr>
-					   		<td style="width:30%;font-weight:bold;">${drug }
+					   		<td style="width:30%;font-weight:bold;">${idx}. ${drug }
 					   		<g:if test="${idx==5}">
 					   			<g:textField style="width:100px" name="q94_otherMedName1" value="${surveyInstance?.q94_otherMedName1}" />
 					   		</g:if>
@@ -203,10 +212,16 @@
 					   		</g:if>
 					   		</td>
 					   		<td style="width:5%">
-					   			<g:textField style="width:100px" name="${('q94_'+idx+'_ageStart')}" value="${surveyInstance?.('q94_'+idx+'_ageStart')}" />
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_'+idx+'_ageStart')}" 
+					   				value="${surveyInstance?.('q94_'+idx+'_ageStart')}"
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
 					   		</td>
 					   		<td style="width:5%">
-					   			<g:textField style="width:100px" name="${('q94_'+idx+'_NumPillsPerWeek')}" value="${surveyInstance?.('q94_'+idx+'_NumPillsPerWeek')}" />
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_'+idx+'_NumPillsPerWeek')}" 
+					   				value="${surveyInstance?.('q94_'+idx+'_NumPillsPerWeek')}"
+					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status'+idx)}\')); "/> <span name="${('q94_pills_status'+idx)}" id="${('q94_pills_status'+idx)}"></span>
 					   		</td>
 					   		<td style="width:30%">
 					   		<%
@@ -220,7 +235,10 @@
 								</g:radioGroup>
 					   		</td>
 					   		<td>
-					   			<g:textField style="width:100px" name="${('q94_'+idx+'_ageStop')}" value="${surveyInstance?.('q94_'+idx+'_ageStop')}" />
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_'+idx+'_ageStop')}" 
+					   				value="${surveyInstance?.('q94_'+idx+'_ageStop')}"
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_${idx}_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status'+idx)}\')); "/> <span name="${('q94_ageStop_status'+idx)}" id="${('q94_ageStop_status'+idx)}"></span>
 					   		</td>
 					   </tr>
 					   </g:each>
