@@ -24,8 +24,7 @@
                     	<label><g:message code="survey.q84" default="q84" /></label>
                     </div>
                     </ul>
-                    <br/>
-                    
+                    <br/>                   
 
                     <%
 					def RadiationTypeList=[message(code:'survey.q84.t1'),
@@ -53,7 +52,7 @@
 					 <%def idx = i+1 %>
 					 <tr>
 					 	<td style="width:25%;font-weight:bold">					 		
-					 		<g:if test="${radiation==message(code:'survey.q84.t10') }">
+					 		${idx }. <g:if test="${radiation==message(code:'survey.q84.t10') }">
 					 			<g:message code="survey.q84.another.place" default="Indicate another place" />
 					 			<g:textField name="q84_another" value="${surveyInstance?.q84_another}" />
 					 		</g:if>
@@ -74,7 +73,11 @@
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 					 	</td>
 					 	<td style="width:10%">
-					 		<g:textField name="${('q84_'+idx+'_whatAge')}" value="${surveyInstance?.('q84_'+idx+'_whatAge')}" />
+					 		<g:textField name="${('q84_'+idx+'_whatAge')}"
+					 					 value="${surveyInstance?.('q84_'+idx+'_whatAge')}" 
+					 					 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q84_age_status'+idx)}\')); "/>
+					 		<br/>
+					 		 <span id="${('q84_age_status'+idx)}"></span> 
 					 	</td>
 					 </tr>
 					 </g:each>

@@ -29,7 +29,9 @@
                 		</td>
                 		<td style="vertical-align: bottom; ">
 							<g:message code="survey.q14_howManyPerWeek.label" default="q14_howManyPerWeek" /><br/>
-							<g:textField name="${('q14_'+idx+'_howManyPerWeek')}" value="${surveyInstance?.('q14_'+idx+'_howManyPerWeek')}" />
+							<g:textField name="${('q14_'+idx+'_howManyPerWeek')}" 
+										 value="${surveyInstance?.('q14_'+idx+'_howManyPerWeek')}"
+										 onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('alcohol_status'+idx)}\')); " /> <span id="${('alcohol_status'+idx)}"></span>
                 		</td>
                 	</tr>
                 	</g:each>
@@ -70,14 +72,13 @@
 									<g:message code="survey.q15_howManyYears.label" default="q15_howManyYears" />
 									<g:textField name="${('q15_'+idx+'_howManyYears')}"
 												 value="${surveyInstance?.('q15_'+idx+'_howManyYears')}"
-												 onkeyup="checkIfValidNumber(this.value, 1, 125, document.getElementById(\'${('tobaccoYear_status'+idx)}\')); " /> <span id="${('tobaccoYear_status'+idx)}"></span>
+												 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('tobaccoYear_status'+idx)}\')); " /> <span id="${('tobaccoYear_status'+idx)}"></span>
 						
 						</td>
 					</tr>
 					</g:each>
 					</tbody>
 					</table>
-
                     
                     <%
 						def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
@@ -86,7 +87,7 @@
                     	<tbody>
                             <tr class="prop">
                                 <td style="width: 65%;font-weight:bold;">
-                                    <label for="q16"><g:message code="survey.q16" default="q16.smoked100cigarettes" /></label>
+                                    <label for="q16"><g:message code="survey.q16" default="q16.smoked100cigarettes" /></label> <span id="smoke100_status"></span>
                                 </td>
                                 <td>
                                     <g:radioGroup name="q16"
@@ -99,31 +100,41 @@
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td>
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q17"><g:message code="survey.q17.label" default="q17" /></label>
                                 </td>
                                 <td>
-                                    <g:textField name="q17" value="${surveyInstance?.q17}" /> <g:message code="survey.years" default="Years" />
+                                    <g:textField name="q17" 
+                                    style="width: 50px"
+                                    value="${surveyInstance?.q17}" 
+                                    onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q17_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q17_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td>
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q18"><g:message code="survey.q18.label" default="q18" /></label>
                                 </td>
                                 <td>
-                                    <g:message code="survey.smokedFor" default="Smoked for" /> <g:textField name="q18" value="${surveyInstance?.q18}" /> <g:message code="survey.years" default="Years" />
+                                    <g:message code="survey.smokedFor" default="Smoked for" /> 
+                                    <g:textField name="q18" 
+                                    style="width: 50px"
+                                    value="${surveyInstance?.q18}" 
+									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q18_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q18_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td>
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q19"><g:message code="survey.q19.label" default="q19" /></label>
                                 </td>
                                 <td>
-                                    <g:textField name="q19" value="${surveyInstance?.q19}" /> <g:message code="survey.q19.cigarettesPerDay" default="cigarettes Per Day" />
+                                    <g:textField name="q19"
+                                    			 style="width: 50px"
+                                    			 value="${surveyInstance?.q19}"
+                                    			 onkeyup="checkIfValidNumber(this.value, 0, 200, document.getElementById(\'${('q19_status')}\')); " /> <g:message code="survey.q19.cigarettesPerDay" default="cigarettes Per Day" /> <span id="q19_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td>
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q20"><g:message code="survey.q20.label" default="q20" /></label>
                                 </td>
                                 <td>
@@ -133,18 +144,26 @@
                                      labels="${yesno }"  
                                      values="['yes','no']" >
 										<g:render template="/common/checkmark_radio" model="[it:it]"/>
-									</g:radioGroup>                                    
+									</g:radioGroup> <span id="stillSmoke_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
-                                <td>
+                                <td style="width: 65%;font-weight:bold;">
                                     <label for="q21_dateStopSmoking"><g:message code="survey.q21_dateStopSmoking.label" default="q21_dateStopSmoking" /></label>
                                 </td>
                                 <td>
-                                    <g:textField name="q21_whenStopSmoking_years" value="${surveyInstance?.q21_whenStopSmoking_years}" /> <g:message code="survey.years.label" default="years" />
-                                    <br/><g:textField name="q21_whenStopSmoking_months" value="${surveyInstance?.q21_whenStopSmoking_months}" /> <g:message code="survey.months.label" default="months" />
+                                    <g:textField name="q21_whenStopSmoking_years" 
+                                    			 style="width: 50px"
+                                    			 value="${surveyInstance?.q21_whenStopSmoking_years}"
+                                    			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q21_status1')}\')); " /> <g:message code="survey.years.label" default="years" /> <span id="q21_status1"></span>
+                                    <br/>
+                                    <g:textField name="q21_whenStopSmoking_months"
+                                    			 style="width: 50px"
+                                    			 value="${surveyInstance?.q21_whenStopSmoking_months}"
+												 onkeyup="checkIfValidNumber(this.value, 0, 11, document.getElementById(\'${('q21_status2')}\')); " /> <g:message code="survey.months.label" default="months" /> <span id="q21_status2"></span>
 									<br/><g:message code="survey.and_or.label" default="and/or" />
                                     <br/>
+
                                     <g:kimsiDatePicker name="q21_dateStopSmoking" precision="day" value="${surveyInstance?.q21_dateStopSmoking}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /><br/>
 

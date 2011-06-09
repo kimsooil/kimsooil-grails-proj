@@ -61,7 +61,7 @@
                     	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
                     	<td>
                     	<%
-						def bleedingList=[message(code:'survey.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2')]
+						def bleedingList=[message(code:'survey.q37.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2')]
 						 %>
                         	<g:radioGroup name="q37"
                             	value="${surveyInstance?.q37}" 
@@ -137,6 +137,7 @@
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
+							
 							<g:message code="survey.when" default="When" />: <g:datePicker name="date_sigmoidoscopy_colonoscopy" precision="month" value="${surveyInstance?.date_sigmoidoscopy_colonoscopy}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
                                       </div>
@@ -216,7 +217,9 @@
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
-								<g:message code="survey.hemoglobinLevels" default="hemoglobin_levels" />: <g:textField name="q44_hemoglobin_levels" value="${surveyInstance?.q44_hemoglobin_levels}" />
+								<g:message code="survey.hemoglobinLevels" default="hemoglobin_levels" />: <g:textField name="q44_hemoglobin_levels" 
+																													   value="${surveyInstance?.q44_hemoglobin_levels}"
+																													   onkeyup="checkIfValidNumber(this.value, 7, 15, document.getElementById(\'q44_status\')); "/> <span id="q44_status"></span>
 							</div>                    	
                     	</td>
                     </tr>                    

@@ -25,10 +25,11 @@
                         <g:each in="${ActivityList }" status="i" var="activity">
                         <% def idx=i+1 %>
 						<tr class="prop">
-							<td style="width:20%;font-weight: bold;">
+							<td style="width:25%;font-weight: bold;">
 								${activity }
 								<g:if test="${activity==message(code:'survey.q22.others') }">
 									<g:textField style="width:100px" name="q22_others" value="${surveyInstance?.q22_others }" />
+									<span id="q22_others_status"></span>
 								</g:if>
 							</td>
 							<td style="width:80%;">

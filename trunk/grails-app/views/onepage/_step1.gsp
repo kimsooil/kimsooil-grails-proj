@@ -36,7 +36,7 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'DOB', 'errors')}">
                                     <g:kimsiDatePicker name="DOB" precision="day" value="${surveyInstance?.DOB}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="age_calculated"></span>
                                 </td>
                             </tr>
                             <% def RaceList=[message(code:"survey.race.white"),
@@ -82,11 +82,11 @@
                                     <label for="addr_street1"><g:message code="survey.q2" default="q2" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'addr_street1', 'errors')}">
-                                    <g:message code="survey.addr_street1.label" default="Addrstreet1" />: <g:textField name="addr_street1" value="${surveyInstance?.addr_street1}" /><br/>
+                                    <label style="color:red">*</label><g:message code="survey.addr_street1.label" default="Addrstreet1" />: <g:textField name="addr_street1" value="${surveyInstance?.addr_street1}" /><br/>
                                     <g:message code="survey.addr_street2.label" default="Addrstreet2" />: <g:textField name="addr_street2" value="${surveyInstance?.addr_street2}" /><br/>
-                                    <g:message code="survey.addr_city.label" default="Addrcity" />: <g:textField name="addr_city" value="${surveyInstance?.addr_city}" /><br/>
-                                    <g:message code="survey.addr_state.label" default="Addrstate" />: <g:textField name="addr_state" value="${surveyInstance?.addr_state}" /><br/>
-                                    <g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="addr_zipcode" value="${surveyInstance?.addr_zipcode}" onkeyup="postcode_validate(this.value);"/> <span id="status"></span>
+                                    <label style="color:red">*</label><g:message code="survey.addr_city.label" default="Addrcity" />: <g:textField name="addr_city" value="${surveyInstance?.addr_city}" /><br/>
+                                    <label style="color:red">*</label><g:message code="survey.addr_state.label" default="Addrstate" />: <g:textField name="addr_state" value="${surveyInstance?.addr_state}" /><br/>
+                                    <label style="color:red">*</label><g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="addr_zipcode" value="${surveyInstance?.addr_zipcode}" onkeyup="postcode_validate(this.value, document.getElementById('status'));"/> <span id="status"></span>
                                 </td>
                             </tr>
 
@@ -102,7 +102,8 @@
           							 from="${countryNames}"
           							 optionKey="key"
           							 optionValue="value"
-          							 noSelection="['':'-Choose your country-']"/>
+          							 onchange="isCountryValid(this.value);"
+          							 noSelection="['':'-Choose your country-']"/> <span id="country_status"></span>
           							                                     
                                 </td>
                             </tr>
@@ -159,8 +160,8 @@
                                     <g:textField name="current_occupation" value="${surveyInstance?.current_occupation}" />&nbsp;&nbsp;&nbsp;
                                     <br/><g:message code="survey.length" default="Length" />: <g:textField name="current_occupation_time"
                                      value="${surveyInstance?.current_occupation_time}"
-                                     onKeyPress="return numbersonly(this, event)" />
-                                     <g:message code="survey.length.less.than.1yr" default="(If < 1 yrs, put 1)" />
+                                     onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById('cjob_status'));" />
+                                     <g:message code="survey.length.less.than.1yr" default="(If < 1 yrs, put 1)" /> <span id="cjob_status"></span>
                                 </td>
                             </tr>
 
@@ -170,8 +171,10 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'prior_job_time', 'errors')}">
                                     <g:textField name="prior_job" value="${surveyInstance?.prior_job}" />&nbsp;&nbsp;&nbsp;
-                                    <br/><g:message code="survey.length" default="Length" />: <g:textField name="prior_job_time" value="${surveyInstance?.prior_job_time}" />
-                                    <g:message code="survey.length.less.than.1yr" default="(If < 1 yrs, put 1)" />
+                                    <br/><g:message code="survey.length" default="Length" />: <g:textField name="prior_job_time"
+                                     value="${surveyInstance?.prior_job_time}"
+                                     onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById('pjob_status'));" />
+                                    <g:message code="survey.length.less.than.1yr" default="(If < 1 yrs, put 1)" /> <span id="pjob_status"></span>
                                 </td>
                             </tr>
 

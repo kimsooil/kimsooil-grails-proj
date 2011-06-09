@@ -1,7 +1,7 @@
                 <div class="dialog">
 					<%
 					def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
-					def freqList=[message(code:'survey.daily'), message(code:'survey.weekly'),message(code:'survey.monthly'),message(code:'survey.none')]
+					def freqList=[message(code:'survey.daily'), message(code:'survey.weekly'),message(code:'survey.monthly'),message(code:'survey.none2')]
 					%>                   
                     <br/>
                     <ul>
@@ -19,8 +19,10 @@
 								</g:radioGroup>
 						</div>
 						<br/>
-						<div style="clear:left">
-								<g:message code="survey.whichone" default="which one" /> <g:textField name="q85_which" value="${surveyInstance?.q85_which}" />
+						<div id="whichDiet" style="clear:left;" >
+								<g:message code="survey.whichone" default="which one" /> <g:textField name="q85_which"
+																									  value="${surveyInstance?.q85_which}"
+																									  onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q85_status')}\')); "/> <span id="${('q85_status')}"></span>
 						</div>
 						</ul>
    	
@@ -75,7 +77,9 @@
 					 <tr>
 					 	<td style="font-size: 12px;">
 					 	<%--${i+1}. --%>
+
 					 	 ${SaturatedFatList[i]}
+
 					 	<g:if test="${i==13 }">
 					 		<g:textField name="q85_sat_fat_other" value="${surveyInstance?.q85_sat_fat_other}" style="width:75px"/>
 					 	</g:if>
@@ -90,14 +94,20 @@
 					 	</td>
 					 	<td>
 					 	<%--${i+1}.  --%>
-					 	${VegetableList[i]}
+					 	<g:if test="${idx==11 }">
+					 	<a target=_new href="http://en.m.wikipedia.org/wiki/Gherkin">${VegetableList[i]}</a>
+					 	</g:if>
+					 	<g:else>
+					 	 ${VegetableList[i]}
+					 	</g:else>					 	
+					 	
 						 	<g:if test="${i==13 }">
 						 		<g:textField name="q85_vege_other" value="${surveyInstance?.q85_vege_other}" style="width:75px"/>
 						 	</g:if>
 						
 						 <g:else>&nbsp;</g:else>
 					 	</td>
-					 	<td style="font-size: 12px;">
+					 	<td style="font-size: 11px;">
 					 	
 							<g:radioGroup name="${('q85_vege_'+idx)}"
 	                            	value="${surveyInstance?.('q85_vege_'+idx)}" 
@@ -193,7 +203,7 @@
 					 </tr>
 					 </g:each>
 					 <tr>
-					 <td><g:message code="survey.q89.t8" /></td>
+					 <td><label style="font-weight:bold;"><g:message code="survey.q89.t8" /></label></td>
 					 <td><g:textField name="q89_other" value="${surveyInstance?.q89_other}" /></td>
 					 </tr>
 					 </tbody>
