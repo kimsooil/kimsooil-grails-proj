@@ -6,6 +6,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
         <title>Hispanic Bio-Bank - Home</title>
+        <export:resource />
     </head>
     <body>
         <div class="nav">

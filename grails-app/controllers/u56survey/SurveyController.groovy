@@ -1,9 +1,17 @@
 package u56survey
 
-import static java.util.Calendar.YEAR
+import static java.util.Calendar.*
+
+import org.codehaus.groovy.grails.commons.ConfigurationHolder
 
 class SurveyController {
 	def beforeInterceptor = [action:this.&authz, except:["index"]]
+
+	// Export service provided by Export plugin
+	def exportService
+	
+	def today = new Date()
+	def thisyear=today[YEAR]
 	
 	def authz() {
 		 if(!session.user) {
@@ -19,8 +27,17 @@ class SurveyController {
     }
 
     def list = {
+
 		session.step=''
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
+
+		if(params?.format && params.format != "html"){
+			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format] 
+			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
+			
+			exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
+		}
+				
         [surveyInstanceList: Survey.list(params), surveyInstanceTotal: Survey.count()]
     }
 	def list_surveyer = {
@@ -52,8 +69,7 @@ class SurveyController {
         return [surveyInstance: surveyInstance]
     }
 	*/
-	def today = new Date()
-	def thisyear=today[YEAR]
+
 	
 	def step1 = { // copied from create
 		def countries = [] as SortedSet
@@ -644,7 +660,7 @@ class SurveyController {
         }
     }
     */
-
+/*
 	def pdf ={
 		def countries = [] as SortedSet
 		def countryNames = [:] // map
@@ -676,4 +692,5 @@ class SurveyController {
 
 
 	}
+*/
 }
