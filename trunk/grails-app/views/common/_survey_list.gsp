@@ -11,8 +11,12 @@ else
 def incomplete=surveyInstanceTotal-completed
 
  %>
+             
             <div class="list">
             	(Total: ${surveyInstanceTotal}=<label style="color:blue">Completed:${completed}</label> + <label style="color:red">Incomplete:${incomplete}</label>)
+            	<g:if test="${session.user.role=='admin' }">
+            		<export:formats />
+            	</g:if>
                 <table id="hor-minimalist-b" style="width:900px;">
                     <thead>
                         <tr>
@@ -98,6 +102,8 @@ def incomplete=surveyInstanceTotal-completed
             <div class="paginateButtons">
                 <g:paginate total="${surveyInstanceTotal}" />
             </div>
+            
+
             <br/><br/><br/>
 
 
