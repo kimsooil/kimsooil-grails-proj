@@ -37,7 +37,7 @@ function confirmSubmit()
 {
 	var agree=confirm(i18nmessages.confirmMsg);
 	if (agree){
-		return false;
+		return true;
 	}
 	else{
 		return false ;

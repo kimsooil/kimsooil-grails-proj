@@ -613,8 +613,8 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:render template="/common/back_button"/></span>
-                    <%--<span class="button"><g:actionSubmit class="back" action="step10" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><g:actionSubmit class="back" action="step10" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <%--<span class="button"><g:render template="/common/back_button"/></span>
                     <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <g:if test="${surveyInstance?.sex=='female' }">  
                     	<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
