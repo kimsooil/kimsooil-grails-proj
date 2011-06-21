@@ -63,7 +63,7 @@ $(document).ready(function(){
                 <g:hiddenField name="age" value="" />
 
                 <div class="dialog">
-                <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" />-<g:select disabled="true" name="consentNumLoc" from="${surveyInstance.constraints.consentNumLoc.inList}" value="${surveyInstance?.consentNumLoc}" valueMessagePrefix="survey.consentNumLoc"  />-<g:textField disabled="true" name="consentNum" value="${surveyInstance?.consentNum}" /></h3><br/>
+                <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" />-<g:select name="consentNumLoc" from="${surveyInstance.constraints.consentNumLoc.inList}" value="${surveyInstance?.consentNumLoc}" valueMessagePrefix="survey.consentNumLoc"  />-<g:textField disabled="true" name="consentNum" value="${surveyInstance?.consentNum}" /></h3><br/>
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
                 <br/>
                 <ul><g:radioGroup name="being_treated_for_cancer"
@@ -150,7 +150,7 @@ $(document).ready(function(){
                                     <g:message code="survey.addr_street2.label" default="Addrstreet2" />: <g:textField name="addr_street2" value="${surveyInstance?.addr_street2}" /><br/>
                                     <label style="color:red">*</label><g:message code="survey.addr_city.label" default="Addrcity" />: <g:textField name="addr_city" value="${surveyInstance?.addr_city}" /><br/>
                                     <label style="color:red">*</label><g:message code="survey.addr_state.label" default="Addrstate" />: <g:textField name="addr_state" value="${surveyInstance?.addr_state}" /><br/>
-                                    <label style="color:red">*</label><g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="addr_zipcode" value="${surveyInstance?.addr_zipcode}" onkeyup="postcode_validate(this.value, document.getElementById('status'));"/> <span id="status"></span>
+                                    <g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="addr_zipcode" value="${surveyInstance?.addr_zipcode}" onkeyup="postcode_validate(this.value, document.getElementById('status'));"/> <span id="status"></span>
                                 </td>
                             </tr>
 

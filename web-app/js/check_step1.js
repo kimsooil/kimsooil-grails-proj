@@ -38,8 +38,7 @@
 	}
 	if (fv.isEmpty(document.getElementById('addr_street1').value) ||
 		fv.isEmpty(document.getElementById('addr_city').value) ||
-		(document.getElementById('country').value=='US' && fv.isEmpty(document.getElementById('addr_state').value)) ||
-		fv.isEmpty(document.getElementById('addr_zipcode').value)){
+		(document.getElementById('country').value=='US' && fv.isEmpty(document.getElementById('addr_state').value)) ){
 			fv.raiseError(i18nmessages.step1Err8);
 	}
 	if (!fv.isEmpty(document.getElementById('addr_zipcode').value) && !fv.isValidZipcode(document.getElementById('addr_zipcode').value)){
