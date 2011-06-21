@@ -473,6 +473,36 @@ class SurveyController {
 			redirect(action: "list")
 		}
 	}
+	def preview_after_update={
+		def surveyInstance = Survey.get(params.id)
+		if (surveyInstance) {
+			if (params.version) {
+				def version = params.version.toLong()
+				if (surveyInstance.version > version) {
+					
+					surveyInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'survey.label', default: 'Survey')] as Object[], "Another user has updated this Survey while you were editing")
+					render(view: "step15", model: [surveyInstance: surveyInstance, thisyear:thisyear])
+					return
+				}
+			}
+			surveyInstance.surveyer=session.user.login
+			surveyInstance.step="15"
+			surveyInstance.properties = params
+			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
+				flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
+				//redirect(action: "show", id: surveyInstance.id)
+				redirect(action: "preview", id: surveyInstance.id)
+			}
+			else {
+				render(view: "step15", model: [surveyInstance: surveyInstance, thisyear:thisyear])
+			}
+		}
+		else {
+			flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'survey.label', default: 'Survey'), params.id])}"
+			redirect(action: "list")
+		}
+	}
+
 	def done={ // copied from show
 		redirect(action: "show", id:params.id)
 	}
