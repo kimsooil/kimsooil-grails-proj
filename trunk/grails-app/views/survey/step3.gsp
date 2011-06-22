@@ -160,7 +160,7 @@ $(document).ready(function(){
 						 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/> / 
 								<g:textField name="${('q13_'+idx+'_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_'+idx+'_ageDiagnosed')}"
-											   onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); " /> <span id="${('cancerAge_status'+idx)}"></span>
+											   onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); " /> <span id="${('cancerAge_status'+idx)}"></span>
 						 	</td>
 						 </tr>
 						 </g:each>
