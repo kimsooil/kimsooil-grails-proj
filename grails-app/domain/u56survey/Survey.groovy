@@ -467,7 +467,7 @@ class Survey {
 		weight(matches:/^([0-9]+)$/) // pounds
 		height_feet(matches:/^([0-9]+)$/) // feet inches
 		height_inches(matches:/^([0-9]+)$/)
-
+/*
 		q13_1_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_2_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_3_ageDiagnosed(matches:/^([0-9]+)$/)
@@ -478,7 +478,7 @@ class Survey {
 		q13_8_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_9_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_10_ageDiagnosed(matches:/^([0-9]+)$/)
-				
+*/				
 		q14_1_howManyPerWeek(matches:/^([0-9]+)$/)
 		q14_2_howManyPerWeek(matches:/^([0-9]+)$/)
 		q14_3_howManyPerWeek(matches:/^([0-9]+)$/)
