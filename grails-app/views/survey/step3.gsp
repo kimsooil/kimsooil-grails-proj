@@ -141,6 +141,53 @@ $(document).ready(function(){
 										"pancreatic":message(code:"survey.q12_pancreatic"),
 										"prostate":message(code:"survey.q12_prostate"),
 										"other":message(code:"survey.q12_other")]
+
+						def CancerList_male=["anal":message(code:"survey.q12_anal"),
+							"bladder":message(code:"survey.q12_bladder"),
+							"brain":message(code:"survey.q12_brain"),
+							"breast":message(code:"survey.q12_breast"),
+							"carcinoma":message(code:"survey.q12_carcinoma"),
+							"colon":message(code:"survey.q12_colon"),
+							"esophageal":message(code:"survey.q12_esophageal"),
+							"gallbladder":message(code:"survey.q12_gallbladder"),
+							"GIST":message(code:"survey.q12_GIST"),
+							"hodgkin":message(code:"survey.q12_hodgkin"),
+							"kidney":message(code:"survey.q12_kidney"),
+							"leukemia":message(code:"survey.q12_leukemia"),
+							"liver":message(code:"survey.q12_liver"),
+							"lung":message(code:"survey.q12_lung"),
+							"melanoma":message(code:"survey.q12_melanoma"),
+							"myeloma":message(code:"survey.q12_myeloma"),
+							"non_hodgkin":message(code:"survey.q12_non_hodgkin"),
+							"throat":message(code:"survey.q12_throat"),
+							"pancreatic":message(code:"survey.q12_pancreatic"),
+							"prostate":message(code:"survey.q12_prostate"),
+							"other":message(code:"survey.q12_other")]
+
+						def CancerList_female=["anal":message(code:"survey.q12_anal"),
+							"bladder":message(code:"survey.q12_bladder"),
+							"brain":message(code:"survey.q12_brain"),
+							"breast":message(code:"survey.q12_breast"),
+							"carcinoma":message(code:"survey.q12_carcinoma"),
+							"cervical":message(code:"survey.q12_cervical"),
+							"colon":message(code:"survey.q12_colon"),
+							"uterine":message(code:"survey.q12_uterine"),
+							"esophageal":message(code:"survey.q12_esophageal"),
+							"gallbladder":message(code:"survey.q12_gallbladder"),
+							"GIST":message(code:"survey.q12_GIST"),
+							"hodgkin":message(code:"survey.q12_hodgkin"),
+							"kidney":message(code:"survey.q12_kidney"),
+							"leukemia":message(code:"survey.q12_leukemia"),
+							"liver":message(code:"survey.q12_liver"),
+							"lung":message(code:"survey.q12_lung"),
+							"melanoma":message(code:"survey.q12_melanoma"),
+							"myeloma":message(code:"survey.q12_myeloma"),
+							"non_hodgkin":message(code:"survey.q12_non_hodgkin"),
+							"throat":message(code:"survey.q12_throat"),
+							"ovarian":message(code:"survey.q12_ovarian"),
+							"pancreatic":message(code:"survey.q12_pancreatic"),
+							"other":message(code:"survey.q12_other")]
+
 						 %>
 						<g:each in="${FamilyList}" status="i" var="member">
 						 <tr class="prop">
@@ -152,15 +199,35 @@ $(document).ready(function(){
 						 	</td>
 						 	<td valign="top" class="value rounded-foot-right ${hasErrors(bean: surveyInstance, field: 'q13_'+idx+'_cancerType', 'errors')} ${hasErrors(bean: surveyInstance, field: 'q13_'+idx+'_ageDiagnosed', 'errors')}">
 						 		<%-- <g:textField name="${('q13_'+idx+'_cancerType')}" value="${surveyInstance?.('q13_'+idx+'_cancerType')}" /> --%>
-						 		<g:select name="${('q13_'+idx+'_cancerType')}"
-						 				  value="${surveyInstance?.('q13_'+idx+'_cancerType')}"
-						 				  from="${CancerList}"
-						 				  optionKey="key"
-						 				  optionValue="value"
-						 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/> / 
-								<g:textField name="${('q13_'+idx+'_ageDiagnosed')}" 
+						 		<g:if test="${member==message(code:'survey.q13_father') || member==message(code:'survey.q13_brother') || member==message(code:'survey.q13_son') || member==message(code:'survey.q13_maternal_uncle') || member==message(code:'survey.q13_paternal_uncle') || member==message(code:'survey.q13_maternal_grandfather') || member==message(code:'survey.q13_paternal_grandfather')}">
+							 		<g:select name="${('q13_'+idx+'_cancerType')}"
+							 				  value="${surveyInstance?.('q13_'+idx+'_cancerType')}"
+							 				  from="${CancerList_male}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>
+
+						 		</g:if>
+						 		<g:elseif test="${member==message(code:'survey.q13_mother') || member==message(code:'survey.q13_sister') || member==message(code:'survey.q13_daughter') || member==message(code:'survey.q13_maternal_aunt') || member==message(code:'survey.q13_paternal_aunt') || member==message(code:'survey.q13_maternal_grandmother') || member==message(code:'survey.q13_paternal_grandmother')}">
+							 		<g:select name="${('q13_'+idx+'_cancerType')}"
+							 				  value="${surveyInstance?.('q13_'+idx+'_cancerType')}"
+							 				  from="${CancerList_female}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>
+
+						 		</g:elseif>
+						 		<g:else>
+							 		<g:select name="${('q13_'+idx+'_cancerType')}"
+							 				  value="${surveyInstance?.('q13_'+idx+'_cancerType')}"
+							 				  from="${CancerList}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>
+								</g:else> 
+								/ <g:textField name="${('q13_'+idx+'_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_'+idx+'_ageDiagnosed')}"
-											   onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); " /> <span id="${('cancerAge_status'+idx)}"></span>
+											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status'+idx)}\')); " /> <span id="${('cancerAge_status'+idx)}"></span>
 						 	</td>
 						 </tr>
 						 </g:each>

@@ -23,7 +23,7 @@ def incomplete=surveyInstanceTotal-completed
                             <g:sortableColumn property="consentNumSurv" title="Survey Name" />
                             <g:sortableColumn property="consentNumLoc" title="Location" />
 							<g:sortableColumn property="id" title="${message(code: 'survey.id.label', default: 'ID')}" />
-
+							<g:sortableColumn property="otherNumberOrComments" title="Other Number, ID, etc." />
                             <g:sortableColumn property="surveyer" title="surveyer" />  
                             
                             <g:sortableColumn property="completed" title="Completed" />         
@@ -54,6 +54,7 @@ def incomplete=surveyInstanceTotal-completed
                         	<td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.consentNumSurv}</g:link></td>
                         	<td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.consentNumLoc}</g:link></td>
                             <td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.id}</g:link></td>
+                            <td><g:link action="${stepNumUrl }" id="${surveyInstance.otherNumberOrComments}">${surveyInstance?.otherNumberOrComments}</g:link></td>
                         	<td>${surveyInstance?.surveyer}</td>
                         	<td>
                             <g:if test="${surveyInstance?.completed}">
