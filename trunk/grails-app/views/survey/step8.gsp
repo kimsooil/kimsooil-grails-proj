@@ -164,12 +164,12 @@ $(document).ready(function(){
                     	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
                     	<td>
                     	<%
-						def bleedingList=[message(code:'survey.q37.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2')]
+						def bleedingList=[message(code:'survey.q37.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2'), message(code:'survey.q37.na')]
 						 %>
                         	<g:radioGroup name="q37"
                             	value="${surveyInstance?.q37}" 
                                 labels="${bleedingList }" 
-                                values="['none', 'red','black']" >
+                                values="['none', 'red','black', 'n/a']" >
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>                    	
                     	</td>

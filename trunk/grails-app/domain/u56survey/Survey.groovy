@@ -6,6 +6,7 @@ class Survey {
 
 //  New ID / ethnic 	
 	String consentNum // informed consent number
+	String otherNumberOrComments // it can be used for preexisting (come from already-collected-via-paper form) questionnaire(s)
 	String consentNumSurv="HISPBB" // Name of the survey
 	String consentNumLoc
 	
@@ -451,7 +452,7 @@ class Survey {
 	static constraints = {
 		
 		//consentNumSurv(inList:["HISPBB"])
-		consentNumLoc(inList:["MOFF", "SANL"])
+		consentNumLoc(inList:["MOFF", "SANL", "CAIMED", 'HIMA', 'PSMHS', 'PRTB'])
 		//consentNum(blank:false)
 		//being_treated_for_cancer(blank:false)
 		//sex(blank:false)
