@@ -24,7 +24,7 @@ function checkForm3()
 			($("#q13_"+i+"_cancerType").val()=='' && $("#q13_"+i+"_ageDiagnosed").val()!='')){
 			fv.raiseError(i18nmessages.step3Err3+" (#"+i+").");
 		}
-		if ($("#q13_"+i+"_ageDiagnosed").val()!='' && !fv.isValidNumber($("#q13_"+i+"_ageDiagnosed").val(), -1, 125)){ // 0 is for unknown age diagnosed
+		if ($("#q13_"+i+"_ageDiagnosed").val()!='' && !fv.isValidNumber($("#q13_"+i+"_ageDiagnosed").val(), -1, 125)){ // -1 is for unknown age diagnosed
 			fv.raiseError(i18nmessages.step3Err4+" (#"+i+").");
 		}		
 	}	

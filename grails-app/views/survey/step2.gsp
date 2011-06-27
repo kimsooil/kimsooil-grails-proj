@@ -376,7 +376,7 @@ $(document).ready(function(){
 								<div style="display:none">
 								<g:textField style="width: 50px" name="${('q12_'+idx+'_ageDiagnosed')}"
 	                    					 value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}"
-	                    					 onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
+	                    					 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
 								</div>
 							</td>
 							<td>
@@ -396,7 +396,7 @@ $(document).ready(function(){
 	                    	<td style="width: 5%;">
 	                    		<g:textField style="width: 50px" name="${('q12_'+idx+'_ageDiagnosed')}"
 	                    					 value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}"
-	                    					 onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
+	                    					 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
 	                    	</td>
 	                    	<td>
 							 <g:each in="${TreatmentList }" status="j" var="treatment">
