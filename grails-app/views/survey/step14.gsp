@@ -253,7 +253,70 @@ $(document).ready(function(){
 	    	$("#q93_5_howManyMonths").attr("disabled", true);
 	    }
 	});	
-
+	$("input[name='q94_1']").change(function(){
+	    if ($("input[name='q94_1']:checked").val() != 'still_using'){
+	    	$("#q94_1_ageStop").attr("disabled", '');
+	    }
+	    else if ($("input[name='q94_1']:checked").val() == 'still_using'){
+	    	$("#q94_1_ageStop").val('');
+	    	$("#q94_1_ageStop").attr("disabled", true);
+	    }
+	});
+	$("input[name='q94_2']").change(function(){
+	    if ($("input[name='q94_2']:checked").val() != 'still_using'){
+	    	$("#q94_2_ageStop").attr("disabled", '');
+	    }
+	    else if ($("input[name='q94_2']:checked").val() == 'still_using'){
+	    	$("#q94_2_ageStop").val('');
+	    	$("#q94_2_ageStop").attr("disabled", true);
+	    }
+	});	
+	$("input[name='q94_3']").change(function(){
+	    if ($("input[name='q94_3']:checked").val() != 'still_using'){
+	    	$("#q94_3_ageStop").attr("disabled", '');
+	    }
+	    else if ($("input[name='q94_3']:checked").val() == 'still_using'){
+	    	$("#q94_3_ageStop").val('');
+	    	$("#q94_3_ageStop").attr("disabled", true);
+	    }
+	});	
+	$("input[name='q94_4']").change(function(){
+	    if ($("input[name='q94_4']:checked").val() != 'still_using'){
+	    	$("#q94_3_ageStop").attr("disabled", '');
+	    }
+	    else if ($("input[name='q94_4']:checked").val() == 'still_using'){
+	    	$("#q94_4_ageStop").val('');
+	    	$("#q94_4_ageStop").attr("disabled", true);
+	    }
+	});	
+	$("input[name='q94_4']").change(function(){
+	    if ($("input[name='q94_4']:checked").val() != 'still_using'){
+	    	$("#q94_4_ageStop").attr("disabled", '');
+	    }
+	    else if ($("input[name='q94_4']:checked").val() == 'still_using'){
+	    	$("#q94_4_ageStop").val('');
+	    	$("#q94_4_ageStop").attr("disabled", true);
+	    }
+	});	
+	$("input[name='q94_5']").change(function(){
+	    if ($("input[name='q94_5']:checked").val() != 'still_using'){
+	    	$("#q94_5_ageStop").attr("disabled", '');
+	    }
+	    else if ($("input[name='q94_5']:checked").val() == 'still_using'){
+	    	$("#q94_5_ageStop").val('');
+	    	$("#q94_5_ageStop").attr("disabled", true);
+	    }
+	});	
+	$("input[name='q94_6']").change(function(){
+	    if ($("input[name='q94_6']:checked").val() != 'still_using'){
+	    	$("#q94_6_ageStop").attr("disabled", '');
+	    }
+	    else if ($("input[name='q94_6']:checked").val() == 'still_using'){
+	    	$("#q94_6_ageStop").val('');
+	    	$("#q94_6_ageStop").attr("disabled", true);
+	    }
+	});	
+		
 });	 
 </g:javascript> 
 <%
