@@ -404,7 +404,7 @@ class Survey {
 	String q78_10_week, q78_10_month
 	String q79
 	String q80, q80_which, q80_whatAge, q80_howLong
-	String q81
+	String q81, q81_other // q81 is contraceptive method
 	String q82
 	String q82_1, q82_2, q82_3, q82_4, q82_5, q82_6, q82_7, q82_8, q82_9, q82_10, q82_11,q82_12,q82_13,q82_14,q82_15
 	String q82_1_type, q82_2_type, q82_3_type, q82_4_type, q82_5_type, q82_6_type, q82_7_type, q82_8_type, q82_9_type, q82_10_type, q82_11_type, q82_12_type, q82_13_type, q82_14_type, q82_15_type

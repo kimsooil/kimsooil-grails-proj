@@ -511,10 +511,24 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    	</td>
 	                    </tr>
 	                    <tr>
+	                    <% def ContraceptiveList=[message(code:'survey.q81.pill'),
+												  message(code:'survey.q81.shot'),
+												  message(code:'survey.q81.patch'),
+												  message(code:'survey.q81.ring'),
+												  message(code:'survey.q81.implantation'),
+												  message(code:'survey.q81.IUD'),
+												  message(code:'survey.q81.diaphragm'),
+												  message(code:'survey.q81.female_condom'),
+												  message(code:'survey.q81.other')]
+						 %>
 	                    	<td style="width:25%;font-weight:bold;"><label><g:message code="survey.q81" default="q81" /></label></td>
 	                    	<td style="width:75%">
-		                    	<g:textField name="q81"
-		                    				 value="${surveyInstance?.q81}"
+	                    		<g:select name="${('q81')}"
+									from="${ContraceptiveList}"
+									value="${surveyInstance?.('q81')}"
+									noSelection="['':'']" />,
+		                    	<label><g:message code="survey.q81.other" default="q81" /></label>: <g:textField name="q81_other"
+		                    				 value="${surveyInstance?.q81_other}"
 		                    				 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q81_status')}\')); "/> <span id="${('q81_status')}"></span>
 	                    	</td>
 	                    </tr>
