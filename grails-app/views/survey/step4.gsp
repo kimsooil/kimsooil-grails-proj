@@ -264,7 +264,7 @@ $(document).ready(function(){
                                     <g:textField name="q18" 
                                     style="width: 50px"
                                     value="${surveyInstance?.q18}" 
-									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q18_status')}\')); " /> <g:message code="survey.years" default="Years" /> <span id="q18_status"></span>
+									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q18_status')}\')); " /> <g:message code="survey.years.label" default="Years" /> <span id="q18_status"></span>
                                 </td>
                             </tr>
                             <tr class="prop">
