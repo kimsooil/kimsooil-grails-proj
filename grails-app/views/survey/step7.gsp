@@ -12,6 +12,13 @@
 	     
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>						
+    
 <g:javascript>
 
 <g:if test="${surveyInstance?.sex!='male' }">
@@ -23,6 +30,28 @@ window.onload= function(){
 }   
 </g:if>
 
+function IsDateRectalExamValid()
+{
+	if ( ($("#date_rectal_exam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_rectal_exam_month").val()) > <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDatePSATestValid(){
+	if ( ($("#date_most_recent_PSA_test_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_most_recent_PSA_test_month").val()) > <%=birth[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+
+}
 $(document).ready(function(){ 
 
 $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male.gif')}" align="absmiddle" alt="male" /><br/><g:message code="male.only.page" /><br/></p>');
@@ -51,6 +80,50 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 	    	$("[name*='results_PSA_test']").attr("disabled", true);	    
 	    }
 	});	
+	$("#date_rectal_exam_month").change(function() {
+			if (!IsDateRectalExamValid())
+			{
+				$('#alertIfInvalid1').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#date_rectal_exam_month").focus();
+			}
+			else {
+				$('#alertIfInvalid1').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#date_rectal_exam_year").change(function() {
+			if (!IsDateRectalExamValid())
+			{
+				$('#alertIfInvalid1').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#date_rectal_exam_year").focus();
+			}
+			else {
+				$('#alertIfInvalid1').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#date_most_recent_PSA_test_month").change(function() {
+			if (!IsDatePSATestValid())
+			{
+				$('#alertIfInvalid2').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#date_most_recent_PSA_test_month").focus();
+			}
+			else {
+				$('#alertIfInvalid2').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#date_most_recent_PSA_test_year").change(function() {
+			if (!IsDatePSATestValid())
+			{
+				$('#alertIfInvalid2').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#date_most_recent_PSA_test_year").focus();
+			}
+			else {
+				$('#alertIfInvalid2').attr('innerHTML', "");
+			}	
+		}
+	);
 	    
 });		    	    
 </g:javascript>
@@ -161,12 +234,9 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>
 						</td>
-                       <%
-							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-						%>						
 						<td align="right"><g:message code="survey.when" default="When" />:<br/>
 							<g:datePicker name="date_rectal_exam" precision="month" value="${surveyInstance?.date_rectal_exam}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid1"></span>
 						</td>
 						<td><g:message code="survey.findings" default="Findings" />:
 						 <g:textField  style="width:150px;" name="findings_rectal_exam" value="${surveyInstance?.findings_rectal_exam}" />
@@ -184,7 +254,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 						</td>
 						<td align="right"><g:message code="survey.mostRecentTest" default="Most recent Test" />:<br/>
 						<g:datePicker name="date_most_recent_PSA_test" precision="month" value="${surveyInstance?.date_most_recent_PSA_test}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid2"></span>
 						</td>
 						<td><g:message code="survey.results" default="Results" />: <g:textField style="width:150px;" 
 																								name="results_PSA_test"
