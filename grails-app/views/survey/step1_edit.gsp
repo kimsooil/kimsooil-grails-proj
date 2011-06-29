@@ -17,6 +17,20 @@
     </head>
     <body>
     <g:javascript>
+function IsDOBValid(){
+			if (($('#DOB_month option:selected').val()=='2' && $('#DOB_day option:selected').val()=='31') ||
+			($('#DOB_month option:selected').val()=='2' && $('#DOB_day option:selected').val()=='30') ||
+			($('#DOB_month option:selected').val()=='4' && $('#DOB_day option:selected').val()=='31') ||
+			($('#DOB_month option:selected').val()=='6' && $('#DOB_day option:selected').val()=='31') ||
+			($('#DOB_month option:selected').val()=='9' && $('#DOB_day option:selected').val()=='31') ||
+			($('#DOB_month option:selected').val()=='11' && $('#DOB_day option:selected').val()=='31'))
+			{
+				return false;
+			}
+			else {
+				return true;
+			}	
+}    
 $(document).ready(function(){
 	$("input[name='q8_1']").change(function(){
 	    if ($("input[name='q8_1']:checked").val() == 'yes'){
@@ -36,9 +50,39 @@ $(document).ready(function(){
 	    	$("#q8_4_which").attr("disabled", true);	  
 	    }
 	});	
-	$("#DOB_day").change(function() { $('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
-	$("#DOB_month").change(function() {$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
-	$("#DOB_year").change(function() {$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));});
+	$("#DOB_day").change(function() {
+			if (!IsDOBValid())
+			{
+				$('#age_calculated').attr('innerHTML', "<label style='color:#ff0000'> -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val())+" (!)</label>");
+				$("#DOB_day").focus();
+			}
+			else {
+				$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));
+			}	
+		}
+	);
+	$("#DOB_month").change(function() {
+			if (!IsDOBValid())
+			{
+				$('#age_calculated').attr('innerHTML', "<label style='color:#ff0000'> -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val())+" (!)</label>");
+				$("#DOB_month").focus();
+			}
+			else {
+				$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));
+			}	
+		}
+	);
+	$("#DOB_year").change(function() {
+			if (!IsDOBValid())
+			{
+				$('#age_calculated').attr('innerHTML', "<label style='color:#ff0000'> -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val())+" (!)</label>");
+				$("#DOB_year").focus();
+			}
+			else {
+				$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));
+			}	
+		}
+	);
 });	
     </g:javascript>    
         <div class="nav">
