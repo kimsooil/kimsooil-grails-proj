@@ -88,6 +88,8 @@ updateConfigurationMap({
    step7Err5 : "${message(code:'step7.err.msgs5').encodeAsHTML()}",
    step7Err6 : "${message(code:'step7.err.msgs6').encodeAsHTML()}",
    step7Err7 : "${message(code:'step7.err.msgs7').encodeAsHTML()}",
+   step7ErrInvalid : "${message(code:'step7.err.invalid').encodeAsHTML()}",
+   step7ErrInvalidDate : "${message(code:'step7.err.msgs.invalid.date').encodeAsHTML()}",
    
    step8Err1 : "${message(code:'step8.err.msgs1').encodeAsHTML()}",
    step8Err2 : "${message(code:'step8.err.msgs2').encodeAsHTML()}",
