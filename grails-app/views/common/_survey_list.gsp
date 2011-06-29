@@ -39,7 +39,7 @@ def incomplete=surveyInstanceTotal-completed
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${surveyInstanceList}" status="i" var="surveyInstance">
+                    <g:each in="${surveyInstanceList.sort{-it.id}}" status="i" var="surveyInstance">
                     	
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 							<%
