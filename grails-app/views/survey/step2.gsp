@@ -14,8 +14,11 @@
     </head>
     <body>
 <%
-	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-%>    
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>	    
 <g:javascript>
 
 <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">

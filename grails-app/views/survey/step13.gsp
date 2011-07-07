@@ -156,12 +156,8 @@ $(document).ready(function(){
 					 	</td>
 					 	<td>
 					 	<%--${i+1}.  --%>
-					 	<g:if test="${idx==11 }">
-					 	<a target=_new href="http://en.m.wikipedia.org/wiki/Gherkin">${VegetableList[i]}</a>
-					 	</g:if>
-					 	<g:else>
+
 					 	 ${VegetableList[i]}
-					 	</g:else>					 	
 					 	
 						 	<g:if test="${i==13 }">
 						 		<g:textField name="q85_vege_other" value="${surveyInstance?.q85_vege_other}" style="width:75px"/>
