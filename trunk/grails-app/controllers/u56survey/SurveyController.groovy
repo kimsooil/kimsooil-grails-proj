@@ -575,6 +575,12 @@ class SurveyController {
         }
 	}
 	def thankyou={}
+	def calendarview={
+		
+		session.step=''
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)			
+		[surveyInstanceList: Survey.list(params), surveyInstanceTotal: Survey.count()]
+		}
 	/*
     def edit = {
         def surveyInstance = Survey.get(params.id)

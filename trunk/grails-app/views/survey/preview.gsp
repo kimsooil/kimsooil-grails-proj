@@ -13,6 +13,12 @@
 		<g:javascript src="checkVerifyForm.js" /> 
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>	     
 <g:javascript>
 $(document).ready(function(){
 	<g:if test="${!surveyInstance?.completed}">

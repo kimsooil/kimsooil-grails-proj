@@ -38,13 +38,16 @@
 
 <g:javascript src="input_validation.js" />    
 
-  
+<script type='text/javascript' src="${resource(dir:'fullcalendar',file:'fullcalendar.min.js')}"></script>  
 <g:javascript>
 $(document).ready(function(){
 	$(".radio").dgStyle();
 	$(".vradio").dgStyle();
 	$(".checkbox").dgStyle();
 	$(".vcheckbox").dgStyle();
+	
+	
+	
 });
 <g:if test="${request.getHeader('user-agent').indexOf('MSIE')>=0}">
 //$(document).ready(function (){

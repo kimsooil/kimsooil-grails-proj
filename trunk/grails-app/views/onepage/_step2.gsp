@@ -59,7 +59,11 @@
 						<g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}" /> (<g:message code="survey.q11a_donotknow" />)				
 						</td>
 						
-						<td></td>
+						<td>
+							<g:datePicker name="q11a_hep_donotknow_type_Year" precision="year" value="${surveyInstance?.('q11a_hep_donotknow_type_Year')}"
+	                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_hep_donotknow_type_Year_status')}"></span><br/>
+						
+						</td>
 					</tr>
 					</g:if>
 					<g:else>

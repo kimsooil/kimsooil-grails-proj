@@ -71,7 +71,11 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q63']").attr("disabled", '');    			    
 	    	$("[name*='q64']").attr("disabled", '');
 	    	$("[name*='q65']").attr("disabled", '');
-	    	$("[name*='q66']").attr("disabled", '');
+	    	$("[name*='q66']").val('');
+	    	if ($("input[name='q63']:checked").val() == 'yes'){
+	    		$("[name*='q66']").attr('checked', false);
+	    	 	$("[name*='q66']").attr("disabled", true);
+	    	 }	 
 	    }
 	    else if ($("input[name='q62']:checked").val() == 'no'){
 	    	$("[name*='q63']").attr('checked', false);
@@ -80,8 +84,20 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q64']").attr("disabled", true);	  
 	    	$("[name*='q65']").val('');
 	    	$("[name*='q65']").attr("disabled", true);	  
-	    	$("[name*='q66']").val('');
-	    	$("[name*='q66']").attr("disabled", true);	  
+	    	$("[name*='q66']").attr("disabled", ''); 
+	    }
+	});
+	$("input[name='q63']").change(function(){
+	    if ($("input[name='q63']:checked").val() == 'yes'){
+	    	if ($("input[name='q62']:checked").val() == 'yes'){
+	    		$("[name*='q66']").attr('checked', false);
+	    		$("[name*='q66']").attr("disabled", true);
+	    		
+	    	}	 
+	    }
+	    else if ($("input[name='q63']:checked").val() == 'no'){
+
+	    	$("[name*='q66']").attr("disabled", ''); 
 	    }
 	});
 	$("input[name='q66']").change(function(){
@@ -95,7 +111,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    }
 	});
 	$("input[name='q67']").change(function(){
-		if ($("input[name='q66']:checked").val() == 'no' && $("input[name='q67']:checked").val() == 'no'){
+		if ($("input[name='q67']:checked").val() == 'no'){
 	    	$("#q68").val('');	  
 			$("#q68").attr("disabled", true)
 	    }
