@@ -14,6 +14,12 @@
 			
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>	    
 <g:javascript>
 
 <g:if test="${surveyInstance?.sex!='female' }">
@@ -24,7 +30,17 @@ window.onload= function(){
   $("[name=_action_update_unified]").attr("disabled", false);
 }   
 </g:if>
-
+function IsDateQ71Valid()
+{
+	if ( ($("#q71_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q71_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 $(document).ready(function(){
 
 $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /><br/><g:message code="female.only.page" /><br/></p>');
@@ -55,6 +71,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q63']").attr("disabled", '');    			    
 	    	$("[name*='q64']").attr("disabled", '');
 	    	$("[name*='q65']").attr("disabled", '');
+	    	$("[name*='q66']").attr("disabled", '');
 	    }
 	    else if ($("input[name='q62']:checked").val() == 'no'){
 	    	$("[name*='q63']").attr('checked', false);
@@ -63,7 +80,8 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q64']").attr("disabled", true);	  
 	    	$("[name*='q65']").val('');
 	    	$("[name*='q65']").attr("disabled", true);	  
-
+	    	$("[name*='q66']").val('');
+	    	$("[name*='q66']").attr("disabled", true);	  
 	    }
 	});
 	$("input[name='q66']").change(function(){
@@ -94,7 +112,30 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q69_']").val('');
 	    	$("[name*='q69_']").attr("disabled", true);	  
 	    }
-	});							
+	});
+	$("#q71_month").change(function() {
+			if (!IsDateQ71Valid())
+			{
+				$('#alertIfInvalid').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q71_month").focus();
+			}
+			else {
+				$('#alertIfInvalid').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q71_year").change(function() {
+			if (!IsDateQ71Valid())
+			{
+				$('#alertIfInvalid').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q71_year").focus();
+			}
+			else {
+				$('#alertIfInvalid').attr('innerHTML', "");
+			}	
+		}
+	);	
+								
 });	
 </g:javascript>    
         <div class="nav">
@@ -318,11 +359,8 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
                     <tr>
                     	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q71" default="q71" /></label></td>
                     	<td style="width:60%">
-<%
-	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-%>	                    	
 							<g:datePicker name="q71" precision="month" value="${surveyInstance?.q71}"  
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />  <span id="alertIfInvalid"></span>
                     	</td>
                     </tr>
                         </tbody>

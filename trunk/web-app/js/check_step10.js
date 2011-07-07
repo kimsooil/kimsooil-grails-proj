@@ -55,11 +55,12 @@ function checkForm10()
 			fv.raiseError(i18nmessages.step10Err13);
 		if (fv.isEmpty($('#q65').val()) || !fv.isValidNumber($('#q65').val(), 1, ageCalculated))
 			fv.raiseError(i18nmessages.step10Err14);
+		if (!fv.isRadioChecked(document.getElementsByName('q66')) )
+		{
+			fv.raiseError(i18nmessages.step10Err15);
+		}		
 	}
-	if (!fv.isRadioChecked(document.getElementsByName('q66')) )
-	{
-		fv.raiseError(i18nmessages.step10Err15);
-	}
+
 	if (!fv.isRadioChecked(document.getElementsByName('q67')) )
 	{
 		fv.raiseError(i18nmessages.step10Err16);
@@ -84,7 +85,11 @@ function checkForm10()
 	{
 		fv.raiseError(i18nmessages.step10Err20);
 	}
-				
+	if ( ($("#q71_year").val() == today_year.toString())  &&
+			(parseInt($("#q71_month").val()) > today_month)
+		){
+			fv.raiseError("Q76: "+i18nmessages.step7ErrInvalidDate);
+		}				
 	// all done
 	// if errors, display, else proceed
 	if (fv.numErrors() > 0)
