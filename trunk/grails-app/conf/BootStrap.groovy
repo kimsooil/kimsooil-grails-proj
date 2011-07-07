@@ -39,9 +39,11 @@ class BootStrap {
 		switch(GrailsUtil.getEnvironment()){
 		//switch(Environment.getCurrent() ){
 			case "development":
-				def admin = new u56survey.Person(login:"admin", password:"pa\$\$word", name:"Administrator", role:"admin", location:"MOFF", language:"English").save()
-				//def kimsooil = new u56survey.Person(login:"kimsooil", password:"password", name:"Soo I. Kim", role:"surveyer", location:"MOFF").save()
-				def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+				if (!u56survey.Person.findByLogin("admin")){
+					def admin = new u56survey.Person(login:"admin", password:"pa\$\$word", name:"Administrator", role:"admin", location:"MOFF", language:"English").save()
+					def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+					def demo = new u56survey.Person(login:"demo", password:"demo", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+				}
 				/****
 				for ( i in 0..10000 ) { // testing to see if creation/update speed is fast enough as the size grows
 					def surveyInstance = new u56survey.Survey()
@@ -52,9 +54,11 @@ class BootStrap {
 				********/
 			break
 			case "production":
-			  def admin = new u56survey.Person(login:"admin", password:"pa\$\$word", name:"Administrator", role:"admin", location:"MOFF", language:"English").save()
-			  
-			  def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+				if (!u56survey.Person.findByLogin("admin")){
+				  def admin = new u56survey.Person(login:"admin", password:"pa\$\$word", name:"Administrator", role:"admin", location:"MOFF", language:"English").save()
+				  def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+				  def demo = new u56survey.Person(login:"demo", password:"demo", name:"DEMO-Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+				}
 			break
 		  }
 	  

@@ -3,7 +3,8 @@
     	def colors = ['FF0000']
 		def values =[]
 		def labels =[]
-		def locations = u56survey.Survey.executeQuery("select distinct p.location from Person p where p.role='surveyer'")
+		//def locations = u56survey.Survey.executeQuery("select distinct p.location from Person p where p.role='surveyer'")
+		def locations = u56survey.Survey.executeQuery("select distinct p.location from Person p")
 		locations.each {
 			values << u56survey.Survey.countByConsentNumLoc(it)
 			labels << it+" ["+u56survey.Survey.countByConsentNumLoc(it)+"]"
@@ -11,7 +12,8 @@
 		def colors2 = ['0000ff']
 		def values2 =[]
 		def labels2 =[]
-		def surveyers = u56survey.Person.executeQuery("select distinct p.login from Person p where p.role='surveyer'")
+		//def surveyers = u56survey.Person.executeQuery("select distinct p.login from Person p where p.role='surveyer'")
+		def surveyers = u56survey.Person.executeQuery("select distinct p.login from Person p")
 		surveyers.each {
 			values2 << u56survey.Survey.countBySurveyer(it)
 			labels2 << it+" ["+u56survey.Survey.countBySurveyer(it)+"]"

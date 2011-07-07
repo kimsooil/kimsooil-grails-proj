@@ -67,49 +67,49 @@ function confirmSubmit()
                 
                 <%--<g:render template="preview"  model="[surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]"/> --%>
 
-<h1><label style="color:orange;"><g:message code="step1.label" default="Step1-new" /></label></h1>
+<h1><g:link title="1" action="step1_edit" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step1.label" default="Step1-new" /></label></g:link></h1>
 <g:render template="/onepage/step1"/>
 
-<h1><label style="color:orange;"><g:message code="step2.label" default="Step2" /></label></h1>
+<h1><g:link title="2" action="step2" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step2.label" default="Step2" /></label></g:link></h1>
 <g:render template="/onepage/step2"/>
 
-<h1><label style="color:orange;"><g:message code="step3.label" default="Step3" /></label></h1>
+<h1><g:link title="3" action="step3" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step3.label" default="Step3" /></label></g:link></h1>
 <g:render template="/onepage/step3"/>
 
-<h1><label style="color:orange;"><g:message code="step4.label" default="Step4" /></label></h1>
+<h1><g:link title="4" action="step4" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step4.label" default="Step4" /></label></g:link></h1>
 <g:render template="/onepage/step4"/>
 
-<h1><label style="color:orange;"><g:message code="step5.label" default="Step5" /></label></h1>
+<h1><g:link title="5" action="step5" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step5.label" default="Step5" /></label></g:link></h1>
 <g:render template="/onepage/step5"/>
 
-<h1><label style="color:orange;"><g:message code="step6.label" default="Step6" /></label></h1>
+<h1><g:link title="6" action="step6" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step6.label" default="Step6" /></label></g:link></h1>
 <g:render template="/onepage/step6"/>
 
-<h1><label style="color:orange;"><g:message code="step7.label" default="Step7" /></label>  <img src="${resource(dir:'images',file:'male.gif')}" align="absmiddle" alt="male" /></h1>
+<h1><g:link title="7" action="step7" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step7.label" default="Step7" /></label></g:link>  <img src="${resource(dir:'images',file:'male.gif')}" align="absmiddle" alt="male" /></h1>
 <g:render template="/onepage/step7"/>
 
-<h1><label style="color:orange;"><g:message code="step8.label" default="Step8" /></label></h1>
+<h1><g:link title="8" action="step8" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step8.label" default="Step8" /></label></g:link></h1>
 <g:render template="/onepage/step8"/>
 
-<h1><label style="color:orange;"><g:message code="step9.label" default="Step9" /></label> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
+<h1><g:link title="9" action="step9" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step9.label" default="Step9" /></label></g:link> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
 <g:render template="/onepage/step9"/>
 
-<h1><label style="color:orange;"><g:message code="step10.label" default="Step10" /></label> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
+<h1><g:link title="10" action="step10" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step10.label" default="Step10" /></label></g:link> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
 <g:render template="/onepage/step10"/>
 
-<h1><label style="color:orange;"><g:message code="step11.label" default="Step11" /></label> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
+<h1><g:link title="11" action="step2" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step11.label" default="Step11" /></label></g:link> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
 <g:render template="/onepage/step11"/>
 
-<h1><label style="color:orange;"><g:message code="step12.label" default="Step12" /></label></h1>
+<h1><g:link title="12" action="step12" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step12.label" default="Step12" /></label></g:link></h1>
 <g:render template="/onepage/step12"/>
 
-<h1><label style="color:orange;"><g:message code="step13.label" default="Step13" /></label></h1>
+<h1><g:link title="13" action="step13" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step13.label" default="Step13" /></label></g:link></h1>
 <g:render template="/onepage/step13"/>
 
-<h1><label style="color:orange;"><g:message code="step14.label" default="Step14" /></label></h1>
+<h1><g:link title="14" action="step14" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step14.label" default="Step14" /></label></g:link></h1>
 <g:render template="/onepage/step14"/>
 
-<h1><label style="color:orange;"><g:message code="step15.label" default="Step15" /></label></h1>
+<h1><g:link title="15" action="step15" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step15.label" default="Step15" /></label></g:link></h1>
 <g:render template="/onepage/step15"/>
 
                 <div class="buttons">

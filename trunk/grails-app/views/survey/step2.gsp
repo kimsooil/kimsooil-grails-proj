@@ -13,6 +13,9 @@
 		<g:javascript src="check_step2.js" />	
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
+%>    
 <g:javascript>
 
 <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">
@@ -265,7 +268,10 @@ $(document).ready(function(){
 						<g:checkBox name="q11a_hep_donotknow_type" value="${surveyInstance?.q11a_hep_donotknow_type}" /> (<g:message code="survey.q11a_donotknow" />)				
 						</td>
 						
-						<td></td>
+						<td>
+							<g:datePicker name="q11a_hep_donotknow_type_Year" precision="year" value="${surveyInstance?.('q11a_hep_donotknow_type_Year')}"
+	                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_hep_donotknow_type_Year_status')}"></span><br/>
+						</td>
 					</tr>
 					</g:if>
 					<g:else>
@@ -282,9 +288,7 @@ $(document).ready(function(){
 								</g:radioGroup>						
 						</td>
 						<td style="border: 1px solid #9baff1;">
-                    <%
-							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-					%>	
+	
 							<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
 	                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_'+idx+'_status')}"></span><br/>
 

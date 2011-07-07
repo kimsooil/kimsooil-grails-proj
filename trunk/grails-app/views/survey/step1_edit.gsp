@@ -230,7 +230,7 @@ $(document).ready(function(){
                                      labels="${mstatuslbls}"
                                      values="['married', 'single', 'divorce', 'consensual', 'Widow']"
                                      value="${surveyInstance?.marital_status}" >
-										<g:render template="/common/checkmark_radio" model="[it:it]" />
+										<g:render template="/common/checkmark_radio_v" model="[it:it]" />
 									</g:radioGroup>                                     
                                 </td>
                             </tr>

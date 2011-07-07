@@ -36,6 +36,8 @@
 		        	<li><g:link class="list_surveyer" action="list_surveyer"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 		        	<br/>
 		        	<g:render template="/common/gchart"/>
+		        	<br/>
+		        	<g:render template="/common/instructions"/>
 	        	</ul>
 	        </ul>
         </g:else>
