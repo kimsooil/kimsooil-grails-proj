@@ -2,7 +2,7 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title><g:layoutTitle default="Grails" /></title>
+        <title><g:layoutTitle default="HISPBB" /></title>
         
 <g:if test="${request.getHeader('user-agent').indexOf('iPad')>=0 && request.getHeader('user-agent').indexOf('Safari')>=0}">
         <link rel="stylesheet" href="${resource(dir:'css',file:'main-ipad.css')}" />
@@ -69,16 +69,23 @@ $(document).ready(function(){
         <tr>
         <td>
         	<%--<div id="ponceLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'Ponce2.jpg')}" alt="ponce" border="0" /></a> --%>
-        	<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'MCC-Logo-DarkLight.png')}" alt="moffitt" border="0" /></a>
+        	<br/>
+        	<%--<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'MCC-Logo-DarkLight.png')}" alt="moffitt" border="0" /></a></div> --%>
+        	<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'psm45percent.JPG')}" alt="moffitt" border="0" /></a>
         </td>
+<%--
+         <td>
+        	<div id="psmLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'Ponce2.jpg')}" alt="psm" border="0" /></a></div>
+        </td>
+ --%>        
         <td>
-	        <h1><g:message code="site.title"/></h1>
-	        <label>Hispanic Bio-Bank (6/29/2011 - <a href="/hispbb/changes.html">Changes</a>)</label> - <label>(<a href="/hispbb/browsers.html">Best viewed with Safari & FireFox - <font color="red">not IE</font></a>)</label>
+	        <br/><h1><g:message code="site.title"/></h1>
+	        <label style="color:deepskyblue">Hispanic Bio-Bank <a href="/hispbb/changes.html">(7/7/2011)</a>
+	        <%-- - <a href="/hispbb/changes.html">Changes</a></label>
+	         - <label>(<a href="/hispbb/browsers.html">Best viewed with Safari & FireFox - <font color="red">not IE</font></a>)</label> --%>
         </td>
-        <td>
-        
-        </td>
-        </tr>
+
+       </tr>
         </table>
         <span style="float:right; padding:1em"><g:loginControl /></span>
         <span style="float:right; padding:1em"><langs:selector langs="es, en"/></span>

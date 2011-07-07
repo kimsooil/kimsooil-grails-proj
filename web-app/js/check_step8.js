@@ -20,7 +20,11 @@ function checkForm8()
 	{
 		fv.raiseError(i18nmessages.step8Err3);
 	}
-	if (getRadioValue(document.getElementsByName('q37'))!='none' && !fv.isRadioChecked(document.getElementsByName('q38')) )
+	if (getRadioValue(document.getElementsByName('q37'))=='yes' && !fv.isRadioChecked(document.getElementsByName('q37_what')) )
+	{
+		fv.raiseError(i18nmessages.step8Err3);
+	}
+	if (getRadioValue(document.getElementsByName('q37'))=='yes' && !fv.isRadioChecked(document.getElementsByName('q38')) )
 	{
 		fv.raiseError(i18nmessages.step8Err4);
 	}
@@ -36,6 +40,12 @@ function checkForm8()
 	{
 		fv.raiseError(i18nmessages.step8Err7);
 	}
+	if ( ($("#date_digital_rectal_exam_year").val() == today_year.toString())  &&
+			(parseInt($("#date_digital_rectal_exam_month").val()) > today_month)
+		){
+			fv.raiseError("Q46: "+i18nmessages.step7ErrInvalidDate);
+		}
+
 	/*
 	if (getRadioValue(document.getElementsByName('q41'))!='no' &&
 	($('#date_digital_rectal_exam_month').val()=='' ||$('#date_digital_rectal_exam_year').val()=='')
@@ -56,6 +66,11 @@ function checkForm8()
 		fv.raiseError(i18nmessages.step8Err10);
 	}
 	*/
+	if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == today_year.toString())  &&
+			(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q47: "+i18nmessages.step7ErrInvalidDate);
+		}	
 	if (getRadioValue(document.getElementsByName('q42'))=='yes')
 	{
 		if ((!fv.isRadioChecked(document.getElementsByName('q42_1')) ||

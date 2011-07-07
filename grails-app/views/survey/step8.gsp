@@ -14,17 +14,49 @@
 		
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>	    
 <g:javascript>
+function IsDateDigitalRectalExamValid()
+{
+	if ( ($("#date_digital_rectal_exam_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_digital_rectal_exam_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDateSigmoidoscopyColonoscopy()
+{
+	if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 $(document).ready(function(){
 	$("input[name='q37']").change(function(){
-	    if ($("input[name='q37']:checked").val() != 'none'){
+	    if ($("input[name='q37']:checked").val() != 'no'){
+	    	$("[name*='q37_what']").attr("disabled", '');		    
 	    	$("[name*='q38']").attr("disabled", '');	    			    
 	    }
-	    else if ($("input[name='q37']:checked").val() == 'none'){
+	    else if ($("input[name='q37']:checked").val() == 'no'){
+	    	$("[name*='q37_what']").attr('checked', false);
+	    	$("[name*='q37_what']").attr("disabled", true);		    
 	    	$("[name*='q38']").attr('checked', false);
 	    	$("[name*='q38']").attr("disabled", true);	    
 	    }
-	}); 
+	});
+
 	$("input[name='q39']").change(function(){
 	    if ($("input[name='q39']:checked").val() == 'yes'){
 	    	$("[name*='q40']").attr("disabled", '');	    			    
@@ -43,6 +75,29 @@ $(document).ready(function(){
 	    	$("[name*='date_digital_rectal_exam']").attr("disabled", true);	    
 	    }
 	});
+	$("#date_digital_rectal_exam_month").change(function() {
+			if (!IsDateDigitalRectalExamValid())
+			{
+				$('#alertIfInvalid3').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("date_digital_rectal_exam_month").focus();
+			}
+			else {
+				$('#alertIfInvalid3').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#date_digital_rectal_exam_year").change(function() {
+			if (!IsDateDigitalRectalExamValid())
+			{
+				$('#alertIfInvalid3').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#date_digital_rectal_exam_year").focus();
+			}
+			else {
+				$('#alertIfInvalid3').attr('innerHTML', "");
+			}	
+		}
+	);
+	
 	$("input[name='q42']").change(function(){
 	    if ($("input[name='q42']:checked").val() == 'yes'){
 	    	$("[name*='date_sigmoidoscopy_colonoscopy']").attr("disabled", '');
@@ -60,6 +115,28 @@ $(document).ready(function(){
 	    	$("[name*='q43']").attr("disabled", true);
 	    }
 	});
+	$("#date_sigmoidoscopy_colonoscopy_month").change(function() {
+			if (!IsDateSigmoidoscopyColonoscopy())
+			{
+				$('#alertIfInvalid4').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("date_sigmoidoscopy_colonoscopy_month").focus();
+			}
+			else {
+				$('#alertIfInvalid4').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#date_sigmoidoscopy_colonoscopy_year").change(function() {
+			if (!IsDateSigmoidoscopyColonoscopy())
+			{
+				$('#alertIfInvalid4').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#date_sigmoidoscopy_colonoscopy_year").focus();
+			}
+			else {
+				$('#alertIfInvalid4').attr('innerHTML', "");
+			}	
+		}
+	);	
 	$("input[name='q43']").change(function(){
 	    if ($("input[name='q43']:checked").val() == 'yes'){
 	    	$("#q43_biopsy_results").attr("disabled", '');
@@ -153,9 +230,7 @@ $(document).ready(function(){
 						</g:each>
 						</tbody>
 						</table>
-<%
-	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-%>						
+					
 					
 
                     <table class="box-table-b-wide">
@@ -163,13 +238,22 @@ $(document).ready(function(){
                     <tr>
                     	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
                     	<td>
-                    	<%
-						def bleedingList=[message(code:'survey.q37.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2'), message(code:'survey.q37.na')]
-						 %>
                         	<g:radioGroup name="q37"
                             	value="${surveyInstance?.q37}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+							<br/><br/>                     	
+                    	<%
+						def bleedingList=[message(code:'survey.q37.donotknow'),
+										 message(code:'survey.q37.b1'),
+										 message(code:'survey.q37.b2')]
+						 %>
+                        	<g:radioGroup name="q37_what"
+                            	value="${surveyInstance?.q37_what}" 
                                 labels="${bleedingList }" 
-                                values="['none', 'red','black', 'n/a']" >
+                                values="['donotknow', 'red','black']" >
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>                    	
                     	</td>
@@ -224,7 +308,7 @@ $(document).ready(function(){
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left"><g:message code="survey.when" default="When" />: <g:datePicker name="date_digital_rectal_exam" precision="month" value="${surveyInstance?.date_digital_rectal_exam}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />  <span id="alertIfInvalid3"></span>
                                       </div>
                             
                     	</td>
@@ -242,7 +326,7 @@ $(document).ready(function(){
 							<div style="clear:left">
 							
 							<g:message code="survey.when" default="When" />: <g:datePicker name="date_sigmoidoscopy_colonoscopy" precision="month" value="${surveyInstance?.date_sigmoidoscopy_colonoscopy}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />  <span id="alertIfInvalid4"></span>
                                       </div>
                             
                     	</td>

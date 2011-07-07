@@ -4,23 +4,32 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
-    <title>Login - <g:message code="site.title" /></title>         
+        <g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}" />
+    <title>Login - <g:message code="site.title" /></title>
+<style type="text/css">
+<!--
+body {
+  background-image: url("../images/tere50percent.JPG");
+  background-position: 0% 0%;
+  background-repeat: no-repeat;  
+}
+-->
+</style>              
   </head>
   <body>
     <div class="body">
-      <h1>Login</h1>
+      <h1 style="color:cyan">Login</h1>
       <br/>
       <g:if test="${flash.message}">
         <div class="message">${flash.message}</div>
       </g:if>
       <g:form action="authenticate" method="post" >
-        <div class="dialog">
-          <table id="one-column-emphasis">
+        <div>
+          <table id="one-column-emphasis loginform">
             <tbody>            
               <tr class="prop">
                 <td class="name">
-                  <label for="login">Login:</label>
+                  <label style="color:white" for="login">ID:</label>
                 </td>
                 <td>
                   <input type="text" id="login" name="login"/>
@@ -29,7 +38,7 @@
           
               <tr class="prop">
                 <td class="name">
-                  <label for="password">Password:</label>
+                  <label style="color:white" for="password">Password:</label>
                 </td>
                 <td>
                   <input type="password" id="password" name="password"/>

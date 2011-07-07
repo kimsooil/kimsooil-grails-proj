@@ -11,5 +11,11 @@ var dob_year=${dob[java.util.Calendar.YEAR] ? dob[java.util.Calendar.YEAR] : 190
 <g:else>
 var ageCalculated = CalAge(1, 1, 1900);
 </g:else>
+
+var today = new Date();
+var today_date=today.getDate(); // 1-31
+var today_month=today.getMonth()+1; //0-11
+var today_year=today.getFullYear(); // 4 digits
+
 //alert(ageCalculated);
 </g:javascript>

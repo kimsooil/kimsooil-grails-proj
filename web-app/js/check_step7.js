@@ -25,24 +25,24 @@ function checkForm7()
 	if (getRadioValue(document.getElementsByName('q32'))=='yes'
 		// && (fv.isEmpty($('#date_rectal_exam_month').val()) || fv.isEmpty($('#findings_rectal_exam').val()))  /// date is optional
 	){
-		if (fv.isEmpty($('#findings_rectal_exam').val()))
-			fv.raiseError(i18nmessages.step7Err4);
+		//if (fv.isEmpty($('#findings_rectal_exam').val()))
+		//	fv.raiseError(i18nmessages.step7Err4);
 	}
 	if (getRadioValue(document.getElementsByName('q33'))=='yes'
 		// && (fv.isEmpty($('#date_most_recent_PSA_test_month').val()) || fv.isEmpty($('#results_PSA_test').val())) // date is optional
 	){
-		if (fv.isEmpty($('#results_PSA_test').val())) fv.raiseError(i18nmessages.step7Err5);
-		else if (!fv.isValidNumber($('#results_PSA_test').val(), 0, 100))
+		//if (fv.isEmpty($('#results_PSA_test').val())) fv.raiseError(i18nmessages.step7Err5);
+		if (!fv.isEmpty($('#results_PSA_test').val()) && !fv.isValidNumber($('#results_PSA_test').val(), 0, 100))
 			fv.raiseError("Q38: 0~100");
 
 	}
-	if ( ($("#date_rectal_exam_year").val() == dob_year.toString())  &&
-			(parseInt($("#date_rectal_exam_month").val()) > dob_month)
+	if ( ($("#date_rectal_exam_year").val() == today_year.toString())  &&
+			(parseInt($("#date_rectal_exam_month").val()) > today_month)
 		){
 			fv.raiseError("Q37: "+i18nmessages.step7ErrInvalidDate);
 		}
-	if ( ($("#date_most_recent_PSA_test_year").val() == dob_year.toString())  &&
-			(parseInt($("#date_most_recent_PSA_test_month").val()) > dob_month) // java.util.Calendar.MONTH is 0~11
+	if ( ($("#date_most_recent_PSA_test_year").val() == today_year.toString())  &&
+			(parseInt($("#date_most_recent_PSA_test_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 		){
 			fv.raiseError("Q38: "+i18nmessages.step7ErrInvalidDate);
 		}

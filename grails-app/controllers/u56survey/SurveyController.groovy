@@ -561,7 +561,8 @@ class SurveyController {
             //if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true) && surveyCompletedInstance.save(flush: true)) {
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
-                redirect(action: "show", id: surveyInstance.id)
+                //redirect(action: "show", id: surveyInstance.id)
+				redirect(action: "thankyou")
             }
             else {
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
@@ -573,6 +574,7 @@ class SurveyController {
             redirect(action: "list")
         }
 	}
+	def thankyou={}
 	/*
     def edit = {
         def surveyInstance = Survey.get(params.id)

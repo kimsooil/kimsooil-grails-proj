@@ -16,6 +16,15 @@ body {
     color: #333;
     font: 11px verdana, helvetica, arial, sans-serif;
 }
+.body {
+    float: left;
+    margin: 0 15px 10px 15px;
+}
+.loginform{
+  background-image: url("../images/tere50percent.JPG");
+  background-position: 0% 0%;
+  background-repeat: no-repeat;  
+}
 #grailsLogo {
 	padding:20px;
 }
@@ -55,11 +64,6 @@ textarea {
 
 input:focus, select:focus, textarea:focus {
     border: 1px solid #b2d1ff;
-}
-
-.body {
-    float: left;
-    margin: 0 15px 10px 15px;
 }
 
 /* NAVIGATION MENU */

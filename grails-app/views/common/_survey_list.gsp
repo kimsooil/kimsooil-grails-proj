@@ -15,7 +15,9 @@ def incomplete=surveyInstanceTotal-completed
             <div class="list">
             	(Total: ${surveyInstanceTotal}=<label style="color:blue">Completed:${completed}</label> + <label style="color:red">Incomplete:${incomplete}</label>)
             	<g:if test="${session.user.role=='admin' }">
-            		<export:formats />
+            		<%--<export:formats />
+            		<export:formats formats="['csv', 'excel', 'ods', 'pdf', 'rtf', 'xml']" />--%>
+            		<export:formats formats="['csv', 'excel', 'xml']" />
             	</g:if>
                 <table id="hor-minimalist-b" style="width:900px;">
                     <thead>

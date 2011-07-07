@@ -32,8 +32,8 @@ window.onload= function(){
 
 function IsDateRectalExamValid()
 {
-	if ( ($("#date_rectal_exam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_rectal_exam_month").val()) > <%=birth[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#date_rectal_exam_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_rectal_exam_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -42,8 +42,8 @@ function IsDateRectalExamValid()
 	}
 }
 function IsDatePSATestValid(){
-	if ( ($("#date_most_recent_PSA_test_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_most_recent_PSA_test_month").val()) > <%=birth[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
+	if ( ($("#date_most_recent_PSA_test_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_most_recent_PSA_test_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
 	){
 		return false;
 	}

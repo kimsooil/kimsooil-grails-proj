@@ -64,7 +64,7 @@ class Survey {
 	//String q11a_hep_a_str, q11a_hep_b_str, q11a_hep_c_str, q11a_hep_donotknow_type_str // added for separate yes/no question
 	//Boolean q11a_hep_a, q11a_hep_b, q11a_hep_c, q11a_hep_donotknow_type
 	Boolean q11a_hep_donotknow_type
-	Date q11a_1Year, q11a_2Year, q11a_3Year, q11a_4Year, q11a_5Year, q11a_6Year
+	Date q11a_hep_donotknow_type_Year, q11a_1Year, q11a_2Year, q11a_3Year, q11a_4Year, q11a_5Year, q11a_6Year
 	
 	String spread_cancer // q11c
 	Boolean spread_liver, spread_brain, spread_lung, spread_bone, spread_other 
@@ -286,6 +286,7 @@ class Survey {
 	String q36_6 // black or tarry stool
 	// q37 If you ever had rectal bleeding, how do you describe it:
 	String q37 // bright red bleeding, melena (black stool)
+	String q37_what
 	
 	String q38 // If you ever had rectal bleeding, did you feel pain
 	String q39 // have you doctor or health care provider recommended that you have a fecal occult blood test
