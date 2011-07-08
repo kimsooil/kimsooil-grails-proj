@@ -578,7 +578,7 @@ class SurveyController {
 	def calendarview={
 		
 		session.step=''
-		params.max = Math.min(params.max ? params.int('max') : 10, 100)			
+		params.max = Math.min(params.max ? params.int('max') : Survey.count(), Survey.count())			
 		[surveyInstanceList: Survey.list(params), surveyInstanceTotal: Survey.count()]
 		}
 	/*

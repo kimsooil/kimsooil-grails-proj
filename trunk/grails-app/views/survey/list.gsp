@@ -11,7 +11,10 @@
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <g:if test="${session.user.role=='admin' }"><span class="menuButton"><g:link controller="person" class="list" action="list">Manage User</g:link></span></g:if>
+            <g:if test="${session.user.role=='admin' }">
+            	<span class="menuButton"><g:link controller="survey" class="list" action="calendarview">Calendar View</g:link></span>
+            	<span class="menuButton"><g:link controller="person" class="list" action="list">Manage User</g:link></span>
+            </g:if>
             <%--<g:if test="${session.user.role=='surveyer' }"><span class="menuButton"><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link></span></g:if> --%>
         </div>
         <div class="body">
