@@ -82,7 +82,7 @@ $(document).ready(function(){
         </td>
  --%>        
         <td>
-	        <br/><h1><g:message code="site.title"/></h1>
+	        <br/><h1><label style="color:limegreen"><g:message code="site.title"/></label></h1>
 	        <label style="color:deepskyblue">Hispanic Bio-Bank <a href="/hispbb/changes.html">(7/7/2011)</a>
 	        <%-- - <a href="/hispbb/changes.html">Changes</a></label>
 	         - <label>(<a href="/hispbb/browsers.html">Best viewed with Safari & FireFox - <font color="red">not IE</font></a>)</label> --%>
