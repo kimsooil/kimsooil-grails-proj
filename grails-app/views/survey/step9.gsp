@@ -15,6 +15,12 @@
 			
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>	
 <g:javascript>
 
 <g:if test="${surveyInstance?.sex!='female' }">
@@ -25,7 +31,95 @@ window.onload= function(){
   $("[name=_action_update_unified]").attr("disabled", false);  
 }   
 </g:if>
+function IsDateQ48()
+{
+	if ( ($("#q48_date_last_visit_gynecologist_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q48_date_last_visit_gynecologist_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDateQ51_1()
+{
+	if ( ($("#q51_1_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_1_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDateQ51_2()
+{
+	if ( ($("#q51_2_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_2_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDateQ51_3()
+{
+	if ( ($("#q51_3_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_3_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDateQ51_4()
+{
+	if ( ($("#q51_4_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_4_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDateQ51_5()
+{
+	if ( ($("#q51_5_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_5_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+function IsDateQ51_6()
+{
+	if ( ($("#q51_6_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_6_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 
+function IsDateQ52()
+{
+	if ( ($("#q52_date_most_recent_pap_smear_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q52_date_most_recent_pap_smear_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 $(document).ready(function(){
 
 $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /><br/><g:message code="female.only.page" /><br/></p>');
@@ -39,7 +133,28 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q48_date_last_visit_gynecologist']").attr("disabled", true);	  
 	    }
 	});
- 
+	$("#q48_date_last_visit_gynecologist_month").change(function() {
+			if (!IsDateQ48())
+			{
+				$('#alertIfInvalid48').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q48_date_last_visit_gynecologist_month").focus();
+			}
+			else {
+				$('#alertIfInvalid48').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q48_date_last_visit_gynecologist_year").change(function() {
+			if (!IsDateQ48())
+			{
+				$('#alertIfInvalid48').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q48_date_last_visit_gynecologist_year").focus();
+			}
+			else {
+				$('#alertIfInvalid48').attr('innerHTML', "");
+			}	
+		}
+	);	 
 	$("input[name='q49']").change(function(){
 	    if ($("input[name='q49']:checked").val() == 'yes'){
 
@@ -79,6 +194,28 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_1_']").attr("disabled", true);	  	 
 	    }
 	});
+	$("#q51_1_date_month").change(function() {
+			if (!IsDateQ51_1())
+			{
+				$('#q51_1_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q51_1_date_month").focus();
+			}
+			else {
+				$('#q51_1_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q51_1_date_year").change(function() {
+			if (!IsDateQ51_1())
+			{
+				$('#q51_1_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q51_1_date_year").focus();
+			}
+			else {
+				$('#q51_1_status').attr('innerHTML', "");
+			}	
+		}
+	);		
 	$("input[name='q51_2']").change(function(){
 	    if ($("input[name='q51_2']:checked").val() == 'yes'){
 	    	$("[name*='q51_2_']").attr("disabled", '');	  
@@ -87,7 +224,29 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_2_']").val('');
 	    	$("[name*='q51_2_']").attr("disabled", true);	  	 
 	    }
-	});	
+	});
+	$("#q51_2_date_month").change(function() {
+			if (!IsDateQ51_2())
+			{
+				$('#q51_2_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q51_2_date_month").focus();
+			}
+			else {
+				$('#q51_2_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q51_2_date_year").change(function() {
+			if (!IsDateQ51_2())
+			{
+				$('#q51_2_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q51_2_date_year").focus();
+			}
+			else {
+				$('#q51_2_status').attr('innerHTML', "");
+			}	
+		}
+	);
 	$("input[name='q51_3']").change(function(){
 	    if ($("input[name='q51_3']:checked").val() == 'yes'){
 	    	$("[name*='q51_3_']").attr("disabled", '');	  
@@ -97,6 +256,28 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_3_']").attr("disabled", true);	  	 
 	    }
 	});	
+	$("#q51_3_date_month").change(function() {
+			if (!IsDateQ51_3())
+			{
+				$('#q51_3_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q51_3_date_month").focus();
+			}
+			else {
+				$('#q51_3_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q51_3_date_year").change(function() {
+			if (!IsDateQ51_3())
+			{
+				$('#q51_3_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q51_3_date_year").focus();
+			}
+			else {
+				$('#q51_3_status').attr('innerHTML', "");
+			}	
+		}
+	);
 	$("input[name='q51_4']").change(function(){
 	    if ($("input[name='q51_4']:checked").val() == 'yes'){
 	    	$("[name*='q51_4_']").attr("disabled", '');	  
@@ -106,6 +287,28 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_4_']").attr("disabled", true);	  	 
 	    }
 	});
+	$("#q51_4_date_month").change(function() {
+			if (!IsDateQ51_4())
+			{
+				$('#q51_4_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q51_4_date_month").focus();
+			}
+			else {
+				$('#q51_4_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q51_4_date_year").change(function() {
+			if (!IsDateQ51_4())
+			{
+				$('#q51_4_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q51_4_date_year").focus();
+			}
+			else {
+				$('#q51_4_status').attr('innerHTML', "");
+			}	
+		}
+	);
 	$("input[name='q51_5']").change(function(){
 	    if ($("input[name='q51_5']:checked").val() == 'yes'){
 	    	$("[name*='q51_5_']").attr("disabled", '');	  
@@ -115,6 +318,28 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_5_']").attr("disabled", true);	  	 
 	    }
 	});	
+	$("#q51_5_date_month").change(function() {
+			if (!IsDateQ51_5())
+			{
+				$('#q51_5_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q51_5_date_month").focus();
+			}
+			else {
+				$('#q51_5_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q51_5_date_year").change(function() {
+			if (!IsDateQ51_5())
+			{
+				$('#q51_5_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q51_5_date_year").focus();
+			}
+			else {
+				$('#q51_5_status').attr('innerHTML', "");
+			}	
+		}
+	);
 	$("input[name='q51_6']").change(function(){
 	    if ($("input[name='q51_6']:checked").val() == 'yes'){
 	    	$("[name*='q51_6_']").attr("disabled", '');	  
@@ -124,6 +349,28 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_6_']").attr("disabled", true);	  	 
 	    }
 	});	
+	$("#q51_6_date_month").change(function() {
+			if (!IsDateQ51_6())
+			{
+				$('#q51_6_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q51_6_date_month").focus();
+			}
+			else {
+				$('#q51_6_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q51_6_date_year").change(function() {
+			if (!IsDateQ51_6())
+			{
+				$('#q51_6_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q51_6_date_year").focus();
+			}
+			else {
+				$('#q51_6_status').attr('innerHTML', "");
+			}	
+		}
+	);
 	$("input[name='q52']").change(function(){
 	    if ($("input[name='q52']:checked").val() == 'yes'){
 	    	$("[name*='q52_']").attr("disabled", '');	  
@@ -134,6 +381,29 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    		 
 	    }
 	});
+	$("#q52_date_most_recent_pap_smear_month").change(function() {
+			if (!IsDateQ52())
+			{
+				$('#alertIfInvalid52').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q52_date_most_recent_pap_smear_month").focus();
+			}
+			else {
+				$('#alertIfInvalid52').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q52_date_most_recent_pap_smear_year").change(function() {
+			if (!IsDateQ52())
+			{
+				$('#alertIfInvalid52').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q52_date_most_recent_pap_smear_year").focus();
+			}
+			else {
+				$('#alertIfInvalid52').attr('innerHTML', "");
+			}	
+		}
+	);	 
+	
 	$("input[name='q53']").change(function(){
 	    if ($("input[name='q53']:checked").val() == 'yes'){
 	    	
@@ -147,9 +417,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	});									
 });	
 </g:javascript>    
-<%
-	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-%>	
+	
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
@@ -276,7 +544,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    	<td style="font-weight:bold;"><label><g:message code="survey.q48" default="q48" /></label></td>
 	                    	<td>
 								<g:datePicker name="q48_date_last_visit_gynecologist" precision="month" value="${surveyInstance?.q48_date_last_visit_gynecologist}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />                	
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid48"></span>               	
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -368,7 +636,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 						</td>
                         <td>    
                              <g:datePicker name="${('q51_'+idx+'_date')}" precision="month" value="${surveyInstance?.('q51_'+idx+'_date')}"  
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q51_'+idx+'_status')}"></span> 
 						</td>
 						<td>
 						<g:if test="${idx==1}">
@@ -422,7 +690,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 							<br/>
 							<div style="clear:left">
 								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52_date_most_recent_pap_smear" precision="month" value="${surveyInstance?.q52_date_most_recent_pap_smear}"  
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid52"></span>  
 								<br/>
                             	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear"
                             																		value="${surveyInstance?.q52_results_pap_smear}"

@@ -25,6 +25,11 @@ function checkForm9()
 	{
 		fv.raiseError(i18nmessages.step9Err3);
 	}
+	if ( ($("#q48_date_last_visit_gynecologist_year").val() == today_year.toString())  &&
+			(parseInt($("#q48_date_last_visit_gynecologist_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q53: "+i18nmessages.step7ErrInvalidDate);
+		}	
 	/*
 	if (getRadioValue(document.getElementsByName('q47'))!='never' && ($('#q48_date_last_visit_gynecologist_momth').val()=='' || $('#q48_date_last_visit_gynecologist_year').val()==''))
 	{
@@ -104,10 +109,46 @@ function checkForm9()
 		fv.raiseError(i18nmessages.step9Err15);
 	}
 	*/
+	if ( ($("#q51_1_date_year").val() == today_year.toString())  &&
+			(parseInt($("#q51_1_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q56.1: "+i18nmessages.step7ErrInvalidDate);
+		}	
+	if ( ($("#q51_2_date_year").val() == today_year.toString())  &&
+			(parseInt($("#q51_2_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q56.2: "+i18nmessages.step7ErrInvalidDate);
+		}	
+	if ( ($("#q51_3_date_year").val() == today_year.toString())  &&
+			(parseInt($("#q51_3_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q56.3: "+i18nmessages.step7ErrInvalidDate);
+		}	
+	if ( ($("#q51_4_date_year").val() == today_year.toString())  &&
+			(parseInt($("#q51_4_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q56.4: "+i18nmessages.step7ErrInvalidDate);
+		}	
+	if ( ($("#q51_5_date_year").val() == today_year.toString())  &&
+			(parseInt($("#q51_5_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q56.5: "+i18nmessages.step7ErrInvalidDate);
+		}	
+	if ( ($("#q51_6_date_year").val() == today_year.toString())  &&
+			(parseInt($("#q51_6_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q56.6: "+i18nmessages.step7ErrInvalidDate);
+		}	
+
 	if (!fv.isRadioChecked(document.getElementsByName('q52')) )
 	{
 		fv.raiseError(i18nmessages.step9Err16_1);
 	}
+	if ( ($("#q52_date_most_recent_pap_smear_year").val() == today_year.toString())  &&
+			(parseInt($("#q52_date_most_recent_pap_smear_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q57: "+i18nmessages.step7ErrInvalidDate);
+		}	
 	/*
 	if (getRadioValue(document.getElementsByName('q52'))=='yes' &&
 		( fv.isEmpty($('#q52_date_most_recent_pap_smear_month').val()) || fv.isEmpty($('#q52_date_most_recent_pap_smear_year').val()) ||fv.isEmpty($('#q52_results_pap_smear').val()) )
@@ -131,6 +172,7 @@ function checkForm9()
 	{
 		fv.raiseError(i18nmessages.step9Err18);
 	}		
+
 	// all done
 	// if errors, display, else proceed
 	if (fv.numErrors() > 0)
