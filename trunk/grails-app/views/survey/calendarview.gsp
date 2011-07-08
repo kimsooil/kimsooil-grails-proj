@@ -14,7 +14,7 @@
 <style type='text/css'>
 
     #calendar {
-        width: 700px;
+        width: 750px;
         margin: 0 auto;
         }
 
@@ -49,11 +49,14 @@ surveyInstanceList.each{
     def uy=udate[java.util.Calendar.YEAR]
     def um=udate[java.util.Calendar.MONTH]
     def ud=udate[java.util.Calendar.DATE]
+	def current_step=it.step ? it.step : ''
+	def sex=it.sex=='female'? 'F' : (it.sex=='male'? 'M': '')
+	
 
     if (it.completed)
-        println "{title:"+"\'$it.id\'"+",color:\'#0000ff\', start: new Date($cy, $cm, $cd), end: new Date($uy, $um, $ud),url:\'/hispbb/survey/show/$it.id\'},"
+        println "{title:"+"\'$it.id[$sex]\'"+",color:\'#0000ff\', start: new Date($cy, $cm, $cd), end: new Date($uy, $um, $ud),url:\'/hispbb/survey/show/$it.id\'},"
     else
-        println "{title:"+"\'$it.id\'"+",color:\'#ff0000\', start: new Date($cy, $cm, $cd), end: new Date($uy, $um, $ud),url:\'/hispbb/survey/show/$it.id\'},"
+        println "{title:"+"\'$it.id[$sex]($current_step)\'"+",color:\'#ff0000\', start: new Date($cy, $cm, $cd), end: new Date($uy, $um, $ud),url:\'/hispbb/survey/show/$it.id\'},"
 
    
 }
@@ -70,9 +73,8 @@ surveyInstanceList.each{
             <%--<g:if test="${session.user.role=='surveyer' }"><span class="menuButton"><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link></span></g:if> --%>
         </div>
 
-        <br/><br/>
         <div class="body">
-
+<h1>Calendar View</h1>
 <div id='calendar'></div>
 
 <%
@@ -89,11 +91,12 @@ def incomplete=surveyInstanceTotal-completed
 
  %>
             
-<br/><br/>
+<br/>
+<h1>Full Survey List</h1>  
 <div class="list">
 
 &nbsp;&nbsp;&nbsp;(Total: ${surveyInstanceTotal}=<label style="color:blue">Completed:${completed}</label> + <label style="color:red">Incomplete:${incomplete}</label>)
-            
+          
                 <table id="hor-minimalist-b" style="text-align:center;width:700px;">
   <thead>
                         <tr>
