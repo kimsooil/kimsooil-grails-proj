@@ -14,7 +14,29 @@
 
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>	    
 <g:javascript>
+function IsDateQ84_1()
+{
+	if ( ($("#q84_1_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_1_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_1_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_1_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_1_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]+1%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
 $(document).ready(function(){
 	$("input[name='q83']").change(function(){
 	    if ($("input[name='q83']:checked").val() == 'yes'){
@@ -44,6 +66,40 @@ $(document).ready(function(){
 			$("[name*='_1_rad_date']").attr("disabled", true);
 	    }
 	});
+	$("#q84_1_rad_date_day").change(function() {
+			if (!IsDateQ84_1())
+			{
+				$('#q84_1_rad_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_1_rad_date_day").focus();
+			}
+			else {
+				$('#q84_1_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_1_rad_date_month").change(function() {
+			if (!IsDateQ84_1())
+			{
+				$('#q84_1_rad_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_1_rad_date_month").focus();
+			}
+			else {
+				$('#q84_1_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_1_rad_date_year").change(function() {
+			if (!IsDateQ84_1())
+			{
+				$('#q84_1_rad_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_1_rad_date_year").focus();
+			}
+			else {
+				$('#q84_1_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	
 	$("input[name='q84_2']").change(function(){
 	    if ($("input[name='q84_2']:checked").val() == 'yes'){
 			$("#q84_2_whatAge").attr("disabled", '');
@@ -199,10 +255,6 @@ $(document).ready(function(){
                     </ul>
                     <br/>
                     <%
-							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-					%>	                    
-
-                    <%
 					def RadiationTypeList=[message(code:'survey.q84.t1'),
 											message(code:'survey.q84.t2'),
 											message(code:'survey.q84.t3'),
@@ -246,7 +298,7 @@ $(document).ready(function(){
 					 	</td>
 					 	<td style="width:40%">
 					 		<g:kimsiDatePicker name="${('q84_'+idx+'_rad_date')}" precision="day" value="${surveyInstance?.('q84_'+idx+'_rad_date')}"  
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q84_'+idx+'_rad_date_status')}"></span> 
 					 	</td>
 					 	<td style="width:10%">
 					 		<g:textField name="${('q84_'+idx+'_whatAge')}"
