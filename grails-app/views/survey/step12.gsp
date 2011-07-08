@@ -29,7 +29,7 @@ function IsDateQ84_1()
 		return false;
 	} else if ( ($("#q84_1_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
 		(parseInt($("#q84_1_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_1_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]+1%>)
+		(parseInt($("#q84_1_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
 	){
 		return false;
 	} 
@@ -37,6 +37,151 @@ function IsDateQ84_1()
 		return true;
 	}
 }
+function IsDateQ84_2()
+{
+	if ( ($("#q84_2_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_2_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_2_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_2_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_2_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_3()
+{
+	if ( ($("#q84_3_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_3_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_3_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_3_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_3_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_4()
+{
+	if ( ($("#q84_4_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_4_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_4_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_4_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_4_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_5()
+{
+	if ( ($("#q84_5_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_5_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_5_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_5_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_5_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_6()
+{
+	if ( ($("#q84_6_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_6_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_6_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_6_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_6_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_7()
+{
+	if ( ($("#q84_7_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_7_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_7_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_7_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_7_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_8()
+{
+	if ( ($("#q84_8_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_8_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_8_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_8_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_8_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_9()
+{
+	if ( ($("#q84_9_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_9_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_9_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_9_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_9_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+function IsDateQ84_10()
+{
+	if ( ($("#q84_10_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_10_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	} else if ( ($("#q84_10_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q84_10_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
+		(parseInt($("#q84_10_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
+	){
+		return false;
+	} 
+	else {
+		return true;
+	}
+}
+
 $(document).ready(function(){
 	$("input[name='q83']").change(function(){
 	    if ($("input[name='q83']:checked").val() == 'yes'){
@@ -66,39 +211,6 @@ $(document).ready(function(){
 			$("[name*='_1_rad_date']").attr("disabled", true);
 	    }
 	});
-	$("#q84_1_rad_date_day").change(function() {
-			if (!IsDateQ84_1())
-			{
-				$('#q84_1_rad_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q84_1_rad_date_day").focus();
-			}
-			else {
-				$('#q84_1_rad_status').attr('innerHTML', "");
-			}	
-		}
-	);	
-	$("#q84_1_rad_date_month").change(function() {
-			if (!IsDateQ84_1())
-			{
-				$('#q84_1_rad_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q84_1_rad_date_month").focus();
-			}
-			else {
-				$('#q84_1_rad_status').attr('innerHTML', "");
-			}	
-		}
-	);
-	$("#q84_1_rad_date_year").change(function() {
-			if (!IsDateQ84_1())
-			{
-				$('#q84_1_rad_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q84_1_rad_date_year").focus();
-			}
-			else {
-				$('#q84_1_rad_status').attr('innerHTML', "");
-			}	
-		}
-	);		
 	
 	$("input[name='q84_2']").change(function(){
 	    if ($("input[name='q84_2']:checked").val() == 'yes'){
@@ -208,6 +320,367 @@ $(document).ready(function(){
 			$("[name*='_10_rad_date']").attr("disabled", true);
 	    }
 	});
+	$("#q84_1_rad_date_day").change(function() {
+			if (!IsDateQ84_1())
+			{
+				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_1_rad_date_day").focus();
+			}
+			else {
+				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_1_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_1_rad_date_month").change(function() {
+			if (!IsDateQ84_1())
+			{
+				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_1_rad_date_month").focus();
+			}
+			else {
+				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_1_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_1_rad_date_year").change(function() {
+			if (!IsDateQ84_1())
+			{
+				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_1_rad_date_year").focus();
+			}
+			else {
+				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_1_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_2_rad_date_day").change(function() {
+			if (!IsDateQ84_2())
+			{
+				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_2_rad_date_day").focus();
+			}
+			else {
+				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_2_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_2_rad_date_month").change(function() {
+			if (!IsDateQ84_2())
+			{
+				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_2_rad_date_month").focus();
+			}
+			else {
+				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_2_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_2_rad_date_year").change(function() {
+			if (!IsDateQ84_2())
+			{
+				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_2_rad_date_year").focus();
+			}
+			else {
+				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_2_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_3_rad_date_day").change(function() {
+			if (!IsDateQ84_3())
+			{
+				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_3_rad_date_day").focus();
+			}
+			else {
+				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_3_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_3_rad_date_month").change(function() {
+			if (!IsDateQ84_3())
+			{
+				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_3_rad_date_month").focus();
+			}
+			else {
+				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_3_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_3_rad_date_year").change(function() {
+			if (!IsDateQ84_3())
+			{
+				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_3_rad_date_year").focus();
+			}
+			else {
+				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_3_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_4_rad_date_day").change(function() {
+			if (!IsDateQ84_4())
+			{
+				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_4_rad_date_day").focus();
+			}
+			else {
+				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_4_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_4_rad_date_month").change(function() {
+			if (!IsDateQ84_4())
+			{
+				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_4_rad_date_month").focus();
+			}
+			else {
+				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_4_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_4_rad_date_year").change(function() {
+			if (!IsDateQ84_4())
+			{
+				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_4_rad_date_year").focus();
+			}
+			else {
+				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_4_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_5_rad_date_day").change(function() {
+			if (!IsDateQ84_5())
+			{
+				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_5_rad_date_day").focus();
+			}
+			else {
+				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_5_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_5_rad_date_month").change(function() {
+			if (!IsDateQ84_5())
+			{
+				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_5_rad_date_month").focus();
+			}
+			else {
+				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_5_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_5_rad_date_year").change(function() {
+			if (!IsDateQ84_5())
+			{
+				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_5_rad_date_year").focus();
+			}
+			else {
+				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_5_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_6_rad_date_day").change(function() {
+			if (!IsDateQ84_6())
+			{
+				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_6_rad_date_day").focus();
+			}
+			else {
+				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_6_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_6_rad_date_month").change(function() {
+			if (!IsDateQ84_6())
+			{
+				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_6_rad_date_month").focus();
+			}
+			else {
+				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_6_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_6_rad_date_year").change(function() {
+			if (!IsDateQ84_6())
+			{
+				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_6_rad_date_year").focus();
+			}
+			else {
+				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_6_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_7_rad_date_day").change(function() {
+			if (!IsDateQ84_7())
+			{
+				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_7_rad_date_day").focus();
+			}
+			else {
+				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_7_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_7_rad_date_month").change(function() {
+			if (!IsDateQ84_7())
+			{
+				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_7_rad_date_month").focus();
+			}
+			else {
+				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_7_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_7_rad_date_year").change(function() {
+			if (!IsDateQ84_7())
+			{
+				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_7_rad_date_year").focus();
+			}
+			else {
+				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_7_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_8_rad_date_day").change(function() {
+			if (!IsDateQ84_8())
+			{
+				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_8_rad_date_day").focus();
+			}
+			else {
+				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_8_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_8_rad_date_month").change(function() {
+			if (!IsDateQ84_8())
+			{
+				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_8_rad_date_month").focus();
+			}
+			else {
+				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_8_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_8_rad_date_year").change(function() {
+			if (!IsDateQ84_8())
+			{
+				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_8_rad_date_year").focus();
+			}
+			else {
+				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_8_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_9_rad_date_day").change(function() {
+			if (!IsDateQ84_9())
+			{
+				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_9_rad_date_day").focus();
+			}
+			else {
+				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_9_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_9_rad_date_month").change(function() {
+			if (!IsDateQ84_9())
+			{
+				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_9_rad_date_month").focus();
+			}
+			else {
+				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_9_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_9_rad_date_year").change(function() {
+			if (!IsDateQ84_9())
+			{
+				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_9_rad_date_year").focus();
+			}
+			else {
+				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_9_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	$("#q84_10_rad_date_day").change(function() {
+			if (!IsDateQ84_10())
+			{
+				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_10_rad_date_day").focus();
+			}
+			else {
+				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_10_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);	
+	$("#q84_10_rad_date_month").change(function() {
+			if (!IsDateQ84_10())
+			{
+				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("q84_10_rad_date_month").focus();
+			}
+			else {
+				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_10_rad_status').attr('innerHTML', "");
+			}	
+		}
+	);
+	$("#q84_10_rad_date_year").change(function() {
+			if (!IsDateQ84_10())
+			{
+				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q84_10_rad_date_year").focus();
+			}
+			else {
+				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				//$('#q84_10_rad_date_status').attr('innerHTML', "");
+			}	
+		}
+	);		
+	
 });	
 </g:javascript>
         <div class="nav">
