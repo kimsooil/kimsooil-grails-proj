@@ -10,26 +10,20 @@
 <link rel='stylesheet' type='text/css' href="${resource(dir:'fullcalendar',file:'fullcalendar.print.css')}" media='print' />
 
 <script type='text/javascript' src="${resource(dir:'fullcalendar',file:'fullcalendar.min.js')}"></script>
-
-<style type='text/css'>
-
-    #calendar {
+<style type="text/css">
+<!--
+	#calendar {
         width: 750px;
         margin: 0 auto;
         }
-
+-->
 </style>
     </head>
     <body>
 <script type='text/javascript'>
 
     $(document).ready(function() {
-   
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
-       
+
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
