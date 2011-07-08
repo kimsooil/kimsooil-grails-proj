@@ -23,7 +23,11 @@
 <script type='text/javascript'>
 
     $(document).ready(function() {
-
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
         $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next today',
@@ -51,10 +55,11 @@ surveyInstanceList.each{
         println "{title:"+"\'$it.id[$sex]\'"+",color:\'#0000ff\', start: new Date($cy, $cm, $cd), end: new Date($uy, $um, $ud),url:\'/hispbb/survey/show/$it.id\'},"
     else
         println "{title:"+"\'$it.id[$sex]($current_step)\'"+",color:\'#ff0000\', start: new Date($cy, $cm, $cd), end: new Date($uy, $um, $ud),url:\'/hispbb/survey/show/$it.id\'},"
-
    
 }
+println "{}"  // supressing js-error in IE7
 %>
+
             ]
         });
        

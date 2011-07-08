@@ -55,6 +55,7 @@ surveyInstanceList.each{
 
    
 }
+println "{}" // supressing js-error in IE7
 %>
             ]
         });
