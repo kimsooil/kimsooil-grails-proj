@@ -4,7 +4,8 @@
 		def values =[]
 		def labels =[]
 		//def locations = u56survey.Survey.executeQuery("select distinct p.location from Person p where p.role='surveyer'")
-		def locations = u56survey.Survey.executeQuery("select distinct p.location from Person p")
+		//def locations = u56survey.Survey.executeQuery("select distinct p.location from Person p")
+		def locations = u56survey.Site.executeQuery("select distinct s.fourletters from Site s")
 		locations.each {
 			values << u56survey.Survey.countByConsentNumLoc(it)
 			labels << it+" ["+u56survey.Survey.countByConsentNumLoc(it)+"]"
