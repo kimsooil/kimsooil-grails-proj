@@ -5,7 +5,7 @@ class Person {
     login(unique:true)
     password(password:true)
 	role(inList:["surveyer", "admin"])
-	location(inList:["MOFF", "SANL"])
+	location(inList:["MOFF", "FLHO", 'PSoM', 'STLU', 'HIMA', 'SJVA', 'AMHO', 'PRTB', 'DEMO'])
 	language(inList:["English", "Spanish"])
 	sex(inList:["Female", "Male"])
   }
