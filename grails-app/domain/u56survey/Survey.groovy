@@ -453,7 +453,7 @@ class Survey {
 	static constraints = {
 		
 		//consentNumSurv(inList:["HISPBB"])
-		consentNumLoc(inList:["MOFF", "SANL", "CAIMED", 'HIMA', 'PSMHS', 'PRTB'])
+		consentNumLoc(inList:["MOFF", "FLHO", "PSoM", "STLU", "HIMA", "SJVA", "AMHO", 'PRTB', "DEMO"])
 		//consentNum(blank:false)
 		//being_treated_for_cancer(blank:false)
 		//sex(blank:false)
