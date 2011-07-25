@@ -19,7 +19,7 @@ body {
     <body>
         <div class="body">
 
-        	<h1>Thank you! / Gracias</h1>
+        	<h1><g:message code="thankyou"/></h1>
 
 			<a href="${createLink(uri: '/')}"><label style="color:aquamarine">HISPBB</label></a>
 <%--<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'psm45percent.JPG')}" alt="moffitt" border="0" /></a> --%>
