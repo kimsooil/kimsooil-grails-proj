@@ -15,6 +15,7 @@ class SurveyController {
 	
 	def authz() {
 		 if(!session.user) {
+			 session.returnURL = request.request.requestURL
 			  redirect(controller:"person", action:"login")
 			  return false
 		 }

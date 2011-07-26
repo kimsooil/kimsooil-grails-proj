@@ -9,12 +9,15 @@ class PersonController {
 	def auth() {
 		if( !(session?.user?.role == "admin") ){
 		  flash.message = "You must be an administrator to perform that task."
+		  session.returnURL = request.request.requestURL
 		  redirect(action:"login")
 		  return false
 		}
 	  }
 	
-	def login = {}
+	def login = {
+		//flash.message = session.returnURL
+	}
 	
 	def authenticate = {
 	  def now = new Date()
@@ -29,10 +32,16 @@ class PersonController {
 
 		//redirect(controller:"survey", action:"list")
 		if (session.user.language=="English"){
-			redirect(uri:"/survey/list?lang=en")
+			if (session.returnURL)
+				redirect(url:session.returnURL+"?lang=en")
+			else
+				redirect(uri:"/survey/list?lang=en")
 		}
 		else if (session.user.language=="Spanish"){
-			redirect(uri:"/survey/list?lang=es")
+			if (session.returnURL)
+				redirect(url:session.returnURL+"?lang=es")
+			else
+				redirect(uri:"/survey/list?lang=es")
 		}
 	  }
 	  else{
