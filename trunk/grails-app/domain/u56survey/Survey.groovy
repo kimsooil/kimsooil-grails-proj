@@ -9,6 +9,7 @@ class Survey {
 	String otherNumberOrComments // it can be used for preexisting (come from already-collected-via-paper form) questionnaire(s)
 	String consentNumSurv="HISPBB" // Name of the survey
 	String consentNumLoc
+	String mrn
 	
 	// status keeping
 	String step // step #. If completed, put 'completed' 

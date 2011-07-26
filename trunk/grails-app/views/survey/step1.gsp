@@ -116,6 +116,7 @@ $(document).ready(function(){
                 <g:hiddenField name="step" value="${step}" />
                 <g:hiddenField name="surveyer" value="${session.user.login}" />
                 <g:hiddenField name="age" value="" />
+                <g:hiddenField name="mrn" value="${surveyInstance?.mrn}" />
 
                 <div class="dialog">
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> - 

@@ -73,6 +73,10 @@ class SurveyController {
 
 	
 	def step1 = { // copied from create
+		if (params.MRN && !params.mrn) params.mrn=params.MRN
+		def existing_survey = params.mrn ? Survey.findByMrn(params.mrn): null
+		if (existing_survey) redirect(action:"step1_edit", id: existing_survey.id)
+		
 		def countries = [] as SortedSet
 		def countryNames = [:] // map
 		
