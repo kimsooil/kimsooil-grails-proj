@@ -68,7 +68,8 @@ $(document).ready(function(){
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
         </div>
-        <table style="border: 0px solid #ccc;">
+		<div align="center">
+        <table style="border: 0px solid #ccc">
         <tr>
         <td>
         	<%--<div id="ponceLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'Ponce2.jpg')}" alt="ponce" border="0" /></a> --%>
@@ -82,17 +83,21 @@ $(document).ready(function(){
         </td>
  --%>        
         <td>
-	        <br/><h1><label style="color:limegreen"><g:message code="site.title"/></label></h1>
-	        <label style="color:deepskyblue">Hispanic Bio-Bank <a href="/hispbb/changes.html">(7/26/2011)</a>
-	        <%-- - <a href="/hispbb/changes.html">Changes</a></label>
+	        <br/> <br/>
+	        <h1><label style="color:limegreen"><g:message code="site.title"/></label></h1>
+	        <%--<label style="color:deepskyblue">Hispanic Bio-Bank <a href="/hispbb/changes.html">(7/26/2011)</a>
+	         - <a href="/hispbb/changes.html">Changes</a></label>
 	         - <label>(<a href="/hispbb/browsers.html">Best viewed with Safari & FireFox - <font color="red">not IE</font></a>)</label> --%>
         </td>
 
        </tr>
         </table>
+		
+        <div>
         <span style="float:right; padding:1em"><g:loginControl /></span>
         <span style="float:right; padding:1em"><langs:selector langs="es, en"/></span>
         </div>
+</div>
         <g:layoutBody />
 
     </body>

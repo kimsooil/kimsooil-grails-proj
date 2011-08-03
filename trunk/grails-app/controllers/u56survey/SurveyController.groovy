@@ -16,8 +16,12 @@ class SurveyController {
 	def authz() {
 		 if(!session.user) {
 			 session.returnURL = request.request.requestURL
-			  redirect(controller:"person", action:"login")
-			  return false
+			 if (params.login && params.password)
+			 	redirect(controller:"person", action:"authenticate", params:params)
+			 else
+			 	redirect(controller:"person", action:"login", params:params)
+			 
+			 return false
 		 }
 	}
 	
@@ -73,6 +77,7 @@ class SurveyController {
 
 	
 	def step1 = { // copied from create
+		
 		if (params.MRN && !params.mrn) params.mrn=params.MRN
 		def existing_survey = params.mrn ? Survey.findByMrn(params.mrn): null
 		if (existing_survey) redirect(action:"step1_edit", id: existing_survey.id)
