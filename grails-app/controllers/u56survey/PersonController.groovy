@@ -10,6 +10,7 @@ class PersonController {
 		if( !(session?.user?.role == "admin") ){
 		  flash.message = "You must be an administrator to perform that task."
 		  session.returnURL = request.request.requestURL
+		  //session.returnURL = request.forwardURI
 		  redirect(action:"login")
 		  return false
 		}
@@ -17,6 +18,7 @@ class PersonController {
 	
 	def login = {
 		//flash.message = session.returnURL
+		//flash.message = message(code:"login_message")
 	}
 	
 	def authenticate = {
@@ -49,8 +51,9 @@ class PersonController {
 		  //System.err.println(" Login("+params.login+":"+params.password+") Failed")
 
 		  log.error " Login("+params.login+":"+params.password+") Failed"
-		  flash.message = "Sorry, ${params.login}. Please try again."
-		  redirect(action:"login")
+		  //flash.message = "Sorry, ${params.login}. Please try again."
+		  flash.message = message(code:"login_message")
+		  redirect(action:"login", params:params)
 	  }
 	  
 	}

@@ -20,11 +20,7 @@ body {
     float: left;
     margin: 0 15px 10px 15px;
 }
-.loginform{
-  background-image: url("../images/tere50percent.JPG");
-  background-position: 0% 0%;
-  background-repeat: no-repeat;  
-}
+
 #grailsLogo {
 	padding:20px;
 }
@@ -141,6 +137,8 @@ td.errors textarea {
 
 table {
     border: 1px solid #ccc;
+    margin-left:auto;
+    margin-right:auto;
    /* width: 100% */
 }
 
@@ -315,6 +313,7 @@ th.desc a {
     font-color: orange;
     padding-left: 28px;
 }
+
 .buttons a.edit {
     background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat;
     padding-left: 28px;

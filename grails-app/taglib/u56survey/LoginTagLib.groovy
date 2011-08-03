@@ -10,21 +10,21 @@ class LoginTagLib {
 				case "development":
 					if(session.user){
 					  out << message(code:"hello")+"  ${session.user} "
-					  out << """[${link(action:"logout", controller:"person"){"Logout"}}]"""
+					  out << """[${link(action:"logout", controller:"person"){message(code:'logout2')}}]"""
 					  
 					} else {
-					  out << """[${link(action:"login", controller:"person"){"Login"}}]"""
+					  out << """[${link(action:"login", controller:"person"){message(code:'login2')}}]"""
 					}
 				break
 				case "production":
 					if(session.user){
 					  out << message(code:"hello")+"  ${session.user} "
-					  out << """[${link(action:"logout", controller:"person"){"Switch user"}}]"""
+					  //out << """[${link(action:"logout", controller:"person"){"Switch user"}}]"""
 					  
-					  out << """-[${link(action:"securelogout", controller:"person"){"Logout"}}]"""
+					  out << """-[${link(action:"securelogout", controller:"person"){message(code:'logout2')}}]"""
 					  
 					} else {
-					  out << """[${link(action:"login", controller:"person"){"Login"}}]"""
+					  out << """[${link(action:"login", controller:"person"){message(code:'login2')}}]"""
 					}
 				break
 			  }
