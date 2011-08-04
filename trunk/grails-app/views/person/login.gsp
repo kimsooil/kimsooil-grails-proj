@@ -11,7 +11,7 @@
 body {
   background-image: url("../images/tere75percent.JPG");
   background-position: 50% 0%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-color: black;  
 }
 .fortypercent{
