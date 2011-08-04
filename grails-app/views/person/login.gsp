@@ -9,7 +9,7 @@
 <style type="text/css">
 <!--
 body {
-  background-image: url("../images/tere55percent.JPG");
+  background-image: url("../images/tere58percent.JPG");
   background-position: 50% 0%;
   background-repeat: repeat;
   background-color: black;  
