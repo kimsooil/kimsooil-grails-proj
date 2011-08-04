@@ -14,7 +14,7 @@ body
 	font-size: 12px;
 	background: #fff;
 	margin: 45px;
-
+	
 	border-collapse: collapse;
 	text-align: left;
 }
@@ -332,7 +332,7 @@ body
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 16px;
 	margin: 0px;
-	width: 100%;
+	width: 40%;
 	text-align: left;
 	border-collapse: collapse;
 }

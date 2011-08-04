@@ -52,7 +52,7 @@ width: 40%;
             </tbody>
           </table>
         </div>
-        <div class="buttons">
+        <div class="buttons fortypercent">
           <span class="button">
             <input class="information" type="submit" value="${message(code:'login2')}" />
           </span>
