@@ -126,10 +126,8 @@ $(document).ready(function(){
 					 <table class="box-table-b-wide">
 					 <thead>
 					 <tr>
-					 	<th style="width:3%"><g:message code="survey.saturatedfats" /></th>
-					 	<th style="width:47%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
-					 	<th style="width:3%"><g:message code="survey.vegetables" /></th>
-					 	<th style="width:47%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
+					 	<th style="width:25%"><g:message code="survey.saturatedfats" /></th>
+					 	<th style="width:75%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
 					 </tr>
 					 </thead>
 					 <tbody>
@@ -154,6 +152,25 @@ $(document).ready(function(){
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 							</g:radioGroup>					 	
 					 	</td>
+
+					 </tr>
+					 <%i++%>
+					 </g:while>
+					 </tbody>
+					 </table>
+
+					 <table class="box-table-b-wide">
+					 <thead>
+					 <tr>
+					 	<th style="width:25%"><g:message code="survey.vegetables" /></th>
+					 	<th style="width:75%"><g:message code="survey.daily" /> / <g:message code="survey.weekly" /> / <g:message code="survey.monthly" /></th>
+					 </tr>
+					 </thead>
+					 <tbody>
+					 <%i=0 %>
+					 <g:while test="${i<14}">
+					 <%def idx=i+1 %>
+					 <tr>
 					 	<td>
 					 	<%--${i+1}.  --%>
 
