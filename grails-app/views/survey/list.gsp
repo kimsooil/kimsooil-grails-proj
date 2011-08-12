@@ -39,6 +39,8 @@
 		        	<br/>
 		        	<li><g:link class="list_surveyer" action="list_surveyer"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 		        	<br/>
+		        	<li><g:link controller="survey" class="list" action="print">Print Form</g:link></li>
+		        	<br/>
 		        	<g:render template="/common/gchart"/>
 		        	<br/>
 		        	<g:render template="/common/instructions"/>
