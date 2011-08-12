@@ -2,9 +2,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
         <meta name="layout" content="main" />
+
         <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
-        <title>Read-only</title>
+        <title>Print</title>
 <%--
 		<jv:generateValidation domain="survey" form="surveyform15"  display="list" container="errors"/>        
  --%>
@@ -29,7 +31,7 @@ $(document).ready(function(){
 	</g:else>
 	
 	window.onload= function(){
-	  	DisableEnableForm(document.surveyform_preview,true);
+	  	//DisableEnableForm(document.surveyform_preview,true);
 		$("[name=_action_update]").attr("disabled", false);
   		$("[name=_action_completed]").attr("disabled", false);
   		$("[name=id]").attr("disabled", false);		  
@@ -50,14 +52,17 @@ function confirmSubmit()
 	}
 }   
 </g:javascript>
+<g:if test="${flash.print!='print'}">	
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <g:if test="${!surveyInstance?.completed}">
             	<span class="menuButton"><g:render template="/common/step_meter"/></span>
             </g:if>
         </div>
+</g:if>        
         <div class="body">
-            <h1><g:message code="preview"/></h1>
+<%--            <h1>Survey Form</h1> --%>
+
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -66,6 +71,9 @@ function confirmSubmit()
             <g:form name="surveyform_preview"
             		onsubmit="return confirmSubmit();"
 					method="post" >
+					
+				<input type="button" value=" Print" onclick="window.print();return false;" />
+					
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:hiddenField name="consentNum" value="${surveyInstance?.consentNum}" />
@@ -126,7 +134,7 @@ function confirmSubmit()
                      
                     <span class="button"><g:actionSubmit class="done" action="done" value="${message(code: 'Done', default: 'Done.')}" /></span>
  --%> 
-
+<%--
 <g:if test="${!surveyInstance?.completed}"> 
 	<span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
 	<span class="button"><g:actionSubmit class="complete" action="completed" value="${message(code: 'complete', default: 'Complete')}" /></span>
@@ -139,7 +147,7 @@ function confirmSubmit()
 <br/>
 <br/>
 </g:else>
-
+ --%>
                 </div>
             </g:form>
         </div>
