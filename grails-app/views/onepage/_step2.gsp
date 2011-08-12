@@ -62,7 +62,6 @@
 						<td>
 							<g:datePicker name="q11a_hep_donotknow_type_Year" precision="year" value="${surveyInstance?.('q11a_hep_donotknow_type_Year')}"
 	                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_hep_donotknow_type_Year_status')}"></span><br/>
-						
 						</td>
 					</tr>
 					</g:if>
@@ -80,9 +79,7 @@
 								</g:radioGroup>						
 						</td>
 						<td style="border: 1px solid #9baff1;">
-                    <%
-							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
-					%>	
+	
 							<g:datePicker name="${('q11a_'+idx+'Year')}" precision="year" value="${surveyInstance?.('q11a_'+idx+'Year')}"
 	                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_'+idx+'_status')}"></span><br/>
 
@@ -98,14 +95,21 @@
 					 <br/> <br/>
 						 <ul>
 						 <div>
-					 	
+						 <%--
+					 		<g:radioGroup name="haveCancer"
+                                  value="${surveyInstance?.haveCancer}" 
+                                  labels="[g.message(code:'survey.yes'),g.message(code:'survey.no')]"
+                                  values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+						  --%>	
 						 	<input type="radio" id="haveCancer" name="haveCancer" value="yes" 
 						 		<g:if test="${surveyInstance?.being_treated_for_cancer=='yes'}">checked="true"</g:if>
 						 		<g:elseif test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:elseif> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
 						 	<%--<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" /> --%>
 						 	<input type="radio" id="haveCancer" name="haveCancer" value="no" 
 						 		<g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
-
+							
 						</div>
 						</ul>
 					</ul>
@@ -162,16 +166,42 @@
 	                    	<% def idx=i+1 %>
 	                    	<tr class="prop">
 	                    	<td style="width: 35%;font-weight:bold;">
-	                    	${idx}. ${cancertype}
-	                    	<g:if test="${cancertype==message(code:'survey.q12_other') }">
-	                    		<g:textField name="q12_which_cancer" 
-	                    					 value="${surveyInstance?.q12_which_cancer}" /> 
-	                    	</g:if>
+	                    		<g:if test="${cancertype==message(code:'survey.q12_prostate') }"><label style="color:#0000FF"></g:if><g:else><label></g:else>
+	                    		<g:if test="${cancertype==message(code:'survey.q12_cervical') || cancertype==message(code:'survey.q12_uterine') || cancertype==message(code:'survey.q12_ovarian') }"><label style="color:#FF1493"></g:if><g:else><label></g:else>
+	                    		${idx}. ${cancertype}
+	                    		</label>
+		                    	<g:if test="${cancertype==message(code:'survey.q12_other') }">
+		                    		<g:textField name="q12_which_cancer" 
+		                    					 value="${surveyInstance?.q12_which_cancer}" /> 
+		                    	</g:if>
 	                    	</td>
+					<g:if test="${(surveyInstance?.sex=='female' && cancertype==message(code:'survey.q12_prostate')) || (surveyInstance?.sex=='male' && (cancertype==message(code:'survey.q12_cervical') || cancertype==message(code:'survey.q12_uterine') || cancertype==message(code:'survey.q12_ovarian'))    ) }">
+							<td style="width: 5%;">
+								n/a
+								<div style="display:none">
+								<g:textField style="width: 50px" name="${('q12_'+idx+'_ageDiagnosed')}"
+	                    					 value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}"
+	                    					 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
+								</div>
+							</td>
+							<td>
+								n/a
+								<div style="display:none">
+									 <g:each in="${TreatmentList }" status="j" var="treatment">
+									 <% def tidx=j+1 %>
+									 		<g:checkBox name="${('q12_'+idx+'_'+tidx)}"
+									 		 value="${surveyInstance?.('q12_'+idx+'_'+tidx)}" 
+									 		 onclick="resetIfnone()"/> <label>${treatment }</label>&nbsp;&nbsp;&nbsp;
+									 </g:each>	 								
+								</div>
+							</td>
+               		</g:if>
+               		<g:else>
+
 	                    	<td style="width: 5%;">
 	                    		<g:textField style="width: 50px" name="${('q12_'+idx+'_ageDiagnosed')}"
 	                    					 value="${surveyInstance?.('q12_'+idx+'_ageDiagnosed')}"
-	                    					 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
+	                    					 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status'+idx)}\')); "/> <span id="${('cancerAge_status'+idx)}"></span>
 	                    	</td>
 	                    	<td>
 							 <g:each in="${TreatmentList }" status="j" var="treatment">
@@ -181,6 +211,7 @@
 							 		 onclick="resetIfnone()"/> <label>${treatment }</label>&nbsp;&nbsp;&nbsp;
 							 </g:each>	                    	
 	                    	</td>
+	                   </g:else>
 	                    	</tr>
 	                    	</g:each>
 	                    </tbody>
@@ -208,7 +239,7 @@
 						<g:checkBox name="spread_lung" value="${surveyInstance?.spread_lung}" /> <g:message code="survey.q11c.lung" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<g:checkBox name="spread_bone" value="${surveyInstance?.spread_bone}" /> <g:message code="survey.q11c.bone" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<g:checkBox name="spread_other" value="${surveyInstance?.spread_other}" onchange="if (this.checked) document.getElementById('spread_status').style.display='inline'; else document.getElementById('spread_status').style.display='none';" /> <g:message code="survey.q11c.other" />
-						 <span id="spread_status">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><g:message code="survey.q11c.specify" /></font> <g:textField name="spread_where" value="${surveyInstance?.spread_where}" /></span>
+						 <span style="display:none;" id="spread_status">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><g:message code="survey.q11c.specify" /></font> <g:textField name="spread_where" value="${surveyInstance?.spread_where}" /></span>
 					
 					</ul>
 					<br/>

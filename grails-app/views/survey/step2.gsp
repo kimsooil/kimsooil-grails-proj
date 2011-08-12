@@ -451,7 +451,7 @@ $(document).ready(function(){
 						<g:checkBox name="spread_lung" value="${surveyInstance?.spread_lung}" /> <g:message code="survey.q11c.lung" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<g:checkBox name="spread_bone" value="${surveyInstance?.spread_bone}" /> <g:message code="survey.q11c.bone" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<g:checkBox name="spread_other" value="${surveyInstance?.spread_other}" onchange="if (this.checked) document.getElementById('spread_status').style.display='inline'; else document.getElementById('spread_status').style.display='none';" /> <g:message code="survey.q11c.other" />
-						 <span style="display:none;" id="spread_status">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><g:message code="survey.q11c.specify" /></font> <g:textField name="spread_where" value="${surveyInstance?.spread_where}" /></span>
+						 <span id="spread_status">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><g:message code="survey.q11c.specify" /></font> <g:textField name="spread_where" value="${surveyInstance?.spread_where}" /></span>
 					
 					</ul>
 					<br/>

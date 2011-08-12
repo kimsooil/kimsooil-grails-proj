@@ -60,13 +60,22 @@
                     <tr>
                     	<td style="width:60%;font-weight:bold"><label><g:message code="survey.q37" default="q37" /></label></td>
                     	<td>
-                    	<%
-						def bleedingList=[message(code:'survey.q37.none'), message(code:'survey.q37.b1'), message(code:'survey.q37.b2')]
-						 %>
                         	<g:radioGroup name="q37"
                             	value="${surveyInstance?.q37}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup>
+							<br/><br/>                     	
+                    	<%
+						def bleedingList=[message(code:'survey.q37.donotknow'),
+										 message(code:'survey.q37.b1'),
+										 message(code:'survey.q37.b2')]
+						 %>
+                        	<g:radioGroup name="q37_what"
+                            	value="${surveyInstance?.q37_what}" 
                                 labels="${bleedingList }" 
-                                values="['none', 'red','black']" >
+                                values="['donotknow', 'red','black']" >
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>                    	
                     	</td>
@@ -121,7 +130,7 @@
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left"><g:message code="survey.when" default="When" />: <g:datePicker name="date_digital_rectal_exam" precision="month" value="${surveyInstance?.date_digital_rectal_exam}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />  <span id="alertIfInvalid3"></span>
                                       </div>
                             
                     	</td>
@@ -139,7 +148,7 @@
 							<div style="clear:left">
 							
 							<g:message code="survey.when" default="When" />: <g:datePicker name="date_sigmoidoscopy_colonoscopy" precision="month" value="${surveyInstance?.date_sigmoidoscopy_colonoscopy}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid4"></span>
                                       </div>
                             
                     	</td>
