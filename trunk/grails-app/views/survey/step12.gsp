@@ -327,8 +327,8 @@ $(document).ready(function(){
 				$("q84_1_rad_date_day").focus();
 			}
 			else {
-				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_1_rad_date_status').attr('innerHTML', "");
+				//$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_1_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -339,8 +339,8 @@ $(document).ready(function(){
 				$("q84_1_rad_date_month").focus();
 			}
 			else {
-				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_1_rad_status').attr('innerHTML', "");
+				//$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_1_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -351,8 +351,8 @@ $(document).ready(function(){
 				$("#q84_1_rad_date_year").focus();
 			}
 			else {
-				$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_1_rad_date_status').attr('innerHTML', "");
+				//$('#q84_1_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_1_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -363,8 +363,8 @@ $(document).ready(function(){
 				$("q84_2_rad_date_day").focus();
 			}
 			else {
-				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_2_rad_date_status').attr('innerHTML', "");
+				//$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_2_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -375,8 +375,8 @@ $(document).ready(function(){
 				$("q84_2_rad_date_month").focus();
 			}
 			else {
-				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_2_rad_status').attr('innerHTML', "");
+				//$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_2_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -387,8 +387,8 @@ $(document).ready(function(){
 				$("#q84_2_rad_date_year").focus();
 			}
 			else {
-				$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_2_rad_date_status').attr('innerHTML', "");
+				//$('#q84_2_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_2_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -399,8 +399,8 @@ $(document).ready(function(){
 				$("q84_3_rad_date_day").focus();
 			}
 			else {
-				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_3_rad_date_status').attr('innerHTML', "");
+				//$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_3_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -411,8 +411,8 @@ $(document).ready(function(){
 				$("q84_3_rad_date_month").focus();
 			}
 			else {
-				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_3_rad_status').attr('innerHTML', "");
+				//$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_3_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -423,8 +423,8 @@ $(document).ready(function(){
 				$("#q84_3_rad_date_year").focus();
 			}
 			else {
-				$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_3_rad_date_status').attr('innerHTML', "");
+				//$('#q84_3_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_3_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -435,8 +435,8 @@ $(document).ready(function(){
 				$("q84_4_rad_date_day").focus();
 			}
 			else {
-				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_4_rad_date_status').attr('innerHTML', "");
+				//$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_4_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -447,8 +447,8 @@ $(document).ready(function(){
 				$("q84_4_rad_date_month").focus();
 			}
 			else {
-				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_4_rad_status').attr('innerHTML', "");
+				//$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_4_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -459,8 +459,8 @@ $(document).ready(function(){
 				$("#q84_4_rad_date_year").focus();
 			}
 			else {
-				$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_4_rad_date_status').attr('innerHTML', "");
+				//$('#q84_4_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_4_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -471,8 +471,8 @@ $(document).ready(function(){
 				$("q84_5_rad_date_day").focus();
 			}
 			else {
-				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_5_rad_date_status').attr('innerHTML', "");
+				//$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_5_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -483,8 +483,8 @@ $(document).ready(function(){
 				$("q84_5_rad_date_month").focus();
 			}
 			else {
-				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_5_rad_status').attr('innerHTML', "");
+				//$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_5_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -495,8 +495,8 @@ $(document).ready(function(){
 				$("#q84_5_rad_date_year").focus();
 			}
 			else {
-				$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_5_rad_date_status').attr('innerHTML', "");
+				//$('#q84_5_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_5_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -507,8 +507,8 @@ $(document).ready(function(){
 				$("q84_6_rad_date_day").focus();
 			}
 			else {
-				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_6_rad_date_status').attr('innerHTML', "");
+				//$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_6_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -519,8 +519,8 @@ $(document).ready(function(){
 				$("q84_6_rad_date_month").focus();
 			}
 			else {
-				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_6_rad_status').attr('innerHTML', "");
+				//$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_6_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -531,8 +531,8 @@ $(document).ready(function(){
 				$("#q84_6_rad_date_year").focus();
 			}
 			else {
-				$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_6_rad_date_status').attr('innerHTML', "");
+				//$('#q84_6_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_6_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -543,8 +543,8 @@ $(document).ready(function(){
 				$("q84_7_rad_date_day").focus();
 			}
 			else {
-				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_7_rad_date_status').attr('innerHTML', "");
+				//$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_7_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -555,8 +555,8 @@ $(document).ready(function(){
 				$("q84_7_rad_date_month").focus();
 			}
 			else {
-				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_7_rad_status').attr('innerHTML', "");
+				//$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_7_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -567,8 +567,8 @@ $(document).ready(function(){
 				$("#q84_7_rad_date_year").focus();
 			}
 			else {
-				$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_7_rad_date_status').attr('innerHTML', "");
+				//$('#q84_7_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_7_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -579,8 +579,8 @@ $(document).ready(function(){
 				$("q84_8_rad_date_day").focus();
 			}
 			else {
-				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_8_rad_date_status').attr('innerHTML', "");
+				//$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_8_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -591,8 +591,8 @@ $(document).ready(function(){
 				$("q84_8_rad_date_month").focus();
 			}
 			else {
-				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_8_rad_status').attr('innerHTML', "");
+				//$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_8_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -603,8 +603,8 @@ $(document).ready(function(){
 				$("#q84_8_rad_date_year").focus();
 			}
 			else {
-				$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_8_rad_date_status').attr('innerHTML', "");
+				//$('#q84_8_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_8_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -615,8 +615,8 @@ $(document).ready(function(){
 				$("q84_9_rad_date_day").focus();
 			}
 			else {
-				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_9_rad_date_status').attr('innerHTML', "");
+				//$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_9_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -627,8 +627,8 @@ $(document).ready(function(){
 				$("q84_9_rad_date_month").focus();
 			}
 			else {
-				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_9_rad_status').attr('innerHTML', "");
+				//$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_9_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -639,8 +639,8 @@ $(document).ready(function(){
 				$("#q84_9_rad_date_year").focus();
 			}
 			else {
-				$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_9_rad_date_status').attr('innerHTML', "");
+				//$('#q84_9_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_9_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		
@@ -651,8 +651,8 @@ $(document).ready(function(){
 				$("q84_10_rad_date_day").focus();
 			}
 			else {
-				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_10_rad_date_status').attr('innerHTML', "");
+				//$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_10_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);	
@@ -663,8 +663,8 @@ $(document).ready(function(){
 				$("q84_10_rad_date_month").focus();
 			}
 			else {
-				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_10_rad_status').attr('innerHTML', "");
+				//$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_10_rad_status').attr('innerHTML', "");
 			}	
 		}
 	);
@@ -675,8 +675,8 @@ $(document).ready(function(){
 				$("#q84_10_rad_date_year").focus();
 			}
 			else {
-				$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
-				//$('#q84_10_rad_date_status').attr('innerHTML', "");
+				//$('#q84_10_rad_date_status').attr('innerHTML', " <label style='color:#0000ff'>(o)</label>");
+				$('#q84_10_rad_date_status').attr('innerHTML', "");
 			}	
 		}
 	);		

@@ -6,4 +6,5 @@
 	<div class="vcheckbox">${it.radio}</div> <div class="label">${it.label}</div>
 </g:else>
  --%>
-<div>${it.radio} ${it.label}</div>
+
+${it.radio} ${it.label}<br/>
