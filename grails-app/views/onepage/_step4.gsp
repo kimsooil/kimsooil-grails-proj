@@ -164,7 +164,7 @@
 									<br/><g:message code="survey.and_or.label" default="and/or" />
                                     <br/>
 
-                                    <g:kimsiDatePicker name="q21_dateStopSmoking" precision="day" value="${surveyInstance?.q21_dateStopSmoking}"
+                                    <g:kimsiDatePicker name="q21DateStopSmoking" precision="day" value="${surveyInstance?.q21DateStopSmoking}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /><br/>
 
                                     

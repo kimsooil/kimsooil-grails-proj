@@ -105,8 +105,8 @@ $(document).ready(function(){
 	    	$("[name='stillSmoke']").attr("disabled", true);
 	    	$("[name*='q21_whenStopSmoking_']").val('');
 	    	$("[name*='q21_whenStopSmoking_']").attr("disabled", true);	    	
-	    	$("[name*='q21_dateStopSmoking']").val('');
-	    	$("[name*='q21_dateStopSmoking']").attr("disabled", true);
+	    	$("[name*='q21DateStopSmoking']").val('');
+	    	$("[name*='q21DateStopSmoking']").attr("disabled", true);
 	    }
 	});
 
@@ -114,13 +114,13 @@ $(document).ready(function(){
 	    if ($("input[name='stillSmoke']:checked").val() == 'yes'){
 	    	$("[name*='q21_whenStopSmoking_']").val('');
 	    	$("[name*='q21_whenStopSmoking_']").attr("disabled", true);	    	
-	    	$("[name*='q21_dateStopSmoking']").val('');
-	    	$("[name*='q21_dateStopSmoking']").attr("disabled", true);	    
+	    	$("[name*='q21DateStopSmoking']").val('');
+	    	$("[name*='q21DateStopSmoking']").attr("disabled", true);	    
 	    }
 	    else if ($("input[name='stillSmoke']:checked").val() == 'no'){
 	    	$("#stillSmoke_status").html(" <font color='red'>(<b>* Answer Q26.</b>)</font>");
 	    	$("[name*='q21_whenStopSmoking_']").attr("disabled", '');	    	
-	    	$("[name*='q21_dateStopSmoking']").attr("disabled", '');	    		    		    
+	    	$("[name*='q21DateStopSmoking']").attr("disabled", '');	    		    		    
 	    }
 	});
 	    
@@ -313,8 +313,8 @@ $(document).ready(function(){
 									//out << birth[java.util.Calendar.YEAR]
 									
                                     %>
-                                    <g:kimsiDatePicker name="q21_dateStopSmoking" precision="day" value="${surveyInstance?.q21_dateStopSmoking}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /><br/>
+                                    <g:kimsiDatePicker name="q21DateStopSmoking" precision="day" value="${surveyInstance?.q21DateStopSmoking}"
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" noSelection="${['':'--']}" /><br/>
 
                                     
                                 </td>

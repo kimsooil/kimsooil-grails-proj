@@ -68,7 +68,7 @@ function checkForm4()
 		fv.raiseError(i18nmessages.step4Err11);
 	}	
 	s1=false;
-	$("[name*='q21_']").each( function() {
+	$("[name*='q21']").each( function() {
 		if (this.value!='') s1=true;
 	});
 	if (!s1 && getRadioValue(document.getElementsByName('stillSmoke'))=='no'){

@@ -215,7 +215,7 @@ class Survey {
 	String q19 // On average, how many cigarettes did/do you smoke per day?
 	Boolean q20 // Do you still smoke cigarettes?
 	String stillSmoke
-	Date q21_dateStopSmoking // if q20=no/false
+	Date q21DateStopSmoking // if q20=no/false
 	String q21_whenStopSmoking_years
 	String q21_whenStopSmoking_months 
 
