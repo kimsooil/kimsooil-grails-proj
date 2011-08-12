@@ -99,9 +99,12 @@
 						 <ul>
 						 <div>
 					 	
-						 	<input type="radio" name="haveCancer" value="yes" <g:if test="${surveyInstance?.being_treated_for_cancer=='yes'}">checked="true"</g:if> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
-						 	<!-- <input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" /> -->
-						 	<input type="radio" name="haveCancer" value="no" /> <g:message code="survey.no" default="No" />
+						 	<input type="radio" id="haveCancer" name="haveCancer" value="yes" 
+						 		<g:if test="${surveyInstance?.being_treated_for_cancer=='yes'}">checked="true"</g:if>
+						 		<g:elseif test="${surveyInstance?.haveCancer=='yes'}">checked="true"</g:elseif> /> <g:message code="survey.yes" default="Yes" />&nbsp;&nbsp;&nbsp;
+						 	<%--<input type="radio" name="haveCancer" value="no"  <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" /> --%>
+						 	<input type="radio" id="haveCancer" name="haveCancer" value="no" 
+						 		<g:if test="${surveyInstance?.haveCancer=='no'}">checked="true"</g:if> /> <g:message code="survey.no" default="No" />
 
 						</div>
 						</ul>
