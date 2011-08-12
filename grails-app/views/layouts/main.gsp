@@ -94,9 +94,12 @@ $(document).ready(function(){
         </table>
 		
         <div>
-        <span style="float:right; padding:1em"><g:loginControl /></span>
-        <span style="float:right; padding:1em"><langs:selector langs="es, en"/></span>
+        <g:if test="${flash.print!='print'}">
+        	<span style="float:right; padding:1em"><g:loginControl /></span>
+	        <span style="float:right; padding:1em"><langs:selector langs="es, en"/></span>
+        </g:if>
         </div>
+
 </div>
         <g:layoutBody />
 

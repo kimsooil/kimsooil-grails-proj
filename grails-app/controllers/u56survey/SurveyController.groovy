@@ -422,6 +422,42 @@ class SurveyController {
 			return [surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]
 		}
 	}
+	def print={
+		def countries = [] as SortedSet
+		def countryNames = [:] // map
+		
+		Locale.ISOCountries.each {
+		  if (it) {
+			countries << it
+		  }
+		}
+		countries.each{twolettercode->
+			Locale l= new Locale("", twolettercode);
+			countryNames.put(twolettercode, l.getDisplayCountry())
+		}
+		countryNames.remove("US")
+		countryNames.remove("PR")
+		countryNames=["PR":"PUERTO RICO", "US":"UNITED STATES", "--":"--"]+countryNames.sort{it.value}
+		
+		def today = new Date()
+		//today=today.minusYears(18) // subject should be 18 years old or more
+		def thisyear=today[YEAR]
+		
+		def surveyInstance = Survey.get(params.id)
+				
+		if (!surveyInstance) {
+			//flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'survey.label', default: 'Survey'), params.id])}"
+			//redirect(action: "list")
+			//flash.message = "Save as PDF / Print / Fill in the form"
+			flash.print = "print"
+			surveyInstance = new Survey()
+			
+			return [surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]
+		}
+		else {
+			return [surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]
+		}
+	}
 	def verify={
 		def countries = [] as SortedSet
 		def countryNames = [:] // map
