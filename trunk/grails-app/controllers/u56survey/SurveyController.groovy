@@ -777,4 +777,8 @@ class SurveyController {
 
 	}
 */
+	
+	def ajaxValidICNorNot={
+		render params['icnEntered']
+	}
 }

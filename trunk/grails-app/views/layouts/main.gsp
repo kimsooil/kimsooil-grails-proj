@@ -19,9 +19,12 @@
 <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
 
         <g:layoutHead />
+
+ <g:javascript library="prototype" />
         
 <g:javascript library="application" />
 
+ 
 <%--<g:javascript src="jquery.js" /> --%>
 <g:javascript src="jquery-1.5.1.min.js" />
 <g:javascript src="jquery-ui-1.8.11.custom.min.js" />

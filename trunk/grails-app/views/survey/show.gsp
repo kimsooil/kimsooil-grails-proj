@@ -71,6 +71,12 @@
                 <table>
                     <tbody>
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="survey.id.label" default="Id" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: surveyInstance, field: "id")}</td>
+                            
+                        </tr>
+                        <tr class="prop">
                             <td valign="top" class="name">Survey Name</td>
                             
                             <td valign="top" class="value">${fieldValue(bean: surveyInstance, field: "consentNumSurv")}</td>
@@ -81,13 +87,14 @@
                             
                             <td valign="top" class="value">${fieldValue(bean: surveyInstance, field: "consentNumLoc")}</td>
                             
-                        </tr>                    
+                        </tr>
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="survey.id.label" default="Id" /></td>
+                            <td valign="top" class="name">Informed Consent Number</td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: surveyInstance, field: "id")}</td>
+                            <td valign="top" class="value"><g:formatNumber number="${surveyInstance?.consentNum }" format="####"/></td>
                             
                         </tr>
+                                            
                         <tr class="prop">
                             <td valign="top" class="name">Completed (Y/N)</td>
                             

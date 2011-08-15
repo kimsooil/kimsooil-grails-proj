@@ -7,7 +7,7 @@
         <title><g:message code="step1.edit.label" default="Step1-edit" /></title>
 
 <%--	<jv:generateValidation domain="survey" form="surveyform1"  display="alert" container="errors"/>    --%>        
-		
+ 		
 		<g:render template="errMsgsToJson-js"/>
 
 		<g:javascript src="check_step1.js" />
@@ -126,7 +126,7 @@ $(document).ready(function(){
                 <g:select name="consentNumLoc" 
                 		  from="${u56survey.Site.list()}"
                 		  optionKey="fourletters"
-                		  value="${surveyInstance?.consentNumLoc}"  />-<g:textField disabled="true" name="consentNum" value="${surveyInstance?.consentNum}" /> <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span></h3><br/>
+                		  value="${surveyInstance?.consentNumLoc}"  />-<g:textField name="consentNum" value="${surveyInstance?.consentNum}" onchange="${remoteFunction(action:'ajaxValidICNorNot',update:'lblvalidICNorNot', params:'\'icnEntered=\' + this.value' )}"/> <label style="color:red" id="lblvalidICNorNot"></label> <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span></h3><br/>
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
                 <br/>
                 <ul><g:radioGroup name="being_treated_for_cancer"
