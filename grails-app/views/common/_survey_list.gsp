@@ -22,9 +22,10 @@ def incomplete=surveyInstanceTotal-completed
                 <table id="hor-minimalist-b" style="width:900px;">
                     <thead>
                         <tr>
+                        	<g:sortableColumn property="id" title="${message(code: 'survey.id.label', default: 'ID')}" />
                             <g:sortableColumn property="consentNumSurv" title="Survey Name" />
                             <g:sortableColumn property="consentNumLoc" title="Location" />
-							<g:sortableColumn property="id" title="${message(code: 'survey.id.label', default: 'ID')}" />
+							<g:sortableColumn property="consentNum" title="Informed Consent Number" />
 							<g:sortableColumn property="otherNumberOrComments" title="Other Number, ID, etc." />
                             <g:sortableColumn property="surveyer" title="surveyer" />  
                             
@@ -53,9 +54,10 @@ def incomplete=surveyInstanceTotal-completed
 								}
 								
 							 %>
+							<td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.id}</g:link></td>
                         	<td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.consentNumSurv}</g:link></td>
                         	<td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.consentNumLoc}</g:link></td>
-                            <td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.id}</g:link></td>
+                            <td><g:link action="${stepNumUrl }" id="${surveyInstance.id}"><g:formatNumber number="${surveyInstance?.consentNum }" format="####"/></g:link></td>
                             <td><g:link action="${stepNumUrl }" id="${surveyInstance.otherNumberOrComments}">${surveyInstance?.otherNumberOrComments}</g:link></td>
                         	<td>${surveyInstance?.surveyer}</td>
                         	<td>

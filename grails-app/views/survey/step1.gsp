@@ -123,7 +123,7 @@ $(document).ready(function(){
                 <g:select name="consentNumLoc" 
                 		  from="${u56survey.Site.list()}"
                 		  optionKey="fourletters"
-                		  value="${surveyInstance?.consentNumLoc}" />-<g:textField disabled="true" name="consentNum" value="${surveyInstance?.consentNum}" /> <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span></h3><br/>
+                		  value="${surveyInstance?.consentNumLoc}" />-<g:textField name="consentNum" value="${surveyInstance?.consentNum}" /> <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span></h3><br/>
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
                 <br/>
                 <ul><g:radioGroup name="being_treated_for_cancer"

@@ -5,7 +5,7 @@ class Survey {
 	Date lastUpdated // built-in
 
 //  New ID / ethnic 	
-	String consentNum // informed consent number
+	Integer consentNum // informed consent number
 	String otherNumberOrComments // it can be used for preexisting (come from already-collected-via-paper form) questionnaire(s)
 	String consentNumSurv="HISPBB" // Name of the survey
 	String consentNumLoc
@@ -455,8 +455,11 @@ class Survey {
 		
 		//consentNumSurv(inList:["HISPBB"])
 		consentNumLoc(inList:["MOFF", "FLHO", "PSoM", "STLU", "HIMA", "SJVA", "AMHO", 'PRTB', "DEMO"])
-		//consentNum(blank:false)
+		
+		consentNum(min:1, max:9999, blank:false, unique:true)
+		
 		//being_treated_for_cancer(blank:false)
+		
 		//sex(blank:false)
 		
 		//marital_status(inList:["Married", "Single", "Divorce", "Consensual relationship"])
