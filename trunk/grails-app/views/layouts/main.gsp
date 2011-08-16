@@ -20,8 +20,7 @@
 
         <g:layoutHead />
 
- <g:javascript library="prototype" />
-        
+ 
 <g:javascript library="application" />
 
  
@@ -43,6 +42,8 @@
 
 <script type='text/javascript' src="${resource(dir:'fullcalendar',file:'fullcalendar.min.js')}"></script>  
 <g:javascript>
+
+
 $(document).ready(function(){
 	$(".radio").dgStyle();
 	$(".vradio").dgStyle();
