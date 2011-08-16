@@ -102,7 +102,7 @@ class SurveyController {
 		surveyInstance.save() // id will be created at this time.
 		surveyInstance.consentNumSurv="HISPBB"
 		surveyInstance.consentNumLoc=session.user.location
-		surveyInstance.consentNum=surveyInstance.id
+		//surveyInstance.consentNum=surveyInstance.id
 		surveyInstance.surveyer=session.user.login
 		surveyInstance.step="1"
 		surveyInstance.properties = params
@@ -779,6 +779,20 @@ class SurveyController {
 */
 	
 	def ajaxValidICNorNot={
-		render params['icnEntered']
+		def whatEntered = params['icnEntered']
+		def resultOut = ""
+		if (whatEntered.isNumber()){
+			def whatNumber = whatEntered.toInteger()
+			if (whatNumber >=1 && whatNumber <10000){
+				//resultOut = Survey.findByConsentNum(whatEntered) ? "Existing ICN" : "Valid"
+				resultOut = Survey.findByConsentNum(whatEntered) ? "Existing ICN" : ""
+			}
+			else
+				resultOut = "Valid rane: 1 ~ 9999"
+		}
+		else 
+			resultOut = "Number Only"
+		//render params['icnEntered']
+		render "<font color='red'>"+resultOut+"</font>"
 	}
 }

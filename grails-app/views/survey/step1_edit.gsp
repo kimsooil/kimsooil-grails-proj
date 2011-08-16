@@ -7,13 +7,15 @@
         <title><g:message code="step1.edit.label" default="Step1-edit" /></title>
 
 <%--	<jv:generateValidation domain="survey" form="surveyform1"  display="alert" container="errors"/>    --%>        
- 		
+
+<%-- 		<g:javascript library="prototype" />   --%> 
+
+<g:javascript library="jquery" plugin="jquery"/>
+  		
 		<g:render template="errMsgsToJson-js"/>
 
 		<g:javascript src="check_step1.js" />
  
-
-
     </head>
     <body>
     <g:javascript>
@@ -31,6 +33,8 @@ function IsDOBValid(){
 				return true;
 			}	
 }    
+
+
 $(document).ready(function(){
 	$("input[name='q8_1']").change(function(){
 	    if ($("input[name='q8_1']:checked").val() == 'yes'){
@@ -106,8 +110,7 @@ $(document).ready(function(){
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-<!-- 					onsubmit="return (checkIfDOBentered() && checkIfcomplete() && validateForm(this) );"  
-    -->
+
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform1"
@@ -122,11 +125,20 @@ $(document).ready(function(){
                 
                 <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
-                <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> -
+                <br/>
+                <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> -
                 <g:select name="consentNumLoc" 
                 		  from="${u56survey.Site.list()}"
                 		  optionKey="fourletters"
-                		  value="${surveyInstance?.consentNumLoc}"  />-<g:textField name="consentNum" value="${surveyInstance?.consentNum}" onchange="${remoteFunction(action:'ajaxValidICNorNot',update:'lblvalidICNorNot', params:'\'icnEntered=\' + this.value' )}"/> <label style="color:red" id="lblvalidICNorNot"></label> <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span></h3><br/>
+                		  value="${surveyInstance?.consentNumLoc}"  /> -
+                <g:textField name="consentNum" value="${surveyInstance?.consentNum}" 
+                		  onkeyup="${remoteFunction(
+                		  				action:'ajaxValidICNorNot',
+                		  				update:'lblvalidICNorNot',
+                		  				params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
+                <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
+                </h3>
+                <br/>
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
                 <br/>
                 <ul><g:radioGroup name="being_treated_for_cancer"

@@ -8,7 +8,10 @@
         <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
         <title><g:message code="step1.label" default="Step1-new" /></title>
 
-		<%--<jv:generateValidation domain="survey" form="surveyform"  display="alert" container="errors"/> --%>        
+		<%--<jv:generateValidation domain="survey" form="surveyform"  display="alert" container="errors"/> --%>       
+		
+		<g:javascript library="jquery" plugin="jquery"/>
+		 
 		<g:render template="errMsgsToJson-js"/>
 
 		<g:javascript src="check_step1.js" />
@@ -119,12 +122,22 @@ $(document).ready(function(){
                 <g:hiddenField name="mrn" value="${surveyInstance?.mrn}" />
 
                 <div class="dialog">
-                <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> - 
+                <br/>
+                <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> -
                 <g:select name="consentNumLoc" 
                 		  from="${u56survey.Site.list()}"
                 		  optionKey="fourletters"
-                		  value="${surveyInstance?.consentNumLoc}" />-<g:textField name="consentNum" value="${surveyInstance?.consentNum}" /> <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span></h3><br/>
-                <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
+                		  value="${surveyInstance?.consentNumLoc}"  /> -
+                <g:textField name="consentNum" value="${surveyInstance?.consentNum}" 
+                		  onkeyup="${remoteFunction(
+                		  				action:'ajaxValidICNorNot',
+                		  				update:'lblvalidICNorNot',
+                		  				params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
+                <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
+                </h3>
+                <br/>
+                <br/>
+                <h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
                 <br/>
                 <ul><g:radioGroup name="being_treated_for_cancer"
                                   value="${surveyInstance?.being_treated_for_cancer}" 
