@@ -3,6 +3,7 @@ package u56survey
 import static java.util.Calendar.*
 
 import org.codehaus.groovy.grails.commons.ConfigurationHolder
+import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
 
 class SurveyController {
 	def beforeInterceptor = [action:this.&authz, except:["index"]]
@@ -36,11 +37,79 @@ class SurveyController {
 		session.step=''
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
 
+		
+		//List fields = ["id", "dateCreated", "lastUpdated", "consentNum", "consentNumSurv","consentNumLoc","mrn","surveyer","completed",
+		//			   "being_treated_for_cancer", "sex", "DOB", "race","other_race","hispanic_or_latino",
+		//			   "addr_street1", "addr_street2", "addr_city", "addr_state", "addr_zipcode", "country",
+		//			   "marital_status", "education",	"current_occupation", "current_occupation_time", "prior_job", "prior_job_time",
+		//			   "q8_1","q8_1_which", "q8_2","q8_3", "q8_4","q8_4_which", "q8_5", "q8_others" // occupatioal exposure
+		//]
+		
+		List fields = []
+		
+		def d = new DefaultGrailsDomainClass(Survey.class)
+		d.persistentProperties.each{
+		//	println "${it.name}"
+			fields.add(it.name)
+		}
+		
+		
+		Map labels =["id":"id", "dateCreated":"Created", "lastUpdated":"Updated", "surveyer":"consenter", "completed":"completedOrNot","consentNum":"icn", "consentNumSurv":"surveyName","consentNumLoc":"site","mrn":"mrn",
+				"being_treated_for_cancer":"q0_Are_you_currently_being_treated_for_cancer", "sex":"q1_sex", "DOB":"q1_Date_of_Birth", "race":"q2_race","other_race":"q2_other_race",
+				"hispanic_or_latino":"q3_Do_you_consider_yourself_Hispanic_or_Latino",
+				"addr_street1":"q4_Street1", "addr_street2":"q4_Street2", "addr_city":"q4_City", "addr_state":"q4_State", "addr_zipcode":"q4_Zip", "country":"q5_Country",
+				"marital_status":"q6_marital_status", "education":"q7_education",	"current_occupation":"q8_current_occupation", "current_occupation_time":"q8_current_occupation_years", "prior_job":"q9_prior_job", "prior_job_time":"q9_prior_job_time",
+				"q8_1":"q10_chemical", "q8_1_which":"q10_which_chemical", "q8_2":"q10_silica","q8_3":"q10_asbestos", "q8_4":"q10_industrial_wastes","q8_4_which":"q10_which_wastes", "q8_5":"q10_construction", "q8_others":"q10_other_occupational_exposure",
+				"weight":"q11_weight_pounds", "height_feet":"q12_height_feet", "height_inches":"q12_height_inches",
+				"q11a_hep_donotknow_type":"q13_hep_do_not_know_type", "q11a_hep_donotknow_type_Year":"q13_hep_do_not_know_type_year", "q11a_1":"q13_hepA", "q11a_1Year":"q13_hepA_year","q11a_2":"q13_hepB", "q11a_2Year":"q13_hepB_year","q11a_3":"q13_hepC", "q11a_3Year":"q13_hepC_year",
+				"q11a_4":"q13_hpv", "q11a_4Year":"q13_hpv_year","q11a_5":"q13_hiv", "q11a_5Year":"q13_hiv_year","q11a_6":"q13_helico", "q11a_6Year":"q13_helico_year",
+				     
+				"haveCancer":"q14_have_you_ever_told_by_doctor_you_have_cancer",
+				"q12_1_ageDiagnosed":"q15_1_ageDiagnosed", "q12_1_1":"q15_1_radio", "q12_1_2":"q15_1_chemo", "q12_1_3":"q15_1_surgery", "q12_1_4":"q15_1_none",
+				"q12_2_ageDiagnosed":"q15_2_ageDiagnosed", "q12_2_1":"q15_2_radio", "q12_2_2":"q15_2_chemo", "q12_2_3":"q15_2_surgery", "q12_2_4":"q15_2_none",
+				"q12_3_ageDiagnosed":"q15_3_ageDiagnosed", "q12_3_1":"q15_3_radio", "q12_3_2":"q15_3_chemo", "q12_3_3":"q15_1_surgery", "q12_3_4":"q15_3_none",
+				"q12_4_ageDiagnosed":"q15_4_ageDiagnosed", "q12_4_1":"q15_4_radio", "q12_4_2":"q15_4_chemo", "q12_4_3":"q15_4_surgery", "q12_4_4":"q15_4_none",
+				"q12_5_ageDiagnosed":"q15_5_ageDiagnosed", "q12_5_1":"q15_5_radio", "q12_5_2":"q15_5_chemo", "q12_5_3":"q15_5_surgery", "q12_5_4":"q15_5_none",
+				"q12_6_ageDiagnosed":"q15_6_ageDiagnosed", "q12_6_1":"q15_6_radio", "q12_6_2":"q15_6_chemo", "q12_6_3":"q15_6_surgery", "q12_6_4":"q15_6_none",
+				"q12_7_ageDiagnosed":"q15_7_ageDiagnosed", "q12_7_1":"q15_7_radio", "q12_7_2":"q15_7_chemo", "q12_7_3":"q15_7_surgery", "q12_7_4":"q15_7_none",
+				"q12_8_ageDiagnosed":"q15_8_ageDiagnosed", "q12_8_1":"q15_8_radio", "q12_8_2":"q15_8_chemo", "q12_8_3":"q15_8_surgery", "q12_8_4":"q15_8_none",
+				"q12_9_ageDiagnosed":"q15_9_ageDiagnosed", "q12_9_1":"q15_9_radio", "q12_9_2":"q15_9_chemo", "q12_9_3":"q15_9_surgery", "q12_9_4":"q15_9_none",
+				"q12_10_ageDiagnosed":"q15_10_ageDiagnosed", "q12_10_1":"q15_10_radio", "q12_10_2":"q15_10_chemo", "q12_10_3":"q15_10_surgery", "q12_10_4":"q15_10_none",
+				"q12_11_ageDiagnosed":"q15_11_ageDiagnosed", "q12_11_1":"q15_11_radio", "q12_11_2":"q15_11_chemo", "q12_11_3":"q15_11_surgery", "q12_11_4":"q15_11_none",
+				"q12_12_ageDiagnosed":"q15_12_ageDiagnosed", "q12_12_1":"q15_12_radio", "q12_12_2":"q15_12_chemo", "q12_12_3":"q15_12_surgery", "q12_12_4":"q15_12_none",
+				"q12_13_ageDiagnosed":"q15_13_ageDiagnosed", "q12_13_1":"q15_13_radio", "q12_13_2":"q15_13_chemo", "q12_13_3":"q15_13_surgery", "q12_13_4":"q15_13_none",
+				"q12_14_ageDiagnosed":"q15_14_ageDiagnosed", "q12_14_1":"q15_14_radio", "q12_14_2":"q15_14_chemo", "q12_14_3":"q15_14_surgery", "q12_14_4":"q15_14_none",
+				"q12_15_ageDiagnosed":"q15_15_ageDiagnosed", "q12_15_1":"q15_15_radio", "q12_15_2":"q15_15_chemo", "q12_15_3":"q15_15_surgery", "q12_15_4":"q15_15_none",
+				"q12_16_ageDiagnosed":"q15_16_ageDiagnosed", "q12_16_1":"q15_16_radio", "q12_16_2":"q15_16_chemo", "q12_16_3":"q15_16_surgery", "q12_16_4":"q15_16_none",
+				"q12_17_ageDiagnosed":"q15_17_ageDiagnosed", "q12_17_1":"q15_17_radio", "q12_17_2":"q15_17_chemo", "q12_17_3":"q15_17_surgery", "q12_17_4":"q15_17_none",
+				"q12_18_ageDiagnosed":"q15_18_ageDiagnosed", "q12_18_1":"q15_18_radio", "q12_18_2":"q15_18_chemo", "q12_18_3":"q15_18_surgery", "q12_18_4":"q15_18_none",
+				"q12_19_ageDiagnosed":"q15_19_ageDiagnosed", "q12_19_1":"q15_19_radio", "q12_19_2":"q15_19_chemo", "q12_19_3":"q15_19_surgery", "q12_19_4":"q15_19_none",
+				"q12_20_ageDiagnosed":"q15_20_ageDiagnosed", "q12_20_1":"q15_20_radio", "q12_20_2":"q15_20_chemo", "q12_20_3":"q15_20_surgery", "q12_20_4":"q15_20_none",
+				"q12_21_ageDiagnosed":"q15_21_ageDiagnosed", "q12_21_1":"q15_21_radio", "q12_21_2":"q15_21_chemo", "q12_21_3":"q15_21_surgery", "q12_21_4":"q15_21_none",
+				"q12_22_ageDiagnosed":"q15_22_ageDiagnosed", "q12_22_1":"q15_22_radio", "q12_22_2":"q15_22_chemo", "q12_22_3":"q15_22_surgery", "q12_22_4":"q15_22_none",
+				"q12_23_ageDiagnosed":"q15_23_ageDiagnosed", "q12_23_1":"q15_23_radio", "q12_23_2":"q15_23_chemo", "q12_23_3":"q15_23_surgery", "q12_23_4":"q15_23_none",
+				"q12_24_ageDiagnosed":"q15_24_ageDiagnosed", "q12_24_1":"q15_24_radio", "q12_24_2":"q15_24_chemo", "q12_24_3":"q15_24_surgery", "q12_24_4":"q15_24_none",
+				"q12_which_cancer":"q15_24_which_cancer",
+				"spread_cancer":"q16_have_been_told_your_cancer_spread"
+				
+				]
+		// Formatter closure
+		def upperCase = { domain, value ->
+			return value.toUpperCase() }
+		
+		
+		Map formatters = [author: upperCase]
+		
+		Map parameters = [title: "survey_list"]
+		
+		
 		if(params?.format && params.format != "html"){
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format] 
 			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
-			exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
+			
+			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
+			exportService.export(params.format, response.outputStream, Survey.list(params), fields, labels, formatters, parameters)
 		}
 				
         [surveyInstanceList: Survey.list(params), surveyInstanceTotal: Survey.count()]
