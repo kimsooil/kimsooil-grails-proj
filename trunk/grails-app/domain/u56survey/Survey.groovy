@@ -34,10 +34,10 @@ class Survey {
 	String addr_zipcode
 	String country // use g:countrySelect tag
 	Date DOB // date of birth mm/dd/yy
-	String phone
+	//String phone
 	String marital_status // married,single,divorce, consensual relationship, other (widow)
 	String education
-	Boolean education_completed
+	//Boolean education_completed
 	String current_occupation
 	String current_occupation_time // years
 	String prior_job
@@ -58,7 +58,7 @@ class Survey {
 	String height_feet // feet inches
 	String height_inches
 
-	Boolean q11 // have you ever told by a doctor or health care provider that you have cancer
+	//Boolean q11 // have you ever told by a doctor or health care provider that you have cancer
 	String haveCancer
 
 	String q11a_1, q11a_2, q11a_3, q11a_4, q11a_5, q11a_6 //  _5~_7 added for separate yes/no question
@@ -72,76 +72,76 @@ class Survey {
 	String spread_where
 	
 	// (preserve order of creation)
-	String q12_1
+	//String q12_1
 	String q12_1_ageDiagnosed
 	Boolean q12_1_1, q12_1_2, q12_1_3, q12_1_4
-	String q12_2
+	//String q12_2
 	String q12_2_ageDiagnosed
 	Boolean q12_2_1, q12_2_2, q12_2_3, q12_2_4
-	String q12_3
+	//String q12_3
 	String q12_3_ageDiagnosed
 	Boolean q12_3_1, q12_3_2, q12_3_3, q12_3_4
-	String q12_4
+	//String q12_4
 	String q12_4_ageDiagnosed
 	Boolean q12_4_1, q12_4_2, q12_4_3, q12_4_4
-	String q12_5
+	//String q12_5
 	String q12_5_ageDiagnosed
 	Boolean q12_5_1, q12_5_2, q12_5_3, q12_5_4
-	String q12_6
+	//String q12_6
 	String q12_6_ageDiagnosed
 	Boolean q12_6_1, q12_6_2, q12_6_3, q12_6_4
-	String q12_7
+	//String q12_7
 	String q12_7_ageDiagnosed
 	Boolean q12_7_1, q12_7_2, q12_7_3, q12_7_4
-	String q12_8
+	//String q12_8
 	String q12_8_ageDiagnosed
 	Boolean q12_8_1, q12_8_2, q12_8_3, q12_8_4
-	String q12_9
+	//String q12_9
 	String q12_9_ageDiagnosed
 	Boolean q12_9_1, q12_9_2, q12_9_3, q12_9_4
-	String q12_10
+	//String q12_10
 	String q12_10_ageDiagnosed
 	Boolean q12_10_1, q12_10_2, q12_10_3, q12_10_4
-	String q12_11
+	//String q12_11
 	String q12_11_ageDiagnosed
 	Boolean q12_11_1, q12_11_2, q12_11_3, q12_11_4
-	String q12_12
+	//String q12_12
 	String q12_12_ageDiagnosed
 	Boolean q12_12_1, q12_12_2, q12_12_3, q12_12_4
-	String q12_13
+	//String q12_13
 	String q12_13_ageDiagnosed
 	Boolean q12_13_1, q12_13_2, q12_13_3, q12_13_4
-	String q12_14
+	//String q12_14
 	String q12_14_ageDiagnosed
 	Boolean q12_14_1, q12_14_2, q12_14_3, q12_14_4
-	String q12_15
+	//String q12_15
 	String q12_15_ageDiagnosed
 	Boolean q12_15_1, q12_15_2, q12_15_3, q12_15_4
-	String q12_16
+	//String q12_16
 	String q12_16_ageDiagnosed
 	Boolean q12_16_1, q12_16_2, q12_16_3, q12_16_4
-	String q12_17
+	//String q12_17
 	String q12_17_ageDiagnosed
 	Boolean q12_17_1, q12_17_2, q12_17_3, q12_17_4
-	String q12_18
+	//String q12_18
 	String q12_18_ageDiagnosed
 	Boolean q12_18_1, q12_18_2, q12_18_3, q12_18_4
-	String q12_19
+	//String q12_19
 	String q12_19_ageDiagnosed
 	Boolean q12_19_1, q12_19_2, q12_19_3, q12_19_4
-	String q12_20
+	//String q12_20
 	String q12_20_ageDiagnosed
 	Boolean q12_20_1, q12_20_2, q12_20_3, q12_20_4
-	String q12_21
+	//String q12_21
 	String q12_21_ageDiagnosed
 	Boolean q12_21_1, q12_21_2, q12_21_3, q12_21_4
-	String q12_22
+	//String q12_22
 	String q12_22_ageDiagnosed
 	Boolean q12_22_1, q12_22_2, q12_22_3, q12_22_4
-	String q12_23
+	//String q12_23
 	String q12_23_ageDiagnosed
 	Boolean q12_23_1, q12_23_2, q12_23_3, q12_23_4
-	String q12_24
+	//String q12_24
 	String q12_24_ageDiagnosed
 	Boolean q12_24_1, q12_24_2, q12_24_3, q12_24_4
 	String q12_which_cancer

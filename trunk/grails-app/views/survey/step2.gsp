@@ -23,15 +23,17 @@
 
 <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">
 window.onload= function(){
-	    	$("#q12_status").html("");
-	    	$("[name*='_ageDiagnosed']").val('');
-	    	$("[name*='_ageDiagnosed']").attr("disabled", true);
-	    	$("[name='q12_which_cancer']").val('');
-	    	$("[name='q12_which_cancer']").attr("disabled", true);
-	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("checked", '');
-	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("disabled", true);
-	    	$("[name*='q12_1_'], [name*='q12_2_'], [name*='q12_3_'], [name*='q12_4_']").attr("disabled", true);
-	    	//$("[name='haveCancer']").attr("disabled", true);
+//
+// this is so error-prone... so commented out
+//
+//	    	$("#q12_status").html("");
+//	    	$("[name*='_ageDiagnosed']").val('');
+//	    	$("[name*='_ageDiagnosed']").attr("disabled", true);
+//	    	$("[name='q12_which_cancer']").val('');
+//	    	$("[name='q12_which_cancer']").attr("disabled", true);
+//	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("checked", '');
+//	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("disabled", true);
+//	    	$("[name*='q12_1_'], [name*='q12_2_'], [name*='q12_3_'], [name*='q12_4_']").attr("disabled", true);
 }   
 </g:if>
 <g:else>
