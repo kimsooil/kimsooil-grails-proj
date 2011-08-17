@@ -213,7 +213,7 @@ class Survey {
 	String q17 // Years, How old were you when you began to smoke cigarettes?
 	String q18// About how many total years have you actually smoked cigarettes? (Do not include the times you may have quit smoking for a month or more)
 	String q19 // On average, how many cigarettes did/do you smoke per day?
-	Boolean q20 // Do you still smoke cigarettes?
+	//Boolean q20 // Do you still smoke cigarettes?
 	String stillSmoke
 	Date q21DateStopSmoking // if q20=no/false
 	String q21_whenStopSmoking_years
@@ -243,7 +243,7 @@ class Survey {
 	String q25_howHaveYouFeltForPast4Weeks // q25. free text
 	String q26 // in the past 3 months have you had any health problem
 	String q26_explain
-	String WhatIsProblem_q26 // explain
+	//String WhatIsProblem_q26 // explain
 	String q27 // Does your health affect your social activity
 	String q28 // excellent, very good, good, regular, poor
 	
