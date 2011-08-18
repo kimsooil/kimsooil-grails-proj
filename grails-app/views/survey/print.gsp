@@ -71,9 +71,7 @@ function confirmSubmit()
             <g:form name="surveyform_preview"
             		onsubmit="return confirmSubmit();"
 					method="post" >
-					
-				<input type="button" value=" Print" onclick="window.print();return false;" />
-					
+				<input type="button" value=" Print" onclick="window.print();return false;" />	
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:hiddenField name="consentNum" value="${surveyInstance?.consentNum}" />
