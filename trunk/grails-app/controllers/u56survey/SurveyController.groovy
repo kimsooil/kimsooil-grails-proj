@@ -1174,6 +1174,12 @@ class SurveyController {
                 }
             }
             
+			if (params.q11a_hep_donotknow_type){
+				params.q11a_1="donotknow"
+				params.q11a_2="donotknow"
+				params.q11a_3="donotknow"
+			}
+			
             surveyInstance.properties = params
 
 			surveyInstance.surveyer=session.user.login
@@ -1223,6 +1229,11 @@ class SurveyController {
 					render(view: ("step"+currentStep), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
 					return
 				}
+			}
+			if (params.q11a_hep_donotknow_type){
+				params.q11a_1="donotknow"
+				params.q11a_2="donotknow"
+				params.q11a_3="donotknow"
 			}
 			surveyInstance.properties = params
 			
