@@ -144,13 +144,13 @@ function checkForm15()
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step14" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}"  onclick="DisableEnableForm(document.surveyform15,false);" /></span>
+                    <span class="button"><g:actionSubmit class="back" action="step14" value="${message(code: 'button.go-back.label', default: 'back')}"  onclick="DisableEnableForm(document.surveyform15,false);" /></span>
                     <%--<span class="button"><g:render template="/common/back_button"/></span>
                     <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <%--<span class="button"><g:actionSubmit class="done" action="verify_after_update" value="${message(code: 'verify', default: 'Verify')}" /></span>
                     <span class="button"><g:link action="preview" id="${surveyInstance?.id }" ><label style="color:red"><g:message code="verify" default="verify" /></label></g:link></span> --%>  
-                    <span class="button"><g:actionSubmit class="done" action="preview_after_update" value="${message(code: 'verify', default: 'Verify')}" /></span>
+                    <span class="button"><g:actionSubmit class="done" action="preview_after_update" value="${message(code: 'verify', default: 'Verify')}"  onclick="DisableEnableForm(document.surveyform15,false);" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                 </div>
             </g:form>

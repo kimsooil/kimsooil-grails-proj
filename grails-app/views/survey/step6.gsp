@@ -40,7 +40,8 @@ $(document).ready(function(){
                 <g:renderErrors bean="${surveyInstance}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form method="post"
+            <g:form name="surveyform6"
+            		method="post"
             		onsubmit="return checkForm6();" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
@@ -179,11 +180,11 @@ $(document).ready(function(){
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step5" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}"  onclick="DisableEnableForm(document.surveyform6,false);" /></span>
+                    <span class="button"><g:actionSubmit class="back" action="step5" value="${message(code: 'button.go-back.label', default: 'back')}"  onclick="DisableEnableForm(document.surveyform6,false);" /></span>
                     <%--<span class="button"><g:render template="/common/back_button"/></span>
                     <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
-                    <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
+                    <span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}"  onclick="DisableEnableForm(document.surveyform6,false);" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>
             </g:form>

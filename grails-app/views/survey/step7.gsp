@@ -277,12 +277,12 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
                     </table>                     
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-                    <span class="button"><g:actionSubmit class="back" action="step6" value="${message(code: 'button.go-back.label', default: 'back')}" /></span>
+                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}"  onclick="DisableEnableForm(document.surveyform7,false);" /></span>
+                    <span class="button"><g:actionSubmit class="back" action="step6" value="${message(code: 'button.go-back.label', default: 'back')}"  onclick="DisableEnableForm(document.surveyform7,false);" /></span>
                     <%--<span class="button"><g:render template="/common/back_button"/></span>
                     <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
                     <g:if test="${surveyInstance?.sex=='male' }">
-                    	<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}" /></span>
+                    	<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}"  onclick="DisableEnableForm(document.surveyform7,false);" /></span>
                     </g:if>
                     <g:else>
                     	<g:link action="step8" id="${surveyInstance?.id}"><label style="color:green"><g:message code='button.save-then-go-to-next.label'/></label></g:link>
