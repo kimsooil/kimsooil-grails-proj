@@ -49,7 +49,7 @@ class SurveyController {
 		
 		def d = new DefaultGrailsDomainClass(Survey.class)
 		d.persistentProperties.each{
-		//	println "${it.name}"
+			//println "${it.name}"
 			fields.add(it.name)
 		}
 		
@@ -551,12 +551,12 @@ class SurveyController {
 		
 		Map formatters = [author: upperCase]
 		
-		Map parameters = [title: "survey_list"]
+		Map parameters = [title: "survey_list", separator:"\t"]
 		
 		
 		if(params?.format && params.format != "html"){
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format] 
-			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
+			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}.txt")
 			params.max=1000000
 			
 			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])

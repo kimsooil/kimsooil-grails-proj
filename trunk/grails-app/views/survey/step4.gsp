@@ -126,6 +126,9 @@ $(document).ready(function(){
 	    
 });		    	    
 </g:javascript>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 
+%>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
@@ -308,13 +311,9 @@ $(document).ready(function(){
 												 onkeyup="checkIfValidNumber(this.value, 0, 11, document.getElementById(\'${('q21_status2')}\')); " /> <g:message code="survey.months.label" default="months" /> <span id="q21_status2"></span>
 									<br/><g:message code="survey.and_or.label" default="and/or" />
                                     <br/>
-                                    <%
-									def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 
-									//out << birth[java.util.Calendar.YEAR]
-									
-                                    %>
+
                                     <g:kimsiDatePicker name="q21DateStopSmoking" precision="day" value="${surveyInstance?.q21DateStopSmoking}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" noSelection="${['':'--']}" /><br/>
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /><br/>
 
                                     
                                 </td>

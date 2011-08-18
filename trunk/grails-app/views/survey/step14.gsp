@@ -202,7 +202,8 @@ $(document).ready(function(){
 			$("[name*='q93_'][type=text]").attr("disabled", '');
 	    }
 	    else if ($("input[name='q93']:checked").val() == 'no'){
-	    	$("[name*='q93_'][type=radio]").attr('checked', false);
+	    	//$("[name*='q93_'][type=radio]").attr('checked', false);
+	    	$("[name*='q93_'][type=radio]").filter('[value="never"]').attr('checked', 'checked');
 	    	$("[name*='q93_'][type=radio]").attr("disabled", true);	  
 	    	$("[name*='q93_'][type=text]").val('');
 	    	$("[name*='q93_'][type=text]").attr("disabled", true);
