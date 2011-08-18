@@ -85,15 +85,19 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 
 	    }
 	});
+
 	$("input[name='q82']").change(function(){
 	    if ($("input[name='q82']:checked").val() == 'yes'){
+	    		    	
 			$("[name*='q82_'][type=radio]").attr("disabled", '');
 			$("[name*='q82_'][type=text]").attr("disabled", '');
 			$("[name*='q82_'][name$='_type']").attr("disabled", '');
 			$("[name*='q82_'][name$='_aliveDead']").attr("disabled", '');
 	    }
 	    else if ($("input[name='q82']:checked").val() == 'no'){
-	    	$("[name*='q82_'][type=radio]").attr('checked', false);
+	    	//$("[name*='q82_'][type=radio]").attr('checked', false);
+	    	//$("[name*='q82_'][type=radio]").removeAttr("checked");
+	    	$("[name*='q82_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');   	
 	    	$("[name*='q82_'][type=radio]").attr("disabled", true);	  
 	    	$("[name*='q82_'][type=text]").val('');
 	    	$("[name*='q82_'][type=text]").attr("disabled", true);
@@ -104,6 +108,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 
 	    }
 	});
+
 	$("input[name='q82_1']").change(function(){
 	    if ($("input[name='q82_1']:checked").val() == 'yes'){
 	    	$("#q82_1_type").attr("disabled", '');
@@ -613,7 +618,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 							<g:textField style="width:50px" 
 										 name="${('q82_'+idx+'_whatAge')}"
 										 value="${surveyInstance?.('q82_'+idx+'_whatAge')}"
-										 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q82_age_status'+idx)}\')); "/> <span id="${('q82_age_status'+idx)}"></span> 
+										 onkeyup="checkIfValidNumber(this.value, 1, 120, document.getElementById(\'${('q82_age_status'+idx)}\')); "/> <span id="${('q82_age_status'+idx)}"></span> 
 						</td>
 						<td style="padding: 5px">
 							<g:select name="${('q82_'+idx+'_aliveDead')}"

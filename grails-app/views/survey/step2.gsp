@@ -184,6 +184,7 @@ $(document).ready(function(){
 	    else if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	    	$("[name*='spread_'][type=checkbox]").attr("checked", false);
 	    	$("#spread_other").val('');
+	    	$("#spread_where").val('');
 	    	$("[name*='spread_'][type=checkbox]").attr("disabled", true);
 	    }
 	});	

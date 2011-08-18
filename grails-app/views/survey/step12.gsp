@@ -190,7 +190,8 @@ $(document).ready(function(){
 			$("[name*='_rad_date']").attr("disabled", '');	    
 	    }
 	    else if ($("input[name='q83']:checked").val() == 'no'){
-	    	$("[name*='q84_'][type=radio]").attr('checked', false);
+	    	//$("[name*='q84_'][type=radio]").attr('checked', false);
+	    	$("[name*='q84_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');
 	    	$("[name*='q84_'][type=radio]").attr("disabled", true);	  
 	    	$("[name*='q84_'][type=text]").val('');
 	    	$("[name*='q84_'][type=text]").attr("disabled", true);

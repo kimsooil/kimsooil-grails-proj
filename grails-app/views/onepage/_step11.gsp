@@ -248,7 +248,7 @@
 							<g:textField style="width:50px" 
 										 name="${('q82_'+idx+'_whatAge')}"
 										 value="${surveyInstance?.('q82_'+idx+'_whatAge')}"
-										 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q82_age_status'+idx)}\')); "/> <span id="${('q82_age_status'+idx)}"></span> 
+										 onkeyup="checkIfValidNumber(this.value, 1, 120, document.getElementById(\'${('q82_age_status'+idx)}\')); "/> <span id="${('q82_age_status'+idx)}"></span> 
 						</td>
 						<td style="padding: 5px">
 							<g:select name="${('q82_'+idx+'_aliveDead')}"
