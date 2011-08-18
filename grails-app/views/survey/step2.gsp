@@ -82,12 +82,12 @@ $(document).ready(function(){
 	}); 
 	$("#q11a_hep_donotknow_type").change(function(){
 		if (this.checked){
-	    	$("[name*='q11a_1']").attr('checked', false)
-	    	$("[name*='q11a_1']").attr('disabled', true)
-	    	$("[name*='q11a_2']").attr('checked', false)
-	    	$("[name*='q11a_2']").attr('disabled', true)
-	    	$("[name*='q11a_3']").attr('checked', false)
-	    	$("[name*='q11a_3']").attr('disabled', true)
+	    	$("[name*='q11a_1']").attr('checked', false);
+	    	$("[name*='q11a_1']").attr('disabled', true);
+	    	$("[name*='q11a_2']").attr('checked', false);
+	    	$("[name*='q11a_2']").attr('disabled', true);
+	    	$("[name*='q11a_3']").attr('checked', false);
+	    	$("[name*='q11a_3']").attr('disabled', true);
 
 	    	$("#q11a_1_status").html('');
 	    	$("#q11a_1Year_year").val('');
