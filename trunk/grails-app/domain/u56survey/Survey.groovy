@@ -388,7 +388,7 @@ class Survey {
 	Date q71
 // Pregnancy History (female only)
 	String q72
-	String q73
+	//String q73
 	String q73_alive, q73_dead, q73_miscarriage
 	String q74
 	String q75
