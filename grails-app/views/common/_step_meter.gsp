@@ -1,3 +1,4 @@
+
 <%
 	def i=0
     def step=''
@@ -29,6 +30,15 @@
 		}
 		if (step!='') session.step=step
  %>
+
+
+<g:if test="${surveyInstance?.completed}">
+<g:javascript>
+  DisableEnableForm(document.${('surveyform'+step)},true);
+</g:javascript>
+</g:if>
+ 
+ 
 <g:while test="${i < 15}">
     <%
     i++

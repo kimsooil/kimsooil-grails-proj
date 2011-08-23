@@ -456,7 +456,7 @@ class Survey {
 		//consentNumSurv(inList:["HISPBB"])
 		consentNumLoc(inList:["MOFF", "FLHO", "PSoM", "STLU", "HIMA", "SJVA", "AMHO", 'PRTB', "DEMO"])
 		
-		consentNum(min:1, max:9999, blank:false, unique:true)
+		consentNum(min:1, max:9999, unique:true)
 		
 		//being_treated_for_cancer(blank:false)
 		
