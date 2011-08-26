@@ -123,17 +123,19 @@ $(document).ready(function(){
 
                 <div class="dialog">
                 <br/>
-                <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> -
+                <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <label style="text-decoration : underline;">${surveyInstance?.consentNumSurv}</label> -
                 <g:select name="consentNumLoc" 
+                		  style="width: 150px;"
                 		  from="${u56survey.Site.list()}"
                 		  optionKey="fourletters"
                 		  value="${surveyInstance?.consentNumLoc}"  /> -
                 <g:textField name="consentNum" value="${surveyInstance?.consentNum}" 
+                		  style="width: 50px;"
                 		  onkeyup="${remoteFunction(
                 		  				action:'ajaxValidICNorNot',
                 		  				update:'lblvalidICNorNot',
                 		  				params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
-                <span id="otherNumber" style="display:none">(<g:textField name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
+                <span id="otherNumber" style="display:none">(<g:textField style="width: 50px;" name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
                 </h3>
                 <br/>
                 <br/>

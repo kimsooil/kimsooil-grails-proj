@@ -115,7 +115,9 @@ log4j = {
 }
 // default constraint... allow null to all values...
 grails.gorm.default.constraints = {
-	'*'(nullable:true)
+//	'*'(nullable:true)
+	'*'(nullable:true, size:1..255)
+
  }
 com.mfelix.grails.plugins.langSelector.lang.flags = ["es":"es-letter", "en":"us-letter"]
 
