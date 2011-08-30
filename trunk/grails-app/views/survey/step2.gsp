@@ -163,6 +163,9 @@ $(document).ready(function(){
 	    	//$("[name*='q12_1_'], [name*='q12_2_'], [name*='q12_3_'], [name*='q12_4_']").attr("disabled", '');
 	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("disabled", '');
 	    	$("[name='q12_which_cancer']").attr("disabled", '');
+	    	
+	    	$("[name*='spread_'][type=checkbox]").attr("disabled", '');
+	    	$("[name='spread_cancer']").attr("disabled", '');
 	    }
 	    else if ($("input[name='haveCancer']:checked").val() == 'no'){
 	    	$("#q12_status").html("");
@@ -173,6 +176,12 @@ $(document).ready(function(){
 	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("checked", '');
 	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("disabled", true);
 	    	$("[name*='q12_1_'], [name*='q12_2_'], [name*='q12_3_'], [name*='q12_4_']").attr("disabled", true);
+	    	
+	    	$("[name='spread_cancer']").removeAttr("checked");
+	    	$("[name='spread_cancer']").attr("disabled", true);
+	    	$("[name*='spread_'][type=checkbox]").attr("checked", false);
+	    	$("#spread_where").val('');
+	    	$("[name*='spread_'][type=checkbox]").attr("disabled", true);
 	    }
 	});
 

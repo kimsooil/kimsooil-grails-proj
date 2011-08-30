@@ -57,6 +57,25 @@ function checkForm2()
 	if (!fv.isRadioChecked(document.getElementsByName('haveCancer'))){
 		fv.raiseError(i18nmessages.step2Err10);
 	}
+	else{
+		if (getRadioValue(document.getElementsByName('haveCancer'))=='yes'){
+			if (!fv.isRadioChecked(document.getElementsByName('spread_cancer'))){
+				fv.raiseError(i18nmessages.step2Err14);
+			}
+			else{ // if answered (yes or no)
+				if (getRadioValue(document.getElementsByName('spread_cancer'))=='yes'){
+					sp1=false;
+					$("[name*='spread_'][type=checkbox]").each( function() {
+						if (this.checked) sp1=true;
+					});
+					if (!sp1)
+						fv.raiseError(i18nmessages.step2Err15);
+					if ($('#spread_other').is(':checked') && $('#spread_where').val()=='')
+						fv.raiseError(i18nmessages.step2Err16);
+				}
+			}				
+		}
+	}
 	var c1=false;
 	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').each( function() {
 		if (this.checked) c1=true;
@@ -77,21 +96,7 @@ function checkForm2()
 		}
 	}
 
-	if (!fv.isRadioChecked(document.getElementsByName('spread_cancer'))){
-		fv.raiseError(i18nmessages.step2Err14);
-	}
-	else{ // if answered (yes or no)
-		if (getRadioValue(document.getElementsByName('spread_cancer'))=='yes'){
-			sp1=false;
-			$("[name*='spread_'][type=checkbox]").each( function() {
-				if (this.checked) sp1=true;
-			});
-			if (!sp1)
-				fv.raiseError(i18nmessages.step2Err15);
-			if ($('#spread_other').is(':checked') && $('#spread_where').val()=='')
-				fv.raiseError(i18nmessages.step2Err16);
-		}
-	}	
+
 	// all done
 	// if errors, display, else proceed
 	if (fv.numErrors() > 0)
