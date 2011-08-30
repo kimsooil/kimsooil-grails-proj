@@ -179,7 +179,7 @@ $(document).ready(function(){
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'DOB', 'errors')}">
                                     <g:kimsiDatePicker name="DOB" precision="day" value="${surveyInstance?.DOB}"
-                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="age_calculated"></span>
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span style="display:none;" id="age_calculated"></span>
                                 </td>
                             </tr>
                             <% def RaceList=[message(code:"survey.race.white"),
