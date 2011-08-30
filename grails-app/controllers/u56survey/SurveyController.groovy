@@ -1216,6 +1216,16 @@ class SurveyController {
                 }
             }
             
+			if (params.haveCancer=="no"){
+				params.spread_cancer="n/a"
+				params.liver=false
+				params.brain=false
+				params.lung=false
+				params.bone=false
+				params.other=false
+				params.spread_where=" "
+			}
+			
 			if (params.q11a_hep_donotknow_type){
 				params.q11a_1="n/a"
 				params.q11a_2="n/a"
@@ -1240,6 +1250,7 @@ class SurveyController {
 				params.q43="n/a"
 				params.q43_biopsy_results=" "
 			}
+
             surveyInstance.properties = params
 
 			surveyInstance.surveyer=session.user.login
@@ -1291,6 +1302,16 @@ class SurveyController {
 				}
 			}
 			// special care for radio buttons (virtually initialize to null - not-existing value 
+			if (params.haveCancer=="no"){
+				params.spread_cancer="n/a"
+				params.liver=false
+				params.brain=false
+				params.lung=false
+				params.bone=false
+				params.other=false
+				params.spread_where=" "
+			}
+			
 			if (params.q11a_hep_donotknow_type){
 				params.q11a_1="n/a"
 				params.q11a_2="n/a"

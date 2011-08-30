@@ -54,9 +54,9 @@ class Survey {
 	String q8_others // others... explain
 
 // Person History of Cancer
-	String weight // pounds
-	String height_feet // feet inches
-	String height_inches
+	String weight="0" // pounds
+	String height_feet="0" // feet inches
+	String height_inches="0"
 
 	//Boolean q11 // have you ever told by a doctor or health care provider that you have cancer
 	String haveCancer
