@@ -23,14 +23,8 @@
 <g:javascript>
 function IsDateQ84_1()
 {
-	if ( ($("#q84_1_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_1_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_1_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_1_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_1_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_1_rad_date_day").val(), $("#q84_1_rad_date_month").val(), $("#q84_1_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -39,14 +33,8 @@ function IsDateQ84_1()
 }
 function IsDateQ84_2()
 {
-	if ( ($("#q84_2_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_2_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_2_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_2_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_2_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_2_rad_date_day").val(), $("#q84_2_rad_date_month").val(), $("#q84_2_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -55,14 +43,8 @@ function IsDateQ84_2()
 }
 function IsDateQ84_3()
 {
-	if ( ($("#q84_3_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_3_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_3_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_3_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_3_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_3_rad_date_day").val(), $("#q84_3_rad_date_month").val(), $("#q84_3_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -71,14 +53,8 @@ function IsDateQ84_3()
 }
 function IsDateQ84_4()
 {
-	if ( ($("#q84_4_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_4_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_4_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_4_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_4_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_4_rad_date_day").val(), $("#q84_4_rad_date_month").val(), $("#q84_4_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -87,14 +63,8 @@ function IsDateQ84_4()
 }
 function IsDateQ84_5()
 {
-	if ( ($("#q84_5_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_5_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_5_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_5_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_5_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_5_rad_date_day").val(), $("#q84_5_rad_date_month").val(), $("#q84_5_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -103,14 +73,8 @@ function IsDateQ84_5()
 }
 function IsDateQ84_6()
 {
-	if ( ($("#q84_6_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_6_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_6_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_6_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_6_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_6_rad_date_day").val(), $("#q84_6_rad_date_month").val(), $("#q84_6_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -119,14 +83,8 @@ function IsDateQ84_6()
 }
 function IsDateQ84_7()
 {
-	if ( ($("#q84_7_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_7_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_7_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_7_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_7_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_7_rad_date_day").val(), $("#q84_7_rad_date_month").val(), $("#q84_7_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -135,14 +93,8 @@ function IsDateQ84_7()
 }
 function IsDateQ84_8()
 {
-	if ( ($("#q84_8_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_8_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_8_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_8_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_8_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_8_rad_date_day").val(), $("#q84_8_rad_date_month").val(), $("#q84_8_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {
@@ -151,14 +103,8 @@ function IsDateQ84_8()
 }
 function IsDateQ84_9()
 {
-	if ( ($("#q84_9_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_9_rad_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
-	){
-		return false;
-	} else if ( ($("#q84_9_rad_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q84_9_rad_date_month").val()) == <%=today[java.util.Calendar.MONTH]+1%>) &&
-		(parseInt($("#q84_9_rad_date_day").val()) > <%=today[java.util.Calendar.DATE]%>)
-	){
+	var validDate = CalAge($("#q84_9_rad_date_day").val(), $("#q84_9_rad_date_month").val(), $("#q84_9_rad_date_year").val());
+	if (validDate <0 || validDate > 17){
 		return false;
 	} 
 	else {

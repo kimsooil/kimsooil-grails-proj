@@ -2,6 +2,19 @@ function checkForm4()
 {
 	// instantiate object
 	fv = new formValidator();
+
+	if (fv.isEmpty(document.getElementById('q21DateStopSmoking_day').value) ||
+			fv.isEmpty(document.getElementById('q21DateStopSmoking_month').value) ||
+			fv.isEmpty(document.getElementById('q21DateStopSmoking_year').value)){
+				//fv.raiseError("Q26: Invalid date");
+		}
+		else{
+			var validDate = CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val());
+			if (validDate <0 || validDate > 17){
+				fv.raiseError("Q26: Invalid date");
+			}
+				
+		}	
 	
 	if (!fv.isRadioChecked(document.getElementsByName('q14_1')) ||
 		!fv.isRadioChecked(document.getElementsByName('q14_2')) ||

@@ -37,6 +37,11 @@ function IsDateQ71Valid()
 	){
 		return false;
 	}
+	else if ( ($("#q71_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q71_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
 	else {
 		return true;
 	}

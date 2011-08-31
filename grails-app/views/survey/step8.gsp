@@ -28,6 +28,11 @@ function IsDateDigitalRectalExamValid()
 	){
 		return false;
 	}
+	else if ( ($("#date_digital_rectal_exam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_digital_rectal_exam_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}	
 	else {
 		return true;
 	}
@@ -39,6 +44,12 @@ function IsDateSigmoidoscopyColonoscopy()
 	){
 		return false;
 	}
+	else if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+
 	else {
 		return true;
 	}

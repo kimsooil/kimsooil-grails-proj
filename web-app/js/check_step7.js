@@ -41,8 +41,19 @@ function checkForm7()
 		){
 			fv.raiseError("Q37: "+i18nmessages.step7ErrInvalidDate);
 		}
+	if ( ($("#date_rectal_exam_year").val() == dob_year.toString())  &&
+			(parseInt($("#date_rectal_exam_month").val()) < dob_month)
+		){
+			fv.raiseError("Q37: "+i18nmessages.step7ErrInvalidDate);
+		}
+	
 	if ( ($("#date_most_recent_PSA_test_year").val() == today_year.toString())  &&
 			(parseInt($("#date_most_recent_PSA_test_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q38: "+i18nmessages.step7ErrInvalidDate);
+		}
+	if ( ($("#date_most_recent_PSA_test_year").val() == dob_year.toString())  &&
+			(parseInt($("#date_most_recent_PSA_test_month").val()) < dob_month) // java.util.Calendar.MONTH is 0~11
 		){
 			fv.raiseError("Q38: "+i18nmessages.step7ErrInvalidDate);
 		}

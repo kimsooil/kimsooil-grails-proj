@@ -14,11 +14,11 @@
     <body>
 <g:javascript>
 $(document).ready(function(){ 
-    $("input[name=q22_8]").change(function() {
-        var test = $(this).val();
-        $("#q22_others").attr("disabled", '');
-        $("#q22_others_status").html("<br/><font color='red'>(<b>* Specify. If no other activity, choose 'never'.</b>)</font>");
-    }); 
+ //   $("input[name=q22_8]").change(function() {
+ //       var test = $(this).val();
+ //       $("#q22_others").attr("disabled", '');
+ //       $("#q22_others_status").html("<br/><font color='red'>(<b>* Specify. If no other activity, choose 'never'.</b>)</font>");
+ //   }); 
 });
 		    	    
 </g:javascript>

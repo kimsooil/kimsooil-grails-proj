@@ -16,6 +16,13 @@
 		fv.isEmpty(document.getElementById('DOB_year').value)){
 			fv.raiseError(i18nmessages.step1Err3);
 	}
+	else{
+		var calc_age = CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val());
+		if (calc_age < 18){
+			fv.raiseError("Q1: Age must be 18 or older.");
+		}
+			
+	}
 	if ($('#DOB_month option:selected').val()=='2'){
 		if ($('#DOB_day option:selected').val()=='30' || $('#DOB_day option:selected').val()=='31')
 			fv.raiseError(i18nmessages.step1Err4)

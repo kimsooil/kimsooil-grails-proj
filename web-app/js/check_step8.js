@@ -45,6 +45,11 @@ function checkForm8()
 		){
 			fv.raiseError("Q46: "+i18nmessages.step7ErrInvalidDate);
 		}
+	if ( ($("#date_digital_rectal_exam_year").val() == dob_year.toString())  &&
+			(parseInt($("#date_digital_rectal_exam_month").val()) < dob_month)
+		){
+			fv.raiseError("Q46: "+i18nmessages.step7ErrInvalidDate);
+		}
 
 	/*
 	if (getRadioValue(document.getElementsByName('q41'))!='no' &&
@@ -70,7 +75,13 @@ function checkForm8()
 			(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 		){
 			fv.raiseError("Q47: "+i18nmessages.step7ErrInvalidDate);
+		}
+	if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == dob_year.toString())  &&
+			(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) < dob_month) // java.util.Calendar.MONTH is 0~11
+		){
+			fv.raiseError("Q47: "+i18nmessages.step7ErrInvalidDate);
 		}	
+	
 	if (getRadioValue(document.getElementsByName('q42'))=='yes')
 	{
 		if ((!fv.isRadioChecked(document.getElementsByName('q42_1')) ||
