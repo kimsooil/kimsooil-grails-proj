@@ -37,6 +37,12 @@ function IsDateRectalExamValid()
 	){
 		return false;
 	}
+	else if ( ($("#date_rectal_exam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_rectal_exam_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+	
+		return false;
+	}
 	else {
 		return true;
 	}
@@ -47,6 +53,12 @@ function IsDatePSATestValid(){
 	){
 		return false;
 	}
+	else if ( ($("#date_most_recent_PSA_test_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#date_most_recent_PSA_test_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
+	){
+		return false;
+	}
+	
 	else {
 		return true;
 	}

@@ -38,6 +38,12 @@ function IsDateQ48()
 	){
 		return false;
 	}
+	else if ( ($("#q48_date_last_visit_gynecologist_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q48_date_last_visit_gynecologist_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	
 	else {
 		return true;
 	}
@@ -46,6 +52,11 @@ function IsDateQ51_1()
 {
 	if ( ($("#q51_1_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
 		(parseInt($("#q51_1_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else if ( ($("#q51_1_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_1_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -60,6 +71,11 @@ function IsDateQ51_2()
 	){
 		return false;
 	}
+	else if ( ($("#q51_2_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_2_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
 	else {
 		return true;
 	}
@@ -68,6 +84,11 @@ function IsDateQ51_3()
 {
 	if ( ($("#q51_3_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
 		(parseInt($("#q51_3_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else if ( ($("#q51_3_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_3_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -82,6 +103,11 @@ function IsDateQ51_4()
 	){
 		return false;
 	}
+	else if ( ($("#q51_4_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_4_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
 	else {
 		return true;
 	}
@@ -90,6 +116,11 @@ function IsDateQ51_5()
 {
 	if ( ($("#q51_5_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
 		(parseInt($("#q51_5_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	else if ( ($("#q51_5_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_5_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -104,6 +135,12 @@ function IsDateQ51_6()
 	){
 		return false;
 	}
+	else if ( ($("#q51_6_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51_6_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	
 	else {
 		return true;
 	}
@@ -116,6 +153,12 @@ function IsDateQ52()
 	){
 		return false;
 	}
+	else if ( ($("#q52_date_most_recent_pap_smear_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q52_date_most_recent_pap_smear_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	){
+		return false;
+	}
+	
 	else {
 		return true;
 	}

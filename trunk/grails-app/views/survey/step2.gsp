@@ -23,6 +23,9 @@
 
 <g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">
 window.onload= function(){
+
+$("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);	
+
 //
 // this is so error-prone... so commented out
 //
@@ -38,6 +41,7 @@ window.onload= function(){
 </g:if>
 <g:else>
 window.onload= function(){
+$("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);	
 	//$("[name='haveCancer']").attr("disabled", true);
 }
 </g:else>
@@ -82,6 +86,10 @@ $(document).ready(function(){
 	}); 
 	$("#q11a_hep_donotknow_type").change(function(){
 		if (this.checked){
+
+	    	$("#q11a_hep_donotknow_type_Year_year").val('');
+	    	$("#q11a_hep_donotknow_type_Year_year").attr("disabled", '');		
+		
 	    	$("[name*='q11a_1']").attr('checked', false);
 	    	$("[name*='q11a_1']").attr('disabled', true);
 	    	$("[name*='q11a_2']").attr('checked', false);
@@ -103,6 +111,8 @@ $(document).ready(function(){
     	
 		}
 		else{
+			$("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);	
+		
 	    	$("[name*='q11a_1']").attr('disabled', false);
 	    	$("[name*='q11a_2']").attr('disabled', false);
 	    	$("[name*='q11a_3']").attr('disabled', false);			

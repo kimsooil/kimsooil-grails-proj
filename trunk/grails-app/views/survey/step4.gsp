@@ -14,8 +14,64 @@
 				
     </head>
     <body>
+<%
+	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date()
+	//out << "dob="+birth[java.util.Calendar.YEAR]+"<br/>"
+	def today=new Date() 		
+	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
+%>		    
+    
 <g:javascript>
+
+
+function Is_q21DateStopSmoking_Valid(){
+	var validDate = CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val());
+	if (validDate <0 || validDate > ageCalculated-1){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
 $(document).ready(function(){ 
+	$("#q21DateStopSmoking_day").change(function() {
+			if (!Is_q21DateStopSmoking_Valid())
+			{
+				$('#alertIfInvalid').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q21DateStopSmoking_day").focus();
+			}
+			else {
+				$('#alertIfInvalid').attr('innerHTML', "");
+				$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
+				
+			}	
+		}
+	);
+	$("#q21DateStopSmoking_month").change(function() {
+			if (!Is_q21DateStopSmoking_Valid())
+			{
+				$('#alertIfInvalid').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q21DateStopSmoking_month").focus();
+			}
+			else {
+				$('#alertIfInvalid').attr('innerHTML', "");
+				$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
+			}	
+		}
+	);
+	$("#q21DateStopSmoking_year").change(function() {
+			if (!Is_q21DateStopSmoking_Valid())
+			{
+				$('#alertIfInvalid').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
+				$("#q21DateStopSmoking_year").focus();
+			}
+			else {
+				$('#alertIfInvalid').attr('innerHTML', "");
+				$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
+			}	
+		}
+	);	
+
 	$("input[name='q14_1']").change(function(){
 	    if ($("input[name='q14_1']:checked").val() != 'never'){
 	    	$("#q14_1_howManyPerWeek").attr("disabled", '');	    			    
@@ -126,9 +182,7 @@ $(document).ready(function(){
 	    
 });		    	    
 </g:javascript>
-<%
-	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 
-%>
+
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
@@ -313,7 +367,7 @@ $(document).ready(function(){
                                     <br/>
 
                                     <g:kimsiDatePicker name="q21DateStopSmoking" precision="day" value="${surveyInstance?.q21DateStopSmoking}"
-                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /><br/>
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />  <span id="alertIfInvalid"></span><br/>
 
                                     
                                 </td>

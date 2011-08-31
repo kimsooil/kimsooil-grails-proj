@@ -89,7 +89,13 @@ function checkForm10()
 			(parseInt($("#q71_month").val()) > today_month)
 		){
 			fv.raiseError("Q76: "+i18nmessages.step7ErrInvalidDate);
+		}
+	if ( ($("#q71_year").val() == dob_year.toString())  &&
+			(parseInt($("#q71_month").val()) < dob_month)
+		){
+			fv.raiseError("Q76: "+i18nmessages.step7ErrInvalidDate);
 		}				
+	
 	// all done
 	// if errors, display, else proceed
 	if (fv.numErrors() > 0)

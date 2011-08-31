@@ -13,10 +13,10 @@ function checkForm5()
 	{
 		fv.raiseError(i18nmessages.step5Err1);
 	}
-	if (getRadioValue(document.getElementsByName('q22_8'))!='never' && fv.isEmpty($('#q22_others').val()) )
-	{
-		fv.raiseError(i18nmessages.step5Err2);
-	}
+//	if (getRadioValue(document.getElementsByName('q22_8'))!='never' && fv.isEmpty($('#q22_others').val()) )
+//	{
+//		fv.raiseError(i18nmessages.step5Err2);
+//	}
 	
 	if (!fv.isRadioChecked(document.getElementsByName('LevelOfActivity')))
 	{

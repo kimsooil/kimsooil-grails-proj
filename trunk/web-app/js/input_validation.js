@@ -202,5 +202,5 @@ function CalAge(dd,mm, yy) {
    //     }
         return years;
     }
-   	    return "";
+   	    return -1;
 }
