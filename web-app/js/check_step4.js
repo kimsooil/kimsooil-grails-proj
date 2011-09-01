@@ -9,8 +9,8 @@ function checkForm4()
 				//fv.raiseError("Q26: Invalid date");
 		}
 		else{
-			var validDate = CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val());
-			if (validDate <0 || validDate > 17){
+			var validDate = CalAge_precise($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val());
+			if (validDate <0 || validDate > ageCalculated){
 				fv.raiseError("Q26: Invalid date");
 			}
 				

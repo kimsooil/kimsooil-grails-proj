@@ -104,6 +104,15 @@ function checkForm12()
 				(parseInt($("#q84_1_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.1: "+i18nmessages.step7ErrInvalidDate);			
+		} else if (
+				getRadioValue(document.getElementsByName('q84_1'))=='yes' &&
+				fv.isEmpty($("#q84_1_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_1_rad_date_day").val(), $("#q84_1_rad_date_month").val(), $("#q84_1_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.1: Invalid date");
+			}			
 		} 
 		if ( ($("#q84_2_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_2_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
@@ -115,7 +124,17 @@ function checkForm12()
 				(parseInt($("#q84_2_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.2: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_2'))=='yes' &&
+				fv.isEmpty($("#q84_2_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_2_rad_date_day").val(), $("#q84_2_rad_date_month").val(), $("#q84_2_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.2: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_3_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_3_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -126,7 +145,17 @@ function checkForm12()
 				(parseInt($("#q84_3_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.3: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_3'))=='yes' &&
+				fv.isEmpty($("#q84_3_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_3_rad_date_day").val(), $("#q84_3_rad_date_month").val(), $("#q84_3_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.3: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_4_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_4_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -137,7 +166,17 @@ function checkForm12()
 				(parseInt($("#q84_4_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.4: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_4'))=='yes' &&
+				fv.isEmpty($("#q84_4_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_4_rad_date_day").val(), $("#q84_4_rad_date_month").val(), $("#q84_4_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.4: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_5_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_5_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -148,7 +187,17 @@ function checkForm12()
 				(parseInt($("#q84_5_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.5: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_5'))=='yes' &&
+				fv.isEmpty($("#q84_5_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_5_rad_date_day").val(), $("#q84_5_rad_date_month").val(), $("#q84_5_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.5: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_6_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_6_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -159,7 +208,17 @@ function checkForm12()
 				(parseInt($("#q84_6_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.6: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_6'))=='yes' &&
+				fv.isEmpty($("#q84_6_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_6_rad_date_day").val(), $("#q84_6_rad_date_month").val(), $("#q84_6_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.6: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_7_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_7_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -170,7 +229,16 @@ function checkForm12()
 				(parseInt($("#q84_7_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.7: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_7'))=='yes' &&
+				fv.isEmpty($("#q84_7_whatAge").val())
+				
+				){			var validDate = CalAge_precise($("#q84_7_rad_date_day").val(), $("#q84_7_rad_date_month").val(), $("#q84_7_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.7: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_8_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_8_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -181,7 +249,16 @@ function checkForm12()
 				(parseInt($("#q84_8_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.8: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_8'))=='yes' &&
+				fv.isEmpty($("#q84_8_whatAge").val())
+				
+				){			var validDate = CalAge_precise($("#q84_8_rad_date_day").val(), $("#q84_8_rad_date_month").val(), $("#q84_8_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.8: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_9_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_9_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -192,7 +269,17 @@ function checkForm12()
 				(parseInt($("#q84_9_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.9: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_9'))=='yes' &&
+				fv.isEmpty($("#q84_9_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_9_rad_date_day").val(), $("#q84_9_rad_date_month").val(), $("#q84_9_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.9: Invalid date");
+			}			
+			
+		}
 		if ( ($("#q84_10_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_10_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
@@ -203,7 +290,17 @@ function checkForm12()
 				(parseInt($("#q84_10_rad_date_day").val()) > today_date)
 		){
 			fv.raiseError("Q89.10: "+i18nmessages.step7ErrInvalidDate);			
-		} 
+		} else if (
+				getRadioValue(document.getElementsByName('q84_10'))=='yes' &&
+				fv.isEmpty($("#q84_10_whatAge").val())
+				
+				){
+			var validDate = CalAge_precise($("#q84_10_rad_date_day").val(), $("#q84_10_rad_date_month").val(), $("#q84_10_rad_date_year").val());
+			if (validDate <0 || validDate > ageCalculated){
+				fv.raiseError("Q89.10: Invalid date");
+			}			
+			
+		}
 		
 	}
 	// all done

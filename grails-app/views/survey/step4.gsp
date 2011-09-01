@@ -25,8 +25,8 @@
 
 
 function Is_q21DateStopSmoking_Valid(){
-	var validDate = CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val());
-	if (validDate <0 || validDate > ageCalculated-1){
+	var validDate = CalAge_precise($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val());
+	if (validDate <0 || validDate > ageCalculated){
 		return false;
 	}
 	else {
@@ -42,7 +42,7 @@ $(document).ready(function(){
 			}
 			else {
 				$('#alertIfInvalid').attr('innerHTML', "");
-				$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
+				//$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
 				
 			}	
 		}
@@ -55,7 +55,7 @@ $(document).ready(function(){
 			}
 			else {
 				$('#alertIfInvalid').attr('innerHTML', "");
-				$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
+				//$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
 			}	
 		}
 	);
@@ -67,7 +67,7 @@ $(document).ready(function(){
 			}
 			else {
 				$('#alertIfInvalid').attr('innerHTML', "");
-				$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
+				//$('#alertIfInvalid').attr('innerHTML', CalAge($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val()));
 			}	
 		}
 	);	
