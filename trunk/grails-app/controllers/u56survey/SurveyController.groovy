@@ -1273,6 +1273,8 @@ class SurveyController {
 	def update_unified = {
 		def currentStep =  session.step!='' && session.step ? session.step.toInteger() : 1
 		def nextStep=currentStep+1
+		
+
 
 		def countries = [] as SortedSet
 		def countryNames = [:]
@@ -1292,6 +1294,10 @@ class SurveyController {
 		
 		def surveyInstance = Survey.get(params.id)
 		if (surveyInstance) {
+			
+			if (currentStep==6 && surveyInstance.sex=='female') nextStep=8
+			else if (currentStep==8 && surveyInstance.sex=='male') nextStep=12
+			
 			if (params.version) {
 				def version = params.version.toLong()
 				if (surveyInstance.version > version) {
