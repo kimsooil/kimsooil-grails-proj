@@ -32,7 +32,7 @@
  %>
 
 
-<g:if test="${surveyInstance?.completed}">
+<g:if test="${surveyInstance?.completed || (session.user.role!='admin' && surveyInstance?.surveyer!=session.user.login)}">
 <g:javascript>
   DisableEnableForm(document.${('surveyform'+step)},true);
 </g:javascript>
