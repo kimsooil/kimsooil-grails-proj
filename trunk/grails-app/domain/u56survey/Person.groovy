@@ -2,11 +2,12 @@ package u56survey
 
 class Person {
   static constraints = {
-    login(unique:true)
-    password(password:true)
-	role(inList:["surveyer", "admin"])
-	location(inList:["MOFF", "FLHO", 'PSoM', 'STLU', 'HIMA', 'SJVA', 'AMHO', 'PRTB', 'DEMO'])
-	language(inList:["English", "Spanish"])
+    login(unique:true, nullable:false, blank:false)
+    password(password:true, nullable:false, blank:false)
+	name(nullable:false, blank:false)
+	role(inList:["surveyer", "admin"], nullable:false, blank:false)
+	location(inList:["MOFF", "FLHO", 'PSoM', 'STLU', 'HIMA', 'SJVA', 'AMHO', 'PRTB', 'DEMO'], nullable:false, blank:false)
+	language(inList:["English", "Spanish"], nullable:false, blank:false)
 	sex(inList:["Female", "Male"])
   }
   
