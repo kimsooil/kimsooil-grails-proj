@@ -48,7 +48,9 @@
 		(document.getElementById('country').value=='US' && fv.isEmpty(document.getElementById('addr_state').value)) ){
 			fv.raiseError(i18nmessages.step1Err8);
 	}
-	if (!fv.isEmpty(document.getElementById('addr_zipcode').value) && !fv.isValidZipcode(document.getElementById('addr_zipcode').value)){
+	if (	(document.getElementById('country').value=='US' || document.getElementById('country').value=='PR') &&
+			!fv.isEmpty(document.getElementById('addr_zipcode').value) &&
+			!fv.isValidZipcode(document.getElementById('addr_zipcode').value)){
 		fv.raiseError(i18nmessages.step1Err9);
 	}
 	if (fv.isEmpty(document.getElementById('country').value) || document.getElementById('country').value=='--'){

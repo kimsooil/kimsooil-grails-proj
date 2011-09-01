@@ -465,8 +465,8 @@ class Survey {
 		//marital_status(inList:["Married", "Single", "Divorce", "Consensual relationship"])
 		//education(inList:["Up to 8 grade", "8-12 grade", "Vocational School", "Associate degree", "Bachelor", "Master", "Doctor", "Other"])
 		//DOB(nullable:false)
-		addr_zipcode(matches:/^([0-9]+)$/)
-		q95_addr_zipcode(matches:/^([0-9]+)$/)
+		//addr_zipcode(matches:/^([0-9]+)$/)
+		//q95_addr_zipcode(matches:/^([0-9]+)$/)
 		age(matches:/^([0-9]+)$/)
 		current_occupation_time(matches:/^([0-9]+)$/) // years
 		prior_job_time(matches:/^([0-9]+)$/) // years

@@ -225,7 +225,8 @@ $(document).ready(function(){
                                     <g:message code="survey.addr_street2.label" default="Addrstreet2" />: <g:textField name="addr_street2" value="${surveyInstance?.addr_street2}" /><br/>
                                     <label style="color:red">*</label><g:message code="survey.addr_city.label" default="Addrcity" />: <g:textField name="addr_city" value="${surveyInstance?.addr_city}" /><br/>
                                     <label style="color:red">*</label><g:message code="survey.addr_state.label" default="Addrstate" />: <g:textField name="addr_state" value="${surveyInstance?.addr_state}" /><br/>
-                                    <g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="addr_zipcode" value="${surveyInstance?.addr_zipcode}" onkeyup="postcode_validate(this.value, document.getElementById('status'));"/> <span id="status"></span>
+<%--                                    <g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="addr_zipcode" value="${surveyInstance?.addr_zipcode}" onkeyup="postcode_validate(this.value, document.getElementById('status'));"/> <span id="status"></span> --%>
+									<g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="addr_zipcode" value="${surveyInstance?.addr_zipcode}" /> <span id="status"></span>
                                 </td>
                             </tr>
 

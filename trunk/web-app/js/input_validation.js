@@ -61,8 +61,11 @@ function postcode_validate(zipcode)
     var regPostcode = /^\d{5}$|^\d{5}-\d{4}$/;;
 
     obj = document.getElementById("status");
+    country = document.getElementById('country');
 	obj.style.display = 'inline';
-	if (zipcode.length > 1){
+	if (zipcode.length > 1 &&
+		(country.value=="PR" || country.value=="US")
+	){
 	    if(regPostcode.test(zipcode) == false)
 	    {
 	
