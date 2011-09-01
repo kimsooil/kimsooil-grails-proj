@@ -9,7 +9,7 @@ class LoginTagLib {
 
 				case "development":
 					if(session.user){
-					  out << message(code:"hello")+"  ${session.user} "
+					  out << message(code:"hello")+"  ${session.user.login} "
 					  out << """[${link(action:"logout", controller:"person"){message(code:'logout2')}}]"""
 					  
 					} else {
@@ -18,7 +18,7 @@ class LoginTagLib {
 				break
 				case "production":
 					if(session.user){
-					  out << message(code:"hello")+"  ${session.user} "
+					  out << message(code:"hello")+"  ${session.user.login} "
 					  //out << """[${link(action:"logout", controller:"person"){"Switch user"}}]"""
 					  
 					  out << """-[${link(action:"securelogout", controller:"person"){message(code:'logout2')}}]"""

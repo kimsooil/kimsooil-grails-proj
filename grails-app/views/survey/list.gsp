@@ -16,6 +16,9 @@
             	<span class="menuButton"><g:link controller="person" class="list" action="list">Manage User</g:link></span>
             	<span class="menuButton"><g:link controller="survey" class="list" action="print">Print Form</g:link></span>
             </g:if>
+            <g:else>
+            	<span class="menuButton"><g:link controller="person" class="edit" action="edit_info" params="[user:session.user.login]">Edit Info</g:link></span>
+            </g:else>
             <%--<g:if test="${session.user.role=='surveyer' }"><span class="menuButton"><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link></span></g:if> --%>
         </div>
         <div class="body">
@@ -41,7 +44,7 @@
 		        	<br/>
 		        	<li><g:link controller="survey" class="list" action="print">Print Form</g:link> (<g:link controller="survey" class="list" action="print" params="[lang:'us']"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'us-letter.png')}" alt="English" border="0" /></g:link>/<g:link controller="survey" class="list" action="print" params="[lang:'es']"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'es-letter.png')}" alt="Español" border="0" /></g:link>)</li>
 		        	<br/>
-		        	<li>PDF (<a href="/hispbb/Print-us.pdf"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'us-letter.png')}" alt="English" border="0" /></a> / <a href="/hispbb/Print-es.pdf"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'es-letter.png')}" alt="Spanish" border="0" /></a>)
+		        	<li><b>PDF</b> (<a href="/hispbb/Print-us.pdf"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'us-letter.png')}" alt="English" border="0" /></a> / <a href="/hispbb/Print-es.pdf"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'es-letter.png')}" alt="Spanish" border="0" /></a>)
 		        	<br/>
 		        	<br/>
 		        	<g:render template="/common/gchart"/>

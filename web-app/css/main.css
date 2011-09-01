@@ -95,7 +95,11 @@ input:focus, select:focus, textarea:focus {
     color: #333;
     padding-left: 25px;
 }
-
+.menuButton a.edit {
+    background: url(../images/skin/database_edit.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
 /* MESSAGES AND ERRORS */
 
 .message {
