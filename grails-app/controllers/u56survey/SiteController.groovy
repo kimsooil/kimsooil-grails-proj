@@ -5,11 +5,19 @@ class SiteController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 	
 	def authz() {
-		if(!session.user) {
+		
+		//if(!session.user) {
+		//	session.returnURL = request.request.requestURL
+		//	 redirect(controller:"person", action:"login")
+		//	 return false
+		//}
+		if( !(session?.user?.role == "admin") ){
+			flash.message = "You must be an administrator to perform that task."
 			session.returnURL = request.request.requestURL
-			 redirect(controller:"person", action:"login")
-			 return false
-		}
+			//session.returnURL = request.forwardURI
+			redirect(controller:"person", action:"login")
+			return false
+		  }
    }
 
     def index = {
