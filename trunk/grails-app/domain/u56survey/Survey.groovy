@@ -34,6 +34,8 @@ class Survey {
 	String addr_zipcode
 	String country // use g:countrySelect tag
 	Date DOB // date of birth mm/dd/yy
+	String shortDOB
+	
 	//String phone
 	String marital_status // married,single,divorce, consensual relationship, other (widow)
 	String education
@@ -66,6 +68,7 @@ class Survey {
 	//Boolean q11a_hep_a, q11a_hep_b, q11a_hep_c, q11a_hep_donotknow_type
 	Boolean q11a_hep_donotknow_type
 	Date q11a_hep_donotknow_type_Year, q11a_1Year, q11a_2Year, q11a_3Year, q11a_4Year, q11a_5Year, q11a_6Year
+	String q11a_hep_donotknow_type_Year_only, q11a_1Year_only, q11a_2Year_only, q11a_3Year_only, q11a_4Year_only, q11a_5Year_only, q11a_6Year_only
 	
 	String spread_cancer // q11c
 	Boolean spread_liver, spread_brain, spread_lung, spread_bone, spread_other 
@@ -216,6 +219,7 @@ class Survey {
 	//Boolean q20 // Do you still smoke cigarettes?
 	String stillSmoke
 	Date q21DateStopSmoking // if q20=no/false
+	String q21DateStopSmoking_short
 	String q21_whenStopSmoking_years
 	String q21_whenStopSmoking_months 
 
@@ -266,10 +270,12 @@ class Survey {
 	
 	String q32 // Have you ever had a rectal exam?
 	Date date_rectal_exam // month and year only
+	String date_rectal_exam_short
 	String findings_rectal_exam
 	
 	String q33 // Have you ever a prostatic specific antigen(PSA) test?
 	Date date_most_recent_PSA_test // month and year only
+	String date_most_recent_PSA_test_short
 	String results_PSA_test
 	
 	String q34 // have you ever had erectile dysfunction
@@ -298,9 +304,11 @@ class Survey {
 	
 	String q41 // q41: have you ever had a digital rectal exam (yes/no/five or more years)
 	Date date_digital_rectal_exam // month and year only // MARK if 5 years or more before (***)
+	String date_digital_rectal_exam_short
 	
 	String q42 // have you ever had a sigmoidoscopy or colonoscopy
 	Date date_sigmoidoscopy_colonoscopy // month and year only
+	String date_sigmoidoscopy_colonoscopy_short
 	
 	String q42_1 // noraml
 	String q42_2 // ulcers
@@ -337,6 +345,7 @@ class Survey {
 	
 	String q47 // every 6 months, every year, never
 	Date q48_date_last_visit_gynecologist // month and year only
+	String q48_date_last_visit_gynecologist_short
 	String q49 // have you had a pelvic exam: yes, no
 	String q49_findings_pelvic_exam // if q49=yes/true
 	String q50 // have you had a digital rectal exam ... ??? same as q41
@@ -351,10 +360,12 @@ class Survey {
 	String q51_5 // barium enema
 	String q51_6 // intravenous pyelogram
 	Date q51_1_date,q51_2_date,q51_3_date,q51_4_date,q51_5_date,q51_6_date
+	String q51_1_date_short,q51_2_date_short,q51_3_date_short,q51_4_date_short,q51_5_date_short,q51_6_date_short
 	String q51_1_result,q51_2_result,q51_3_result,q51_4_result,q51_5_result,q51_6_result
 	
 	String q52 // have you had a Pap Smear
 	Date q52_date_most_recent_pap_smear //if q52 is yes/true
+	String q52_date_most_recent_pap_smear_short
 	String q52_results_pap_smear
 	
 	String q53 // have you ever used some medications for fertility?
@@ -386,6 +397,7 @@ class Survey {
 	String q69_whatAgeStarted
 	String q70
 	Date q71
+	String q71shortdate
 // Pregnancy History (female only)
 	String q72
 	//String q73
@@ -418,6 +430,7 @@ class Survey {
 	String q83
 	String q84_1, q84_2, q84_3, q84_4, q84_5, q84_6, q84_7, q84_8, q84_9, q84_10
 	Date q84_1_rad_date, q84_2_rad_date, q84_3_rad_date, q84_4_rad_date, q84_5_rad_date, q84_6_rad_date, q84_7_rad_date, q84_8_rad_date, q84_9_rad_date, q84_10_rad_date
+	String q84_1_rad_date_short, q84_2_rad_date_short, q84_3_rad_date_short, q84_4_rad_date_short, q84_5_rad_date_short, q84_6_rad_date_short, q84_7_rad_date_short, q84_8_rad_date_short, q84_9_rad_date_short, q84_10_rad_date_short
 	String q84_1_whatAge, q84_2_whatAge, q84_3_whatAge, q84_4_whatAge, q84_5_whatAge, q84_6_whatAge, q84_7_whatAge, q84_8_whatAge, q84_9_whatAge, q84_10_whatAge
 	String q84_another
 // Nutritional History
@@ -434,6 +447,7 @@ class Survey {
 	String q90_1,q90_2,q90_3,q90_4,q90_5,q90_6
 	String q90_1_age,q90_2_age,q90_3_age,q90_4_age,q90_5_age,q90_6_age
 	Date q90_1_year,q90_2_year,q90_3_year,q90_4_year,q90_5_year,q90_6_year
+	String q90_1_year_only,q90_2_year_only,q90_3_year_only,q90_4_year_only,q90_5_year_only,q90_6_year_only
 	String q91_1, q91_2, q91_3
 	String q91_1_howManyYears, q91_2_howManyYears, q91_3_howManyYears
 	String q92_1,q92_2,q92_3,q92_4,q92_5,q92_6,q92_7,q92_8,q92_9

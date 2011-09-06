@@ -43,7 +43,8 @@ class SurveyController {
 		"dateCreated",
 		"lastUpdated",
 		"being_treated_for_cancer",
-		"DOB",
+		//"DOB",
+		"shortDOB",
 		"sex",
 		"race",
 		"other_race",
@@ -72,19 +73,19 @@ class SurveyController {
 		"height_feet",
 		"height_inches",
 		"q11a_1",
-		"q11a_1Year",
+		"q11a_1Year_only",
 		"q11a_2",
-		"q11a_2Year",
+		"q11a_2Year_only",
 		"q11a_3",
-		"q11a_3Year",
+		"q11a_3Year_only",
 		"q11a_4",
-		"q11a_4Year",
+		"q11a_4Year_only",
 		"q11a_5",
-		"q11a_5Year",
+		"q11a_5Year_only",
 		"q11a_6",
-		"q11a_6Year",
+		"q11a_6Year_only",
 		"q11a_hep_donotknow_type",
-		"q11a_hep_donotknow_type_Year",
+		"q11a_hep_donotknow_type_Year_only",
 		"haveCancer",
 		"q12_1_1",
 		"q12_1_2",
@@ -269,7 +270,7 @@ class SurveyController {
 		"q18",
 		"q19",
 		"stillSmoke",
-		"q21DateStopSmoking",
+		"q21DateStopSmoking_short",
 		"q21_whenStopSmoking_months",
 		"q21_whenStopSmoking_years",
 		"q22_1",
@@ -307,10 +308,10 @@ class SurveyController {
 		"q31_3",
 		"q32",
 		"findings_rectal_exam",
-		"date_rectal_exam",
+		"date_rectal_exam_short",
 		"q33",
-		"date_most_recent_PSA_test",
 		"results_PSA_test",
+		"date_most_recent_PSA_test_short",
 		"q34",
 		"q35",
 		"q36_1",
@@ -325,9 +326,9 @@ class SurveyController {
 		"q39",
 		"q40",
 		"q41",
-		"date_digital_rectal_exam",
+		"date_digital_rectal_exam_short",
 		"q42",
-		"date_sigmoidoscopy_colonoscopy",
+		"date_sigmoidoscopy_colonoscopy_short",
 		"q42_1",
 		"q42_2",
 		"q42_3",
@@ -355,32 +356,32 @@ class SurveyController {
 		"q46_6",
 		"q46_7",
 		"q47",
-		"q48_date_last_visit_gynecologist",
+		"q48_date_last_visit_gynecologist_short",
 		"q49",
 		"q49_findings_pelvic_exam",
 		"q50",
 		"q50_findings_digital_rectal_exam",
 		"q51",
 		"q51_1",
-		"q51_1_date",
+		"q51_1_date_short",
 		"q51_1_result",
 		"q51_2",
-		"q51_2_date",
+		"q51_2_date_short",
 		"q51_2_result",
 		"q51_3",
-		"q51_3_date",
+		"q51_3_date_short",
 		"q51_3_result",
 		"q51_4",
-		"q51_4_date",
+		"q51_4_date_short",
 		"q51_4_result",
 		"q51_5",
-		"q51_5_date",
+		"q51_5_date_short",
 		"q51_5_result",
 		"q51_6",
-		"q51_6_date",
+		"q51_6_date_short",
 		"q51_6_result",
 		"q52",
-		"q52_date_most_recent_pap_smear",
+		"q52_date_most_recent_pap_smear_short",
 		"q52_results_pap_smear",
 		"q53",
 		"q53_how_long_use_fertility_medication",
@@ -408,7 +409,7 @@ class SurveyController {
 		"q69_whatAgeStarted",
 		"q69_which",
 		"q70",
-		"q71",
+		"q71shortdate",
 		"q72",
 		"q73_alive",
 		"q73_dead",
@@ -508,34 +509,34 @@ class SurveyController {
 		"q82_others",
 		"q83",
 		"q84_1",
-		"q84_1_rad_date",
+		"q84_1_rad_date_short",
 		"q84_1_whatAge",
 		"q84_2",
-		"q84_2_rad_date",
+		"q84_2_rad_date_short",
 		"q84_2_whatAge",
 		"q84_3",
-		"q84_3_rad_date",
+		"q84_3_rad_date_short",
 		"q84_3_whatAge",
 		"q84_4",
-		"q84_4_rad_date",
+		"q84_4_rad_date_short",
 		"q84_4_whatAge",
 		"q84_5",
-		"q84_5_rad_date",
+		"q84_5_rad_date_short",
 		"q84_5_whatAge",
 		"q84_6",
-		"q84_6_rad_date",
+		"q84_6_rad_date_short",
 		"q84_6_whatAge",
 		"q84_7",
-		"q84_7_rad_date",
+		"q84_7_rad_date_short",
 		"q84_7_whatAge",
 		"q84_8",
-		"q84_8_rad_date",
+		"q84_8_rad_date_short",
 		"q84_8_whatAge",
 		"q84_9",
-		"q84_9_rad_date",
+		"q84_9_rad_date_short",
 		"q84_9_whatAge",
 		"q84_10",
-		"q84_10_rad_date",
+		"q84_10_rad_date_short",
 		"q84_10_whatAge",
 		"q84_another",
 		"q85",
@@ -583,22 +584,22 @@ class SurveyController {
 		"q89_other",
 		"q90_1",
 		"q90_1_age",
-		"q90_1_year",
+		"q90_1_year_only",
 		"q90_2",
 		"q90_2_age",
-		"q90_2_year",
+		"q90_2_year_only",
 		"q90_3",
 		"q90_3_age",
-		"q90_3_year",
+		"q90_3_year_only",
 		"q90_4",
 		"q90_4_age",
-		"q90_4_year",
+		"q90_4_year_only",
 		"q90_5",
 		"q90_5_age",
-		"q90_5_year",
+		"q90_5_year_only",
 		"q90_6",
 		"q90_6_age",
-		"q90_6_year",
+		"q90_6_year_only",
 		"q91_1",
 		"q91_1_howManyYears",
 		"q91_2",
@@ -685,7 +686,7 @@ class SurveyController {
 
 "being_treated_for_cancer":"Q000_Are_you_currently_being_treated_for_cancer",
 
-"DOB":"Q001_Date_of_Birth",	
+"shortDOB":"Q001_Date_of_Birth",	
 "sex":"Q001_sex",
 
 "race":"Q002_race",
@@ -724,19 +725,19 @@ class SurveyController {
 
 
 "q11a_1":"Q013_hepA",
-"q11a_1Year":"Q013_hepA_year",
+"q11a_1Year_only":"Q013_hepA_year",
 "q11a_2":"Q013_hepB",
-"q11a_2Year":"Q013_hepB_year",
+"q11a_2Year_only":"Q013_hepB_year",
 "q11a_3":"Q013_hepC",
-"q11a_3Year":"Q013_hepC_year",
+"q11a_3Year_only":"Q013_hepC_year",
 "q11a_4":"Q013_hpv",
-"q11a_4Year":"Q013_hpv_year",
+"q11a_4Year_only":"Q013_hpv_year",
 "q11a_5":"Q013_hiv",
-"q11a_5Year":"Q013_hiv_year",
+"q11a_5Year_only":"Q013_hiv_year",
 "q11a_6":"Q013_helico",
-"q11a_6Year":"Q013_helico_year",
+"q11a_6Year_only":"Q013_helico_year",
 "q11a_hep_donotknow_type":"Q013_hep_do_not_know_type",
-"q11a_hep_donotknow_type_Year":"Q013_hep_do_not_know_type_year",
+"q11a_hep_donotknow_type_Year_only":"Q013_hep_do_not_know_type_year",
 
 "haveCancer":"Q014_have_you_ever_told_by_doctor_you_have_cancer",
 "q12_1_1":"Q015_01_radio",
@@ -927,7 +928,7 @@ class SurveyController {
 
 "stillSmoke":"Q025_still_smoke",
 
-"q21DateStopSmoking":"Q026_date_stop_smoking",
+"q21DateStopSmoking_short":"Q026_date_stop_smoking",
 "q21_whenStopSmoking_months":"Q026_how_long_ago_stop_smoking_months",
 "q21_whenStopSmoking_years":"Q026_how_long_ago_stop_smoking_years",
 "q22_1":"Q027_running_freq",
@@ -965,9 +966,9 @@ class SurveyController {
 "q31_3":"Q036_needed_prostate_biopsy",
 "q32":"Q037_had_rectal_exam",
 "findings_rectal_exam":"Q037_rectal_exam_findings",
-"date_rectal_exam":"Q037_date_rectal_exam",
+"date_rectal_exam_short":"Q037_date_rectal_exam",
 "q33":"Q038_had_PSA_test",
-"date_most_recent_PSA_test":"Q038_date_most_recent_PSA_test",
+"date_most_recent_PSA_test_short":"Q038_date_most_recent_PSA_test",
 "results_PSA_test":"Q038_PSA_test_results",
 "q34":"Q039_have_erectile_dysfunction",
 "q35":"Q040_have_digestive_tract_problem",
@@ -983,9 +984,9 @@ class SurveyController {
 "q39":"Q044_whether_recommended_fecal_occult_blood_test",
 "q40":"Q045_result_fecal_occult_blood_test",
 "q41":"Q046_have_digital_rectal_exam",
-"date_digital_rectal_exam":"Q046_date_digital_rectal_exam",
+"date_digital_rectal_exam_short":"Q046_date_digital_rectal_exam",
 "q42":"Q047_have_sigmoidoscopy_or_colonoscopy",
-"date_sigmoidoscopy_colonoscopy":"Q047_date_sigmoidoscopy_colonoscopy",
+"date_sigmoidoscopy_colonoscopy_short":"Q047_date_sigmoidoscopy_colonoscopy",
 
 "q42_1":"Q047_normal",
 "q42_2":"Q047_ulcers",
@@ -1017,32 +1018,32 @@ class SurveyController {
 "q46_6":"Q051_increased_urinating_freq",
 "q46_7":"Q051_other",
 "q47":"Q052_how_often_visit_gynecologist",
-"q48_date_last_visit_gynecologist":"Q053_last_visit_to_gynecologist",
+"q48_date_last_visit_gynecologist_short":"Q053_last_visit_to_gynecologist",
 "q49":"Q054_have_pelvic_exam",
 "q49_findings_pelvic_exam":"Q054_findings_pelvic_exam",
 "q50":"Q055_have_digital_rectal_exam",
 "q50_findings_digital_rectal_exam":"Q055_findings_digital_rectal_exam",
 "q51":"Q056_whether_doctor_order_any_diagnostic_test",
 "q51_1":"Q056_CA125",
-"q51_1_date":"Q056_CA125_date",
+"q51_1_date_short":"Q056_CA125_date",
 "q51_1_result":"Q056_CA125_result",
 "q51_2":"Q056_alpha_fetoprotein",
-"q51_2_date":"Q056_alpha_fetoprotein_date",
+"q51_2_date_short":"Q056_alpha_fetoprotein_date",
 "q51_2_result":"Q056_alpha_fetoprotein_result",
 "q51_3":"Q056_quantitativeHCG",
-"q51_3_date":"Q056_quantitativeHCG_date",
+"q51_3_date_short":"Q056_quantitativeHCG_date",
 "q51_3_result":"Q056_quantitativeHCG_result",
 "q51_4":"Q056_sonogram",
-"q51_4_date":"Q056_sonogram_date",
+"q51_4_date_short":"Q056_sonogram_date",
 "q51_4_result":"Q056_sonogram_result",
 "q51_5":"Q056_barium_enema",
-"q51_5_date":"Q056_barium_enema_date",
+"q51_5_date_short":"Q056_barium_enema_date",
 "q51_5_result":"Q056_barium_enema_result",
 "q51_6":"Q056_intravenous_pyelogram",
-"q51_6_date":"Q056_intravenous_pyelogram_date",
+"q51_6_date_short":"Q056_intravenous_pyelogram_date",
 "q51_6_result":"Q056_intravenous_pyelogram_result",
 "q52":"Q057_have_pap_smear",
-"q52_date_most_recent_pap_smear":"Q057_date_most_recent_pap_smear",
+"q52_date_most_recent_pap_smear_short":"Q057_date_most_recent_pap_smear",
 "q52_results_pap_smear":"Q057_results_pap_smear",
 "q53":"Q058_have_fertility_medication",
 "q53_how_long_use_fertility_medication":"Q058_how_long_use_fertility_medication",
@@ -1070,7 +1071,7 @@ class SurveyController {
 "q69_whatAgeStarted":"Q074_whatAgeStarted",
 "q69_which":"Q074_which",
 "q70":"Q075_have_mammogram_every_year",
-"q71":"Q076_last_mammogram",
+"q71shortdate":"Q076_last_mammogram",
 "q72":"Q077_have_ever_been_pregnant",
 "q73_alive":"Q078_alive",
 "q73_dead":"Q078_dead",
@@ -1172,34 +1173,34 @@ class SurveyController {
 "q82_others":"Q087_others",
 "q83":"Q088_exposed_to_radiation_treatment",
 "q84_1":"Q089_01_tb",
-"q84_1_rad_date":"Q089_01_rad_date",
+"q84_1_rad_date_short":"Q089_01_rad_date",
 "q84_1_whatAge":"Q089_01_whatAge",
 "q84_2":"Q089_02_vertebral_column",
-"q84_2_rad_date":"Q089_02_rad_date",
+"q84_2_rad_date_short":"Q089_02_rad_date",
 "q84_2_whatAge":"Q089_02_whatAge",
 "q84_3":"Q089_03_chest",
-"q84_3_rad_date":"Q089_03_rad_date",
+"q84_3_rad_date_short":"Q089_03_rad_date",
 "q84_3_whatAge":"Q089_03_whatAge",
 "q84_4":"Q089_04_abdomen",
-"q84_4_rad_date":"Q089_04_rad_date",
+"q84_4_rad_date_short":"Q089_04_rad_date",
 "q84_4_whatAge":"Q089_04_whatAge",
 "q84_5":"Q089_05_acne",
-"q84_5_rad_date":"Q089_05_rad_date",
+"q84_5_rad_date_short":"Q089_05_rad_date",
 "q84_5_whatAge":"Q089_05_whatAge",
 "q84_6":"Q089_06_thymus",
-"q84_6_rad_date":"Q089_06_rad_date",
+"q84_6_rad_date_short":"Q089_06_rad_date",
 "q84_6_whatAge":"Q089_06_whatAge",
 "q84_7":"Q089_07_non_hodgkin",
-"q84_7_rad_date":"Q089_07_rad_date",
+"q84_7_rad_date_short":"Q089_07_rad_date",
 "q84_7_whatAge":"Q089_07_whatAge",
 "q84_8":"Q089_08_neck",
-"q84_8_rad_date":"Q089_08_rad_date",
+"q84_8_rad_date_short":"Q089_08_rad_date",
 "q84_8_whatAge":"Q089_08_whatAge",
 "q84_9":"Q089_09_fluoroscopic",
-"q84_9_rad_date":"Q089_09_rad_date",
+"q84_9_rad_date_short":"Q089_09_rad_date",
 "q84_9_whatAge":"Q089_09_whatAge",
 "q84_10":"Q089_10_another",
-"q84_10_rad_date":"Q089_10_rad_date",
+"q84_10_rad_date_short":"Q089_10_rad_date",
 "q84_10_whatAge":"Q089_10_whatAge",
 
 "q84_another":"Q089_10_another_place",
@@ -1248,22 +1249,22 @@ class SurveyController {
 "q89_other":"Q094_other",
 "q90_1":"Q095_01_asthma",
 "q90_1_age":"Q095_01_age",
-"q90_1_year":"Q095_01_year",
+"q90_1_year_only":"Q095_01_year",
 "q90_2":"Q095_02_chronic_bronchitis",
 "q90_2_age":"Q095_02_age",
-"q90_2_year":"Q095_02_year",
+"q90_2_year_only":"Q095_02_year",
 "q90_3":"Q095_03_emphysema",
 "q90_3_age":"Q095_03_age",
-"q90_3_year":"Q095_03_year",
+"q90_3_year_only":"Q095_03_year",
 "q90_4":"Q095_04_pneumonia",
 "q90_4_age":"Q095_04_age",
-"q90_4_year":"Q095_04_year",
+"q90_4_year_only":"Q095_04_year",
 "q90_5":"Q095_05_hay_fever",
 "q90_5_age":"Q095_05_age",
-"q90_5_year":"Q095_05_year",
+"q90_5_year_only":"Q095_05_year",
 "q90_6":"Q095_06_eczema_dermatitis",
 "q90_6_age":"Q095_06_age",
-"q90_6_year":"Q095_06_year",
+"q90_6_year_only":"Q095_06_year",
 "q91_1":"Q096_01_second_hand_smoke_at_home",
 "q91_1_howManyYears":"Q096_01_howManyYears",
 "q91_2":"Q096_02_second_hand_smoke_at_work",
@@ -1373,6 +1374,87 @@ class SurveyController {
 		
 		Map parameters = [title: "survey_list", separator:"\t"]
 		
+		def surveys = Survey.list().each{
+			def shortDOB = it.DOB ? String.format('%tY/%<tm/%<td', it.DOB) : ""
+			it.putAt("shortDOB", shortDOB)
+			def q11a_1Year_only = it.q11a_1Year ? String.format('%tY', it.q11a_1Year) : ""
+			def q11a_2Year_only = it.q11a_2Year ? String.format('%tY', it.q11a_2Year) : ""
+			def q11a_3Year_only = it.q11a_3Year ? String.format('%tY', it.q11a_3Year) : ""
+			def q11a_4Year_only = it.q11a_4Year ? String.format('%tY', it.q11a_4Year) : ""
+			def q11a_5Year_only = it.q11a_5Year ? String.format('%tY', it.q11a_5Year) : ""
+			def q11a_6Year_only = it.q11a_6Year ? String.format('%tY', it.q11a_6Year) : ""
+			def q11a_hep_donotknow_type_Year_only = it.q11a_hep_donotknow_type_Year ? String.format('%tY', it.q11a_hep_donotknow_type_Year) : ""
+			it.putAt("q11a_1Year_only", q11a_1Year_only)
+			it.putAt("q11a_2Year_only", q11a_2Year_only)
+			it.putAt("q11a_3Year_only", q11a_3Year_only)
+			it.putAt("q11a_4Year_only", q11a_4Year_only)
+			it.putAt("q11a_5Year_only", q11a_5Year_only)
+			it.putAt("q11a_6Year_only", q11a_6Year_only)
+			it.putAt("q11a_hep_donotknow_type_Year_only", q11a_hep_donotknow_type_Year_only)
+			def q21DateStopSmoking_short = it.q21DateStopSmoking ? String.format('%tY/%<tm/%<td', it.q21DateStopSmoking) : ""
+			it.putAt("q21DateStopSmoking_short", q21DateStopSmoking_short)
+			def date_most_recent_PSA_test_short = it.date_most_recent_PSA_test ? String.format('%tY/%<tm', it.date_most_recent_PSA_test) : ""
+			def date_rectal_exam_short = it.date_rectal_exam ? String.format('%tY/%<tm', it.date_rectal_exam) : ""
+			it.putAt("date_rectal_exam_short", date_rectal_exam_short)
+			it.putAt("date_most_recent_PSA_test_short", date_most_recent_PSA_test_short)
+			def date_digital_rectal_exam_short = it.date_digital_rectal_exam ? String.format('%tY/%<tm', it.date_digital_rectal_exam) : ""
+			def date_sigmoidoscopy_colonoscopy_short = it.date_sigmoidoscopy_colonoscopy ? String.format('%tY/%<tm', it.date_sigmoidoscopy_colonoscopy): ""
+			it.putAt("date_digital_rectal_exam_short", date_digital_rectal_exam_short)
+			it.putAt("date_sigmoidoscopy_colonoscopy_short", date_sigmoidoscopy_colonoscopy_short)
+			
+			def q48_date_last_visit_gynecologist_short = it.q48_date_last_visit_gynecologist ? String.format('%tY/%<tm', it.q48_date_last_visit_gynecologist): ""
+			it.putAt("q48_date_last_visit_gynecologist_short", q48_date_last_visit_gynecologist_short)
+			def q51_1_date_short = it.q51_1_date ? String.format('%tY/%<tm', it.q51_1_date): ""
+			def q51_2_date_short = it.q51_2_date ? String.format('%tY/%<tm', it.q51_2_date): ""
+			def q51_3_date_short = it.q51_3_date ? String.format('%tY/%<tm', it.q51_3_date): ""
+			def q51_4_date_short = it.q51_4_date ? String.format('%tY/%<tm', it.q51_4_date): ""
+			def q51_5_date_short = it.q51_5_date ? String.format('%tY/%<tm', it.q51_5_date): ""
+			def q51_6_date_short = it.q51_6_date ? String.format('%tY/%<tm', it.q51_6_date): ""
+			it.putAt("q51_1_date_short", q51_1_date_short)
+			it.putAt("q51_2_date_short", q51_2_date_short)
+			it.putAt("q51_3_date_short", q51_3_date_short)
+			it.putAt("q51_4_date_short", q51_4_date_short)
+			it.putAt("q51_5_date_short", q51_5_date_short)
+			it.putAt("q51_6_date_short", q51_6_date_short)
+			def q52_date_most_recent_pap_smear_short = it.q52_date_most_recent_pap_smear ? String.format('%tY/%<tm', it.q52_date_most_recent_pap_smear): ""
+			it.putAt("q52_date_most_recent_pap_smear_short", q52_date_most_recent_pap_smear_short)
+			def q71shortdate = it.q71 ? String.format('%tY/%<tm', it.q71): ""
+			it.putAt("q71shortdate", q71shortdate)
+			def q84_1_rad_date_short = it.q84_1_rad_date ? String.format('%tY/%<tm/%<td', it.q84_1_rad_date): ""
+			def q84_2_rad_date_short = it.q84_2_rad_date ? String.format('%tY/%<tm/%<td', it.q84_2_rad_date): ""
+			def q84_3_rad_date_short = it.q84_3_rad_date ? String.format('%tY/%<tm/%<td', it.q84_3_rad_date): ""
+			def q84_4_rad_date_short = it.q84_4_rad_date ? String.format('%tY/%<tm/%<td', it.q84_4_rad_date): ""
+			def q84_5_rad_date_short = it.q84_5_rad_date ? String.format('%tY/%<tm/%<td', it.q84_5_rad_date): ""
+			def q84_6_rad_date_short = it.q84_6_rad_date ? String.format('%tY/%<tm/%<td', it.q84_6_rad_date): ""
+			def q84_7_rad_date_short = it.q84_7_rad_date ? String.format('%tY/%<tm/%<td', it.q84_7_rad_date): ""
+			def q84_8_rad_date_short = it.q84_8_rad_date ? String.format('%tY/%<tm/%<td', it.q84_8_rad_date): ""
+			def q84_9_rad_date_short = it.q84_9_rad_date ? String.format('%tY/%<tm/%<td', it.q84_9_rad_date): ""
+			def q84_10_rad_date_short = it.q84_10_rad_date ? String.format('%tY/%<tm/%<td', it.q84_10_rad_date): ""
+			it.putAt("q84_1_rad_date_short", q84_1_rad_date_short)
+			it.putAt("q84_2_rad_date_short", q84_2_rad_date_short)
+			it.putAt("q84_3_rad_date_short", q84_3_rad_date_short)
+			it.putAt("q84_4_rad_date_short", q84_4_rad_date_short)
+			it.putAt("q84_5_rad_date_short", q84_5_rad_date_short)
+			it.putAt("q84_6_rad_date_short", q84_6_rad_date_short)
+			it.putAt("q84_7_rad_date_short", q84_7_rad_date_short)
+			it.putAt("q84_8_rad_date_short", q84_8_rad_date_short)
+			it.putAt("q84_9_rad_date_short", q84_9_rad_date_short)
+			it.putAt("q84_10_rad_date_short", q84_10_rad_date_short)
+			def q90_1_year_only = it.q90_1_year ? String.format('%tY', it.q90_1_year): ""
+			def q90_2_year_only = it.q90_2_year ? String.format('%tY', it.q90_2_year): ""
+			def q90_3_year_only = it.q90_3_year ? String.format('%tY', it.q90_3_year): ""
+			def q90_4_year_only = it.q90_4_year ? String.format('%tY', it.q90_4_year): ""
+			def q90_5_year_only = it.q90_5_year ? String.format('%tY', it.q90_5_year): ""
+			def q90_6_year_only = it.q90_6_year ? String.format('%tY', it.q90_6_year): ""
+			it.putAt("q90_1_year_only", q90_1_year_only)
+			it.putAt("q90_2_year_only", q90_2_year_only)
+			it.putAt("q90_3_year_only", q90_3_year_only)
+			it.putAt("q90_4_year_only", q90_4_year_only)
+			it.putAt("q90_5_year_only", q90_5_year_only)
+			it.putAt("q90_6_year_only", q90_6_year_only)
+			
+		}
+		
 		
 		if(params?.format && params.format != "html"){
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format] 
@@ -1380,7 +1462,8 @@ class SurveyController {
 			params.max=1000000
 			
 			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
-			exportService.export(params.format, response.outputStream, Survey.list(params).sort{it.id}, fields, global_labels, formatters, parameters)
+			//exportService.export(params.format, response.outputStream, Survey.list(params).sort{it.id}, fields, global_labels, formatters, parameters)
+			exportService.export(params.format, response.outputStream, surveys.sort{it.id}, fields, global_labels, formatters, parameters)
 		}
 				
         [surveyInstanceList: Survey.list(params).sort{-it.id}, surveyInstanceTotal: Survey.count()]
