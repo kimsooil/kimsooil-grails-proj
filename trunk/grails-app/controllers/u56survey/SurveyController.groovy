@@ -1385,7 +1385,7 @@ class SurveyController {
 			exportService.export(params.format, response.outputStream, Survey.list(params).sort{it.id}, fields, global_labels, formatters, parameters)
 		}
 				
-        [surveyInstanceList: Survey.list(params), surveyInstanceTotal: Survey.count()]
+        [surveyInstanceList: Survey.list(params).sort{-it.id}, surveyInstanceTotal: Survey.count()]
     }
 	def list_surveyer = {
 		session.step=''
