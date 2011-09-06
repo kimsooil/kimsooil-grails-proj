@@ -1382,7 +1382,7 @@ class SurveyController {
 			params.max=1000000
 			
 			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
-			exportService.export(params.format, response.outputStream, Survey.list(params), fields, global_labels, formatters, parameters)
+			exportService.export(params.format, response.outputStream, Survey.list(params).sort{it.id}, fields, global_labels, formatters, parameters)
 		}
 				
         [surveyInstanceList: Survey.list(params), surveyInstanceTotal: Survey.count()]
