@@ -429,7 +429,7 @@ class Survey {
 	String q86
 	String q87
 	String q88
-	String q89_1,q89_2,q89_3,q89_4,q89_5,q89_6,q89_7,q89_8, q89_other
+	String q89_1,q89_2,q89_3,q89_4,q89_5,q89_6,q89_7, q89_other
 // Lung Cancer Risk Assessment	
 	String q90_1,q90_2,q90_3,q90_4,q90_5,q90_6
 	String q90_1_age,q90_2_age,q90_3_age,q90_4_age,q90_5_age,q90_6_age
