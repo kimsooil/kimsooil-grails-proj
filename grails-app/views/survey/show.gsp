@@ -6,8 +6,9 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
-        
+        <%--
 		<export:resource />
+		 --%>
 		
     </head>
     <body>
@@ -25,6 +26,9 @@
             <div class="message">${flash.message}</div>
             </g:if>
 <g:form>
+                <g:hiddenField name="id" value="${surveyInstance?.id}" />
+                <g:hiddenField name="version" value="${surveyInstance?.version}" />
+
             <div class="buttons2">
 
 			<%
@@ -69,7 +73,7 @@
                     <%--<span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span> --%>
                
             </div>
-          <export:formats formats="['csv', 'xml']" />
+          <%--<export:formats formats="['csv', 'xml']" /> --%>
             <div class="dialog">
                 <table>
                     <tbody>
