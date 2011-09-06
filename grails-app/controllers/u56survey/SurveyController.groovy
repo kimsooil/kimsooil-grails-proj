@@ -1416,7 +1416,7 @@ class SurveyController {
 		
 		if(params?.format && params.format != "html"){
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format]
-			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}.txt")
+			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
 			
 			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
