@@ -100,6 +100,11 @@ class PersonController {
 	}
 
 	def edit_info = {
+		if (session.user.login!=params.user){
+			flash.message = "You cannot edit other user's info."
+			redirect(action: "list")
+		}
+
 		def user = Person.findByLogin(params.user)
 		def personInstance = Person.get(user.id)
 		if (!personInstance) {
