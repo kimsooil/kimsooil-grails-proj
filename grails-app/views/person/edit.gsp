@@ -33,16 +33,16 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="login"><g:message code="person.login.label" default="Login" /></label>
+                                  <label for="login"><g:message code="person.login.label" default="Login" /></label><label style="color:red">*</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'login', 'errors')}">
-                                    <g:textArea name="login" cols="40" rows="5" value="${personInstance?.login}" />
+                                    ${personInstance?.login}
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="password"><g:message code="person.password.label" default="Password" /></label>
+                                  <label for="password"><g:message code="person.password.label" default="Password" /></label><label style="color:red">*</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'password', 'errors')}">
                                     <g:passwordField name="password" maxlength="255" value="${personInstance?.password}" />
@@ -51,7 +51,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="role"><g:message code="person.role.label" default="Role" /></label>
+                                  <label for="role"><g:message code="person.role.label" default="Role" /></label><label style="color:red">*</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'role', 'errors')}">
                                     <g:select name="role" from="${personInstance.constraints.role.inList}" value="${personInstance?.role}" valueMessagePrefix="person.role" noSelection="['': '']" />
@@ -60,7 +60,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="location"><g:message code="person.location.label" default="Location" /></label>
+                                  <label for="location"><g:message code="person.location.label" default="Location" /></label><label style="color:red">*</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'location', 'errors')}">
                                     <g:select name="location" from="${personInstance.constraints.location.inList}" value="${personInstance?.location}" valueMessagePrefix="person.location" noSelection="['': '']" />
@@ -69,10 +69,52 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="language"><g:message code="person.language.label" default="Language" /></label>
+                                  <label for="language"><g:message code="person.language.label" default="Language" /></label><label style="color:red">*</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'language', 'errors')}">
                                     <g:select name="language" from="${personInstance.constraints.language.inList}" value="${personInstance?.language}" valueMessagePrefix="person.language" noSelection="['': '']" />
+                                </td>
+                            </tr>
+                             <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="name"><g:message code="person.name.label" default="Name" /></label><label style="color:red">*</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'name', 'errors')}">
+                                    <g:textField name="name" value="${personInstance?.name}" />
+                                </td>
+                            </tr>
+                             <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label>(The following fields are optional)</label>
+                                </td>
+                                <td valign="top">
+                                    -----------------
+                                </td>
+                            </tr>                          
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="nameFirst"><g:message code="person.nameFirst.label" default="Name First" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'nameFirst', 'errors')}">
+                                    <g:textField name="nameFirst" value="${personInstance?.nameFirst}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="nameLast"><g:message code="person.nameLast.label" default="Name Last" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'nameLast', 'errors')}">
+                                    <g:textField name="nameLast" value="${personInstance?.nameLast}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="nameMiddle"><g:message code="person.nameMiddle.label" default="Name Middle" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'nameMiddle', 'errors')}">
+                                    <g:textField name="nameMiddle" value="${personInstance?.nameMiddle}" />
                                 </td>
                             </tr>
                         
@@ -90,7 +132,7 @@
                                   <label for="assignedToLocation"><g:message code="person.assignedToLocation.label" default="Assigned To Location" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'assignedToLocation', 'errors')}">
-                                    <g:textArea name="assignedToLocation" cols="40" rows="5" value="${personInstance?.assignedToLocation}" />
+                                    <g:textField name="assignedToLocation" value="${personInstance?.assignedToLocation}" />
                                 </td>
                             </tr>
                         
@@ -108,7 +150,7 @@
                                   <label for="email1"><g:message code="person.email1.label" default="Email1" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'email1', 'errors')}">
-                                    <g:textArea name="email1" cols="40" rows="5" value="${personInstance?.email1}" />
+                                    <g:textField name="email1" value="${personInstance?.email1}" />
                                 </td>
                             </tr>
                         
@@ -117,7 +159,7 @@
                                   <label for="email2"><g:message code="person.email2.label" default="Email2" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'email2', 'errors')}">
-                                    <g:textArea name="email2" cols="40" rows="5" value="${personInstance?.email2}" />
+                                    <g:textField name="email2" value="${personInstance?.email2}" />
                                 </td>
                             </tr>
                         
@@ -126,7 +168,7 @@
                                   <label for="emergencyContact_FirstName"><g:message code="person.emergencyContact_FirstName.label" default="Emergency Contact First Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'emergencyContact_FirstName', 'errors')}">
-                                    <g:textArea name="emergencyContact_FirstName" cols="40" rows="5" value="${personInstance?.emergencyContact_FirstName}" />
+                                    <g:textField name="emergencyContact_FirstName" value="${personInstance?.emergencyContact_FirstName}" />
                                 </td>
                             </tr>
                         
@@ -135,7 +177,7 @@
                                   <label for="emergencyContact_LastName"><g:message code="person.emergencyContact_LastName.label" default="Emergency Contact Last Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'emergencyContact_LastName', 'errors')}">
-                                    <g:textArea name="emergencyContact_LastName" cols="40" rows="5" value="${personInstance?.emergencyContact_LastName}" />
+                                    <g:textField name="emergencyContact_LastName" value="${personInstance?.emergencyContact_LastName}" />
                                 </td>
                             </tr>
                         
@@ -144,7 +186,7 @@
                                   <label for="emergencyContact_MiddleName"><g:message code="person.emergencyContact_MiddleName.label" default="Emergency Contact Middle Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'emergencyContact_MiddleName', 'errors')}">
-                                    <g:textArea name="emergencyContact_MiddleName" cols="40" rows="5" value="${personInstance?.emergencyContact_MiddleName}" />
+                                    <g:textField name="emergencyContact_MiddleName" value="${personInstance?.emergencyContact_MiddleName}" />
                                 </td>
                             </tr>
                         
@@ -153,7 +195,7 @@
                                   <label for="emergencyContact_email"><g:message code="person.emergencyContact_email.label" default="Emergency Contactemail" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'emergencyContact_email', 'errors')}">
-                                    <g:textArea name="emergencyContact_email" cols="40" rows="5" value="${personInstance?.emergencyContact_email}" />
+                                    <g:textField name="emergencyContact_email" value="${personInstance?.emergencyContact_email}" />
                                 </td>
                             </tr>
                         
@@ -162,7 +204,7 @@
                                   <label for="emergencyContact_phone"><g:message code="person.emergencyContact_phone.label" default="Emergency Contactphone" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'emergencyContact_phone', 'errors')}">
-                                    <g:textArea name="emergencyContact_phone" cols="40" rows="5" value="${personInstance?.emergencyContact_phone}" />
+                                    <g:textField name="emergencyContact_phone" value="${personInstance?.emergencyContact_phone}" />
                                 </td>
                             </tr>
                         
@@ -171,7 +213,7 @@
                                   <label for="homeAddress"><g:message code="person.homeAddress.label" default="Home Address" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'homeAddress', 'errors')}">
-                                    <g:textArea name="homeAddress" cols="40" rows="5" value="${personInstance?.homeAddress}" />
+                                    <g:textField name="homeAddress" value="${personInstance?.homeAddress}" />
                                 </td>
                             </tr>
                         
@@ -180,7 +222,7 @@
                                   <label for="homeCity"><g:message code="person.homeCity.label" default="Home City" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'homeCity', 'errors')}">
-                                    <g:textArea name="homeCity" cols="40" rows="5" value="${personInstance?.homeCity}" />
+                                    <g:textField name="homeCity" value="${personInstance?.homeCity}" />
                                 </td>
                             </tr>
                         
@@ -189,7 +231,7 @@
                                   <label for="homeCountry"><g:message code="person.homeCountry.label" default="Home Country" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'homeCountry', 'errors')}">
-                                    <g:textArea name="homeCountry" cols="40" rows="5" value="${personInstance?.homeCountry}" />
+                                    <g:textField name="homeCountry" value="${personInstance?.homeCountry}" />
                                 </td>
                             </tr>
                         
@@ -198,7 +240,7 @@
                                   <label for="homeState"><g:message code="person.homeState.label" default="Home State" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'homeState', 'errors')}">
-                                    <g:textArea name="homeState" cols="40" rows="5" value="${personInstance?.homeState}" />
+                                    <g:textField name="homeState" value="${personInstance?.homeState}" />
                                 </td>
                             </tr>
                         
@@ -207,7 +249,7 @@
                                   <label for="homeZipCode"><g:message code="person.homeZipCode.label" default="Home Zip Code" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'homeZipCode', 'errors')}">
-                                    <g:textArea name="homeZipCode" cols="40" rows="5" value="${personInstance?.homeZipCode}" />
+                                    <g:textField name="homeZipCode" value="${personInstance?.homeZipCode}" />
                                 </td>
                             </tr>
                         
@@ -216,7 +258,7 @@
                                   <label for="locAddress"><g:message code="person.locAddress.label" default="Loc Address" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locAddress', 'errors')}">
-                                    <g:textArea name="locAddress" cols="40" rows="5" value="${personInstance?.locAddress}" />
+                                    <g:textField name="locAddress" value="${personInstance?.locAddress}" />
                                 </td>
                             </tr>
                         
@@ -225,7 +267,7 @@
                                   <label for="locAreaCode"><g:message code="person.locAreaCode.label" default="Loc Area Code" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locAreaCode', 'errors')}">
-                                    <g:textArea name="locAreaCode" cols="40" rows="5" value="${personInstance?.locAreaCode}" />
+                                    <g:textField name="locAreaCode" value="${personInstance?.locAreaCode}" />
                                 </td>
                             </tr>
                         
@@ -234,7 +276,7 @@
                                   <label for="locCity"><g:message code="person.locCity.label" default="Loc City" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locCity', 'errors')}">
-                                    <g:textArea name="locCity" cols="40" rows="5" value="${personInstance?.locCity}" />
+                                    <g:textField name="locCity" value="${personInstance?.locCity}" />
                                 </td>
                             </tr>
                         
@@ -243,7 +285,7 @@
                                   <label for="locCountry"><g:message code="person.locCountry.label" default="Loc Country" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locCountry', 'errors')}">
-                                    <g:textArea name="locCountry" cols="40" rows="5" value="${personInstance?.locCountry}" />
+                                    <g:textField name="locCountry" value="${personInstance?.locCountry}" />
                                 </td>
                             </tr>
                         
@@ -252,7 +294,7 @@
                                   <label for="locPhoneExt"><g:message code="person.locPhoneExt.label" default="Loc Phone Ext" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locPhoneExt', 'errors')}">
-                                    <g:textArea name="locPhoneExt" cols="40" rows="5" value="${personInstance?.locPhoneExt}" />
+                                    <g:textField name="locPhoneExt" value="${personInstance?.locPhoneExt}" />
                                 </td>
                             </tr>
                         
@@ -261,7 +303,7 @@
                                   <label for="locPhoneNum"><g:message code="person.locPhoneNum.label" default="Loc Phone Num" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locPhoneNum', 'errors')}">
-                                    <g:textArea name="locPhoneNum" cols="40" rows="5" value="${personInstance?.locPhoneNum}" />
+                                    <g:textField name="locPhoneNum" value="${personInstance?.locPhoneNum}" />
                                 </td>
                             </tr>
                         
@@ -270,7 +312,7 @@
                                   <label for="locState"><g:message code="person.locState.label" default="Loc State" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locState', 'errors')}">
-                                    <g:textArea name="locState" cols="40" rows="5" value="${personInstance?.locState}" />
+                                    <g:textField name="locState" value="${personInstance?.locState}" />
                                 </td>
                             </tr>
                         
@@ -279,7 +321,7 @@
                                   <label for="locZipCode"><g:message code="person.locZipCode.label" default="Loc Zip Code" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locZipCode', 'errors')}">
-                                    <g:textArea name="locZipCode" cols="40" rows="5" value="${personInstance?.locZipCode}" />
+                                    <g:textField name="locZipCode" value="${personInstance?.locZipCode}" />
                                 </td>
                             </tr>
                         
@@ -288,52 +330,17 @@
                                   <label for="locationName"><g:message code="person.locationName.label" default="Location Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'locationName', 'errors')}">
-                                    <g:textArea name="locationName" cols="40" rows="5" value="${personInstance?.locationName}" />
+                                    <g:textField name="locationName" value="${personInstance?.locationName}" />
                                 </td>
                             </tr>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="name"><g:message code="person.name.label" default="Name" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'name', 'errors')}">
-                                    <g:textArea name="name" cols="40" rows="5" value="${personInstance?.name}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="nameFirst"><g:message code="person.nameFirst.label" default="Name First" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'nameFirst', 'errors')}">
-                                    <g:textArea name="nameFirst" cols="40" rows="5" value="${personInstance?.nameFirst}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="nameLast"><g:message code="person.nameLast.label" default="Name Last" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'nameLast', 'errors')}">
-                                    <g:textArea name="nameLast" cols="40" rows="5" value="${personInstance?.nameLast}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="nameMiddle"><g:message code="person.nameMiddle.label" default="Name Middle" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'nameMiddle', 'errors')}">
-                                    <g:textArea name="nameMiddle" cols="40" rows="5" value="${personInstance?.nameMiddle}" />
-                                </td>
-                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="phone1Area"><g:message code="person.phone1Area.label" default="Phone1 Area" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'phone1Area', 'errors')}">
-                                    <g:textArea name="phone1Area" cols="40" rows="5" value="${personInstance?.phone1Area}" />
+                                    <g:textField name="phone1Area" value="${personInstance?.phone1Area}" />
                                 </td>
                             </tr>
                         
@@ -342,7 +349,7 @@
                                   <label for="phone1Ext"><g:message code="person.phone1Ext.label" default="Phone1 Ext" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'phone1Ext', 'errors')}">
-                                    <g:textArea name="phone1Ext" cols="40" rows="5" value="${personInstance?.phone1Ext}" />
+                                    <g:textField name="phone1Ext" value="${personInstance?.phone1Ext}" />
                                 </td>
                             </tr>
                         
@@ -351,7 +358,7 @@
                                   <label for="phone1Num"><g:message code="person.phone1Num.label" default="Phone1 Num" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'phone1Num', 'errors')}">
-                                    <g:textArea name="phone1Num" cols="40" rows="5" value="${personInstance?.phone1Num}" />
+                                    <g:textField name="phone1Num" value="${personInstance?.phone1Num}" />
                                 </td>
                             </tr>
                         
@@ -360,7 +367,7 @@
                                   <label for="phone2Area"><g:message code="person.phone2Area.label" default="Phone2 Area" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'phone2Area', 'errors')}">
-                                    <g:textArea name="phone2Area" cols="40" rows="5" value="${personInstance?.phone2Area}" />
+                                    <g:textField name="phone2Area" value="${personInstance?.phone2Area}" />
                                 </td>
                             </tr>
                         
@@ -369,7 +376,7 @@
                                   <label for="phone2Ext"><g:message code="person.phone2Ext.label" default="Phone2 Ext" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'phone2Ext', 'errors')}">
-                                    <g:textArea name="phone2Ext" cols="40" rows="5" value="${personInstance?.phone2Ext}" />
+                                    <g:textField name="phone2Ext" value="${personInstance?.phone2Ext}" />
                                 </td>
                             </tr>
                         
@@ -378,7 +385,7 @@
                                   <label for="phone2Num"><g:message code="person.phone2Num.label" default="Phone2 Num" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'phone2Num', 'errors')}">
-                                    <g:textArea name="phone2Num" cols="40" rows="5" value="${personInstance?.phone2Num}" />
+                                    <g:textField name="phone2Num" value="${personInstance?.phone2Num}" />
                                 </td>
                             </tr>
                         
@@ -387,7 +394,7 @@
                                   <label for="primaryPhoneArea"><g:message code="person.primaryPhoneArea.label" default="Primary Phone Area" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'primaryPhoneArea', 'errors')}">
-                                    <g:textArea name="primaryPhoneArea" cols="40" rows="5" value="${personInstance?.primaryPhoneArea}" />
+                                    <g:textField name="primaryPhoneArea" value="${personInstance?.primaryPhoneArea}" />
                                 </td>
                             </tr>
                         
@@ -396,7 +403,7 @@
                                   <label for="primaryPhoneExt"><g:message code="person.primaryPhoneExt.label" default="Primary Phone Ext" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'primaryPhoneExt', 'errors')}">
-                                    <g:textArea name="primaryPhoneExt" cols="40" rows="5" value="${personInstance?.primaryPhoneExt}" />
+                                    <g:textField name="primaryPhoneExt" value="${personInstance?.primaryPhoneExt}" />
                                 </td>
                             </tr>
                         
@@ -405,7 +412,7 @@
                                   <label for="primaryPhoneNum"><g:message code="person.primaryPhoneNum.label" default="Primary Phone Num" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'primaryPhoneNum', 'errors')}">
-                                    <g:textArea name="primaryPhoneNum" cols="40" rows="5" value="${personInstance?.primaryPhoneNum}" />
+                                    <g:textField name="primaryPhoneNum" value="${personInstance?.primaryPhoneNum}" />
                                 </td>
                             </tr>
                         
@@ -414,7 +421,7 @@
                                   <label for="ssn"><g:message code="person.ssn.label" default="Ssn" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'ssn', 'errors')}">
-                                    <g:textArea name="ssn" cols="40" rows="5" value="${personInstance?.ssn}" />
+                                    <g:textField name="ssn" value="${personInstance?.ssn}" />
                                 </td>
                             </tr>
                         
