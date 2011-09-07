@@ -141,8 +141,8 @@
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q66" default="q66" /></label></td>
 	                    	<td style="width:60%">
-	                        	<g:radioGroup name="q66"
-	                            	value="${surveyInstance?.q66}" 
+	                        	<g:radioGroup name="q66InMenopause"
+	                            	value="${surveyInstance?.q66InMenopause}" 
 	                                labels="${yesno }"
 	                                values="['yes','no']" >
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>

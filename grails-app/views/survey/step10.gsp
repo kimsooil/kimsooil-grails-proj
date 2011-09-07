@@ -78,8 +78,8 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q65']").attr("disabled", '');
 	    	$("[name*='q66']").val('');
 	    	if ($("input[name='q63']:checked").val() == 'yes'){
-	    		$("[name*='q66']").attr('checked', false);
-	    	 	$("[name*='q66']").attr("disabled", true);
+	    		$("[name*='q66InMenopause']").attr('checked', false);
+	    	 	$("[name*='q66InMenopause']").attr("disabled", true);
 	    	 }	 
 	    }
 	    else if ($("input[name='q62']:checked").val() == 'no'){
@@ -89,20 +89,20 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q64']").attr("disabled", true);	  
 	    	$("[name*='q65']").val('');
 	    	$("[name*='q65']").attr("disabled", true);	  
-	    	$("[name*='q66']").attr("disabled", ''); 
+	    	$("[name*='q66InMenopause']").attr("disabled", ''); 
 	    }
 	});
 	$("input[name='q63']").change(function(){
 	    if ($("input[name='q63']:checked").val() == 'yes'){
 	    	if ($("input[name='q62']:checked").val() == 'yes'){
-	    		$("[name*='q66']").attr('checked', false);
-	    		$("[name*='q66']").attr("disabled", true);
+	    		$("[name*='q66InMenopause']").attr('checked', false);
+	    		$("[name*='q66InMenopause']").attr("disabled", true);
 	    		
 	    	}	 
 	    }
 	    else if ($("input[name='q63']:checked").val() == 'no'){
 
-	    	$("[name*='q66']").attr("disabled", ''); 
+	    	$("[name*='q66InMenopause']").attr("disabled", ''); 
 	    }
 	});
 	$("input[name='q66']").change(function(){
@@ -319,8 +319,8 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q66" default="q66" /></label></td>
 	                    	<td style="width:60%">
-	                        	<g:radioGroup name="q66"
-	                            	value="${surveyInstance?.q66}" 
+	                        	<g:radioGroup name="q66InMenopause"
+	                            	value="${surveyInstance?.q66InMenopause}" 
 	                                labels="${yesno }"
 	                                values="['yes','no']" >
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
