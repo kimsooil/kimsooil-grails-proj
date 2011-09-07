@@ -191,7 +191,9 @@ $(document).ready(function(){
 	    	$("[name='spread_cancer']").attr("disabled", true);
 	    	$("[name*='spread_'][type=checkbox]").attr("checked", false);
 	    	$("#spread_where").val('');
+	    	$("#spread_where").attr("disabled", true);
 	    	$("[name*='spread_'][type=checkbox]").attr("disabled", true);
+	    	
 	    }
 	});
 
@@ -205,6 +207,7 @@ $(document).ready(function(){
 	    	$("#spread_other").val('');
 	    	$("#spread_where").val('');
 	    	$("[name*='spread_'][type=checkbox]").attr("disabled", true);
+	    	$("#spread_where").attr("disabled", true);
 	    }
 	});	
 	
