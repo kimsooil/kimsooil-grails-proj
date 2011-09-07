@@ -188,6 +188,118 @@ $(document).ready(function(){
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+
+	    if ($("input[name='q14_1']:checked").val() != 'never'){
+	    	$("#q14_1_howManyPerWeek").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q14_1']:checked").val() == 'never'){
+	    	$("#q14_1_howManyPerWeek").val('');
+	    	$("#q14_1_howManyPerWeek").attr("disabled", true);	  
+	    }
+
+
+	    if ($("input[name='q14_2']:checked").val() != 'never'){
+	    	$("#q14_2_howManyPerWeek").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q14_2']:checked").val() == 'never'){
+	    	$("#q14_2_howManyPerWeek").val('');
+	    	$("#q14_2_howManyPerWeek").attr("disabled", true);	  
+	    }
+
+
+	    if ($("input[name='q14_3']:checked").val() != 'never'){
+	    	$("#q14_3_howManyPerWeek").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q14_3']:checked").val() == 'never'){
+	    	$("#q14_3_howManyPerWeek").val('');
+	    	$("#q14_3_howManyPerWeek").attr("disabled", true);	  
+	    }
+
+
+	    if ($("input[name='q15_1']:checked").val() != 'no'){
+	    	$("[name*='q15_1_']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q15_1']:checked").val() == 'no'){
+	    	$("[name*='q15_1_']").val('');
+	    	$("[name*='q15_1_']").attr("disabled", true);	    		  
+	    }
+
+
+	    if ($("input[name='q15_2']:checked").val() != 'no'){
+	    	$("[name*='q15_2_']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q15_2']:checked").val() == 'no'){
+	    	$("[name*='q15_2_']").val('');
+	    	$("[name*='q15_2_']").attr("disabled", true);	    		  
+	    }
+
+
+	    if ($("input[name='q15_3']:checked").val() != 'no'){
+	    	$("[name*='q15_3_']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q15_3']:checked").val() == 'no'){
+	    	$("[name*='q15_3_']").val('');
+	    	$("[name*='q15_3_']").attr("disabled", true);	    		  
+	    }
+			
+
+	    if ($("input[name='q15_4']:checked").val() != 'no'){
+	    	$("[name*='q15_4_']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q15_4']:checked").val() == 'no'){
+	    	$("[name*='q15_4_']").val('');
+	    	$("[name*='q15_4_']").attr("disabled", true);	    		  
+	    }
+			
+					
+
+	    if ($("input[name='q16']:checked").val() == 'yes'){
+	    $("#smoke100_status").html(" <font color='red'>(<b>***</b>)</font>");
+	    	$("[name='q17']").attr("disabled", '');
+	    	$("[name='q18']").attr("disabled", '');	    	
+	    	$("[name='q19']").attr("disabled", '');	    	
+	    	$("[name='stillSmoke']").attr("disabled", '');
+
+	    	$("[name*='q21_whenStopSmoking_']").attr("disabled", '');	    	
+
+	    	$("[name*='q21_dateStopSmoking']").attr("disabled", '');	    		    	
+	    }
+	    else if ($("input[name='q16']:checked").val() == 'no'){
+	    	$("#smoke100_status").html("");
+	    
+	    	$("[name='q17']").val('');
+	    	$("[name='q17']").attr("disabled", true);
+	    	$("[name='q18']").val('');
+	    	$("[name='q18']").attr("disabled", true);	    	
+	    	$("[name='q19']").val('');
+	    	$("[name='q19']").attr("disabled", true);	    	
+	    	$("[name='stillSmoke']").attr("checked", false);
+	    	$("[name='stillSmoke']").attr("disabled", true);
+	    	$("[name*='q21_whenStopSmoking_']").val('');
+	    	$("[name*='q21_whenStopSmoking_']").attr("disabled", true);	    	
+	    	$("[name*='q21DateStopSmoking']").val('');
+	    	$("[name*='q21DateStopSmoking']").attr("disabled", true);
+	    }
+
+
+	    if ($("input[name='stillSmoke']:checked").val() == 'yes'){
+	    	$("[name*='q21_whenStopSmoking_']").val('');
+	    	$("[name*='q21_whenStopSmoking_']").attr("disabled", true);	    	
+	    	$("[name*='q21DateStopSmoking']").val('');
+	    	$("[name*='q21DateStopSmoking']").attr("disabled", true);	    
+	    }
+	    else if ($("input[name='stillSmoke']:checked").val() == 'no'){
+	    	$("#stillSmoke_status").html(" <font color='red'>(<b>* Answer Q26.</b>)</font>");
+	    	$("[name*='q21_whenStopSmoking_']").attr("disabled", '');	    	
+	    	$("[name*='q21DateStopSmoking']").attr("disabled", '');	    		    		    
+	    }
+
+	    
+});		    	    
+</g:javascript>
+        
             <h1><g:message code="step4.label" default="Step4" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>

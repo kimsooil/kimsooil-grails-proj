@@ -89,7 +89,7 @@
 							def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 		
 						%>						
 						<td align="right"><g:message code="survey.when" default="When" />:<br/>
-							<g:datePicker name="date_rectal_exam" precision="month" value="${surveyInstance?.date_rectal_exam}"
+							<g:datePicker name="dateRectalExam" precision="month" value="${surveyInstance?.dateRectalExam}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
 						</td>
 						<td><g:message code="survey.findings" default="Findings" />:
@@ -107,7 +107,7 @@
 							</g:radioGroup>
 						</td>
 						<td align="right"><g:message code="survey.mostRecentTest" default="Most recent Test" />:<br/>
-						<g:datePicker name="date_most_recent_PSA_test" precision="month" value="${surveyInstance?.date_most_recent_PSA_test}"
+						<g:datePicker name="dateMostRecentPSAtest" precision="month" value="${surveyInstance?.dateMostRecentPSAtest}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 						</td>
 						<td><g:message code="survey.results" default="Results" />: <g:textField style="width:150px;" 

@@ -269,12 +269,12 @@ class Survey {
 	String q31_3 // needed a prostate biopsy
 	
 	String q32 // Have you ever had a rectal exam?
-	Date date_rectal_exam // month and year only
+	Date dateRectalExam // month and year only
 	String date_rectal_exam_short
 	String findings_rectal_exam
 	
 	String q33 // Have you ever a prostatic specific antigen(PSA) test?
-	Date date_most_recent_PSA_test // month and year only
+	Date dateMostRecentPSAtest // month and year only
 	String date_most_recent_PSA_test_short
 	String results_PSA_test
 	
@@ -303,11 +303,11 @@ class Survey {
 	
 	
 	String q41 // q41: have you ever had a digital rectal exam (yes/no/five or more years)
-	Date date_digital_rectal_exam // month and year only // MARK if 5 years or more before (***)
+	Date dateDigitalRectalExam // month and year only // MARK if 5 years or more before (***)
 	String date_digital_rectal_exam_short
 	
 	String q42 // have you ever had a sigmoidoscopy or colonoscopy
-	Date date_sigmoidoscopy_colonoscopy // month and year only
+	Date dateSigmoidoscopyColonoscopy // month and year only
 	String date_sigmoidoscopy_colonoscopy_short
 	
 	String q42_1 // noraml
@@ -344,7 +344,7 @@ class Survey {
 	String q46_7
 	
 	String q47 // every 6 months, every year, never
-	Date q48_date_last_visit_gynecologist // month and year only
+	Date q48dateLastVisitGynecologist // month and year only
 	String q48_date_last_visit_gynecologist_short
 	String q49 // have you had a pelvic exam: yes, no
 	String q49_findings_pelvic_exam // if q49=yes/true
@@ -359,12 +359,12 @@ class Survey {
 	String q51_4 // sonogram
 	String q51_5 // barium enema
 	String q51_6 // intravenous pyelogram
-	Date q51_1_date,q51_2_date,q51_3_date,q51_4_date,q51_5_date,q51_6_date
+	Date q51date1,q51date2,q51date3,q51date4,q51date5,q51date6
 	String q51_1_date_short,q51_2_date_short,q51_3_date_short,q51_4_date_short,q51_5_date_short,q51_6_date_short
 	String q51_1_result,q51_2_result,q51_3_result,q51_4_result,q51_5_result,q51_6_result
 	
 	String q52 // have you had a Pap Smear
-	Date q52_date_most_recent_pap_smear //if q52 is yes/true
+	Date q52dateMostRecentPapSmear //if q52 is yes/true
 	String q52_date_most_recent_pap_smear_short
 	String q52_results_pap_smear
 	

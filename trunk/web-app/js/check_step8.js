@@ -40,13 +40,13 @@ function checkForm8()
 	{
 		fv.raiseError(i18nmessages.step8Err7);
 	}
-	if ( ($("#date_digital_rectal_exam_year").val() == today_year.toString())  &&
-			(parseInt($("#date_digital_rectal_exam_month").val()) > today_month)
+	if ( ($("#dateDigitalRectalExam_year").val() == today_year.toString())  &&
+			(parseInt($("#dateDigitalRectalExam_month").val()) > today_month)
 		){
 			fv.raiseError("Q46: "+i18nmessages.step7ErrInvalidDate);
 		}
-	if ( ($("#date_digital_rectal_exam_year").val() == dob_year.toString())  &&
-			(parseInt($("#date_digital_rectal_exam_month").val()) < dob_month)
+	if ( ($("#dateDigitalRectalExam_year").val() == dob_year.toString())  &&
+			(parseInt($("#dateDigitalRectalExam_month").val()) < dob_month)
 		){
 			fv.raiseError("Q46: "+i18nmessages.step7ErrInvalidDate);
 		}
@@ -71,13 +71,13 @@ function checkForm8()
 		fv.raiseError(i18nmessages.step8Err10);
 	}
 	*/
-	if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == today_year.toString())  &&
-			(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
+	if ( ($("#dateSigmoidoscopyColonoscopy_year").val() == today_year.toString())  &&
+			(parseInt($("#dateSigmoidoscopyColonoscopy_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 		){
 			fv.raiseError("Q47: "+i18nmessages.step7ErrInvalidDate);
 		}
-	if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == dob_year.toString())  &&
-			(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) < dob_month) // java.util.Calendar.MONTH is 0~11
+	if ( ($("#dateSigmoidoscopyColonoscopy_year").val() == dob_year.toString())  &&
+			(parseInt($("#dateSigmoidoscopyColonoscopy_month").val()) < dob_month) // java.util.Calendar.MONTH is 0~11
 		){
 			fv.raiseError("Q47: "+i18nmessages.step7ErrInvalidDate);
 		}	

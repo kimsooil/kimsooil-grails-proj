@@ -129,7 +129,7 @@
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>
 							<br/>
-							<div style="clear:left"><g:message code="survey.when" default="When" />: <g:datePicker name="date_digital_rectal_exam" precision="month" value="${surveyInstance?.date_digital_rectal_exam}"
+							<div style="clear:left"><g:message code="survey.when" default="When" />: <g:datePicker name="dateDigitalRectalExam" precision="month" value="${surveyInstance?.dateDigitalRectalExam}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />  <span id="alertIfInvalid3"></span>
                                       </div>
                             
@@ -147,7 +147,7 @@
 							<br/>
 							<div style="clear:left">
 							
-							<g:message code="survey.when" default="When" />: <g:datePicker name="date_sigmoidoscopy_colonoscopy" precision="month" value="${surveyInstance?.date_sigmoidoscopy_colonoscopy}"
+							<g:message code="survey.when" default="When" />: <g:datePicker name="dateSigmoidoscopyColonoscopy" precision="month" value="${surveyInstance?.dateSigmoidoscopyColonoscopy}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid4"></span>
                                       </div>
                             

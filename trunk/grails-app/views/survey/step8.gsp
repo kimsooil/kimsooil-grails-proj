@@ -23,13 +23,13 @@
 <g:javascript>
 function IsDateDigitalRectalExamValid()
 {
-	if ( ($("#date_digital_rectal_exam_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_digital_rectal_exam_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#dateDigitalRectalExam_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateDigitalRectalExam_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#date_digital_rectal_exam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_digital_rectal_exam_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#dateDigitalRectalExam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateDigitalRectalExam_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}	
@@ -39,13 +39,13 @@ function IsDateDigitalRectalExamValid()
 }
 function IsDateSigmoidoscopyColonoscopy()
 {
-	if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#dateSigmoidoscopyColonoscopy_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateSigmoidoscopyColonoscopy_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#date_sigmoidoscopy_colonoscopy_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_sigmoidoscopy_colonoscopy_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#dateSigmoidoscopyColonoscopy_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateSigmoidoscopyColonoscopy_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -79,18 +79,18 @@ $(document).ready(function(){
 	});
 	$("input[name='q41']").change(function(){
 	    if ($("input[name='q41']:checked").val() == 'yes' || $("input[name='q41']:checked").val() == 'five'){
-	    	$("[name*='date_digital_rectal_exam']").attr("disabled", '');	    			    
+	    	$("[name*='dateDigitalRectalExam']").attr("disabled", '');	    			    
 	    }
 	    else if ($("input[name='q41']:checked").val() == 'no'){
-	    	$("[name*='date_digital_rectal_exam']").val('');
-	    	$("[name*='date_digital_rectal_exam']").attr("disabled", true);	    
+	    	$("[name*='dateDigitalRectalExam']").val('');
+	    	$("[name*='dateDigitalRectalExam']").attr("disabled", true);	    
 	    }
 	});
-	$("#date_digital_rectal_exam_month").change(function() {
+	$("#dateDigitalRectalExam_month").change(function() {
 			if (!IsDateDigitalRectalExamValid())
 			{
 				$('#alertIfInvalid3').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("date_digital_rectal_exam_month").focus();
+				$("dateDigitalRectalExam_month").focus();
 			}
 			else {
 				$('#alertIfInvalid3').attr('innerHTML', "");
@@ -101,7 +101,7 @@ $(document).ready(function(){
 			if (!IsDateDigitalRectalExamValid())
 			{
 				$('#alertIfInvalid3').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#date_digital_rectal_exam_year").focus();
+				$("#dateDigitalRectalExam_year").focus();
 			}
 			else {
 				$('#alertIfInvalid3').attr('innerHTML', "");
@@ -111,13 +111,13 @@ $(document).ready(function(){
 	
 	$("input[name='q42']").change(function(){
 	    if ($("input[name='q42']:checked").val() == 'yes'){
-	    	$("[name*='date_sigmoidoscopy_colonoscopy']").attr("disabled", '');
+	    	$("[name*='dateSigmoidoscopyColonoscopy']").attr("disabled", '');
 	    	$("[name*='q42_']").attr("disabled", '');
 	    	$("[name*='q43']").attr("disabled", '');	    			    
 	    }
 	    else if ($("input[name='q42']:checked").val() == 'no'){
-	    	$("[name*='date_sigmoidoscopy_colonoscopy']").val('');
-	    	$("[name*='date_sigmoidoscopy_colonoscopy']").attr("disabled", true);	  
+	    	$("[name*='dateSigmoidoscopyColonoscopy']").val('');
+	    	$("[name*='dateSigmoidoscopyColonoscopy']").attr("disabled", true);	  
 	    	
 	    	$("[name*='q42_']").attr("checked", false);
 	    	$("[name*='q42_']").attr("disabled", true);
@@ -130,7 +130,7 @@ $(document).ready(function(){
 			if (!IsDateSigmoidoscopyColonoscopy())
 			{
 				$('#alertIfInvalid4').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("date_sigmoidoscopy_colonoscopy_month").focus();
+				$("dateSigmoidoscopyColonoscopy_month").focus();
 			}
 			else {
 				$('#alertIfInvalid4').attr('innerHTML', "");
@@ -141,7 +141,7 @@ $(document).ready(function(){
 			if (!IsDateSigmoidoscopyColonoscopy())
 			{
 				$('#alertIfInvalid4').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#date_sigmoidoscopy_colonoscopy_year").focus();
+				$("#dateSigmoidoscopyColonoscopy_year").focus();
 			}
 			else {
 				$('#alertIfInvalid4').attr('innerHTML', "");
@@ -175,6 +175,80 @@ $(document).ready(function(){
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>        
+$(document).ready(function(){
+
+	    if ($("input[name='q37']:checked").val() != 'no'){
+	    	$("[name*='q37_what']").attr("disabled", '');		    
+	    	$("[name*='q38']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q37']:checked").val() == 'no'){
+	    	$("[name*='q37_what']").attr('checked', false);
+	    	$("[name*='q37_what']").attr("disabled", true);		    
+	    	$("[name*='q38']").attr('checked', false);
+	    	$("[name*='q38']").attr("disabled", true);	    
+	    }
+
+
+
+	    if ($("input[name='q39']:checked").val() == 'yes'){
+	    	$("[name*='q40']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q39']:checked").val() == 'no'){
+	    	$("[name*='q40']").val('');
+	    	$("[name*='q40']").attr("disabled", true);	    
+	    }
+
+
+	    if ($("input[name='q41']:checked").val() == 'yes' || $("input[name='q41']:checked").val() == 'five'){
+	    	$("[name*='dateDigitalRectalExam']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q41']:checked").val() == 'no'){
+	    	$("[name*='dateDigitalRectalExam']").val('');
+	    	$("[name*='dateDigitalRectalExam']").attr("disabled", true);	    
+	    }
+
+
+
+	    if ($("input[name='q42']:checked").val() == 'yes'){
+	    	$("[name*='dateSigmoidoscopyColonoscopy']").attr("disabled", '');
+	    	$("[name*='q42_']").attr("disabled", '');
+	    	$("[name*='q43']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q42']:checked").val() == 'no'){
+	    	$("[name*='dateSigmoidoscopyColonoscopy']").val('');
+	    	$("[name*='dateSigmoidoscopyColonoscopy']").attr("disabled", true);	  
+	    	
+	    	$("[name*='q42_']").attr("checked", false);
+	    	$("[name*='q42_']").attr("disabled", true);
+			
+	    	$("[name*='q43']").attr("checked", false);
+	    	$("[name*='q43']").attr("disabled", true);
+	    }
+
+
+
+	    if ($("input[name='q43']:checked").val() == 'yes'){
+	    	$("#q43_biopsy_results").attr("disabled", '');
+	    	$("#q43_biopsy_results").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q43']:checked").val() == 'no'){
+	    	$("#q43_biopsy_results").val('');
+	    	$("#q43_biopsy_results").attr("disabled", true);	  
+	    }
+
+
+	    if ($("input[name='q44']:checked").val() == 'yes'){
+	    	$("#q44_hemoglobin_levels").attr("disabled", '');
+	    	$("#q44_hemoglobin_levels").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q44']:checked").val() == 'no'){
+	    	$("#q44_hemoglobin_levels").val('');
+	    	$("#q44_hemoglobin_levels").attr("disabled", true);	  
+	    }
+		
+});	
+</g:javascript>        
             <h1><g:message code="step8.label" default="Step8" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -318,7 +392,7 @@ $(document).ready(function(){
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 							</g:radioGroup>
 							<br/>
-							<div style="clear:left"><g:message code="survey.when" default="When" />: <g:datePicker name="date_digital_rectal_exam" precision="month" value="${surveyInstance?.date_digital_rectal_exam}"
+							<div style="clear:left"><g:message code="survey.when" default="When" />: <g:datePicker name="dateDigitalRectalExam" precision="month" value="${surveyInstance?.dateDigitalRectalExam}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />  <span id="alertIfInvalid3"></span>
                                       </div>
                             
@@ -336,7 +410,7 @@ $(document).ready(function(){
 							<br/>
 							<div style="clear:left">
 							
-							<g:message code="survey.when" default="When" />: <g:datePicker name="date_sigmoidoscopy_colonoscopy" precision="month" value="${surveyInstance?.date_sigmoidoscopy_colonoscopy}"
+							<g:message code="survey.when" default="When" />: <g:datePicker name="dateSigmoidoscopyColonoscopy" precision="month" value="${surveyInstance?.dateSigmoidoscopyColonoscopy}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid4"></span>
                                       </div>
                             
