@@ -123,6 +123,8 @@ function IsDateQ84_10()
 }
 
 $(document).ready(function(){
+
+
 	$("input[name='q83']").change(function(){
 	    if ($("input[name='q83']:checked").val() == 'yes'){
 			$("[name*='q84_'][type=radio]").attr("disabled", '');
@@ -629,6 +631,20 @@ $(document).ready(function(){
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){
+if ($("input[name='q83']:checked").val() != 'yes'){
+	    	//$("[name*='q84_'][type=radio]").attr('checked', false);
+	    	/////$("[name*='q84_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');
+	    	$("[name*='q84_'][type=radio]").attr("disabled", true);	  
+	    	/////$("[name*='q84_'][type=text]").val('');
+	    	$("[name*='q84_'][type=text]").attr("disabled", true);
+	    	/////$("[name*='_rad_date']").val('');
+			$("[name*='_rad_date']").attr("disabled", true);
+
+	    }
+});		    
+</g:javascript>
             <h1><g:message code="step12.label" default="Step12" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
