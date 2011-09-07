@@ -176,6 +176,7 @@ $(document).ready(function(){
 	    	
 	    	$("[name*='spread_'][type=checkbox]").attr("disabled", '');
 	    	$("[name='spread_cancer']").attr("disabled", '');
+	    	$("#spread_where").attr("disabled", "");
 	    }
 	    else if ($("input[name='haveCancer']:checked").val() == 'no'){
 	    	$("#q12_status").html("");
@@ -201,6 +202,7 @@ $(document).ready(function(){
 	    if ($("input[name='spread_cancer']:checked").val() == 'yes'){
 
 	    	$("[name*='spread_'][type=checkbox]").attr("disabled", '');
+	    	$("#spread_where").attr("disabled", "");
 	    }
 	    else if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	    	$("[name*='spread_'][type=checkbox]").attr("checked", false);
