@@ -55,7 +55,7 @@ function checkForm10()
 			fv.raiseError(i18nmessages.step10Err13);
 		if (fv.isEmpty($('#q65').val()) || !fv.isValidNumber($('#q65').val(), 1, ageCalculated))
 			fv.raiseError(i18nmessages.step10Err14);
-		if (!fv.isRadioChecked(document.getElementsByName('q66')) )
+		if (!fv.isRadioChecked(document.getElementsByName('q66InMenopause')) )
 		{
 			fv.raiseError(i18nmessages.step10Err15);
 		}		
@@ -66,7 +66,7 @@ function checkForm10()
 		fv.raiseError(i18nmessages.step10Err16);
 	}
 
-	if ((getRadioValue(document.getElementsByName('q66'))=='yes' || getRadioValue(document.getElementsByName('q66'))=='yes') &&
+	if ((getRadioValue(document.getElementsByName('q66InMenopause'))=='yes' || getRadioValue(document.getElementsByName('q66InMenopause'))=='yes') &&
 	(fv.isEmpty($('#q68').val()) || !fv.isValidNumber($('#q68').val(), 1, ageCalculated))
 	)
 	{

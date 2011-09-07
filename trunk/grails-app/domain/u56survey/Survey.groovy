@@ -388,7 +388,7 @@ class Survey {
 	String q63
 	String q64
 	String q65
-	String q66
+	String q66InMenopause
 	String q67
 	String q68
 	String q69
