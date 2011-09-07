@@ -106,7 +106,7 @@
 	                    <tr>
 	                    	<td style="font-weight:bold;"><label><g:message code="survey.q48" default="q48" /></label></td>
 	                    	<td>
-								<g:datePicker name="q48_date_last_visit_gynecologist" precision="month" value="${surveyInstance?.q48_date_last_visit_gynecologist}"
+								<g:datePicker name="q48dateLastVisitGynecologist" precision="month" value="${surveyInstance?.q48dateLastVisitGynecologist}"
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />                	
 	                    	</td>
 	                    </tr>
@@ -198,7 +198,7 @@
 							</g:radioGroup>
 						</td>
                         <td>    
-                             <g:datePicker name="${('q51_'+idx+'_date')}" precision="month" value="${surveyInstance?.('q51_'+idx+'_date')}"  
+                             <g:datePicker name="${('q51date'+idx)}" precision="month" value="${surveyInstance?.('q51date'+idx)}"  
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 						</td>
 						<td>
@@ -252,7 +252,7 @@
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
-								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52_date_most_recent_pap_smear" precision="month" value="${surveyInstance?.q52_date_most_recent_pap_smear}"  
+								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52dateMostRecentPapSmear" precision="month" value="${surveyInstance?.q52dateMostRecentPapSmear}"  
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 								<br/>
                             	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear"

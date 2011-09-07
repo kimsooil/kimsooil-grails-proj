@@ -32,13 +32,13 @@ window.onload= function(){
 
 function IsDateRectalExamValid()
 {
-	if ( ($("#date_rectal_exam_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_rectal_exam_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#dateRectalExam_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateRectalExam_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#date_rectal_exam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_rectal_exam_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#dateRectalExam_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateRectalExam_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 	
 		return false;
@@ -48,13 +48,13 @@ function IsDateRectalExamValid()
 	}
 }
 function IsDatePSATestValid(){
-	if ( ($("#date_most_recent_PSA_test_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_most_recent_PSA_test_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
+	if ( ($("#dateMostRecentPSAtest_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateMostRecentPSAtest_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
 	){
 		return false;
 	}
-	else if ( ($("#date_most_recent_PSA_test_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#date_most_recent_PSA_test_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
+	else if ( ($("#dateMostRecentPSAtest_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#dateMostRecentPSAtest_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>) // java.util.Calendar.MONTH is 0~11
 	){
 		return false;
 	}
@@ -70,66 +70,66 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 
 	$("input[name='q32']").change(function(){
 	    if ($("input[name='q32']:checked").val() == 'yes'){
-	    	$("[name*='date_rectal_exam']").attr("disabled", '');	    	
+	    	$("[name*='dateRectalExam']").attr("disabled", '');	    	
 	    	$("[name*='findings_rectal_exam']").attr("disabled", '');		    
 	    }
 	    else if ($("input[name='q32']:checked").val() == 'no'){
-	    	$("[name*='date_rectal_exam']").val('');
-	    	$("[name*='date_rectal_exam']").attr("disabled", true);	    	
+	    	$("[name*='dateRectalExam']").val('');
+	    	$("[name*='dateRectalExam']").attr("disabled", true);	    	
 	    	$("[name*='findings_rectal_exam']").val('');
 	    	$("[name*='findings_rectal_exam']").attr("disabled", true);	    
 	    }
 	});
 	$("input[name='q33']").change(function(){
 	    if ($("input[name='q33']:checked").val() == 'yes'){
-	    	$("[name*='date_most_recent_PSA_test']").attr("disabled", '');	    	
+	    	$("[name*='dateMostRecentPSAtest']").attr("disabled", '');	    	
 	    	$("[name*='results_PSA_test']").attr("disabled", '');		    
 	    }
 	    else if ($("input[name='q33']:checked").val() == 'no'){
-	    	$("[name*='date_most_recent_PSA_test']").val('');
-	    	$("[name*='date_most_recent_PSA_test']").attr("disabled", true);	    	
+	    	$("[name*='dateMostRecentPSAtest']").val('');
+	    	$("[name*='dateMostRecentPSAtest']").attr("disabled", true);	    	
 	    	$("[name*='results_PSA_test']").val('');
 	    	$("[name*='results_PSA_test']").attr("disabled", true);	    
 	    }
 	});	
-	$("#date_rectal_exam_month").change(function() {
+	$("#dateRectalExam_month").change(function() {
 			if (!IsDateRectalExamValid())
 			{
 				$('#alertIfInvalid1').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#date_rectal_exam_month").focus();
+				$("#dateRectalExam_month").focus();
 			}
 			else {
 				$('#alertIfInvalid1').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#date_rectal_exam_year").change(function() {
+	$("#dateRectalExam_year").change(function() {
 			if (!IsDateRectalExamValid())
 			{
 				$('#alertIfInvalid1').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#date_rectal_exam_year").focus();
+				$("#dateRectalExam_year").focus();
 			}
 			else {
 				$('#alertIfInvalid1').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#date_most_recent_PSA_test_month").change(function() {
+	$("#dateMostRecentPSAtest_month").change(function() {
 			if (!IsDatePSATestValid())
 			{
 				$('#alertIfInvalid2').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#date_most_recent_PSA_test_month").focus();
+				$("#dateMostRecentPSAtest_month").focus();
 			}
 			else {
 				$('#alertIfInvalid2').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#date_most_recent_PSA_test_year").change(function() {
+	$("#dateMostRecentPSAtest_year").change(function() {
 			if (!IsDatePSATestValid())
 			{
 				$('#alertIfInvalid2').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#date_most_recent_PSA_test_year").focus();
+				$("#dateMostRecentPSAtest_year").focus();
 			}
 			else {
 				$('#alertIfInvalid2').attr('innerHTML', "");
@@ -144,6 +144,34 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+
+	    if ($("input[name='q32']:checked").val() == 'yes'){
+	    	$("[name*='dateRectalExam']").attr("disabled", '');	    	
+	    	$("[name*='findings_rectal_exam']").attr("disabled", '');		    
+	    }
+	    else if ($("input[name='q32']:checked").val() == 'no'){
+	    	$("[name*='dateRectalExam']").val('');
+	    	$("[name*='dateRectalExam']").attr("disabled", true);	    	
+	    	$("[name*='findings_rectal_exam']").val('');
+	    	$("[name*='findings_rectal_exam']").attr("disabled", true);	    
+	    }
+
+
+	    if ($("input[name='q33']:checked").val() == 'yes'){
+	    	$("[name*='dateMostRecentPSAtest']").attr("disabled", '');	    	
+	    	$("[name*='results_PSA_test']").attr("disabled", '');		    
+	    }
+	    else if ($("input[name='q33']:checked").val() == 'no'){
+	    	$("[name*='dateMostRecentPSAtest']").val('');
+	    	$("[name*='dateMostRecentPSAtest']").attr("disabled", true);	    	
+	    	$("[name*='results_PSA_test']").val('');
+	    	$("[name*='results_PSA_test']").attr("disabled", true);	    
+	    }
+	    
+});		    	    
+</g:javascript>
             <h1><g:message code="step7.label" default="Step7" /> </h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -247,7 +275,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 							</g:radioGroup>
 						</td>
 						<td align="right"><g:message code="survey.when" default="When" />:<br/>
-							<g:datePicker name="date_rectal_exam" precision="month" value="${surveyInstance?.date_rectal_exam}"
+							<g:datePicker name="dateRectalExam" precision="month" value="${surveyInstance?.dateRectalExam}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid1"></span>
 						</td>
 						<td><g:message code="survey.findings" default="Findings" />:
@@ -265,7 +293,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 							</g:radioGroup>
 						</td>
 						<td align="right"><g:message code="survey.mostRecentTest" default="Most recent Test" />:<br/>
-						<g:datePicker name="date_most_recent_PSA_test" precision="month" value="${surveyInstance?.date_most_recent_PSA_test}"
+						<g:datePicker name="dateMostRecentPSAtest" precision="month" value="${surveyInstance?.dateMostRecentPSAtest}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid2"></span>
 						</td>
 						<td><g:message code="survey.results" default="Results" />: <g:textField style="width:150px;" 

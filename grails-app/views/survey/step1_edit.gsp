@@ -97,7 +97,11 @@ $(document).ready(function(){
 				$("#otherNumberOrComments").val('');
 			}	
 		}
-	);	
+	);
+	$("input[name='being_treated_for_cancer']").change(function(){
+		DisableEnableForm(document.surveyform1,false);
+	});
+		
 });	
     </g:javascript>    
         <div class="nav">
@@ -106,6 +110,16 @@ $(document).ready(function(){
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){
+		if ($("input[name='being_treated_for_cancer']:checked").val()== null){
+	  		DisableEnableForm(document.surveyform1,true);
+	  		$("[name*='being_treated_for_cancer'][type=radio]").attr("disabled", "");
+	  		$("#consentNumLoc").attr("disabled", "");
+	  		$("#consentNum").attr("disabled", "");
+	  	}
+});		  	
+</g:javascript>
             <h1><g:message code="step1.edit.label" default="Step1-edit" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>

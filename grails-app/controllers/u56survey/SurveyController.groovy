@@ -1393,30 +1393,30 @@ class SurveyController {
 			it.putAt("q11a_hep_donotknow_type_Year_only", q11a_hep_donotknow_type_Year_only)
 			def q21DateStopSmoking_short = it.q21DateStopSmoking ? String.format('%tY/%<tm/%<td', it.q21DateStopSmoking) : ""
 			it.putAt("q21DateStopSmoking_short", q21DateStopSmoking_short)
-			def date_most_recent_PSA_test_short = it.date_most_recent_PSA_test ? String.format('%tY/%<tm', it.date_most_recent_PSA_test) : ""
-			def date_rectal_exam_short = it.date_rectal_exam ? String.format('%tY/%<tm', it.date_rectal_exam) : ""
+			def date_most_recent_PSA_test_short = it.dateMostRecentPSAtest ? String.format('%tY/%<tm', it.dateMostRecentPSAtest) : ""
+			def date_rectal_exam_short = it.dateRectalExam ? String.format('%tY/%<tm', it.dateRectalExam) : ""
 			it.putAt("date_rectal_exam_short", date_rectal_exam_short)
 			it.putAt("date_most_recent_PSA_test_short", date_most_recent_PSA_test_short)
-			def date_digital_rectal_exam_short = it.date_digital_rectal_exam ? String.format('%tY/%<tm', it.date_digital_rectal_exam) : ""
-			def date_sigmoidoscopy_colonoscopy_short = it.date_sigmoidoscopy_colonoscopy ? String.format('%tY/%<tm', it.date_sigmoidoscopy_colonoscopy): ""
+			def date_digital_rectal_exam_short = it.dateDigitalRectalExam ? String.format('%tY/%<tm', it.dateDigitalRectalExam) : ""
+			def date_sigmoidoscopy_colonoscopy_short = it.dateSigmoidoscopyColonoscopy ? String.format('%tY/%<tm', it.dateSigmoidoscopyColonoscopy): ""
 			it.putAt("date_digital_rectal_exam_short", date_digital_rectal_exam_short)
 			it.putAt("date_sigmoidoscopy_colonoscopy_short", date_sigmoidoscopy_colonoscopy_short)
 			
-			def q48_date_last_visit_gynecologist_short = it.q48_date_last_visit_gynecologist ? String.format('%tY/%<tm', it.q48_date_last_visit_gynecologist): ""
+			def q48_date_last_visit_gynecologist_short = it.q48dateLastVisitGynecologist ? String.format('%tY/%<tm', it.q48dateLastVisitGynecologist): ""
 			it.putAt("q48_date_last_visit_gynecologist_short", q48_date_last_visit_gynecologist_short)
-			def q51_1_date_short = it.q51_1_date ? String.format('%tY/%<tm', it.q51_1_date): ""
-			def q51_2_date_short = it.q51_2_date ? String.format('%tY/%<tm', it.q51_2_date): ""
-			def q51_3_date_short = it.q51_3_date ? String.format('%tY/%<tm', it.q51_3_date): ""
-			def q51_4_date_short = it.q51_4_date ? String.format('%tY/%<tm', it.q51_4_date): ""
-			def q51_5_date_short = it.q51_5_date ? String.format('%tY/%<tm', it.q51_5_date): ""
-			def q51_6_date_short = it.q51_6_date ? String.format('%tY/%<tm', it.q51_6_date): ""
+			def q51_1_date_short = it.q51date1 ? String.format('%tY/%<tm', it.q51date1): ""
+			def q51_2_date_short = it.q51date2 ? String.format('%tY/%<tm', it.q51date2): ""
+			def q51_3_date_short = it.q51date3 ? String.format('%tY/%<tm', it.q51date3): ""
+			def q51_4_date_short = it.q51date4 ? String.format('%tY/%<tm', it.q51date4): ""
+			def q51_5_date_short = it.q51date5 ? String.format('%tY/%<tm', it.q51date5): ""
+			def q51_6_date_short = it.q51date6 ? String.format('%tY/%<tm', it.q51date): ""
 			it.putAt("q51_1_date_short", q51_1_date_short)
 			it.putAt("q51_2_date_short", q51_2_date_short)
 			it.putAt("q51_3_date_short", q51_3_date_short)
 			it.putAt("q51_4_date_short", q51_4_date_short)
 			it.putAt("q51_5_date_short", q51_5_date_short)
 			it.putAt("q51_6_date_short", q51_6_date_short)
-			def q52_date_most_recent_pap_smear_short = it.q52_date_most_recent_pap_smear ? String.format('%tY/%<tm', it.q52_date_most_recent_pap_smear): ""
+			def q52_date_most_recent_pap_smear_short = it.q52dateMostRecentPapSmear ? String.format('%tY/%<tm', it.q52dateMostRecentPapSmear): ""
 			it.putAt("q52_date_most_recent_pap_smear_short", q52_date_most_recent_pap_smear_short)
 			def q71shortdate = it.q71 ? String.format('%tY/%<tm', it.q71): ""
 			it.putAt("q71shortdate", q71shortdate)

@@ -33,13 +33,13 @@ window.onload= function(){
 </g:if>
 function IsDateQ48()
 {
-	if ( ($("#q48_date_last_visit_gynecologist_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q48_date_last_visit_gynecologist_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q48dateLastVisitGynecologist_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q48dateLastVisitGynecologist_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q48_date_last_visit_gynecologist_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q48_date_last_visit_gynecologist_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q48dateLastVisitGynecologist_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q48dateLastVisitGynecologist_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -50,13 +50,13 @@ function IsDateQ48()
 }
 function IsDateQ51_1()
 {
-	if ( ($("#q51_1_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_1_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q51date1_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date1_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q51_1_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_1_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q51date1_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date1_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -66,13 +66,13 @@ function IsDateQ51_1()
 }
 function IsDateQ51_2()
 {
-	if ( ($("#q51_2_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_2_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q51date2_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date2_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q51_2_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_2_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q51date2_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date2_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -82,13 +82,13 @@ function IsDateQ51_2()
 }
 function IsDateQ51_3()
 {
-	if ( ($("#q51_3_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_3_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q51date3_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date3_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q51_3_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_3_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q51date3_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date3_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -98,13 +98,13 @@ function IsDateQ51_3()
 }
 function IsDateQ51_4()
 {
-	if ( ($("#q51_4_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_4_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q51date4_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date4_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q51_4_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_4_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q51date4_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date4_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -114,13 +114,13 @@ function IsDateQ51_4()
 }
 function IsDateQ51_5()
 {
-	if ( ($("#q51_5_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_5_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q51date5_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date5_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q51_5_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_5_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q51date5_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date5_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -130,13 +130,13 @@ function IsDateQ51_5()
 }
 function IsDateQ51_6()
 {
-	if ( ($("#q51_6_date_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_6_date_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q51date6_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date6_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q51_6_date_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q51_6_date_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q51date6_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q51date6_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -148,13 +148,13 @@ function IsDateQ51_6()
 
 function IsDateQ52()
 {
-	if ( ($("#q52_date_most_recent_pap_smear_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q52_date_most_recent_pap_smear_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
+	if ( ($("#q52dateMostRecentPapSmear_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q52dateMostRecentPapSmear_month").val()) > <%=today[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
-	else if ( ($("#q52_date_most_recent_pap_smear_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
-		(parseInt($("#q52_date_most_recent_pap_smear_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
+	else if ( ($("#q52dateMostRecentPapSmear_year").val() == "<%=birth[java.util.Calendar.YEAR]%>")  &&
+		(parseInt($("#q52dateMostRecentPapSmear_month").val()) < <%=birth[java.util.Calendar.MONTH]+1%>)
 	){
 		return false;
 	}
@@ -169,29 +169,29 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 
 	$("input[name='q47']").change(function(){
 	    if ($("input[name='q47']:checked").val() != 'never'){
-	    	$("[name*='q48_date_last_visit_gynecologist']").attr("disabled", '');	    			    
+	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", '');	    			    
 	    }
 	    else if ($("input[name='q47']:checked").val() == 'never'){
-	    	$("[name*='q48_date_last_visit_gynecologist']").val('');
-	    	$("[name*='q48_date_last_visit_gynecologist']").attr("disabled", true);	  
+	    	$("[name*='q48dateLastVisitGynecologist']").val('');
+	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", true);	  
 	    }
 	});
-	$("#q48_date_last_visit_gynecologist_month").change(function() {
+	$("#q48dateLastVisitGynecologist_month").change(function() {
 			if (!IsDateQ48())
 			{
 				$('#alertIfInvalid48').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q48_date_last_visit_gynecologist_month").focus();
+				$("q48dateLastVisitGynecologist_month").focus();
 			}
 			else {
 				$('#alertIfInvalid48').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q48_date_last_visit_gynecologist_year").change(function() {
+	$("#q48dateLastVisitGynecologist_year").change(function() {
 			if (!IsDateQ48())
 			{
 				$('#alertIfInvalid48').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q48_date_last_visit_gynecologist_year").focus();
+				$("#q48dateLastVisitGynecologist_year").focus();
 			}
 			else {
 				$('#alertIfInvalid48').attr('innerHTML', "");
@@ -237,22 +237,22 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_1_']").attr("disabled", true);	  	 
 	    }
 	});
-	$("#q51_1_date_month").change(function() {
+	$("#q51date1_month").change(function() {
 			if (!IsDateQ51_1())
 			{
 				$('#q51_1_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q51_1_date_month").focus();
+				$("q51date1_month").focus();
 			}
 			else {
 				$('#q51_1_status').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q51_1_date_year").change(function() {
+	$("#q51date1_year").change(function() {
 			if (!IsDateQ51_1())
 			{
 				$('#q51_1_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q51_1_date_year").focus();
+				$("#q51date1_year").focus();
 			}
 			else {
 				$('#q51_1_status').attr('innerHTML', "");
@@ -268,22 +268,22 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_2_']").attr("disabled", true);	  	 
 	    }
 	});
-	$("#q51_2_date_month").change(function() {
+	$("#q51date2_month").change(function() {
 			if (!IsDateQ51_2())
 			{
 				$('#q51_2_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q51_2_date_month").focus();
+				$("q51date2_month").focus();
 			}
 			else {
 				$('#q51_2_status').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q51_2_date_year").change(function() {
+	$("#q51date2_year").change(function() {
 			if (!IsDateQ51_2())
 			{
 				$('#q51_2_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q51_2_date_year").focus();
+				$("#q51date2_year").focus();
 			}
 			else {
 				$('#q51_2_status').attr('innerHTML', "");
@@ -299,22 +299,22 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_3_']").attr("disabled", true);	  	 
 	    }
 	});	
-	$("#q51_3_date_month").change(function() {
+	$("#q51date3_month").change(function() {
 			if (!IsDateQ51_3())
 			{
 				$('#q51_3_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q51_3_date_month").focus();
+				$("q51date3_month").focus();
 			}
 			else {
 				$('#q51_3_status').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q51_3_date_year").change(function() {
+	$("#q51date3_year").change(function() {
 			if (!IsDateQ51_3())
 			{
 				$('#q51_3_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q51_3_date_year").focus();
+				$("#q51date3_year").focus();
 			}
 			else {
 				$('#q51_3_status').attr('innerHTML', "");
@@ -330,22 +330,22 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_4_']").attr("disabled", true);	  	 
 	    }
 	});
-	$("#q51_4_date_month").change(function() {
+	$("#q51date4_month").change(function() {
 			if (!IsDateQ51_4())
 			{
 				$('#q51_4_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q51_4_date_month").focus();
+				$("q51date4_month").focus();
 			}
 			else {
 				$('#q51_4_status').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q51_4_date_year").change(function() {
+	$("#q51date4_year").change(function() {
 			if (!IsDateQ51_4())
 			{
 				$('#q51_4_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q51_4_date_year").focus();
+				$("#q51date4_year").focus();
 			}
 			else {
 				$('#q51_4_status').attr('innerHTML', "");
@@ -361,22 +361,22 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_5_']").attr("disabled", true);	  	 
 	    }
 	});	
-	$("#q51_5_date_month").change(function() {
+	$("#q51date5_month").change(function() {
 			if (!IsDateQ51_5())
 			{
 				$('#q51_5_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q51_5_date_month").focus();
+				$("q51date5_month").focus();
 			}
 			else {
 				$('#q51_5_status').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q51_5_date_year").change(function() {
+	$("#q51date5_year").change(function() {
 			if (!IsDateQ51_5())
 			{
 				$('#q51_5_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q51_5_date_year").focus();
+				$("#q51date5_year").focus();
 			}
 			else {
 				$('#q51_5_status').attr('innerHTML', "");
@@ -392,22 +392,22 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_6_']").attr("disabled", true);	  	 
 	    }
 	});	
-	$("#q51_6_date_month").change(function() {
+	$("#q51date6_month").change(function() {
 			if (!IsDateQ51_6())
 			{
 				$('#q51_6_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q51_6_date_month").focus();
+				$("q51date6_month").focus();
 			}
 			else {
 				$('#q51_6_status').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q51_6_date_year").change(function() {
+	$("#q51date6_year").change(function() {
 			if (!IsDateQ51_6())
 			{
 				$('#q51_6_status').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q51_6_date_year").focus();
+				$("#q51date6_year").focus();
 			}
 			else {
 				$('#q51_6_status').attr('innerHTML', "");
@@ -424,22 +424,22 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    		 
 	    }
 	});
-	$("#q52_date_most_recent_pap_smear_month").change(function() {
+	$("#q52dateMostRecentPapSmear_month").change(function() {
 			if (!IsDateQ52())
 			{
 				$('#alertIfInvalid52').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("q52_date_most_recent_pap_smear_month").focus();
+				$("q52dateMostRecentPapSmear_month").focus();
 			}
 			else {
 				$('#alertIfInvalid52').attr('innerHTML', "");
 			}	
 		}
 	);
-	$("#q52_date_most_recent_pap_smear_year").change(function() {
+	$("#q52dateMostRecentPapSmear_year").change(function() {
 			if (!IsDateQ52())
 			{
 				$('#alertIfInvalid52').attr('innerHTML', " <label style='color:#ff0000'>(!)</label>");
-				$("#q52_date_most_recent_pap_smear_year").focus();
+				$("#q52dateMostRecentPapSmear_year").focus();
 			}
 			else {
 				$('#alertIfInvalid52').attr('innerHTML', "");
@@ -466,6 +466,110 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){
+
+
+
+	    if ($("input[name='q47']:checked").val() != 'never'){
+	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q47']:checked").val() == 'never'){
+	    	$("[name*='q48dateLastVisitGynecologist']").val('');
+	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", true);	  
+	    }
+
+	    if ($("input[name='q49']:checked").val() == 'yes'){
+
+	    	$("#q49_findings_pelvic_exam").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q49']:checked").val() == 'no'){
+	    	$("#q49_findings_pelvic_exam").val('');
+	    	$("#q49_findings_pelvic_exam").attr("disabled", true);	  
+	    }
+
+
+	    if ($("input[name='q50']:checked").val() == 'yes'){
+
+	    	$("#q50_findings_digital_rectal_exam").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q50']:checked").val() == 'no'){
+	    	$("#q50_findings_digital_rectal_exam").val('');
+	    	$("#q50_findings_digital_rectal_exam").attr("disabled", true);	  
+	    }
+
+	    if ($("input[name='q51']:checked").val() == 'yes'){
+
+	    	$("[name*='q51_']").attr("disabled", '');	    			    
+	    }
+	    else if ($("input[name='q51']:checked").val() == 'no'){
+	    	$("[name*='q51_']").val('');
+	    	$("[name*='q51_']").attr("disabled", true);	  
+	    }
+
+	    if ($("input[name='q51_1']:checked").val() == 'yes'){
+	    	$("[name*='q51_1_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_1']:checked").val() == 'no'){
+	    	$("[name*='q51_1_']").val('');
+	    	$("[name*='q51_1_']").attr("disabled", true);	  	 
+	    }
+	    if ($("input[name='q51_2']:checked").val() == 'yes'){
+	    	$("[name*='q51_2_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_2']:checked").val() == 'no'){
+	    	$("[name*='q51_2_']").val('');
+	    	$("[name*='q51_2_']").attr("disabled", true);	  	 
+	    }
+	    if ($("input[name='q51_3']:checked").val() == 'yes'){
+	    	$("[name*='q51_3_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_3']:checked").val() == 'no'){
+	    	$("[name*='q51_3_']").val('');
+	    	$("[name*='q51_3_']").attr("disabled", true);	  	 
+	    }
+	    if ($("input[name='q51_4']:checked").val() == 'yes'){
+	    	$("[name*='q51_4_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_4']:checked").val() == 'no'){
+	    	$("[name*='q51_4_']").val('');
+	    	$("[name*='q51_4_']").attr("disabled", true);	  	 
+	    }
+	    if ($("input[name='q51_5']:checked").val() == 'yes'){
+	    	$("[name*='q51_5_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_5']:checked").val() == 'no'){
+	    	$("[name*='q51_5_']").val('');
+	    	$("[name*='q51_5_']").attr("disabled", true);	  	 
+	    }
+	    if ($("input[name='q51_6']:checked").val() == 'yes'){
+	    	$("[name*='q51_6_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q51_6']:checked").val() == 'no'){
+	    	$("[name*='q51_6_']").val('');
+	    	$("[name*='q51_6_']").attr("disabled", true);	  	 
+	    }
+	    if ($("input[name='q52']:checked").val() == 'yes'){
+	    	$("[name*='q52_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q52']:checked").val() == 'no'){
+	    	$("[name*='q52_']").val('');
+	    	$("[name*='q52_']").attr("disabled", true);	  
+	    		 
+	    }
+	    if ($("input[name='q53']:checked").val() == 'yes'){
+	    	
+	    	$("[name*='q53_']").attr("disabled", '');	  
+	    }
+	    else if ($("input[name='q53']:checked").val() == 'no'){
+	    	$("[name*='q53_']").val('');
+	    	$("[name*='q53_']").attr("disabled", true);	  
+	    		 
+	    }
+								
+});	
+
+</g:javascript>        
             <h1><g:message code="step9.label" default="Step9" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -586,7 +690,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="font-weight:bold;"><label><g:message code="survey.q48" default="q48" /></label></td>
 	                    	<td>
-								<g:datePicker name="q48_date_last_visit_gynecologist" precision="month" value="${surveyInstance?.q48_date_last_visit_gynecologist}"
+								<g:datePicker name="q48dateLastVisitGynecologist" precision="month" value="${surveyInstance?.q48dateLastVisitGynecologist}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid48"></span>               	
 	                    	</td>
 	                    </tr>
@@ -678,7 +782,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 							</g:radioGroup>
 						</td>
                         <td>    
-                             <g:datePicker name="${('q51_'+idx+'_date')}" precision="month" value="${surveyInstance?.('q51_'+idx+'_date')}"  
+                             <g:datePicker name="${('q51date'+idx)}" precision="month" value="${surveyInstance?.('q51date'+idx)}"  
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q51_'+idx+'_status')}"></span> 
 						</td>
 						<td>
@@ -732,7 +836,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 							</g:radioGroup>
 							<br/>
 							<div style="clear:left">
-								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52_date_most_recent_pap_smear" precision="month" value="${surveyInstance?.q52_date_most_recent_pap_smear}"  
+								<g:message code="survey.mostRecently" default="Most recently" />: <g:datePicker name="q52dateMostRecentPapSmear" precision="month" value="${surveyInstance?.q52dateMostRecentPapSmear}"  
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid52"></span>  
 								<br/>
                             	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear"

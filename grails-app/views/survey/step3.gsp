@@ -49,6 +49,36 @@ $(document).ready(function(){
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+
+	    if ($("input[name='familyHaveCancer']:checked").val() == 'yes'){
+			$("[name*='_cancerType']").attr("disabled", '');
+	    	$("[name*='_ageDiagnosed']").attr("disabled", '');
+	    	
+	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_cancerType)').attr("disabled", '');
+	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_ageDiagnosed)').attr("disabled", '');
+	    	
+	    	$("[name='q13_other_family_member']").attr("disabled", '');
+	    }
+	    else if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
+			$("[name*='_cancerType']").val('');
+	    	$("[name*='_ageDiagnosed']").val('');
+
+	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_cancerType)').attr("disabled", true);
+	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_ageDiagnosed)').attr("disabled", true);
+
+	    	$("[name*='_cancerType']").attr("disabled", true);
+	    	$("[name*='_ageDiagnosed']").attr("disabled", true);
+	    	
+	    	$("[name='q13_other_family_member']").val('');
+	    	$("[name='q13_other_family_member']").attr("disabled", true);
+	    	
+	    	
+	    }
+
+});	
+</g:javascript>        
             <h1><g:message code="step3.label" default="Step3" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>

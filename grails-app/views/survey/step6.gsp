@@ -31,6 +31,20 @@ $(document).ready(function(){
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+
+	    if ($("input[name='q26']:checked").val() == 'yes'){
+  			$("#q26_explain").attr("disabled", '');
+	    }
+	    else if ($("input[name='q26']:checked").val() == 'no'){
+	    	$("#q26_explain").val('');
+	    	$("#q26_explain").attr("disabled", true);	    	
+	    }
+
+	    
+});	
+</g:javascript>          
             <h1><g:message code="step6.label" default="Step6" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
