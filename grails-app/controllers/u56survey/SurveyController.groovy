@@ -1476,13 +1476,13 @@ class SurveyController {
 		
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		
-		List fields = []
+		/////List fields = []
 		
-		def d = new DefaultGrailsDomainClass(Survey.class)
-		d.persistentProperties.each{
+		/////def d = new DefaultGrailsDomainClass(Survey.class)
+		/////d.persistentProperties.each{
 			//println "${it.name}"
-			fields.add(it.name)
-		}
+		/////	fields.add(it.name)
+		/////}
 		
 		
 
@@ -1502,9 +1502,10 @@ class SurveyController {
 			params.max=1000000
 			
 			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
-			exportService.export(params.format, response.outputStream, selectedSurveys, fields, global_labels, formatters, parameters)
+			exportService.export(params.format, response.outputStream, selectedSurveys.sort{it.id}, fields, global_labels, formatters, parameters)
 		}
-		[surveyInstanceList: selectedSurveys, surveyInstanceTotal: surveySize]
+
+		[surveyInstanceList: selectedSurveys.sort{-it.id}, surveyInstanceTotal: surveySize]
 	}
 	def getSurveyList(surveyer, params) {
 		params.max = Math.min(params?.max?.toInteger() ?: 10, 100)
