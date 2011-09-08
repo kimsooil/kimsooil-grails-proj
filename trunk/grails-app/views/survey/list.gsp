@@ -40,10 +40,12 @@
 	        		<br/>
 		        	<li><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 		        	<br/>
-		        	<li><g:link class="list_surveyer" action="list_surveyer"><g:message code="default.list.label" args="[entityName]" /></g:link> (<g:link controller="survey" class="list" action="calendarview">Calendar View</g:link>)</li>
+		        	<li><g:link class="list_surveyer" action="list_surveyer"><g:message code="default.list.label" args="[entityName]" /></g:link><%-- (<g:link controller="survey" class="list" action="calendarview">Calendar View</g:link>) --%></li>
 		        	<br/>
+		        	<%--
 		        	<li><g:link controller="survey" class="list" action="print">Print Form</g:link> (<g:link controller="survey" class="list" action="print" params="[lang:'us']"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'us-letter.png')}" alt="English" border="0" /></g:link>/<g:link controller="survey" class="list" action="print" params="[lang:'es']"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'es-letter.png')}" alt="Español" border="0" /></g:link>)</li>
 		        	<br/>
+		        	 --%>
 		        	<li><b>PDF</b> (<a href="/hispbb/Print-us.pdf"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'us-letter.png')}" alt="English" border="0" /></a> / <a href="/hispbb/Print-es.pdf"><img style="vertical-align:middle;" src="${resource(dir:'images',file:'es-letter.png')}" alt="Spanish" border="0" /></a>)
 		        	<br/>
 		        	<br/>
