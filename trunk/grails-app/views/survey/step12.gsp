@@ -633,6 +633,7 @@ $(document).ready(function(){
         </div>
         <div class="body">
 <g:javascript>
+/*
 $(document).ready(function(){
 if ($("input[name='q83']:checked").val() != 'yes'){
 	    	//$("[name*='q84_'][type=radio]").attr('checked', false);
@@ -644,7 +645,132 @@ if ($("input[name='q83']:checked").val() != 'yes'){
 			$("[name*='_rad_date']").attr("disabled", true);
 
 	    }
-});		    
+});
+*/
+
+
+$(document).ready(function(){
+
+
+	    if ($("input[name='q83']:checked").val() == 'yes'){
+		$("[name*='q84_'][type=radio]").attr("disabled", '');
+		//$("[name*='q84_'][type=radio]").removeAttr("checked");	 
+		$("[name*='q84_'][type=text]").attr("disabled", '');
+		$("[name*='_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q83']:checked").val() == 'no'){
+	    	//$("[name*='q84_'][type=radio]").attr('checked', false);
+	    	$("[name*='q84_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');
+	    	$("[name*='q84_'][type=radio]").attr("disabled", true);	  
+	    	$("[name*='q84_'][type=text]").val('');
+	    	$("[name*='q84_'][type=text]").attr("disabled", true);
+	    	//$("[name*='_rad_date']").val('');
+		$("[name*='_rad_date']").attr("disabled", true);
+
+	    }
+	    if ($("input[name='q84_1']:checked").val() == 'yes'){
+		$("#q84_1_whatAge").attr("disabled", '');
+		$("[name*='_1_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_1']:checked").val() == 'no'){
+	    	$("#q84_1_whatAge").val('');
+	    	$("#q84_1_whatAge").attr("disabled", true);
+	    	//$("[name*='_1_rad_date']").val('');
+		$("[name*='_1_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_2']:checked").val() == 'yes'){
+		$("#q84_2_whatAge").attr("disabled", '');
+		$("[name*='_2_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_2']:checked").val() == 'no'){
+	    	$("#q84_2_whatAge").val('');
+	    	$("#q84_2_whatAge").attr("disabled", true);
+	    	//$("[name*='_2_rad_date']").val('');
+		$("[name*='_2_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_3']:checked").val() == 'yes'){
+		$("#q84_3_whatAge").attr("disabled", '');
+		$("[name*='_3_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_3']:checked").val() == 'no'){
+	    	$("#q84_3_whatAge").val('');
+	    	$("#q84_3_whatAge").attr("disabled", true);
+	    	//$("[name*='_3_rad_date']").val('');
+		$("[name*='_3_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_4']:checked").val() == 'yes'){
+		$("#q84_4_whatAge").attr("disabled", '');
+		$("[name*='_4_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_4']:checked").val() == 'no'){
+	    	$("#q84_4_whatAge").val('');
+	    	$("#q84_4_whatAge").attr("disabled", true);
+	    	//$("[name*='_4_rad_date']").val('');
+		$("[name*='_4_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_5']:checked").val() == 'yes'){
+		$("#q84_5_whatAge").attr("disabled", '');
+		$("[name*='_5_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_5']:checked").val() == 'no'){
+	    	$("#q84_5_whatAge").val('');
+	    	$("#q84_5_whatAge").attr("disabled", true);
+	    	//$("[name*='_5_rad_date']").val('');
+		$("[name*='_5_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_6']:checked").val() == 'yes'){
+		$("#q84_6_whatAge").attr("disabled", '');
+		$("[name*='_6_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_6']:checked").val() == 'no'){
+	    	$("#q84_6_whatAge").val('');
+	    	$("#q84_6_whatAge").attr("disabled", true);
+	    	//$("[name*='_6_rad_date']").val('');
+		$("[name*='_6_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_7']:checked").val() == 'yes'){
+		$("#q84_7_whatAge").attr("disabled", '');
+		$("[name*='_7_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_7']:checked").val() == 'no'){
+	    	$("#q84_7_whatAge").val('');
+	    	$("#q84_7_whatAge").attr("disabled", true);
+	    	//$("[name*='_7_rad_date']").val('');
+		$("[name*='_7_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_8']:checked").val() == 'yes'){
+		$("#q84_8_whatAge").attr("disabled", '');
+		$("[name*='_8_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_8']:checked").val() == 'no'){
+	    	$("#q84_8_whatAge").val('');
+	    	$("#q84_8_whatAge").attr("disabled", true);
+	    	//$("[name*='_8_rad_date']").val('');
+		$("[name*='_8_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_9']:checked").val() == 'yes'){
+		$("#q84_9_whatAge").attr("disabled", '');
+		$("[name*='_9_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_9']:checked").val() == 'no'){
+	    	$("#q84_9_whatAge").val('');
+	    	$("#q84_9_whatAge").attr("disabled", true);
+	    	//$("[name*='_9_rad_date']").val('');
+		$("[name*='_9_rad_date']").attr("disabled", true);
+	    }
+	    if ($("input[name='q84_10']:checked").val() == 'yes'){
+		$("#q84_10_whatAge").attr("disabled", '');
+		$("[name*='_10_rad_date']").attr("disabled", '');	    
+	    }
+	    else if ($("input[name='q84_10']:checked").val() == 'no'){
+	    	$("#q84_10_whatAge").val('');
+	    	$("#q84_10_whatAge").attr("disabled", true);
+	    	//$("[name*='_10_rad_date']").val('');
+		$("[name*='_10_rad_date']").attr("disabled", true);
+	    }
+	
+});	
+		    
 </g:javascript>
             <h1><g:message code="step12.label" default="Step12" /></h1>
             <g:if test="${flash.message}">

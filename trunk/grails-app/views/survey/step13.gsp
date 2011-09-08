@@ -45,6 +45,32 @@ $(document).ready(function(){
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+
+	    if ($("input[name='q85']:checked").val() == 'yes'){
+	    	$("#whichDiet").show();
+	    	$("#q85_which").attr("disabled", '');
+	    }
+	    else if ($("input[name='q85']:checked").val() == 'no'){
+	    	$("#whichDiet").hide();
+	    	$("#q85_which").val('');
+	    	$("#q85_which").attr("disabled", true);
+	    }
+
+	    if ($("input[name='q87']:checked").val() == 'yes'){
+	    	$("[name='q88']").attr("disabled", '');
+	    	$("[name*='q89']").attr("disabled", '');
+	    }
+	    else if ($("input[name='q87']:checked").val() == 'no'){
+	    	$("[name='q88']").attr("checked", false);
+	    	$("[name='q88']").attr("disabled", true);
+	    	$("[name*='q89']").attr("checked", false);
+	    	$("[name*='q89']").attr("disabled", true);
+	    }
+
+}); 
+</g:javascript>
             <h1><g:message code="step13.label" default="Step13" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
