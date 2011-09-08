@@ -443,11 +443,14 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	);
 	$("input[name='q52']").change(function(){
 	    if ($("input[name='q52']:checked").val() == 'yes'){
-	    	$("[name*='q52_']").attr("disabled", '');	  
+	    	$("[name*='q52_']").attr("disabled", '');	
+	    	$("[name*='q52date']").attr("disabled", '');	  
 	    }
 	    else if ($("input[name='q52']:checked").val() == 'no'){
 	    	$("[name*='q52_']").val('');
 	    	$("[name*='q52_']").attr("disabled", true);	  
+	    	$("[name*='q52date']").val('');
+	    	$("[name*='q52date']").attr("disabled", true);	  	    	
 	    		 
 	    }
 	});
@@ -496,132 +499,78 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 <g:javascript>
 $(document).ready(function(){
 
-	    if ($("input[name='q47']:checked").val() != 'never'){
-	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q47']:checked").val() == 'never'){
+if ($("input[name='q47']:checked").val() == 'never'){
 	    	$("[name*='q48dateLastVisitGynecologist']").val('');
 	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", true);	  
 	    }
 
-
-	    if ($("input[name='q49']:checked").val() == 'yes'){
-
-	    	$("#q49_findings_pelvic_exam").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q49']:checked").val() == 'no'){
+if ($("input[name='q49']:checked").val() == 'no'){
 	    	$("#q49_findings_pelvic_exam").val('');
 	    	$("#q49_findings_pelvic_exam").attr("disabled", true);	  
 	    }
 
-
-	    if ($("input[name='q50']:checked").val() == 'yes'){
-
-	    	$("#q50_findings_digital_rectal_exam").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q50']:checked").val() == 'no'){
+if ($("input[name='q50']:checked").val() == 'no'){
 	    	$("#q50_findings_digital_rectal_exam").val('');
 	    	$("#q50_findings_digital_rectal_exam").attr("disabled", true);	  
 	    }
 
-	    if ($("input[name='q51']:checked").val() == 'yes'){
-
-	    	$("[name*='q51_']").attr("disabled", '');	  
-	    	$("[name*='q51date']").attr("disabled", '');
- 			    
-	    }
-	    else if ($("input[name='q51']:checked").val() == 'no'){
-	    	$("[name*='q51_']").val('');
+if ($("input[name='q51']:checked").val() == 'no'){
+	    	//$("[name*='q51_']").val('');
 	    	$("[name*='q51_']").attr("disabled", true);	 
-	    	$("[name*='q51date']").val('');
+	    	//$("[name*='q51date']").val('');
 	    	$("[name*='q51date']").attr("disabled", true);
 	    	$("[name*='q51_'][type=radio]").removeAttr("checked");	
 	    	$("[name*='q51_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');		    	 
 	    }
 
-
-	    if ($("input[name='q51_1']:checked").val() == 'yes'){
-	    	$("[name*='q51_1_']").attr("disabled", '');
-	    	$("[name*='q51date1']").attr("disabled", '');	  
-	    }
-	    else if ($("input[name='q51_1']:checked").val() == 'no'){
-	    	$("[name*='q51_1_']").val('');
+if ($("input[name='q51_1']:checked").val() == 'no'){
+	    	//$("[name*='q51_1_']").val('');
 	    	$("[name*='q51_1_']").attr("disabled", true);	
-	    	$("[name*='q51date1']").val('');
+	    	//$("[name*='q51date1']").val('');
 	    	$("[name*='q51date1']").attr("disabled", true);
-	    	
-    	 
 	    }
-	    if ($("input[name='q51_2']:checked").val() == 'yes'){
-	    	$("[name*='q51_2_']").attr("disabled", '');	  
-	    	$("[name*='q51date3']").attr("disabled", '');
-	    }
-	    else if ($("input[name='q51_2']:checked").val() == 'no'){
-	    	$("[name*='q51_2_']").val('');
+if ($("input[name='q51_2']:checked").val() == 'no'){
+	    	//$("[name*='q51_2_']").val('');
 	    	$("[name*='q51_2_']").attr("disabled", true);
-	    	$("[name*='q51date2']").val('');
+	    	//$("[name*='q51date2']").val('');
 	    	$("[name*='q51date2']").attr("disabled", true);	  	 
 	    }
-	    if ($("input[name='q51_3']:checked").val() == 'yes'){
-	    	$("[name*='q51_3_']").attr("disabled", '');	 
-	    	$("[name*='q51date3']").attr("disabled", '');	 
-	    }
-	    else if ($("input[name='q51_3']:checked").val() == 'no'){
-	    	$("[name*='q51_3_']").val('');
+if ($("input[name='q51_3']:checked").val() == 'no'){
+	    	//$("[name*='q51_3_']").val('');
 	    	$("[name*='q51_3_']").attr("disabled", true);
-	    	$("[name*='q51date3']").val('');
+	    	//$("[name*='q51date3']").val('');
 	    	$("[name*='q51date3']").attr("disabled", true);	  	 
 	    }
-	    if ($("input[name='q51_4']:checked").val() == 'yes'){
-	    	$("[name*='q51_4_']").attr("disabled", '');
-	    	$("[name*='q51date4']").attr("disabled", '');	  
-	    }
-	    else if ($("input[name='q51_4']:checked").val() == 'no'){
-	    	$("[name*='q51_4_']").val('');
+if ($("input[name='q51_4']:checked").val() == 'no'){
+	    	//$("[name*='q51_4_']").val('');
 	    	$("[name*='q51_4_']").attr("disabled", true);	  	 
-	    	$("[name*='q51date4']").val('');
+	    	//$("[name*='q51date4']").val('');
 	    	$("[name*='q51date4']").attr("disabled", true);	  	 
 
 	    }
-	    if ($("input[name='q51_5']:checked").val() == 'yes'){
-	    	$("[name*='q51_5_']").attr("disabled", '');
-	    	$("[name*='q51date5']").attr("disabled", '');	  
-	    }
-	    else if ($("input[name='q51_5']:checked").val() == 'no'){
-	    	$("[name*='q51_5_']").val('');
+if ($("input[name='q51_5']:checked").val() == 'no'){
+	    	//$("[name*='q51_5_']").val('');
 	    	$("[name*='q51_5_']").attr("disabled", true);	  	 
-	    	$("[name*='q51date5']").val('');
+	    	//$("[name*='q51date5']").val('');
 	    	$("[name*='q51date5']").attr("disabled", true);	  	 
 	    }
-	    if ($("input[name='q51_6']:checked").val() == 'yes'){
-	    	$("[name*='q51_6_']").attr("disabled", '');	  
-	    	$("[name*='q51date6']").attr("disabled", '');
-	    }
-	    else if ($("input[name='q51_6']:checked").val() == 'no'){
-	    	$("[name*='q51_6_']").val('');
+if ($("input[name='q51_6']:checked").val() == 'no'){
+	    	//$("[name*='q51_6_']").val('');
 	    	$("[name*='q51_6_']").attr("disabled", true);	  	 
-	    	$("[name*='q51date6']").val('');
+	    	//$("[name*='q51date6']").val('');
 	    	$("[name*='q51date6']").attr("disabled", true);	  	 
 	    }
-	    if ($("input[name='q52']:checked").val() == 'yes'){
-	    	$("[name*='q52_']").attr("disabled", '');	  
-	    }
-	    else if ($("input[name='q52']:checked").val() == 'no'){
-	    	$("[name*='q52_']").val('');
+if ($("input[name='q52']:checked").val() == 'no'){
+	    	//$("[name*='q52_']").val('');
 	    	$("[name*='q52_']").attr("disabled", true);	  
-	    		 
+	    	//$("[name*='q52date']").val('');
+	    	$("[name*='q52date']").attr("disabled", true);	 	    		 
 	    }
-	    if ($("input[name='q53']:checked").val() == 'yes'){
-	    	
-	    	$("[name*='q53_']").attr("disabled", '');	  
-	    }
-	    else if ($("input[name='q53']:checked").val() == 'no'){
-	    	$("[name*='q53_']").val('');
+if ($("input[name='q53']:checked").val() == 'no'){
+	    	//$("[name*='q53_']").val('');
 	    	$("[name*='q53_']").attr("disabled", true);	  
 	    		 
 	    }
-
-
 });	
 
 </g:javascript>        

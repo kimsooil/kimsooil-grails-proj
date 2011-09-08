@@ -75,13 +75,13 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	$("input[name='q80']").change(function(){
 	    if ($("input[name='q80']:checked").val() == 'yes'){
 			$("[name*='q80_']").attr("disabled", '');
-			$("#q81").attr("disabled", '');
+			$("[name*='q81']").attr("disabled", '');
 	    }
 	    else if ($("input[name='q80']:checked").val() == 'no'){
 	    	$("[name*='q80_']").val('');
 	    	$("[name*='q80_']").attr("disabled", true);	  
-	    	$("#q81").val('');
-	    	$("#q81").attr("disabled", true);
+	    	$("[name*='q81']").val('');
+	    	$("[name*='q81']").attr("disabled", true);
 
 	    }
 	});
@@ -90,6 +90,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    if ($("input[name='q82']:checked").val() == 'yes'){
 	    		    	
 			$("[name*='q82_'][type=radio]").attr("disabled", '');
+			$("[name*='q82_'][type=radio]").removeAttr("checked");
 			$("[name*='q82_'][type=text]").attr("disabled", '');
 			$("[name*='q82_'][name$='_type']").attr("disabled", '');
 			$("[name*='q82_'][name$='_aliveDead']").attr("disabled", '');
@@ -359,17 +360,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 <g:javascript>
 $(document).ready(function(){
 
-	    if ($("input[name='q72']:checked").val() == 'yes'){
-	    	$("#q72_status").html(" <font color='blue'>Answer Q78-Q83</font>");
-	    	$("[name*='q73_']").attr("disabled", '');    			    
-	    	$("#q74").attr("disabled", '');
-	    	$("#q75").attr("disabled", '');
-	    	$("#q76").attr("disabled", '');
-	    	$("[name*='q77']").attr("disabled", '');	
-	    	$("[name*='q78_']").attr("disabled", '');
-	    	$("[name*='q79']").attr("disabled", '');
-	    }
-	    else if ($("input[name='q72']:checked").val() == 'no'){
+if ($("input[name='q72']:checked").val() == 'no'){
 		    $("#q72_status").html(" <font color='red'>Skip to Q85</font>");
 		    $("#q73_alive_status").html('');
 		    $("#q73_dead_status").html('');
@@ -391,252 +382,162 @@ $(document).ready(function(){
 	    	$("[name*='q79']").attr("disabled", true);		    		  
 
 	    }
-	    if ($("input[name='q77']:checked").val() == 'yes'){	
-	    	$("[name*='q78_']").attr("disabled", '');	    
-	    }
-	    else if ($("input[name='q77']:checked").val() == 'no'){
+if ($("input[name='q77']:checked").val() == 'no'){
 	    	$("[name*='q78_']").val('');
 	    	$("[name*='q78_']").attr("disabled", true);	    
 	    }
-	    if ($("input[name='q80']:checked").val() == 'yes'){
-			$("[name*='q80_']").attr("disabled", '');
-			$("#q81").attr("disabled", '');
-	    }
-	    else if ($("input[name='q80']:checked").val() == 'no'){
+if ($("input[name='q80']:checked").val() == 'no'){
 	    	$("[name*='q80_']").val('');
 	    	$("[name*='q80_']").attr("disabled", true);	  
-	    	$("#q81").val('');
-	    	$("#q81").attr("disabled", true);
+			$("[name*='q81']").attr("disabled", true);
 
 	    }
-	    if ($("input[name='q82']:checked").val() == 'yes'){
-	    		    	
-			$("[name*='q82_'][type=radio]").attr("disabled", '');
-			$("[name*='q82_'][type=text]").attr("disabled", '');
-			$("[name*='q82_'][name$='_type']").attr("disabled", '');
-			$("[name*='q82_'][name$='_aliveDead']").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82']:checked").val() == 'no'){
+if ($("input[name='q82']:checked").val() == 'no'){
 	    	//$("[name*='q82_'][type=radio]").attr('checked', false);
 	    	//$("[name*='q82_'][type=radio]").removeAttr("checked");
 	    	$("[name*='q82_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');   	
 	    	$("[name*='q82_'][type=radio]").attr("disabled", true);	  
-	    	$("[name*='q82_'][type=text]").val('');
+	    	//$("[name*='q82_'][type=text]").val('');
 	    	$("[name*='q82_'][type=text]").attr("disabled", true);
-	    	$("[name*='q82_'][name$='_type']").val('');
+	    	//$("[name*='q82_'][name$='_type']").val('');
 			$("[name*='q82_'][name$='_type']").attr("disabled", true);
-			$("[name*='q82_'][name$='_aliveDead']").val('');
+			//$("[name*='q82_'][name$='_aliveDead']").val('');
 			$("[name*='q82_'][name$='_aliveDead']").attr("disabled", true);
 
 	    }
-	    if ($("input[name='q82_1']:checked").val() == 'yes'){
-	    	$("#q82_1_type").attr("disabled", '');
-			$("#q82_1_whatAge").attr("disabled", '');
-			$("#q82_1_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_1']:checked").val() == 'no'){
+if ($("input[name='q82_1']:checked").val() == 'no'){
  
-	    	$("#q82_1_type").val('');
+	    	//$("#q82_1_type").val('');
 	    	$("#q82_1_type").attr("disabled", true);
-	    	$("#q82_1_whatAge").val('');
+	    	//$("#q82_1_whatAge").val('');
 			$("#q82_1_whatAge").attr("disabled", true);
-			$("#q82_1_aliveDead").val('');
+			//$("#q82_1_aliveDead").val('');
 			$("#q82_1_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_2']:checked").val() == 'yes'){
-	    	$("#q82_2_type").attr("disabled", '');
-			$("#q82_2_whatAge").attr("disabled", '');
-			$("#q82_2_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_2']:checked").val() == 'no'){
+if ($("input[name='q82_2']:checked").val() == 'no'){
  
-	    	$("#q82_2_type").val('');
+	    	//$("#q82_2_type").val('');
 	    	$("#q82_2_type").attr("disabled", true);
-	    	$("#q82_2_whatAge").val('');
+	    	//$("#q82_2_whatAge").val('');
 			$("#q82_2_whatAge").attr("disabled", true);
-			$("#q82_2_aliveDead").val('');
+			//$("#q82_2_aliveDead").val('');
 			$("#q82_2_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_3']:checked").val() == 'yes'){
-	    	$("#q82_3_type").attr("disabled", '');
-			$("#q82_3_whatAge").attr("disabled", '');
-			$("#q82_3_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_3']:checked").val() == 'no'){
+if ($("input[name='q82_3']:checked").val() == 'no'){
  
-	    	$("#q82_3_type").val('');
+	    	//$("#q82_3_type").val('');
 	    	$("#q82_3_type").attr("disabled", true);
-	    	$("#q82_3_whatAge").val('');
+	    	//$("#q82_3_whatAge").val('');
 			$("#q82_3_whatAge").attr("disabled", true);
-			$("#q82_3_aliveDead").val('');
+			//$("#q82_3_aliveDead").val('');
 			$("#q82_3_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_4']:checked").val() == 'yes'){
-	    	$("#q82_4_type").attr("disabled", '');
-			$("#q82_4_whatAge").attr("disabled", '');
-			$("#q82_4_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_4']:checked").val() == 'no'){
+if ($("input[name='q82_4']:checked").val() == 'no'){
  
-	    	$("#q82_4_type").val('');
+	    	//$("#q82_4_type").val('');
 	    	$("#q82_4_type").attr("disabled", true);
-	    	$("#q82_4_whatAge").val('');
+	    	//$("#q82_4_whatAge").val('');
 			$("#q82_4_whatAge").attr("disabled", true);
-			$("#q82_4_aliveDead").val('');
+			//$("#q82_4_aliveDead").val('');
 			$("#q82_4_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_5']:checked").val() == 'yes'){
-	    	$("#q82_5_type").attr("disabled", '');
-			$("#q82_5_whatAge").attr("disabled", '');
-			$("#q82_5_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_5']:checked").val() == 'no'){
+if ($("input[name='q82_5']:checked").val() == 'no'){
  
-	    	$("#q82_5_type").val('');
+	    	//$("#q82_5_type").val('');
 	    	$("#q82_5_type").attr("disabled", true);
-	    	$("#q82_5_whatAge").val('');
+	    	//$("#q82_5_whatAge").val('');
 			$("#q82_5_whatAge").attr("disabled", true);
-			$("#q82_5_aliveDead").val('');
+			//$("#q82_5_aliveDead").val('');
 			$("#q82_5_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_6']:checked").val() == 'yes'){
-	    	$("#q82_6_type").attr("disabled", '');
-			$("#q82_6_whatAge").attr("disabled", '');
-			$("#q82_6_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_6']:checked").val() == 'no'){
+if ($("input[name='q82_6']:checked").val() == 'no'){
  
-	    	$("#q82_6_type").val('');
+	    	//$("#q82_6_type").val('');
 	    	$("#q82_6_type").attr("disabled", true);
-	    	$("#q82_6_whatAge").val('');
+	    	//$("#q82_6_whatAge").val('');
 			$("#q82_6_whatAge").attr("disabled", true);
-			$("#q82_6_aliveDead").val('');
+			//$("#q82_6_aliveDead").val('');
 			$("#q82_6_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_7']:checked").val() == 'yes'){
-	    	$("#q82_7_type").attr("disabled", '');
-			$("#q82_7_whatAge").attr("disabled", '');
-			$("#q82_7_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_7']:checked").val() == 'no'){
+if ($("input[name='q82_7']:checked").val() == 'no'){
  
-	    	$("#q82_7_type").val('');
+	    	//$("#q82_7_type").val('');
 	    	$("#q82_7_type").attr("disabled", true);
-	    	$("#q82_7_whatAge").val('');
+	    	//$("#q82_7_whatAge").val('');
 			$("#q82_7_whatAge").attr("disabled", true);
-			$("#q82_7_aliveDead").val('');
+			//$("#q82_7_aliveDead").val('');
 			$("#q82_7_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_8']:checked").val() == 'yes'){
-	    	$("#q82_8_type").attr("disabled", '');
-			$("#q82_8_whatAge").attr("disabled", '');
-			$("#q82_8_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_8']:checked").val() == 'no'){
+if ($("input[name='q82_8']:checked").val() == 'no'){
  
-	    	$("#q82_8_type").val('');
+	    	//$("#q82_8_type").val('');
 	    	$("#q82_8_type").attr("disabled", true);
-	    	$("#q82_8_whatAge").val('');
+	    	//$("#q82_8_whatAge").val('');
 			$("#q82_8_whatAge").attr("disabled", true);
-			$("#q82_8_aliveDead").val('');
+			//$("#q82_8_aliveDead").val('');
 			$("#q82_8_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_9']:checked").val() == 'yes'){
-	    	$("#q82_9_type").attr("disabled", '');
-			$("#q82_9_whatAge").attr("disabled", '');
-			$("#q82_9_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_9']:checked").val() == 'no'){
+if ($("input[name='q82_9']:checked").val() == 'no'){
  
-	    	$("#q82_9_type").val('');
+	    	//$("#q82_9_type").val('');
 	    	$("#q82_9_type").attr("disabled", true);
-	    	$("#q82_9_whatAge").val('');
+	    	//$("#q82_9_whatAge").val('');
 			$("#q82_9_whatAge").attr("disabled", true);
-			$("#q82_9_aliveDead").val('');
+			//$("#q82_9_aliveDead").val('');
 			$("#q82_9_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_10']:checked").val() == 'yes'){
-	    	$("#q82_10_type").attr("disabled", '');
-			$("#q82_10_whatAge").attr("disabled", '');
-			$("#q82_10_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_10']:checked").val() == 'no'){
+if ($("input[name='q82_10']:checked").val() == 'no'){
  
-	    	$("#q82_10_type").val('');
+	    	//$("#q82_10_type").val('');
 	    	$("#q82_10_type").attr("disabled", true);
-	    	$("#q82_10_whatAge").val('');
+	    	//$("#q82_10_whatAge").val('');
 			$("#q82_10_whatAge").attr("disabled", true);
-			$("#q82_10_aliveDead").val('');
+			//$("#q82_10_aliveDead").val('');
 			$("#q82_10_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_11']:checked").val() == 'yes'){
-	    	$("#q82_11_type").attr("disabled", '');
-			$("#q82_11_whatAge").attr("disabled", '');
-			$("#q82_11_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_11']:checked").val() == 'no'){
+if ($("input[name='q82_11']:checked").val() == 'no'){
  
-	    	$("#q82_11_type").val('');
+	    	//$("#q82_11_type").val('');
 	    	$("#q82_11_type").attr("disabled", true);
-	    	$("#q82_11_whatAge").val('');
+	    	//$("#q82_11_whatAge").val('');
 			$("#q82_11_whatAge").attr("disabled", true);
-			$("#q82_11_aliveDead").val('');
+			//$("#q82_11_aliveDead").val('');
 			$("#q82_11_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_12']:checked").val() == 'yes'){
-	    	$("#q82_12_type").attr("disabled", '');
-			$("#q82_12_whatAge").attr("disabled", '');
-			$("#q82_12_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_12']:checked").val() == 'no'){
+if ($("input[name='q82_12']:checked").val() == 'no'){
  
-	    	$("#q82_12_type").val('');
+	    	//$("#q82_12_type").val('');
 	    	$("#q82_12_type").attr("disabled", true);
-	    	$("#q82_12_whatAge").val('');
+	    	//$("#q82_12_whatAge").val('');
 			$("#q82_12_whatAge").attr("disabled", true);
-			$("#q82_12_aliveDead").val('');
+			//$("#q82_12_aliveDead").val('');
 			$("#q82_12_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_13']:checked").val() == 'yes'){
-	    	$("#q82_13_type").attr("disabled", '');
-			$("#q82_13_whatAge").attr("disabled", '');
-			$("#q82_13_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_13']:checked").val() == 'no'){
+if ($("input[name='q82_13']:checked").val() == 'no'){
  
-	    	$("#q82_13_type").val('');
+	    	//$("#q82_13_type").val('');
 	    	$("#q82_13_type").attr("disabled", true);
-	    	$("#q82_13_whatAge").val('');
+	    	//$("#q82_13_whatAge").val('');
 			$("#q82_13_whatAge").attr("disabled", true);
-			$("#q82_13_aliveDead").val('');
+			//$("#q82_13_aliveDead").val('');
 			$("#q82_13_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_14']:checked").val() == 'yes'){
-	    	$("#q82_14_type").attr("disabled", '');
-			$("#q82_14_whatAge").attr("disabled", '');
-			$("#q82_14_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_14']:checked").val() == 'no'){
+if ($("input[name='q82_14']:checked").val() == 'no'){
  
-	    	$("#q82_14_type").val('');
+	    	//$("#q82_14_type").val('');
 	    	$("#q82_14_type").attr("disabled", true);
-	    	$("#q82_14_whatAge").val('');
+	    	//$("#q82_14_whatAge").val('');
 			$("#q82_14_whatAge").attr("disabled", true);
-			$("#q82_14_aliveDead").val('');
+			//$("#q82_14_aliveDead").val('');
 			$("#q82_14_aliveDead").attr("disabled", true);
 	    }
-	    if ($("input[name='q82_15']:checked").val() == 'yes'){
-	    	$("#q82_15_type").attr("disabled", '');
-			$("#q82_15_whatAge").attr("disabled", '');
-			$("#q82_15_aliveDead").attr("disabled", '');
-	    }
-	    else if ($("input[name='q82_15']:checked").val() == 'no'){
+if ($("input[name='q82_15']:checked").val() == 'no'){
  
-	    	$("#q82_15_type").val('');
+	    	//$("#q82_15_type").val('');
 	    	$("#q82_15_type").attr("disabled", true);
-	    	$("#q82_15_whatAge").val('');
+	    	//$("#q82_15_whatAge").val('');
 			$("#q82_15_whatAge").attr("disabled", true);
-			$("#q82_15_aliveDead").val('');
+			//$("#q82_15_aliveDead").val('');
 			$("#q82_15_aliveDead").attr("disabled", true);
 	    }
 });	

@@ -2247,6 +2247,7 @@ class SurveyController {
 				params.q51_5="no"
 				params.q51_6="no"
 			}
+
 			surveyInstance.properties = params
 			
 			//surveyInstance.surveyer=session.user.login // when ever updated, save the surveyer (loggined user)

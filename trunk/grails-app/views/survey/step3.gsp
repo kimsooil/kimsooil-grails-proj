@@ -52,16 +52,7 @@ $(document).ready(function(){
 <g:javascript>
 $(document).ready(function(){ 
 
-	    if ($("input[name='familyHaveCancer']:checked").val() == 'yes'){
-			$("[name*='_cancerType']").attr("disabled", '');
-	    	$("[name*='_ageDiagnosed']").attr("disabled", '');
-	    	
-	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_cancerType)').attr("disabled", '');
-	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_ageDiagnosed)').attr("disabled", '');
-	    	
-	    	$("[name='q13_other_family_member']").attr("disabled", '');
-	    }
-	    else if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
+if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 			$("[name*='_cancerType']").val('');
 	    	$("[name*='_ageDiagnosed']").val('');
 
