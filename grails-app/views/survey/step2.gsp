@@ -226,13 +226,7 @@ $(document).ready(function(){
 $(document).ready(function(){ 
 
 
-	    if ($("input[name='q11a_1']:checked").val() == 'yes'){
-	    	$("#q11a_1_status").html(" <font color='red'>Choose Year</font>");
-	    	$("#q11a_1Year_year").attr("disabled", '');
-
-
-	    }
-	    else if ($("input[name='q11a_1']:checked").val() == 'no'){
+if ($("input[name='q11a_1']:checked").val() == 'no'){
 	    	$("#q11a_1_status").html("");
 	    	$("#q11a_1Year_year").val('');
 	    	$("#q11a_1Year_year").attr("disabled", true);
@@ -240,22 +234,14 @@ $(document).ready(function(){
 	    }
 
 
-	    if ($("input[name='q11a_2']:checked").val() == 'yes'){
-	    	$("#q11a_2_status").html(" <font color='red'>Choose Year</font>");
-	    	$("#q11a_2Year_year").attr("disabled", '');
-	    }
-	    else if ($("input[name='q11a_2']:checked").val() == 'no'){
+if ($("input[name='q11a_2']:checked").val() == 'no'){
 	    	$("#q11a_2_status").html('');
 	    	$("#q11a_2Year_year").val('');
 	    	$("#q11a_2Year_year").attr("disabled", true);
 	    }
 
 
-	    if ($("input[name='q11a_3']:checked").val() == 'yes'){
-	    	$("#q11a_3_status").html(" <font color='red'>Choose Year</font>");
-	    	$("#q11a_3Year_year").attr("disabled", '');
-	    }
-	    else if ($("input[name='q11a_3']:checked").val() == 'no'){
+if ($("input[name='q11a_3']:checked").val() == 'no'){
 	    	$("#q11a_3_status").html('');
 	    	$("#q11a_3Year_year").val('');
 	    	$("#q11a_3Year_year").attr("disabled", true);
@@ -287,55 +273,29 @@ $(document).ready(function(){
 	    	$("#q11a_3Year_year").attr("disabled", true);		
     	
 		}
-		else{
-			$("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);	
-		
-	    	$("[name*='q11a_1']").attr('disabled', false);
-	    	$("[name*='q11a_2']").attr('disabled', false);
-	    	$("[name*='q11a_3']").attr('disabled', false);			
-		}
 
-
-	    if ($("input[name='q11a_4']:checked").val() == 'yes'){
-	    	$("#q11a_4_status").html(" <font color='red'>Choose Year</font>");
-	    	$("#q11a_4Year_year").attr("disabled", '');
-
-
-	    }
-	    else if ($("input[name='q11a_4']:checked").val() == 'no'){
+if ($("input[name='q11a_4']:checked").val() == 'no'){
 	    	$("#q11a_4_status").html("");
 	    	$("#q11a_4Year_year").val('');
 	    	$("#q11a_4Year_year").attr("disabled", true);
 	    }
 
 
-	    if ($("input[name='q11a_5']:checked").val() == 'yes'){
-	    	$("#q11a_5_status").html(" <font color='red'>Choose Year</font>");
-	    	$("#q11a_5Year_year").attr("disabled", '');
-	    }
-	    else if ($("input[name='q11a_5']:checked").val() == 'no'){
+if ($("input[name='q11a_5']:checked").val() == 'no'){
 	    	$("#q11a_5_status").html("");
 	    	$("#q11a_5Year_year").val('');
 	    	$("#q11a_5Year_year").attr("disabled", true);
 	    }
 
 
-	    if ($("input[name='q11a_6']:checked").val() == 'yes'){
-	    	$("#q11a_6_status").html(" <font color='red'>Choose Year</font>");
-	    	$("#q11a_6Year_year").attr("disabled", '');
-	    }
-	    else if ($("input[name='q11a_6']:checked").val() == 'no'){
+if ($("input[name='q11a_6']:checked").val() == 'no'){
 	    	$("#q11a_6_status").html("");
 	    	$("#q11a_6Year_year").val('');
 	    	$("#q11a_6Year_year").attr("disabled", true);
 	    }
 
 
-	    if ($("input[name='q11a_7']:checked").val() == 'yes'){
-	    	$("#q11a_7_status").html(" <font color='red'>Choose Year</font>");
-	    	$("#q11a_7Year_year").attr("disabled", '');
-	    }
-	    else if ($("input[name='q11a_7']:checked").val() == 'no'){
+if ($("input[name='q11a_7']:checked").val() == 'no'){
 	    	$("#q11a_7_status").html("");
 	    	$("#q11a_7Year_year").val('');
 	    	$("#q11a_7Year_year").attr("disabled", true);
@@ -374,12 +334,7 @@ $(document).ready(function(){
 
 
 
-	    if ($("input[name='spread_cancer']:checked").val() == 'yes'){
-
-	    	$("[name*='spread_'][type=checkbox]").attr("disabled", '');
-	    	$("#spread_where").attr("disabled", "");
-	    }
-	    else if ($("input[name='spread_cancer']:checked").val() == 'no'){
+if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	    	$("[name*='spread_'][type=checkbox]").attr("checked", false);
 	    	$("#spread_other").val('');
 	    	$("#spread_where").val('');

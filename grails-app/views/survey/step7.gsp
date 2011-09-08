@@ -147,23 +147,14 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 <g:javascript>
 $(document).ready(function(){ 
 
-	    if ($("input[name='q32']:checked").val() == 'yes'){
-	    	$("[name*='dateRectalExam']").attr("disabled", '');	    	
-	    	$("[name*='findings_rectal_exam']").attr("disabled", '');		    
-	    }
-	    else if ($("input[name='q32']:checked").val() == 'no'){
+if ($("input[name='q32']:checked").val() == 'no'){
 	    	$("[name*='dateRectalExam']").val('');
 	    	$("[name*='dateRectalExam']").attr("disabled", true);	    	
 	    	$("[name*='findings_rectal_exam']").val('');
 	    	$("[name*='findings_rectal_exam']").attr("disabled", true);	    
 	    }
 
-
-	    if ($("input[name='q33']:checked").val() == 'yes'){
-	    	$("[name*='dateMostRecentPSAtest']").attr("disabled", '');	    	
-	    	$("[name*='results_PSA_test']").attr("disabled", '');		    
-	    }
-	    else if ($("input[name='q33']:checked").val() == 'no'){
+if ($("input[name='q33']:checked").val() == 'no'){
 	    	$("[name*='dateMostRecentPSAtest']").val('');
 	    	$("[name*='dateMostRecentPSAtest']").attr("disabled", true);	    	
 	    	$("[name*='results_PSA_test']").val('');

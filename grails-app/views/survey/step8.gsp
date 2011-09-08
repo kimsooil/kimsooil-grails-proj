@@ -178,44 +178,24 @@ $(document).ready(function(){
 <g:javascript>        
 $(document).ready(function(){
 
-	    if ($("input[name='q37']:checked").val() != 'no'){
-	    	$("[name*='q37_what']").attr("disabled", '');		    
-	    	$("[name*='q38']").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q37']:checked").val() == 'no'){
+if ($("input[name='q37']:checked").val() == 'no'){
 	    	$("[name*='q37_what']").attr('checked', false);
 	    	$("[name*='q37_what']").attr("disabled", true);		    
 	    	$("[name*='q38']").attr('checked', false);
 	    	$("[name*='q38']").attr("disabled", true);	    
 	    }
 
-
-
-	    if ($("input[name='q39']:checked").val() == 'yes'){
-	    	$("[name*='q40']").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q39']:checked").val() == 'no'){
+if ($("input[name='q39']:checked").val() == 'no'){
 	    	$("[name*='q40']").val('');
 	    	$("[name*='q40']").attr("disabled", true);	    
 	    }
 
-
-	    if ($("input[name='q41']:checked").val() == 'yes' || $("input[name='q41']:checked").val() == 'five'){
-	    	$("[name*='dateDigitalRectalExam']").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q41']:checked").val() == 'no'){
+if ($("input[name='q41']:checked").val() == 'no'){
 	    	$("[name*='dateDigitalRectalExam']").val('');
 	    	$("[name*='dateDigitalRectalExam']").attr("disabled", true);	    
 	    }
 
-
-
-	    if ($("input[name='q42']:checked").val() == 'yes'){
-	    	$("[name*='dateSigmoidoscopyColonoscopy']").attr("disabled", '');
-	    	$("[name*='q42_']").attr("disabled", '');
-	    	$("[name*='q43']").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q42']:checked").val() == 'no'){
+if ($("input[name='q42']:checked").val() == 'no'){
 	    	$("[name*='dateSigmoidoscopyColonoscopy']").val('');
 	    	$("[name*='dateSigmoidoscopyColonoscopy']").attr("disabled", true);	  
 	    	
@@ -226,13 +206,7 @@ $(document).ready(function(){
 	    	$("[name*='q43']").attr("disabled", true);
 	    }
 
-
-
-	    if ($("input[name='q43']:checked").val() == 'yes'){
-	    	$("#q43_biopsy_results").attr("disabled", '');
-	    	$("#q43_biopsy_results").attr("disabled", '');	    			    
-	    }
-	    else if ($("input[name='q43']:checked").val() == 'no'){
+if ($("input[name='q43']:checked").val() == 'no'){
 	    	$("#q43_biopsy_results").val('');
 	    	$("#q43_biopsy_results").attr("disabled", true);	  
 	    }
