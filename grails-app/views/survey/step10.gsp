@@ -76,7 +76,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q63']").attr("disabled", '');    			    
 	    	$("[name*='q64']").attr("disabled", '');
 	    	$("[name*='q65']").attr("disabled", '');
-	    	$("[name*='q66']").val('');
+	    	//$("[name*='q66']").val('');
 	    	if ($("input[name='q63']:checked").val() == 'yes'){
 	    		$("[name*='q66InMenopause']").attr('checked', false);
 	    	 	$("[name*='q66InMenopause']").attr("disabled", true);
@@ -164,6 +164,87 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){
+
+
+	    if ($("input[name='q59']:checked").val() == 'yes'){
+	    	$("[name*='q59_']").attr("disabled", '');    			    
+	    }
+	    else if ($("input[name='q59']:checked").val() == 'no'){
+	    	$("[name*='q59_']").val('');
+	    	$("[name*='q59_']").attr("disabled", true);	  
+	    }
+
+
+	    if ($("input[name='q60']:checked").val() == 'yes'){
+	    	$("[name*='q61_whatAge']").attr("disabled", '');
+	    	$("[name*='q61']").attr("disabled", '');	      			    
+	    }
+	    else if ($("input[name='q60']:checked").val() == 'no'){
+	    	$("[name*='q61_whatAge']").val('');
+	    	$("[name*='q61_whatAge']").attr("disabled", true);
+	    	$("[name*='q61']").attr("checked", false);
+	    	$("[name*='q61']").attr("disabled", true);	  
+	    }
+
+
+	    if ($("input[name='q62']:checked").val() == 'yes'){
+	    	$("[name*='q63']").attr("disabled", '');    			    
+	    	$("[name*='q64']").attr("disabled", '');
+	    	$("[name*='q65']").attr("disabled", '');
+	    	//$("[name*='q66']").val('');
+	    	if ($("input[name='q63']:checked").val() == 'yes'){
+	    		$("[name*='q66InMenopause']").attr('checked', false);
+	    	 	$("[name*='q66InMenopause']").attr("disabled", true);
+	    	 }	 
+	    }
+	    else if ($("input[name='q62']:checked").val() == 'no'){
+	    	$("[name*='q63']").attr('checked', false);
+	    	$("[name*='q63']").attr("disabled", true);	  
+	    	$("[name*='q64']").val('');
+	    	$("[name*='q64']").attr("disabled", true);	  
+	    	$("[name*='q65']").val('');
+	    	$("[name*='q65']").attr("disabled", true);	  
+	    	$("[name*='q66InMenopause']").attr("disabled", ''); 
+	    }
+
+
+	    if ($("input[name='q63']:checked").val() == 'yes'){
+	    	if ($("input[name='q62']:checked").val() == 'yes'){
+	    		$("[name*='q66InMenopause']").attr('checked', false);
+	    		$("[name*='q66InMenopause']").attr("disabled", true);
+	    		
+	    	}	 
+	    }
+	    else if ($("input[name='q63']:checked").val() == 'no'){
+
+	    	$("[name*='q66InMenopause']").attr("disabled", ''); 
+	    }
+
+
+		if ($("input[name='q66']:checked").val() == 'no' && $("input[name='q67']:checked").val() == 'no'){
+	    	$("#q68").val('');
+	    	$("#q68").attr("disabled", true);	  
+
+	    }
+	    else {
+	    	$("#q68").attr("disabled", '');
+	    }
+
+
+	    
+
+	    if ($("input[name='q69']:checked").val() == 'yes'){
+			$("[name*='q69_']").attr("disabled", '');
+	    }
+	    else if ($("input[name='q69']:checked").val() == 'no'){
+	    	$("[name*='q69_']").val('');
+	    	$("[name*='q69_']").attr("disabled", true);	  
+	    }
+
+});	
+</g:javascript>
             <h1><g:message code="step10.label" default="Step10" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -319,12 +400,14 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q66" default="q66" /></label></td>
 	                    	<td style="width:60%">
+
 	                        	<g:radioGroup name="q66InMenopause"
 	                            	value="${surveyInstance?.q66InMenopause}" 
 	                                labels="${yesno }"
 	                                values="['yes','no']" >
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 								</g:radioGroup>
+
 							</td>
 						</tr>
 	                    <tr>

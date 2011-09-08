@@ -1409,7 +1409,7 @@ class SurveyController {
 			def q51_3_date_short = it.q51date3 ? String.format('%tY/%<tm', it.q51date3): ""
 			def q51_4_date_short = it.q51date4 ? String.format('%tY/%<tm', it.q51date4): ""
 			def q51_5_date_short = it.q51date5 ? String.format('%tY/%<tm', it.q51date5): ""
-			def q51_6_date_short = it.q51date6 ? String.format('%tY/%<tm', it.q51date): ""
+			def q51_6_date_short = it.q51date6 ? String.format('%tY/%<tm', it.q51date6): ""
 			it.putAt("q51_1_date_short", q51_1_date_short)
 			it.putAt("q51_2_date_short", q51_2_date_short)
 			it.putAt("q51_3_date_short", q51_3_date_short)
@@ -2139,6 +2139,14 @@ class SurveyController {
 				params.q43="n/a"
 				params.q43_biopsy_results=" "
 			}
+			if (params.q51=="no"){
+				params.q51_1="n/a"
+				params.q51_2="n/a"
+				params.q51_3="n/a"
+				params.q51_4="n/a"
+				params.q51_5="n/a"
+				params.q51_6="n/a"
+			}
 
             surveyInstance.properties = params
 
@@ -2230,6 +2238,14 @@ class SurveyController {
 				params.q42_8="n/a"
 				params.q43="n/a"
 				params.q43_biopsy_results=" "
+			}
+			if (params.q51=="no"){
+				params.q51_1="no"
+				params.q51_2="no"
+				params.q51_3="no"
+				params.q51_4="no"
+				params.q51_5="no"
+				params.q51_6="no"
 			}
 			surveyInstance.properties = params
 			
