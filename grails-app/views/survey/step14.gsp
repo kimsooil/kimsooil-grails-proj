@@ -328,6 +328,159 @@ $(document).ready(function(){
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+
+if ($("input[name='q90_1']:checked").val() == 'no'){
+	    	$("#q90_1_age").val('');
+	    	$("#q90_1_age").attr("disabled", true);
+	    	//$("[name*='q90_1_year']").val('');
+	    	$("[name*='q90_1_year']").attr("disabled", true);
+	    }
+
+if ($("input[name='q90_2']:checked").val() == 'no'){
+	    	$("#q90_2_age").val('');
+	    	$("#q90_2_age").attr("disabled", true);
+	    	//$("[name*='q90_2_year']").val('');
+	    	$("[name*='q90_2_year']").attr("disabled", true);
+	    }
+if ($("input[name='q90_3']:checked").val() == 'no'){
+	    	$("#q90_3_age").val('');
+	    	$("#q90_3_age").attr("disabled", true);
+	    	//$("[name*='q90_3_year']").val('');
+	    	$("[name*='q90_3_year']").attr("disabled", true);
+	    }
+
+if ($("input[name='q90_4']:checked").val() == 'no'){
+	    	$("#q90_4_age").val('');
+	    	$("#q90_4_age").attr("disabled", true);
+	    	//$("[name*='q90_4_year']").val('');
+	    	$("[name*='q90_4_year']").attr("disabled", true);
+	    }
+
+if ($("input[name='q90_5']:checked").val() == 'no'){
+	    	$("#q90_5_age").val('');
+	    	$("#q90_5_age").attr("disabled", true);
+	    	//$("[name*='q90_5_year']").val('');
+	    	$("[name*='q90_5_year']").attr("disabled", true);
+	    }
+
+if ($("input[name='q90_6']:checked").val() == 'no'){
+	    	$("#q90_6_age").val('');
+	    	$("#q90_6_age").attr("disabled", true);
+	    	//$("[name*='q90_6_year']").val('');
+	    	$("[name*='q90_6_year']").attr("disabled", true);
+	    }
+
+if ($("input[name='q91_1']:checked").val() == 'never'){
+	    	//$("#q91_1_howManyYears").val('');
+	    	$("#q91_1_howManyYears").attr("disabled", true);
+	    }
+
+if ($("input[name='q91_2']:checked").val() == 'never'){
+	    	//$("#q91_2_howManyYears").val('');
+	    	$("#q91_2_howManyYears").attr("disabled", true);
+	    }
+
+if ($("input[name='q91_3']:checked").val() == 'never'){
+	    	//$("#q91_3_howManyYears").val('');
+	    	$("#q91_3_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_1']:checked").val() == 'never'){
+	    	//$("#q92_1_howManyYears").val('');
+	    	$("#q92_1_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_2']:checked").val() == 'never'){
+	    	//$("#q92_2_howManyYears").val('');
+	    	$("#q92_2_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_3']:checked").val() == 'never'){
+	    	//$("#q92_3_howManyYears").val('');
+	    	$("#q92_3_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_4']:checked").val() == 'never'){
+	    	//$("#q92_4_howManyYears").val('');
+	    	$("#q92_4_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_5']:checked").val() == 'never'){
+	    	//$("#q92_5_howManyYears").val('');
+	    	$("#q92_5_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_6']:checked").val() == 'never'){
+	    	//$("#q92_6_howManyYears").val('');
+	    	$("#q92_6_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_7']:checked").val() == 'never'){
+	    	//$("#q92_7_howManyYears").val('');
+	    	$("#q92_7_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_8']:checked").val() == 'never'){
+	    	//$("#q92_8_howManyYears").val('');
+	    	$("#q92_8_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q92_9']:checked").val() == 'never'){
+	    	//$("#q92_9_howManyYears").val('');
+	    	$("#q92_9_howManyYears").attr("disabled", true);
+	    }
+if ($("input[name='q93']:checked").val() == 'no'){
+	    	//$("[name*='q93_'][type=radio]").attr('checked', false);
+	    	$("[name*='q93_'][type=radio]").filter('[value="never"]').attr('checked', 'checked');
+	    	$("[name*='q93_'][type=radio]").attr("disabled", true);	  
+	    //	$("[name*='q93_'][type=text]").val('');
+	    	$("[name*='q93_'][type=text]").attr("disabled", true);
+	    }
+if ($("input[name='q93_1']:checked").val() == 'never'){
+	    	//$("#q93_1_howManyMonths").val('');
+	    	$("#q93_1_howManyMonths").attr("disabled", true);
+	    }
+if ($("input[name='q93_2']:checked").val() == 'never'){
+	    	//$("#q93_2_howManyMonths").val('');
+	    	$("#q93_2_howManyMonths").attr("disabled", true);
+	    }
+if ($("input[name='q93_3']:checked").val() == 'never'){
+	    	//$("#q93_3_howManyMonths").val('');
+	    	$("#q93_3_howManyMonths").attr("disabled", true);
+	    }
+if ($("input[name='q93_4']:checked").val() == 'never'){
+	    	//$("#q93_4_howManyMonths").val('');
+	    	$("#q93_4_howManyMonths").attr("disabled", true);
+	    }
+if ($("input[name='q93_5']:checked").val() == 'never'){
+	    	//$("#q93_5_howManyMonths").val('');
+	    	$("#q93_5_howManyMonths").attr("disabled", true);
+	    }
+if ($("input[name='q94_1']:checked").val() == 'still_using'){
+	    	//$("#q94_1_ageStop").val('');
+	    	$("#q94_1_ageStop").attr("disabled", true);
+	    }
+if ($("input[name='q94_2']:checked").val() == 'still_using'){
+	    	//$("#q94_2_ageStop").val('');
+	    	$("#q94_2_ageStop").attr("disabled", true);
+	    }
+if ($("input[name='q94_3']:checked").val() == 'still_using'){
+	    	//$("#q94_3_ageStop").val('');
+	    	$("#q94_3_ageStop").attr("disabled", true);
+	    }
+if ($("input[name='q94_4']:checked").val() == 'still_using'){
+	    	//$("#q94_4_ageStop").val('');
+	    	$("#q94_4_ageStop").attr("disabled", true);
+	    }
+if ($("input[name='q94_4']:checked").val() == 'still_using'){
+	    	//$("#q94_4_ageStop").val('');
+	    	$("#q94_4_ageStop").attr("disabled", true);
+	    }
+if ($("input[name='q94_5']:checked").val() == 'still_using'){
+	    	//$("#q94_5_ageStop").val('');
+	    	$("#q94_5_ageStop").attr("disabled", true);
+	    }
+if ($("input[name='q94_6']:checked").val() == 'still_using'){
+	    	//$("#q94_6_ageStop").val('');
+	    	$("#q94_6_ageStop").attr("disabled", true);
+	    }
+
+		
+});	 
+</g:javascript>
             <h1><g:message code="step14.label" default="Step14" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
