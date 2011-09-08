@@ -128,6 +128,7 @@ $(document).ready(function(){
 	$("input[name='q83']").change(function(){
 	    if ($("input[name='q83']:checked").val() == 'yes'){
 			$("[name*='q84_'][type=radio]").attr("disabled", '');
+			$("[name*='q84_'][type=radio]").removeAttr("checked");	 
 			$("[name*='q84_'][type=text]").attr("disabled", '');
 			$("[name*='_rad_date']").attr("disabled", '');	    
 	    }
