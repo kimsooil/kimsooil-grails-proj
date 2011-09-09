@@ -97,9 +97,9 @@ def incomplete=surveyInstanceTotal-completed
                             </g:if>                            
                             </td>
                              --%>                        
-                            <td><g:formatDate date="${surveyInstance.dateCreated}" format="MM/dd/yyyy hh:mm:ss"/></td>
-                        	<td><g:formatDate date="${surveyInstance.lastUpdated}" format="MM/dd/yyyy hh:mm:ss"/></td>
-                        	<td><g:formatDate date="${surveyInstance.dateCompleted}" format="MM/dd/yyyy hh:mm:ss"/></td>
+                            <td><g:formatDate date="${surveyInstance.dateCreated}" format="MM/dd/yyyy HH:mm:ss"/></td>
+                        	<td><g:formatDate date="${surveyInstance.lastUpdated}" format="MM/dd/yyyy HH:mm:ss"/></td>
+                        	<td><g:formatDate date="${surveyInstance.dateCompleted}" format="MM/dd/yyyy HH:mm:ss"/></td>
                         
                         </tr>
                         
