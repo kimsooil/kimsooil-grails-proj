@@ -98,8 +98,18 @@ $(document).ready(function(){
 	);
 	$("input[name='being_treated_for_cancer']").change(function(){
 		DisableEnableForm(document.surveyform1,false);
-	});			
+	});
+    $('#consentNum').click(function(){
+          this.value = '';
+          this.style.color = 'red';
+    }).blur(function(){
+      if ( this.value == '')
+          this.value = '---ICN---';
+           this.style.color = 'red';
+    });						
 });	
+
+
     </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
@@ -151,8 +161,8 @@ $(document).ready(function(){
                 		  from="${u56survey.Site.list()}"
                 		  optionKey="fourletters"
                 		  value="${surveyInstance?.consentNumLoc}"  /> -
-                <g:textField name="consentNum" value="${surveyInstance?.consentNum}" 
-                		  style="width: 50px;"
+                <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}" 
+                		  style="width: 70px;color:red;"
                 		  onkeyup="${remoteFunction(
                 		  				action:'ajaxValidICNorNot',
                 		  				update:'lblvalidICNorNot',
