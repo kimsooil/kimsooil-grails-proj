@@ -41,8 +41,8 @@ class BootStrap {
 			case "development":
 				if (!u56survey.Person.findByLogin("admin")){
 					def admin = new u56survey.Person(login:"admin", password:"pa\$\$word", name:"Administrator", role:"admin", location:"MOFF", language:"English").save()
-					def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
-					def demo = new u56survey.Person(login:"demo", password:"demo", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+					//def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+					//def demo = new u56survey.Person(login:"demo", password:"demo", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
 				}
 				/****
 				for ( i in 0..10000 ) { // testing to see if creation/update speed is fast enough as the size grows
@@ -56,8 +56,8 @@ class BootStrap {
 			case "production":
 				if (!u56survey.Person.findByLogin("admin")){
 				  def admin = new u56survey.Person(login:"admin", password:"pa\$\$word", name:"Administrator", role:"admin", location:"MOFF", language:"English").save()
-				  def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
-				  def demo = new u56survey.Person(login:"demo", password:"demo", name:"DEMO-Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+				  //def survey = new u56survey.Person(login:"survey", password:"\$urvey", name:"Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
+				  //def demo = new u56survey.Person(login:"demo", password:"demo", name:"DEMO-Surveyer", role:"surveyer", location:"MOFF", language:"English").save()
 				}
 			break
 		  }

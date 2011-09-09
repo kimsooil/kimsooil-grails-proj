@@ -62,12 +62,14 @@ function confirmSubmit()
 </g:if>        
         <div class="body">
 <%--            <h1>Survey Form</h1> --%>
-
+<%--
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-<div id="errors" class="errors" style="display:none;">
+<div id="errors" class="errors" style="display:none;"> 
+
 </div>
+--%>
             <g:form name="surveyform_preview"
             		onsubmit="return confirmSubmit();"
 					method="post" >
