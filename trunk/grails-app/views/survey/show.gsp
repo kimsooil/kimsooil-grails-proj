@@ -141,6 +141,12 @@
                             
                         </tr>
                         <tr class="prop">
+                            <td valign="top" class="name">date Completed</td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${surveyInstance?.dateCompleted}" /></td>
+                            
+                        </tr>                        
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="Current Step" default="Current Step" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: surveyInstance, field: "step")}</td>
