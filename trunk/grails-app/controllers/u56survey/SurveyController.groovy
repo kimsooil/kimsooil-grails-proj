@@ -36,10 +36,12 @@ class SurveyController {
 		"id",
 		"surveyer",
 		"completed",
+		"completedBy",
 		"consentNumSurv",
 		"consentNumLoc",
 		"consentNum",
-		"mrn",
+		//"mrn",
+		"step",
 		"dateCreated",
 		"lastUpdated",
 		"being_treated_for_cancer",
@@ -676,11 +678,13 @@ class SurveyController {
 	Map global_labels =[
 "id":"id",
 "surveyer":"consenter",
-"completed":"completedOrNot",
+"completed":"Completed",
+"completedBy":"CompletedBy",
 "consentNumSurv":"surveyName",
 "consentNumLoc":"site",
-"consentNum":"icn",
-"mrn":"mrn",
+"consentNum":"InformedConsentNumber",
+//"mrn":"mrn",
+"step":"step",
 "dateCreated":"Created",
 "lastUpdated":"Updated",
 
@@ -1457,8 +1461,9 @@ class SurveyController {
 		
 		
 		if(params?.format && params.format != "html"){
+			if (params.extension=="csv") params.extension="tsv.txt"
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format] 
-			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}.txt")
+			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
 			
 			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
@@ -1497,8 +1502,9 @@ class SurveyController {
 		
 		
 		if(params?.format && params.format != "html"){
+			if (params.extension=="csv") params.extension="tsv.txt"
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format]
-			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}.txt")
+			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
 			
 			//exportService.export(params.format, response.outputStream, Survey.list(params), [:], [:])
@@ -2041,6 +2047,7 @@ class SurveyController {
 			surveyInstance.completed=true
 			surveyInstance.step='completed'
 			surveyInstance.completedBy = session.user.login
+			surveyInstance.dateCompleted=new Date()
 			
 			//surveyCompletedInstance.properties = params
 			//surveyCompletedInstance.completed=true
@@ -2248,6 +2255,9 @@ class SurveyController {
 				params.q51_5="no"
 				params.q51_6="no"
 			}
+			//if (params.consentNumLoc!="PRTB"){
+		//		params.otherNumberOrComments=" "
+			//}
 
 			surveyInstance.properties = params
 			

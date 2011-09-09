@@ -9,12 +9,7 @@
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>                
 </g:if>
 <g:else>                
-                <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <label style="text-decoration : underline;">${surveyInstance?.consentNumSurv}</label> - 
-                <g:select disabled="true"
-                		name="consentNumLoc" 
-                		from="${surveyInstance.constraints.consentNumLoc.inList}" 
-                		value="${surveyInstance?.consentNumLoc}" 
-                		valueMessagePrefix="survey.consentNumLoc"  /> - <g:textField style="width: 50px;" name="consentNum" value="${surveyInstance?.consentNum}" /> (<g:textField style="width: 50px;" name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</h3><br/>
+                <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <label style="color:red;">${surveyInstance?.consentNumSurv} - ${surveyInstance?.consentNumLoc} - ${surveyInstance?.consentNum} <g:if test="${surveyInstance?.otherNumberOrComments}">(${surveyInstance?.otherNumberOrComments})</g:if></label></h3><br/>
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
 </g:else>                
                 <br/>

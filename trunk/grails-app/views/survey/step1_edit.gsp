@@ -117,7 +117,16 @@ $(document).ready(function(){
 	  		$("[name*='being_treated_for_cancer'][type=radio]").attr("disabled", "");
 	  		$("#consentNumLoc").attr("disabled", "");
 	  		$("#consentNum").attr("disabled", "");
+	  		$("#otherNumberOrComments").attr("disabled", "");
 	  	}
+		if ($("#consentNumLoc").val()=='PRTB')
+		{
+			$("#otherNumber").show();
+		}
+		else {
+			$("#otherNumber").hide();
+			$("#otherNumberOrComments").val('');
+		}		  	
 });		  	
 </g:javascript>
             <h1><g:message code="step1.edit.label" default="Step1-edit" /></h1>
@@ -154,7 +163,7 @@ $(document).ready(function(){
                 		  				action:'ajaxValidICNorNot',
                 		  				update:'lblvalidICNorNot',
                 		  				params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
-                <span id="otherNumber" style="display:none">(<g:textField style="width: 50px;" name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
+                <span id="otherNumber">(<g:textField style="width: 50px;" name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
                 </h3>
                 <br/>
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
