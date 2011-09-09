@@ -1,5 +1,5 @@
 <g:if test="${surveyInstance?.dateCreated}">
-&nbsp;&nbsp;&nbsp;(Created: <g:formatDate date="${surveyInstance?.dateCreated}" type="datetime" style="SHORT" timeStyle="SHORT"/>, Updated: <g:formatDate date="${surveyInstance?.lastUpdated}" type="datetime" style="SHORT" timeStyle="SHORT"/>)
+&nbsp;&nbsp;&nbsp;(Created: <g:formatDate date="${surveyInstance?.dateCreated}" type="datetime" style="SHORT" timeStyle="SHORT"/>, <g:if test="${surveyInstance?.dateCompleted}">Completed: <g:formatDate date="${surveyInstance?.dateCompleted}" type="datetime" style="SHORT" timeStyle="SHORT"/></g:if><g:else>Updated: <g:formatDate date="${surveyInstance?.lastUpdated}" type="datetime" style="SHORT" timeStyle="SHORT"/></g:else>)
 <br/>
 </g:if>
 <g:javascript>
