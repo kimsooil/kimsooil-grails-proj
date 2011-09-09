@@ -12,7 +12,7 @@
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <g:if test="${session.user.role=='admin' }">
-            	<span class="menuButton"><g:link controller="survey" class="list" action="calendarview">Calendar View</g:link></span>
+            	<%--<span class="menuButton"><g:link controller="survey" class="list" action="calendarview">Calendar View</g:link></span> --%>
             	<span class="menuButton"><g:link controller="person" class="list" action="list">Manage User</g:link></span>
             	<span class="menuButton"><g:link controller="survey" class="list" action="print">Print Form</g:link></span>
             </g:if>

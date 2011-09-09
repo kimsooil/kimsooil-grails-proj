@@ -29,7 +29,7 @@ def incomplete=surveyInstanceTotal-completed
                             <g:sortableColumn property="consentNumSurv" title="Survey Name" />
                             <g:sortableColumn property="consentNumLoc" title="Location" />
 							<g:sortableColumn property="consentNum" title="Informed Consent Number" />
-							<g:sortableColumn property="otherNumberOrComments" title="Other Number, ID, etc." />
+							<%--<g:sortableColumn property="otherNumberOrComments" title="Other Number, ID, etc." /> --%>
                             <g:sortableColumn property="surveyer" title="surveyer" />  
                             
                             <g:sortableColumn property="completed" title="Completed" />         
@@ -41,7 +41,7 @@ def incomplete=surveyInstanceTotal-completed
                             <g:sortableColumn property="dateCreated" title="${message(code: 'survey.dateCreated.label', default: 'Date Created')}" />
                             
                             <g:sortableColumn property="lastUpdated" title="${message(code: 'survey.lastUpdated.label', default: 'Date updated')}" />
-                        
+                            <g:sortableColumn property="dateCompleted" title="Date Completed" />                        
                         </tr>
                     </thead>
                     <tbody>
@@ -61,7 +61,7 @@ def incomplete=surveyInstanceTotal-completed
                         	<td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.consentNumSurv}</g:link></td>
                         	<td><g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.consentNumLoc}</g:link></td>
                             <td><g:link action="${stepNumUrl }" id="${surveyInstance.id}"><g:formatNumber number="${surveyInstance?.consentNum }" format="####"/></g:link></td>
-                            <td><g:link action="${stepNumUrl }" id="${surveyInstance.otherNumberOrComments}">${surveyInstance?.otherNumberOrComments}</g:link></td>
+                            <%--<td><g:link action="${stepNumUrl }" id="${surveyInstance.otherNumberOrComments}">${surveyInstance?.otherNumberOrComments}</g:link></td> --%>
                         	<td>${surveyInstance?.surveyer}</td>
                         	<td>
                             <g:if test="${surveyInstance?.completed}">
@@ -99,6 +99,7 @@ def incomplete=surveyInstanceTotal-completed
                              --%>                        
                             <td><g:formatDate date="${surveyInstance.dateCreated}" format="MM/dd/yyyy hh:mm:ss"/></td>
                         	<td><g:formatDate date="${surveyInstance.lastUpdated}" format="MM/dd/yyyy hh:mm:ss"/></td>
+                        	<td><g:formatDate date="${surveyInstance.dateCompleted}" format="MM/dd/yyyy hh:mm:ss"/></td>
                         
                         </tr>
                         

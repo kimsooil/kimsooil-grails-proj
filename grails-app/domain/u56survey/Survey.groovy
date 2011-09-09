@@ -3,6 +3,7 @@ package u56survey
 class Survey {
 	Date dateCreated // built-in
 	Date lastUpdated // built-in
+	Date dateCompleted
 
 //  New ID / ethnic 	
 	Integer consentNum // informed consent number
