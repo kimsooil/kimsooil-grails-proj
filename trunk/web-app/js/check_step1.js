@@ -6,7 +6,7 @@
 	fv = new formValidator();
 	
 	if ($("#consentNum").val()=='---ICN---' || $("#lblvalidICNorNot").text()!=""){
-		fv.raiseError("Invalid ICN");
+		fv.raiseError(i18nmessages.step1ErrICN);
 	}
 	if (!fv.isRadioChecked(document.getElementsByName('being_treated_for_cancer'))){
 		fv.raiseError(i18nmessages.step1Err1);
