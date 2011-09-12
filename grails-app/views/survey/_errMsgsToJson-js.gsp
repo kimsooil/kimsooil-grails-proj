@@ -14,6 +14,7 @@ function updateConfigurationMap(newConfigurationMap) {
 }
 updateConfigurationMap({
 
+   step1ErrICN : "${message(code:'step1.err.msgs.icn').encodeAsHTML()}",
    step1Err1 : "${message(code:'step1.err.msgs1').encodeAsHTML()}",
    step1Err2 : "${message(code:'step1.err.msgs2').encodeAsHTML()}",
    step1Err3 : "${message(code:'step1.err.msgs3').encodeAsHTML()}",
