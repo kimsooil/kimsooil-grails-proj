@@ -47,8 +47,7 @@
 		fv.raiseError(i18nmessages.step1Err7);
 	}
 	if (fv.isEmpty(document.getElementById('addr_street1').value) ||
-		fv.isEmpty(document.getElementById('addr_city').value) ||
-		(document.getElementById('country').value=='US' && fv.isEmpty(document.getElementById('addr_state').value)) ){
+		fv.isEmpty(document.getElementById('addr_city').value)  ){
 			fv.raiseError(i18nmessages.step1Err8);
 	}
 	if (	(document.getElementById('country').value=='US' || document.getElementById('country').value=='PR') &&
