@@ -2345,13 +2345,13 @@ class SurveyController {
 			def whatNumber = whatEntered.toInteger()
 			if (whatNumber >=1 && whatNumber <10000){
 				//resultOut = Survey.findByConsentNum(whatEntered) ? "Existing ICN" : "Valid"
-				resultOut = Survey.findByConsentNum(whatEntered) ? "Existing ICN" : ""
+				resultOut = Survey.findByConsentNum(whatEntered) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
 			}
 			else
-				resultOut = "Valid rane: 1 ~ 9999"
+				resultOut = "1 ~ 9999"
 		}
 		else 
-			resultOut = "Number Only"
+			resultOut = message(code: 'step1.err.msgs.icn', default: 'Number Only')
 		//render params['icnEntered']
 		render "<font color='red'>"+resultOut+"</font>"
 	}
