@@ -32,7 +32,11 @@ function checkForm8()
 	{
 		fv.raiseError(i18nmessages.step8Err5);
 	}
-	if (getRadioValue(document.getElementsByName('q39'))=='yes' && !fv.isRadioChecked(document.getElementsByName('q40')) )
+	if (!fv.isRadioChecked(document.getElementsByName('q40')) )
+	{
+		fv.raiseError(i18nmessages.step8Err6);
+	}
+	if (getRadioValue(document.getElementsByName('q40'))=='yes' && !fv.isRadioChecked(document.getElementsByName('resultsFecalOccultBloodTest')) )
 	{
 		fv.raiseError(i18nmessages.step8Err6);
 	}
@@ -98,12 +102,14 @@ function checkForm8()
 		{
 			fv.raiseError(i18nmessages.step8Err12);
 		}
+		/*
 		if (getRadioValue(document.getElementsByName('q43'))=='yes' &&
 			fv.isEmpty($('#q43_biopsy_results').val())
 		)
 		{
 			fv.raiseError(i18nmessages.step8Err13);
 		}
+		*/
 	}
 	if (!fv.isRadioChecked(document.getElementsByName('q44')) )
 	{

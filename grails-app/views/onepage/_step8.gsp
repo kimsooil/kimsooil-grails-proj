@@ -108,12 +108,21 @@
                     	<%
 						def negpov=[message(code:'survey.negative'), message(code:'survey.positive')]
 						 %>
-                        	<g:radioGroup name="q40"
+						    <g:radioGroup name="q40"
                             	value="${surveyInstance?.q40}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup><br/><br/>
+						 <g:message code="survey.results" default="Results" />: <br/>
+
+                        	<g:radioGroup name="resultsFecalOccultBloodTest"
+                            	value="${surveyInstance?.resultsFecalOccultBloodTest}" 
                                 labels="${negpov }" 
                                 values="['negative', 'positive']" >
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
-							</g:radioGroup>                    	
+							</g:radioGroup>
+                 	
                     	</td>
                     </tr>
                     <tr>
