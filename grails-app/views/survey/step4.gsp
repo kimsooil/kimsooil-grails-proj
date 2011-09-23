@@ -305,7 +305,7 @@ if ($("input[name='q16']:checked").val() == 'no'){
 							<g:message code="survey.q14_howManyPerWeek.label" default="q14_howManyPerWeek" /><br/>
 							<g:textField name="${('q14_'+idx+'_howManyPerWeek')}" 
 										 value="${surveyInstance?.('q14_'+idx+'_howManyPerWeek')}"
-										 onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('alcohol_status'+idx)}\')); " /> <span id="${('alcohol_status'+idx)}"></span>
+										 onkeyup="checkIfValidNumber(this.value, 1, 50, document.getElementById(\'${('alcohol_status'+idx)}\')); " /> <span id="${('alcohol_status'+idx)}"></span>
                 		</td>
                 	</tr>
                 	</g:each>
@@ -341,7 +341,7 @@ if ($("input[name='q16']:checked").val() == 'no'){
 									<g:message code="survey.q15_howManyTimesPerWeek.label" default="q15_howManyTimesPerWeek" /> 
 									<g:textField name="${('q15_'+idx+'_howManyTimesPerWeek')}" 
 												 value="${surveyInstance?.('q15_'+idx+'_howManyTimesPerWeek')}"
-												 onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('tobaccoWeek_status'+idx)}\')); " /> <span id="${('tobaccoWeek_status'+idx)}"></span>
+												 onkeyup="checkIfValidNumber(this.value, 1, 100, document.getElementById(\'${('tobaccoWeek_status'+idx)}\')); " /> <span id="${('tobaccoWeek_status'+idx)}"></span>
 									<br/>
 									<g:message code="survey.q15_howManyYears.label" default="q15_howManyYears" />
 									<g:textField name="${('q15_'+idx+'_howManyYears')}"
