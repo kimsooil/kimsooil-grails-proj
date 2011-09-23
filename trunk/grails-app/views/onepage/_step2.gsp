@@ -165,7 +165,7 @@
 	                    	<g:each in="${CancerList}" status="i" var="cancertype">
 	                    	<% def idx=i+1 %>
 	                    	<tr class="prop">
-	                    	<td style="width: 35%;font-weight:bold;">
+	                    	<td style="width: 30%;font-weight:bold;">
 	                    		<g:if test="${cancertype==message(code:'survey.q12_prostate') }"><label style="color:#0000FF"></g:if><g:else><label></g:else>
 	                    		<g:if test="${cancertype==message(code:'survey.q12_cervical') || cancertype==message(code:'survey.q12_uterine') || cancertype==message(code:'survey.q12_ovarian') }"><label style="color:#FF1493"></g:if><g:else><label></g:else>
 	                    		${idx}. ${cancertype}
