@@ -187,8 +187,11 @@ if ($("input[name='q37']:checked").val() == 'no'){
 	    	$("[name*='q38']").attr("disabled", true);	    
 	    }
 
+if ($("input[name='q40']:checked").val() == 'yes'){
 
-if ($("input[name='q40']:checked").val() == 'no'){
+	    	$("[name*='resultsFecalOccultBloodTest']").attr("disabled", '');	
+                }
+else if ($("input[name='q40']:checked").val() == 'no'){
 
 	    	$("[name*='resultsFecalOccultBloodTest']").attr("checked", false);
 	    	$("[name*='resultsFecalOccultBloodTest']").attr("disabled", true);	    
