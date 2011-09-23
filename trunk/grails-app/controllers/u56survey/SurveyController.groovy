@@ -328,6 +328,7 @@ class SurveyController {
 		"q38",
 		"q39",
 		"q40",
+		"resultsFecalOccultBloodTest",
 		"q41",
 		"date_digital_rectal_exam_short",
 		"q42",
@@ -988,7 +989,8 @@ class SurveyController {
 "q37_what":"Q042_rectal_bleeding_type",
 "q38":"Q043_pain_rectal_bleeding",
 "q39":"Q044_whether_recommended_fecal_occult_blood_test",
-"q40":"Q045_result_fecal_occult_blood_test",
+"q40":"Q045_had_fecal_occult_blood_test",
+"resultsFecalOccultBloodTest":"Q045_result_fecal_occult_blood_test",
 "q41":"Q046_have_digital_rectal_exam",
 "date_digital_rectal_exam_short":"Q046_date_digital_rectal_exam",
 "q42":"Q047_have_sigmoidoscopy_or_colonoscopy",
@@ -2134,8 +2136,8 @@ class SurveyController {
 				params.q37_what="n/a"
 				params.q38="n/a"
 			}
-			if (params.q39=="no"){
-				params.q40="n/a"
+			if (params.q40=="no"){
+				params.resultsFecalOccultBloodTest="n/a"
 			}
 			if (params.q42=="no"){
 				params.q42_1="n/a"
@@ -2234,8 +2236,9 @@ class SurveyController {
 				params.q37_what="n/a"
 				params.q38="n/a"
 			}
-			if (params.q39=="no"){
-				params.q40="n/a"
+
+			if (params.q40=="no"){
+				params.resultsFecalOccultBloodTest="n/a"
 			}
 			if (params.q42=="no"){
 				params.q42_1="n/a"

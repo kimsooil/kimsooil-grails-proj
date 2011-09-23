@@ -300,7 +300,7 @@ class Survey {
 	String q39 // have you doctor or health care provider recommended that you have a fecal occult blood test
 	
 	// q40: results of the fecal occult blood test
-	String q40 // negative / positive
+	String q40, resultsFecalOccultBloodTest // negative / positive
 	
 	
 	String q41 // q41: have you ever had a digital rectal exam (yes/no/five or more years)

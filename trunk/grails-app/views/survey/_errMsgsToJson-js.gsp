@@ -72,6 +72,7 @@ updateConfigurationMap({
    step5Err1 : "${message(code:'step5.err.msgs1').encodeAsHTML()}",
    step5Err2 : "${message(code:'step5.err.msgs2').encodeAsHTML()}",
    step5Err3 : "${message(code:'step5.err.msgs3').encodeAsHTML()}",
+   step5msg1 : "${message(code:'survey.q22.specify').encodeAsHTML()}",
    
    step6Err1 : "${message(code:'step6.err.msgs1').encodeAsHTML()}",
    step6Err2 : "${message(code:'step6.err.msgs2').encodeAsHTML()}",

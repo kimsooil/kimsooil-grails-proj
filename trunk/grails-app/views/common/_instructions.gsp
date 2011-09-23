@@ -8,6 +8,7 @@
 		<li>Select institution</li> 
 		<li>Confirm that Questionnaire ID number matches the Consent form number</li>
 		<li>To advanced to next questionnaire section used the selection of pages in the bottom bar</li>
+		<li><u>To save the inputs</u>, hit '<b>Next</b>' (or '<b>Finish later</b>'). <font color="red">If not, input data will not be saved</font></li>
 		<li>When survey is completed:</li> 
 			<ul>
 				<li>Press Verify</li>

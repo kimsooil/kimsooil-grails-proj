@@ -61,22 +61,24 @@ $(document).ready(function(){
 	    	$("[name*='q38']").attr("disabled", '');	    			    
 	    }
 	    else if ($("input[name='q37']:checked").val() == 'no'){
-	    	$("[name*='q37_what']").attr('checked', false);
+	    	$("[name*='q37_what']").attr("checked", false);
 	    	$("[name*='q37_what']").attr("disabled", true);		    
 	    	$("[name*='q38']").attr('checked', false);
 	    	$("[name*='q38']").attr("disabled", true);	    
 	    }
 	});
 
-	$("input[name='q39']").change(function(){
-	    if ($("input[name='q39']:checked").val() == 'yes'){
-	    	$("[name*='q40']").attr("disabled", '');	    			    
+
+	$("input[name='q40']").change(function(){
+	    if ($("input[name='q40']:checked").val() == 'yes'){
+	    	$("[name*='resultsFecalOccultBloodTest']").attr("disabled", '');	    			    
 	    }
-	    else if ($("input[name='q39']:checked").val() == 'no'){
-	    	$("[name*='q40']").val('');
-	    	$("[name*='q40']").attr("disabled", true);	    
+	    else if ($("input[name='q40']:checked").val() == 'no'){
+
+	    	$("[name*='resultsFecalOccultBloodTest']").attr("checked", false);
+	    	$("[name*='resultsFecalOccultBloodTest']").attr("disabled", true);	    
 	    }
-	});
+	});	
 	$("input[name='q41']").change(function(){
 	    if ($("input[name='q41']:checked").val() == 'yes' || $("input[name='q41']:checked").val() == 'five'){
 	    	$("[name*='dateDigitalRectalExam']").attr("disabled", '');	    			    
@@ -185,11 +187,12 @@ if ($("input[name='q37']:checked").val() == 'no'){
 	    	$("[name*='q38']").attr("disabled", true);	    
 	    }
 
-if ($("input[name='q39']:checked").val() == 'no'){
-	    	$("[name*='q40']").val('');
-	    	$("[name*='q40']").attr("disabled", true);	    
-	    }
 
+if ($("input[name='q40']:checked").val() == 'no'){
+
+	    	$("[name*='resultsFecalOccultBloodTest']").attr("checked", false);
+	    	$("[name*='resultsFecalOccultBloodTest']").attr("disabled", true);	    
+	    }
 if ($("input[name='q41']:checked").val() == 'no'){
 	    	$("[name*='dateDigitalRectalExam']").val('');
 	    	$("[name*='dateDigitalRectalExam']").attr("disabled", true);	    
@@ -345,12 +348,21 @@ if ($("input[name='q43']:checked").val() == 'no'){
                     	<%
 						def negpov=[message(code:'survey.negative'), message(code:'survey.positive')]
 						 %>
-                        	<g:radioGroup name="q40"
+						    <g:radioGroup name="q40"
                             	value="${surveyInstance?.q40}" 
+                                labels="${yesno }" 
+                                values="['yes','no']" >
+								<g:render template="/common/checkmark_radio" model="[it:it]"/>
+							</g:radioGroup><br/><br/>
+						 <g:message code="survey.results" default="Results" />: <br/>
+
+                        	<g:radioGroup name="resultsFecalOccultBloodTest"
+                            	value="${surveyInstance?.resultsFecalOccultBloodTest}" 
                                 labels="${negpov }" 
                                 values="['negative', 'positive']" >
 								<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
-							</g:radioGroup>                    	
+							</g:radioGroup>
+                 	
                     	</td>
                     </tr>
                     <tr>
