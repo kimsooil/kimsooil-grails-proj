@@ -226,7 +226,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q51_'][type=radio]").removeAttr("checked");	  			    
 	    }
 	    else if ($("input[name='q51']:checked").val() == 'no'){
-	    	$("[name*='q51_']").val('');
+	    	//$("[name*='q51_']").val('');
 	    	$("[name*='q51_']").attr("disabled", true);	 
 	    	$("[name*='q51date']").val('');
 	    	$("[name*='q51date']").attr("disabled", true);
