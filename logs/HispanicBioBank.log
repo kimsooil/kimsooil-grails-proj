@@ -11233,3 +11233,371 @@ Possible solutions: q40_result
 2011-09-23 16:14:10,456 [http-8080-1] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'gsp'
 2011-09-23 16:14:10,472 [http-8080-1] INFO  [localhost].[/hispbb]  - GSP servlet initialized
 2011-09-23 16:14:16,082 [http-8080-1] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-23 16:20:07,131 [main] INFO  http11.Http11Protocol  - Pausing Coyote HTTP/1.1 on http-8080
+2011-09-23 16:20:08,131 [main] INFO  core.StandardService  - Stopping service Tomcat
+2011-09-23 16:20:08,131 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'grails'
+2011-09-23 16:20:08,162 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'gsp'
+2011-09-23 16:20:08,318 [main] INFO  http11.Http11Protocol  - Stopping Coyote HTTP/1.1 on http-8080
+2011-09-23 16:20:09,396 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2011-09-23 16:20:09,396 [main] INFO  core.StandardService  - Starting service Tomcat
+2011-09-23 16:20:09,396 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2011-09-23 16:20:09,428 [main] INFO  tomcat.TomcatLoader  - Dual registration of jndi stream handler: factory already defined
+2011-09-23 16:20:09,428 [main] INFO  startup.ContextConfig  - No default web.xml
+2011-09-23 16:20:09,568 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2011-09-23 16:20:09,599 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2011-09-23 16:20:09,615 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2011-09-23 16:20:09,709 [main] INFO  [localhost].[/hispbb]  - Initializing Spring root WebApplicationContext
+2011-09-23 16:20:10,709 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2011-09-23 16:20:11,678 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Documents%20and%20Settings/kimsi/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2011-09-23 16:20:14,303 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@104a7cf: startup date [Fri Sep 23 16:20:10 EDT 2011]; parent: Root WebApplicationContext
+2011-09-23 16:20:14,678 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2011-09-23 16:20:14,724 [main] INFO  u56survey.DataSourceUtils  - Configured Datasource properties:
+2011-09-23 16:20:14,740 [main] INFO  u56survey.DataSourceUtils  -   targetDataSource=org.apache.commons.dbcp.BasicDataSource@6ba2ed
+2011-09-23 16:20:14,740 [main] INFO  u56survey.DataSourceUtils  -   connection=Transaction-aware proxy for target Connection  from DataSource [org.apache.commons.dbcp.BasicDataSource@6ba2ed]
+2011-09-23 16:20:14,740 [main] INFO  u56survey.DataSourceUtils  -   class=class org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy
+2011-09-23 16:20:14,740 [main] INFO  u56survey.DataSourceUtils  -   reobtainTransactionalConnections=false
+2011-09-23 16:20:14,740 [main] INFO  u56survey.DataSourceUtils  -   logWriter=java.io.PrintWriter@959ac0
+2011-09-23 16:20:14,834 [main] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'grails'
+2011-09-23 16:20:14,834 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2011-09-26 13:05:05,029 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2011-09-26 13:05:05,060 [main] INFO  core.StandardService  - Starting service Tomcat
+2011-09-26 13:05:05,060 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2011-09-26 13:05:05,560 [main] INFO  startup.ContextConfig  - No default web.xml
+2011-09-26 13:05:06,123 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2011-09-26 13:05:06,185 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2011-09-26 13:05:06,248 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2011-09-26 13:05:06,435 [main] INFO  [localhost].[/hispbb]  - Initializing Spring root WebApplicationContext
+2011-09-26 13:05:11,576 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2011-09-26 13:05:15,810 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Documents%20and%20Settings/kimsi/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2011-09-26 13:05:19,264 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@18a3745: startup date [Mon Sep 26 13:05:13 EDT 2011]; parent: Root WebApplicationContext
+2011-09-26 13:05:21,326 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2011-09-26 13:05:21,498 [main] INFO  u56survey.DataSourceUtils  - Configured Datasource properties:
+2011-09-26 13:05:21,529 [main] INFO  u56survey.DataSourceUtils  -   targetDataSource=org.apache.commons.dbcp.BasicDataSource@1722d01
+2011-09-26 13:05:21,529 [main] INFO  u56survey.DataSourceUtils  -   connection=Transaction-aware proxy for target Connection  from DataSource [org.apache.commons.dbcp.BasicDataSource@1722d01]
+2011-09-26 13:05:21,529 [main] INFO  u56survey.DataSourceUtils  -   class=class org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy
+2011-09-26 13:05:21,529 [main] INFO  u56survey.DataSourceUtils  -   reobtainTransactionalConnections=false
+2011-09-26 13:05:21,529 [main] INFO  u56survey.DataSourceUtils  -   logWriter=java.io.PrintWriter@e8cc94
+2011-09-26 13:05:22,576 [main] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'grails'
+2011-09-26 13:05:23,310 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2011-09-26 13:06:22,998 [http-8080-1] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'gsp'
+2011-09-26 13:06:23,014 [http-8080-1] INFO  [localhost].[/hispbb]  - GSP servlet initialized
+2011-09-26 13:09:26,078 [http-8080-2] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 13:16:28,471 [http-8080-4] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 14:41:25,144 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 14:43:10,160 [http-8080-5] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 14:44:02,739 [http-8080-5] ERROR [/hispbb].[gsp]  - Servlet.service() for servlet gsp threw exception
+org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException: Grails tag [g:if] was not closed at C:\grails-proj\hispbb6\hispbb\grails-app\views\layouts\main.gsp:109
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.endTag(GroovyPageParser.java:944)
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.page(GroovyPageParser.java:805)
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.generateGsp(GroovyPageParser.java:380)
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.parse(GroovyPageParser.java:326)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.buildPageMetaInfo(GroovyPagesTemplateEngine.java:584)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplate(GroovyPagesTemplateEngine.java:493)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplateWithResource(GroovyPagesTemplateEngine.java:473)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplate(GroovyPagesTemplateEngine.java:237)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplateForUri(GroovyPagesTemplateEngine.java:373)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplateForUri(GroovyPagesTemplateEngine.java:345)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesServlet.doService(GroovyPagesServlet.java:115)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:549)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.mapping.filter.UrlMappingsFilter.processFilterChain(UrlMappingsFilter.java:287)
+	at org.codehaus.groovy.grails.web.mapping.filter.UrlMappingsFilter.doFilterInternal(UrlMappingsFilter.java:205)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:70)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:70)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:70)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:646)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter$1$1.render(GrailsPageFilter.java:219)
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:34)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter.doFilter(GrailsPageFilter.java:142)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.filter.GrailsReloadServletFilter.doFilterInternal(GrailsReloadServletFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:237)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:167)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:662)
+2011-09-26 14:44:02,755 [http-8080-5] ERROR [localhost].[/hispbb]  - Unhandled exception occurred whilst decorating page
+java.lang.RuntimeException: org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException: Grails tag [g:if] was not closed at C:\grails-proj\hispbb6\hispbb\grails-app\views\layouts\main.gsp:109
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:40)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter.doFilter(GrailsPageFilter.java:142)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.filter.GrailsReloadServletFilter.doFilterInternal(GrailsReloadServletFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:237)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:167)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:662)
+2011-09-26 14:44:02,755 [http-8080-5] ERROR [/hispbb].[default]  - Servlet.service() for servlet default threw exception
+java.lang.RuntimeException: org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException: Grails tag [g:if] was not closed at C:\grails-proj\hispbb6\hispbb\grails-app\views\layouts\main.gsp:109
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:40)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter.doFilter(GrailsPageFilter.java:142)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.filter.GrailsReloadServletFilter.doFilterInternal(GrailsReloadServletFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:237)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:167)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:662)
+2011-09-26 14:44:02,770 [http-8080-5] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'grails-errorhandler'
+2011-09-26 14:44:04,801 [http-8080-5] ERROR [/hispbb].[gsp]  - Servlet.service() for servlet gsp threw exception
+org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException: Grails tag [g:if] was not closed at C:\grails-proj\hispbb6\hispbb\grails-app\views\layouts\main.gsp:109
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.endTag(GroovyPageParser.java:944)
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.page(GroovyPageParser.java:805)
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.generateGsp(GroovyPageParser.java:380)
+	at org.codehaus.groovy.grails.web.pages.GroovyPageParser.parse(GroovyPageParser.java:326)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.buildPageMetaInfo(GroovyPagesTemplateEngine.java:584)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplate(GroovyPagesTemplateEngine.java:493)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplateWithResource(GroovyPagesTemplateEngine.java:473)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplate(GroovyPagesTemplateEngine.java:237)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplateForUri(GroovyPagesTemplateEngine.java:373)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesTemplateEngine.createTemplateForUri(GroovyPagesTemplateEngine.java:345)
+	at org.codehaus.groovy.grails.web.pages.GroovyPagesServlet.doService(GroovyPagesServlet.java:115)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:644)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:549)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.mapping.filter.UrlMappingsFilter.processFilterChain(UrlMappingsFilter.java:287)
+	at org.codehaus.groovy.grails.web.mapping.filter.UrlMappingsFilter.doFilterInternal(UrlMappingsFilter.java:205)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:70)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:70)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:70)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:646)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter$1$1.render(GrailsPageFilter.java:219)
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:34)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter.doFilter(GrailsPageFilter.java:142)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.filter.GrailsReloadServletFilter.doFilterInternal(GrailsReloadServletFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:237)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:167)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:662)
+2011-09-26 14:44:04,801 [http-8080-5] ERROR [localhost].[/hispbb]  - Unhandled exception occurred whilst decorating page
+java.lang.RuntimeException: org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException: Grails tag [g:if] was not closed at C:\grails-proj\hispbb6\hispbb\grails-app\views\layouts\main.gsp:109
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:40)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter.doFilter(GrailsPageFilter.java:142)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.filter.GrailsReloadServletFilter.doFilterInternal(GrailsReloadServletFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:237)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:167)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:662)
+2011-09-26 14:44:04,801 [http-8080-5] ERROR [/hispbb].[default]  - Servlet.service() for servlet default threw exception
+java.lang.RuntimeException: org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException: Grails tag [g:if] was not closed at C:\grails-proj\hispbb6\hispbb\grails-app\views\layouts\main.gsp:109
+	at com.opensymphony.sitemesh.webapp.decorator.BaseWebAppDecorator.render(BaseWebAppDecorator.java:40)
+	at org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter.doFilter(GrailsPageFilter.java:142)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.filter.GrailsReloadServletFilter.doFilterInternal(GrailsReloadServletFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequestFilter.doFilterInternal(GrailsWebRequestFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.codehaus.groovy.grails.web.filters.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:237)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:167)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:662)
+2011-09-26 14:45:01,646 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 14:45:06,442 [http-8080-5] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 14:45:13,083 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 14:49:08,210 [http-8080-6] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 14:51:42,773 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 14:54:32,446 [http-8080-6] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 14:56:27,962 [http-8080-6] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 14:56:58,791 [main] INFO  http11.Http11Protocol  - Pausing Coyote HTTP/1.1 on http-8080
+2011-09-26 14:56:59,806 [main] INFO  core.StandardService  - Stopping service Tomcat
+2011-09-26 14:56:59,806 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'grails-errorhandler'
+2011-09-26 14:56:59,931 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'grails'
+2011-09-26 14:56:59,947 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'gsp'
+2011-09-26 14:57:00,291 [main] INFO  http11.Http11Protocol  - Stopping Coyote HTTP/1.1 on http-8080
+2011-09-26 14:57:01,853 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2011-09-26 14:57:01,853 [main] INFO  core.StandardService  - Starting service Tomcat
+2011-09-26 14:57:01,853 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2011-09-26 14:57:01,900 [main] INFO  tomcat.TomcatLoader  - Dual registration of jndi stream handler: factory already defined
+2011-09-26 14:57:01,900 [main] INFO  startup.ContextConfig  - No default web.xml
+2011-09-26 14:57:02,072 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2011-09-26 14:57:02,103 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2011-09-26 14:57:02,135 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2011-09-26 14:57:02,213 [main] INFO  [localhost].[/hispbb]  - Initializing Spring root WebApplicationContext
+2011-09-26 14:57:03,713 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2011-09-26 14:57:05,072 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Documents%20and%20Settings/kimsi/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2011-09-26 14:57:07,275 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@7b5411: startup date [Mon Sep 26 14:57:04 EDT 2011]; parent: Root WebApplicationContext
+2011-09-26 14:57:07,806 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2011-09-26 14:57:08,041 [main] INFO  u56survey.DataSourceUtils  - Configured Datasource properties:
+2011-09-26 14:57:08,088 [main] INFO  u56survey.DataSourceUtils  -   targetDataSource=org.apache.commons.dbcp.BasicDataSource@68de3
+2011-09-26 14:57:08,088 [main] INFO  u56survey.DataSourceUtils  -   connection=Transaction-aware proxy for target Connection  from DataSource [org.apache.commons.dbcp.BasicDataSource@68de3]
+2011-09-26 14:57:08,088 [main] INFO  u56survey.DataSourceUtils  -   class=class org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy
+2011-09-26 14:57:08,088 [main] INFO  u56survey.DataSourceUtils  -   reobtainTransactionalConnections=false
+2011-09-26 14:57:08,088 [main] INFO  u56survey.DataSourceUtils  -   logWriter=java.io.PrintWriter@4d4282
+2011-09-26 14:57:08,181 [main] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'grails'
+2011-09-26 14:57:08,197 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2011-09-26 14:57:34,041 [http-8080-1] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'gsp'
+2011-09-26 14:57:34,041 [http-8080-1] INFO  [localhost].[/hispbb]  - GSP servlet initialized
+2011-09-26 14:57:39,229 [http-8080-1] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 15:10:55,046 [http-8080-5] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 15:11:25,734 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
