@@ -72,14 +72,17 @@ $(document).ready(function(){
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
         </div>
-		<div align="center">
+
         <table style="border: 0px solid #ccc">
         <tr>
         <td>
         	<%--<div id="ponceLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'Ponce2.jpg')}" alt="ponce" border="0" /></a> --%>
         	<br/>
         	<%--<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'MCC-Logo-DarkLight.png')}" alt="moffitt" border="0" /></a></div> --%>
-        	<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'psm45percent.JPG')}" alt="moffitt" border="0" /></a>
+        	<%--<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'psm45percent.JPG')}" alt="moffitt" border="0" /></a> --%>
+<g:if test="${!(request.requestURI.indexOf('person')>=0 && request.requestURI.indexOf('login')>=0)}">        	
+        	<div><a href="${createLink(uri: '/')}"><img width="160" height="80" src="${resource(dir:'images',file:'hispbb.JPG')}" alt="moffitt" border="0" /></a></div>
+</g:if>        	
         </td>
 <%--
          <td>
@@ -87,8 +90,9 @@ $(document).ready(function(){
         </td>
  --%>        
         <td>
-	        <br/> <br/>
-	        <h1><label style="color:limegreen"><g:message code="site.title"/></label></h1>
+	        <br/>
+	        <h1><b>Hispanic Bio Bank</b></h1>
+	        <h1><label style="font-family:Georgia,Serif;color:limegreen"><g:message code="site.title"/></label></h1>
 	        <%--<label style="color:deepskyblue">Hispanic Bio-Bank <a href="/hispbb/changes.html">(7/26/2011)</a>
 	         - <a href="/hispbb/changes.html">Changes</a></label>
 	         - <label>(<a href="/hispbb/browsers.html">Best viewed with Safari & FireFox - <font color="red">not IE</font></a>)</label> --%>
@@ -104,7 +108,7 @@ $(document).ready(function(){
         </g:if>
         </div>
 
-</div>
+
         <g:layoutBody />
 
     </body>
