@@ -11601,3 +11601,7 @@ java.lang.RuntimeException: org.springframework.web.util.NestedServletException:
 2011-09-26 14:57:39,229 [http-8080-1] INFO  u56survey.PersonController  -  Login(admin) Successful
 2011-09-26 15:10:55,046 [http-8080-5] INFO  u56survey.PersonController  -  User:'admin' Logged out
 2011-09-26 15:11:25,734 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 15:32:04,617 [http-8080-5] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 15:33:13,742 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 15:53:51,703 [http-8080-5] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-26 15:53:56,344 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful

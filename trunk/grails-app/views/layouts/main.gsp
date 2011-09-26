@@ -91,8 +91,8 @@ $(document).ready(function(){
  --%>        
         <td>
 	        <br/>
-	        <h1><b>Hispanic Bio Bank</b></h1>
-	        <h1><label style="font-family:Georgia,Serif;color:limegreen"><g:message code="site.title"/></label></h1>
+	        <h1><b><label style="color:#00BFFF;">Hispanic Bio Bank</label></b></h1><br/>
+	        <h2><label style="font-family:Georgia,Serif;color:limegreen"><i><g:message code="site.title"/></i></label></h2>
 	        <%--<label style="color:deepskyblue">Hispanic Bio-Bank <a href="/hispbb/changes.html">(7/26/2011)</a>
 	         - <a href="/hispbb/changes.html">Changes</a></label>
 	         - <label>(<a href="/hispbb/browsers.html">Best viewed with Safari & FireFox - <font color="red">not IE</font></a>)</label> --%>
