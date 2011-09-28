@@ -11605,3 +11605,69 @@ java.lang.RuntimeException: org.springframework.web.util.NestedServletException:
 2011-09-26 15:33:13,742 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
 2011-09-26 15:53:51,703 [http-8080-5] INFO  u56survey.PersonController  -  User:'admin' Logged out
 2011-09-26 15:53:56,344 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 15:57:00,704 [main] INFO  http11.Http11Protocol  - Pausing Coyote HTTP/1.1 on http-8080
+2011-09-26 15:57:01,704 [main] INFO  core.StandardService  - Stopping service Tomcat
+2011-09-26 15:57:01,704 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'grails'
+2011-09-26 15:57:01,704 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'gsp'
+2011-09-26 15:57:01,767 [main] INFO  http11.Http11Protocol  - Stopping Coyote HTTP/1.1 on http-8080
+2011-09-26 15:57:02,970 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2011-09-26 15:57:02,970 [main] INFO  core.StandardService  - Starting service Tomcat
+2011-09-26 15:57:02,970 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2011-09-26 15:57:02,986 [main] INFO  tomcat.TomcatLoader  - Dual registration of jndi stream handler: factory already defined
+2011-09-26 15:57:03,001 [main] INFO  startup.ContextConfig  - No default web.xml
+2011-09-26 15:57:03,204 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2011-09-26 15:57:03,236 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2011-09-26 15:57:03,251 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2011-09-26 15:57:03,345 [main] INFO  [localhost].[/hispbb]  - Initializing Spring root WebApplicationContext
+2011-09-26 15:57:05,314 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2011-09-26 15:57:05,923 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Documents%20and%20Settings/kimsi/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2011-09-26 15:57:08,204 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@b709b1: startup date [Mon Sep 26 15:57:05 EDT 2011]; parent: Root WebApplicationContext
+2011-09-26 15:57:08,845 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2011-09-26 15:57:09,064 [main] INFO  u56survey.DataSourceUtils  - Configured Datasource properties:
+2011-09-26 15:57:09,095 [main] INFO  u56survey.DataSourceUtils  -   targetDataSource=org.apache.commons.dbcp.BasicDataSource@1239702
+2011-09-26 15:57:09,095 [main] INFO  u56survey.DataSourceUtils  -   connection=Transaction-aware proxy for target Connection  from DataSource [org.apache.commons.dbcp.BasicDataSource@1239702]
+2011-09-26 15:57:09,095 [main] INFO  u56survey.DataSourceUtils  -   class=class org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy
+2011-09-26 15:57:09,095 [main] INFO  u56survey.DataSourceUtils  -   reobtainTransactionalConnections=false
+2011-09-26 15:57:09,095 [main] INFO  u56survey.DataSourceUtils  -   logWriter=java.io.PrintWriter@18f29d1
+2011-09-26 15:57:09,158 [main] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'grails'
+2011-09-26 15:57:09,173 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2011-09-26 15:59:00,502 [http-8080-1] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'gsp'
+2011-09-26 15:59:00,502 [http-8080-1] INFO  [localhost].[/hispbb]  - GSP servlet initialized
+2011-09-26 16:00:17,706 [http-8080-1] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-26 16:15:16,196 [main] INFO  http11.Http11Protocol  - Pausing Coyote HTTP/1.1 on http-8080
+2011-09-26 16:15:17,196 [main] INFO  core.StandardService  - Stopping service Tomcat
+2011-09-26 16:15:17,196 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'grails'
+2011-09-26 16:15:17,211 [main] INFO  [localhost].[/hispbb]  - Destroying Spring FrameworkServlet 'gsp'
+2011-09-26 16:15:17,227 [main] INFO  http11.Http11Protocol  - Stopping Coyote HTTP/1.1 on http-8080
+2011-09-26 16:15:18,008 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2011-09-26 16:15:18,008 [main] INFO  core.StandardService  - Starting service Tomcat
+2011-09-26 16:15:18,008 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2011-09-26 16:15:18,024 [main] INFO  tomcat.TomcatLoader  - Dual registration of jndi stream handler: factory already defined
+2011-09-26 16:15:18,024 [main] INFO  startup.ContextConfig  - No default web.xml
+2011-09-26 16:15:18,118 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2011-09-26 16:15:18,165 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2011-09-26 16:15:18,165 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2011-09-26 16:15:18,274 [main] INFO  [localhost].[/hispbb]  - Initializing Spring root WebApplicationContext
+2011-09-26 16:15:19,071 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2011-09-26 16:15:19,571 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Documents%20and%20Settings/kimsi/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2011-09-26 16:15:21,461 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@615933: startup date [Mon Sep 26 16:15:19 EDT 2011]; parent: Root WebApplicationContext
+2011-09-26 16:15:21,696 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2011-09-26 16:15:21,743 [main] INFO  u56survey.DataSourceUtils  - Configured Datasource properties:
+2011-09-26 16:15:21,758 [main] INFO  u56survey.DataSourceUtils  -   targetDataSource=org.apache.commons.dbcp.BasicDataSource@17d3074
+2011-09-26 16:15:21,758 [main] INFO  u56survey.DataSourceUtils  -   connection=Transaction-aware proxy for target Connection  from DataSource [org.apache.commons.dbcp.BasicDataSource@17d3074]
+2011-09-26 16:15:21,758 [main] INFO  u56survey.DataSourceUtils  -   class=class org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy
+2011-09-26 16:15:21,758 [main] INFO  u56survey.DataSourceUtils  -   reobtainTransactionalConnections=false
+2011-09-26 16:15:21,758 [main] INFO  u56survey.DataSourceUtils  -   logWriter=java.io.PrintWriter@1f8127c
+2011-09-26 16:15:21,836 [main] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'grails'
+2011-09-26 16:15:21,836 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2011-09-28 08:31:18,359 [http-8080-1] INFO  [localhost].[/hispbb]  - Initializing Spring FrameworkServlet 'gsp'
+2011-09-28 08:31:18,375 [http-8080-1] INFO  [localhost].[/hispbb]  - GSP servlet initialized
+2011-09-28 08:38:13,378 [http-8080-5] ERROR u56survey.PersonController  -  Login(survey:survey) Failed
+2011-09-28 08:45:30,740 [http-8080-5] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-28 08:53:30,665 [http-8080-2] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2011-09-28 08:53:30,696 [http-8080-2] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2011-09-28 08:55:35,275 [http-8080-2] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-28 09:37:00,322 [http-8080-9] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-28 09:51:16,335 [http-8080-1] INFO  u56survey.PersonController  -  Login(admin) Successful
+2011-09-28 09:51:29,037 [http-8080-1] INFO  u56survey.PersonController  -  User:'admin' Logged out
+2011-09-28 09:51:36,177 [http-8080-1] INFO  u56survey.PersonController  -  Login(survey) Successful
