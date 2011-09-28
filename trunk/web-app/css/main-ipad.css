@@ -12,9 +12,10 @@ html * {
 }
 
 body {
-    background: #fff;
+    /*background: #fff; */
     color: #333;
     font: 14px verdana, helvetica, arial, sans-serif;
+    background-color: #FFF8DC; /* cornsilk */
 }
 #grailsLogo {
 	padding:20px;
@@ -28,11 +29,24 @@ a:link, a:visited, a:hover {
 
 h1 {
     color: #48802c;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 16px;
     margin: .8em 0 .3em 0;
 }
-
+.title {
+    color: #D2691E;
+    font-weight: bold;
+    font-size: 24px;
+    font-family:arial, verdana, helvetica, sans-serif;
+    margin: .8em 0 .3em 0;
+}
+.subtitle {
+    color: #FF7F50;
+    font-weight: bold;
+    font-size: 16px;
+    font-family:arial, verdana, helvetica, sans-serif;
+    margin: 3em 0 .3em 0;
+}
 ul {
     padding-left: 15px;
 }
@@ -82,17 +96,17 @@ input:focus, select:focus, textarea:focus {
     padding: 4px 6px;
 }
 .menuButton a.home {
-    background: url(../images/skin/house.png) center left no-repeat;
+    /* background: url(../images/skin/house.png) center left no-repeat; */
     color: #333;
     padding-left: 25px;
 }
 .menuButton a.list {
-    background: url(../images/skin/database_table.png) center left no-repeat;
+    /* background: url(../images/skin/database_table.png) center left no-repeat; */
     color: #333;
     padding-left: 25px;
 }
 .menuButton a.create {
-    background: url(../images/skin/database_add.png) center left no-repeat;
+    /* background: url(../images/skin/database_add.png) center left no-repeat; */
     color: #333;
     padding-left: 25px;
 }
@@ -282,30 +296,30 @@ th.desc a {
     padding: 2px 6px;
 }
 .buttons input.delete {
-    background: transparent url(../images/skin/database_delete.png) 5px 50% no-repeat;
+    /* background: transparent url(../images/skin/database_delete.png) 5px 50% no-repeat; */
     padding-left: 28px;
 }
 .buttons input.edit {
-    background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat;
+    /* background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat; */
     padding-left: 28px;
 }
 .buttons input.save {
-    background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
+    /* background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat; */
     padding-left: 28px;
 }
 .buttons input.complete {
-    background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
+    /* background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat; */
     font-color: orange;
     padding-left: 28px;
 }
 .buttons input.information {
-    background: transparent url(../images/skin/information.png) 5px 50% no-repeat;
+    /* background: transparent url(../images/skin/information.png) 5px 50% no-repeat; */
     font-color: orange;
     padding-left: 28px;
 }
 
 .buttons a.edit {
-    background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat;
+    /* background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat; */
     padding-left: 28px;
 }
 #loginHeader {
