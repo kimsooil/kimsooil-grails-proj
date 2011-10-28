@@ -1562,6 +1562,7 @@ class SurveyController {
 		
 		flash.paper = "paper"
 		def surveyInstance = new Survey()
+		surveyInstance.mode="paper"
 		surveyInstance.save() // id will be created at this time.
 		surveyInstance.consentNumSurv="HISPBB"
 		surveyInstance.consentNumLoc=session.user.location
@@ -1595,6 +1596,7 @@ class SurveyController {
 		def thisyear=today[YEAR]
 		
 		flash.paper = "paper"
+		//params.mode="paper"
 		def surveyInstance = Survey.get(params.id)
 
 		if (!surveyInstance) {
@@ -2132,7 +2134,7 @@ class SurveyController {
             }
             else {
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
-				redirect(action: "preview", id: surveyInstance.id)
+				redirect(action: "show", id: surveyInstance.id)
             }
         }
         else {

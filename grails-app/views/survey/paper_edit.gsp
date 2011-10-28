@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
-        <title>Read-only</title>
+        <title>Paper-based Survey (Edit)</title>
 <%--
 		<jv:generateValidation domain="survey" form="surveyform15"  display="list" container="errors"/>        
  --%>
@@ -64,7 +64,6 @@ function confirmSubmit()
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform_preview"
-            		onsubmit="return confirmSubmit();"
 					method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
@@ -131,12 +130,13 @@ function confirmSubmit()
  --%> 
 
 <g:if test="${!surveyInstance?.completed}"> 
+<%--
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}"   onclick="DisableEnableForm(document.surveyform,false);" /></span>
 
-<!-- 
+--%> 
 	<span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
-	<span class="button"><g:actionSubmit class="complete" action="completed" value="${message(code: 'complete', default: 'Complete')}" /></span>
--->	
+	<span class="button"><g:actionSubmit class="complete" action="completed" value="${message(code: 'complete', default: 'Complete')}" onclick="return confirmSubmit();"/></span>
+	
 	<!-- <span class="menuButton"><g:render template="/common/step_meter"/></span> -->
 <br/>
 </g:if>

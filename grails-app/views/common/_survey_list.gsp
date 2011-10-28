@@ -81,7 +81,11 @@ def incomplete=surveyInstanceTotal-completed
                             	<label style="color:red;font-style:bold;">N</label>
                             </g:else>
                         	</td>
-                        	<td>${surveyInstance?.step }</td>
+                        	<td>
+                        		<g:if test="${surveyInstance?.mode!='paper'}">
+                        			${surveyInstance?.step }
+                        		</g:if>
+                        	</td>
                             <td><g:formatDate format="MM/dd/yyyy" date="${surveyInstance?.DOB}" /></td>                 
                         	<td>${surveyInstance?.sex }</td>
                             

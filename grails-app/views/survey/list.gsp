@@ -38,7 +38,7 @@
 	        	<ul>
 	        		
 	        		<br/>
-		        	<li><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+		        	<li><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link> (<g:link class="create" action="paper">Paper</g:link>)</li>
 		        	<br/>
 		        	<li><g:link class="list_surveyer" action="list_surveyer"><g:message code="default.list.label" args="[entityName]" /></g:link><%-- (<g:link controller="survey" class="list" action="calendarview">Calendar View</g:link>) --%></li>
 		        	<br/>
