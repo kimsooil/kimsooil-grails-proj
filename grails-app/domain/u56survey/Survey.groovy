@@ -6,7 +6,9 @@ class Survey {
 	Date dateCompleted
 
 //  New ID / ethnic 	
-	Integer consentNum // informed consent number
+	String mode // paper (copied from paper-form ) or onscreen
+	String consentNum // informed consent number
+	Integer consentNumInt
 	String otherNumberOrComments // it can be used for preexisting (come from already-collected-via-paper form) questionnaire(s)
 	String consentNumSurv="HISPBB" // Name of the survey
 	String consentNumLoc
@@ -467,12 +469,12 @@ class Survey {
 	String q95_addr_street1,q95_addr_street2, q95_addr_city, q95_addr_state, q95_addr_zipcode, q95_country
 
 	static constraints = {
-		
+		mode(inList:["paper", "screen"])
 		//consentNumSurv(inList:["HISPBB"])
 		consentNumLoc(inList:["MOFF", "FLHO", "PSoM", "STLU", "HIMA", "SJVA", "AMHO", 'PRTB', "DEMO"])
 		
-		consentNum(min:1, max:9999, unique:true)
-		
+		consentNumInt(min:1, max:9999, unique:true)
+		consentNum(maxSize:4, unique:true)
 		//being_treated_for_cancer(blank:false)
 		
 		//sex(blank:false)

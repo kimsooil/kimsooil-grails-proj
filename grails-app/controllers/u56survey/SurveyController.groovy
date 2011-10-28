@@ -1539,7 +1539,72 @@ class SurveyController {
     }
 	*/
 
-	
+	def paper = {
+		if (params.MRN && !params.mrn) params.mrn=params.MRN
+		def existing_survey = params.mrn ? Survey.findByMrn(params.mrn): null
+		if (existing_survey) redirect(action:"paper_edit", id: existing_survey.id)
+		
+		def countries = [] as SortedSet
+		def countryNames = [:] // map
+		
+		Locale.ISOCountries.each {
+		  if (it) {
+			countries << it
+		  }
+		}
+		countries.each{twolettercode->
+			Locale l= new Locale("", twolettercode);
+			countryNames.put(twolettercode, l.getDisplayCountry())
+		}
+		countryNames.remove("US")
+		countryNames.remove("PR")
+		countryNames=["PR":"PUERTO RICO", "US":"UNITED STATES", "--":"--"]+countryNames.sort{it.value}
+		
+		flash.paper = "paper"
+		def surveyInstance = new Survey()
+		surveyInstance.save() // id will be created at this time.
+		surveyInstance.consentNumSurv="HISPBB"
+		surveyInstance.consentNumLoc=session.user.location
+		//surveyInstance.consentNum=surveyInstance.id
+		surveyInstance.surveyer=session.user.login
+		surveyInstance.step="1"
+		surveyInstance.properties = params
+		thisyear=thisyear-18
+		return [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames]
+
+	}
+	def paper_edit = {
+		def countries = [] as SortedSet
+		def countryNames = [:] // map
+		
+		Locale.ISOCountries.each {
+		  if (it) {
+			countries << it
+		  }
+		}
+		countries.each{twolettercode->
+			Locale l= new Locale("", twolettercode);
+			countryNames.put(twolettercode, l.getDisplayCountry())
+		}
+		countryNames.remove("US")
+		countryNames.remove("PR")
+		countryNames=["PR":"PUERTO RICO", "US":"UNITED STATES", "--":"--"]+countryNames.sort{it.value}
+		
+		def today = new Date()
+		//today=today.minusYears(18) // subject should be 18 years old or more
+		def thisyear=today[YEAR]
+		
+		flash.paper = "paper"
+		def surveyInstance = Survey.get(params.id)
+
+		if (!surveyInstance) {
+			flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'survey.label', default: 'Survey'), params.id])}"
+			redirect(action: "list")
+		}
+		else {
+			return [surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]
+		}
+	}
 	def step1 = { // copied from create
 		
 		if (params.MRN && !params.mrn) params.mrn=params.MRN
@@ -1601,6 +1666,7 @@ class SurveyController {
             return [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames]
         }
 	}
+
 /*
 	def step2_after_save={
 		def surveyInstance = new Survey(params)
@@ -2116,7 +2182,9 @@ class SurveyController {
                     return
                 }
             }
-            
+			if (params.consentNum && params.consentNum.isNumber()){
+				params.consentNumInt=Integer.toString(params.consentNum.toInteger())
+			}
 			if (params.haveCancer=="no"){
 				params.spread_cancer="n/a"
 				params.liver=false
@@ -2216,6 +2284,12 @@ class SurveyController {
 					return
 				}
 			}
+			
+			if (params.consentNum){
+				params.consentNumInt=Integer.toString(params.consentNum.toInteger())
+			}
+			
+			
 			// special care for radio buttons (virtually initialize to null - not-existing value 
 			if (params.haveCancer=="no"){
 				params.spread_cancer="n/a"
@@ -2345,7 +2419,10 @@ class SurveyController {
 			def whatNumber = whatEntered.toInteger()
 			if (whatNumber >=1 && whatNumber <10000){
 				//resultOut = Survey.findByConsentNum(whatEntered) ? "Existing ICN" : "Valid"
-				resultOut = Survey.findByConsentNum(whatEntered) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
+				
+				//resultOut = Survey.findByConsentNum(whatEntered) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
+				
+				resultOut = Survey.findByConsentNum(whatEntered) || Survey.findByConsentNumInt(whatNumber) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
 			}
 			else
 				resultOut = "1 ~ 9999"
