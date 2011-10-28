@@ -6,12 +6,31 @@
                 		  noSelection="['':'']" 
                 		  value="" 
                 		  valueMessagePrefix="survey.consentNumLoc"  /> - <g:textField  style="width: 50px;" name="consentNum" value="" /> (<g:textField style="width: 50px;" name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</h3><br/>
-                <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>                
+                                
 </g:if>
+<g:elseif test="${flash.paper}">
+                <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <label style="text-decoration : underline;">${surveyInstance?.consentNumSurv}</label> -
+
+                <g:select name="consentNumLoc" 
+                		  style="width: 150px;"
+                		  from="${u56survey.Site.list()}"
+                		  optionKey="fourletters"
+                		  value="${surveyInstance?.consentNumLoc}"  /> -
+                <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}" 
+                			style="width: 70px;color:red;"
+                		    onkeyup="${remoteFunction(
+                		  				action:'ajaxValidICNorNot',
+                		  				update:'lblvalidICNorNot',
+                		  				params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
+                <span id="otherNumber">(<g:textField style="width: 50px;" name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
+                </h3>
+                <br/>
+</g:elseif>
 <g:else>                
                 <br/><h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <label style="color:red;">${surveyInstance?.consentNumSurv} - ${surveyInstance?.consentNumLoc} - ${surveyInstance?.consentNum} <g:if test="${surveyInstance?.otherNumberOrComments}">(${surveyInstance?.otherNumberOrComments})</g:if></label></h3><br/>
-                <br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>
-</g:else>                
+                
+</g:else>        
+				<br/><h3>&nbsp;&nbsp;<g:message code="survey.first_question" default="being_treated_for_cancer" /></h3>        
                 <br/>
                 <ul><g:radioGroup name="being_treated_for_cancer"
                                   value="${surveyInstance?.being_treated_for_cancer}" 

@@ -57,9 +57,12 @@
                      --%>
 
                     <g:if test="${!surveyInstance?.completed}">
-
-                    	<%--<g:link class="editbutton" action="verify" id="${surveyInstance?.id }" ><g:message code="verify" default="verify" /></g:link> --%>
-                   		<span class="button"><g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></span>
+						<g:if test="${surveyInstance?.mode!='paper'}">
+                    		<span class="button"><g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></span>
+                    	</g:if>
+                    	<g:else>
+                    		<span class="button"><g:link class="editbutton" action="paper_edit" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" />(Paper)</g:link></span>
+                    	</g:else>
                     </g:if>
                     <g:else>
 
@@ -98,8 +101,8 @@
                         <tr class="prop">
                             <td valign="top" class="name">Informed Consent Number</td>
                             
-                            <td valign="top" class="value"><g:formatNumber number="${surveyInstance?.consentNum }" format="####"/></td>
-                            
+                            <%--<td valign="top" class="value"><g:formatNumber number="${surveyInstance?.consentNum }" format="####"/></td> --%>
+                            <td valign="top" class="value">${fieldValue(bean: surveyInstance, field: "consentNum")}</td>
                         </tr>
                                             
                         <tr class="prop">
