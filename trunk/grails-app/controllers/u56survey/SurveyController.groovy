@@ -35,6 +35,7 @@ class SurveyController {
 	List fields = [
 		"id",
 		"surveyer",
+		"mode",
 		"completed",
 		"completedBy",
 		"dateCompleted",
@@ -680,6 +681,7 @@ class SurveyController {
 	Map global_labels =[
 "id":"id",
 "surveyer":"consenter",
+"mode":"mode",
 "completed":"Completed",
 "completedBy":"CompletedBy",
 "dateCompleted":"dateCompleted",
