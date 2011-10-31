@@ -501,7 +501,8 @@ class Survey {
 		q13_8_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_9_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_10_ageDiagnosed(matches:/^([0-9]+)$/)
-*/				
+*/	
+/*					
 		q14_1_howManyPerWeek(matches:/^([0-9]+)$/)
 		q14_2_howManyPerWeek(matches:/^([0-9]+)$/)
 		q14_3_howManyPerWeek(matches:/^([0-9]+)$/)
@@ -622,7 +623,7 @@ class Survey {
 		q94_4_NumPillsPerWeek(matches:/^([0-9]+)$/)
 		q94_5_NumPillsPerWeek(matches:/^([0-9]+)$/)
 		q94_6_NumPillsPerWeek(matches:/^([0-9]+)$/)
-	
+*/	
 	}
 
 }

@@ -37,22 +37,28 @@
   DisableEnableForm(document.${('surveyform'+step)},true);
 </g:javascript>
 </g:if>
- 
+
+<%
+def fragmentString=""
+ %>
  
 <g:while test="${i < 15}">
     <%
     i++
     //out << "step=["+step+"]"
-    %>
+
+	fragmentString= (i==11 && surveyInstance?.sex=='male') ? "step11b" : ""
+	%>
     <g:if test="${step=='1' && current_url.indexOf('_edit')==-1 }">
         <%
             if (i==1) out << "<label style='font-size:18px;font-weight:bold;padding: 4px 6px;'>"+i+"</label>"
             else out << "<label style='font-weight:bold;padding: 4px 6px;'>"+i+"</label>"
+			
          %>
     </g:if>
     <g:else>
         <g:if test="${i.toString().trim()==step }">
-            <g:link title="${stepTitles[i-1] }" action="${('step')+(i==1?'1_edit':i)}" id="${surveyInstance?.id}">
+            <g:link title="${stepTitles[i-1] }" action="${('step')+(i==1?'1_edit':i)}" id="${surveyInstance?.id}" fragment="${fragmentString}" >
 	            <g:if test="${i==7 }">
 	            	<label style="color:#0000FF;font-size:18px;">${i}</label>
 	            </g:if>
@@ -65,7 +71,7 @@
             </g:link>
         </g:if>
         <g:else>
-            <g:link title="${stepTitles[i-1]}" action="${('step')+(i==1?'1_edit':i)}" id="${surveyInstance?.id}">
+            <g:link title="${stepTitles[i-1]}" action="${('step')+(i==1?'1_edit':i)}" id="${surveyInstance?.id}" fragment="${fragmentString}" >
 	            <g:if test="${i==7 }">
 	            	<label style="color:#0000FF">${i}</label>
 	            </g:if>

@@ -22,13 +22,19 @@ window.onload= function(){
   $("[name=_action_update]").attr("disabled", false);
   $("[name=_action_step10]").attr("disabled", false);
   $("[name=_action_update_unified]").attr("disabled", false);  
+  
+  $("[name*='q82'][type=radio]").attr("disabled", '');
+	$("[name*='q82_'][type=radio]").attr("disabled", '');
+	$("[name*='q82_'][type=text]").attr("disabled", '');
+	$("[name*='q82_'][name$='_type']").attr("disabled", '');
+	$("[name*='q82_'][name$='_aliveDead']").attr("disabled", '');  
 }   
 </g:if>
 
 $(document).ready(function(){
-
+<%--
 $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /><br/><g:message code="female.only.page" /><br/></p>');
-
+ --%>
 	$("input[name='q72']").change(function(){
 	    if ($("input[name='q72']:checked").val() == 'yes'){
 	    	$("#q72_status").html(" <font color='blue'>Answer Q78-Q83</font>");
@@ -726,6 +732,8 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
                     </tbody>
                     </table>
                     
+                    <a name="step11b"></a>
+                    
                     <h1><g:message code="step11b.label" default="Step11b" /></h1>
                     
                     <table class="box-table-b-wide">
@@ -821,12 +829,15 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
                     <span class="button"><g:actionSubmit class="back" action="step10" value="${message(code: 'button.go-back.label', default: 'back')}"  onclick="DisableEnableForm(document.surveyform11,false);" /></span>
                     <%--<span class="button"><g:render template="/common/back_button"/></span>
                     <span class="button"><input type="reset" value="${message(code: 'button.reset-all.label', default: 'reset')}"></span> --%>  
+<%--
                     <g:if test="${surveyInstance?.sex=='female' }">  
                     	<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}"  onclick="DisableEnableForm(document.surveyform11,false);" /></span>
                     </g:if>
                     <g:else>
                     	<g:link action="step12" id="${surveyInstance?.id}"><label style="color:green"><g:message code='button.save-then-go-to-next.label'/></label></g:link>
                     </g:else>
+--%>                    
+					<span class="button"><g:actionSubmit class="next" action="update_unified" value="${message(code: 'button.save-then-go-to-next.label', default: 'next')}"  onclick="DisableEnableForm(document.surveyform11,false);" /></span>
                     <span class="menuButton"><g:render template="/common/step_meter"/></span>
                  </div>
             </g:form>

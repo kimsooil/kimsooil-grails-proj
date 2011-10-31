@@ -165,13 +165,4 @@ function checkForm14()
 		return true;
 	}	
 }
-function clear_q99()
-{
-	$("[name*='q94_'][type=radio]").attr("checked", false);
-	$("[name*='q94_'][name$='ageStart']").val('');
-	$("[name*='q94_'][name$='ageStop']").val('');
-	$("[name*='q94_'][name$='NumPillsPerWeek']").val('');
-	$("[name*='q94_ageStart_status']").html('');
-	$("[name*='q94_ageStop_status']").html('');
-	$("[name*='q94_pills_status']").html('');
-}
+

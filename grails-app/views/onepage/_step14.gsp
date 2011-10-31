@@ -184,11 +184,23 @@
 											message(code:'survey.q94.t5'),
 											message(code:'survey.q94.t6')]
 					   %>
+<g:javascript>
+function clear_q99()
+{
+	$("[name*='q94_'][type=radio]").attr("checked", false);
+	$("[name*='q94_'][name$='ageStart']").val('');
+	$("[name*='q94_'][name$='ageStop']").val('');
+	$("[name*='q94_'][name$='NumPillsPerWeek']").val('');
+	$("[name*='q94_ageStart_status']").html('');
+	$("[name*='q94_ageStop_status']").html('');
+	$("[name*='q94_pills_status']").html('');
+}
+</g:javascript>					   
 					   <table class="box-table-b-wide">
 					   <thead>
 					   <tr>
 					   		<th style="border: 1px solid #9baff1;;font-weight:bold;" colspan="5">
-					   		<g:message code="survey.q94.table" /><%-- <input onclick="clear_q99();" type="button" value="Clear Q99" /> --%>
+					   		<g:message code="survey.q94.table" /><input onclick="clear_q99();" type="button" value="Clear Q99" />
 					   		</th>
 					   </tr>
 					   <tr>

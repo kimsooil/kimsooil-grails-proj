@@ -175,7 +175,7 @@
 		                    					 value="${surveyInstance?.q12_which_cancer}" /> 
 		                    	</g:if>
 	                    	</td>
-					<g:if test="${(surveyInstance?.sex=='female' && cancertype==message(code:'survey.q12_prostate')) || (surveyInstance?.sex=='male' && (cancertype==message(code:'survey.q12_cervical') || cancertype==message(code:'survey.q12_uterine') || cancertype==message(code:'survey.q12_ovarian'))    ) }">
+					<g:if test="${surveyInstance?.mode!='paper' && ( (surveyInstance?.sex=='female' && cancertype==message(code:'survey.q12_prostate')) || (surveyInstance?.sex=='male' && (cancertype==message(code:'survey.q12_cervical') || cancertype==message(code:'survey.q12_uterine') || cancertype==message(code:'survey.q12_ovarian'))) ) }">
 							<td style="width: 5%;">
 								n/a
 								<div style="display:none">

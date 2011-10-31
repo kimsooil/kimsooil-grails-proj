@@ -2349,7 +2349,11 @@ class SurveyController {
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
 				flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
 				//redirect(action: "show", id: surveyInstance.id)
-				redirect(action: ("step"+nextStep), id: surveyInstance.id)
+				
+				if (currentStep==8 && surveyInstance.sex=='male')
+					redirect(action: "step11", fragment: "step11b", id: surveyInstance.id)
+				else
+					redirect(action: ("step"+nextStep), id: surveyInstance.id)
 			}
 			else {
 				render(view: ("step"+currentStep), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
