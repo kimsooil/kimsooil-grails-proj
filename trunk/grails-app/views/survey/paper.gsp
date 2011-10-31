@@ -29,11 +29,11 @@ $(document).ready(function(){
 	</g:else>
 	
 	window.onload= function(){
-	  	//DisableEnableForm(document.surveyform_preview,true);
-		$("[name=_action_update]").attr("disabled", false);
-  		$("[name=_action_completed]").attr("disabled", false);
-  		$("[name=id]").attr("disabled", false);		  
-  		$("[name=version]").attr("disabled", false);
+	  	//DisableEnableForm(document.surveyform_paper,true);
+		//$("[name=_action_update]").attr("disabled", false);
+  		//$("[name=_action_completed]").attr("disabled", false);
+  		//$("[name=id]").attr("disabled", false);		  
+  		//$("[name=version]").attr("disabled", false);
   		//$("[name=consentNum]").attr("disabled", false);
   		//checkVerifyForm();
 	}
@@ -57,13 +57,13 @@ function confirmSubmit()
             </g:if>
         </div>
         <div class="body">
-            <h1><g:message code="preview"/></h1>
+            <h1>Paper Survey</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
 <div id="errors" class="errors" style="display:none;">
 </div>
-            <g:form name="surveyform_preview"
+            <g:form name="surveyform_paper"
 					method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />

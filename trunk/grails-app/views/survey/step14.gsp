@@ -480,6 +480,17 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 
 		
 });	 
+
+function clear_q99()
+{
+	$("[name*='q94_'][type=radio]").attr("checked", false);
+	$("[name*='q94_'][name$='ageStart']").val('');
+	$("[name*='q94_'][name$='ageStop']").val('');
+	$("[name*='q94_'][name$='NumPillsPerWeek']").val('');
+	$("[name*='q94_ageStart_status']").html('');
+	$("[name*='q94_ageStop_status']").html('');
+	$("[name*='q94_pills_status']").html('');
+}
 </g:javascript>
             <h1><g:message code="step14.label" default="Step14" /></h1>
             <g:if test="${flash.message}">
@@ -683,7 +694,7 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 					   <thead>
 					   <tr>
 					   		<th style="border: 1px solid #9baff1;;font-weight:bold;" colspan="5">
-					   		<g:message code="survey.q94.table" /><%-- <input onclick="clear_q99();" type="button" value="Clear Q99" /> --%>
+					   		<g:message code="survey.q94.table" /><input onclick="clear_q99();" type="button" value="Clear Q99" />
 					   		</th>
 					   </tr>
 					   <tr>
