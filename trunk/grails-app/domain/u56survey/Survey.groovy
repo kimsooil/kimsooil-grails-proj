@@ -152,7 +152,21 @@ class Survey {
 	Boolean q12_24_1, q12_24_2, q12_24_3, q12_24_4
 	String q12_which_cancer
 	
+	// additional (multiple cancers)
+	String q12_25, q12_25_ageDiagnosed
+	Boolean q12_25_1, q12_25_2, q12_25_3, q12_25_4
+
+	String q12_26, q12_26_ageDiagnosed
+	Boolean q12_26_1, q12_26_2, q12_26_3, q12_26_4
 	
+	String q12_27, q12_27_ageDiagnosed
+	Boolean q12_27_1, q12_27_2, q12_27_3, q12_27_4
+	
+	String q12_28, q12_28_ageDiagnosed
+	Boolean q12_28_1, q12_28_2, q12_28_3, q12_28_4
+	
+	String q12_29, q12_29_ageDiagnosed
+	Boolean q12_29_1, q12_29_2, q12_29_3, q12_29_4
 
 // Family History of Cancer
 	Boolean q13 // have any of your following blood-related family members been told by a doctor or other health care professional that they have cancer?
