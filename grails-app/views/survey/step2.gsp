@@ -46,8 +46,47 @@ $("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);
 }
 </g:else>
 
+var extraCancerTypeVar= ['q12_25','q12_26','q12_27','q12_28','q12_29'];
+var num_extraCancerType = 0;
+
+    function AddNew() {
+	    if (num_extraCancerType < 5 && !isEmpty($("#txtCancerType option:selected").val()) && isNumber($("#txtAgeDiagnosed").val()) && isValidNumber($("#txtAgeDiagnosed").val(), -1, ageCalculated)){
+	    	var treatment1="";
+	    	var treatment2="";
+	    	var treatment3="";
+	    	var treatment4="";
+	    	var treatments="";
+	    	if ($("#txtTreatment1").is(':checked')){ treatment1 = "Radiology"; treatments += treatment1;}
+	    	if ($("#txtTreatment2").is(':checked')){ treatment2 = "Chemotheraphy"; treatments += (treatment1 ? " / ": "")+ treatment2;} 
+	    	if ($("#txtTreatment3").is(':checked')){ treatment3 = "Surgery"; treatments += (treatment2 || treatment1 ? " / ": "")+ treatment3;} 
+	    	if ($("#txtTreatment4").is(':checked')){ treatment1 = ""; treatment2=""; treatment3=""; treatment4="None"; treatments = "(No treatment)";}
+	
+			var oneString = $("#txtCancerType option:selected").val() + "," + $("#txtAgeDiagnosed").val() +","+treatments;
+	        var appendTxt = "<tr> <td>" + $("#txtCancerType option:selected").val() + 
+	        				//"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"button\" value = \"Delete\" class=\"rdelete\"/>" +
+	        			    "</td> <td>" + $("#txtAgeDiagnosed").val() + 
+	        			    "</td><td>" + treatments +
+	        			    
+	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"\" value=\""+$("#txtCancerType option:selected").val()+"\" />" +
+	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_ageDiagnosed"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_ageDiagnosed"+"\" value=\""+$("#txtAgeDiagnosed").val()+"\" />" +
+	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_1"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_1"+"\" value=\""+(treatment1 ? true: false)+"\" />" +
+	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_2"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_2"+"\" value=\""+(treatment2 ? true: false)+"\" />" +
+	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_3"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_3"+"\" value=\""+(treatment3 ? true: false)+"\" />" +
+	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_4"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_4"+"\" value=\""+(treatment4 ? true: false)+"\" />" +
+	        			    "</td></tr>";
+	        $("#tblCancerDiagnosed tr:last").after(appendTxt);
+	        
+	        num_extraCancerType++;
+	    }
+    }  
 
 $(document).ready(function(){ 
+
+        $("#tblCancerDiagnosed td input.rdelete").live("click", function () {
+            var srow = $(this).parent().parent();
+            srow.remove();
+        });
+      
 
 	$("input[name='q11a_1']").change(function(){
 	    if ($("input[name='q11a_1']:checked").val() == 'yes'){
@@ -486,7 +525,7 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
                     <br/>
                     <ul><label><g:message code="survey.q12" default="q12" /></label> <span id="q12_status"></span></ul>
                     
-                    <table class="box-table-b-wide">
+                    <table id="tblCancerDiagnosed" class="box-table-b-wide">
 	                    <thead>
 	                    	<tr>
 	                    	<th><g:message code="survey.q12.typeofcancer" default="Cancer type" /></th>
@@ -578,8 +617,96 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	                   </g:else>
 	                    	</tr>
 	                    	</g:each>
+						<g:if test="${surveyInstance?.q12_25 }">
+						<tr>
+							<td>25. ${surveyInstance?.q12_25 }&nbsp;&nbsp;&nbsp;<input type="button" value = "Delete" class="rdelete"/></td>
+							<td>${surveyInstance?.q12_25_ageDiagnosed }</td>
+							<td>
+								<g:if test="${surveyInstance?.q12_25_1 }">Radiology</g:if>
+								<g:if test="${surveyInstance?.q12_25_2 }">Chemotherapy</g:if>
+								<g:if test="${surveyInstance?.q12_25_3 }">Surgery</g:if>
+								<g:if test="${surveyInstance?.q12_25_4 }">None</g:if>
+							</td>
+						</tr>
+						</g:if>
+						<g:if test="${surveyInstance?.q12_26 }">
+						<tr>
+							<td>26. ${surveyInstance?.q12_26 }&nbsp;&nbsp;&nbsp;<input type="button" value = "Delete" class="rdelete"/></td>
+							<td>${surveyInstance?.q12_26_ageDiagnosed }</td>
+							<td>
+								<g:if test="${surveyInstance?.q12_26_1 }">Radiology</g:if>
+								<g:if test="${surveyInstance?.q12_26_2 }">Chemotherapy</g:if>
+								<g:if test="${surveyInstance?.q12_26_3 }">Surgery</g:if>
+								<g:if test="${surveyInstance?.q12_26_4 }">None</g:if>
+							</td>
+						</tr>
+						</g:if>	                    	
+						<g:if test="${surveyInstance?.q12_27 }">
+						<tr>
+							<td>27. ${surveyInstance?.q12_27 }&nbsp;&nbsp;&nbsp;<input type="button" value = "Delete" class="rdelete"/></td>
+							<td>${surveyInstance?.q12_27_ageDiagnosed }</td>
+							<td>
+								<g:if test="${surveyInstance?.q12_27_1 }">Radiology</g:if>
+								<g:if test="${surveyInstance?.q12_27_2 }">Chemotherapy</g:if>
+								<g:if test="${surveyInstance?.q12_27_3 }">Surgery</g:if>
+								<g:if test="${surveyInstance?.q12_27_4 }">None</g:if>
+							</td>
+						</tr>
+						</g:if>
+						<g:if test="${surveyInstance?.q12_28 }">
+						<tr>
+							<td>28. ${surveyInstance?.q12_28 }&nbsp;&nbsp;&nbsp;<input type="button" value = "Delete" class="rdelete"/></td>
+							<td>${surveyInstance?.q12_28_ageDiagnosed }</td>
+							<td>
+								<g:if test="${surveyInstance?.q12_28_1 }">Radiology</g:if>
+								<g:if test="${surveyInstance?.q12_28_2 }">Chemotherapy</g:if>
+								<g:if test="${surveyInstance?.q12_28_3 }">Surgery</g:if>
+								<g:if test="${surveyInstance?.q12_28_4 }">None</g:if>
+							</td>
+						</tr>
+						</g:if>
+						<g:if test="${surveyInstance?.q12_29 }">
+						<tr>
+							<td>29. ${surveyInstance?.q12_29 }&nbsp;&nbsp;&nbsp;<input type="button" value = "Delete" class="rdelete"/></td>
+							<td>${surveyInstance?.q12_29_ageDiagnosed }</td>
+							<td>
+								<g:if test="${surveyInstance?.q12_29_1 }">Radiology</g:if>
+								<g:if test="${surveyInstance?.q12_29_2 }">Chemotherapy</g:if>
+								<g:if test="${surveyInstance?.q12_29_3 }">Surgery</g:if>
+								<g:if test="${surveyInstance?.q12_29_4 }">None</g:if>
+							</td>
+						</tr>
+						</g:if>
 	                    </tbody>
                     </table>
+                    <br/>
+                    <ul>
+                    <%
+                    	def CancerList2 = ['']+CancerList
+                    %>
+	                    <input style="font-weight:bold;color:red;" type="button" value="Add New Row (up to 5)" onclick="AddNew()"><br/>
+	                    <table>
+	                    	<tr>
+	                    		<td style="width: 30%;font-weight:bold;">Cancer Type</td>
+	                    		<td style="width: 5%;font-weight:bold;">Age</td>
+	                    		<td style="font-weight:bold;">Check if apply</td>
+	                    		
+	                    	</tr>
+		                    	<tr>
+		                    		<td><g:select name="txtCancerType" from="${CancerList2}" value="" /></td>
+		                    		<td><g:textField style="width: 50px" name="txtAgeDiagnosed"
+		                    					 value="" />
+		                    				 
+		                    		</td>
+		                    		<td>
+		                    		<g:checkBox name="txtTreatment1" /> <g:message code="survey.q12_opt1" />&nbsp;&nbsp;&nbsp;
+		                    		<g:checkBox name="txtTreatment2" /> <g:message code="survey.q12_opt2" />&nbsp;&nbsp;&nbsp;
+		                    		<g:checkBox name="txtTreatment3" /> <g:message code="survey.q12_opt3" />&nbsp;&nbsp;&nbsp;
+		                    		<g:checkBox name="txtTreatment4" /> <g:message code="survey.q12_opt4" />
+		                    		</td>
+		                    	</tr>
+						</table>
+						</ul> 
 					</div>
 					<ul>
 					<label for="q11b"><g:message code="survey.q11b.label" default="q11b" /></label>
