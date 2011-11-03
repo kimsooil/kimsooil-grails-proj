@@ -49,8 +49,19 @@ $("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);
 var extraCancerTypeVar= ['q12_25','q12_26','q12_27','q12_28','q12_29'];
 var num_extraCancerType = 0;
 
+<%
+def existingC=0
+if (surveyInstance?.q12_25) existingC++
+if (surveyInstance?.q12_26) existingC++
+if (surveyInstance?.q12_27) existingC++
+if (surveyInstance?.q12_28) existingC++
+if (surveyInstance?.q12_29) existingC++
+ %>
+
+var existing_C = ${existingC ? existingC : 0};
+
     function AddNew() {
-	    if (num_extraCancerType < 5 && !isEmpty($("#txtCancerType option:selected").val()) && isNumber($("#txtAgeDiagnosed").val()) && isValidNumber($("#txtAgeDiagnosed").val(), -1, ageCalculated)){
+	    if (num_extraCancerType < (5-existing_C) && !isEmpty($("#txtCancerType option:selected").val()) && isNumber($("#txtAgeDiagnosed").val()) && isValidNumber($("#txtAgeDiagnosed").val(), -1, ageCalculated)){
 	    	var treatment1="";
 	    	var treatment2="";
 	    	var treatment3="";
@@ -63,7 +74,7 @@ var num_extraCancerType = 0;
 	
 			var oneString = $("#txtCancerType option:selected").val() + "," + $("#txtAgeDiagnosed").val() +","+treatments;
 	        var appendTxt = "<tr> <td>" + $("#txtCancerType option:selected").val() + 
-	        				//"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"button\" value = \"Delete\" class=\"rdelete\"/>" +
+	        				"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"button\" value = \"Delete\" class=\"rdelete\"/>" +
 	        			    "</td> <td>" + $("#txtAgeDiagnosed").val() + 
 	        			    "</td><td>" + treatments +
 	        			    
@@ -84,6 +95,7 @@ $(document).ready(function(){
 
         $("#tblCancerDiagnosed td input.rdelete").live("click", function () {
             var srow = $(this).parent().parent();
+            existing_C--;
             srow.remove();
         });
       
