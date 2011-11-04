@@ -88,6 +88,81 @@ $(document).ready(function(){
 	    	$("[name*='q90_6_year']").attr("disabled", true);
 	    }
 	});
+	$("input[name='q90_7']").change(function(){
+	    if ($("input[name='q90_7']:checked").val() == 'yes'){
+	    	$("#q90_7_age").attr("disabled", '');
+	    	$("[name*='q90_7_year']").attr("disabled", '');
+	    	$("[name*='q90_7_medcon']").attr("disabled", '');
+	    }
+	    else if ($("input[name='q90_7']:checked").val() == 'no'){
+	    	$("#q90_7_age").val('');
+	    	$("#q90_7_age").attr("disabled", true);
+	    	$("[name*='q90_7_year']").val('');
+	    	$("[name*='q90_7_year']").attr("disabled", true);
+	    	$("[name*='q90_7_medcon']").val('');
+	    	$("[name*='q90_7_medcon']").attr("disabled", true);	    	
+	    }
+	});	
+	$("input[name='q90_8']").change(function(){
+	    if ($("input[name='q90_8']:checked").val() == 'yes'){
+	    	$("#q90_8_age").attr("disabled", '');
+	    	$("[name*='q90_8_year']").attr("disabled", '');
+	    	$("[name*='q90_8_medcon']").attr("disabled", '');
+	    }
+	    else if ($("input[name='q90_8']:checked").val() == 'no'){
+	    	$("#q90_8_age").val('');
+	    	$("#q90_8_age").attr("disabled", true);
+	    	$("[name*='q90_8_year']").val('');
+	    	$("[name*='q90_8_year']").attr("disabled", true);
+	    	$("[name*='q90_8_medcon']").val('');
+	    	$("[name*='q90_8_medcon']").attr("disabled", true);	    	
+	    }
+	});		
+	$("input[name='q90_9']").change(function(){
+	    if ($("input[name='q90_9']:checked").val() == 'yes'){
+	    	$("#q90_9_age").attr("disabled", '');
+	    	$("[name*='q90_9_year']").attr("disabled", '');
+	    	$("[name*='q90_9_medcon']").attr("disabled", '');
+	    }
+	    else if ($("input[name='q90_9']:checked").val() == 'no'){
+	    	$("#q90_9_age").val('');
+	    	$("#q90_9_age").attr("disabled", true);
+	    	$("[name*='q90_9_year']").val('');
+	    	$("[name*='q90_9_year']").attr("disabled", true);
+	    	$("[name*='q90_9_medcon']").val('');
+	    	$("[name*='q90_9_medcon']").attr("disabled", true);	    	
+	    }
+	});
+	$("input[name='q90_10']").change(function(){
+	    if ($("input[name='q90_10']:checked").val() == 'yes'){
+	    	$("#q90_10_age").attr("disabled", '');
+	    	$("[name*='q90_10_year']").attr("disabled", '');
+	    	$("[name*='q90_10_medcon']").attr("disabled", '');
+	    }
+	    else if ($("input[name='q90_10']:checked").val() == 'no'){
+	    	$("#q90_10_age").val('');
+	    	$("#q90_10_age").attr("disabled", true);
+	    	$("[name*='q90_10_year']").val('');
+	    	$("[name*='q90_10_year']").attr("disabled", true);
+	    	$("[name*='q90_10_medcon']").val('');
+	    	$("[name*='q90_10_medcon']").attr("disabled", true);	    	
+	    }
+	});
+	$("input[name='q90_11']").change(function(){
+	    if ($("input[name='q90_11']:checked").val() == 'yes'){
+	    	$("#q90_11_age").attr("disabled", '');
+	    	$("[name*='q90_11_year']").attr("disabled", '');
+	    	$("[name*='q90_11_medcon']").attr("disabled", '');
+	    }
+	    else if ($("input[name='q90_11']:checked").val() == 'no'){
+	    	$("#q90_11_age").val('');
+	    	$("#q90_11_age").attr("disabled", true);
+	    	$("[name*='q90_11_year']").val('');
+	    	$("[name*='q90_11_year']").attr("disabled", true);
+	    	$("[name*='q90_11_medcon']").val('');
+	    	$("[name*='q90_11_medcon']").attr("disabled", true);	    	
+	    }
+	});									
 	$("input[name='q91_1']").change(function(){
 	    if ($("input[name='q91_1']:checked").val() != 'never'){
 	    	$("#q91_1_howManyYears").attr("disabled", '');
@@ -372,6 +447,7 @@ if ($("input[name='q90_6']:checked").val() == 'no'){
 	    	$("[name*='q90_6_year']").attr("disabled", true);
 	    }
 
+
 if ($("input[name='q91_1']:checked").val() == 'never'){
 	    	//$("#q91_1_howManyYears").val('');
 	    	$("#q91_1_howManyYears").attr("disabled", true);
@@ -487,6 +563,7 @@ function clear_q99()
 	$("[name*='q94_'][name$='ageStart']").val('');
 	$("[name*='q94_'][name$='ageStop']").val('');
 	$("[name*='q94_'][name$='NumPillsPerWeek']").val('');
+	$("[name*='q94_otherMedName']").val('');
 	$("[name*='q94_ageStart_status']").html('');
 	$("[name*='q94_ageStop_status']").html('');
 	$("[name*='q94_pills_status']").html('');
@@ -545,6 +622,142 @@ function clear_q99()
 							</td>
 						</tr>
 						</g:each>
+						<tr>
+							<td>
+							 		7. <g:select name="${('q90_7_medcon')}"
+							 				  value="${surveyInstance?.('q90_7_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_7')}"
+	                            	value="${surveyInstance?.('q90_7')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_7_age')}" 
+																			 value="${surveyInstance?.('q90_7_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status7')}\')); "/> <span id="${('q90_age_status7')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_7_year')}" precision="year" value="${surveyInstance?.('q90_7_year')}"  
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>
+						<tr>
+							<td>
+							 		8. <g:select name="${('q90_8_medcon')}"
+							 				  value="${surveyInstance?.('q90_8_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_8')}"
+	                            	value="${surveyInstance?.('q90_8')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_8_age')}" 
+																			 value="${surveyInstance?.('q90_8_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status8')}\')); "/> <span id="${('q90_age_status8')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_8_year')}" precision="year" value="${surveyInstance?.('q90_8_year')}"  
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+						<tr>
+							<td>
+							 		9. <g:select name="${('q90_9_medcon')}"
+							 				  value="${surveyInstance?.('q90_9_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_9')}"
+	                            	value="${surveyInstance?.('q90_9')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_9_age')}" 
+																			 value="${surveyInstance?.('q90_9_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status9')}\')); "/> <span id="${('q90_age_status9')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_9_year')}" precision="year" value="${surveyInstance?.('q90_9_year')}"  
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+						<tr>
+							<td>
+							 		10. <g:select name="${('q90_10_medcon')}"
+							 				  value="${surveyInstance?.('q90_10_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_10')}"
+	                            	value="${surveyInstance?.('q90_10')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_10_age')}" 
+																			 value="${surveyInstance?.('q90_10_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status10')}\')); "/> <span id="${('q90_age_status10')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_10_year')}" precision="year" value="${surveyInstance?.('q90_10_year')}"  
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+						<tr>
+							<td>
+							 		11. <g:select name="${('q90_11_medcon')}"
+							 				  value="${surveyInstance?.('q90_11_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_11')}"
+	                            	value="${surveyInstance?.('q90_11')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_11_age')}" 
+																			 value="${surveyInstance?.('q90_11_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status11')}\')); "/> <span id="${('q90_age_status11')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_11_year')}" precision="year" value="${surveyInstance?.('q90_11_year')}"  
+                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+
                         </tbody>
                     </table>
                     
@@ -689,7 +902,8 @@ function clear_q99()
 											message(code:'survey.q94.t4'),
 											message(code:'survey.q94.t5'),
 											message(code:'survey.q94.t6')]
-					   %>
+					  def q94StillNoLongerList=[message(code:'survey.stillusing'),message(code:'survey.nolongerusing')] 
+					 %>					   
 					   <table class="box-table-b-wide">
 					   <thead>
 					   <tr>
@@ -709,7 +923,7 @@ function clear_q99()
 					   <g:each in="${DrugMedicineList }" status="i" var="drug">
 					   <%def idx=i+1 %>
 					   <tr>
-					   		<td style="width:30%;font-weight:bold;">${idx}. ${drug }
+					   		<td style="width:40%;font-weight:bold;">${idx}. ${drug }
 					   		<g:if test="${idx==5}">
 					   			<g:textField style="width:100px" name="q94_otherMedName1" value="${surveyInstance?.q94_otherMedName1}" />
 					   		</g:if>
@@ -718,7 +932,7 @@ function clear_q99()
 					   		</g:if>
 					   		</td>
 					   		<td style="width:5%">
-					   			<g:textField style="width:100px" 
+					   			<g:textField style="width:50px" 
 					   				name="${('q94_'+idx+'_ageStart')}" 
 					   				value="${surveyInstance?.('q94_'+idx+'_ageStart')}"
 									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
@@ -730,9 +944,7 @@ function clear_q99()
 					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status'+idx)}\')); "/> <span name="${('q94_pills_status'+idx)}" id="${('q94_pills_status'+idx)}"></span>
 					   		</td>
 					   		<td style="width:30%">
-					   		<%
-							def q94StillNoLongerList=[message(code:'survey.stillusing'),message(code:'survey.nolongerusing')] 
-							 %>
+
 					   			<g:radioGroup name="${('q94_'+idx)}"
 	                            	value="${surveyInstance?.('q94_'+idx)}" 
 	                                labels="${q94StillNoLongerList}" 
@@ -740,14 +952,118 @@ function clear_q99()
 									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 								</g:radioGroup>
 					   		</td>
-					   		<td>
-					   			<g:textField style="width:100px" 
+					   		<td style="width:5%">
+					   			<g:textField style="width:50px" 
 					   				name="${('q94_'+idx+'_ageStop')}" 
 					   				value="${surveyInstance?.('q94_'+idx+'_ageStop')}"
 					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_${idx}_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status'+idx)}\')); "/> <span name="${('q94_ageStop_status'+idx)}" id="${('q94_ageStop_status'+idx)}"></span>
 					   		</td>
 					   </tr>
 					   </g:each>
+					   <tr>
+					   		<td style="width:30%;font-weight:bold;">
+					   			7. <g:message code="survey.q94.t.other" /> #3
+					   			<g:textField style="width:100px" name="q94_otherMedName3" value="${surveyInstance?.q94_otherMedName3}" />
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_7_ageStart')}" 
+					   				value="${surveyInstance?.('q94_7_ageStart')}"
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status7')}\')); "/> <span id="${('q94_ageStart_status7')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_7_NumPillsPerWeek')}" 
+					   				value="${surveyInstance?.('q94_7_NumPillsPerWeek')}"
+					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status7')}\')); "/> <span id="${('q94_pills_status7')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:radioGroup name="${('q94_7')}"
+	                            	value="${surveyInstance?.('q94_7')}" 
+	                                labels="${q94StillNoLongerList}" 
+	                                values="['still_using','no_longer_using']" >
+									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+								</g:radioGroup>					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_7_ageStop')}" 
+					   				value="${surveyInstance?.('q94_7_ageStop')}"
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_7_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status7')}\')); "/> <span id="${('q94_ageStop_status7')}"></span>
+					   		</td>
+					   </tr>
+					   <tr>
+					   		<td style="width:30%;font-weight:bold;">
+					   			8. <g:message code="survey.q94.t.other" /> #4
+					   			<g:textField style="width:100px" name="q94_otherMedName4" value="${surveyInstance?.q94_otherMedName4}" />
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_8_ageStart')}" 
+					   				value="${surveyInstance?.('q94_8_ageStart')}"
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status8')}\')); "/> <span id="${('q94_ageStart_status8')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_8_NumPillsPerWeek')}" 
+					   				value="${surveyInstance?.('q94_8_NumPillsPerWeek')}"
+					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status8')}\')); "/> <span id="${('q94_pills_status8')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:radioGroup name="${('q94_8')}"
+	                            	value="${surveyInstance?.('q94_8')}" 
+	                                labels="${q94StillNoLongerList}" 
+	                                values="['still_using','no_longer_using']" >
+									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+								</g:radioGroup>					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_8_ageStop')}" 
+					   				value="${surveyInstance?.('q94_8_ageStop')}"
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_8_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status8')}\')); "/> <span id="${('q94_ageStop_status8')}"></span>
+					   		</td>
+					   </tr>
+					   <tr>
+					   		<td style="width:30%;font-weight:bold;">
+					   			9. <g:message code="survey.q94.t.other" /> #5
+					   			<g:textField style="width:100px" name="q94_otherMedName5" value="${surveyInstance?.q94_otherMedName5}" />
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_9_ageStart')}" 
+					   				value="${surveyInstance?.('q94_9_ageStart')}"
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status9')}\')); "/> <span id="${('q94_ageStart_status9')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_9_NumPillsPerWeek')}" 
+					   				value="${surveyInstance?.('q94_9_NumPillsPerWeek')}"
+					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status9')}\')); "/> <span id="${('q94_pills_status9')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:radioGroup name="${('q94_9')}"
+	                            	value="${surveyInstance?.('q94_9')}" 
+	                                labels="${q94StillNoLongerList}" 
+	                                values="['still_using','no_longer_using']" >
+									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+								</g:radioGroup>					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_9_ageStop')}" 
+					   				value="${surveyInstance?.('q94_9_ageStop')}"
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_9_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status9')}\')); "/> <span id="${('q94_ageStop_status9')}"></span>
+					   		</td>
+					   </tr>
+					   
+					   
 					   </tbody>
 					   </table>
                 </div>
