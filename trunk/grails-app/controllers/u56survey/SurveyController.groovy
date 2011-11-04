@@ -250,18 +250,6 @@ class SurveyController {
 		"spread_other",
 		"spread_where",
 		"familyHaveCancer",
-		"q13_10_ageDiagnosed",
-		"q13_10_cancerType",
-		"q13_11_ageDiagnosed",
-		"q13_11_cancerType",
-		"q13_12_ageDiagnosed",
-		"q13_12_cancerType",
-		"q13_13_ageDiagnosed",
-		"q13_13_cancerType",
-		"q13_14_ageDiagnosed",
-		"q13_14_cancerType",
-		"q13_15_ageDiagnosed",
-		"q13_15_cancerType",
 		"q13_1_ageDiagnosed",
 		"q13_1_cancerType",
 		"q13_2_ageDiagnosed",
@@ -280,6 +268,35 @@ class SurveyController {
 		"q13_8_cancerType",
 		"q13_9_ageDiagnosed",
 		"q13_9_cancerType",
+		"q13_10_ageDiagnosed",
+		"q13_10_cancerType",
+		"q13_11_ageDiagnosed",
+		"q13_11_cancerType",
+		"q13_12_ageDiagnosed",
+		"q13_12_cancerType",
+		"q13_13_ageDiagnosed",
+		"q13_13_cancerType",
+		"q13_14_ageDiagnosed",
+		"q13_14_cancerType",
+		"q13_15_ageDiagnosed",
+		"q13_15_cancerType",
+
+		"q13_16",
+		"q13_16_ageDiagnosed",
+		"q13_16_cancerType",
+		"q13_17",
+		"q13_17_ageDiagnosed",
+		"q13_17_cancerType",
+		"q13_18",
+		"q13_18_ageDiagnosed",
+		"q13_18_cancerType",
+		"q13_19",
+		"q13_19_ageDiagnosed",
+		"q13_19_cancerType",
+		"q13_20",
+		"q13_20_ageDiagnosed",
+		"q13_20_cancerType",
+
 		"q13_other_family_member",
 		"q14_1",
 		"q14_1_howManyPerWeek",
@@ -635,6 +652,27 @@ class SurveyController {
 		"q90_6",
 		"q90_6_age",
 		"q90_6_year_only",
+		"q90_7",
+		"q90_7_medcon",
+		"q90_7_age",
+		"q90_7_year_only",
+		"q90_8",
+		"q90_8_medcon",
+		"q90_8_age",
+		"q90_8_year_only",
+		"q90_9",
+		"q90_9_medcon",
+		"q90_9_age",
+		"q90_9_year_only",
+		"q90_10",
+		"q90_10_medcon",
+		"q90_10_age",
+		"q90_10_year_only",
+		"q90_11",
+		"q90_11_medcon",
+		"q90_11_age",
+		"q90_11_year_only",
+
 		"q91_1",
 		"q91_1_howManyYears",
 		"q91_2",
@@ -694,8 +732,25 @@ class SurveyController {
 		"q94_6_NumPillsPerWeek",
 		"q94_6_ageStart",
 		"q94_6_ageStop",
+		"q94_7",
+		"q94_7_NumPillsPerWeek",
+		"q94_7_ageStart",
+		"q94_7_ageStop",
+		"q94_8",
+		"q94_8_NumPillsPerWeek",
+		"q94_8_ageStart",
+		"q94_8_ageStop",
+		"q94_9",
+		"q94_9_NumPillsPerWeek",
+		"q94_9_ageStart",
+		"q94_9_ageStop",
+
+		
 		"q94_otherMedName1",
 		"q94_otherMedName2",
+		"q94_otherMedName3",
+		"q94_otherMedName4",
+		"q94_otherMedName5",
 		"q95_doctor_name",
 		"q95_addr_street1",
 		"q95_addr_street2",
@@ -940,18 +995,6 @@ class SurveyController {
 
 "familyHaveCancer":"Q018_familyHaveCancer",
 
-"q13_10_ageDiagnosed":"Q018_m_uncle_ageDiagnosed",
-"q13_10_cancerType":"Q018_m_uncle_cancerType",
-"q13_11_ageDiagnosed":"Q018_p_grandmother_ageDiagnosed",
-"q13_11_cancerType":"Q018_p_grandmother_cancerType",
-"q13_12_ageDiagnosed":"Q018_p_grandfather_ageDiagnosed",
-"q13_12_cancerType":"Q018_p_grandfather_cancerType",
-"q13_13_ageDiagnosed":"Q018_p_aunt_ageDiagnosed",
-"q13_13_cancerType":"Q018_p_aunt_cancerType",
-"q13_14_ageDiagnosed":"Q018_p_uncle_ageDiagnosed",
-"q13_14_cancerType":"Q018_p_uncle_cancerType",
-"q13_15_ageDiagnosed":"Q018_other_ageDiagnosed",
-"q13_15_cancerType":"Q018_other_cancerType",
 "q13_1_ageDiagnosed":"Q018_mother_ageDiagnosed",
 "q13_1_cancerType":"Q018_mother_cancerType",
 "q13_2_ageDiagnosed":"Q018_father_ageDiagnosed",
@@ -970,6 +1013,34 @@ class SurveyController {
 "q13_8_cancerType":"Q018_m_grandfather_cancerType",
 "q13_9_ageDiagnosed":"Q018_m_aunt_ageDiagnosed",
 "q13_9_cancerType":"Q018_m_aunt_cancerType",
+"q13_10_ageDiagnosed":"Q018_m_uncle_ageDiagnosed",
+"q13_10_cancerType":"Q018_m_uncle_cancerType",
+"q13_11_ageDiagnosed":"Q018_p_grandmother_ageDiagnosed",
+"q13_11_cancerType":"Q018_p_grandmother_cancerType",
+"q13_12_ageDiagnosed":"Q018_p_grandfather_ageDiagnosed",
+"q13_12_cancerType":"Q018_p_grandfather_cancerType",
+"q13_13_ageDiagnosed":"Q018_p_aunt_ageDiagnosed",
+"q13_13_cancerType":"Q018_p_aunt_cancerType",
+"q13_14_ageDiagnosed":"Q018_p_uncle_ageDiagnosed",
+"q13_14_cancerType":"Q018_p_uncle_cancerType",
+"q13_15_ageDiagnosed":"Q018_other_ageDiagnosed",
+"q13_15_cancerType":"Q018_other_cancerType",
+"q13_16":"Q018_more1",
+"q13_16_ageDiagnosed":"Q018_more1_ageDiagnosed",
+"q13_16_cancerType":"Q018_more1_cancerType",
+"q13_17":"Q018_more2",
+"q13_17_ageDiagnosed":"Q018_more2_ageDiagnosed",
+"q13_17_cancerType":"Q018_more2_cancerType",
+"q13_18":"Q018_more3",
+"q13_18_ageDiagnosed":"Q018_more3_ageDiagnosed",
+"q13_18_cancerType":"Q018_more3_cancerType",
+"q13_19":"Q018_more4",
+"q13_19_ageDiagnosed":"Q018_more4_ageDiagnosed",
+"q13_19_cancerType":"Q018_more4_cancerType",
+"q13_20":"Q018_more5",
+"q13_20_ageDiagnosed":"Q018_more5_ageDiagnosed",
+"q13_20_cancerType":"Q018_more5_cancerType",
+
 "q13_other_family_member":"Q018_other_family_member",
 "q14_1":"Q019_beer",
 "q14_1_howManyPerWeek":"Q019_beer_drinks_a_week",
@@ -1334,6 +1405,27 @@ class SurveyController {
 "q90_6":"Q095_06_eczema_dermatitis",
 "q90_6_age":"Q095_06_age",
 "q90_6_year_only":"Q095_06_year",
+"q90_7":"Q095_07_moreMedicalCondition",
+"q90_7_medcon":"Q095_07_whichMedicalCondition",
+"q90_7_age":"Q095_07_age",
+"q90_7_year_only":"Q095_07_year",
+"q90_8":"Q095_08_moreMedicalCondition",
+"q90_8_medcon":"Q095_08_whichMedicalCondition",
+"q90_8_age":"Q095_08_age",
+"q90_8_year_only":"Q095_08_year",
+"q90_9":"Q095_09_moreMedicalCondition",
+"q90_9_medcon":"Q095_09_whichMedicalCondition",
+"q90_9_age":"Q095_09_age",
+"q90_9_year_only":"Q095_09_year",
+"q90_10":"Q095_10_moreMedicalCondition",
+"q90_10_medcon":"Q095_10_whichMedicalCondition",
+"q90_10_age":"Q095_10_age",
+"q90_10_year_only":"Q095_10_year",
+"q90_11":"Q095_11_moreMedicalCondition",
+"q90_11_medcon":"Q095_11_whichMedicalCondition",
+"q90_11_age":"Q095_11_age",
+"q90_11_year_only":"Q095_11_year",
+
 "q91_1":"Q096_01_second_hand_smoke_at_home",
 "q91_1_howManyYears":"Q096_01_howManyYears",
 "q91_2":"Q096_02_second_hand_smoke_at_work",
@@ -1387,15 +1479,30 @@ class SurveyController {
 "q94_4_ageStart":"Q099_04_ageStart",
 "q94_4_ageStop":"Q099_04_ageStop",
 "q94_5":"Q099_05_other_med1",
+"q94_otherMedName1":"Q099_05_otherMedName",
 "q94_5_NumPillsPerWeek":"Q099_05_NumPillsPerWeek",
 "q94_5_ageStart":"Q099_05_ageStart",
 "q94_5_ageStop":"Q099_05_ageStop",
 "q94_6":"Q099_06_other_med2",
+"q94_otherMedName2":"Q099_06_otherMedName",
 "q94_6_NumPillsPerWeek":"Q099_06_NumPillsPerWeek",
 "q94_6_ageStart":"Q099_06_ageStart",
 "q94_6_ageStop":"Q099_06_ageStop",
-"q94_otherMedName1":"Q099_otherMedName1",
-"q94_otherMedName2":"Q099_otherMedName2",
+"q94_7":"Q099_07_other_med3",
+"q94_otherMedName3":"Q099_07_otherMedName",
+"q94_7_NumPillsPerWeek":"Q099_07_NumPillsPerWeek",
+"q94_7_ageStart":"Q099_07_ageStart",
+"q94_7_ageStop":"Q099_07_ageStop",
+"q94_8":"Q099_08_other_med4",
+"q94_otherMedName4":"Q099_08_otherMedName",
+"q94_8_NumPillsPerWeek":"Q099_08_NumPillsPerWeek",
+"q94_8_ageStart":"Q099_08_ageStart",
+"q94_8_ageStop":"Q099_06_ageStop",
+"q94_9":"Q099_09_other_med5",
+"q94_otherMedName5":"Q099_09_otherMedName",
+"q94_9_NumPillsPerWeek":"Q099_09_NumPillsPerWeek",
+"q94_9_ageStart":"Q099_09_ageStart",
+"q94_9_ageStop":"Q099_09_ageStop",
 
 "q95_doctor_name":"q100_doctor_name",
 "q95_addr_street1":"q100_addr_street1",
@@ -1515,12 +1622,22 @@ class SurveyController {
 			def q90_4_year_only = it.q90_4_year ? String.format('%tY', it.q90_4_year): ""
 			def q90_5_year_only = it.q90_5_year ? String.format('%tY', it.q90_5_year): ""
 			def q90_6_year_only = it.q90_6_year ? String.format('%tY', it.q90_6_year): ""
+			def q90_7_year_only = it.q90_7_year ? String.format('%tY', it.q90_7_year): ""
+			def q90_8_year_only = it.q90_8_year ? String.format('%tY', it.q90_8_year): ""
+			def q90_9_year_only = it.q90_9_year ? String.format('%tY', it.q90_9_year): ""
+			def q90_10_year_only = it.q90_10_year ? String.format('%tY', it.q90_10_year): ""
+			def q90_11_year_only = it.q90_11_year ? String.format('%tY', it.q90_11_year): ""
 			it.putAt("q90_1_year_only", q90_1_year_only)
 			it.putAt("q90_2_year_only", q90_2_year_only)
 			it.putAt("q90_3_year_only", q90_3_year_only)
 			it.putAt("q90_4_year_only", q90_4_year_only)
 			it.putAt("q90_5_year_only", q90_5_year_only)
 			it.putAt("q90_6_year_only", q90_6_year_only)
+			it.putAt("q90_7_year_only", q90_7_year_only)
+			it.putAt("q90_8_year_only", q90_8_year_only)
+			it.putAt("q90_9_year_only", q90_9_year_only)
+			it.putAt("q90_10_year_only", q90_10_year_only)
+			it.putAt("q90_11_year_only", q90_11_year_only)
 			
 		}
 		
@@ -2248,6 +2365,7 @@ class SurveyController {
 			if (params.consentNum && params.consentNum.isNumber()){
 				params.consentNumInt=Integer.toString(params.consentNum.toInteger())
 			}
+/*			
 			if (params.haveCancer=="no"){
 				params.spread_cancer="n/a"
 				params.liver=false
@@ -2290,7 +2408,7 @@ class SurveyController {
 				params.q51_5="n/a"
 				params.q51_6="n/a"
 			}
-
+*/
             surveyInstance.properties = params
 
 			surveyInstance.surveyer=session.user.login
@@ -2354,6 +2472,7 @@ class SurveyController {
 			
 			
 			// special care for radio buttons (virtually initialize to null - not-existing value 
+/*			
 			if (params.haveCancer=="no"){
 				params.spread_cancer="n/a"
 				params.liver=false
@@ -2397,6 +2516,7 @@ class SurveyController {
 				params.q51_5="no"
 				params.q51_6="no"
 			}
+*/			
 			//if (params.consentNumLoc!="PRTB"){
 		//		params.otherNumberOrComments=" "
 			//}

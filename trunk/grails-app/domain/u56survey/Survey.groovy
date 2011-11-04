@@ -467,10 +467,13 @@ class Survey {
 	String q88
 	String q89_1,q89_2,q89_3,q89_4,q89_5,q89_6,q89_7, q89_other
 // Lung Cancer Risk Assessment	
-	String q90_1,q90_2,q90_3,q90_4,q90_5,q90_6
-	String q90_1_age,q90_2_age,q90_3_age,q90_4_age,q90_5_age,q90_6_age
-	Date q90_1_year,q90_2_year,q90_3_year,q90_4_year,q90_5_year,q90_6_year
-	String q90_1_year_only,q90_2_year_only,q90_3_year_only,q90_4_year_only,q90_5_year_only,q90_6_year_only
+	String q90_1,q90_2,q90_3,q90_4,q90_5,q90_6, q90_7, q90_8, q90_9, q90_10, q90_11
+	String q90_7_medcon, q90_8_medcon, q90_9_medcon, q90_10_medcon, q90_11_medcon
+	String q90_1_age,q90_2_age,q90_3_age,q90_4_age,q90_5_age,q90_6_age, q90_7_age, q90_8_age, q90_9_age, q90_10_age, q90_11_age
+	Date q90_1_year,q90_2_year,q90_3_year,q90_4_year,q90_5_year,q90_6_year, q90_7_year, q90_8_year, q90_9_year, q90_10_year, q90_11_year
+	String q90_1_year_only,q90_2_year_only,q90_3_year_only,q90_4_year_only,q90_5_year_only,q90_6_year_only, q90_7_year_only, q90_8_year_only, q90_9_year_only, q90_10_year_only, q90_11_year_only
+	
+	
 	String q91_1, q91_2, q91_3
 	String q91_1_howManyYears, q91_2_howManyYears, q91_3_howManyYears
 	String q92_1,q92_2,q92_3,q92_4,q92_5,q92_6,q92_7,q92_8,q92_9
@@ -479,11 +482,12 @@ class Survey {
 	String q93_1,q93_2,q93_3,q93_4,q93_5
 	String q93_1_howManyMonths,q93_2_howManyMonths,q93_3_howManyMonths,q93_4_howManyMonths,q93_5_howManyMonths
 	String q94_1,q94_2,q94_3,q94_4,q94_5, q94_6
-	String q94_1_ageStart,q94_2_ageStart,q94_3_ageStart,q94_4_ageStart,q94_5_ageStart,q94_6_ageStart
-	String q94_1_ageStop,q94_2_ageStop,q94_3_ageStop,q94_4_ageStop,q94_5_ageStop,q94_6_ageStop
-	String q94_1_NumPillsPerWeek,q94_2_NumPillsPerWeek,q94_3_NumPillsPerWeek,q94_4_NumPillsPerWeek,q94_5_NumPillsPerWeek,q94_6_NumPillsPerWeek
+	String q94_7, q94_8, q94_9
+	String q94_1_ageStart,q94_2_ageStart,q94_3_ageStart,q94_4_ageStart,q94_5_ageStart,q94_6_ageStart, q94_7_ageStart, q94_8_ageStart, q94_9_ageStart
+	String q94_1_ageStop,q94_2_ageStop,q94_3_ageStop,q94_4_ageStop,q94_5_ageStop,q94_6_ageStop, q94_7_ageStop,q94_8_ageStop,q94_9_ageStop
+	String q94_1_NumPillsPerWeek,q94_2_NumPillsPerWeek,q94_3_NumPillsPerWeek,q94_4_NumPillsPerWeek,q94_5_NumPillsPerWeek,q94_6_NumPillsPerWeek,q94_7_NumPillsPerWeek,q94_8_NumPillsPerWeek,q94_9_NumPillsPerWeek
 	String q94_otherMedName1
-	String q94_otherMedName2
+	String q94_otherMedName2, q94_otherMedName3, q94_otherMedName4, q94_otherMedName5
 	
 	String q95_doctor_name, q95_doctor_telephone, q95_doctor_other_info
 	String q95_addr_street1,q95_addr_street2, q95_addr_city, q95_addr_state, q95_addr_zipcode, q95_country

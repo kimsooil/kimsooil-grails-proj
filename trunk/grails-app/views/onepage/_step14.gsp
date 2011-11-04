@@ -39,6 +39,142 @@
 							</td>
 						</tr>
 						</g:each>
+						<tr>
+							<td>
+							 		7. <g:select name="${('q90_7_medcon')}"
+							 				  value="${surveyInstance?.('q90_7_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_7')}"
+	                            	value="${surveyInstance?.('q90_7')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_7_age')}" 
+																			 value="${surveyInstance?.('q90_7_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status7')}\')); "/> <span id="${('q90_age_status7')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_7_year')}" precision="year" value="${surveyInstance?.('q90_7_year')}"  
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>
+						<tr>
+							<td>
+							 		8. <g:select name="${('q90_8_medcon')}"
+							 				  value="${surveyInstance?.('q90_8_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_8')}"
+	                            	value="${surveyInstance?.('q90_8')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_8_age')}" 
+																			 value="${surveyInstance?.('q90_8_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status8')}\')); "/> <span id="${('q90_age_status8')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_8_year')}" precision="year" value="${surveyInstance?.('q90_8_year')}"  
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+						<tr>
+							<td>
+							 		9. <g:select name="${('q90_9_medcon')}"
+							 				  value="${surveyInstance?.('q90_9_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_9')}"
+	                            	value="${surveyInstance?.('q90_9')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_9_age')}" 
+																			 value="${surveyInstance?.('q90_9_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status9')}\')); "/> <span id="${('q90_age_status9')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_9_year')}" precision="year" value="${surveyInstance?.('q90_9_year')}"  
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+						<tr>
+							<td>
+							 		10. <g:select name="${('q90_10_medcon')}"
+							 				  value="${surveyInstance?.('q90_10_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_10')}"
+	                            	value="${surveyInstance?.('q90_10')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_10_age')}" 
+																			 value="${surveyInstance?.('q90_10_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status10')}\')); "/> <span id="${('q90_age_status10')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_10_year')}" precision="year" value="${surveyInstance?.('q90_10_year')}"  
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+						<tr>
+							<td>
+							 		11. <g:select name="${('q90_11_medcon')}"
+							 				  value="${surveyInstance?.('q90_11_medcon')}"
+							 				  from="${MedicalConditionList}"
+							 				  noSelection="['':'']"/>									
+							</td>
+							<td>
+								<g:radioGroup name="${('q90_11')}"
+	                            	value="${surveyInstance?.('q90_11')}" 
+	                                labels="${yesno }" 
+	                                values="['yes','no']" >
+									<g:render template="/common/checkmark_radio" model="[it:it]"/>
+								</g:radioGroup>							
+							</td>
+							<td>
+								<g:message code="survey.age" /> <g:textField name="${('q90_11_age')}" 
+																			 value="${surveyInstance?.('q90_11_age')}"  style="width:90px"
+																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status11')}\')); "/> <span id="${('q90_age_status11')}"></span>
+							
+							</td>
+							<td>
+							<g:message code="survey.year" /> <g:datePicker name="${('q90_11_year')}" precision="year" value="${surveyInstance?.('q90_11_year')}"  
+                                      years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
+							
+							</td>
+						</tr>						
+						
                         </tbody>
                     </table>
                     
