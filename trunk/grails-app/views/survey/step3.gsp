@@ -20,18 +20,26 @@ $(document).ready(function(){
 	    if ($("input[name='familyHaveCancer']:checked").val() == 'yes'){
 			$("[name*='_cancerType']").attr("disabled", '');
 	    	$("[name*='_ageDiagnosed']").attr("disabled", '');
-	    	
-	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_cancerType)').attr("disabled", '');
-	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_ageDiagnosed)').attr("disabled", '');
+	    	$("[name*='q13_']").attr("disabled", '');
 	    	
 	    	$("[name='q13_other_family_member']").attr("disabled", '');
 	    }
 	    else if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
+	     
+	    	$("[name*='q13_16']").val('');
+	    	$("[name*='q13_16']").attr("disabled", true);
+	    	$("[name*='q13_17']").val('');
+	    	$("[name*='q13_17']").attr("disabled", true);
+	    	$("[name*='q13_18']").val('');
+	    	$("[name*='q13_18']").attr("disabled", true);
+	    	$("[name*='q13_19']").val('');
+	    	$("[name*='q13_19']").attr("disabled", true);
+	    	$("[name*='q13_20']").val('');
+	    	$("[name*='q13_20']").attr("disabled", true);
+	    		     
 			$("[name*='_cancerType']").val('');
 	    	$("[name*='_ageDiagnosed']").val('');
 
-	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_cancerType)').attr("disabled", true);
-	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_ageDiagnosed)').attr("disabled", true);
 
 	    	$("[name*='_cancerType']").attr("disabled", true);
 	    	$("[name*='_ageDiagnosed']").attr("disabled", true);
@@ -56,8 +64,8 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 			$("[name*='_cancerType']").val('');
 	    	$("[name*='_ageDiagnosed']").val('');
 
-	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_cancerType)').attr("disabled", true);
-	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_ageDiagnosed)').attr("disabled", true);
+	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_cancerType)').attr("disabled", true);
+	    	$(':regex(id,q13_([0-9]|[0-9][0-9])_ageDiagnosed)').attr("disabled", true);
 
 	    	$("[name*='_cancerType']").attr("disabled", true);
 	    	$("[name*='_ageDiagnosed']").attr("disabled", true);
@@ -252,6 +260,111 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 						 	</td>
 						 </tr>
 						 </g:each>
+						 
+						 <tr>
+						 	<td>
+							 		16. <g:select name="${('q13_16')}"
+							 				  value="${surveyInstance?.('q13_16')}"
+							 				  from="${FamilyList}"
+							 				  noSelection="['':'']"/>						 	
+						 	</td>
+						 	<td>
+							 		<g:select name="${('q13_16_cancerType')}"
+							 				  value="${surveyInstance?.('q13_16_cancerType')}"
+							 				  from="${CancerList}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>				
+									/ <g:textField name="${('q13_16_ageDiagnosed')}" 
+											   value="${surveyInstance?.('q13_16_ageDiagnosed')}"
+											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status16')}\')); " /> <span id="${('cancerAge_status16')}"></span>							 				  		 	
+						 	</td>
+						 </tr>
+						 <tr>
+						 	<td>
+							 		17. <g:select name="${('q13_17')}"
+							 				  value="${surveyInstance?.('q13_17')}"
+							 				  from="${FamilyList}"
+
+							 				  noSelection="['':'']"/>						 	
+						 	</td>
+						 	<td>
+							 		<g:select name="${('q13_17_cancerType')}"
+							 				  value="${surveyInstance?.('q13_17_cancerType')}"
+							 				  from="${CancerList}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>		
+									/ <g:textField name="${('q13_17_ageDiagnosed')}" 
+											   value="${surveyInstance?.('q13_17_ageDiagnosed')}"
+											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status17')}\')); " /> <span id="${('cancerAge_status17')}"></span>							 				  		 	
+							 				  				 	
+						 	</td>
+						 </tr>						 
+						 <tr>
+						 	<td>
+							 		18. <g:select name="${('q13_18')}"
+							 				  value="${surveyInstance?.('q13_18')}"
+							 				  from="${FamilyList}"
+
+							 				  noSelection="['':'']"/>						 	
+						 	</td>
+						 	<td>
+							 		<g:select name="${('q13_18_cancerType')}"
+							 				  value="${surveyInstance?.('q13_18_cancerType')}"
+							 				  from="${CancerList}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>			
+									/ <g:textField name="${('q13_18_ageDiagnosed')}" 
+											   value="${surveyInstance?.('q13_18_ageDiagnosed')}"
+											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status18')}\')); " /> <span id="${('cancerAge_status18')}"></span>							 				  		 	
+							 				  			 	
+						 	</td>
+						 </tr>						 
+						 <tr>
+						 	<td>
+							 		19. <g:select name="${('q13_19')}"
+							 				  value="${surveyInstance?.('q13_19')}"
+							 				  from="${FamilyList}"
+
+							 				  noSelection="['':'']"/>						 	
+						 	</td>
+						 	<td>
+							 		<g:select name="${('q13_19_cancerType')}"
+							 				  value="${surveyInstance?.('q13_19_cancerType')}"
+							 				  from="${CancerList}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>
+									/ <g:textField name="${('q13_19_ageDiagnosed')}" 
+											   value="${surveyInstance?.('q13_19_ageDiagnosed')}"
+											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status19')}\')); " /> <span id="${('cancerAge_status19')}"></span>							 				  		 	
+							 				  						 	
+						 	</td>
+						 </tr>						 
+						 <tr>
+						 	<td>
+							 		20. <g:select name="${('q13_20')}"
+							 				  value="${surveyInstance?.('q13_20')}"
+							 				  from="${FamilyList}"
+
+							 				  noSelection="['':'']"/>						 	
+						 	</td>
+						 	<td>
+							 		<g:select name="${('q13_20_cancerType')}"
+							 				  value="${surveyInstance?.('q13_20_cancerType')}"
+							 				  from="${CancerList}"
+							 				  optionKey="key"
+							 				  optionValue="value"
+							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>		
+									/ <g:textField name="${('q13_20_ageDiagnosed')}" 
+											   value="${surveyInstance?.('q13_20_ageDiagnosed')}"
+											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status20')}\')); " /> <span id="${('cancerAge_status20')}"></span>							 				  		 	
+							 				  				 	
+						 	</td>
+						 </tr>						 
+
                         </tbody>
                     </table>
                     </div>
