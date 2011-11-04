@@ -390,6 +390,108 @@ function clear_q99()
 					   		</td>
 					   </tr>
 					   </g:each>
+					   <tr>
+					   		<td style="width:30%;font-weight:bold;">
+					   			7. <g:message code="survey.q94.t.other" /> #3
+					   			<g:textField style="width:100px" name="q94_otherMedName3" value="${surveyInstance?.q94_otherMedName3}" />
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_7_ageStart')}" 
+					   				value="${surveyInstance?.('q94_7_ageStart')}"
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status7')}\')); "/> <span id="${('q94_ageStart_status7')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_7_NumPillsPerWeek')}" 
+					   				value="${surveyInstance?.('q94_7_NumPillsPerWeek')}"
+					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status7')}\')); "/> <span id="${('q94_pills_status7')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:radioGroup name="${('q94_7')}"
+	                            	value="${surveyInstance?.('q94_7')}" 
+	                                labels="${q94StillNoLongerList}" 
+	                                values="['still_using','no_longer_using']" >
+									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+								</g:radioGroup>					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_7_ageStop')}" 
+					   				value="${surveyInstance?.('q94_7_ageStop')}"
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_7_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status7')}\')); "/> <span id="${('q94_ageStop_status7')}"></span>
+					   		</td>
+					   </tr>
+					   <tr>
+					   		<td style="width:30%;font-weight:bold;">
+					   			8. <g:message code="survey.q94.t.other" /> #4
+					   			<g:textField style="width:100px" name="q94_otherMedName4" value="${surveyInstance?.q94_otherMedName4}" />
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_8_ageStart')}" 
+					   				value="${surveyInstance?.('q94_8_ageStart')}"
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status8')}\')); "/> <span id="${('q94_ageStart_status8')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_8_NumPillsPerWeek')}" 
+					   				value="${surveyInstance?.('q94_8_NumPillsPerWeek')}"
+					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status8')}\')); "/> <span id="${('q94_pills_status8')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:radioGroup name="${('q94_8')}"
+	                            	value="${surveyInstance?.('q94_8')}" 
+	                                labels="${q94StillNoLongerList}" 
+	                                values="['still_using','no_longer_using']" >
+									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+								</g:radioGroup>					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_8_ageStop')}" 
+					   				value="${surveyInstance?.('q94_8_ageStop')}"
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_8_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status8')}\')); "/> <span id="${('q94_ageStop_status8')}"></span>
+					   		</td>
+					   </tr>
+					   <tr>
+					   		<td style="width:30%;font-weight:bold;">
+					   			9. <g:message code="survey.q94.t.other" /> #5
+					   			<g:textField style="width:100px" name="q94_otherMedName5" value="${surveyInstance?.q94_otherMedName5}" />
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_9_ageStart')}" 
+					   				value="${surveyInstance?.('q94_9_ageStart')}"
+									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status9')}\')); "/> <span id="${('q94_ageStart_status9')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:100px" 
+					   				name="${('q94_9_NumPillsPerWeek')}" 
+					   				value="${surveyInstance?.('q94_9_NumPillsPerWeek')}"
+					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status9')}\')); "/> <span id="${('q94_pills_status9')}"></span>
+					   		
+					   		</td>
+					   		<td>
+					   			<g:radioGroup name="${('q94_9')}"
+	                            	value="${surveyInstance?.('q94_9')}" 
+	                                labels="${q94StillNoLongerList}" 
+	                                values="['still_using','no_longer_using']" >
+									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
+								</g:radioGroup>					   		
+					   		</td>
+					   		<td>
+					   			<g:textField style="width:50px" 
+					   				name="${('q94_9_ageStop')}" 
+					   				value="${surveyInstance?.('q94_9_ageStop')}"
+					   				onkeyup="checkIfValidNumber(this.value, document.getElementById('q94_9_ageStart').value, ${surveyInstance?.age ? surveyInstance?.age : 100 }, document.getElementById(\'${('q94_ageStop_status9')}\')); "/> <span id="${('q94_ageStop_status9')}"></span>
+					   		</td>
+					   </tr>					   
 					   </tbody>
 					   </table>
                 </div>

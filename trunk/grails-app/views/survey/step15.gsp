@@ -142,6 +142,15 @@ function checkForm15()
                             </tr>
                         </tbody>
                     </table>
+                    <br/>
+                    <table class="box-table-b-wide">
+                        <thead>
+                        	<tr><th>Memo / Comments</th></tr>
+                        </thead>
+                        <tbody>
+                        	<tr><td><g:textArea name="other_memo" value="${surveyInstance?.other_memo}" style="	width: 600px; height: 120px; vertical-align: top;"/></td></tr>
+                        </tbody>
+                    </table>                    
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}"  onclick="DisableEnableForm(document.surveyform15,false);" /></span>
