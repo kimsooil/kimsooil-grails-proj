@@ -48,7 +48,7 @@ $("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);
 
 var extraCancerTypeVar= ['q12_25','q12_26','q12_27','q12_28','q12_29'];
 var num_extraCancerType = 0;
-
+<%--
 <%
 def existingC=0
 if (surveyInstance?.q12_25) existingC++
@@ -56,7 +56,7 @@ if (surveyInstance?.q12_26) existingC++
 if (surveyInstance?.q12_27) existingC++
 if (surveyInstance?.q12_28) existingC++
 if (surveyInstance?.q12_29) existingC++
- %>
+%>
 
 var existing_C = ${existingC ? existingC : 0};
 
@@ -90,7 +90,7 @@ var existing_C = ${existingC ? existingC : 0};
 	        num_extraCancerType++;
 	    }
     }  
-
+--%>
 $(document).ready(function(){ 
 
         $("#tblCancerDiagnosed td input.rdelete").live("click", function () {
@@ -221,6 +221,7 @@ $(document).ready(function(){
 	$("input[name='haveCancer']").change(function(){
 	    if ($("input[name='haveCancer']:checked").val() == 'yes'){
 	    	$("#q12_status").html(" <font color='red'>(<b>***</b>)</font>");
+	    	$(':regex(id,q12_([0-9]|[0-9][0-9]))').attr("disabled", '');
 	    	$("[name*='_ageDiagnosed']").attr("disabled", '');
 	    	//$("[name*='q12_1_'], [name*='q12_2_'], [name*='q12_3_'], [name*='q12_4_']").attr("disabled", '');
 	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("disabled", '');
@@ -232,6 +233,17 @@ $(document).ready(function(){
 	    }
 	    else if ($("input[name='haveCancer']:checked").val() == 'no'){
 	    	$("#q12_status").html("");
+	    	$("[name*='q12_25']").val('');
+	    	$("[name*='q12_25']").attr("disabled", true);
+	    	$("[name*='q12_26']").val('');
+	    	$("[name*='q12_26']").attr("disabled", true);	    	
+	    	$("[name*='q12_27']").val('');
+	    	$("[name*='q12_27']").attr("disabled", true);	    	
+	    	$("[name*='q12_28']").val('');
+	    	$("[name*='q12_28']").attr("disabled", true);	    	
+	    	$("[name*='q12_29']").val('');
+	    	$("[name*='q12_29']").attr("disabled", true);	    	
+	    		    	
 	    	$("[name*='_ageDiagnosed']").val('');
 	    	$("[name*='_ageDiagnosed']").attr("disabled", true);
 	    	$("[name='q12_which_cancer']").val('');
@@ -629,6 +641,89 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	                   </g:else>
 	                    	</tr>
 	                    	</g:each>
+                    <%
+                    	def CancerList2 = ['']+CancerList
+                    %>	                    	
+						<tr>
+							<td>25. <g:select name="q12_25" from="${CancerList2}" value="${surveyInstance?.q12_25 }" /></td>
+							<td><g:textField style="width: 50px" name="q12_25_ageDiagnosed" value="${surveyInstance?.q12_25_ageDiagnosed }"
+											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status25')}\')); "/> <span id="${('cancerAge_status25')}"></span>
+							</td>
+							<td>
+								 <g:each in="${TreatmentList }" status="j" var="treatment">
+								 <% def tidx=j+1 %>
+								 		<g:checkBox name="${('q12_25'+'_'+tidx)}"
+								 		 value="${surveyInstance?.('q12_25'+'_'+tidx)}" 
+								 		 onclick="resetIfnone()"/> <label>${treatment }</label>&nbsp;&nbsp;&nbsp;
+								 </g:each>	 
+							</td>
+						</tr>
+
+						<tr>
+							<td>26. <g:select name="q12_26" from="${CancerList2}" value="${surveyInstance?.q12_26 }" /></td>
+							<td><g:textField style="width: 50px" name="q12_26_ageDiagnosed" value="${surveyInstance?.q12_26_ageDiagnosed }"
+											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status26')}\')); "/> <span id="${('cancerAge_status26')}"></span>							</td>
+							<td>
+								 <g:each in="${TreatmentList }" status="j" var="treatment">
+								 <% def tidx=j+1 %>
+								 		<g:checkBox name="${('q12_26'+'_'+tidx)}"
+								 		 value="${surveyInstance?.('q12_26'+'_'+tidx)}" 
+								 		 onclick="resetIfnone()"/> <label>${treatment }</label>&nbsp;&nbsp;&nbsp;
+								 </g:each>	 
+
+							</td>
+						</tr>
+
+						<tr>
+							<td>27. <g:select name="q12_27" from="${CancerList2}" value="${surveyInstance?.q12_27 }" /></td>
+							<td><g:textField style="width: 50px" name="q12_27_ageDiagnosed" value="${surveyInstance?.q12_27_ageDiagnosed }"
+											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status27')}\')); "/> <span id="${('cancerAge_status27')}"></span>
+							</td>
+							<td>
+								 <g:each in="${TreatmentList }" status="j" var="treatment">
+								 <% def tidx=j+1 %>
+								 		<g:checkBox name="${('q12_27'+'_'+tidx)}"
+								 		 value="${surveyInstance?.('q12_27'+'_'+tidx)}" 
+								 		 onclick="resetIfnone()"/> <label>${treatment }</label>&nbsp;&nbsp;&nbsp;
+								 </g:each>	 
+
+							</td>
+						</tr>
+
+						<tr>
+							<td>28. <g:select name="q12_28" from="${CancerList2}" value="${surveyInstance?.q12_28 }" /></td>
+							<td><g:textField style="width: 50px" name="q12_28_ageDiagnosed" value="${surveyInstance?.q12_28_ageDiagnosed }"
+											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status28')}\')); "/> <span id="${('cancerAge_status28')}"></span>
+							</td>
+							<td>
+								 <g:each in="${TreatmentList }" status="j" var="treatment">
+								 <% def tidx=j+1 %>
+								 		<g:checkBox name="${('q12_28'+'_'+tidx)}"
+								 		 value="${surveyInstance?.('q12_28'+'_'+tidx)}" 
+								 		 onclick="resetIfnone()"/> <label>${treatment }</label>&nbsp;&nbsp;&nbsp;
+								 </g:each>	 
+
+							</td>
+						</tr>
+
+						<tr>
+							<td>29. <g:select name="q12_29" from="${CancerList2}" value="${surveyInstance?.q12_29 }" /></td>
+							<td><g:textField style="width: 50px" name="q12_29_ageDiagnosed" value="${surveyInstance?.q12_29_ageDiagnosed }"
+											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status29')}\')); "/> <span id="${('cancerAge_status29')}"></span>
+							</td>
+							<td>
+								 <g:each in="${TreatmentList }" status="j" var="treatment">
+								 <% def tidx=j+1 %>
+								 		<g:checkBox name="${('q12_29'+'_'+tidx)}"
+								 		 value="${surveyInstance?.('q12_29'+'_'+tidx)}" 
+								 		 onclick="resetIfnone()"/> <label>${treatment }</label>&nbsp;&nbsp;&nbsp;
+								 </g:each>	 
+
+							</td>
+						</tr>
+
+	                    	
+<%--	                    	
 						<g:if test="${surveyInstance?.q12_25 }">
 						<tr>
 							<td>25. ${surveyInstance?.q12_25 }&nbsp;&nbsp;&nbsp;<input type="button" value = "Delete" class="rdelete"/></td>
@@ -689,13 +784,14 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 							</td>
 						</tr>
 						</g:if>
+--%>					
 	                    </tbody>
                     </table>
-                    <br/>
+<%--
+
                     <ul>
-                    <%
-                    	def CancerList2 = ['']+CancerList
-                    %>
+                    
+
 	                    <input style="font-weight:bold;color:red;" type="button" value="Add New Row (up to 5)" onclick="AddNew()"><br/>
 	                    <table>
 	                    	<tr>
@@ -706,10 +802,7 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	                    	</tr>
 		                    	<tr>
 		                    		<td><g:select name="txtCancerType" from="${CancerList2}" value="" /></td>
-		                    		<td><g:textField style="width: 50px" name="txtAgeDiagnosed"
-		                    					 value="" />
-		                    				 
-		                    		</td>
+		                    		<td><g:textField style="width: 50px" name="txtAgeDiagnosed" value="" /></td>
 		                    		<td>
 		                    		<g:checkBox name="txtTreatment1" /> <g:message code="survey.q12_opt1" />&nbsp;&nbsp;&nbsp;
 		                    		<g:checkBox name="txtTreatment2" /> <g:message code="survey.q12_opt2" />&nbsp;&nbsp;&nbsp;
@@ -721,6 +814,8 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 						</ul> 
 					</div>
 					<ul>
+ --%>
+                <br/>					
 					<label for="q11b"><g:message code="survey.q11b.label" default="q11b" /></label>
 					<br/><br/>
 					<ul><g:radioGroup name="spread_cancer"
