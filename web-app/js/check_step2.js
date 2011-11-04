@@ -118,7 +118,7 @@ function checkForm2()
 //	}		  	
 //}
 function resetIfnone(){
-	for (i=1;i<=24;i++){
+	for (i=1;i<=29;i++){
 		if (document.getElementById('q12_'+i+'_4').checked){
 			for (j=1;j<=3;j++){
 				$('#q12_'+i+'_'+j).attr('checked', '');
