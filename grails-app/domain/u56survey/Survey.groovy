@@ -491,6 +491,8 @@ class Survey {
 	
 	String q95_doctor_name, q95_doctor_telephone, q95_doctor_other_info
 	String q95_addr_street1,q95_addr_street2, q95_addr_city, q95_addr_state, q95_addr_zipcode, q95_country
+	
+	String other_memo
 
 	static constraints = {
 		mode(inList:["paper", "screen"])

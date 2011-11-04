@@ -46,4 +46,13 @@
                             </tr>
                         </tbody>
                     </table>
+                    <br/>
+                    <table class="box-table-b-wide">
+                        <thead>
+                        	<tr><th>Memo / Comments</th></tr>
+                        </thead>
+                        <tbody>
+                        	<tr><td><g:textArea name="other_memo" value="${surveyInstance?.other_memo}" style="	width: 600px; height: 120px; vertical-align: top;"/></td></tr>
+                        </tbody>
+                    </table>                    
                 </div>

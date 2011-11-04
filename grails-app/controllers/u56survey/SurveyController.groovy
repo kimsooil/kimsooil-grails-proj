@@ -760,6 +760,7 @@ class SurveyController {
 		"q95_country",
 		"q95_doctor_telephone",
 		"q95_doctor_other_info",
+		"other_memo",
 		]
 
 	
@@ -1513,6 +1514,7 @@ class SurveyController {
 "q95_country":"q100_country",
 "q95_doctor_telephone":"q100_doctor_telephone",
 "q95_doctor_other_info":"q100_doctor_other_info",
+"other_memo":"Memo_comment",
 		]
 	
 	def show = {
