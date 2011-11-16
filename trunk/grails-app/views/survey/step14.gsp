@@ -613,7 +613,7 @@ function clear_q99()
 							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:message code="survey.age" /> <g:textField name="${('q90_'+idx+'_age')}" 
 																			 value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
 							
 							</td>
 							<td style="border: 1px solid #9baff1;">
@@ -640,7 +640,7 @@ function clear_q99()
 							<td>
 								<g:message code="survey.age" /> <g:textField name="${('q90_7_age')}" 
 																			 value="${surveyInstance?.('q90_7_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status7')}\')); "/> <span id="${('q90_age_status7')}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status7')}\')); "/> <span id="${('q90_age_status7')}"></span>
 							
 							</td>
 							<td>
@@ -667,7 +667,7 @@ function clear_q99()
 							<td>
 								<g:message code="survey.age" /> <g:textField name="${('q90_8_age')}" 
 																			 value="${surveyInstance?.('q90_8_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status8')}\')); "/> <span id="${('q90_age_status8')}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status8')}\')); "/> <span id="${('q90_age_status8')}"></span>
 							
 							</td>
 							<td>
@@ -694,7 +694,7 @@ function clear_q99()
 							<td>
 								<g:message code="survey.age" /> <g:textField name="${('q90_9_age')}" 
 																			 value="${surveyInstance?.('q90_9_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status9')}\')); "/> <span id="${('q90_age_status9')}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status9')}\')); "/> <span id="${('q90_age_status9')}"></span>
 							
 							</td>
 							<td>
@@ -721,7 +721,7 @@ function clear_q99()
 							<td>
 								<g:message code="survey.age" /> <g:textField name="${('q90_10_age')}" 
 																			 value="${surveyInstance?.('q90_10_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status10')}\')); "/> <span id="${('q90_age_status10')}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status10')}\')); "/> <span id="${('q90_age_status10')}"></span>
 							
 							</td>
 							<td>
@@ -748,7 +748,7 @@ function clear_q99()
 							<td>
 								<g:message code="survey.age" /> <g:textField name="${('q90_11_age')}" 
 																			 value="${surveyInstance?.('q90_11_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q90_age_status11')}\')); "/> <span id="${('q90_age_status11')}"></span>
+																			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status11')}\')); "/> <span id="${('q90_age_status11')}"></span>
 							
 							</td>
 							<td>
@@ -790,7 +790,7 @@ function clear_q99()
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q91_'+idx+'_howManyYears')}"
 																			value="${surveyInstance?.('q91_'+idx+'_howManyYears')}" 
-																			onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
+																			onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
 								</div>
 					 	</td>
 					 </tr>
@@ -833,7 +833,7 @@ function clear_q99()
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q92_'+idx+'_howManyYears')}" 
 																						  value="${surveyInstance?.('q92_'+idx+'_howManyYears')}" 
-																						  onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
+																						  onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
 								</div>
 					  	</td>
 					  </tr>
@@ -886,7 +886,7 @@ function clear_q99()
 								<div style="clear:left;">
 									<g:message code="survey.monthsofuse" /> <g:textField name="${('q93_'+idx+'_howManyMonths')}"
 																						 value="${surveyInstance?.('q93_'+idx+'_howManyMonths')}"
-																						 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
+																						 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
 								</div>					  	
 					  	</td>
 					  </tr>
@@ -935,13 +935,13 @@ function clear_q99()
 					   			<g:textField style="width:50px" 
 					   				name="${('q94_'+idx+'_ageStart')}" 
 					   				value="${surveyInstance?.('q94_'+idx+'_ageStart')}"
-									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
+									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q94_ageStart_status'+idx)}\')); "/> <span name="${('q94_ageStart_status'+idx)}" id="${('q94_ageStart_status'+idx)}"></span>
 					   		</td>
 					   		<td style="width:5%">
 					   			<g:textField style="width:100px" 
 					   				name="${('q94_'+idx+'_NumPillsPerWeek')}" 
 					   				value="${surveyInstance?.('q94_'+idx+'_NumPillsPerWeek')}"
-					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status'+idx)}\')); "/> <span name="${('q94_pills_status'+idx)}" id="${('q94_pills_status'+idx)}"></span>
+					   				onkeyup="checkIfValidNumber(this.value, 0, 200, document.getElementById(\'${('q94_pills_status'+idx)}\')); "/> <span name="${('q94_pills_status'+idx)}" id="${('q94_pills_status'+idx)}"></span>
 					   		</td>
 					   		<td style="width:30%">
 
@@ -969,14 +969,14 @@ function clear_q99()
 					   			<g:textField style="width:50px" 
 					   				name="${('q94_7_ageStart')}" 
 					   				value="${surveyInstance?.('q94_7_ageStart')}"
-									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status7')}\')); "/> <span id="${('q94_ageStart_status7')}"></span>
+									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q94_ageStart_status7')}\')); "/> <span id="${('q94_ageStart_status7')}"></span>
 					   		
 					   		</td>
 					   		<td>
 					   			<g:textField style="width:100px" 
 					   				name="${('q94_7_NumPillsPerWeek')}" 
 					   				value="${surveyInstance?.('q94_7_NumPillsPerWeek')}"
-					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status7')}\')); "/> <span id="${('q94_pills_status7')}"></span>
+					   				onkeyup="checkIfValidNumber(this.value, 0, 200, document.getElementById(\'${('q94_pills_status7')}\')); "/> <span id="${('q94_pills_status7')}"></span>
 					   		
 					   		</td>
 					   		<td>
@@ -1003,14 +1003,14 @@ function clear_q99()
 					   			<g:textField style="width:50px" 
 					   				name="${('q94_8_ageStart')}" 
 					   				value="${surveyInstance?.('q94_8_ageStart')}"
-									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status8')}\')); "/> <span id="${('q94_ageStart_status8')}"></span>
+									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q94_ageStart_status8')}\')); "/> <span id="${('q94_ageStart_status8')}"></span>
 					   		
 					   		</td>
 					   		<td>
 					   			<g:textField style="width:100px" 
 					   				name="${('q94_8_NumPillsPerWeek')}" 
 					   				value="${surveyInstance?.('q94_8_NumPillsPerWeek')}"
-					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status8')}\')); "/> <span id="${('q94_pills_status8')}"></span>
+					   				onkeyup="checkIfValidNumber(this.value, 0, 200, document.getElementById(\'${('q94_pills_status8')}\')); "/> <span id="${('q94_pills_status8')}"></span>
 					   		
 					   		</td>
 					   		<td>
@@ -1037,14 +1037,14 @@ function clear_q99()
 					   			<g:textField style="width:50px" 
 					   				name="${('q94_9_ageStart')}" 
 					   				value="${surveyInstance?.('q94_9_ageStart')}"
-									onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q94_ageStart_status9')}\')); "/> <span id="${('q94_ageStart_status9')}"></span>
+									onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q94_ageStart_status9')}\')); "/> <span id="${('q94_ageStart_status9')}"></span>
 					   		
 					   		</td>
 					   		<td>
 					   			<g:textField style="width:100px" 
 					   				name="${('q94_9_NumPillsPerWeek')}" 
 					   				value="${surveyInstance?.('q94_9_NumPillsPerWeek')}"
-					   				onkeyup="checkIfValidNumber(this.value, 1, 200, document.getElementById(\'${('q94_pills_status9')}\')); "/> <span id="${('q94_pills_status9')}"></span>
+					   				onkeyup="checkIfValidNumber(this.value, 0, 200, document.getElementById(\'${('q94_pills_status9')}\')); "/> <span id="${('q94_pills_status9')}"></span>
 					   		
 					   		</td>
 					   		<td>
