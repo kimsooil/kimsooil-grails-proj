@@ -122,7 +122,7 @@ $(document).ready(function(){
     </g:javascript>   
  
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+            <%--<span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span> --%>
             <%--<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span> --%>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
             <g:if test="${session.user.location=='MOFF' }">

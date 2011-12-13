@@ -31,7 +31,7 @@ $(document).ready(function(){
 		    	    
 </g:javascript>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
             <g:if test="${session.user.location=='MOFF' }">
             <span class="menuButton"><g:select name="mode" 
