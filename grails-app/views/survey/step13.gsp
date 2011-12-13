@@ -14,6 +14,14 @@
     <body>
 <g:javascript>
 $(document).ready(function(){ 
+	$("#mode").change(function() {
+		if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+		}
+		else{
+			$('body').css('background-color', '#FFF8DC');
+		}
+	});
 	$("input[name='q85']").change(function(){
 	    if ($("input[name='q85']:checked").val() == 'yes'){
 	    	$("#whichDiet").show();
@@ -43,10 +51,20 @@ $(document).ready(function(){
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
+            <g:if test="${session.user.location=='MOFF' }">
+            <span class="menuButton"><g:select name="mode" 
+          			from="${['paper', 'screen']}"
+          			value="${surveyInstance?.mode}"
+          			noSelection="['':'-Mode-']"  />
+          	</span>
+          	</g:if>
         </div>
         <div class="body">
 <g:javascript>
 $(document).ready(function(){ 
+	if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+	}
 
 if ($("input[name='q85']:checked").val() == 'no'){
 	    	$("#whichDiet").hide();
@@ -73,10 +91,13 @@ if ($("input[name='q87']:checked").val() == 'no'){
             </div>
             </g:hasErrors>
             <g:form name="surveyform12"
-            		onsubmit="return checkForm13();"
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm13());} else {return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:if test="${session.user.location!='MOFF' }">
+                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                </g:if>
                 <g:render template="/common/status_info"  model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
 					<%

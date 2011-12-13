@@ -1818,7 +1818,9 @@ class SurveyController {
 		surveyInstance.step="1"
 		surveyInstance.properties = params
 		thisyear=thisyear-18
-		return [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames]
+		//return [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames]
+		
+		redirect(action: "step1_edit", id: surveyInstance.id)
 	}
 
 	def step1_edit ={ // copied from edit
@@ -2421,8 +2423,9 @@ class SurveyController {
                 redirect(action: "show", id: surveyInstance.id)
             }
             else {
+				flash.message = "Inputs cannot be saved due to error(s). Try again."
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
-				redirect(action: "show", id: surveyInstance.id)
+				//redirect(action: "show", id: surveyInstance.id)
             }
         }
         else {
@@ -2539,6 +2542,7 @@ class SurveyController {
 					redirect(action: ("step"+nextStep), id: surveyInstance.id)
 			}
 			else {
+				flash.message = "Inputs cannot be saved due to error(s). Try again."
 				render(view: ("step"+currentStep), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
 			}
 		}

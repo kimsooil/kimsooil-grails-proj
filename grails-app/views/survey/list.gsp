@@ -15,9 +15,11 @@
             	<%--<span class="menuButton"><g:link controller="survey" class="list" action="calendarview">Calendar View</g:link></span> --%>
             	<span class="menuButton"><g:link controller="person" class="list" action="list">Manage User</g:link></span>
             	<span class="menuButton"><g:link controller="survey" class="list" action="print">Print Form</g:link></span>
+
             </g:if>
             <g:else>
             	<span class="menuButton"><g:link controller="person" class="edit" action="edit_info" params="[user:session.user.login]">Edit Info</g:link></span>
+
             </g:else>
             <%--<g:if test="${session.user.role=='surveyer' }"><span class="menuButton"><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link></span></g:if> --%>
         </div>
@@ -38,7 +40,7 @@
 	        	<ul>
 	        		
 	        		<br/>
-		        	<li><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link> (<g:link class="create" action="paper">Paper</g:link>)</li>
+		        	<li><g:link class="create" action="step1"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 		        	<br/>
 		        	<li><g:link class="list_surveyer" action="list_surveyer"><g:message code="default.list.label" args="[entityName]" /></g:link><%-- (<g:link controller="survey" class="list" action="calendarview">Calendar View</g:link>) --%></li>
 		        	<br/>

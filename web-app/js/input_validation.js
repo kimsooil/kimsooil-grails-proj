@@ -232,3 +232,37 @@ function CalAge_precise(dd,mm, yy) {
     }
    	    return -1;
 }
+
+function confirmIfSure()
+{
+	//var agree=confirm(i18nmessages.step1ErrICN);
+	var agree=confirm("Do you really want to save your inputs without Input Validation?");
+	if (agree){
+		return true;
+	}
+	else{
+		return false ;
+	}
+} 
+
+function checkIfConsentNumIsNumber(val)
+{
+	//var agree=confirm(i18nmessages.step1ErrICN);
+	var agree=confirm("Do you really want to save your inputs without Input Validation?");
+	if (agree){
+		
+		if (!isValidNumber(val, 1, 9999))
+		{
+			alert(i18nmessages.step1ErrICN+" (1~9999)");
+			
+			return false;
+		}
+		else
+		{
+			return true;
+		} 
+	}
+	else{
+		return false ;
+	}
+} 

@@ -136,17 +136,33 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 			}	
 		}
 	);
-	    
+	$("#mode").change(function() {
+		if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+		}
+		else{
+			$('body').css('background-color', '#FFF8DC');
+		}
+	});		    
 });		    	    
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
+            <g:if test="${session.user.location=='MOFF' }">
+            <span class="menuButton"><g:select name="mode" 
+          			from="${['paper', 'screen']}"
+          			value="${surveyInstance?.mode}"
+          			noSelection="['':'-Mode-']"  />
+          	</span>
+          	</g:if>
         </div>
         <div class="body">
 <g:javascript>
 $(document).ready(function(){ 
-
+	if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+	}
 if ($("input[name='q32']:checked").val() == 'no'){
 	    	$("[name*='dateRectalExam']").val('');
 	    	$("[name*='dateRectalExam']").attr("disabled", true);	    	
@@ -174,9 +190,12 @@ if ($("input[name='q33']:checked").val() == 'no'){
             </g:hasErrors>
             <g:form name="surveyform7"
             		method="post"
-            		onsubmit="return checkForm7();" >
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm7());} else {return confirmIfSure();}" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:if test="${session.user.location!='MOFF' }">
+                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                </g:if>
                 <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                 <br/><ul><label><g:message code="survey.q30" default="q30" /></label></ul>

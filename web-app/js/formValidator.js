@@ -37,7 +37,7 @@ function isValidNumber(val, min, max)
 		}
         		
 	}
-	return
+	return false;
 }
 function isValidZipcode(zipcode)
 {

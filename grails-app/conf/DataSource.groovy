@@ -44,7 +44,9 @@ environments {
 			//url = "jdbc:hsqldb:file:prodDb;shutdown=true"
 			//url = "jdbc:oracle:thin:@genome:1523:Bioinfod"
 			//url = "jdbc:postgresql://kimsiapp:5432/u56survey"
-			url = "jdbc:postgresql://localhost:5432/u56survey"
+			
+			//url = "jdbc:postgresql://localhost:5432/u56survey"
+			url = "jdbc:postgresql://postgres.chromworks.jelastic.servint.net/u56survey"
         }
     }
     test {

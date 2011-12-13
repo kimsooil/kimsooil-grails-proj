@@ -195,6 +195,9 @@ updateConfigurationMap({
    step14Err9 : "${message(code:'step14.err.msgs9').encodeAsHTML()}",
    step14Err10 : "${message(code:'step14.err.msgs10').encodeAsHTML()}",
    step14Err11 : "${message(code:'step14.err.msgs11').encodeAsHTML()}",
+   
+   step15Err1 : "${message(code:'step15.err.msgs1').encodeAsHTML()}",
+   
    confirmMsg: "${message(code:'confirmMsg').encodeAsHTML()}"
  });
  </g:javascript>
