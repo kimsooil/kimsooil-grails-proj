@@ -495,6 +495,7 @@ class Survey {
 	String other_memo
 
 	static constraints = {
+		other_memo(size:1..5000)
 		mode(inList:["paper", "screen"])
 		//consentNumSurv(inList:["HISPBB"])
 		consentNumLoc(inList:["MOFF", "FLHO", "PSoM", "STLU", "HIMA", "SJVA", "AMHO", 'PRTB', "DEMO"])

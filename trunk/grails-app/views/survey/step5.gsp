@@ -19,14 +19,36 @@ $(document).ready(function(){
        $("#q22_others").attr("disabled", '');
        $("#q22_others_status").html("<br/><font color='red'>(<b>"+i18nmessages.step5msg1+"</b>)</font>");
    }); 
+	$("#mode").change(function() {
+		if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+		}
+		else{
+			$('body').css('background-color', '#FFF8DC');
+		}
+	});		   
 });
 		    	    
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
+            <g:if test="${session.user.location=='MOFF' }">
+            <span class="menuButton"><g:select name="mode" 
+          			from="${['paper', 'screen']}"
+          			value="${surveyInstance?.mode}"
+          			noSelection="['':'-Mode-']"  />
+          	</span>
+          	</g:if>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+	if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+	}
+});
+</g:javascript>        
             <h1><g:message code="step5.label" default="Step5" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -38,9 +60,12 @@ $(document).ready(function(){
             </g:hasErrors>
             <g:form name="surveyform5"
             		method="post" 
-            		onsubmit="return checkForm5();">
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm5());} else {return confirmIfSure();}">
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:if test="${session.user.location!='MOFF' }">
+                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                </g:if>
                 <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                 <br/>

@@ -37,7 +37,17 @@ $(document).ready(function(){
   		//$("[name=consentNum]").attr("disabled", false);
   		//checkVerifyForm();
 	}
-
+	$("#consentNumLoc").change(function() {
+			if ($("#consentNumLoc").val()=='PRTB')
+			{
+				$("#otherNumber").show();
+			}
+			else {
+				$("#otherNumber").hide();
+				$("#otherNumberOrComments").val('');
+			}	
+		}
+	);
 });
 function confirmSubmit()
 {

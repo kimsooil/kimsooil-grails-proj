@@ -38,7 +38,22 @@ $(document).ready(function(){
   		//checkVerifyForm();
 	}
 	</g:if>
+	$("#consentNumLoc").change(function() {
+			if ($("#consentNumLoc").val()=='PRTB')
+			{
+				$("#otherNumber").show();
+			}
+			else {
+				$("#otherNumber").hide();
+				$("#otherNumberOrComments").val('');
+			}	
+		}
+	);	
+	
 });
+
+
+
 function confirmSubmit()
 {
 	var agree=confirm(i18nmessages.confirmMsg);
@@ -49,6 +64,7 @@ function confirmSubmit()
 		return false ;
 	}
 }   
+
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
@@ -57,6 +73,20 @@ function confirmSubmit()
             </g:if>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){
+
+		if ($("#consentNumLoc").val()=='PRTB')
+		{
+			$("#otherNumber").show();
+		}
+		else {
+			$("#otherNumber").hide();
+			$("#otherNumberOrComments").val('');
+		}		  	
+});		  	
+</g:javascript>        
+        
             <h1>Paper Survey (Edit)</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>

@@ -487,18 +487,36 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	    	$("[name*='q53_']").attr("disabled", true);	  
 	    		 
 	    }
-	});									
+	});		
+	$("#mode").change(function() {
+		if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+		}
+		else{
+			$('body').css('background-color', '#FFF8DC');
+		}
+	});		
+								
 });	
 </g:javascript>    
 	
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
 			<span class="menuButton"><g:render template="/common/step_meter"/></span>
+            <g:if test="${session.user.location=='MOFF' }">
+            <span class="menuButton"><g:select name="mode" 
+          			from="${['paper', 'screen']}"
+          			value="${surveyInstance?.mode}"
+          			noSelection="['':'-Mode-']"  />
+          	</span>
+          	</g:if>
         </div>
         <div class="body">
 <g:javascript>
 $(document).ready(function(){
-
+	if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+	}
 if ($("input[name='q47']:checked").val() == 'never'){
 	    	$("[name*='q48dateLastVisitGynecologist']").val('');
 	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", true);	  
@@ -581,10 +599,13 @@ if ($("input[name='q53']:checked").val() == 'no'){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform9"
-            		onsubmit="return checkForm9();"
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm9());} else {return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:if test="${session.user.location!='MOFF' }">
+                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                </g:if>
                 <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
 					<br/><ul><label><g:message code="survey.q45" default="q45" /></label></ul>

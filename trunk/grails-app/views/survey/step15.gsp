@@ -6,82 +6,46 @@
         <g:set var="entityName" value="${message(code: 'survey.label', default: 'Survey')}" />
         <title><g:message code="step15.label" default="Step15" /></title>
 
-		<jv:generateValidation domain="survey" form="surveyform15"  display="list" container="errors"/>      
+		<%--<jv:generateValidation domain="survey" form="surveyform15"  display="list" container="errors"/> --%>      
+		<g:render template="errMsgsToJson-js"/>
 
-<g:javascript>
-var i18nmessages={};
+		<g:javascript src="check_step15.js" /> 
+		 
 
-function updateConfigurationMap(newConfigurationMap) {
-	for(key in newConfigurationMap){
-		i18nmessages[key] = newConfigurationMap[key];
-	}
-
-	//or in jQuery way
-//	jQuery.each(newConfiguration, function(key, val) {
-//		i18nmessages[key] = val
-//	});
-
-}
-updateConfigurationMap({
-
-   step15Err1 : "${message(code:'step15.err.msgs1').encodeAsHTML()}"
-
- }); 
-function checkForm15()
-{
-	// instantiate object
-	fv = new formValidator();
-	
-//	String q95_doctor_name, q95_doctor_telephone, q95_doctor_other_info
-//	String q95_addr_street1,q95_addr_street2, q95_addr_city, q95_addr_state, q95_addr_zipcode, q95_country	
-/*
-	if (fv.isEmpty($('#q95_doctor_name').val())){
-		fv.raiseError("Q100: Enter name (Doctor).");
-	}
-	if (fv.isEmpty($('#q95_doctor_telephone').val())){
-		fv.raiseError("Q100: Enter telephone number (Doctor).");
-	}
-	if (fv.isEmpty($('#q95_addr_street1').val())){
-		fv.raiseError("Q100: Enter street (Doctor).");
-	}
-	if (fv.isEmpty($('#q95_addr_city').val())){
-		fv.raiseError("Q100: Enter city (Doctor).");
-	}
-	if (fv.isEmpty($('#q95_addr_state').val())){
-		fv.raiseError("Q100: Enter state (Doctor).");
-	}
-
-	if (!fv.isValidZipcode($('#q95_addr_zipcode').val())){
-		fv.raiseError(i18nmessages.step15Err1);
-	}
-	
-	if (fv.isEmpty($('#q95_country').val())){
-		fv.raiseError("Q100: Choose country");
-	}
-*/	
-	// all done
-	// if errors, display, else proceed
-	if (fv.numErrors() > 0)
-	{
-		fv.displayErrors();
-	
-		return false;
-	}
-	else
-	{
-		return true;
-	}	
-}
-
-</g:javascript>
 		  
     </head>
     <body>
+<g:javascript>
+$(document).ready(function(){ 
+	$("#mode").change(function() {
+		if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+		}
+		else{
+			$('body').css('background-color', '#FFF8DC');
+		}
+	});
+});	 
+</g:javascript>       
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
+            <g:if test="${session.user.location=='MOFF' }">
+            <span class="menuButton"><g:select name="mode" 
+          			from="${['paper', 'screen']}"
+          			value="${surveyInstance?.mode}"
+          			noSelection="['':'-Mode-']"  />
+          	</span>
+          	</g:if>
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+	if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+	}
+});
+</g:javascript>         
             <h1><g:message code="step15.label" default="Step15" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -89,10 +53,13 @@ function checkForm15()
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform15"
-					onsubmit="return checkForm15()"
+					onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm15());} else {return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
+                <g:if test="${session.user.location!='MOFF' }">
+                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                </g:if>
                 <g:render template="/common/status_info"  model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                 <br/><label>&nbsp;&nbsp;<g:message code="survey.q95" default="q95" /></label><br/><br/>

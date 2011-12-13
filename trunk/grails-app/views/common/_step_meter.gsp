@@ -88,3 +88,4 @@ def fragmentString=""
 </g:while>
 
 <g:link title="preview" action="preview" id="${surveyInstance?.id}"><label>*</label></g:link>
+         

@@ -96,8 +96,27 @@ $(document).ready(function(){
 			}	
 		}
 	);
+	$("#mode").change(function() {
+		if ($("#mode").val()=='paper'){
+			DisableEnableForm(document.surveyform1,false);
+			$('body').css('background-color', '#CCCCCC');
+			//$('#consentNum').val('');
+		}
+		else if ($("input[name='being_treated_for_cancer']:checked").val()== null){
+			DisableEnableForm(document.surveyform1,true);
+	  		$("[name*='being_treated_for_cancer'][type=radio]").attr("disabled", "");
+	  		$("#consentNumLoc").attr("disabled", "");
+	  		$("#consentNum").attr("disabled", "");
+	  		$("#otherNumberOrComments").attr("disabled", "");
+	  		$('body').css('background-color', '#FFF8DC');			
+		}
+		else{
+			$('body').css('background-color', '#FFF8DC');
+		}
+	});	
 	$("input[name='being_treated_for_cancer']").change(function(){
 		DisableEnableForm(document.surveyform1,false);
+		$('body').css('background-color', '#FFF8DC');
 	});
     $('#consentNum').click(function(){
           this.value = '';
@@ -115,6 +134,11 @@ $(document).ready(function(){
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <g:if test="${session.user.role=='admin' }"><span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span></g:if>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
+            <span class="menuButton"><g:select name="mode" 
+          			from="${['paper', 'screen']}"
+          			value="${surveyInstance?.mode}"
+          			noSelection="['':'-Mode-']"  />
+          	</span>            
         </div>
         <div class="body">
 <g:javascript>
@@ -133,7 +157,11 @@ $(document).ready(function(){
 		else {
 			$("#otherNumber").hide();
 			$("#otherNumberOrComments").val('');
-		}		  	
+		}
+		if ($("#mode").val()=='paper'){
+			DisableEnableForm(document.surveyform1,false);
+			$('body').css('background-color', '#CCCCCC');
+		}				  	
 });	  	
 </g:javascript>        
             <h1><g:message code="step1.label" default="Step1-new" /></h1>
@@ -144,7 +172,7 @@ $(document).ready(function(){
 </div>
             <g:form
  					name="surveyform1"
- 					onsubmit="return (checkForm1());"       
+ 					onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm1());} else {return checkIfConsentNumIsNumber(document.getElementById('consentNum').value);}"     
              		action="save" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />   

@@ -18,6 +18,8 @@
  
     </head>
     <body>
+
+
     <g:javascript>
 function IsDOBValid(){
 			if (($('#DOB_month option:selected').val()=='2' && $('#DOB_day option:selected').val()=='31') ||
@@ -25,8 +27,7 @@ function IsDOBValid(){
 			($('#DOB_month option:selected').val()=='4' && $('#DOB_day option:selected').val()=='31') ||
 			($('#DOB_month option:selected').val()=='6' && $('#DOB_day option:selected').val()=='31') ||
 			($('#DOB_month option:selected').val()=='9' && $('#DOB_day option:selected').val()=='31') ||
-			($('#DOB_month option:selected').val()=='11' && $('#DOB_day option:selected').val()=='31'))
-			{
+			($('#DOB_month option:selected').val()=='11' && $('#DOB_day option:selected').val()=='31')) {
 				return false;
 			}
 			else {
@@ -63,8 +64,7 @@ $(document).ready(function(){
 			else {
 				$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));
 			}	
-		}
-	);
+	});
 	$("#DOB_month").change(function() {
 			if (!IsDOBValid())
 			{
@@ -74,8 +74,7 @@ $(document).ready(function(){
 			else {
 				$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));
 			}	
-		}
-	);
+	});
 	$("#DOB_year").change(function() {
 			if (!IsDOBValid())
 			{
@@ -85,8 +84,7 @@ $(document).ready(function(){
 			else {
 				$('#age_calculated').attr('innerHTML', " -> "+CalAge($("#DOB_day").val(), $("#DOB_month").val(), $("#DOB_year").val()));
 			}	
-		}
-	);
+	});
 	$("#consentNumLoc").change(function() {
 			if ($("#consentNumLoc").val()=='PRTB')
 			{
@@ -96,38 +94,57 @@ $(document).ready(function(){
 				$("#otherNumber").hide();
 				$("#otherNumberOrComments").val('');
 			}	
+	});
+	$("#mode").change(function() {
+		if ($("#mode").val()=='paper'){
+			DisableEnableForm(document.surveyform1,false);
+			$('body').css('background-color', '#CCCCCC');
 		}
-	);
+		else{
+			$('body').css('background-color', '#FFF8DC');
+		}
+	});
 	$("input[name='being_treated_for_cancer']").change(function(){
 		DisableEnableForm(document.surveyform1,false);
 	});
-	
+	/*******
     $('#consentNum').click(function(){
           this.value = '';
           this.style.color = 'red';
     }).blur(function(){
-      if ( this.value == '')
-          this.value = '---ICN---';
-           this.style.color = 'red';
-    });		
+//      if ( this.value == '')
+//          this.value = '---ICN---';
+//           this.style.color = 'red';
+    });
+    **********/		
 });	
 
-    </g:javascript>    
+    </g:javascript>   
+ 
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <%--<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span> --%>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
+            <g:if test="${session.user.location=='MOFF' }">
+            <span class="menuButton"><g:select name="mode" 
+          			from="${['paper', 'screen']}"
+          			value="${surveyInstance?.mode}"
+          			noSelection="['':'-Mode-']"  />
+          	</span>
+          	</g:if>
         </div>
         <div class="body">
+
+
 <g:javascript>
 $(document).ready(function(){
-		if ($("input[name='being_treated_for_cancer']:checked").val()== null){
-	  		DisableEnableForm(document.surveyform1,true);
-	  		$("[name*='being_treated_for_cancer'][type=radio]").attr("disabled", "");
-	  		$("#consentNumLoc").attr("disabled", "");
-	  		$("#consentNum").attr("disabled", "");
-	  		$("#otherNumberOrComments").attr("disabled", "");
-	  	}
+		//if ($("input[name='being_treated_for_cancer']:checked").val()== null){
+	  	//	DisableEnableForm(document.surveyform1,true);
+	  	//	$("[name*='being_treated_for_cancer'][type=radio]").attr("disabled", "");
+	  	//	$("#consentNumLoc").attr("disabled", "");
+	  	//	$("#consentNum").attr("disabled", "");
+	  	//	$("#otherNumberOrComments").attr("disabled", "");
+	  	//}
 		if ($("#consentNumLoc").val()=='PRTB')
 		{
 			$("#otherNumber").show();
@@ -136,8 +153,13 @@ $(document).ready(function(){
 			$("#otherNumber").hide();
 			$("#otherNumberOrComments").val('');
 		}		  	
+		if ($("#mode").val()=='paper'){
+			DisableEnableForm(document.surveyform1,false);
+			$('body').css('background-color', '#CCCCCC');
+		}
 });		  	
 </g:javascript>
+
             <h1><g:message code="step1.edit.label" default="Step1-edit" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -146,14 +168,17 @@ $(document).ready(function(){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform1"
-					onsubmit="return (checkForm1());"
+					onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm1());} else {return checkIfConsentNumIsNumber(document.getElementById('consentNum').value);}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:hiddenField name="step" value="${step}" />
                 <g:hiddenField name="surveyer" value="${session.user.login}" />
                 <g:hiddenField name="age" value="" />
-                <g:hiddenField name="mrn" value="${surveyInstance?.mrn}" />
+                <g:hiddenField name="mrn" value="${surveyInstance?.mrn}" />           	
+                <g:if test="${session.user.location!='MOFF' }">
+                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                </g:if>
                 
                 <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
@@ -166,7 +191,9 @@ $(document).ready(function(){
                 		  from="${u56survey.Site.list()}"
                 		  optionKey="fourletters"
                 		  value="${surveyInstance?.consentNumLoc}"  /> -
-                <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}" 
+                		  
+                <%--<g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}" --%> 
+                <g:textField name="consentNum" value="${surveyInstance?.consentNum}"
                 			style="width: 70px;color:red;"
                 		    onkeyup="${remoteFunction(
                 		  				action:'ajaxValidICNorNot',
