@@ -289,7 +289,7 @@ $(document).ready(function(){
 });
 </g:javascript>
         <div class="nav">
-
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
             <g:if test="${session.user.location=='MOFF' }">
             <span class="menuButton"><g:select name="mode" 

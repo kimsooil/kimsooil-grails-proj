@@ -123,6 +123,7 @@ $(document).ready(function(){
  
         <div class="nav">
             <%--<span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span> --%>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
             <%--<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span> --%>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
             <g:if test="${session.user.location=='MOFF' }">
