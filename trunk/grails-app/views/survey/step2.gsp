@@ -291,13 +291,12 @@ $(document).ready(function(){
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
-            <g:if test="${session.user.location=='MOFF' }">
-            <span class="menuButton"><g:select name="mode" 
-          			from="${['paper', 'screen']}"
-          			value="${surveyInstance?.mode}"
-          			noSelection="['':'-Mode-']"  />
-          	</span>
-          	</g:if>
+            <g:if test="${surveyInstance?.mode=='paper'}"> 
+              <span class="menuButton"><label style="color:red;"> Validation=OFF</label></span>
+            </g:if>
+            <g:else>
+              <span class="menuButton"><label style="color:green;">Validation=ON</label></span>
+            </g:else>
         </div>
         <div class="body">
 <g:javascript>
@@ -434,16 +433,14 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform2"
-					onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm2());} else {return confirmIfSure();}"
-		            method="post" >
+		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm2());} else {return confirmIfSure();}"
+		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:hiddenField name="step" value="${step}" />
                 <g:hiddenField name="surveyer" value="${session.user.login}" />
-                <g:if test="${session.user.location!='MOFF' }">
-                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
-                </g:if>
-                
+                <g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                                
                 <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                     <table class="box-table-b-wide">

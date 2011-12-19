@@ -2535,6 +2535,8 @@ class SurveyController {
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
 				flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
 				//redirect(action: "show", id: surveyInstance.id)
+                                
+                                log.info "Update()-"+session.user.login+"-ID:"+surveyInstance.id+"-Step:"+surveyInstance.step+"-"+params+"\n"
 				
 				if (currentStep==8 && surveyInstance.sex=='male')
 					redirect(action: "step11", fragment: "step11b", id: surveyInstance.id)

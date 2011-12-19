@@ -55,8 +55,22 @@ function confirmSubmit()
             <g:if test="${!surveyInstance?.completed}">
             	<span class="menuButton"><g:render template="/common/step_meter"/></span>
             </g:if>
+            <g:if test="${surveyInstance?.mode=='paper'}"> 
+              <span class="menuButton"><label style="color:red;"> Validation=OFF</label></span>
+            </g:if>
+            <g:else>
+              <span class="menuButton"><label style="color:green;">Validation=ON</label></span>
+            </g:else>
+            
         </div>
         <div class="body">
+<g:javascript>
+$(document).ready(function(){ 
+	if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+	}
+});
+</g:javascript>            
             <h1><g:message code="preview"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -69,6 +83,8 @@ function confirmSubmit()
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:hiddenField name="consentNum" value="${surveyInstance?.consentNum}" />
+                <g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                
                 <g:render template="/common/status_info"  model="['dob':surveyInstance?.DOB]"/>
                 
                 <%--<g:render template="preview"  model="[surveyInstance: surveyInstance, countryNames:countryNames, thisyear:thisyear]"/> --%>
