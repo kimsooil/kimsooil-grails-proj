@@ -409,13 +409,13 @@ $(document).ready(function(){
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
-            <g:if test="${session.user.location=='MOFF' }">
-            <span class="menuButton"><g:select name="mode" 
-          			from="${['paper', 'screen']}"
-          			value="${surveyInstance?.mode}"
-          			noSelection="['':'-Mode-']"  />
-          	</span>
-          	</g:if>
+            <g:if test="${surveyInstance?.mode=='paper'}"> 
+              <span class="menuButton"><label style="color:red;"> Validation=OFF</label></span>
+            </g:if>
+            <g:else>
+              <span class="menuButton"><label style="color:green;">Validation=ON</label></span>
+            </g:else>
+
         </div>
         <div class="body">
 <g:javascript>
@@ -598,9 +598,8 @@ function clear_q99()
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
-                <g:if test="${session.user.location!='MOFF' }">
-                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
-                </g:if>
+                <g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+
                 <g:render template="/common/status_info"  model="['dob':surveyInstance?.DOB]"/>
                 <div class="dialog">
                 <br/><ul><label><g:message code="survey.q90" default="q90" /></label></ul>

@@ -120,7 +120,12 @@ $(document).ready(function(){
 });	
 
     </g:javascript>   
- 
+<g:form name="surveyform1"
+                    onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm1());} else {return checkIfConsentNumIsNumber(document.getElementById('consentNum').value);}"
+                    method="post" >
+
+ <% def modesList=["paper":"Validation=OFF", "screen":"Validation=ON"]
+ %>
         <div class="nav">
             <%--<span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span> --%>
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -128,9 +133,11 @@ $(document).ready(function(){
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
             <g:if test="${session.user.location=='MOFF' }">
             <span class="menuButton"><g:select name="mode" 
-          			from="${['paper', 'screen']}"
+          			from="${modesList}"
           			value="${surveyInstance?.mode}"
-          			noSelection="['':'-Mode-']"  />
+                                optionKey="key"
+                                optionValue="value"
+          			noSelection="['':'-Validation-']"  />
           	</span>
           	</g:if>
         </div>
@@ -168,9 +175,6 @@ $(document).ready(function(){
 
 <div id="errors" class="errors" style="display:none;">
 </div>
-            <g:form name="surveyform1"
-					onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm1());} else {return checkIfConsentNumIsNumber(document.getElementById('consentNum').value);}"
-            		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
                 <g:hiddenField name="step" value="${step}" />

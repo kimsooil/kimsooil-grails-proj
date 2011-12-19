@@ -26,7 +26,8 @@ def incomplete=surveyInstanceTotal-completed
                     <thead>
                         <tr>
                         	<g:sortableColumn property="id" title="${message(code: 'survey.id.label', default: 'ID')}" />
-                        	<%--<g:sortableColumn property="mode" title="Mode" /> --%>
+                        	
+                                <g:if test="${session.user.location=='MOFF' }"><g:sortableColumn property="mode" title="Mode" /></g:if>
                             <g:sortableColumn property="consentNumSurv" title="Survey Name" />
                             <g:sortableColumn property="consentNumLoc" title="Location" />
 							<g:sortableColumn property="consentNum" title="Informed Consent Number" />
@@ -64,7 +65,7 @@ def incomplete=surveyInstanceTotal-completed
 
 
 							</td>
-
+                        	<g:if test="${session.user.location=='MOFF' }"><td>${surveyInstance?.mode}</td></g:if>
                         	<td>${surveyInstance?.consentNumSurv}</td>
                         	<td>${surveyInstance?.consentNumLoc}</td>
                             <%--<td><g:formatNumber number="${surveyInstance?.consentNum }" format="####"/></td> --%>
