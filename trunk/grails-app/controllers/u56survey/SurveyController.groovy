@@ -2316,7 +2316,8 @@ class SurveyController {
             }
             else {
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
-				redirect(action: "show", id: surveyInstance.id)
+                flash.message = "The survey has not been submitted successfully. Please try again. If the problem does not go away, please contact administrator."
+				redirect(action: "preview", id: surveyInstance.id)
             }
         }
         else {
@@ -2426,6 +2427,8 @@ class SurveyController {
 				flash.message = "Inputs cannot be saved due to error(s). Try again."
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
 				//redirect(action: "show", id: surveyInstance.id)
+                                surveyInstance.step=='1' ? render(view: ("step1_edit"), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
+                                                         : render(view: ("step"+surveyInstance.step), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
             }
         }
         else {
