@@ -511,13 +511,13 @@ class Survey {
 		//DOB(nullable:false)
 		//addr_zipcode(matches:/^([0-9]+)$/)
 		//q95_addr_zipcode(matches:/^([0-9]+)$/)
-		age(matches:/^([0-9]+)$/)
+/*		age(matches:/^([0-9]+)$/)
 		current_occupation_time(matches:/^([0-9]+)$/) // years
 		prior_job_time(matches:/^([0-9]+)$/) // years
 		weight(matches:/^([0-9]+)$/) // pounds
 		height_feet(matches:/^([0-9]+)$/) // feet inches
 		height_inches(matches:/^([0-9]+)$/)
-/*
+
 		q13_1_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_2_ageDiagnosed(matches:/^([0-9]+)$/)
 		q13_3_ageDiagnosed(matches:/^([0-9]+)$/)
