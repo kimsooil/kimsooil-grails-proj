@@ -1645,7 +1645,18 @@ class SurveyController {
 		
 		
 		if(params?.format && params.format != "html"){
-			if (params.extension=="csv") params.extension="tsv.txt"
+			if (params.extension=="csv"){
+				params.extension="tsv"
+				
+				surveys.each {
+					if (it.other_memo){
+						String ss=it.other_memo.toString()
+						it.other_memo=ss.replaceAll("\\r\\n|\\r|\\n", "**").replaceAll("\\t", " ")
+					
+						//println it.other_memo
+					}
+				}
+			}
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format] 
 			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
@@ -1682,11 +1693,24 @@ class SurveyController {
 		
 		Map formatters = [author: upperCase]
 		
-		Map parameters = [title: "survey_list", separator:"\t"]
-		
+		//Map parameters = [title: "survey_list", separator:"\t"]
+		Map parameters = [title: "survey_list"]
 		
 		if(params?.format && params.format != "html"){
-			if (params.extension=="csv") params.extension="tsv.txt"
+			if (params.extension=="csv"){
+				params.extension="tsv"
+				
+				selectedSurveys.each {
+					if (it.other_memo){
+						String ss=it.other_memo.toString()
+						it.other_memo=ss.replaceAll("\\r\\n|\\r|\\n", "**").replaceAll("\\t", " ")
+						//	println it.other_memo
+					}
+				}
+				
+				
+				
+			}
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format]
 			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
@@ -2427,8 +2451,7 @@ class SurveyController {
 				flash.message = "Inputs cannot be saved due to error(s). Try again."
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
 				//redirect(action: "show", id: surveyInstance.id)
-                                surveyInstance.step=='1' ? render(view: ("step1_edit"), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
-                                                         : render(view: ("step"+surveyInstance.step), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
+                surveyInstance.step=='1' ? render(view: ("step1_edit"), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames]) : render(view: ("step"+surveyInstance.step), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
             }
         }
         else {
