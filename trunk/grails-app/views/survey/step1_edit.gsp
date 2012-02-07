@@ -107,16 +107,15 @@ $(document).ready(function(){
 	$("input[name='being_treated_for_cancer']").change(function(){
 		DisableEnableForm(document.surveyform1,false);
 	});
-	/*******
+
     $('#consentNum').click(function(){
           this.value = '';
           this.style.color = 'red';
     }).blur(function(){
-//      if ( this.value == '')
-//          this.value = '---ICN---';
-//           this.style.color = 'red';
+      if ( this.value == '')
+          this.value = '---ICN---';
+           this.style.color = 'red';
     });
-    **********/		
 });	
 
     </g:javascript>   
