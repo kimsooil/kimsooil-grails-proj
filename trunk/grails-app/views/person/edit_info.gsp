@@ -56,7 +56,12 @@
                                   <label for="role"><g:message code="person.role.label" default="Role" /></label><label style="color:red">*</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'role', 'errors')}">
-                                    <g:select name="role" from="${personInstance.constraints.role.inList}" value="${personInstance?.role}" valueMessagePrefix="person.role" noSelection="['': '']" />
+                                    <g:if test="${session.user.role=='admin' }">
+                                    	<g:select name="role" from="${personInstance.constraints.role.inList}" value="${personInstance?.role}" valueMessagePrefix="person.role" noSelection="['': '']" />
+                                    </g:if>
+                                    <g:else>
+                                    	${personInstance?.role}
+                                    </g:else>
                                 </td>
                             </tr>
                         
@@ -65,7 +70,12 @@
                                   <label for="location"><g:message code="person.location.label" default="Location" /></label><label style="color:red">*</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personInstance, field: 'location', 'errors')}">
-                                    <g:select name="location" from="${personInstance.constraints.location.inList}" value="${personInstance?.location}" valueMessagePrefix="person.location" noSelection="['': '']" />
+                                	<g:if test="${session.user.role=='admin' }">
+                                    	<g:select name="location" from="${personInstance.constraints.location.inList}" value="${personInstance?.location}" valueMessagePrefix="person.location" noSelection="['': '']" />
+                                    </g:if>
+                                    <g:else>
+                                    	${personInstance?.location}
+                                    </g:else>
                                 </td>
                             </tr>
                         
