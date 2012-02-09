@@ -1,5 +1,5 @@
 <g:if test="${surveyInstance?.dateCreated}">
-&nbsp;&nbsp;&nbsp;(Created: <g:formatDate date="${surveyInstance?.dateCreated}" type="datetime" style="SHORT" timeStyle="SHORT"/>, <g:if test="${surveyInstance?.dateCompleted}">Completed: <g:formatDate date="${surveyInstance?.dateCompleted}" type="datetime" style="SHORT" timeStyle="SHORT"/></g:if><g:else>Updated: <g:formatDate date="${surveyInstance?.lastUpdated}" type="datetime" style="SHORT" timeStyle="SHORT"/></g:else>)
+&nbsp;&nbsp;&nbsp;(Created: <g:formatDate date="${surveyInstance?.dateCreated}" type="both" style="SHORT" timeStyle="MEDIUM"/>, <g:if test="${surveyInstance?.dateCompleted}">Completed: <g:formatDate date="${surveyInstance?.dateCompleted}" type="datetime" style="SHORT" timeStyle="MEDIUM"/></g:if><g:else>Updated: <g:formatDate date="${surveyInstance?.lastUpdated}" type="datetime" style="SHORT" timeStyle="MEDIUM"/></g:else>)
 <br/>
 </g:if>
 <g:javascript>
@@ -21,3 +21,4 @@ var today_year=today.getFullYear(); // 4 digits
 
 //alert(ageCalculated);
 </g:javascript>
+
