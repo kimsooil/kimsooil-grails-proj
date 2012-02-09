@@ -19,78 +19,8 @@
 	def today=new Date() 		
 	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
 %>	    
-<g:javascript>
+<g:javascript><g:if test="${surveyInstance?.mode!='paper'}">
 
-<g:if test="${surveyInstance?.being_treated_for_cancer=='no'}">
-window.onload= function(){
-
-$("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);	
-
-//
-// this is so error-prone... so commented out
-//
-//	    	$("#q12_status").html("");
-//	    	$("[name*='_ageDiagnosed']").val('');
-//	    	$("[name*='_ageDiagnosed']").attr("disabled", true);
-//	    	$("[name='q12_which_cancer']").val('');
-//	    	$("[name='q12_which_cancer']").attr("disabled", true);
-//	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("checked", '');
-//	    	$(':regex(id,q12_([0-9]|[0-9][0-9])_[1-4])').attr("disabled", true);
-//	    	$("[name*='q12_1_'], [name*='q12_2_'], [name*='q12_3_'], [name*='q12_4_']").attr("disabled", true);
-}   
-</g:if>
-<g:else>
-window.onload= function(){
-$("#q11a_hep_donotknow_type_Year_year").attr("disabled", true);	
-	//$("[name='haveCancer']").attr("disabled", true);
-}
-</g:else>
-
-var extraCancerTypeVar= ['q12_25','q12_26','q12_27','q12_28','q12_29'];
-var num_extraCancerType = 0;
-<%--
-<%
-def existingC=0
-if (surveyInstance?.q12_25) existingC++
-if (surveyInstance?.q12_26) existingC++
-if (surveyInstance?.q12_27) existingC++
-if (surveyInstance?.q12_28) existingC++
-if (surveyInstance?.q12_29) existingC++
-%>
-
-var existing_C = ${existingC ? existingC : 0};
-
-    function AddNew() {
-	    if (num_extraCancerType < (5-existing_C) && !isEmpty($("#txtCancerType option:selected").val()) && isNumber($("#txtAgeDiagnosed").val()) && isValidNumber($("#txtAgeDiagnosed").val(), -1, ageCalculated)){
-	    	var treatment1="";
-	    	var treatment2="";
-	    	var treatment3="";
-	    	var treatment4="";
-	    	var treatments="";
-	    	if ($("#txtTreatment1").is(':checked')){ treatment1 = "Radiology"; treatments += treatment1;}
-	    	if ($("#txtTreatment2").is(':checked')){ treatment2 = "Chemotheraphy"; treatments += (treatment1 ? " / ": "")+ treatment2;} 
-	    	if ($("#txtTreatment3").is(':checked')){ treatment3 = "Surgery"; treatments += (treatment2 || treatment1 ? " / ": "")+ treatment3;} 
-	    	if ($("#txtTreatment4").is(':checked')){ treatment1 = ""; treatment2=""; treatment3=""; treatment4="None"; treatments = "(No treatment)";}
-	
-			var oneString = $("#txtCancerType option:selected").val() + "," + $("#txtAgeDiagnosed").val() +","+treatments;
-	        var appendTxt = "<tr> <td>" + $("#txtCancerType option:selected").val() + 
-	        				"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"button\" value = \"Delete\" class=\"rdelete\"/>" +
-	        			    "</td> <td>" + $("#txtAgeDiagnosed").val() + 
-	        			    "</td><td>" + treatments +
-	        			    
-	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"\" value=\""+$("#txtCancerType option:selected").val()+"\" />" +
-	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_ageDiagnosed"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_ageDiagnosed"+"\" value=\""+$("#txtAgeDiagnosed").val()+"\" />" +
-	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_1"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_1"+"\" value=\""+(treatment1 ? true: false)+"\" />" +
-	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_2"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_2"+"\" value=\""+(treatment2 ? true: false)+"\" />" +
-	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_3"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_3"+"\" value=\""+(treatment3 ? true: false)+"\" />" +
-	        			    "<input type=\"hidden\" id=\""+extraCancerTypeVar[num_extraCancerType]+"_4"+"\""+"name=\""+extraCancerTypeVar[num_extraCancerType]+"_4"+"\" value=\""+(treatment4 ? true: false)+"\" />" +
-	        			    "</td></tr>";
-	        $("#tblCancerDiagnosed tr:last").after(appendTxt);
-	        
-	        num_extraCancerType++;
-	    }
-    }  
---%>
 $(document).ready(function(){ 
 
         $("#tblCancerDiagnosed td input.rdelete").live("click", function () {
@@ -287,7 +217,9 @@ $(document).ready(function(){
 	});	
 	 	 
 });
+</g:if>
 </g:javascript>
+
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
@@ -299,12 +231,13 @@ $(document).ready(function(){
             </g:else>
         </div>
         <div class="body">
+          
 <g:javascript>
 $(document).ready(function(){ 
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
-
+<g:if test="${surveyInstance?.mode!='paper'}">
 if ($("input[name='q11a_1']:checked").val() == 'no'){
 	    	$("#q11a_1_status").html("");
 	    	$("#q11a_1Year_year").val('');
@@ -422,6 +355,7 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	    }
 
 	
+</g:if>
 	 	 
 });
 </g:javascript>

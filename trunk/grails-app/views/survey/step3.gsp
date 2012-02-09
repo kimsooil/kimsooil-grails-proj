@@ -15,6 +15,7 @@
     </head>
     <body>
 <g:javascript>
+  <g:if test="${surveyInstance?.mode!='paper'}">
 $(document).ready(function(){ 
 	$("input[name='familyHaveCancer']").change(function(){
 	    if ($("input[name='familyHaveCancer']:checked").val() == 'yes'){
@@ -59,6 +60,7 @@ $(document).ready(function(){
 		}
 	});		
 });	
+  </g:if>
 </g:javascript>    
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -77,6 +79,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
+<g:if test="${surveyInstance?.mode!='paper'}">
 if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 			$("[name*='_cancerType']").val('');
 	    	$("[name*='_ageDiagnosed']").val('');
@@ -92,6 +95,7 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 	    	
 	    	
 	    }
+</g:if>
 
 });	
 </g:javascript>        

@@ -16,6 +16,7 @@
     </head>
     <body>
 <g:javascript>
+<g:if test="${surveyInstance?.mode!='paper'}">     
 $(document).ready(function(){ 
 	$("#mode").change(function() {
 		if ($("#mode").val()=='paper'){
@@ -26,6 +27,7 @@ $(document).ready(function(){
 		}
 	});
 });	 
+</g:if>
 </g:javascript>       
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>

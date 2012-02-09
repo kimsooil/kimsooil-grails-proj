@@ -13,7 +13,8 @@
     </head>
     <body>
 <g:javascript>
-$(document).ready(function(){ 
+<g:if test="${surveyInstance?.mode!='paper'}">
+  $(document).ready(function(){ 
    $("input[name=q22_8]").change(function() {
        var test = $(this).val();
        $("#q22_others").attr("disabled", '');
@@ -28,7 +29,7 @@ $(document).ready(function(){
 		}
 	});		   
 });
-		    	    
+</g:if>		    	    
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>

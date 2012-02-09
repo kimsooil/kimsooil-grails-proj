@@ -30,6 +30,7 @@ window.onload= function(){
   $("[name=_action_update_unified]").attr("disabled", false);
 }   
 </g:if>
+<g:if test="${surveyInstance?.mode!='paper'}">
 function IsDateQ71Valid()
 {
 	if ( ($("#q71_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
@@ -165,6 +166,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 		}
 	});								
 });	
+</g:if>
 </g:javascript>    
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -183,6 +185,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
+<g:if test="${surveyInstance?.mode!='paper'}">        
 if ($("input[name='q59']:checked").val() == 'no'){
 	    	//$("[name*='q59_']").val('');
 	    	$("[name*='q59_']").attr("disabled", true);	  
@@ -235,6 +238,7 @@ if ($("input[name='q69']:checked").val() == 'no'){
 	    	$("[name*='q69_']").val('');
 	    	$("[name*='q69_']").attr("disabled", true);	  
 	    }
+</g:if>            
 
 });	
 </g:javascript>
