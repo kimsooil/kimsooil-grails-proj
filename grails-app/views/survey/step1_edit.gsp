@@ -196,8 +196,7 @@ $(document).ready(function(){
                 		  optionKey="fourletters"
                 		  value="${surveyInstance?.consentNumLoc}"  /> -
                 		  
-                <%--<g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}" --%> 
-                <g:textField name="consentNum" value="${surveyInstance?.consentNum}"
+                <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}"
                 			style="width: 70px;color:red;"
                 		    onkeyup="${remoteFunction(
                 		  				action:'ajaxValidICNorNot',

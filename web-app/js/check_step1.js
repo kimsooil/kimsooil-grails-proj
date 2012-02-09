@@ -5,7 +5,7 @@
 	// instantiate object
 	fv = new formValidator();
 	
-	if ($("#consentNum").val()=='' && $("#consentNum").val()=='---ICN---' || $("#lblvalidICNorNot").text()!=""){
+	if ($("#consentNum").val()=='' || $("#consentNum").val()=='---ICN---' || $("#lblvalidICNorNot").text()!=""){
 		fv.raiseError(i18nmessages.step1ErrICN);
 	}
 	if (!fv.isRadioChecked(document.getElementsByName('being_treated_for_cancer'))){
