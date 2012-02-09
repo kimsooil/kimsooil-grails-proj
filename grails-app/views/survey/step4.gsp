@@ -23,7 +23,7 @@
     
 <g:javascript>
 
-
+<g:if test="${surveyInstance?.mode!='paper'}">
 function Is_q21DateStopSmoking_Valid(){
 	var validDate = CalAge_precise($("#q21DateStopSmoking_day").val(), $("#q21DateStopSmoking_month").val(), $("#q21DateStopSmoking_year").val());
 	if (validDate <0 || validDate > ageCalculated){
@@ -187,7 +187,8 @@ $(document).ready(function(){
 			$('body').css('background-color', '#FFF8DC');
 		}
 	});		    
-});		    	    
+});	
+</g:if>
 </g:javascript>
 
         <div class="nav">
@@ -207,6 +208,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
+<g:if test="${surveyInstance?.mode!='paper'}">
 if ($("input[name='q14_1']:checked").val() == 'never'){
 	    	$("#q14_1_howManyPerWeek").val('');
 	    	$("#q14_1_howManyPerWeek").attr("disabled", true);	  
@@ -272,7 +274,7 @@ if ($("input[name='q16']:checked").val() == 'no'){
 	    	$("[name*='q21DateStopSmoking']").attr("disabled", '');	    		    		    
 	    }
 
-	    
+</g:if>	    
 });		    	    
 </g:javascript>
         

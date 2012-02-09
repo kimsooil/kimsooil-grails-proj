@@ -30,7 +30,7 @@ window.onload= function(){
 	$("[name*='q82_'][name$='_aliveDead']").attr("disabled", '');  
 }   
 </g:if>
-
+<g:if test="${surveyInstance?.mode!='paper'}">
 $(document).ready(function(){
 
 	$("#mode").change(function() {
@@ -365,7 +365,8 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 			$("#q82_15_aliveDead").attr("disabled", true);
 	    }
 	});
-});	
+});
+</g:if>
 </g:javascript>    
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -384,7 +385,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
-
+<g:if test="${surveyInstance?.mode!='paper'}">
 if ($("input[name='q72']:checked").val() == 'no'){
 		    $("#q72_status").html(" <font color='red'>Skip to Q85</font>");
 		    $("#q73_alive_status").html('');
@@ -565,6 +566,7 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
 			//$("#q82_15_aliveDead").val('');
 			$("#q82_15_aliveDead").attr("disabled", true);
 	    }
+</g:if>            
 });	
 </g:javascript>
             <h1><g:message code="step11.label" default="Step11" /></h1>

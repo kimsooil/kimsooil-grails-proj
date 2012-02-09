@@ -31,6 +31,7 @@ window.onload= function(){
   $("[name=_action_update_unified]").attr("disabled", false);  
 }   
 </g:if>
+<g:if test="${surveyInstance?.mode!='paper'}">
 function IsDateQ48()
 {
 	if ( ($("#q48dateLastVisitGynecologist_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
@@ -497,7 +498,8 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 		}
 	});		
 								
-});	
+});
+</g:if>
 </g:javascript>    
 	
         <div class="nav">
@@ -517,6 +519,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
+<g:if test="${surveyInstance?.mode!='paper'}">        
 if ($("input[name='q47']:checked").val() == 'never'){
 	    	$("[name*='q48dateLastVisitGynecologist']").val('');
 	    	$("[name*='q48dateLastVisitGynecologist']").attr("disabled", true);	  
@@ -589,6 +592,7 @@ if ($("input[name='q53']:checked").val() == 'no'){
 	    	$("[name*='q53_']").attr("disabled", true);	  
 	    		 
 	    }
+</g:if>            
 });	
 
 </g:javascript>        

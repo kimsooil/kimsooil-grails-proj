@@ -21,6 +21,7 @@
 	//out << "today="+today[java.util.Calendar.YEAR]+"<br/>"
 %>	    
 <g:javascript>
+<g:if test="${surveyInstance?.mode!='paper'}">  
 function IsDateQ84_1()
 {
 	var validDate = CalAge_precise($("#q84_1_rad_date_day").val(), $("#q84_1_rad_date_month").val(), $("#q84_1_rad_date_year").val());
@@ -633,6 +634,7 @@ $(document).ready(function(){
 		}
 	});	
 });	
+</g:if>
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -667,6 +669,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
+<g:if test="${surveyInstance?.mode!='paper'}">        
 if ($("input[name='q83']:checked").val() == 'no'){
 	    	//$("[name*='q84_'][type=radio]").attr('checked', false);
 	    	$("[name*='q84_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');
@@ -737,7 +740,7 @@ if ($("input[name='q84_10']:checked").val() == 'no'){
 	    	//$("[name*='_10_rad_date']").val('');
 			$("[name*='_10_rad_date']").attr("disabled", true);
 	    }
-	
+</g:if>	
 });	
 		    
 </g:javascript>

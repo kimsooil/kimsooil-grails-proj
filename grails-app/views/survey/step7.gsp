@@ -29,7 +29,7 @@ window.onload= function(){
   $("[name=_action_update_unified]").attr("disabled", false);
 }   
 </g:if>
-
+<g:if test="${surveyInstance?.mode!='paper'}">
 function IsDateRectalExamValid()
 {
 	if ( ($("#dateRectalExam_year").val() == "<%=today[java.util.Calendar.YEAR]%>")  &&
@@ -145,6 +145,7 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'male
 		}
 	});		    
 });		    	    
+</g:if>
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -163,6 +164,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
+<g:if test="${surveyInstance?.mode!='paper'}">      
 if ($("input[name='q32']:checked").val() == 'no'){
 	    	$("[name*='dateRectalExam']").val('');
 	    	$("[name*='dateRectalExam']").attr("disabled", true);	    	
@@ -176,7 +178,7 @@ if ($("input[name='q33']:checked").val() == 'no'){
 	    	$("[name*='results_PSA_test']").val('');
 	    	$("[name*='results_PSA_test']").attr("disabled", true);	    
 	    }
-	    
+</g:if>	    
 });		    	    
 </g:javascript>
             <h1><g:message code="step7.label" default="Step7" /> </h1>

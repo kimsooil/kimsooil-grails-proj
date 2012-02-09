@@ -15,6 +15,7 @@
     </head>
     <body>
 <g:javascript>
+<g:if test="${surveyInstance?.mode!='paper'}">  
 $(document).ready(function(){ 
 	$("input[name='q90_1']").change(function(){
 	    if ($("input[name='q90_1']:checked").val() == 'yes'){
@@ -401,7 +402,8 @@ $(document).ready(function(){
 		}
 	});
 		
-});	 
+});
+</g:if>
 </g:javascript> 
 <%
 	def birth=surveyInstance?.DOB ? surveyInstance?.DOB : new Date() 
@@ -419,8 +421,23 @@ $(document).ready(function(){
         </div>
         <div class="body">
 <g:javascript>
-$(document).ready(function(){ 
+function clear_q99()
+{
+	$("[name*='q94_'][type=radio]").attr("checked", false);
+	$("[name*='q94_'][name$='ageStart']").val('');
+	$("[name*='q94_'][name$='ageStop']").val('');
+	$("[name*='q94_'][name$='NumPillsPerWeek']").val('');
+	$("[name*='q94_otherMedName']").val('');
+	$("[name*='q94_ageStart_status']").html('');
+	$("[name*='q94_ageStop_status']").html('');
+	$("[name*='q94_pills_status']").html('');
+}
 
+  $(document).ready(function(){ 
+	if ($("#mode").val()=='paper'){
+			$('body').css('background-color', '#CCCCCC');
+	}
+<g:if test="${surveyInstance?.mode!='paper'}">          
 if ($("input[name='q90_1']:checked").val() == 'no'){
 	    	$("#q90_1_age").val('');
 	    	$("#q90_1_age").attr("disabled", true);
@@ -569,23 +586,11 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 	    	$("#q94_6_ageStop").attr("disabled", true);
 	    }
 
-	if ($("#mode").val()=='paper'){
-			$('body').css('background-color', '#CCCCCC');
-	}
-		
+
+</g:if>		
 });	 
 
-function clear_q99()
-{
-	$("[name*='q94_'][type=radio]").attr("checked", false);
-	$("[name*='q94_'][name$='ageStart']").val('');
-	$("[name*='q94_'][name$='ageStop']").val('');
-	$("[name*='q94_'][name$='NumPillsPerWeek']").val('');
-	$("[name*='q94_otherMedName']").val('');
-	$("[name*='q94_ageStart_status']").html('');
-	$("[name*='q94_ageStop_status']").html('');
-	$("[name*='q94_pills_status']").html('');
-}
+
 </g:javascript>
             <h1><g:message code="step14.label" default="Step14" /></h1>
             <g:if test="${flash.message}">

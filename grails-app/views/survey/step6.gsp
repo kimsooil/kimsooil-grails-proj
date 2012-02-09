@@ -13,6 +13,7 @@
     </head>
     <body>
 <g:javascript>
+  <g:if test="${surveyInstance?.mode!='paper'}">
 $(document).ready(function(){ 
 	$("input[name='q26']").change(function(){
 	    if ($("input[name='q26']:checked").val() == 'yes'){
@@ -31,7 +32,8 @@ $(document).ready(function(){
 			$('body').css('background-color', '#FFF8DC');
 		}
 	});			    
-});	
+});
+  </g:if>
 </g:javascript>    
             <g:form name="surveyform6"
             		method="post"
@@ -54,6 +56,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
+<g:if test="${surveyInstance?.mode!='paper'}">        
 	    if ($("input[name='q26']:checked").val() == 'yes'){
   			$("#q26_explain").attr("disabled", '');
 	    }
@@ -61,7 +64,7 @@ $(document).ready(function(){
 	    	$("#q26_explain").val('');
 	    	$("#q26_explain").attr("disabled", true);	    	
 	    }
-
+</g:if>
 	    
 });	
 </g:javascript>          

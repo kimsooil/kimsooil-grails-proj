@@ -57,12 +57,15 @@
                      --%>
 
                     <g:if test="${!surveyInstance?.completed}">
-						<g:if test="${surveyInstance?.mode!='paper'}">
+                        <%--
+			<g:if test="${surveyInstance?.mode!='paper'}">
                     		<span class="button"><g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></span>
                     	</g:if>
                     	<g:else>
                     		<span class="button"><g:link class="editbutton" action="paper_edit" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" />(Paper)</g:link></span>
                     	</g:else>
+                        --%>
+                        <span class="button"><g:link class="editbutton" action="${stepNumUrl }" id="${surveyInstance.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></span>
                     </g:if>
                     <g:else>
 

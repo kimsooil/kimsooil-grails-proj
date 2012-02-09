@@ -13,6 +13,7 @@
     </head>
     <body>
 <g:javascript>
+<g:if test="${surveyInstance?.mode!='paper'}">  
 $(document).ready(function(){ 
 	$("#mode").change(function() {
 		if ($("#mode").val()=='paper'){
@@ -46,7 +47,8 @@ $(document).ready(function(){
 	    	$("[name*='q89']").attr("disabled", true);
 	    }
 	});	
-}); 
+});
+</g:if>
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -65,7 +67,7 @@ $(document).ready(function(){
 	if ($("#mode").val()=='paper'){
 			$('body').css('background-color', '#CCCCCC');
 	}
-
+<g:if test="${surveyInstance?.mode!='paper'}">
 if ($("input[name='q85']:checked").val() == 'no'){
 	    	$("#whichDiet").hide();
 	    	$("#q85_which").val('');
@@ -78,7 +80,7 @@ if ($("input[name='q87']:checked").val() == 'no'){
 	    	$("[name*='q89']").attr("checked", false);
 	    	$("[name*='q89']").attr("disabled", true);
 	    }
-
+</g:if>
 }); 
 </g:javascript>
             <h1><g:message code="step13.label" default="Step13" /></h1>
