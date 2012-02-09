@@ -164,9 +164,33 @@ $(document).ready(function(){
 			DisableEnableForm(document.surveyform1,false);
 			$('body').css('background-color', '#CCCCCC');
 		}
+    <g:if test="${surveyInstance?.lastUpdated.compareTo(surveyInstance?.dateCreated)!=0}">
+	  		$("#consentNumLoc").attr("disabled", "");
+	  		$("#consentNum").attr("disabled", "");      
+    </g:if>
+                
 });		  	
 </g:javascript>
+<%
 
+    Long difference = surveyInstance?.lastUpdated.time - surveyInstance?.dateCreated.time
+    Map diffMap =[:]
+    difference = difference / 1000
+    diffMap.seconds = difference % 60
+    difference = (difference - diffMap.seconds) / 60
+    diffMap.minutes = difference % 60
+    difference = (difference - diffMap.minutes) / 60
+    diffMap.hours = difference % 24
+    difference = (difference - diffMap.hours) / 24
+    diffMap.years = (difference / 365).toInteger()
+    if(diffMap.years)
+       difference = (difference) % 365
+    diffMap.days = difference % 7
+    diffMap.weeks = (difference - diffMap.days) / 7  
+
+//out << diffMap
+
+%>
             <h1><g:message code="step1.edit.label" default="Step1-edit" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -189,19 +213,27 @@ $(document).ready(function(){
                 <br/>
 <%--                <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> -  --%>
                 <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <label style="text-decoration : underline;">${surveyInstance?.consentNumSurv}</label> -
-
-                <g:select name="consentNumLoc" 
-                		  style="width: 150px;"
-                		  from="${u56survey.Site.list()}"
-                		  optionKey="fourletters"
-                		  value="${surveyInstance?.consentNumLoc}"  /> -
-                		  
-                <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}"
-                			style="width: 70px;color:red;"
-                		    onkeyup="${remoteFunction(
-                		  				action:'ajaxValidICNorNot',
-                		  				update:'lblvalidICNorNot',
-                		  				params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
+                <g:if test="${(diffMap.days==0 && diffMap.hours==0 && diffMap.minutes==0 && diffMap.seconds < 5) || surveyInstance?.mode=='paper' || !surveyInstance?.consentNum }">
+                      <g:if test="${session.user.location=='MOFF' }">
+                      <g:select name="consentNumLoc" 
+                                        style="width: 150px;"
+                                        from="${u56survey.Site.list()}"
+                                        optionKey="fourletters"
+                                        value="${surveyInstance?.consentNumLoc}"  />
+                      </g:if>
+                      <g:else>
+                          ${surveyInstance?.consentNumLoc}
+                      </g:else>
+                      - <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}"
+                                              style="width: 70px;color:red;"
+                                          onkeyup="${remoteFunction(
+                                                                      action:'ajaxValidICNorNot',
+                                                                      update:'lblvalidICNorNot',
+                                                                      params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
+                </g:if>
+                <g:else>
+                      ${surveyInstance?.consentNumLoc} - ${surveyInstance?.consentNum}
+                </g:else>
                 <span id="otherNumber">(<g:textField style="width: 50px;" name="otherNumberOrComments" value="${surveyInstance?.otherNumberOrComments}" />)</span>
                 </h3>
                 <br/>
