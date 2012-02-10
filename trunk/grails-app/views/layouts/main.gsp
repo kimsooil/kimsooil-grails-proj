@@ -81,7 +81,8 @@ $(document).ready(function(){
         	<%--<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'MCC-Logo-DarkLight.png')}" alt="moffitt" border="0" /></a></div> --%>
         	<%--<div id="moffittLogo" class="logo"><a href="${createLink(uri: '/')}"><img src="${resource(dir:'images',file:'psm45percent.JPG')}" alt="moffitt" border="0" /></a> --%>
 <g:if test="${!(request.requestURI.indexOf('person')>=0 && request.requestURI.indexOf('login')>=0)}">        	
-        	<div><a href="${createLink(uri: '/')}"><img width="140" height="90" src="${resource(dir:'images',file:'hispbb.JPG')}" alt="moffitt" border="0" /></a></div>
+<%--        	<div><a href="${createLink(uri: '/')}"><img width="140" height="90" src="${resource(dir:'images',file:'hispbb.JPG')}" alt="moffitt" border="0" /></a></div>--%>
+  <div><img width="140" height="90" src="${resource(dir:'images',file:'hispbb.JPG')}" alt="moffitt" border="0" /></div>
 </g:if>        	
         </td>
 <%--

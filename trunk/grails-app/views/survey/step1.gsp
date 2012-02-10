@@ -298,7 +298,8 @@ $(document).ready(function(){
 									<%--<g:countrySelect name="country" value="${surveyInstance?.country}"
           								noSelection="['':'-Choose your country-']"/>
           							 --%>
-          							 <g:select name="country" value="${surveyInstance?.country}"
+          							<label style="color:red">*</label> 
+                                                                <g:select name="country" value="${surveyInstance?.country}"
           							 from="${countryNames}"
           							 optionKey="key"
           							 optionValue="value"
