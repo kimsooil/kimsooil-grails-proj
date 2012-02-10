@@ -198,11 +198,11 @@ function CalAge(dd,mm, yy) {
                  years = Math.floor((now.getTime() - born.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
                  //years = (now.getTime() - born.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
    //     if (years < 18) {
-   //         alert(“You are not eligible”);
+   //         alert(ï¿½You are not eligibleï¿½);
    //
    //     }
    //     else if (years = 18 || years > 18) {
-   //     	alert(“Welcome”);
+   //     	alert(ï¿½Welcomeï¿½);
    //     }
         return years;
     }
@@ -222,11 +222,11 @@ function CalAge_precise(dd,mm, yy) {
                  //years = Math.floor((now.getTime() - born.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
                  years = (now.getTime() - born.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
    //     if (years < 18) {
-   //         alert(“You are not eligible”);
+   //         alert(ï¿½You are not eligibleï¿½);
    //
    //     }
    //     else if (years = 18 || years > 18) {
-   //     	alert(“Welcome”);
+   //     	alert(ï¿½Welcomeï¿½);
    //     }
         return years;
     }
@@ -266,3 +266,13 @@ function checkIfConsentNumIsNumber(val)
 		return false ;
 	}
 } 
+function confirm_if_lost_data()
+{
+    var sure =confirm('You may lost data you entered. At least ICN number is required to keep data.');
+    	if (sure){
+		return true;
+	}
+	else{
+		return false ;
+	}
+}
