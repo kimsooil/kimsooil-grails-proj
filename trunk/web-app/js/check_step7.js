@@ -27,15 +27,27 @@ function checkForm7()
 	){
 		//if (fv.isEmpty($('#findings_rectal_exam').val()))
 		//	fv.raiseError(i18nmessages.step7Err4);
+            if ( !(fv.isEmpty(document.getElementById('dateRectalExam_month').value) && fv.isEmpty(document.getElementById('dateRectalExam_year').value)) &&	
+                    (fv.isEmpty(document.getElementById('dateRectalExam_month').value) ||
+                    fv.isEmpty(document.getElementById('dateRectalExam_year').value)) ){
+                            fv.raiseError(i18nmessages.step7ErrInvalidDate1);
+            }                
 	}
 	if (getRadioValue(document.getElementsByName('q33'))=='yes'
 		// && (fv.isEmpty($('#date_most_recent_PSA_test_month').val()) || fv.isEmpty($('#results_PSA_test').val())) // date is optional
 	){
+            if ( !(fv.isEmpty(document.getElementById('dateMostRecentPSAtest_month').value) && fv.isEmpty(document.getElementById('dateMostRecentPSAtest_year').value)) &&
+                    (fv.isEmpty(document.getElementById('dateMostRecentPSAtest_month').value) ||
+                    fv.isEmpty(document.getElementById('dateMostRecentPSAtest_year').value)) ){
+                            fv.raiseError(i18nmessages.step7ErrInvalidDate2);
+            }  	
+                
 		//if (fv.isEmpty($('#results_PSA_test').val())) fv.raiseError(i18nmessages.step7Err5);
 		if (!fv.isEmpty($('#results_PSA_test').val()) && !fv.isValidNumber($('#results_PSA_test').val(), 0, 100))
 			fv.raiseError("Q38: 0~100");
 
 	}
+        
 	if ( ($("#dateRectalExam_year").val() == today_year.toString())  &&
 			(parseInt($("#dateRectalExam_month").val()) > today_month)
 		){
@@ -46,7 +58,6 @@ function checkForm7()
 		){
 			fv.raiseError("Q37: "+i18nmessages.step7ErrInvalidDate);
 		}
-	
 	if ( ($("#dateMostRecentPSAtest_year").val() == today_year.toString())  &&
 			(parseInt($("#dateMostRecentPSAtest_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 		){

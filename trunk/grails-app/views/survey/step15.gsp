@@ -116,7 +116,11 @@ $(document).ready(function(){
                         	<tr><th>Memo / Comments</th></tr>
                         </thead>
                         <tbody>
-                        	<tr><td><g:textArea name="other_memo" value="${surveyInstance?.other_memo}" style="	width: 600px; height: 120px; vertical-align: top;"/></td></tr>
+                        	<tr><td>
+                                    <label style="color:red">*: For Excel-friendly file, do not use tab or return(new line).</label> 
+                                    Use '///' or '***' instead.<br/>
+                                  <g:textArea name="other_memo" value="${surveyInstance?.other_memo}" style="	width: 600px; height: 120px; vertical-align: top;"/>
+                                </td></tr>
                         </tbody>
                     </table>                    
                 </div>

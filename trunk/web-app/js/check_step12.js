@@ -94,6 +94,99 @@ function checkForm12()
 			if (fv.isEmpty($('#q84_another').val()) || fv.isEmpty($('#q84_10_whatAge').val()) || !fv.isValidNumber($('#q84_10_whatAge').val(), 1, ageCalculated))
 				fv.raiseError(i18nmessages.step12Err3 +"(#10)");
 		}
+/************
+	if (getRadioValue(document.getElementsByName('q84_1'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_1_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_1_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_1_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_1_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_1_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_1_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate891);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_2'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_2_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_2_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_2_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_2_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_2_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_2_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate892);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_3'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_3_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_3_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_3_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_3_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_3_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_3_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate893);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_4'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_4_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_4_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_4_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_4_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_4_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_4_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate894);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_5'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_5_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_5_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_5_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_5_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_5_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_5_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate895);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_6'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_6_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_6_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_6_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_6_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_6_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_6_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate896);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_7'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_7_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_7_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_7_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_7_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_7_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_7_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate897);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_8'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_8_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_8_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_8_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_8_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_8_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_8_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate898);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_9'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_9_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_9_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_9_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_9_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_9_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_9_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate899);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q84_10'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q84_10_rad_date_year').value) && fv.isEmpty(document.getElementById('q84_10_rad_date_month').value) && fv.isEmpty(document.getElementById('q84_10_rad_date_day').value)) &&
+                    (fv.isEmpty(document.getElementById('q84_10_rad_date_year').value) ||
+                    fv.isEmpty(document.getElementById('q84_10_rad_date_month').value) ||
+                    fv.isEmpty(document.getElementById('q84_10_rad_date_day').value)) ){
+                            fv.raiseError(i18nmessages.step12ErrInvalidDate8910);
+            } 
+	}         
+**************/
+
 		if ( ($("#q84_1_rad_date_year").val() == today_year.toString())  &&
 				(parseInt($("#q84_1_rad_date_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 			){
