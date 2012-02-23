@@ -1552,7 +1552,9 @@ class SurveyController {
 		
 		Map parameters = [title: "survey_list", separator:"\t"]
 		
-		def surveys = Survey.list().each{
+		def surveys = Survey.list()
+                //def sclone=new ArrayList(surveys) // shallow copy ... similar to .clone()
+                surveys.each{
 			def shortDOB = it.DOB ? String.format('%tY/%<tm/%<td', it.DOB) : ""
 			it.putAt("shortDOB", shortDOB)
 			def q11a_1Year_only = it.q11a_1Year ? String.format('%tY', it.q11a_1Year) : ""
@@ -1646,17 +1648,20 @@ class SurveyController {
 		
 		if(params?.format && params.format != "html"){
 			if (params.extension=="csv"){
-				params.extension="tsv"
-				
+				params.extension="tsv.txt"
+                                /*
 				surveys.each {
 					if (it.other_memo){
 						String ss=it.other_memo.toString()
-						it.other_memo=ss.replaceAll("\\r\\n|\\r|\\n", "**").replaceAll("\\t", " ")
+						it.other_memo=ss.replaceAll("\\r\\n|\\r|\\n", "-**-").replaceAll("\\t", " ")
 					
 						//println it.other_memo
 					}
 				}
+                                */
+
 			}
+                        
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format] 
 			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
@@ -1672,6 +1677,8 @@ class SurveyController {
 	def list_surveyer = {
 		session.step=''
 		def selectedSurveys=getSurveyList(session.user.login, params)
+                //def selectedSurveysClone=new ArrayList(selectedSurveys) // shallow copy ... similar to .clone()
+
 		def surveySize=u56survey.Survey.countBySurveyer(session.user.login)
 		
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
@@ -1695,22 +1702,116 @@ class SurveyController {
 		
 		//Map parameters = [title: "survey_list", separator:"\t"]
 		Map parameters = [title: "survey_list"]
-		
+/*
+                selectedSurveys.each{
+			def shortDOB = it.DOB ? String.format('%tY/%<tm/%<td', it.DOB) : ""
+			it.putAt("shortDOB", shortDOB)
+			def q11a_1Year_only = it.q11a_1Year ? String.format('%tY', it.q11a_1Year) : ""
+			def q11a_2Year_only = it.q11a_2Year ? String.format('%tY', it.q11a_2Year) : ""
+			def q11a_3Year_only = it.q11a_3Year ? String.format('%tY', it.q11a_3Year) : ""
+			def q11a_4Year_only = it.q11a_4Year ? String.format('%tY', it.q11a_4Year) : ""
+			def q11a_5Year_only = it.q11a_5Year ? String.format('%tY', it.q11a_5Year) : ""
+			def q11a_6Year_only = it.q11a_6Year ? String.format('%tY', it.q11a_6Year) : ""
+			def q11a_hep_donotknow_type_Year_only = it.q11a_hep_donotknow_type_Year ? String.format('%tY', it.q11a_hep_donotknow_type_Year) : ""
+			it.putAt("q11a_1Year_only", q11a_1Year_only)
+			it.putAt("q11a_2Year_only", q11a_2Year_only)
+			it.putAt("q11a_3Year_only", q11a_3Year_only)
+			it.putAt("q11a_4Year_only", q11a_4Year_only)
+			it.putAt("q11a_5Year_only", q11a_5Year_only)
+			it.putAt("q11a_6Year_only", q11a_6Year_only)
+			it.putAt("q11a_hep_donotknow_type_Year_only", q11a_hep_donotknow_type_Year_only)
+			def q21DateStopSmoking_short = it.q21DateStopSmoking ? String.format('%tY/%<tm/%<td', it.q21DateStopSmoking) : ""
+			it.putAt("q21DateStopSmoking_short", q21DateStopSmoking_short)
+			def date_most_recent_PSA_test_short = it.dateMostRecentPSAtest ? String.format('%tY/%<tm', it.dateMostRecentPSAtest) : ""
+			def date_rectal_exam_short = it.dateRectalExam ? String.format('%tY/%<tm', it.dateRectalExam) : ""
+			it.putAt("date_rectal_exam_short", date_rectal_exam_short)
+			it.putAt("date_most_recent_PSA_test_short", date_most_recent_PSA_test_short)
+			def date_digital_rectal_exam_short = it.dateDigitalRectalExam ? String.format('%tY/%<tm', it.dateDigitalRectalExam) : ""
+			def date_sigmoidoscopy_colonoscopy_short = it.dateSigmoidoscopyColonoscopy ? String.format('%tY/%<tm', it.dateSigmoidoscopyColonoscopy): ""
+			it.putAt("date_digital_rectal_exam_short", date_digital_rectal_exam_short)
+			it.putAt("date_sigmoidoscopy_colonoscopy_short", date_sigmoidoscopy_colonoscopy_short)
+			
+			def q48_date_last_visit_gynecologist_short = it.q48dateLastVisitGynecologist ? String.format('%tY/%<tm', it.q48dateLastVisitGynecologist): ""
+			it.putAt("q48_date_last_visit_gynecologist_short", q48_date_last_visit_gynecologist_short)
+			def q51_1_date_short = it.q51date1 ? String.format('%tY/%<tm', it.q51date1): ""
+			def q51_2_date_short = it.q51date2 ? String.format('%tY/%<tm', it.q51date2): ""
+			def q51_3_date_short = it.q51date3 ? String.format('%tY/%<tm', it.q51date3): ""
+			def q51_4_date_short = it.q51date4 ? String.format('%tY/%<tm', it.q51date4): ""
+			def q51_5_date_short = it.q51date5 ? String.format('%tY/%<tm', it.q51date5): ""
+			def q51_6_date_short = it.q51date6 ? String.format('%tY/%<tm', it.q51date6): ""
+			it.putAt("q51_1_date_short", q51_1_date_short)
+			it.putAt("q51_2_date_short", q51_2_date_short)
+			it.putAt("q51_3_date_short", q51_3_date_short)
+			it.putAt("q51_4_date_short", q51_4_date_short)
+			it.putAt("q51_5_date_short", q51_5_date_short)
+			it.putAt("q51_6_date_short", q51_6_date_short)
+			def q52_date_most_recent_pap_smear_short = it.q52dateMostRecentPapSmear ? String.format('%tY/%<tm', it.q52dateMostRecentPapSmear): ""
+			it.putAt("q52_date_most_recent_pap_smear_short", q52_date_most_recent_pap_smear_short)
+			def q71shortdate = it.q71 ? String.format('%tY/%<tm', it.q71): ""
+			it.putAt("q71shortdate", q71shortdate)
+			def q84_1_rad_date_short = it.q84_1_rad_date ? String.format('%tY/%<tm/%<td', it.q84_1_rad_date): ""
+			def q84_2_rad_date_short = it.q84_2_rad_date ? String.format('%tY/%<tm/%<td', it.q84_2_rad_date): ""
+			def q84_3_rad_date_short = it.q84_3_rad_date ? String.format('%tY/%<tm/%<td', it.q84_3_rad_date): ""
+			def q84_4_rad_date_short = it.q84_4_rad_date ? String.format('%tY/%<tm/%<td', it.q84_4_rad_date): ""
+			def q84_5_rad_date_short = it.q84_5_rad_date ? String.format('%tY/%<tm/%<td', it.q84_5_rad_date): ""
+			def q84_6_rad_date_short = it.q84_6_rad_date ? String.format('%tY/%<tm/%<td', it.q84_6_rad_date): ""
+			def q84_7_rad_date_short = it.q84_7_rad_date ? String.format('%tY/%<tm/%<td', it.q84_7_rad_date): ""
+			def q84_8_rad_date_short = it.q84_8_rad_date ? String.format('%tY/%<tm/%<td', it.q84_8_rad_date): ""
+			def q84_9_rad_date_short = it.q84_9_rad_date ? String.format('%tY/%<tm/%<td', it.q84_9_rad_date): ""
+			def q84_10_rad_date_short = it.q84_10_rad_date ? String.format('%tY/%<tm/%<td', it.q84_10_rad_date): ""
+			it.putAt("q84_1_rad_date_short", q84_1_rad_date_short)
+			it.putAt("q84_2_rad_date_short", q84_2_rad_date_short)
+			it.putAt("q84_3_rad_date_short", q84_3_rad_date_short)
+			it.putAt("q84_4_rad_date_short", q84_4_rad_date_short)
+			it.putAt("q84_5_rad_date_short", q84_5_rad_date_short)
+			it.putAt("q84_6_rad_date_short", q84_6_rad_date_short)
+			it.putAt("q84_7_rad_date_short", q84_7_rad_date_short)
+			it.putAt("q84_8_rad_date_short", q84_8_rad_date_short)
+			it.putAt("q84_9_rad_date_short", q84_9_rad_date_short)
+			it.putAt("q84_10_rad_date_short", q84_10_rad_date_short)
+			def q90_1_year_only = it.q90_1_year ? String.format('%tY', it.q90_1_year): ""
+			def q90_2_year_only = it.q90_2_year ? String.format('%tY', it.q90_2_year): ""
+			def q90_3_year_only = it.q90_3_year ? String.format('%tY', it.q90_3_year): ""
+			def q90_4_year_only = it.q90_4_year ? String.format('%tY', it.q90_4_year): ""
+			def q90_5_year_only = it.q90_5_year ? String.format('%tY', it.q90_5_year): ""
+			def q90_6_year_only = it.q90_6_year ? String.format('%tY', it.q90_6_year): ""
+			def q90_7_year_only = it.q90_7_year ? String.format('%tY', it.q90_7_year): ""
+			def q90_8_year_only = it.q90_8_year ? String.format('%tY', it.q90_8_year): ""
+			def q90_9_year_only = it.q90_9_year ? String.format('%tY', it.q90_9_year): ""
+			def q90_10_year_only = it.q90_10_year ? String.format('%tY', it.q90_10_year): ""
+			def q90_11_year_only = it.q90_11_year ? String.format('%tY', it.q90_11_year): ""
+			it.putAt("q90_1_year_only", q90_1_year_only)
+			it.putAt("q90_2_year_only", q90_2_year_only)
+			it.putAt("q90_3_year_only", q90_3_year_only)
+			it.putAt("q90_4_year_only", q90_4_year_only)
+			it.putAt("q90_5_year_only", q90_5_year_only)
+			it.putAt("q90_6_year_only", q90_6_year_only)
+			it.putAt("q90_7_year_only", q90_7_year_only)
+			it.putAt("q90_8_year_only", q90_8_year_only)
+			it.putAt("q90_9_year_only", q90_9_year_only)
+			it.putAt("q90_10_year_only", q90_10_year_only)
+			it.putAt("q90_11_year_only", q90_11_year_only)
+			
+		}        
+        */
 		if(params?.format && params.format != "html"){
 			if (params.extension=="csv"){
-				params.extension="tsv"
-				
-				selectedSurveys.each {
+				params.extension=session.user.login+".tsv.txt"
+				/*
+				selectedSurveysClone.each {
 					if (it.other_memo){
 						String ss=it.other_memo.toString()
-						it.other_memo=ss.replaceAll("\\r\\n|\\r|\\n", "**").replaceAll("\\t", " ")
+						it.other_memo=ss.replaceAll("\\r\\n|\\r|\\n", "-**-").replaceAll("\\t", " ")
 						//	println it.other_memo
 					}
 				}
-				
+				*/
 				
 				
 			}
+                        else if (params.extension=="xml"){
+                                params.extension=session.user.login+".xml"
+                        }
 			response.contentType = ConfigurationHolder.config.grails.mime.types[params.format]
 			response.setHeader("Content-disposition", "attachment; filename=survey_list.${params.extension}")
 			params.max=1000000
@@ -2275,6 +2376,7 @@ class SurveyController {
 			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
 				flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
 				//redirect(action: "show", id: surveyInstance.id)
+                                log.info " Updated/Verify  by "+session.user.login+"(Step "+surveyInstance.step+" of ICN="+surveyInstance.consentNum+" id="+surveyInstance.id+")"
 				redirect(action: "preview", id: surveyInstance.id)
 			}
 			else {
@@ -2333,14 +2435,16 @@ class SurveyController {
 			//surveyCompletedInstance.completedBy = session.user.login
 			
             //if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true) && surveyCompletedInstance.save(flush: true)) {
-			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
+	if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
                 //redirect(action: "show", id: surveyInstance.id)
+                log.info "Verified/OK  by "+session.user.login+"(Step "+surveyInstance.step+" of ICN="+surveyInstance.consentNum+" id="+surveyInstance.id+")"
 				redirect(action: "thankyou")
             }
             else {
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
                 flash.message = "The survey has not been submitted successfully. Please try again. If the problem does not go away, please contact administrator."
+                log.error "Verified/ERROR  by "+session.user.login+"(Step "+surveyInstance.step+" of ICN="+surveyInstance.consentNum+" id="+surveyInstance.id+")"
 				redirect(action: "preview", id: surveyInstance.id)
             }
         }
@@ -2438,13 +2542,15 @@ class SurveyController {
 				params.q51_6="n/a"
 			}
 */
-            surveyInstance.properties = params
+                        surveyInstance.properties = params
 
-			surveyInstance.surveyer=session.user.login
+			//surveyInstance.surveyer=session.user.login
+                        surveyInstance.updatedBy = session.user.login
 			if (session.step!='') surveyInstance.step=session.step.toString()
 			
-			if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
+	    if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
+                log.info "Updated  by "+session.user.login+"(Step "+surveyInstance.step+" of ICN="+surveyInstance.consentNum+" id="+surveyInstance.id+")"
                 redirect(action: "show", id: surveyInstance.id)
             }
             else {
@@ -2562,7 +2668,7 @@ class SurveyController {
 				flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
 				//redirect(action: "show", id: surveyInstance.id)
                                 
-                                log.info "Update()-"+session.user.login+"-ID:"+surveyInstance.id+"-Step:"+surveyInstance.step+"-"+params+"\n"
+                                log.info "Updated/Next-"+session.user.login+"-ID:"+surveyInstance.id+"-Step:"+surveyInstance.step+"-"+params
 				
 				if (currentStep==8 && surveyInstance.sex=='male')
 					redirect(action: "step11", fragment: "step11b", id: surveyInstance.id)

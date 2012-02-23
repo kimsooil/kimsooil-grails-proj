@@ -144,7 +144,7 @@ $(document).ready(function(){
  --%> 
 
 <g:if test="${!surveyInstance?.completed}"> 
-	<span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>
+	<%--<span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'button.save-finish-later.label', default: 'update')}" /></span>--%>
 	<span class="button"><g:actionSubmit class="complete" action="completed" value="${message(code: 'complete', default: 'Complete')}" /></span>
 	<span class="menuButton"><g:render template="/common/step_meter"/></span>
 <br/>

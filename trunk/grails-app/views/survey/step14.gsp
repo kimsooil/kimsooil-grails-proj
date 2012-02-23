@@ -950,10 +950,10 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 					   <tr>
 					   		<td style="width:40%;font-weight:bold;">${idx}. ${drug }
 					   		<g:if test="${idx==5}">
-					   			<g:textField style="width:100px" name="q94_otherMedName1" value="${surveyInstance?.q94_otherMedName1}" />
+					   			<g:textField style="width:250px" name="q94_otherMedName1" value="${surveyInstance?.q94_otherMedName1}" />
 					   		</g:if>
 					   		<g:if test="${idx==6}">
-					   			<g:textField style="width:100px" name="q94_otherMedName2" value="${surveyInstance?.q94_otherMedName2}" />
+					   			<g:textField style="width:250px" name="q94_otherMedName2" value="${surveyInstance?.q94_otherMedName2}" />
 					   		</g:if>
 					   		</td>
 					   		<td style="width:5%">
@@ -987,8 +987,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 					   </g:each>
 					   <tr>
 					   		<td style="width:30%;font-weight:bold;">
-					   			7. <g:message code="survey.q94.t.other" /> #3
-					   			<g:textField style="width:100px" name="q94_otherMedName3" value="${surveyInstance?.q94_otherMedName3}" />
+					   			7. <g:message code="survey.q94.t.other" /> #3<br/>
+					   			<g:textField style="width:250px" name="q94_otherMedName3" value="${surveyInstance?.q94_otherMedName3}" />
 					   		</td>
 					   		<td>
 					   			<g:textField style="width:50px" 
@@ -1021,8 +1021,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 					   </tr>
 					   <tr>
 					   		<td style="width:30%;font-weight:bold;">
-					   			8. <g:message code="survey.q94.t.other" /> #4
-					   			<g:textField style="width:100px" name="q94_otherMedName4" value="${surveyInstance?.q94_otherMedName4}" />
+					   			8. <g:message code="survey.q94.t.other" /> #4<br/>
+					   			<g:textField style="width:250px" name="q94_otherMedName4" value="${surveyInstance?.q94_otherMedName4}" />
 					   		</td>
 					   		<td>
 					   			<g:textField style="width:50px" 
@@ -1055,8 +1055,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 					   </tr>
 					   <tr>
 					   		<td style="width:30%;font-weight:bold;">
-					   			9. <g:message code="survey.q94.t.other" /> #5
-					   			<g:textField style="width:100px" name="q94_otherMedName5" value="${surveyInstance?.q94_otherMedName5}" />
+					   			9. <g:message code="survey.q94.t.other" /> #5<br/>
+					   			<g:textField style="width:250px" name="q94_otherMedName5" value="${surveyInstance?.q94_otherMedName5}" />
 					   		</td>
 					   		<td>
 					   			<g:textField style="width:50px" 

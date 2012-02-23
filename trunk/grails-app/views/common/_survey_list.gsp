@@ -15,13 +15,13 @@ def incomplete=surveyInstanceTotal-completed
             <div class="list">
             	(Total: ${surveyInstanceTotal}=<label style="color:blue">Completed:${completed}</label> + <label style="color:red">Incomplete:${incomplete}</label>)
             	
-            	<%--<g:if test="${session.user.role=='admin' }"> --%>
+            	<g:if test="${session.user.role=='admin' }">
             		<%--<export:formats />
             		<export:formats formats="['csv', 'excel', 'ods', 'pdf', 'rtf', 'xml']" />
             		--%>
             		<export:formats formats="['csv', 'xml']" />
             		
-            	<%--</g:if> --%>
+            	</g:if>
                 <table id="hor-minimalist-b" style="width:900px;">
                     <thead>
                         <tr>
@@ -81,13 +81,14 @@ def incomplete=surveyInstanceTotal-completed
                             </g:else>
                         	</td>
                         	<td>
-                        		<g:if test="${surveyInstance?.mode!='paper'}">
-                        			${surveyInstance?.step }
-                        		</g:if>
-                        		<g:elseif test="${surveyInstance?.completed}">
+                        		<g:if test="${surveyInstance?.completed}">
                         			(completed)
-                        		</g:elseif>
+                        		</g:if>
+                        		<g:else>
+                        			${surveyInstance?.step }
+                        		</g:else>                                
                         	</td>
+                                
                             <td><g:formatDate format="MM/dd/yyyy" date="${surveyInstance?.DOB}" /></td>                 
                         	<td>${surveyInstance?.sex }</td>
                             
