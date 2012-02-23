@@ -86,8 +86,16 @@ function checkForm4()
 	});
 	if (!s1 && getRadioValue(document.getElementsByName('stillSmoke'))=='no'){
 		fv.raiseError(i18nmessages.step4Err12)
-	}
-	
+	} else if (fv.isEmpty(document.getElementById('q21_whenStopSmoking_years').value) &&
+                   fv.isEmpty(document.getElementById('q21_whenStopSmoking_months').value) &&
+                    getRadioValue(document.getElementsByName('stillSmoke'))=='no'){
+            if ( !(fv.isEmpty(document.getElementById('q21DateStopSmoking_day').value) && fv.isEmpty(document.getElementById('q21DateStopSmoking_month').value) && fv.isEmpty(document.getElementById('q21DateStopSmoking_year').value)) &&
+                    (fv.isEmpty(document.getElementById('q21DateStopSmoking_day').value) ||
+                    fv.isEmpty(document.getElementById('q21DateStopSmoking_month').value) ||
+                    fv.isEmpty(document.getElementById('q21DateStopSmoking_year').value)) ){
+                            fv.raiseError(i18nmessages.step4Err13);
+            }	
+        }
 	
 	// all done
 	// if errors, display, else proceed

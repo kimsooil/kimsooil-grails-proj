@@ -28,20 +28,25 @@ function checkForm9()
 	if ( ($("#q48dateLastVisitGynecologist_year").val() == today_year.toString())  &&
 			(parseInt($("#q48dateLastVisitGynecologist_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 		){
-			fv.raiseError("Q53: "+i18nmessages.step7ErrInvalidDate);
+			fv.raiseError("Q53: "+i18nmessages.step9ErrInvalidDate1);
 		}	
 	if ( ($("#q48dateLastVisitGynecologist_year").val() == dob_year.toString())  &&
 			(parseInt($("#q48dateLastVisitGynecologist_month").val()) < dob_month) // java.util.Calendar.MONTH is 0~11
 		){
-			fv.raiseError("Q53: "+i18nmessages.step7ErrInvalidDate);
+			fv.raiseError("Q53: "+i18nmessages.step9ErrInvalidDate1);
 		}	
 
-	/*
-	if (getRadioValue(document.getElementsByName('q47'))!='never' && ($('#q48_date_last_visit_gynecologist_momth').val()=='' || $('#q48_date_last_visit_gynecologist_year').val()==''))
+
+	if (getRadioValue(document.getElementsByName('q47'))!='never')
 	{
-		fv.raiseError(i18nmessages.step9Err4);
+            if ( !(fv.isEmpty(document.getElementById('q48dateLastVisitGynecologist_month').value) && fv.isEmpty(document.getElementById('q48dateLastVisitGynecologist_year').value)) &&
+                    (fv.isEmpty(document.getElementById('q48dateLastVisitGynecologist_month').value) ||
+                    fv.isEmpty(document.getElementById('q48dateLastVisitGynecologist_year').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate1);
+            } 
+ 
 	}
-	*/
+
 	if (!fv.isRadioChecked(document.getElementsByName('q49')) )
 	{
 		fv.raiseError(i18nmessages.step9Err5);
@@ -115,6 +120,55 @@ function checkForm9()
 		fv.raiseError(i18nmessages.step9Err15);
 	}
 	*/
+       
+	if (getRadioValue(document.getElementsByName('q51_1'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q51date1_year').value) && fv.isEmpty(document.getElementById('q51date1_month').value)) &&
+                    (fv.isEmpty(document.getElementById('q51date1_year').value) ||
+                    fv.isEmpty(document.getElementById('q51date1_month').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate561);
+            } 
+	}       
+	if (getRadioValue(document.getElementsByName('q51_2'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q51date2_year').value) && fv.isEmpty(document.getElementById('q51date2_month').value)) &&
+                    (fv.isEmpty(document.getElementById('q51date2_year').value) ||
+                    fv.isEmpty(document.getElementById('q51date2_month').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate562);
+            } 
+	}
+	if (getRadioValue(document.getElementsByName('q51_3'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q51date3_year').value) && fv.isEmpty(document.getElementById('q51date3_month').value)) &&
+                    (fv.isEmpty(document.getElementById('q51date3_year').value) ||
+                    fv.isEmpty(document.getElementById('q51date3_month').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate563);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q51_4'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q51date4_year').value) && fv.isEmpty(document.getElementById('q51date4_month').value)) &&
+                    (fv.isEmpty(document.getElementById('q51date4_year').value) ||
+                    fv.isEmpty(document.getElementById('q51date4_month').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate564);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q51_5'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q51date5_year').value) && fv.isEmpty(document.getElementById('q51date5_month').value)) &&
+                    (fv.isEmpty(document.getElementById('q51date5_year').value) ||
+                    fv.isEmpty(document.getElementById('q51date5_month').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate565);
+            } 
+	}         
+	if (getRadioValue(document.getElementsByName('q51_6'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q51date6_year').value) && fv.isEmpty(document.getElementById('q51date6_month').value)) &&
+                    (fv.isEmpty(document.getElementById('q51date6_year').value) ||
+                    fv.isEmpty(document.getElementById('q51date6_month').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate566);
+            } 
+	}         
 	if ( ($("#q51date1_year").val() == today_year.toString())  &&
 			(parseInt($("#q51date1_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 		){
@@ -185,6 +239,15 @@ function checkForm9()
 	{
 		fv.raiseError(i18nmessages.step9Err16_1);
 	}
+	if (getRadioValue(document.getElementsByName('q52'))=='yes')
+	{
+            if ( !(fv.isEmpty(document.getElementById('q52dateMostRecentPapSmear_year').value) && fv.isEmpty(document.getElementById('q52dateMostRecentPapSmear_month').value)) &&
+                    (fv.isEmpty(document.getElementById('q52dateMostRecentPapSmear_year').value) ||
+                    fv.isEmpty(document.getElementById('q52dateMostRecentPapSmear_month').value)) ){
+                            fv.raiseError(i18nmessages.step9ErrInvalidDate57);
+            } 
+	}         
+        
 	if ( ($("#q52dateMostRecentPapSmear_year").val() == today_year.toString())  &&
 			(parseInt($("#q52dateMostRecentPapSmear_month").val()) > today_month) // java.util.Calendar.MONTH is 0~11
 		){

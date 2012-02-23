@@ -85,15 +85,21 @@ function checkForm10()
 	{
 		fv.raiseError(i18nmessages.step10Err20);
 	}
+        if ( !(fv.isEmpty(document.getElementById('q71_month').value) && fv.isEmpty(document.getElementById('q71_year').value)) &&
+                    (fv.isEmpty(document.getElementById('q71_month').value) ||
+                    fv.isEmpty(document.getElementById('q71_year').value)) ){
+                            fv.raiseError(i18nmessages.step10ErrInvalidDate);
+        } 
+        
 	if ( ($("#q71_year").val() == today_year.toString())  &&
 			(parseInt($("#q71_month").val()) > today_month)
 		){
-			fv.raiseError("Q76: "+i18nmessages.step7ErrInvalidDate);
+			fv.raiseError(i18nmessages.step10ErrInvalidDate);
 		}
 	if ( ($("#q71_year").val() == dob_year.toString())  &&
 			(parseInt($("#q71_month").val()) < dob_month)
 		){
-			fv.raiseError("Q76: "+i18nmessages.step7ErrInvalidDate);
+			fv.raiseError(i18nmessages.step10ErrInvalidDate);
 		}				
 	
 	// all done

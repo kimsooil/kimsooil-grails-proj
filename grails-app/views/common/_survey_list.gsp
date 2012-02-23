@@ -33,6 +33,7 @@ def incomplete=surveyInstanceTotal-completed
 							<g:sortableColumn property="consentNum" title="Informed Consent Number" />
 							<%--<g:sortableColumn property="otherNumberOrComments" title="Other Number, ID, etc." /> --%>
                             <g:sortableColumn property="surveyer" title="surveyer" />  
+                            <g:sortableColumn property="updatedBy" title="updated-by" />
                             
                             <g:sortableColumn property="completed" title="Completed" />         
                             <g:sortableColumn property="step" title="Step" />
@@ -72,14 +73,16 @@ def incomplete=surveyInstanceTotal-completed
                             <td>${surveyInstance?.consentNum}</td>
                             <%--<td><g:link action="${stepNumUrl }" id="${surveyInstance.otherNumberOrComments}">${surveyInstance?.otherNumberOrComments}</g:link></td> --%>
                         	<td>${surveyInstance?.surveyer}</td>
+                                <td>${surveyInstance?.updatedBy}</td>
                         	<td>
-                            <g:if test="${surveyInstance?.completed}">
-                            	<label style="color:blue;font-style:bold;">Y</label>
-                            </g:if>
-                            <g:else>
-                            	<label style="color:red;font-style:bold;">N</label>
-                            </g:else>
+                                    <g:if test="${surveyInstance?.completed}">
+                                      <label style="color:blue;font-style:bold;">Y</label>
+                                    </g:if>
+                                    <g:else>
+                                      <label style="color:red;font-style:bold;">N</label>
+                                    </g:else>
                         	</td>
+                                
                         	<td>
                         		<g:if test="${surveyInstance?.completed}">
                         			(completed)

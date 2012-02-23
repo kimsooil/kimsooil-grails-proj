@@ -262,7 +262,7 @@ if ($("input[name='q11a_3']:checked").val() == 'no'){
 
 		if ($("#q11a_hep_donotknow_type").attr('checked')){
 
-	    	$("#q11a_hep_donotknow_type_Year_year").val('');
+	    	//$("#q11a_hep_donotknow_type_Year_year").val('');
 	    	$("#q11a_hep_donotknow_type_Year_year").attr("disabled", '');		
 		
 	    	$("[name*='q11a_1']").attr('checked', false);
@@ -438,7 +438,7 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 						</td>
 						
 						<td>
-							<g:datePicker name="q11a_hep_donotknow_type_Year" precision="year" value="${surveyInstance?.('q11a_hep_donotknow_type_Year')}"
+							<g:kimsiDatePicker name="q11a_hep_donotknow_type_Year" precision="year" value="${surveyInstance?.q11a_hep_donotknow_type_Year}"
 	                                      years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q11a_hep_donotknow_type_Year_status')}"></span><br/>
 						</td>
 					</tr>
