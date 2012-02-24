@@ -233,18 +233,6 @@ function CalAge_precise(dd,mm, yy) {
    	    return -1;
 }
 
-function confirmIfSure()
-{
-	//var agree=confirm(i18nmessages.step1ErrICN);
-	var agree=confirm("Do you really want to save your inputs without Input Validation?");
-	if (agree){
-		return true;
-	}
-	else{
-		return false ;
-	}
-} 
-
 function checkIfConsentNumIsNumber(val)
 {
 	//var agree=confirm(i18nmessages.step1ErrICN);
@@ -266,9 +254,22 @@ function checkIfConsentNumIsNumber(val)
 		return false ;
 	}
 } 
+
+function confirmIfSure()
+{
+	//var agree=confirm(i18nmessages.step1ErrICN);
+	var agree=confirm("Do you really want to save your inputs without Input Validation?");
+	if (agree){
+		return true;
+	}
+	else{
+		return false ;
+	}
+} 
+
 function confirm_if_lost_data()
 {
-    var sure =confirm('You may lost data you entered. At least ICN number is required to keep data.');
+        var sure =confirm('You may lost data you entered. At least ICN number is required to keep data.');
     	if (sure){
 		return true;
 	}

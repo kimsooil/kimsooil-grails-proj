@@ -181,6 +181,21 @@ $(document).ready(function(){
 	});		
 });
 </g:if>
+function checkDate()
+{
+    var msg="";
+            if ( !(isEmpty(document.getElementById('dateDigitalRectalExam_month').value) && isEmpty(document.getElementById('dateDigitalRectalExam_year').value)) &&
+                    (isEmpty(document.getElementById('dateDigitalRectalExam_month').value) ||
+                    isEmpty(document.getElementById('dateDigitalRectalExam_year').value)) ){
+                            msg +=i18nmessages.step8ErrInvalidDate1+"\n";
+            }
+            if ( !(isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_month').value) && isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_year').value)) &&
+                    (isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_month').value) ||
+                     isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_year').value)) ){
+                            msg+=i18nmessages.step8ErrInvalidDate2;
+            }                
+            if (msg!="") alert(msg);
+}
 </g:javascript>    
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -256,7 +271,7 @@ if ($("input[name='q43']:checked").val() == 'no'){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform8"
-            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm8());} else {return confirmIfSure();}"
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm8());} else {checkDate(); return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />

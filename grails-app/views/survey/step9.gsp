@@ -500,6 +500,51 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 								
 });
 </g:if>
+function checkDate(){
+
+	var msg="";
+            if ( !(isEmpty(document.getElementById('q48dateLastVisitGynecologist_month').value) && isEmpty(document.getElementById('q48dateLastVisitGynecologist_year').value)) &&
+                    (isEmpty(document.getElementById('q48dateLastVisitGynecologist_month').value) ||
+                    isEmpty(document.getElementById('q48dateLastVisitGynecologist_year').value)) ){
+                            msg += i18nmessages.step9ErrInvalidDate1+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q51date1_year').value) && isEmpty(document.getElementById('q51date1_month').value)) &&
+                    (isEmpty(document.getElementById('q51date1_year').value) ||
+                    isEmpty(document.getElementById('q51date1_month').value)) ){
+                            msg +=i18nmessages.step9ErrInvalidDate561+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q51date2_year').value) && isEmpty(document.getElementById('q51date2_month').value)) &&
+                    (isEmpty(document.getElementById('q51date2_year').value) ||
+                    isEmpty(document.getElementById('q51date2_month').value)) ){
+                            msg+=i18nmessages.step9ErrInvalidDate562+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q51date3_year').value) && isEmpty(document.getElementById('q51date3_month').value)) &&
+                    (isEmpty(document.getElementById('q51date3_year').value) ||
+                    isEmpty(document.getElementById('q51date3_month').value)) ){
+                            msg+=i18nmessages.step9ErrInvalidDate563+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q51date4_year').value) && isEmpty(document.getElementById('q51date4_month').value)) &&
+                    (isEmpty(document.getElementById('q51date4_year').value) ||
+                    isEmpty(document.getElementById('q51date4_month').value)) ){
+                            msg+=i18nmessages.step9ErrInvalidDate564+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q51date5_year').value) && isEmpty(document.getElementById('q51date5_month').value)) &&
+                    (isEmpty(document.getElementById('q51date5_year').value) ||
+                    isEmpty(document.getElementById('q51date5_month').value)) ){
+                            msg+=i18nmessages.step9ErrInvalidDate565+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q51date6_year').value) && isEmpty(document.getElementById('q51date6_month').value)) &&
+                    (isEmpty(document.getElementById('q51date6_year').value) ||
+                    isEmpty(document.getElementById('q51date6_month').value)) ){
+                            msg+=i18nmessages.step9ErrInvalidDate566+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q52dateMostRecentPapSmear_year').value) && isEmpty(document.getElementById('q52dateMostRecentPapSmear_month').value)) &&
+                    (isEmpty(document.getElementById('q52dateMostRecentPapSmear_year').value) ||
+                    isEmpty(document.getElementById('q52dateMostRecentPapSmear_month').value)) ){
+                           msg+=i18nmessages.step9ErrInvalidDate57;
+            }
+            if (msg!="") alert(msg);
+}
 </g:javascript>    
 	
         <div class="nav">
@@ -603,7 +648,7 @@ if ($("input[name='q53']:checked").val() == 'no'){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform9"
-            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm9());} else {return confirmIfSure();}"
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm9());} else {checkDate(); return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />

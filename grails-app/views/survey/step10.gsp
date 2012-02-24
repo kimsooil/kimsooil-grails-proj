@@ -167,6 +167,13 @@ $.jqDialog.alert('<p align="center"><img src="${resource(dir:'images',file:'fema
 	});								
 });	
 </g:if>
+function checkDate(){
+        if ( !(isEmpty(document.getElementById('q71_month').value) && isEmpty(document.getElementById('q71_year').value)) &&
+                    (isEmpty(document.getElementById('q71_month').value) ||
+                    isEmpty(document.getElementById('q71_year').value)) ){
+                            alert(i18nmessages.step10ErrInvalidDate);
+        } 
+}
 </g:javascript>    
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -249,7 +256,7 @@ if ($("input[name='q69']:checked").val() == 'no'){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform10"
-            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm10());} else {return confirmIfSure();}"
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm10());} else {checkDate(); return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />

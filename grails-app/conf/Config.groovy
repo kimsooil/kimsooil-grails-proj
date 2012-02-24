@@ -102,7 +102,8 @@ log4j = {
            'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
            'org.springframework',
            'org.hibernate',
-           'net.sf.ehcache.hibernate'
+           'net.sf.ehcache.hibernate',
+    'org.codehaus.groovy.grails.web.binding.GrailsDataBinder'  // suppressing the warning of incomplete date format
 
     warn   'org.mortbay.log'
 

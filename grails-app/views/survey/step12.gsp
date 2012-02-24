@@ -635,6 +635,73 @@ $(document).ready(function(){
 	});	
 });	
 </g:if>
+function checkDate(){
+
+	var msg="";
+
+            if ( !(isEmpty(document.getElementById('q84_1_rad_date_year').value) && isEmpty(document.getElementById('q84_1_rad_date_month').value) && isEmpty(document.getElementById('q84_1_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_1_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_1_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_1_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate891+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_2_rad_date_year').value) && isEmpty(document.getElementById('q84_2_rad_date_month').value) && isEmpty(document.getElementById('q84_2_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_2_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_2_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_2_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate892+"\n";
+            }
+            if ( !(isEmpty(document.getElementById('q84_3_rad_date_year').value) && isEmpty(document.getElementById('q84_3_rad_date_month').value) && isEmpty(document.getElementById('q84_3_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_3_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_3_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_3_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate893+"\n";
+            }            
+            if ( !(isEmpty(document.getElementById('q84_4_rad_date_year').value) && isEmpty(document.getElementById('q84_4_rad_date_month').value) && isEmpty(document.getElementById('q84_4_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_4_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_4_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_4_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate894+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_5_rad_date_year').value) && isEmpty(document.getElementById('q84_5_rad_date_month').value) && isEmpty(document.getElementById('q84_5_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_5_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_5_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_5_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate895+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_6_rad_date_year').value) && isEmpty(document.getElementById('q84_6_rad_date_month').value) && isEmpty(document.getElementById('q84_6_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_6_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_6_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_6_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate896+"\n";
+            }
+            if ( !(isEmpty(document.getElementById('q84_7_rad_date_year').value) && isEmpty(document.getElementById('q84_7_rad_date_month').value) && isEmpty(document.getElementById('q84_7_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_7_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_7_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_7_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate897+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_8_rad_date_year').value) && isEmpty(document.getElementById('q84_8_rad_date_month').value) && isEmpty(document.getElementById('q84_8_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_8_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_8_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_8_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate898+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_9_rad_date_year').value) && isEmpty(document.getElementById('q84_9_rad_date_month').value) && isEmpty(document.getElementById('q84_9_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_9_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_9_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_9_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate899+"\n";
+            } 
+             if ( !(isEmpty(document.getElementById('q84_10_rad_date_year').value) && isEmpty(document.getElementById('q84_10_rad_date_month').value) && isEmpty(document.getElementById('q84_10_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_10_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_10_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_10_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate8910;
+            } 
+           
+            if (msg!="") alert(msg);
+}
 </g:javascript>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
@@ -670,76 +737,72 @@ $(document).ready(function(){
 			$('body').css('background-color', '#CCCCCC');
 	}
 <g:if test="${surveyInstance?.mode!='paper'}">        
-if ($("input[name='q83']:checked").val() == 'no'){
-	    	//$("[name*='q84_'][type=radio]").attr('checked', false);
-	    	$("[name*='q84_'][type=radio]").filter('[value="no"]').attr('checked', 'checked');
-	    	$("[name*='q84_'][type=radio]").attr("disabled", true);	  
-	    	$("[name*='q84_'][type=text]").val('');
-	    	$("[name*='q84_'][type=text]").attr("disabled", true);
-	    	//$("[name*='_rad_date']").val('');
-			$("[name*='_rad_date']").attr("disabled", true);
+function checkDate(){
 
-	    }
-if ($("input[name='q84_1']:checked").val() == 'no'){
-	    	$("#q84_1_whatAge").val('');
-	    	$("#q84_1_whatAge").attr("disabled", true);
-	    	//$("[name*='_1_rad_date']").val('');
-			$("[name*='_1_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_2']:checked").val() == 'no'){
-	    	$("#q84_2_whatAge").val('');
-	    	$("#q84_2_whatAge").attr("disabled", true);
-	    	//$("[name*='_2_rad_date']").val('');
-			$("[name*='_2_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_3']:checked").val() == 'no'){
-	    	$("#q84_3_whatAge").val('');
-	    	$("#q84_3_whatAge").attr("disabled", true);
-	    	//$("[name*='_3_rad_date']").val('');
-			$("[name*='_3_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_4']:checked").val() == 'no'){
-	    	$("#q84_4_whatAge").val('');
-	    	$("#q84_4_whatAge").attr("disabled", true);
-	    	//$("[name*='_4_rad_date']").val('');
-			$("[name*='_4_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_5']:checked").val() == 'no'){
-	    	$("#q84_5_whatAge").val('');
-	    	$("#q84_5_whatAge").attr("disabled", true);
-	    	//$("[name*='_5_rad_date']").val('');
-			$("[name*='_5_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_6']:checked").val() == 'no'){
-	    	$("#q84_6_whatAge").val('');
-	    	$("#q84_6_whatAge").attr("disabled", true);
-	    	//$("[name*='_6_rad_date']").val('');
-			$("[name*='_6_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_7']:checked").val() == 'no'){
-	    	$("#q84_7_whatAge").val('');
-	    	$("#q84_7_whatAge").attr("disabled", true);
-	    	//$("[name*='_7_rad_date']").val('');
-			$("[name*='_7_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_8']:checked").val() == 'no'){
-	    	$("#q84_8_whatAge").val('');
-	    	$("#q84_8_whatAge").attr("disabled", true);
-	    	//$("[name*='_8_rad_date']").val('');
-			$("[name*='_8_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_9']:checked").val() == 'no'){
-	    	$("#q84_9_whatAge").val('');
-	    	$("#q84_9_whatAge").attr("disabled", true);
-	    	//$("[name*='_9_rad_date']").val('');
-			$("[name*='_9_rad_date']").attr("disabled", true);
-	    }
-if ($("input[name='q84_10']:checked").val() == 'no'){
-	    	$("#q84_10_whatAge").val('');
-	    	$("#q84_10_whatAge").attr("disabled", true);
-	    	//$("[name*='_10_rad_date']").val('');
-			$("[name*='_10_rad_date']").attr("disabled", true);
-	    }
+	var msg="";
+
+            if ( !(isEmpty(document.getElementById('q84_1_rad_date_year').value) && isEmpty(document.getElementById('q84_1_rad_date_month').value) && isEmpty(document.getElementById('q84_1_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_1_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_1_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_1_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate891+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_2_rad_date_year').value) && isEmpty(document.getElementById('q84_2_rad_date_month').value) && isEmpty(document.getElementById('q84_2_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_2_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_2_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_2_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate892+"\n";
+            if ( !(isEmpty(document.getElementById('q84_3_rad_date_year').value) && isEmpty(document.getElementById('q84_3_rad_date_month').value) && isEmpty(document.getElementById('q84_3_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_3_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_3_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_3_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate893+"\n";
+            }            
+            if ( !(isEmpty(document.getElementById('q84_4_rad_date_year').value) && isEmpty(document.getElementById('q84_4_rad_date_month').value) && isEmpty(document.getElementById('q84_4_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_4_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_4_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_4_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate894+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_5_rad_date_year').value) && isEmpty(document.getElementById('q84_5_rad_date_month').value) && isEmpty(document.getElementById('q84_5_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_5_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_5_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_5_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate895+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_6_rad_date_year').value) && isEmpty(document.getElementById('q84_6_rad_date_month').value) && isEmpty(document.getElementById('q84_6_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_6_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_6_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_6_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate896+"\n";
+            }
+            if ( !(isEmpty(document.getElementById('q84_7_rad_date_year').value) && isEmpty(document.getElementById('q84_7_rad_date_month').value) && isEmpty(document.getElementById('q84_7_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_7_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_7_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_7_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate897+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_8_rad_date_year').value) && isEmpty(document.getElementById('q84_8_rad_date_month').value) && isEmpty(document.getElementById('q84_8_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_8_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_8_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_8_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate898+"\n";
+            } 
+            if ( !(isEmpty(document.getElementById('q84_9_rad_date_year').value) && isEmpty(document.getElementById('q84_9_rad_date_month').value) && isEmpty(document.getElementById('q84_9_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_9_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_9_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_9_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate899+"\n";
+            } 
+             if ( !(isEmpty(document.getElementById('q84_10_rad_date_year').value) && isEmpty(document.getElementById('q84_10_rad_date_month').value) && isEmpty(document.getElementById('q84_10_rad_date_day').value)) &&
+                    (isEmpty(document.getElementById('q84_10_rad_date_year').value) ||
+                    isEmpty(document.getElementById('q84_10_rad_date_month').value) ||
+                    isEmpty(document.getElementById('q84_10_rad_date_day').value)) ){
+                            msg+=i18nmessages.step12ErrInvalidDate8910;
+            } 
+           
+            if (msg!="") alert(msg);
+}
 </g:if>	
 });	
 		    
@@ -751,7 +814,7 @@ if ($("input[name='q84_10']:checked").val() == 'no'){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform12"
-            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm12());} else {return confirmIfSure();}"
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm12());} else {checkDate(); return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />
