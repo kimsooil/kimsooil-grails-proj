@@ -189,6 +189,14 @@ $(document).ready(function(){
 	});		    
 });	
 </g:if>
+function checkDate(){
+            if ( !(isEmpty(document.getElementById('q21DateStopSmoking_day').value) && isEmpty(document.getElementById('q21DateStopSmoking_month').value) && isEmpty(document.getElementById('q21DateStopSmoking_year').value)) &&
+                    (isEmpty(document.getElementById('q21DateStopSmoking_day').value) ||
+                    isEmpty(document.getElementById('q21DateStopSmoking_month').value) ||
+                    isEmpty(document.getElementById('q21DateStopSmoking_year').value)) ){
+                            alert(i18nmessages.step4Err13);
+            }	
+}            
 </g:javascript>
 
         <div class="nav">
@@ -285,7 +293,7 @@ if ($("input[name='q16']:checked").val() == 'no'){
 <div id="errors" class="errors" style="display:none;">
 </div>
             <g:form name="surveyform4"
-            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm4());} else {return confirmIfSure();}"
+            		onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm4());} else {checkDate(); return confirmIfSure();}"
             		method="post" >
                 <g:hiddenField name="id" value="${surveyInstance?.id}" />
                 <g:hiddenField name="version" value="${surveyInstance?.version}" />

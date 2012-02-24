@@ -110,11 +110,11 @@ function checkForm8()
 		{
 			fv.raiseError(i18nmessages.step8Err12);
 		}
-            if ( !(fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_month').value) && fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_year').value)) &&
-                    (fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_month').value) ||
-                    fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_year').value)) ){
-                            fv.raiseError(i18nmessages.step8ErrInvalidDate2);
-            }                
+                if ( !(fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_month').value) && fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_year').value)) &&
+                        (fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_month').value) ||
+                        fv.isEmpty(document.getElementById('dateSigmoidoscopyColonoscopy_year').value)) ){
+                                fv.raiseError(i18nmessages.step8ErrInvalidDate2);
+                }                
 		/*
 		if (getRadioValue(document.getElementsByName('q43'))=='yes' &&
 			fv.isEmpty($('#q43_biopsy_results').val())

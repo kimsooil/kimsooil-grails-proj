@@ -18,7 +18,26 @@
  
     </head>
     <body>
+<%
 
+    Long difference = surveyInstance?.lastUpdated.time - surveyInstance?.dateCreated.time
+    Map diffMap =[:]
+    difference = difference / 1000
+    diffMap.seconds = difference % 60
+    difference = (difference - diffMap.seconds) / 60
+    diffMap.minutes = difference % 60
+    difference = (difference - diffMap.minutes) / 60
+    diffMap.hours = difference % 24
+    difference = (difference - diffMap.hours) / 24
+    diffMap.years = (difference / 365).toInteger()
+    if(diffMap.years)
+       difference = (difference) % 365
+    diffMap.days = difference % 7
+    diffMap.weeks = (difference - diffMap.days) / 7  
+
+//out << diffMap
+
+%>
 
     <g:javascript>
 function IsDOBValid(){
@@ -118,9 +137,16 @@ $(document).ready(function(){
     });
 });	
 
+function checkDOB(){
+	if (isEmpty(document.getElementById('DOB_day').value) ||
+            isEmpty(document.getElementById('DOB_month').value) ||
+            isEmpty(document.getElementById('DOB_year').value)){
+			alert(i18nmessages.step1Err3);
+	}
+}
     </g:javascript>   
 <g:form name="surveyform1"
-                    onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm1());} else {return checkIfConsentNumIsNumber(document.getElementById('consentNum').value);}"
+                    onsubmit="if (document.getElementById('mode').value!='paper'){ return (checkForm1());} else {checkDOB(); return checkIfConsentNumIsNumber(document.getElementById('consentNum').value);}"
                     method="post" >
 
  <% def modesList=["paper":"Validation=OFF", "screen":"Validation=ON"]
@@ -171,26 +197,7 @@ $(document).ready(function(){
                 
 });		  	
 </g:javascript>
-<%
 
-    Long difference = surveyInstance?.lastUpdated.time - surveyInstance?.dateCreated.time
-    Map diffMap =[:]
-    difference = difference / 1000
-    diffMap.seconds = difference % 60
-    difference = (difference - diffMap.seconds) / 60
-    diffMap.minutes = difference % 60
-    difference = (difference - diffMap.minutes) / 60
-    diffMap.hours = difference % 24
-    difference = (difference - diffMap.hours) / 24
-    diffMap.years = (difference / 365).toInteger()
-    if(diffMap.years)
-       difference = (difference) % 365
-    diffMap.days = difference % 7
-    diffMap.weeks = (difference - diffMap.days) / 7  
-
-//out << diffMap
-
-%>
             <h1><g:message code="step1.edit.label" default="Step1-edit" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>

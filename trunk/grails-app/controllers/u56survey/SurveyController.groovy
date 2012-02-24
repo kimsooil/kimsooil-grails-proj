@@ -1836,13 +1836,6 @@ class SurveyController {
 			eq "surveyer", surveyer
 		}
 	}
-	/*
-    def create = {
-        def surveyInstance = new Survey()
-        surveyInstance.properties = params
-        return [surveyInstance: surveyInstance]
-    }
-	*/
 
 	def paper = {
 		if (params.MRN && !params.mrn) params.mrn=params.MRN
@@ -2392,19 +2385,6 @@ class SurveyController {
 	def done={ // copied from show
 		redirect(action: "show", id:params.id)
 	}
-	/*
-    def save = {
-        def surveyInstance = new Survey(params)
-        if (surveyInstance.save(flush: true)) {
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
-            redirect(action: "show", id: surveyInstance.id)
-        }
-        else {
-            //render(view: "create", model: [surveyInstance: surveyInstance])
-			render(view: "step1", model: [surveyInstance: surveyInstance, thisyear:thisyear])
-        }
-    }
-    */
 
 	def completed = {
 
@@ -2469,18 +2449,6 @@ class SurveyController {
 			[surveyInstanceList: Survey.list(params), surveyInstanceTotal: Survey.count()]
 		}
 	}
-	/*
-    def edit = {
-        def surveyInstance = Survey.get(params.id)
-        if (!surveyInstance) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'survey.label', default: 'Survey'), params.id])}"
-            redirect(action: "list")
-        }
-        else {
-            return [surveyInstance: surveyInstance]
-        }
-    }
-    */
 
     def update = {
         def surveyInstance = Survey.get(params.id)
@@ -2495,58 +2463,15 @@ class SurveyController {
                     return
                 }
             }
-			if (params.consentNum && params.consentNum.isNumber()){
-				params.consentNumInt=Integer.toString(params.consentNum.toInteger())
-			}
-/*			
-			if (params.haveCancer=="no"){
-				params.spread_cancer="n/a"
-				params.liver=false
-				params.brain=false
-				params.lung=false
-				params.bone=false
-				params.other=false
-				params.spread_where=" "
-			}
-			
-			if (params.q11a_hep_donotknow_type){
-				params.q11a_1="n/a"
-				params.q11a_2="n/a"
-				params.q11a_3="n/a"
-			}
-			if (params.q37=="no"){
-				params.q37_what="n/a"
-				params.q38="n/a"
-			}
-			if (params.q40=="no"){
-				params.resultsFecalOccultBloodTest="n/a"
-			}
-			if (params.q42=="no"){
-				params.q42_1="n/a"
-				params.q42_2="n/a"
-				params.q42_3="n/a"
-				params.q42_4="n/a"
-				params.q42_5="n/a"
-				params.q42_6="n/a"
-				params.q42_7="n/a"
-				params.q42_8="n/a"
-				params.q43="n/a"
-				params.q43_biopsy_results=" "
-			}
-			if (params.q51=="no"){
-				params.q51_1="n/a"
-				params.q51_2="n/a"
-				params.q51_3="n/a"
-				params.q51_4="n/a"
-				params.q51_5="n/a"
-				params.q51_6="n/a"
-			}
-*/
-                        surveyInstance.properties = params
+            if (params.consentNum && params.consentNum.isNumber()){
+		params.consentNumInt=Integer.toString(params.consentNum.toInteger())
+            }
 
-			//surveyInstance.surveyer=session.user.login
-                        surveyInstance.updatedBy = session.user.login
-			if (session.step!='') surveyInstance.step=session.step.toString()
+             surveyInstance.properties = params
+
+            //surveyInstance.surveyer=session.user.login
+             surveyInstance.updatedBy = session.user.login
+            if (session.step!='') surveyInstance.step=session.step.toString()
 			
 	    if (!surveyInstance.hasErrors() && surveyInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
@@ -2554,7 +2479,7 @@ class SurveyController {
                 redirect(action: "show", id: surveyInstance.id)
             }
             else {
-				flash.message = "Inputs cannot be saved due to error(s). Try again."
+		flash.message = "***** Inputs cannot be saved due to error(s). Try again. *****"
                 //render(view: "edit", model: [surveyInstance: surveyInstance])
 				//redirect(action: "show", id: surveyInstance.id)
                 surveyInstance.step=='1' ? render(view: ("step1_edit"), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames]) : render(view: ("step"+surveyInstance.step), model: [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames])
@@ -2607,57 +2532,6 @@ class SurveyController {
 				params.consentNumInt=Integer.toString(params.consentNum.toInteger())
 			}
 			
-			
-			// special care for radio buttons (virtually initialize to null - not-existing value 
-/*			
-			if (params.haveCancer=="no"){
-				params.spread_cancer="n/a"
-				params.liver=false
-				params.brain=false
-				params.lung=false
-				params.bone=false
-				params.other=false
-				params.spread_where=" "
-			}
-			
-			if (params.q11a_hep_donotknow_type){
-				params.q11a_1="n/a"
-				params.q11a_2="n/a"
-				params.q11a_3="n/a"
-			}
-			if (params.q37=="no"){
-				params.q37_what="n/a"
-				params.q38="n/a"
-			}
-
-			if (params.q40=="no"){
-				params.resultsFecalOccultBloodTest="n/a"
-			}
-			if (params.q42=="no"){
-				params.q42_1="n/a"
-				params.q42_2="n/a"
-				params.q42_3="n/a"
-				params.q42_4="n/a"
-				params.q42_5="n/a"
-				params.q42_6="n/a"
-				params.q42_7="n/a"
-				params.q42_8="n/a"
-				params.q43="n/a"
-				params.q43_biopsy_results=" "
-			}
-			if (params.q51=="no"){
-				params.q51_1="no"
-				params.q51_2="no"
-				params.q51_3="no"
-				params.q51_4="no"
-				params.q51_5="no"
-				params.q51_6="no"
-			}
-*/			
-			//if (params.consentNumLoc!="PRTB"){
-		//		params.otherNumberOrComments=" "
-			//}
-
 			surveyInstance.properties = params
 			
 			//surveyInstance.surveyer=session.user.login // when ever updated, save the surveyer (loggined user)
@@ -2685,7 +2559,59 @@ class SurveyController {
 			redirect(action: "list")
 		}
 	}
+        
+	def ajaxValidICNorNot={
+		def whatEntered = params['icnEntered']
+		def resultOut = ""
+		if (whatEntered.isNumber()){
+			def whatNumber = whatEntered.toInteger()
+			if (whatNumber >=1 && whatNumber <10000){
+				//resultOut = Survey.findByConsentNum(whatEntered) ? "Existing ICN" : "Valid"
+				
+				//resultOut = Survey.findByConsentNum(whatEntered) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
+				
+				resultOut = Survey.findByConsentNum(whatEntered) || Survey.findByConsentNumInt(whatNumber) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
+			}
+			else
+				resultOut = "1 ~ 9999"
+		}
+		else 
+			resultOut = message(code: 'step1.err.msgs.icn', default: 'Number Only')
+		//render params['icnEntered']
+		render "<font color='red'>"+resultOut+"</font>"
+	}
+}
+
 	/*
+    def create = {
+        def surveyInstance = new Survey()
+        surveyInstance.properties = params
+        return [surveyInstance: surveyInstance]
+    }
+
+    def save = {
+        def surveyInstance = new Survey(params)
+        if (surveyInstance.save(flush: true)) {
+            flash.message = "${message(code: 'default.created.message', args: [message(code: 'survey.label', default: 'Survey'), surveyInstance.id])}"
+            redirect(action: "show", id: surveyInstance.id)
+        }
+        else {
+            //render(view: "create", model: [surveyInstance: surveyInstance])
+			render(view: "step1", model: [surveyInstance: surveyInstance, thisyear:thisyear])
+        }
+    }
+
+    def edit = {
+        def surveyInstance = Survey.get(params.id)
+        if (!surveyInstance) {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'survey.label', default: 'Survey'), params.id])}"
+            redirect(action: "list")
+        }
+        else {
+            return [surveyInstance: surveyInstance]
+        }
+    }
+
     def delete = {
         def surveyInstance = Survey.get(params.id)
         if (surveyInstance) {
@@ -2738,25 +2664,3 @@ class SurveyController {
 
 	}
 */
-	
-	def ajaxValidICNorNot={
-		def whatEntered = params['icnEntered']
-		def resultOut = ""
-		if (whatEntered.isNumber()){
-			def whatNumber = whatEntered.toInteger()
-			if (whatNumber >=1 && whatNumber <10000){
-				//resultOut = Survey.findByConsentNum(whatEntered) ? "Existing ICN" : "Valid"
-				
-				//resultOut = Survey.findByConsentNum(whatEntered) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
-				
-				resultOut = Survey.findByConsentNum(whatEntered) || Survey.findByConsentNumInt(whatNumber) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
-			}
-			else
-				resultOut = "1 ~ 9999"
-		}
-		else 
-			resultOut = message(code: 'step1.err.msgs.icn', default: 'Number Only')
-		//render params['icnEntered']
-		render "<font color='red'>"+resultOut+"</font>"
-	}
-}
