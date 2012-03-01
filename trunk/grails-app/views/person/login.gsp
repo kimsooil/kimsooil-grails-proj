@@ -37,7 +37,8 @@ width: 40%;
                   <label style="color:white" for="login"><g:message code="id" />:</label>
                 </td>
                 <td>
-                  <input type="text" id="login" name="login"/>
+                  <input style="width:250px;" type="text" id="login" name="login"/>
+                  <%--<g:textField name="login" value="" />--%>
                 </td>
               </tr> 
           
@@ -46,7 +47,8 @@ width: 40%;
                   <label style="color:white" for="password"><g:message code="password2" />:</label>
                 </td>
                 <td>
-                  <input type="password" id="password" name="password"/>
+                  <input  style="width:250px;" type="password" id="password" name="password"/>
+                 <%--<g:passwordField name="password" value="" />--%>
                 </td>
               </tr> 
             </tbody>
@@ -55,6 +57,7 @@ width: 40%;
         <div class="buttons fortypercent">
           <span class="button">
             <input class="information" type="submit" value="${message(code:'login2')}" />
+            <%--<g:actionSubmit value="${message(code:'login2')}" />--%>
           </span>
         </div>
       </g:form>

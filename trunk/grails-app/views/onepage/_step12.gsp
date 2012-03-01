@@ -73,7 +73,7 @@
                                       years="${thisyear..1900}" default="none" noSelection="${['':'--']}" />
 					 	</td>
 					 	<td style="width:10%">
-					 		<g:textField name="${('q84_'+idx+'_whatAge')}"
+					 		<g:textField style="width:80px;" name="${('q84_'+idx+'_whatAge')}"
 					 					 value="${surveyInstance?.('q84_'+idx+'_whatAge')}" 
 					 					 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q84_age_status'+idx)}\')); "/>
 					 		<br/>
