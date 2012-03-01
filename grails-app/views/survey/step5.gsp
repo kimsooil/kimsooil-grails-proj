@@ -97,7 +97,7 @@ $(document).ready(function(){
 							<td style="width:25%;font-weight: bold;">
 								${activity }
 								<g:if test="${activity==message(code:'survey.q22.others') }">
-									<g:textField style="width:100px" name="q22_others" value="${surveyInstance?.q22_others }" />
+									<g:textField name="q22_others" value="${surveyInstance?.q22_others }" />
 									<span id="q22_others_status"></span>
 								</g:if>
 							</td>

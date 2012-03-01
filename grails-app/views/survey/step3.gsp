@@ -278,7 +278,7 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 							 				  optionValue="value"
 							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>
 								</g:else> 
-								/ <g:textField name="${('q13_'+idx+'_ageDiagnosed')}" 
+								/ <g:textField style="width:80px;" name="${('q13_'+idx+'_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_'+idx+'_ageDiagnosed')}"
 											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status'+idx)}\')); " /> <span id="${('cancerAge_status'+idx)}"></span>
 						 	</td>
@@ -299,7 +299,7 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 							 				  optionKey="key"
 							 				  optionValue="value"
 							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>				
-									/ <g:textField name="${('q13_16_ageDiagnosed')}" 
+									/ <g:textField style="width:80px;" name="${('q13_16_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_16_ageDiagnosed')}"
 											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status16')}\')); " /> <span id="${('cancerAge_status16')}"></span>							 				  		 	
 						 	</td>
@@ -319,7 +319,7 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 							 				  optionKey="key"
 							 				  optionValue="value"
 							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>		
-									/ <g:textField name="${('q13_17_ageDiagnosed')}" 
+									/ <g:textField style="width:80px;" name="${('q13_17_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_17_ageDiagnosed')}"
 											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status17')}\')); " /> <span id="${('cancerAge_status17')}"></span>							 				  		 	
 							 				  				 	
@@ -340,7 +340,7 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 							 				  optionKey="key"
 							 				  optionValue="value"
 							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>			
-									/ <g:textField name="${('q13_18_ageDiagnosed')}" 
+									/ <g:textField style="width:80px;" name="${('q13_18_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_18_ageDiagnosed')}"
 											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status18')}\')); " /> <span id="${('cancerAge_status18')}"></span>							 				  		 	
 							 				  			 	
@@ -361,7 +361,7 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 							 				  optionKey="key"
 							 				  optionValue="value"
 							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>
-									/ <g:textField name="${('q13_19_ageDiagnosed')}" 
+									/ <g:textField style="width:80px;" name="${('q13_19_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_19_ageDiagnosed')}"
 											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status19')}\')); " /> <span id="${('cancerAge_status19')}"></span>							 				  		 	
 							 				  						 	
@@ -382,7 +382,7 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 							 				  optionKey="key"
 							 				  optionValue="value"
 							 				  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/>		
-									/ <g:textField name="${('q13_20_ageDiagnosed')}" 
+									/ <g:textField style="width:80px;" name="${('q13_20_ageDiagnosed')}" 
 											   value="${surveyInstance?.('q13_20_ageDiagnosed')}"
 											   onkeyup="checkIfValidNumber(this.value, -1, 125, document.getElementById(\'${('cancerAge_status20')}\')); " /> <span id="${('cancerAge_status20')}"></span>							 				  		 	
 							 				  				 	

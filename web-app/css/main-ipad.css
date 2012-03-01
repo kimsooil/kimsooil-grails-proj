@@ -58,11 +58,17 @@ input, select, textarea {
     margin: 2px 0;
     padding: 2px 4px;
 }
+input[type="text"] {
+    width: 250px;
+}
+input[type="password"] {
+    width: 250px;
+}
 select {
    padding: 2px 2px 2px 0;
 }
 textarea {
-	width: 200px;
+	width: 250px;
 	height: 150px;
 	vertical-align: top;
 }

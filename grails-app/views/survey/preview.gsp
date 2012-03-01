@@ -119,7 +119,7 @@ $(document).ready(function(){
 <h1><g:link title="10" action="step10" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step10.label" default="Step10" /></label></g:link> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
 <g:render template="/onepage/step10"/>
 
-<h1><g:link title="11" action="step2" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step11.label" default="Step11" /></label></g:link> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
+<h1><g:link title="11" action="step11" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step11.label" default="Step11" /></label></g:link> <img src="${resource(dir:'images',file:'female.gif')}" align="absmiddle" alt="female" /></h1>
 <g:render template="/onepage/step11"/>
 
 <h1><g:link title="12" action="step12" id="${surveyInstance?.id}"><label style="color:orange;"><g:message code="step12.label" default="Step12" /></label></g:link></h1>

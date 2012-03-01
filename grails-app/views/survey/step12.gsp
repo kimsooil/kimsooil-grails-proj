@@ -895,7 +895,7 @@ function checkDate(){
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="${('q84_'+idx+'_rad_date_status')}"></span> 
 					 	</td>
 					 	<td style="width:10%">
-					 		<g:textField name="${('q84_'+idx+'_whatAge')}"
+					 		<g:textField style="width:80px;" name="${('q84_'+idx+'_whatAge')}"
 					 					 value="${surveyInstance?.('q84_'+idx+'_whatAge')}" 
 					 					 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'${('q84_age_status'+idx)}\')); "/>
 					 		<br/>

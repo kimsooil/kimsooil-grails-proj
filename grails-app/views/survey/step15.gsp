@@ -95,8 +95,8 @@ $(document).ready(function(){
                                     <label><g:message code="survey.q95.address" default="q2" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: surveyInstance, field: 'addr_street1', 'errors')}">
-                                    <g:message code="survey.addr_street1.label" default="Addrstreet1" />: <g:textField name="q95_addr_street1" value="${surveyInstance?.q95_addr_street1}" />
-                                    <g:message code="survey.addr_street2.label" default="Addrstreet2" />: <g:textField name="q95_addr_street2" value="${surveyInstance?.q95_addr_street2}" /><br/>
+                                    <g:message code="survey.addr_street1.label" default="Addrstreet1" />: <g:textField name="q95_addr_street1" value="${surveyInstance?.q95_addr_street1}" /> <br/>
+                                    <g:message code="survey.addr_street2.label" default="Addrstreet2" />: <g:textField name="q95_addr_street2" value="${surveyInstance?.q95_addr_street2}" /> <br/>
                                     <g:message code="survey.addr_city.label" default="Addrcity" />: <g:textField name="q95_addr_city" value="${surveyInstance?.q95_addr_city}" /><br/>
                                     <g:message code="survey.addr_state.label" default="Addrstate" />: <g:textField name="q95_addr_state" value="${surveyInstance?.q95_addr_state}" /><br/>
                                     <g:message code="survey.addr_zipcode.label" default="Addrzipcode" />: <g:textField name="q95_addr_zipcode" value="${surveyInstance?.q95_addr_zipcode}" onkeyup="postcode_validate(this.value, document.getElementById('status'));"/> <span id="status"></span><br/>

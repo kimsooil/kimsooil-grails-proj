@@ -269,7 +269,7 @@ function confirmIfSure()
 
 function confirm_if_lost_data()
 {
-        var sure =confirm('You may lost data you entered. At least ICN number is required to keep data.');
+        var sure =confirm('You may lose data you entered. At least ICN number is required to keep data.');
     	if (sure){
 		return true;
 	}
