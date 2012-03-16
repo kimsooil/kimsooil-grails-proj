@@ -512,7 +512,7 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 						//def CancerList=["Bladder Cancer", "Breast Cancer", "Cervical Cancer", "Colon or rectal Cancer", "Endometrial/Uterine Cancer",
 						//				"Kidney (renal cell) Cancer", "Lung Cancer", "Ovarian Cancer", "Prostate Cancer", "Other"]
 
-						def CancerList=[message(code:"survey.q12_anal"),
+						/*def CancerList=[message(code:"survey.q12_anal"),
 										message(code:"survey.q12_bladder"),
 										message(code:"survey.q12_brain"),
 										message(code:"survey.q12_breast"),
@@ -536,6 +536,32 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 										message(code:"survey.q12_pancreatic"),
 										message(code:"survey.q12_prostate"),
 										message(code:"survey.q12_other")]
+                                                                                */
+                                                def CancerList=["anal":message(code:"survey.q12_anal"),
+										"bladder":message(code:"survey.q12_bladder"),
+										"brain":message(code:"survey.q12_brain"),
+										"breast":message(code:"survey.q12_breast"),
+										"carcinoma":message(code:"survey.q12_carcinoma"),
+										"cervical":message(code:"survey.q12_cervical"),
+										"colon":message(code:"survey.q12_colon"),
+										"uterine":message(code:"survey.q12_uterine"),
+										"esophageal":message(code:"survey.q12_esophageal"),
+										"gallbladder":message(code:"survey.q12_gallbladder"),
+										"GIST":message(code:"survey.q12_GIST"),
+										"hodgkin":message(code:"survey.q12_hodgkin"),
+										"kidney":message(code:"survey.q12_kidney"),
+										"leukemia":message(code:"survey.q12_leukemia"),
+										"liver":message(code:"survey.q12_liver"),
+										"lung":message(code:"survey.q12_lung"),
+										"melanoma":message(code:"survey.q12_melanoma"),
+										"myeloma":message(code:"survey.q12_myeloma"),
+										"non_hodgkin":message(code:"survey.q12_non_hodgkin"),
+										"throat":message(code:"survey.q12_throat"),
+										"ovarian":message(code:"survey.q12_ovarian"),
+										"pancreatic":message(code:"survey.q12_pancreatic"),
+										"prostate":message(code:"survey.q12_prostate"),
+										"other":message(code:"survey.q12_other")]                               
+                                                
 						//def TreatmentList=["Radiation", "Chemotherapy", "Surgery", "None"]
 						def TreatmentList=[message(code:"survey.q12_opt1"),message(code:"survey.q12_opt2"),message(code:"survey.q12_opt3"),message(code:"survey.q12_opt4")]
 						 %>	                    
@@ -544,16 +570,16 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	                    	<% def idx=i+1 %>
 	                    	<tr class="prop">
 	                    	<td style="width: 30%;font-weight:bold;">
-	                    		<g:if test="${cancertype==message(code:'survey.q12_prostate') }"><label style="color:#0000FF"></g:if><g:else><label></g:else>
-	                    		<g:if test="${cancertype==message(code:'survey.q12_cervical') || cancertype==message(code:'survey.q12_uterine') || cancertype==message(code:'survey.q12_ovarian') }"><label style="color:#FF1493"></g:if><g:else><label></g:else>
-	                    		${idx}. ${cancertype}
+	                    		<g:if test="${cancertype.value==message(code:'survey.q12_prostate') }"><label style="color:#0000FF"></g:if><g:else><label></g:else>
+	                    		<g:if test="${cancertype.value==message(code:'survey.q12_cervical') || cancertype.value==message(code:'survey.q12_uterine') || cancertype.value==message(code:'survey.q12_ovarian') }"><label style="color:#FF1493"></g:if><g:else><label></g:else>
+	                    		${idx}. ${cancertype.value}
 	                    		</label>
-		                    	<g:if test="${cancertype==message(code:'survey.q12_other') }">
+		                    	<g:if test="${cancertype.value==message(code:'survey.q12_other') }">
 		                    		<g:textField name="q12_which_cancer" 
 		                    					 value="${surveyInstance?.q12_which_cancer}" /> 
 		                    	</g:if>
 	                    	</td>
-					<g:if test="${(surveyInstance?.sex=='female' && cancertype==message(code:'survey.q12_prostate')) || (surveyInstance?.sex=='male' && (cancertype==message(code:'survey.q12_cervical') || cancertype==message(code:'survey.q12_uterine') || cancertype==message(code:'survey.q12_ovarian'))    ) }">
+					<g:if test="${(surveyInstance?.sex=='female' && cancertype.value==message(code:'survey.q12_prostate')) || (surveyInstance?.sex=='male' && (cancertype.value==message(code:'survey.q12_cervical') || cancertype.value==message(code:'survey.q12_uterine') || cancertype.value==message(code:'survey.q12_ovarian'))    ) }">
 							<td style="width: 5%;">
 								n/a
 								<div style="display:none">
@@ -593,10 +619,15 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 	                    	</tr>
 	                    	</g:each>
                     <%
-                    	def CancerList2 = ['']+CancerList
+                    	//def CancerList2 = ['']+CancerList
                     %>	                    	
 						<tr>
-							<td>25. <g:select name="q12_25" from="${CancerList2}" value="${surveyInstance?.q12_25 }" /></td>
+							<td>25. <g:select name="q12_25"
+                                                                          from="${CancerList}"
+                                                                          value="${surveyInstance?.q12_25 }"
+                                                                          optionKey="key"
+							 		  optionValue="value"
+							 		  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/></td>
 							<td><g:textField style="width: 50px" name="q12_25_ageDiagnosed" value="${surveyInstance?.q12_25_ageDiagnosed }"
 											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status25')}\')); "/> <span id="${('cancerAge_status25')}"></span>
 							</td>
@@ -611,7 +642,12 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 						</tr>
 
 						<tr>
-							<td>26. <g:select name="q12_26" from="${CancerList2}" value="${surveyInstance?.q12_26 }" /></td>
+							<td>26. <g:select name="q12_26"
+                                                                          from="${CancerList}"
+                                                                          value="${surveyInstance?.q12_26 }"
+                                                                          optionKey="key"
+							 		  optionValue="value"
+							 		  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/></td>
 							<td><g:textField style="width: 50px" name="q12_26_ageDiagnosed" value="${surveyInstance?.q12_26_ageDiagnosed }"
 											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status26')}\')); "/> <span id="${('cancerAge_status26')}"></span>							</td>
 							<td>
@@ -626,7 +662,13 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 						</tr>
 
 						<tr>
-							<td>27. <g:select name="q12_27" from="${CancerList2}" value="${surveyInstance?.q12_27 }" /></td>
+							<td>27. <g:select name="q12_27"
+                                                                          from="${CancerList}"
+                                                                          value="${surveyInstance?.q12_27 }"
+                                                                          optionKey="key"
+							 		  optionValue="value"
+							 		  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/></td>
+
 							<td><g:textField style="width: 50px" name="q12_27_ageDiagnosed" value="${surveyInstance?.q12_27_ageDiagnosed }"
 											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status27')}\')); "/> <span id="${('cancerAge_status27')}"></span>
 							</td>
@@ -642,7 +684,12 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 						</tr>
 
 						<tr>
-							<td>28. <g:select name="q12_28" from="${CancerList2}" value="${surveyInstance?.q12_28 }" /></td>
+							<td>28. <g:select name="q12_28"
+                                                                          from="${CancerList}"
+                                                                          value="${surveyInstance?.q12_28 }"
+                                                                          optionKey="key"
+							 		  optionValue="value"
+							 		  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/></td>
 							<td><g:textField style="width: 50px" name="q12_28_ageDiagnosed" value="${surveyInstance?.q12_28_ageDiagnosed }"
 											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status28')}\')); "/> <span id="${('cancerAge_status28')}"></span>
 							</td>
@@ -658,7 +705,12 @@ if ($("input[name='spread_cancer']:checked").val() == 'no'){
 						</tr>
 
 						<tr>
-							<td>29. <g:select name="q12_29" from="${CancerList2}" value="${surveyInstance?.q12_29 }" /></td>
+							<td>29. <g:select name="q12_29"
+                                                                          from="${CancerList}"
+                                                                          value="${surveyInstance?.q12_29 }"
+                                                                          optionKey="key"
+							 		  optionValue="value"
+							 		  noSelection="['':'-'+message(code:'survey.q13.typeofcancer')+'-']"/></td>
 							<td><g:textField style="width: 50px" name="q12_29_ageDiagnosed" value="${surveyInstance?.q12_29_ageDiagnosed }"
 											 onkeyup="checkIfValidNumber(this.value, -1, ageCalculated, document.getElementById(\'${('cancerAge_status29')}\')); "/> <span id="${('cancerAge_status29')}"></span>
 							</td>
