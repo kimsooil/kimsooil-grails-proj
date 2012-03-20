@@ -169,6 +169,21 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 										message(code:"survey.q13_paternal_aunt"),
 										message(code:"survey.q13_paternal_uncle"),
 										message(code:"survey.q13_others")]
+						def FamilyList2=["mother":message(code:"survey.q13_mother"),
+										"father": message(code:"survey.q13_father"),
+										"sister":message(code:"survey.q13_sister"),
+										"brother":message(code:"survey.q13_brother"),
+										"daughter":message(code:"survey.q13_daughter"),
+										"son":message(code:"survey.q13_son"),
+										"maternal grandmother":message(code:"survey.q13_maternal_grandmother"),
+										"maternal grandfather":message(code:"survey.q13_maternal_grandfather"),
+										"maternal aunt":message(code:"survey.q13_maternal_aunt"),
+										"maternal uncle":message(code:"survey.q13_maternal_uncle"),
+										"paternal grandmother":message(code:"survey.q13_paternal_grandmother"),
+										"paternal grandfather":message(code:"survey.q13_paternal_grandfather"),
+										"paternal aunt":message(code:"survey.q13_paternal_aunt"),
+										"paternal uncle":message(code:"survey.q13_paternal_uncle"),
+										"others":message(code:"survey.q13_others")]                                                                              
 
 						def CancerList=["anal":message(code:"survey.q12_anal"),
 										"bladder":message(code:"survey.q12_bladder"),
@@ -289,8 +304,10 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 						 	<td>
 							 		16. <g:select name="${('q13_16')}"
 							 				  value="${surveyInstance?.('q13_16')}"
-							 				  from="${FamilyList}"
-							 				  noSelection="['':'']"/>						 	
+							 				  from="${FamilyList2}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
+							 				  noSelection="['':'---']"/>						 	
 						 	</td>
 						 	<td>
 							 		<g:select name="${('q13_16_cancerType')}"
@@ -308,9 +325,11 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 						 	<td>
 							 		17. <g:select name="${('q13_17')}"
 							 				  value="${surveyInstance?.('q13_17')}"
-							 				  from="${FamilyList}"
+							 				  from="${FamilyList2}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
 
-							 				  noSelection="['':'']"/>						 	
+							 				  noSelection="['':'---']"/>						 	
 						 	</td>
 						 	<td>
 							 		<g:select name="${('q13_17_cancerType')}"
@@ -329,9 +348,10 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 						 	<td>
 							 		18. <g:select name="${('q13_18')}"
 							 				  value="${surveyInstance?.('q13_18')}"
-							 				  from="${FamilyList}"
-
-							 				  noSelection="['':'']"/>						 	
+							 				  from="${FamilyList2}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
+							 				  noSelection="['':'---']"/>						 	
 						 	</td>
 						 	<td>
 							 		<g:select name="${('q13_18_cancerType')}"
@@ -350,9 +370,10 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 						 	<td>
 							 		19. <g:select name="${('q13_19')}"
 							 				  value="${surveyInstance?.('q13_19')}"
-							 				  from="${FamilyList}"
-
-							 				  noSelection="['':'']"/>						 	
+							 				  from="${FamilyList2}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
+							 				  noSelection="['':'---']"/>						 	
 						 	</td>
 						 	<td>
 							 		<g:select name="${('q13_19_cancerType')}"
@@ -371,9 +392,10 @@ if ($("input[name='familyHaveCancer']:checked").val() == 'no'){
 						 	<td>
 							 		20. <g:select name="${('q13_20')}"
 							 				  value="${surveyInstance?.('q13_20')}"
-							 				  from="${FamilyList}"
-
-							 				  noSelection="['':'']"/>						 	
+							 				  from="${FamilyList2}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
+							 				  noSelection="['':'---']"/>						 	
 						 	</td>
 						 	<td>
 							 		<g:select name="${('q13_20_cancerType')}"

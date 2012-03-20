@@ -610,12 +610,12 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
                 <br/><ul><label><g:message code="survey.q90" default="q90" /></label></ul>
                 <%
 				def yesno=[message(code:'survey.yes'), message(code:'survey.no')]
-				def MedicalConditionList=[message(code:'survey.q90.t1'),
-										message(code:'survey.q90.t2'),
-										message(code:'survey.q90.t3'),
-										message(code:'survey.q90.t4'),
-										message(code:'survey.q90.t5'),
-										message(code:'survey.q90.t6')]
+				def MedicalConditionList=["asthma":message(code:'survey.q90.t1'),
+										"chronicBronchitis":message(code:'survey.q90.t2'),
+										"emphysema":message(code:'survey.q90.t3'),
+										"pneumonia":message(code:'survey.q90.t4'),
+										"hayFever":message(code:'survey.q90.t5'),
+										"EczemaDermatitis":message(code:'survey.q90.t6')]
 
 				def q91and92freqList=[message(code:'survey.q91.freq1'),message(code:'survey.q91.freq2'),message(code:'survey.q91.freq3')]
 				def q91and92freqList2=[message(code:'survey.never2'),message(code:'survey.q91.freq2'),message(code:'survey.q91.freq3')]
@@ -626,7 +626,7 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 						<g:each in="${MedicalConditionList}" status="i" var="medcond">
 						<%def idx=i+1 %>
 						<tr>
-							<td style="width:35%;border: 1px solid #9baff1;font-weight:bold;">${idx}. ${medcond }</td>
+							<td style="width:35%;border: 1px solid #9baff1;font-weight:bold;">${idx}. ${medcond.value }</td>
 							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:radioGroup name="${('q90_'+idx)}"
 	                            	value="${surveyInstance?.('q90_'+idx)}" 
@@ -637,8 +637,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 							</td>
 							<td style="width:20%;border: 1px solid #9baff1;">
 								<g:message code="survey.age" /> <g:textField name="${('q90_'+idx+'_age')}" 
-																			 value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"
-																			 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
+										value="${surveyInstance?.('q90_'+idx+'_age')}"  style="width:90px"
+										onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q90_age_status'+idx)}\')); "/> <span id="${('q90_age_status'+idx)}"></span>
 							
 							</td>
 							<td style="border: 1px solid #9baff1;">
@@ -652,6 +652,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 							 		7. <g:select name="${('q90_7_medcon')}"
 							 				  value="${surveyInstance?.('q90_7_medcon')}"
 							 				  from="${MedicalConditionList}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
 							 				  noSelection="['':'']"/>									
 							</td>
 							<td>
@@ -679,6 +681,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 							 		8. <g:select name="${('q90_8_medcon')}"
 							 				  value="${surveyInstance?.('q90_8_medcon')}"
 							 				  from="${MedicalConditionList}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
 							 				  noSelection="['':'']"/>									
 							</td>
 							<td>
@@ -706,6 +710,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 							 		9. <g:select name="${('q90_9_medcon')}"
 							 				  value="${surveyInstance?.('q90_9_medcon')}"
 							 				  from="${MedicalConditionList}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
 							 				  noSelection="['':'']"/>									
 							</td>
 							<td>
@@ -733,6 +739,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 							 		10. <g:select name="${('q90_10_medcon')}"
 							 				  value="${surveyInstance?.('q90_10_medcon')}"
 							 				  from="${MedicalConditionList}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
 							 				  noSelection="['':'']"/>									
 							</td>
 							<td>
@@ -760,6 +768,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 							 		11. <g:select name="${('q90_11_medcon')}"
 							 				  value="${surveyInstance?.('q90_11_medcon')}"
 							 				  from="${MedicalConditionList}"
+                                                                                          optionKey="key"
+                                                                                          optionValue="value"
 							 				  noSelection="['':'']"/>									
 							</td>
 							<td>
@@ -814,8 +824,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 								<br/>
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q91_'+idx+'_howManyYears')}"
-																			value="${surveyInstance?.('q91_'+idx+'_howManyYears')}" 
-																			onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
+															value="${surveyInstance?.('q91_'+idx+'_howManyYears')}" 
+															onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q91_years_status'+idx)}\')); "/> <span id="${('q91_years_status'+idx)}"></span>
 								</div>
 					 	</td>
 					 </tr>
@@ -857,8 +867,8 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 								<br/>
 								<div style="clear:left;">
 									<g:message code="survey.howmanyyears" /> <g:textField name="${('q92_'+idx+'_howManyYears')}" 
-																						  value="${surveyInstance?.('q92_'+idx+'_howManyYears')}" 
-																						  onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
+															value="${surveyInstance?.('q92_'+idx+'_howManyYears')}" 
+															onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q92_years_status'+idx)}\')); "/> <span id="${('q92_years_status'+idx)}"></span>
 								</div>
 					  	</td>
 					  </tr>
@@ -904,14 +914,14 @@ if ($("input[name='q94_6']:checked").val() == 'still_using'){
 								<g:radioGroup name="${('q93_'+idx)}"
 	                            	value="${surveyInstance?.('q93_'+idx)}" 
 	                                labels="${q91and92freqList2 }" 
-	                                values="['never','yes_in_the_past', 'yes_currently']" >
+	                                values="['never','yes_in_the_past','yes_currently']" >
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 								</g:radioGroup>
 								<br/>
 								<div style="clear:left;">
 									<g:message code="survey.monthsofuse" /> <g:textField name="${('q93_'+idx+'_howManyMonths')}"
-																						 value="${surveyInstance?.('q93_'+idx+'_howManyMonths')}"
-																						 onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
+															value="${surveyInstance?.('q93_'+idx+'_howManyMonths')}"
+															onkeyup="checkIfValidNumber(this.value, 0, ageCalculated*12, document.getElementById(\'${('q93_months_status'+idx)}\')); "/> <span id="${('q93_months_status'+idx)}"></span>
 								</div>					  	
 					  	</td>
 					  </tr>

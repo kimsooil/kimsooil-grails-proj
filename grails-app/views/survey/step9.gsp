@@ -913,8 +913,8 @@ if ($("input[name='q53']:checked").val() == 'no'){
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid52"></span>  
 								<br/>
                             	<g:message code="survey.results" default="results" />: <g:textField name="q52_results_pap_smear"
-                            																		value="${surveyInstance?.q52_results_pap_smear}"
-                            																		onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q52_status')}\')); "/> <span id="${('q52_status')}"></span>
+                            									value="${surveyInstance?.q52_results_pap_smear}"
+                            									onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q52_status')}\')); "/> <span id="${('q52_status')}"></span>
                             </div>
                     	</td>
                     </tr>
