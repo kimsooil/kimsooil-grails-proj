@@ -605,14 +605,14 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
 	                    	<td style=";font-weight:bold;"><label><g:message code="survey.q73" default="q73" /></label></td>
 	                    	<td>
 		                    	<g:message code="survey.alive" default="Alive" />: <g:textField name="q73_alive" 
-		                    																	value="${surveyInstance?.q73_alive}" 
-		                    																	onkeyup="checkIfValidNumber(this.value, 0, 50, document.getElementById(\'q73_alive_status\')); sumOfNumbers(document.getElementById('q73_alive'),document.getElementById('q73_dead'),document.getElementById('q73_miscarriage'),document.getElementById(\'pregnancy_total\'));"/> <span id="q73_alive_status"></span>
+		                    									value="${surveyInstance?.q73_alive}" 
+		                    									onkeyup="checkIfValidNumber(this.value, 0, 50, document.getElementById(\'q73_alive_status\')); sumOfNumbers(document.getElementById('q73_alive'),document.getElementById('q73_dead'),document.getElementById('q73_miscarriage'),document.getElementById(\'pregnancy_total\'));"/> <span id="q73_alive_status"></span>
 		                    	<br/><g:message code="survey.dead" default="Dead" />: <g:textField name="q73_dead"
-		                    																	value="${surveyInstance?.q73_dead}" 
-		                    																	onkeyup="checkIfValidNumber(this.value, 0, 50, document.getElementById(\'q73_dead_status\')); sumOfNumbers(document.getElementById('q73_alive'),document.getElementById('q73_dead'),document.getElementById('q73_miscarriage'),document.getElementById(\'pregnancy_total\'));"/> <span id="q73_dead_status"></span>
+		                    									value="${surveyInstance?.q73_dead}" 
+		                    									onkeyup="checkIfValidNumber(this.value, 0, 50, document.getElementById(\'q73_dead_status\')); sumOfNumbers(document.getElementById('q73_alive'),document.getElementById('q73_dead'),document.getElementById('q73_miscarriage'),document.getElementById(\'pregnancy_total\'));"/> <span id="q73_dead_status"></span>
 		                    	<br/><g:message code="survey.miscarriage" default="Miscarriage" />: <g:textField name="q73_miscarriage" 
-		                    																	value="${surveyInstance?.q73_miscarriage}" 
-		                    																	onkeyup="checkIfValidNumber(this.value, 0, 50, document.getElementById(\'q73_miscarriage_status\')); sumOfNumbers(document.getElementById('q73_alive'),document.getElementById('q73_dead'),document.getElementById('q73_miscarriage'),document.getElementById(\'pregnancy_total\'));"/> <span id="q73_miscarriage_status"></span>
+		                    											value="${surveyInstance?.q73_miscarriage}" 
+		                    											onkeyup="checkIfValidNumber(this.value, 0, 50, document.getElementById(\'q73_miscarriage_status\')); sumOfNumbers(document.getElementById('q73_alive'),document.getElementById('q73_dead'),document.getElementById('q73_miscarriage'),document.getElementById(\'pregnancy_total\'));"/> <span id="q73_miscarriage_status"></span>
 								<br/>
 								<span id="pregnancy_total"></span>		                    																	
 	                    	</td>
@@ -719,34 +719,36 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
 								</g:radioGroup>
 								<div style="clear:left">
 								<br/><g:message code="survey.whichone" default="Which one" /> <g:textField name="q80_which"
-																										   value="${surveyInstance?.q80_which}"
-																										   onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q80_which_status')}\')); "/> <span id="${('q80_which_status')}"></span>&nbsp;&nbsp;&nbsp;
+																	value="${surveyInstance?.q80_which}"
+																	onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q80_which_status')}\')); "/> <span id="${('q80_which_status')}"></span>&nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q80_whatAge"
-																											  value="${surveyInstance?.q80_whatAge}"
-																											  onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q80_whatAge_status')}\')); "/> <g:message code="survey.years" /> <span id="${('q80_whatAge_status')}"></span>&nbsp;&nbsp;&nbsp;
+																	value="${surveyInstance?.q80_whatAge}"
+																	onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q80_whatAge_status')}\')); "/> <g:message code="survey.years" /> <span id="${('q80_whatAge_status')}"></span>&nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.forhowlong" default="For how long" /> <g:textField name="q80_howLong"
-																												value="${surveyInstance?.q80_howLong}"
-																												onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q80_howLong_status')}\')); "/> <g:message code="survey.years.label" /> <label style="color:orange">(<g:message code="survey.q80_if6monthEnter0.5" />)</label><span id="${('q80_howLong_status')}"></span> &nbsp;&nbsp;&nbsp;
+																	value="${surveyInstance?.q80_howLong}"
+																	onkeyup="checkIfValidNumber(this.value, 0, ageCalculated, document.getElementById(\'${('q80_howLong_status')}\')); "/> <g:message code="survey.years.label" /> <label style="color:orange">(<g:message code="survey.q80_if6monthEnter0.5" />)</label><span id="${('q80_howLong_status')}"></span> &nbsp;&nbsp;&nbsp;
 								</div>
 	                    	</td>
 	                    </tr>
 	                    <tr>
-	                    <% def ContraceptiveList=[message(code:'survey.q81.pill'),
-												  message(code:'survey.q81.shot'),
-												  message(code:'survey.q81.patch'),
-												  message(code:'survey.q81.ring'),
-												  message(code:'survey.q81.implantation'),
-												  message(code:'survey.q81.IUD'),
-												  message(code:'survey.q81.diaphragm'),
-												  message(code:'survey.q81.female_condom'),
-												  message(code:'survey.q81.other')]
+	                    <% def ContraceptiveList=["pill":message(code:'survey.q81.pill'),
+												  "shot":message(code:'survey.q81.shot'),
+												  "patch":message(code:'survey.q81.patch'),
+												  "ring":message(code:'survey.q81.ring'),
+												  "implntation":message(code:'survey.q81.implantation'),
+												  "IUD":message(code:'survey.q81.IUD'),
+												  "diaphragm":message(code:'survey.q81.diaphragm'),
+												  "female_condom":message(code:'survey.q81.female_condom'),
+												  "other":message(code:'survey.q81.other')]
 						 %>
 	                    	<td style="width:25%;font-weight:bold;"><label><g:message code="survey.q81" default="q81" /></label></td>
 	                    	<td style="width:75%">
 	                    		<g:select name="${('q81')}"
 									from="${ContraceptiveList}"
 									value="${surveyInstance?.('q81')}"
-									noSelection="['':'']" />,
+                                                                        optionKey="key"
+                                                                        optionValue="value"
+							 		noSelection="['':'---']"/>,
 		                    	<label><g:message code="survey.q81.other" default="q81" /></label>: <g:textField name="q81_other"
 		                    				 value="${surveyInstance?.q81_other}"
 		                    				 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q81_status')}\')); "/> <span id="${('q81_status')}"></span>
@@ -795,8 +797,8 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
 									message(code:'survey.uncle.p'),
 									message(code:'survey.others')]
 					
-					def BreastCancerTypeList=[message(code:'survey.breastcancer.diag1'), message(code:'survey.breastcancer.diag2'), message(code:'survey.breastcancer.diag3') ]
-					def AliveDeadList=[message(code:'survey.alive'), message(code:'survey.dead')]
+					def BreastCancerTypeList=["DCIS":message(code:'survey.breastcancer.diag1'), "invasive":message(code:'survey.breastcancer.diag2'), "donotknow":message(code:'survey.breastcancer.diag3') ]
+					def AliveDeadList=["alive":message(code:'survey.alive'), "dead":message(code:'survey.dead')]
 					%>
 					<table class="box-table-b-wide">
 					<thead>
@@ -828,6 +830,8 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
 						<td style="padding: 5px">
 							<g:select name="${('q82_'+idx+'_type')}"
 									from="${BreastCancerTypeList}"
+                                                                        optionKey="key"
+                                                                        optionValue="value"
 									value="${surveyInstance?.('q82_'+idx+'_type')}"
 									noSelection="['':'']" />
 						</td>
@@ -841,6 +845,8 @@ if ($("input[name='q82_15']:checked").val() == 'no'){
 							<g:select name="${('q82_'+idx+'_aliveDead')}"
 									from="${AliveDeadList}"
 									value="${surveyInstance?.('q82_'+idx+'_aliveDead')}"
+                                                                        optionKey="key"
+                                                                        optionValue="value"
 									noSelection="['':'']" />						
 						</td>
 					</tr>

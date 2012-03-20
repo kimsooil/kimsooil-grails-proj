@@ -292,8 +292,8 @@ if ($("input[name='q69']:checked").val() == 'no'){
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q56" default="q56" /></label></td>
 	                    	<td style="width:60%">
 		                    	<label style="color:blue">*</label> <g:textField name="q56"
-		                    	value="${surveyInstance?.q56}" 
-								onkeyup="checkIfValidNumber(this.value, 1, 365, document.getElementById(\'q56_status\')); "/> <g:message code="survey.q55.days" default="days" /> <span id="q56_status"></span>
+                                                                                      value="${surveyInstance?.q56}" 
+                                                                                      onkeyup="checkIfValidNumber(this.value, 1, 365, document.getElementById(\'q56_status\')); "/> <g:message code="survey.q55.days" default="days" /> <span id="q56_status"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -334,11 +334,12 @@ if ($("input[name='q69']:checked").val() == 'no'){
 								</g:radioGroup>
 								<div style="clear:left">
 								<br/><g:message code="survey.ifyeswhy" default="If yes, why?" /> <g:textField name="q59_why" 
-																											  value="${surveyInstance?.q59_why}" 
-																										      onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q59_why_status')}\')); "/> <span id="${('q59_why_status')}"></span>&nbsp;&nbsp;&nbsp;
+																	value="${surveyInstance?.q59_why}"
+                                                                                                                                        onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q59_why_status')}\')); "/> <span id="${('q59_why_status')}"></span>
+                                                                                                                                        &nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q59_whatAge" 
-																										      value="${surveyInstance?.q59_whatAge}" 
-																										      onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q59_whatAge_status\')); "/> <span id="q59_whatAge_status"></span>
+																	value="${surveyInstance?.q59_whatAge}" 
+																	onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q59_whatAge_status\')); "/> <span id="q59_whatAge_status"></span>
 								</div>
 							</td>
 						</tr>
@@ -363,8 +364,8 @@ if ($("input[name='q69']:checked").val() == 'no'){
 									<g:render template="/common/checkmark_radio" model="[it:it]"/>
 								</g:radioGroup>&nbsp;&nbsp;&nbsp;
 								<g:message code="survey.atwhatage" default="At what age" /> <g:textField name="q61_whatAge" 
-																										 value="${surveyInstance?.q61_whatAge}"
-																										 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q61_whatAge_status\')); "/> <span id="q61_whatAge_status"></span>
+																	value="${surveyInstance?.q61_whatAge}"
+																	onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q61_whatAge_status\')); "/> <span id="q61_whatAge_status"></span>
 							</td>
 						</tr>
 	                    <tr>
@@ -393,14 +394,16 @@ if ($("input[name='q69']:checked").val() == 'no'){
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q64" default="q64" /></label></td>
 	                    	<td style="width:60%">
 		                    	<g:textField name="q64"
-		                    				 value="${surveyInstance?.q64}"
-		                    				 onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q64_status')}\')); "/> <span id="${('q64_status')}"></span>
+		                    		value="${surveyInstance?.q64}"
+		                    		onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q64_status')}\')); "/> <span id="${('q64_status')}"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q65" default="q65" /></label></td>
 	                    	<td style="width:60%">
-		                    	<g:textField name="q65" value="${surveyInstance?.q65}" onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q65_status\')); "/> <span id="q65_status"></span>
+		                    	<g:textField name="q65" 
+                                                     value="${surveyInstance?.q65}" 
+                                                     onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q65_status\')); "/> <span id="q65_status"></span>
 	                    	</td>
 	                    </tr>
 	                    <tr>
@@ -411,11 +414,13 @@ if ($("input[name='q69']:checked").val() == 'no'){
 	                            	value="${surveyInstance?.q66InMenopause}" 
 	                                labels="${yesno }"
 	                                values="['yes','no']" >
-									<g:render template="/common/checkmark_radio" model="[it:it]"/>
-								</g:radioGroup>
+					
+                                          <g:render template="/common/checkmark_radio" model="[it:it]"/>
+					
+                                        </g:radioGroup>
 
-							</td>
-						</tr>
+				</td>
+			    </tr>
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q67" default="q67" /></label></td>
 	                    	<td style="width:60%">
@@ -423,10 +428,14 @@ if ($("input[name='q69']:checked").val() == 'no'){
 	                            	value="${surveyInstance?.q67}" 
 	                                labels="${yesno }"
 	                                values="['yes','no']" >
-									<g:render template="/common/checkmark_radio" model="[it:it]"/>
-								</g:radioGroup>
-							</td>
-						</tr>
+					
+                                          <g:render template="/common/checkmark_radio" model="[it:it]"/>
+					
+                                        </g:radioGroup>
+				
+                                        </td>
+				
+                            </tr>
 	                    <tr>
 	                    	<td style="width:40%;font-weight:bold;"><label><g:message code="survey.q68" default="q68" /></label></td>
 	                    	<td style="width:60%">
@@ -444,14 +453,16 @@ if ($("input[name='q69']:checked").val() == 'no'){
 								</g:radioGroup>
 								<div style="clear:left">
 								<br/><g:message code="survey.whichone" default="Which one" /> <g:textField name="q69_which" 
-																										   value="${surveyInstance?.q69_which}"
-																										   onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q69_which_status')}\')); "/> <span id="${('q69_which_status')}"></span>&nbsp;&nbsp;&nbsp;
+																	value="${surveyInstance?.q69_which}"
+																	onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q69_which_status')}\')); "/> <span id="${('q69_which_status')}"></span>
+                                                                                                                                        &nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.forwhat" default="For what" /> <g:textField name="q69_forWhat" 
-																									     value="${surveyInstance?.q69_forWhat}"
-																									     onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q69_forWhat_status')}\')); "/> <span id="${('q69_forWhat_status')}"></span>&nbsp;&nbsp;&nbsp;
+																	value="${surveyInstance?.q69_forWhat}"
+																	onkeyup="checkIfNumberOnly(this.value, document.getElementById(\'${('q69_forWhat_status')}\')); "/> <span id="${('q69_forWhat_status')}"></span>
+                                                                                                                                        &nbsp;&nbsp;&nbsp;
 								<br/><g:message code="survey.atwhatageyoustarted" default="At what age you started?" /> <g:textField name="q69_whatAgeStarted" 
-																																	 value="${surveyInstance?.q69_whatAgeStarted}" 
-																																	 onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q69_age_status\')); "/> <span id="q69_age_status"></span>
+																	value="${surveyInstance?.q69_whatAgeStarted}" 
+																	onkeyup="checkIfValidNumber(this.value, 1, ageCalculated, document.getElementById(\'q69_age_status\')); "/> <span id="q69_age_status"></span>
 								</div>
 							</td>
 						</tr>

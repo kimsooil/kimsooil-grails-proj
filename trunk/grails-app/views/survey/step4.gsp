@@ -462,8 +462,8 @@ if ($("input[name='q16']:checked").val() == 'no'){
                                     <g:textField name="q21_whenStopSmoking_months"
                                     			 style="width: 50px"
                                     			 value="${surveyInstance?.q21_whenStopSmoking_months}"
-												 onkeyup="checkIfValidNumber(this.value, 0, 11, document.getElementById(\'${('q21_status2')}\')); " /> <g:message code="survey.months.label" default="months" /> <span id="q21_status2"></span>
-									<br/><g:message code="survey.and_or.label" default="and/or" />
+							 onkeyup="checkIfValidNumber(this.value, 0, 11, document.getElementById(\'${('q21_status2')}\')); " /> <g:message code="survey.months.label" default="months" /> <span id="q21_status2"></span>
+							<br/><g:message code="survey.and_or.label" default="and/or" />
                                     <br/>
 
                                     <g:kimsiDatePicker name="q21DateStopSmoking" precision="day" value="${surveyInstance?.q21DateStopSmoking}"
