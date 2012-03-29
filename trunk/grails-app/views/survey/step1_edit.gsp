@@ -165,6 +165,7 @@ function checkDOB(){
           			noSelection="['':'-Validation-']"  />
           	</span>
           	</g:if>
+
         </div>
         <div class="body">
 
@@ -212,7 +213,7 @@ $(document).ready(function(){
                 <g:hiddenField name="age" value="" />
                 <g:hiddenField name="mrn" value="${surveyInstance?.mrn}" />           	
                 <g:if test="${session.user.location!='MOFF' }">
-                	<g:hiddenField name="mode" value="${surveyInstance?.mode}" />
+                	<g:hiddenField name="mode" value="screen" />
                 </g:if>
                 
                 <g:render template="/common/status_info" model="['dob':surveyInstance?.DOB]"/>
@@ -229,7 +230,8 @@ $(document).ready(function(){
                                         value="${surveyInstance?.consentNumLoc}"  />
                       </g:if>
                       <g:else>
-                          ${surveyInstance?.consentNumLoc}
+                          <g:hiddenField name="consentNumLoc" value="${session.user.location}" />   
+                          ${session.user.location}
                       </g:else>
                       - <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}"
                                               style="width: 70px;color:red;"

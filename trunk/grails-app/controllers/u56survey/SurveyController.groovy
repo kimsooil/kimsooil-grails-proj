@@ -1937,7 +1937,7 @@ class SurveyController {
 		thisyear=thisyear-18
 		//return [surveyInstance: surveyInstance, thisyear:thisyear, countryNames:countryNames]
 		
-		redirect(action: "step1_edit", id: surveyInstance.id)
+		redirect(action: "step1_edit", id: surveyInstance.id, surveyer:session.user.login)
 	}
 
 	def step1_edit ={ // copied from edit

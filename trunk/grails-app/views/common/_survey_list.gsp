@@ -62,7 +62,8 @@ def incomplete=surveyInstanceTotal-completed
 							 %>
 							<td>
 
-									<g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.id}</g:link>
+									<%--<g:link action="${stepNumUrl }" id="${surveyInstance.id}">${surveyInstance?.id}</g:link>--%>
+                                                                        <g:link action="preview" id="${surveyInstance.id}">${surveyInstance?.id}</g:link>
 
 
 							</td>
