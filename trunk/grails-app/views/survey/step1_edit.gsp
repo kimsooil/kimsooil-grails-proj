@@ -156,7 +156,7 @@ function checkDOB(){
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"  onclick="return(confirm_if_lost_data());"><img src="${resource(dir:'images/skin',file:'house.png')}" alt="house.png"  border="0" /></a></span>
             <%--<span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span> --%>
             <span class="menuButton"><g:render template="/common/step_meter"/></span>
-            <g:if test="${session.user.location=='MOFF' }">
+            <g:if test="${session.user.location=='MOFF'  || session.user.login=='idhaliz.flores' || session.user.role=='admin'}">
             <span class="menuButton"><g:select name="mode" 
           			from="${modesList}"
           			value="${surveyInstance?.mode}"
@@ -222,7 +222,7 @@ $(document).ready(function(){
 <%--                <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <g:textField disabled="true" name="consentNumSurv" value="${surveyInstance?.consentNumSurv}" /> -  --%>
                 <h3>&nbsp;&nbsp;<g:message code="survey.ic_number" default="ICN" />: <label style="text-decoration : underline;">${surveyInstance?.consentNumSurv}</label> -
                 <g:if test="${(diffMap.days==0 && diffMap.hours==0 && diffMap.minutes==0 && diffMap.seconds < 5) || surveyInstance?.mode=='paper' || !surveyInstance?.consentNum }">
-                      <g:if test="${session.user.location=='MOFF' }">
+                      <g:if test="${session.user.location=='MOFF' || session.user.login=='idhaliz.flores' || session.user.role=='admin'}">
                       <g:select name="consentNumLoc" 
                                         style="width: 150px;"
                                         from="${u56survey.Site.list()}"
