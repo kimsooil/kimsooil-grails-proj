@@ -501,10 +501,13 @@ class Survey {
 		other_memo(size:1..5000)
 		mode(inList:["paper", "screen"])
 		//consentNumSurv(inList:["HISPBB"])
-		consentNumLoc(inList:["MOFF", "FLHO", "PSoM", "STLU", "HIMA", "SJVA", "AMHO", 'PRTB', "DEMO"])
+		//consentNumLoc(inList:["MOFF", "FLHO", "PSoM", "STLU", "HIMA", "SJVA", "AMHO", 'PRTB', "DEMO"])
 		
-		consentNumInt(min:1, max:9999, unique:true)
-		consentNum(maxSize:4, unique:true)
+		consentNumInt(min:1, max:9999)
+		consentNum(maxSize:4)
+                //consentNumInt(min:1, max:9999, unique:true)
+		//consentNum(maxSize:4, unique:true)
+                
 		//being_treated_for_cancer(blank:false)
 		
 		//sex(blank:false)

@@ -2561,6 +2561,7 @@ class SurveyController {
         
 	def ajaxValidICNorNot={
 		def whatEntered = params['icnEntered']
+                def siteEntered = params['siteEntered']
 		def resultOut = ""
 		if (whatEntered.isNumber()){
 			def whatNumber = whatEntered.toInteger()
@@ -2569,7 +2570,7 @@ class SurveyController {
 				
 				//resultOut = Survey.findByConsentNum(whatEntered) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
 				
-				resultOut = Survey.findByConsentNum(whatEntered) || Survey.findByConsentNumInt(whatNumber) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
+				resultOut = Survey.findByConsentNumAndConsentNumLoc(whatEntered, siteEntered) || Survey.findByConsentNumIntAndConsentNumLoc(whatNumber, siteEntered) ? message(code: 'existing.icn', default: 'Existing ICN') : ""
 			}
 			else
 				resultOut = "1 ~ 9999"
