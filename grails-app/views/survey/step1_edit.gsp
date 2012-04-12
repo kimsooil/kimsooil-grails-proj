@@ -191,11 +191,11 @@ $(document).ready(function(){
 			DisableEnableForm(document.surveyform1,false);
 			$('body').css('background-color', '#CCCCCC');
 		}
-    <g:if test="${surveyInstance?.lastUpdated.compareTo(surveyInstance?.dateCreated)!=0}">
+<%--    <g:if test="${surveyInstance?.lastUpdated.compareTo(surveyInstance?.dateCreated)!=0}">
 	  		$("#consentNumLoc").attr("disabled", "");
 	  		$("#consentNum").attr("disabled", "");      
     </g:if>
-                
+--%>                
 });		  	
 </g:javascript>
 
@@ -227,7 +227,10 @@ $(document).ready(function(){
                                         style="width: 150px;"
                                         from="${u56survey.Site.list()}"
                                         optionKey="fourletters"
-                                        value="${surveyInstance?.consentNumLoc}"  />
+                                        value="${surveyInstance?.consentNumLoc}"
+                                        onchange="${remoteFunction(  action:'ajaxValidICNorNot',
+                                                                      update:'lblvalidICNorNot',
+                                                                      params:'\'icnEntered=\'+document.getElementById(\'consentNum\').value+\'&siteEntered=\'+this.value' )}"/>
                       </g:if>
                       <g:else>
                           <g:hiddenField name="consentNumLoc" value="${session.user.location}" />   
@@ -235,10 +238,9 @@ $(document).ready(function(){
                       </g:else>
                       - <g:textField name="consentNum" value="${surveyInstance?.consentNum ? surveyInstance?.consentNum : '---ICN---'}"
                                               style="width: 70px;color:red;"
-                                          onkeyup="${remoteFunction(
-                                                                      action:'ajaxValidICNorNot',
+                                          onkeyup="${remoteFunction(  action:'ajaxValidICNorNot',
                                                                       update:'lblvalidICNorNot',
-                                                                      params:'\'icnEntered=\' + this.value' )}"/> <label id="lblvalidICNorNot"></label>
+                                                                      params:'\'icnEntered=\'+this.value+\'&siteEntered=\'+document.getElementById(\'consentNumLoc\').value' )}"/> <label id="lblvalidICNorNot"></label>
                 </g:if>
                 <g:else>
                       ${surveyInstance?.consentNumLoc} - ${surveyInstance?.consentNum}
