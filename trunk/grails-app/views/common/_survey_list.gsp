@@ -19,7 +19,7 @@ def incomplete=surveyInstanceTotal-completed
             		<%--<export:formats />
             		<export:formats formats="['csv', 'excel', 'ods', 'pdf', 'rtf', 'xml']" />
             		--%>
-            		<export:formats formats="['csv', 'xml']" />
+            		<export:formats formats="['csv', 'xml', 'csv2', 'xml2']" />
             		
             	</g:if>
                 <table id="hor-minimalist-b" style="width:900px;">

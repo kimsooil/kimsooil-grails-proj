@@ -755,7 +755,7 @@ if ($("input[name='q53']:checked").val() == 'no'){
 	                        	<g:radioGroup name="q47"
 	                            	value="${surveyInstance?.q47}" 
 	                                labels="${q47lbls }" 
-	                                values="['every6mon', 'everyyear', 'lessthan6mon', 'never']" >
+	                                values="['every6mon', 'everyyear', 'lessthan1year', 'never']" >
 									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 								</g:radioGroup>                  	
 	                    	</td>
@@ -763,7 +763,7 @@ if ($("input[name='q53']:checked").val() == 'no'){
 	                    <tr>
 	                    	<td style="font-weight:bold;"><label><g:message code="survey.q48" default="q48" /></label></td>
 	                    	<td>
-								<g:datePicker name="q48dateLastVisitGynecologist" precision="month" value="${surveyInstance?.q48dateLastVisitGynecologist}"
+				      <g:datePicker name="q48dateLastVisitGynecologist" precision="month" value="${surveyInstance?.q48dateLastVisitGynecologist}"
                                       years="${thisyear..birth[java.util.Calendar.YEAR]}" default="none" noSelection="${['':'--']}" /> <span id="alertIfInvalid48"></span>               	
 	                    	</td>
 	                    </tr>
