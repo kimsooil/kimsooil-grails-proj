@@ -98,7 +98,7 @@
 	                        	<g:radioGroup name="q47"
 	                            	value="${surveyInstance?.q47}" 
 	                                labels="${q47lbls }" 
-	                                values="['every6mon', 'everyyear', 'lessthan6mon', 'never']" >
+	                                values="['every6mon', 'everyyear', 'lessthan1year', 'never']" >
 									<g:render template="/common/checkmark_radio_v" model="[it:it]"/>
 								</g:radioGroup>                  	
 	                    	</td>
