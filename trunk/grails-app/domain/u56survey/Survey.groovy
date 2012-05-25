@@ -171,6 +171,8 @@ class Survey {
 	String q12_29, q12_29_ageDiagnosed
 	Boolean q12_29_1, q12_29_2, q12_29_3, q12_29_4
 
+        String q12_cancerlist
+    
 // Family History of Cancer
 	Boolean q13 // have any of your following blood-related family members been told by a doctor or other health care professional that they have cancer?
 	String familyHaveCancer
