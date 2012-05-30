@@ -1003,8 +1003,8 @@ class SurveyController {
 "q13_3_cancerType":"Q018_sister_cancerType",
 "q13_4_ageDiagnosed":"Q018_brother_ageDiagnosed",
 "q13_4_cancerType":"Q018_brother_cancerType",
-"q13_5_ageDiagnosed":"Q018_daugther_ageDiagnosed",
-"q13_5_cancerType":"Q018_daugther_cancerType",
+"q13_5_ageDiagnosed":"Q018_daughter_ageDiagnosed",
+"q13_5_cancerType":"Q018_daughter_cancerType",
 "q13_6_ageDiagnosed":"Q018_son_ageDiagnosed",
 "q13_6_cancerType":"Q018_son_cancerType",
 "q13_7_ageDiagnosed":"Q018_m_grandmother_ageDiagnosed",
@@ -1531,6 +1531,8 @@ class SurveyController {
                 "q12_cancerlist",
         
 		"familyHaveCancer",
+                "q13_family_cancerlist",
+/*        
 		"q13_1_ageDiagnosed",
 		"q13_1_cancerType",
 		"q13_2_ageDiagnosed",
@@ -1579,7 +1581,7 @@ class SurveyController {
 		"q13_20_cancerType",
 
 		"q13_other_family_member",
-
+*/
 		"q16",
 		"q17",
 		"q18",
@@ -1604,217 +1606,12 @@ class SurveyController {
 "addr_state":"Q004_State",
 
 "haveCancer":"Q014_have_you_ever_told_by_doctor_you_have_cancer",
-"q12_1_1":"Q015_AnalCancer_radio",
-"q12_1_2":"Q015_AnalCancer_chemo",
-"q12_1_3":"Q015_AnalCancer_surgery",
-"q12_1_4":"Q015_AnalCancer_none",
-"q12_1_ageDiagnosed":"Q015_AnalCancer_ageDiagnosed",
-"q12_2_1":"Q015_BladderCancer_radio",
-"q12_2_2":"Q015_BladderCancer_chemo",
-"q12_2_3":"Q015_BladderCancer_surgery",
-"q12_2_4":"Q015_BladderCancer_none",
-"q12_2_ageDiagnosed":"Q015_BladderCancer_ageDiagnosed",
-"q12_3_1":"Q015_BrainCancer_radio",
-"q12_3_2":"Q015_BrainCancer_chemo",
-"q12_3_3":"Q015_BrainCancer_surgery",
-"q12_3_4":"Q015_BrainCancer_none",
-"q12_3_ageDiagnosed":"Q015_BrainCancer_ageDiagnosed",
-"q12_4_1":"Q015_BreastCancer_radio",
-"q12_4_2":"Q015_BreastCancer_chemo",
-"q12_4_3":"Q015_BreastCancer_surgery",
-"q12_4_4":"Q015_BreastCancer_none",
-"q12_4_ageDiagnosed":"Q015_BreastCancer_ageDiagnosed",
-"q12_5_1":"Q015_CarcinoidTumor_radio",
-"q12_5_2":"Q015_CarcinoidTumor_chemo",
-"q12_5_3":"Q015_CarcinoidTumor_surgery",
-"q12_5_4":"Q015_CarcinoidTumor_none",
-"q12_5_ageDiagnosed":"Q015_CarcinoidTumor_ageDiagnosed",
-"q12_6_1":"Q015_CervicalCancer_radio",
-"q12_6_2":"Q015_CervicalCancer_chemo",
-"q12_6_3":"Q015_CervicalCancer_surgery",
-"q12_6_4":"Q015_CervicalCancer_none",
-"q12_6_ageDiagnosed":"Q015_CervicalCancer_ageDiagnosed",
-"q12_7_1":"Q015_ColonCancer_radio",
-"q12_7_2":"Q015_ColonCancer_chemo",
-"q12_7_3":"Q015_ColonCancer_surgery",
-"q12_7_4":"Q015_ColonCancer_none",
-"q12_7_ageDiagnosed":"Q015_ColonCancer_ageDiagnosed",
-"q12_8_1":"Q015_UterineCancer_radio",
-"q12_8_2":"Q015_UterineCancer_chemo",
-"q12_8_3":"Q015_UterineCancer_surgery",
-"q12_8_4":"Q015_UterineCancer_none",
-"q12_8_ageDiagnosed":"Q015_UterineCancer_ageDiagnosed",
-"q12_9_1":"Q015_EsophagealCancer_radio",
-"q12_9_2":"Q015_EsophagealCancer_chemo",
-"q12_9_3":"Q015_EsophagealCancer_surgery",
-"q12_9_4":"Q015_EsophagealCancer_none",
-"q12_9_ageDiagnosed":"Q015_EsophagealCancer_ageDiagnosed",
-"q12_10_1":"Q015_GallBladderCancer_radio",
-"q12_10_2":"Q015_GallBladderCancer_chemo",
-"q12_10_3":"Q015_GallBladderCancer_surgery",
-"q12_10_4":"Q015_GallBLadderCancer_none",
-"q12_10_ageDiagnosed":"Q015_GallBladderCancer_ageDiagnosed",
-"q12_11_1":"Q015_GIST_radio",
-"q12_11_2":"Q015_GIST_chemo",
-"q12_11_3":"Q015_GIST_surgery",
-"q12_11_4":"Q015_GIST_none",
-"q12_11_ageDiagnosed":"Q015_GIST_ageDiagnosed",
-"q12_12_1":"Q015_HodgkinsLymphoma_radio",
-"q12_12_2":"Q015_HodgkinsLymphoma_chemo",
-"q12_12_3":"Q015_HodgkinsLymphoma_surgery",
-"q12_12_4":"Q015_HodgkinsLymphoma_none",
-"q12_12_ageDiagnosed":"Q015_HodgkinsLymphoma_ageDiagnosed",
-"q12_13_1":"Q015_KidneyCancer_radio",
-"q12_13_2":"Q015_KidneyCancer_chemo",
-"q12_13_3":"Q015_KidneyCancer_surgery",
-"q12_13_4":"Q015_KidneyCancer_none",
-"q12_13_ageDiagnosed":"Q015_KidneyCancer_ageDiagnosed",
-"q12_14_1":"Q015_Leukemia_radio",
-"q12_14_2":"Q015_Leukemia_chemo",
-"q12_14_3":"Q015_Leukemia_surgery",
-"q12_14_4":"Q015_Leukemia_none",
-"q12_14_ageDiagnosed":"Q015_Leukemia_ageDiagnosed",
-"q12_15_1":"Q015_LiverCancer_radio",
-"q12_15_2":"Q015_LiverCancer_chemo",
-"q12_15_3":"Q015_LiverCancer_surgery",
-"q12_15_4":"Q015_LiverCancer_none",
-"q12_15_ageDiagnosed":"Q015_LiverCancer_ageDiagnosed",
-"q12_16_1":"Q015_LungCancer_radio",
-"q12_16_2":"Q015_LungCancer_chemo",
-"q12_16_3":"Q015_LungCancer_surgery",
-"q12_16_4":"Q015_LungCancer_none",
-"q12_16_ageDiagnosed":"Q015_LungCancer_ageDiagnosed",
-"q12_17_1":"Q015_Melanoma_radio",
-"q12_17_2":"Q015_Melanoma_chemo",
-"q12_17_3":"Q015_Melanoma_surgery",
-"q12_17_4":"Q015_Melanoma_none",
-"q12_17_ageDiagnosed":"Q015_Melanoma_ageDiagnosed",
-"q12_18_1":"Q015_MultipleMyeloma_radio",
-"q12_18_2":"Q015_MultipleMyeloma_chemo",
-"q12_18_3":"Q015_MultipleMyeloma_surgery",
-"q12_18_4":"Q015_MultipleMyeloma_none",
-"q12_18_ageDiagnosed":"Q015_MultipleMyeloma_ageDiagnosed",
-"q12_19_1":"Q015_NoHodgkinsLymphoma_radio",
-"q12_19_2":"Q015_NoHodgkinsLymphoma_chemo",
-"q12_19_3":"Q015_NoHodgkinsLymphoma_surgery",
-"q12_19_4":"Q015_NoHodgkinsLymphoma_none",
-"q12_19_ageDiagnosed":"Q015_NoHodgkinsLymphoma_ageDiagnosed",
-"q12_20_1":"Q015_ThroatCancer_radio",
-"q12_20_2":"Q015_ThroatCancer_chemo",
-"q12_20_3":"Q015_ThroatCancer_surgery",
-"q12_20_4":"Q015_ThroatCancer_none",
-"q12_20_ageDiagnosed":"Q015_ThroatCancer_ageDiagnosed",
-"q12_21_1":"Q015_OvarianCancer_radio",
-"q12_21_2":"Q015_OvarianCancer_chemo",
-"q12_21_3":"Q015_OvarianCancer_surgery",
-"q12_21_4":"Q015_OvarianCancer_none",
-"q12_21_ageDiagnosed":"Q015_OvarianCancer_ageDiagnosed",
-"q12_22_1":"Q015_PancreaticCancer_radio",
-"q12_22_2":"Q015_PancreaticCancer_chemo",
-"q12_22_3":"Q015_PancreaticCancer_surgery",
-"q12_22_4":"Q015_PancreaticCancer_none",
-"q12_22_ageDiagnosed":"Q015_PancreaticCancer_ageDiagnosed",
-"q12_23_1":"Q015_ProstateCancer_radio",
-"q12_23_2":"Q015_ProstateCancer_chemo",
-"q12_23_3":"Q015_ProstateCancer_surgery",
-"q12_23_4":"Q015_ProstateCancer_none",
-"q12_23_ageDiagnosed":"Q015_ProstateCancer_ageDiagnosed",
-"q12_24_1":"Q015_OtherCancer_radio",
-"q12_24_2":"Q015_OtherCancer_chemo",
-"q12_24_3":"Q015_OtherCancer_surgery",
-"q12_24_4":"Q015_OtherCancer_none",
-"q12_24_ageDiagnosed":"Q015_OtherCancer_ageDiagnosed",
-"q12_which_cancer":"Q015_OtherCancerTypeNotListed",
-"q12_25":"Q015_MoreCancerType1",
-"q12_25_1":"Q015_MoreCancerType1_radio",
-"q12_25_2":"Q015_MoreCancerType1_chemo",
-"q12_25_3":"Q015_MoreCancerType1_surgery",
-"q12_25_4":"Q015_MoreCancerType1_none",
-"q12_25_ageDiagnosed":"Q015_MoreCancerType1_ageDiagnosed",
-"q12_26":"Q015_MoreCancerType2",
-"q12_26_1":"Q015_MoreCancerType2_radio",
-"q12_26_2":"Q015_MoreCancerType2_chemo",
-"q12_26_3":"Q015_MoreCancerType2_surgery",
-"q12_26_4":"Q015_MoreCancerType2_none",
-"q12_26_ageDiagnosed":"Q015_MoreCancerType2_ageDiagnosed",
-"q12_27":"Q015_MoreCancerType3",
-"q12_27_1":"Q015_MoreCancerType3_radio",
-"q12_27_2":"Q015_MoreCancerType3_chemo",
-"q12_27_3":"Q015_MoreCancerType3_surgery",
-"q12_27_4":"Q015_MoreCancerType3_none",
-"q12_27_ageDiagnosed":"Q015_MoreCancerType3_ageDiagnosed",
-"q12_28":"Q015_MoreCancerType4",
-"q12_28_1":"Q015_MoreCancerType4_radio",
-"q12_28_2":"Q015_MoreCancerType4_chemo",
-"q12_28_3":"Q015_MoreCancerType4_surgery",
-"q12_28_4":"Q015_MoreCancerType4_none",
-"q12_28_ageDiagnosed":"Q015_MoreCancerType4_ageDiagnosed",
-"q12_29":"Q015_MoreCancerType5",
-"q12_29_1":"Q015_MoreCancerType5_radio",
-"q12_29_2":"Q015_MoreCancerType5_chemo",
-"q12_29_3":"Q015_MoreCancerType5_surgery",
-"q12_29_4":"Q015_MoreCancerType5_none",
-"q12_29_ageDiagnosed":"Q015_MoreCancerType5_ageDiagnosed",
 
-"q12_cancerlist":"Q15_CancerList",
-"spread_cancer":"Q016_have_been_told_your_cancer_spread",
-        
-"spread_bone":"Q017_spread_bone",
-"spread_brain":"Q017_spread_brain",
-"spread_liver":"Q017_spread_liver",
-"spread_lung":"Q017_spread_lung",
-"spread_other":"Q017_spread_other",
-"spread_where":"Q017_spread_where",
+"q12_cancerlist":"Q015_CancerList",
 
 "familyHaveCancer":"Q018_familyHaveCancer",
 
-"q13_1_ageDiagnosed":"Q018_mother_ageDiagnosed",
-"q13_1_cancerType":"Q018_mother_cancerType",
-"q13_2_ageDiagnosed":"Q018_father_ageDiagnosed",
-"q13_2_cancerType":"Q018_father_cancerType",
-"q13_3_ageDiagnosed":"Q018_sister_ageDiagnosed",
-"q13_3_cancerType":"Q018_sister_cancerType",
-"q13_4_ageDiagnosed":"Q018_brother_ageDiagnosed",
-"q13_4_cancerType":"Q018_brother_cancerType",
-"q13_5_ageDiagnosed":"Q018_daugther_ageDiagnosed",
-"q13_5_cancerType":"Q018_daugther_cancerType",
-"q13_6_ageDiagnosed":"Q018_son_ageDiagnosed",
-"q13_6_cancerType":"Q018_son_cancerType",
-"q13_7_ageDiagnosed":"Q018_m_grandmother_ageDiagnosed",
-"q13_7_cancerType":"Q018_m_grandmother_cancerType",
-"q13_8_ageDiagnosed":"Q018_m_grandfather_ageDiagnosed",
-"q13_8_cancerType":"Q018_m_grandfather_cancerType",
-"q13_9_ageDiagnosed":"Q018_m_aunt_ageDiagnosed",
-"q13_9_cancerType":"Q018_m_aunt_cancerType",
-"q13_10_ageDiagnosed":"Q018_m_uncle_ageDiagnosed",
-"q13_10_cancerType":"Q018_m_uncle_cancerType",
-"q13_11_ageDiagnosed":"Q018_p_grandmother_ageDiagnosed",
-"q13_11_cancerType":"Q018_p_grandmother_cancerType",
-"q13_12_ageDiagnosed":"Q018_p_grandfather_ageDiagnosed",
-"q13_12_cancerType":"Q018_p_grandfather_cancerType",
-"q13_13_ageDiagnosed":"Q018_p_aunt_ageDiagnosed",
-"q13_13_cancerType":"Q018_p_aunt_cancerType",
-"q13_14_ageDiagnosed":"Q018_p_uncle_ageDiagnosed",
-"q13_14_cancerType":"Q018_p_uncle_cancerType",
-"q13_15_ageDiagnosed":"Q018_other_ageDiagnosed",
-"q13_15_cancerType":"Q018_other_cancerType",
-"q13_16":"Q018_more1",
-"q13_16_ageDiagnosed":"Q018_more1_ageDiagnosed",
-"q13_16_cancerType":"Q018_more1_cancerType",
-"q13_17":"Q018_more2",
-"q13_17_ageDiagnosed":"Q018_more2_ageDiagnosed",
-"q13_17_cancerType":"Q018_more2_cancerType",
-"q13_18":"Q018_more3",
-"q13_18_ageDiagnosed":"Q018_more3_ageDiagnosed",
-"q13_18_cancerType":"Q018_more3_cancerType",
-"q13_19":"Q018_more4",
-"q13_19_ageDiagnosed":"Q018_more4_ageDiagnosed",
-"q13_19_cancerType":"Q018_more4_cancerType",
-"q13_20":"Q018_more5",
-"q13_20_ageDiagnosed":"Q018_more5_ageDiagnosed",
-"q13_20_cancerType":"Q018_more5_cancerType",
-
-"q13_other_family_member":"Q018_other_family_member",
+"q13_family_cancerlist":"Q018_FamilyCancerList",
 
 "q16":"Q021_smoke_100_cigarettes",
 "q17":"Q022_at_what_age_begin_smoking",
@@ -1956,37 +1753,62 @@ class SurveyController {
 			it.putAt("q90_11_year_only", q90_11_year_only)
                         
                         def cancers=" "
-                        if (it.q12_1_1 || it.q12_1_2 || it.q12_1_3 || it.q12_1_4){ cancers+= "Anal cancer|" }
-                        if (it.q12_2_1 || it.q12_2_2 || it.q12_2_3 || it.q12_2_4){ cancers+= "Bladder cancer|" }
-                        if (it.q12_3_1 || it.q12_3_2 || it.q12_3_3 || it.q12_3_4){ cancers+= "Brain cancer|" }
-                        if (it.q12_4_1 || it.q12_4_2 || it.q12_4_3 || it.q12_4_4){ cancers+= "Breast cancer|" }
-                        if (it.q12_5_1 || it.q12_5_2 || it.q12_5_3 || it.q12_5_4){ cancers+= "Carcinoid Tumor|" }
-                        if (it.q12_6_1 || it.q12_6_2 || it.q12_6_3 || it.q12_6_4){ cancers+= "Cervical cancer|" }
-                        if (it.q12_7_1 || it.q12_7_2 || it.q12_7_3 || it.q12_7_4){ cancers+= "Colon cancer|" }
-                        if (it.q12_8_1 || it.q12_8_2 || it.q12_8_3 || it.q12_8_4){ cancers+= "Uterine cancer|" }
-                        if (it.q12_9_1 || it.q12_9_2 || it.q12_9_3 || it.q12_9_4){ cancers+= "Esophageal cancer|" }
-                        if (it.q12_10_1 || it.q12_10_2 || it.q12_10_3 || it.q12_10_4){ cancers+= "GallBladdr cancer|" }
-                        if (it.q12_11_1 || it.q12_11_2 || it.q12_11_3 || it.q12_11_4){ cancers+= "Gastrointestinal stromal tumor|" }
-                        if (it.q12_12_1 || it.q12_12_2 || it.q12_12_3 || it.q12_12_4){ cancers+= "Hodgkin's lymphoma|" }
-                        if (it.q12_13_1 || it.q12_13_2 || it.q12_13_3 || it.q12_13_4){ cancers+= "Kidney cancer|" }
-                        if (it.q12_14_1 || it.q12_14_2 || it.q12_14_3 || it.q12_14_4){ cancers+= "Leukemia|" }
-                        if (it.q12_15_1 || it.q12_15_2 || it.q12_15_3 || it.q12_15_4){ cancers+= "Liver cancer|" }
-                        if (it.q12_16_1 || it.q12_16_2 || it.q12_16_3 || it.q12_16_4){ cancers+= "Lung cancer|" }
-                        if (it.q12_17_1 || it.q12_17_2 || it.q12_17_3 || it.q12_17_4){ cancers+= "Melanoma|" }
-                        if (it.q12_18_1 || it.q12_18_2 || it.q12_18_3 || it.q12_18_4){ cancers+= "Multiple myeloma|" }
-                        if (it.q12_19_1 || it.q12_19_2 || it.q12_19_3 || it.q12_19_4){ cancers+= "Non-Hodgkin's lymphoma|" }
-                        if (it.q12_20_1 || it.q12_20_2 || it.q12_20_3 || it.q12_20_4){ cancers+= "Throat cancer|" }
-                        if (it.q12_21_1 || it.q12_21_2 || it.q12_21_3 || it.q12_21_4){ cancers+= "Ovarian cancer|" }
-			if (it.q12_22_1 || it.q12_22_2 || it.q12_22_3 || it.q12_22_4){ cancers+= "Pancreatic cancer|" }
-                        if (it.q12_23_1 || it.q12_23_2 || it.q12_23_3 || it.q12_23_4){ cancers+= "Prostate ancer|" }
-                        if ((it.q12_24_1 || it.q12_24_2 || it.q12_24_3 || it.q12_24_4) && it.q12_which_cancer!=""){ cancers+= it.q12_which_cancer }
-                        if ((it.q12_25_1 || it.q12_25_2 || it.q12_25_3 || it.q12_25_4) && it.q12_25!=""){ cancers+= it.q12_25 }
-                        if ((it.q12_26_1 || it.q12_26_2 || it.q12_26_3 || it.q12_26_4) && it.q12_26!=""){ cancers+= it.q12_26 }
-                        if ((it.q12_27_1 || it.q12_27_2 || it.q12_27_3 || it.q12_27_4) && it.q12_27!=""){ cancers+= it.q12_27 }
-                        if ((it.q12_28_1 || it.q12_28_2 || it.q12_28_3 || it.q12_28_4) && it.q12_28!=""){ cancers+= it.q12_28 }
-                        if ((it.q12_29_1 || it.q12_29_2 || it.q12_29_3 || it.q12_29_4) && it.q12_29!=""){ cancers+= it.q12_29 }
+                        if ((it.q12_1_1 || it.q12_1_2 || it.q12_1_3 || it.q12_1_4) && it.q12_1_ageDiagnosed && it.q12_1_ageDiagnosed.trim()!="-1"){ cancers+= "Anal cancer|" }
+                        if ((it.q12_2_1 || it.q12_2_2 || it.q12_2_3 || it.q12_2_4) && it.q12_2_ageDiagnosed && it.q12_2_ageDiagnosed.trim()!="-1" ){ cancers+= "Bladder cancer|" }
+                        if ((it.q12_3_1 || it.q12_3_2 || it.q12_3_3 || it.q12_3_4) && it.q12_3_ageDiagnosed && it.q12_3_ageDiagnosed.trim()!="-1" ){ cancers+= "Brain cancer|" }
+                        if ((it.q12_4_1 || it.q12_4_2 || it.q12_4_3 || it.q12_4_4) && it.q12_4_ageDiagnosed && it.q12_4_ageDiagnosed.trim()!="-1" ){ cancers+= "Breast cancer|" }
+                        if ((it.q12_5_1 || it.q12_5_2 || it.q12_5_3 || it.q12_5_4) && it.q12_5_ageDiagnosed && it.q12_5_ageDiagnosed.trim()!="-1" ){ cancers+= "Carcinoid Tumor|" }
+                        if ((it.q12_6_1 || it.q12_6_2 || it.q12_6_3 || it.q12_6_4) && it.q12_6_ageDiagnosed && it.q12_6_ageDiagnosed.trim()!="-1" ){ cancers+= "Cervical cancer|" }
+                        if ((it.q12_7_1 || it.q12_7_2 || it.q12_7_3 || it.q12_7_4) && it.q12_7_ageDiagnosed && it.q12_7_ageDiagnosed.trim()!="-1" ){ cancers+= "Colon cancer|" }
+                        if ((it.q12_8_1 || it.q12_8_2 || it.q12_8_3 || it.q12_8_4) && it.q12_8_ageDiagnosed && it.q12_8_ageDiagnosed.trim()!="-1" ){ cancers+= "Uterine cancer|" }
+                        if ((it.q12_9_1 || it.q12_9_2 || it.q12_9_3 || it.q12_9_4) && it.q12_9_ageDiagnosed && it.q12_9_ageDiagnosed.trim()!="-1" ){ cancers+= "Esophageal cancer|" }
+                        if ((it.q12_10_1 || it.q12_10_2 || it.q12_10_3 || it.q12_10_4) && it.q12_10_ageDiagnosed && it.q12_10_ageDiagnosed.trim()!="-1" ){ cancers+= "GallBladdr cancer|" }
+                        if ((it.q12_11_1 || it.q12_11_2 || it.q12_11_3 || it.q12_11_4) && it.q12_11_ageDiagnosed && it.q12_11_ageDiagnosed.trim()!="-1" ){ cancers+= "Gastrointestinal stromal tumor|" }
+                        if ((it.q12_12_1 || it.q12_12_2 || it.q12_12_3 || it.q12_12_4) && it.q12_12_ageDiagnosed && it.q12_12_ageDiagnosed.trim()!="-1" ){ cancers+= "Hodgkin's lymphoma|" }
+                        if ((it.q12_13_1 || it.q12_13_2 || it.q12_13_3 || it.q12_13_4) && it.q12_13_ageDiagnosed && it.q12_13_ageDiagnosed.trim()!="-1" ){ cancers+= "Kidney cancer|" }
+                        if ((it.q12_14_1 || it.q12_14_2 || it.q12_14_3 || it.q12_14_4) && it.q12_14_ageDiagnosed && it.q12_14_ageDiagnosed.trim()!="-1" ){ cancers+= "Leukemia|" }
+                        if ((it.q12_15_1 || it.q12_15_2 || it.q12_15_3 || it.q12_15_4) && it.q12_15_ageDiagnosed && it.q12_15_ageDiagnosed.trim()!="-1" ){ cancers+= "Liver cancer|" }
+                        if ((it.q12_16_1 || it.q12_16_2 || it.q12_16_3 || it.q12_16_4) && it.q12_16_ageDiagnosed && it.q12_16_ageDiagnosed.trim()!="-1" ){ cancers+= "Lung cancer|" }
+                        if ((it.q12_17_1 || it.q12_17_2 || it.q12_17_3 || it.q12_17_4) && it.q12_17_ageDiagnosed && it.q12_17_ageDiagnosed.trim()!="-1" ){ cancers+= "Melanoma|" }
+                        if ((it.q12_18_1 || it.q12_18_2 || it.q12_18_3 || it.q12_18_4) && it.q12_18_ageDiagnosed && it.q12_18_ageDiagnosed.trim()!="-1" ){ cancers+= "Multiple myeloma|" }
+                        if ((it.q12_19_1 || it.q12_19_2 || it.q12_19_3 || it.q12_19_4) && it.q12_19_ageDiagnosed && it.q12_19_ageDiagnosed.trim()!="-1" ){ cancers+= "Non-Hodgkin's lymphoma|" }
+                        if ((it.q12_20_1 || it.q12_20_2 || it.q12_20_3 || it.q12_20_4) && it.q12_20_ageDiagnosed && it.q12_20_ageDiagnosed.trim()!="-1" ){ cancers+= "Throat cancer|" }
+                        if ((it.q12_21_1 || it.q12_21_2 || it.q12_21_3 || it.q12_21_4) && it.q12_21_ageDiagnosed && it.q12_21_ageDiagnosed.trim()!="-1" ){ cancers+= "Ovarian cancer|" }
+			if ((it.q12_22_1 || it.q12_22_2 || it.q12_22_3 || it.q12_22_4) && it.q12_22_ageDiagnosed && it.q12_22_ageDiagnosed.trim()!="-1" ){ cancers+= "Pancreatic cancer|" }
+                        if ((it.q12_23_1 || it.q12_23_2 || it.q12_23_3 || it.q12_23_4) && it.q12_23_ageDiagnosed && it.q12_23_ageDiagnosed.trim()!="-1" ){ cancers+= "Prostate ancer|" }
+                        if ((it.q12_24_1 || it.q12_24_2 || it.q12_24_3 || it.q12_24_4) && it.q12_which_cancer!="" && it.q12_24_ageDiagnosed && it.q12_24_ageDiagnosed.trim()!="-1" ){ cancers+= it.q12_which_cancer }
+                        if ((it.q12_25_1 || it.q12_25_2 || it.q12_25_3 || it.q12_25_4) && it.q12_25!="" && it.q12_25_ageDiagnosed && it.q12_25_ageDiagnosed.trim()!="-1" ){ cancers+= it.q12_25 }
+                        if ((it.q12_26_1 || it.q12_26_2 || it.q12_26_3 || it.q12_26_4) && it.q12_26!="" && it.q12_26_ageDiagnosed && it.q12_26_ageDiagnosed.trim()!="-1" ){ cancers+= it.q12_26 }
+                        if ((it.q12_27_1 || it.q12_27_2 || it.q12_27_3 || it.q12_27_4) && it.q12_27!="" && it.q12_27_ageDiagnosed && it.q12_27_ageDiagnosed.trim()!="-1" ){ cancers+= it.q12_27 }
+                        if ((it.q12_28_1 || it.q12_28_2 || it.q12_28_3 || it.q12_28_4) && it.q12_28!="" && it.q12_28_ageDiagnosed && it.q12_28_ageDiagnosed.trim()!="-1" ){ cancers+= it.q12_28 }
+                        if ((it.q12_29_1 || it.q12_29_2 || it.q12_29_3 || it.q12_29_4) && it.q12_29!="" && it.q12_29_ageDiagnosed && it.q12_29_ageDiagnosed.trim()!="-1" ){ cancers+= it.q12_29 }
                        
                        it.putAt("q12_cancerlist", cancers)
+                       
+                        def familyCancers=" "
+                        if (it.q13_1_cancerType) {familyCancers += "Mother:"+it.q13_1_cancerType+", "}
+                        if (it.q13_2_cancerType) {familyCancers += "Father:"+it.q13_2_cancerType+", "}
+                        if (it.q13_3_cancerType) {familyCancers += "Sister:"+it.q13_3_cancerType+", "}
+                        if (it.q13_4_cancerType) {familyCancers += "Brother:"+it.q13_4_cancerType+", "}
+                        if (it.q13_5_cancerType) {familyCancers += "Daughter:"+it.q13_5_cancerType+", "}
+                        if (it.q13_6_cancerType) {familyCancers += "Son:"+it.q13_6_cancerType+", "}
+                        if (it.q13_7_cancerType) {familyCancers += "Maternal_Grandmother:"+it.q13_7_cancerType+", "}
+                        if (it.q13_8_cancerType) {familyCancers += "Maternal_Grandfather:"+it.q13_8_cancerType+", "}
+                        if (it.q13_9_cancerType) {familyCancers += "Maternal_Aunt:"+it.q13_9_cancerType+", "}
+                        if (it.q13_10_cancerType) {familyCancers += "Maternal_Uncle:"+it.q13_10_cancerType+", "}
+                        if (it.q13_11_cancerType) {familyCancers += "Paternal_Grandmother:"+it.q13_11_cancerType+", "}
+                        if (it.q13_12_cancerType) {familyCancers += "Paternal_Grandfather:"+it.q13_12_cancerType+", "}
+                        if (it.q13_13_cancerType) {familyCancers += "Paternal_Aunt:"+it.q13_13_cancerType+", "}
+                        if (it.q13_14_cancerType) {familyCancers += "Paternal_Uncle:"+it.q13_14_cancerType+", "}
+                        if (it.q13_15_cancerType) {familyCancers += it.q13_other_family_member+":"+it.q13_15_cancerType+", "}
+                        if (it.q13_16_cancerType) {familyCancers += it.q13_16+":"+it.q13_16_cancerType+", "}
+                        if (it.q13_17_cancerType) {familyCancers += it.q13_17+":"+it.q13_17_cancerType+", "}
+                        if (it.q13_18_cancerType) {familyCancers += it.q13_18+":"+it.q13_18_cancerType+", "}
+                        if (it.q13_19_cancerType) {familyCancers += it.q13_19+":"+it.q13_19_cancerType+", "}
+                        if (it.q13_20_cancerType) {familyCancers += it.q13_20+":"+it.q13_20_cancerType+", "}
+                        
+            
+                        it.putAt("q13_family_cancerlist", familyCancers)
 		}
 		
 		

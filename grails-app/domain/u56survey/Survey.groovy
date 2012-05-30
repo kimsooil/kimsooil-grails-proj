@@ -214,6 +214,8 @@ class Survey {
 	String q13_18, q13_18_cancerType, q13_18_ageDiagnosed
 	String q13_19, q13_19_cancerType, q13_19_ageDiagnosed
 	String q13_20, q13_20_cancerType, q13_20_ageDiagnosed
+        
+        String q13_family_cancerlist
 // Alcohol use
 	
 	String q14_1
