@@ -1,0 +1,772 @@
+2012-01-28 17:09:08,736 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:09:08,738 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:09:08,739 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:09:08,941 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:09:09,224 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:09:09,259 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:09:09,278 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:09:09,643 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:09:13,377 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:09:14,800 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'com.mysql.jdbc.Driver'
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'com.mysql.jdbc.Driver'
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'com.mysql.jdbc.Driver'
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'com.mysql.jdbc.Driver'
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'com.mysql.jdbc.Driver'
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'com.mysql.jdbc.Driver'
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot load JDBC driver class 'com.mysql.jdbc.Driver'
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1429)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1371)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.commons.dbcp.BasicDataSource.createConnectionFactory(BasicDataSource.java:1420)
+	... 26 more
+2012-01-28 17:12:24,293 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:12:24,295 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:12:24,296 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:12:24,421 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:12:24,625 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:12:24,659 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:12:24,677 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:12:24,719 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:12:27,678 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:12:32,484 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.Util.getInstance(Util.java:384)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1015)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:984)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:929)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2226)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2127)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:774)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:49)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:375)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:289)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1075)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3566)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3498)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:919)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4004)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1284)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2172)
+	... 36 more
+2012-01-28 17:14:16,843 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:14:16,845 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:14:16,846 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:14:17,023 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:14:17,276 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:14:17,315 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:14:17,353 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:14:17,455 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:14:18,619 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:14:23,606 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.Util.getInstance(Util.java:384)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1015)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:984)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:929)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2226)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2127)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:774)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:49)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:375)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:289)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1075)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3566)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3498)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:919)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4004)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1284)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2172)
+	... 36 more
+2012-01-28 17:17:02,148 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:17:02,150 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:17:02,151 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:17:02,314 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:17:02,549 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:17:02,582 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:17:02,612 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:17:02,695 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:17:03,827 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:17:08,766 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.Util.getInstance(Util.java:384)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1015)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:984)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:929)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2226)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2127)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:774)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:49)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:375)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:289)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1075)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3566)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3498)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:919)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4004)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1284)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2172)
+	... 36 more
+2012-01-28 17:20:08,592 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:20:08,593 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:20:08,595 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:20:08,717 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:20:08,918 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:20:08,953 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:20:08,987 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:20:09,086 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:20:12,203 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:20:17,403 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2237)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2158)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:943)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4113)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1308)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2336)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2176)
+	... 36 more
+2012-01-28 17:21:45,540 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:21:45,541 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:21:45,543 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:21:45,706 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:21:45,891 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:21:45,928 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:21:45,959 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:21:46,035 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:21:47,071 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:21:52,216 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2237)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2158)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:943)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4113)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1308)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2336)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2176)
+	... 36 more
+2012-01-28 17:22:40,134 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:22:40,152 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:22:40,153 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:22:40,312 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:22:40,538 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:22:40,573 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:22:40,603 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:22:40,728 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:22:43,777 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:22:48,712 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2237)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2158)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:943)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4113)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1308)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2336)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2176)
+	... 36 more
+2012-01-28 17:24:45,617 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:24:45,618 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:24:45,620 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:24:45,779 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:24:46,021 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:24:46,059 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:24:46,087 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:24:46,165 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:24:47,189 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:24:52,235 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2237)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2158)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:943)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4113)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1308)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2336)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2176)
+	... 36 more
+2012-01-28 17:27:10,095 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:27:10,096 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:27:10,098 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:27:10,249 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:27:10,426 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:27:10,472 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:27:10,502 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:27:10,572 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:27:11,658 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:27:16,660 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2237)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2158)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:943)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4113)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1308)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2336)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2176)
+	... 36 more
+2012-01-28 17:29:04,018 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:29:04,020 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:29:04,022 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:29:04,182 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:29:04,430 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:29:04,484 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:29:04,521 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:29:04,628 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:29:05,707 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:29:10,774 [main] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	... 23 more
+Caused by: org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549)
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388)
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044)
+	at $Proxy9.getMetaData(Unknown Source)
+	... 23 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1013)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:987)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:982)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2237)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2158)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38)
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
+	... 26 more
+Caused by: java.sql.SQLException: Access denied for user 'neuropathology'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3609)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3541)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:943)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4113)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1308)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2336)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2176)
+	... 36 more
+2012-01-28 17:46:23,514 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-01-28 17:46:23,515 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-01-28 17:46:23,517 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-01-28 17:46:23,679 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-01-28 17:46:23,894 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-01-28 17:46:23,931 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-01-28 17:46:23,967 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-01-28 17:46:24,069 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring root WebApplicationContext
+2012-01-28 17:46:25,150 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-01-28 17:46:27,243 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/mj58ksi/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2012-01-28 17:46:28,623 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@461b29f: startup date [Sat Jan 28 17:46:25 EST 2012]; parent: Root WebApplicationContext
+2012-01-28 17:46:30,212 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2012-01-28 17:46:30,327 [main] INFO  braintumorpathologyreview.DataSourceUtils  - Configured Datasource properties:
+2012-01-28 17:46:30,346 [main] INFO  braintumorpathologyreview.DataSourceUtils  -   targetDataSource=org.apache.commons.dbcp.BasicDataSource@78189538
+2012-01-28 17:46:30,347 [main] INFO  braintumorpathologyreview.DataSourceUtils  -   connection=Transaction-aware proxy for target Connection  from DataSource [org.apache.commons.dbcp.BasicDataSource@78189538]
+2012-01-28 17:46:30,347 [main] INFO  braintumorpathologyreview.DataSourceUtils  -   class=class org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy
+2012-01-28 17:46:30,347 [main] INFO  braintumorpathologyreview.DataSourceUtils  -   reobtainTransactionalConnections=false
+2012-01-28 17:46:30,347 [main] INFO  braintumorpathologyreview.DataSourceUtils  -   logWriter=java.io.PrintWriter@15eccd21
+2012-01-28 17:46:30,510 [main] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring FrameworkServlet 'grails'
+2012-01-28 17:46:30,644 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2012-01-28 17:46:35,212 [http-8080-1] INFO  [localhost].[/BrainTumorPathologyReview]  - Initializing Spring FrameworkServlet 'gsp'
+2012-01-28 17:46:35,213 [http-8080-1] INFO  [localhost].[/BrainTumorPathologyReview]  - GSP servlet initialized
+2012-01-28 17:46:50,219 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-01-28 17:46:50,221 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-01-28 17:54:32,032 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-01-28 17:54:32,064 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
